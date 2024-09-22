@@ -5093,7 +5093,7 @@ int PolicyHelpers::GetNumPlayersWithBranchUnlocked(PolicyBranchTypes eBranch)
 
 int PolicyHelpers::GetNumFreePolicies(PolicyBranchTypes eBranch)
 {
-	int iFreePolicies = 0;
+	/* int iFreePolicies = 0;
 
 	CvPolicyBranchEntry *pkEntry = GC.getPolicyBranchInfo(eBranch);
 	if (pkEntry)
@@ -5110,7 +5110,7 @@ int PolicyHelpers::GetNumFreePolicies(PolicyBranchTypes eBranch)
 				iFreePolicies = pkEntry->GetSecondAdopterFreePolicies();
 			}
 		}
-	}
+	} */
 
-	return iFreePolicies;
+	return 1;
 }
