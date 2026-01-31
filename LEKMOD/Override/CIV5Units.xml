@@ -106650,7 +106650,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>0</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>0</DiploEmphasisLatePolicies> 
-			<LeaguePercent>300</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>50</WarmongerPercent> 
 			<SoundtrackSpace>0</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_EARLY</CityBombardEffectTag> 
@@ -106698,7 +106698,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>2</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>0</DiploEmphasisLatePolicies> 
-			<LeaguePercent>300</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>60</WarmongerPercent> 
 			<SoundtrackSpace>400</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_EARLY</CityBombardEffectTag> 
@@ -106746,7 +106746,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>5</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>0</DiploEmphasisLatePolicies> 
-			<LeaguePercent>300</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>70</WarmongerPercent> 
 			<SoundtrackSpace>200</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_MID</CityBombardEffectTag> 
@@ -106794,7 +106794,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>5</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>0</DiploEmphasisLatePolicies> 
-			<LeaguePercent>300</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>80</WarmongerPercent> 
 			<SoundtrackSpace>160</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_MID</CityBombardEffectTag> 
@@ -106842,7 +106842,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>2</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>7</DiploEmphasisLatePolicies> 
-			<LeaguePercent>200</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>90</WarmongerPercent> 
 			<SoundtrackSpace>120</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_MID</CityBombardEffectTag> 
@@ -106890,7 +106890,7 @@
 			<FaithCostMultiplier>100</FaithCostMultiplier> 
 			<DiploEmphasisReligion>0</DiploEmphasisReligion> 
 			<DiploEmphasisLatePolicies>9</DiploEmphasisLatePolicies> 
-			<LeaguePercent>200</LeaguePercent> 
+			<LeaguePercent>100</LeaguePercent> 
 			<WarmongerPercent>100</WarmongerPercent> 
 			<SoundtrackSpace>80</SoundtrackSpace> 
 			<CityBombardEffectTag>CITY_BOMBARD_LATE</CityBombardEffectTag> 
