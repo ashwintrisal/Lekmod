@@ -174640,7 +174640,7 @@
 			<SessionSplashImage>WorldCongress.dds</SessionSplashImage> 
 			<EraTrigger>ERA_RENAISSANCE</EraTrigger> 
 			<ImmediateProposal>RESOLUTION_CHANGE_LEAGUE_HOST</ImmediateProposal> 
-			<TurnsBetweenSessions>24</TurnsBetweenSessions> 
+			<TurnsBetweenSessions>15</TurnsBetweenSessions> 
 			<CivDelegates>1</CivDelegates> 
 			<HostDelegates>1</HostDelegates> 
 			<CityStateDelegates>0</CityStateDelegates> 
@@ -174654,7 +174654,7 @@
 			<SessionSplashImage>WorldCongress.dds</SessionSplashImage> 
 			<EraTrigger>ERA_INDUSTRIAL</EraTrigger> 
 			<ImmediateProposal>RESOLUTION_CHANGE_LEAGUE_HOST</ImmediateProposal> 
-			<TurnsBetweenSessions>19</TurnsBetweenSessions> 
+			<TurnsBetweenSessions>13</TurnsBetweenSessions> 
 			<CivDelegates>2</CivDelegates> 
 			<HostDelegates>1</HostDelegates> 
 			<CityStateDelegates>1</CityStateDelegates> 
@@ -174668,7 +174668,7 @@
 			<SessionSplashImage>WorldCongress.dds</SessionSplashImage> 
 			<EraTrigger>ERA_MODERN</EraTrigger> 
 			<ImmediateProposal>RESOLUTION_CHANGE_LEAGUE_HOST</ImmediateProposal> 
-			<TurnsBetweenSessions>15</TurnsBetweenSessions> 
+			<TurnsBetweenSessions>11</TurnsBetweenSessions> 
 			<CivDelegates>3</CivDelegates> 
 			<HostDelegates>2</HostDelegates> 
 			<CityStateDelegates>1</CityStateDelegates> 
@@ -174683,7 +174683,7 @@
 			<EraTrigger>ERA_POSTMODERN</EraTrigger> 
 			<ImmediateProposal>RESOLUTION_CHANGE_LEAGUE_HOST</ImmediateProposal> 
 			<RecurringProposal>RESOLUTION_DIPLOMATIC_VICTORY</RecurringProposal> 
-			<TurnsBetweenSessions>8</TurnsBetweenSessions> 
+			<TurnsBetweenSessions>9</TurnsBetweenSessions> 
 			<CivDelegates>4</CivDelegates> 
 			<HostDelegates>2</HostDelegates> 
 			<CityStateDelegates>2</CityStateDelegates> 
