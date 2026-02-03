@@ -95908,6 +95908,14 @@
 			<Value>16.023</Value> 
 		</Row>
 		<Row> 
+			<Name>DIPLO_VICTORY_BASE</Name> 
+			<Value>45</Value> 
+		</Row>
+		<Row> 
+			<Name>DIPLO_VICTORY_CS_COUNT</Name> 
+			<Value>1</Value> 
+		</Row>
+		<Row> 
 			<Name>DIPLO_VICTORY_CS_DELEGATES_CONSTANT</Name> 
 			<Value>-13.758</Value> 
 		</Row>
