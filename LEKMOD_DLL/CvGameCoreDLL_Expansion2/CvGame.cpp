@@ -5742,6 +5742,7 @@ void CvGame::DoUpdateDiploVictory()
 	int iVotesForHost = 1;
 	int iVotesPerCiv = 1;
 	int iVotesPerCityState = 1;
+	/*
 #ifdef AUI_WARNING_FIXES
 	for (uint i = 0; i < GC.getNumLeagueSpecialSessionInfos(); i++)
 #else
@@ -5817,7 +5818,10 @@ void CvGame::DoUpdateDiploVictory()
 
 	int iVotesToWin = (int)floor(fCivVotesPortion + fCityStateVotesPortion);
 	iVotesToWin = MAX(iVotesForHost + iVotesPerCiv + 1, iVotesToWin);
-	iVotesToWin = MIN(iVotesForHost + (iVotesPerCiv * (int)fCivsToCount) + (iVotesPerCityState * (int)fCityStatesToCount), iVotesToWin);
+	iVotesToWin = MIN(iVotesForHost + (iVotesPerCiv * (int)fCivsToCount) + (iVotesPerCityState * (int)fCityStatesToCount), iVotesToWin); 
+	*/
+
+	int iVotesToWin = GC.getDIPLO_VICTORY_BASE() - GC.getDIPLO_VICTORY_CS_COUNT();
 
 	SetVotesNeededForDiploVictory(iVotesToWin);
 	GC.GetEngineUserInterface()->setDirty(LeagueScreen_DIRTY_BIT, true);

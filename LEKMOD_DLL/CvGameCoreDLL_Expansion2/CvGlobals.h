@@ -7040,6 +7040,14 @@ public:
 	{
 		return m_iWALLS_BUILDINGCLASS;
 	}
+	inline int getDIPLO_VICTORY_BASE()
+	{
+		return m_iDIPLO_VICTORY_BASE;
+	}
+	inline int getDIPLO_VICTORY_CS_COUNT()
+	{
+		return m_iDIPLO_VICTORY_CS_COUNT;
+	}
 
 	// -- floats --
 
@@ -9668,6 +9676,8 @@ protected:
 	int m_iCOMBAT_CAPTURE_MIN_CHANCE;
 	int m_iCOMBAT_CAPTURE_MAX_CHANCE;
 	int m_iCOMBAT_CAPTURE_RATIO_MULTIPLIER;
+	int m_iDIPLO_VICTORY_BASE;
+	int m_iDIPLO_VICTORY_CS_COUNT;
 
 	// -- floats --
 
