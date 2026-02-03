@@ -174622,12 +174622,13 @@
 		<Column name="SessionSplashImage" type="text"  default="NULL"/>
 		<Column name="EraTrigger" type="text"  default="NULL"/>
 		<Column name="ImmediateProposal" type="text"  default="NULL"/>
-		<Column name="RecurringProposal" type="text"  default="NULL"/>
+		<Column name="RecurringProposal" type="text"  default="RESOLUTION_DIPLOMATIC_VICTORY"/>
 		<Column name="TurnsBetweenSessions" type="integer"  default="0"/>
 		<Column name="CivDelegates" type="integer"  default="0"/>
 		<Column name="HostDelegates" type="integer"  default="0"/>
 		<Column name="CityStateDelegates" type="integer"  default="0"/>
 		<Column name="UnitedNations" type="boolean"  default="0"/>
+		<Column name="ExtraCapitalVotes" type="integer" default="0" />
 	</Table> 
 	<LeagueSpecialSessions>
 		<Delete />
@@ -174658,7 +174659,8 @@
 			<CivDelegates>2</CivDelegates> 
 			<HostDelegates>1</HostDelegates> 
 			<CityStateDelegates>1</CityStateDelegates> 
-			<UnitedNations>false</UnitedNations> 
+			<UnitedNations>false</UnitedNations>
+			<ExtraCapitalVotes>1</ExtraCapitalVotes>
 		</Row>
 		<Row> 
 			<ID>2</ID> 
@@ -174673,6 +174675,7 @@
 			<HostDelegates>2</HostDelegates> 
 			<CityStateDelegates>1</CityStateDelegates> 
 			<UnitedNations>false</UnitedNations> 
+			<ExtraCapitalVotes>1</ExtraCapitalVotes>
 		</Row>
 		<Row> 
 			<ID>3</ID> 
@@ -174686,8 +174689,25 @@
 			<TurnsBetweenSessions>9</TurnsBetweenSessions> 
 			<CivDelegates>4</CivDelegates> 
 			<HostDelegates>2</HostDelegates> 
+			<CityStateDelegates>1</CityStateDelegates> 
+			<UnitedNations>true</UnitedNations> 
+			<ExtraCapitalVotes>2</ExtraCapitalVotes>
+		</Row>
+		<Row> 
+			<ID>4</ID> 
+			<Type>LEAGUE_SPECIAL_SESSION_INFO</Type> 
+			<Description>TXT_KEY_LEAGUE_SPECIAL_SESSION_INFO</Description> 
+			<Help>TXT_KEY_LEAGUE_SPECIAL_SESSION_INFO_HELP</Help> 
+			<SessionSplashImage>WonderConceptUN.dds</SessionSplashImage> 
+			<EraTrigger>ERA_FUTURE</EraTrigger> 
+			<ImmediateProposal>RESOLUTION_CHANGE_LEAGUE_HOST</ImmediateProposal> 
+			<RecurringProposal>RESOLUTION_DIPLOMATIC_VICTORY</RecurringProposal> 
+			<TurnsBetweenSessions>7</TurnsBetweenSessions> 
+			<CivDelegates>5</CivDelegates> 
+			<HostDelegates>2</HostDelegates> 
 			<CityStateDelegates>2</CityStateDelegates> 
 			<UnitedNations>true</UnitedNations> 
+			<ExtraCapitalVotes>3</ExtraCapitalVotes>
 		</Row>
 	</LeagueSpecialSessions> 
 

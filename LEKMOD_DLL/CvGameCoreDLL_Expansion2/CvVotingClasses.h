@@ -1076,6 +1076,7 @@ public:
 	int GetCivDelegates() const;
 	int GetHostDelegates() const;
 	int GetCityStateDelegates() const;
+	int GetExtraCapitalVotes() const;
 	bool IsUnitedNations() const;
 
 protected:
@@ -1086,6 +1087,7 @@ protected:
 	int m_iCivDelegates;
 	int m_iHostDelegates;
 	int m_iCityStateDelegates;
+	int m_iExtraCapitalVotes;
 	bool m_bUnitedNations;
 
 

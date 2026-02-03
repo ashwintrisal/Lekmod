@@ -3641,7 +3641,9 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 		}
 		iVotes += iCityStateVotes;
 
-		// Diplomats after Globalization tech
+		// Diplomats after Globalization tech\
+		// no more of this
+		/*
 		int iDiplomatVotes = 0;
 		for (int i = 0; i < MAX_MAJOR_CIVS; i++)
 		{
@@ -3655,6 +3657,7 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 			}
 		}
 		iVotes += iDiplomatVotes;
+		*/
 
 		// Wonders
 		int iWonderVotes = GET_PLAYER(ePlayer).GetExtraLeagueVotes();
@@ -3679,6 +3682,30 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 		// World Ideology
 		int iWorldIdeologyVotes = GetExtraVotesForFollowingIdeology(ePlayer);
 		iVotes += iWorldIdeologyVotes;
+
+		// add votes for capitals other than own
+		int iNumExtraCapitalsControlled = 0;
+		{	
+			int iCityLoop;
+			CvCity* pLoopCity = NULL;
+				for(pLoopCity = GET_PLAYER(ePlayer).firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = GET_PLAYER(ePlayer).nextCity(&iCityLoop))
+				{
+					if (pLoopCity->getOriginalOwner() < MAX_MAJOR_CIVS && pLoopCity->getOriginalOwner() != ePlayer && pLoopCity->IsOriginalCapital())
+					{
+						iNumExtraCapitalsControlled += 1;
+					}
+				}
+		}
+		iVotes+=pInfo->GetExtraCapitalVotes()*iNumExtraCapitalsControlled;
+
+		// add votes for extraordinary session
+		// add votes for auto, freedom tier 3 -- this is better as a lua effect, perhaps? flat votes are lua, increase from allies should be cpp
+		// add votes for previously passed proposals
+		// add votes for religious enhancer
+		// add votes for number of players you are influential over, minus for being influenced
+		// subtract votes for being embargoed
+		// remove votes from diplomats
+
 
 		// Vote Sources - Normally this is only updated when we are not in session
 		if (bForceUpdateSources || !IsInSession())
@@ -3709,13 +3736,13 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 				sTemp << pInfo->GetCityStateDelegates();
 				pMember->sVoteSources += sTemp.toUTF8();
 			}
-			if (iDiplomatVotes > 0)
+			/* if (iDiplomatVotes > 0)
 			{
 				Localization::String sTemp = Localization::Lookup("TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_DIPLOMAT_VOTES");
 				sTemp << iDiplomatVotes;
 				sTemp << GET_PLAYER(ePlayer).GetExtraVotesPerDiplomat();
 				pMember->sVoteSources += sTemp.toUTF8();
-			}
+			} */
 			if (iWonderVotes > 0)
 			{
 				Localization::String sTemp = Localization::Lookup("TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_WONDER_VOTES");
@@ -3757,6 +3784,7 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 				pMember->sVoteSources += sTemp.toUTF8();
 			}
 		}
+
 	}
 	return iVotes;
 }
@@ -11283,6 +11311,7 @@ CvLeagueSpecialSessionEntry::CvLeagueSpecialSessionEntry(void)
 	m_iCivDelegates						= 0;
 	m_iHostDelegates					= 0;
 	m_iCityStateDelegates				= 0;
+	m_iExtraCapitalVotes				= 0;
 	m_bUnitedNations					= false;
 }
 
@@ -11304,6 +11333,7 @@ bool CvLeagueSpecialSessionEntry::CacheResults(Database::Results& kResults, CvDa
 	m_iCivDelegates						= kResults.GetInt("CivDelegates");
 	m_iHostDelegates					= kResults.GetInt("HostDelegates");
 	m_iCityStateDelegates				= kResults.GetInt("CityStateDelegates");
+	m_iExtraCapitalVotes				= kResults.GetInt("ExtraCapitalVotes");
 	m_bUnitedNations					= kResults.GetBool("UnitedNations");
 
 	return true;
@@ -11342,6 +11372,11 @@ int CvLeagueSpecialSessionEntry::GetHostDelegates() const
 int CvLeagueSpecialSessionEntry::GetCityStateDelegates() const
 {
 	return m_iCityStateDelegates;
+}
+
+int CvLeagueSpecialSessionEntry::GetExtraCapitalVotes() const
+{
+	return m_iExtraCapitalVotes;
 }
 
 bool CvLeagueSpecialSessionEntry::IsUnitedNations() const
