@@ -711,6 +711,12 @@ public:
 	int GetPolicyExtraLeagueVotes() const;
 	void ChangePolicyExtraLeagueVotes(int iChange);
 
+	int GetMinorBonusVotes() const;
+	void ChangeMinorBonusVotes(int iChange);
+
+	int GetPassedPolicyVotes() const;
+	void ChangePassedPolicyVotes (int iChange);
+
 	int GetNumMiscTradeRoutes() const;
 	void ChangeNumMiscTradeRoutes(int iChange);
 #endif
@@ -2030,6 +2036,8 @@ protected:
 #if defined(MISC_CHANGES) // create variables
 	int m_iTechExtraLeagueVotes;
 	int m_iPolicyExtraLeagueVotes;
+	int m_iMinorBonusVotes;
+	int m_iPassedPolicyVotes;
 	int m_iMiscTradeRoutes;
 #endif
 #if defined(LEKMOD_v34) // create variables

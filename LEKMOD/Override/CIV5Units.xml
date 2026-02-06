@@ -186714,6 +186714,7 @@
 		<Column name="TourismPerCity" type="INTEGER"  default="0"/>
 		<Column name="NumExtraSpies" type="INTEGER"  default="0"/>
 		<Column name="NumExtraLeagueVotes" type="INTEGER"  default="0"/>
+		<Column name="NumMinorExtraLeagueVotes" type="INTEGER" default="0"/>
 		<Column name="NumTradeRouteBonus" type="INTEGER"  default="0"/>
 		<Column name="GlobalMoveChange" type="integer" default="0"/>
 		<Column name="GlobalMoveChangeFriendly" type="integer" default="0"/>

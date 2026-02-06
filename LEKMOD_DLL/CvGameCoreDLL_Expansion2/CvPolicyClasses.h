@@ -66,6 +66,7 @@ public:
 #endif
 #if defined(MISC_CHANGES) // Extra League Votes
 	int GetNumExtraLeagueVotes() const;
+	int GetNumMinorBonusVotes() const;
 	int GetNumTradeRouteBonus() const;
 #endif
 	int GetMedianTechPercentChange() const;
@@ -372,6 +373,7 @@ private:
 #endif
 #if defined(MISC_CHANGES) // Private member variables
 	int m_iNumExtraLeagueVotes;
+	int m_iNumMinorBonusVotes;
 	int m_iNumTradeRouteBonus;
 #endif
 	int m_iMedianTechPercentChange;

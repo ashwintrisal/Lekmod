@@ -3637,6 +3637,7 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 			if (GET_PLAYER(eMinor).isAlive() && GET_PLAYER(eMinor).GetMinorCivAI()->IsAllies(ePlayer))
 			{
 				iCityStateVotes += pInfo->GetCityStateDelegates();
+				iCityStateVotes += GET_PLAYER(ePlayer).GetMinorBonusVotes();
 			}
 		}
 		iVotes += iCityStateVotes;
@@ -3701,10 +3702,35 @@ int CvLeague::CalculateStartingVotesForMember(PlayerTypes ePlayer, bool bForceUp
 		// add votes for extraordinary session
 		// add votes for auto, freedom tier 3 -- this is better as a lua effect, perhaps? flat votes are lua, increase from allies should be cpp
 		// add votes for previously passed proposals
+		int iPassedPolicyVotes = GET_PLAYER(ePlayer).GetPassedPolicyVotes();
+		iVotes += iPassedPolicyVotes;
+
 		// add votes for religious enhancer
 		// add votes for number of players you are influential over, minus for being influenced
+		for (int iOtherPlayer = 0; iOtherPlayer < MAX_MAJOR_CIVS; iOtherPlayer++)
+		{
+
+			CvPlayer& kOtherPlayer = GET_PLAYER((PlayerTypes) iOtherPlayer);
+			if ((PlayerTypes)iOtherPlayer != ePlayer && kOtherPlayer.isAlive() && !kOtherPlayer.isMinorCiv())
+			{
+				if(kOtherPlayer.GetCulture()->GetInfluenceLevel(ePlayer) >= INFLUENCE_LEVEL_INFLUENTIAL)
+					iVotes--;
+				if((GET_PLAYER(ePlayer)).GetCulture()->GetInfluenceLevel(kOtherPlayer.GetID()) >= INFLUENCE_LEVEL_INFLUENTIAL)
+					iVotes++;
+			}
+		}
+
 		// subtract votes for being embargoed
-		// remove votes from diplomats
+		for (ActiveResolutionList::iterator it = m_vActiveResolutions.begin(); it != m_vActiveResolutions.end(); it++)
+		{		
+			if (it->GetEffects()->bEmbargoPlayer)
+			{
+				if (ePlayer == (PlayerTypes) it->GetProposerDecision()->GetDecision())
+				{
+					iVotes--;
+				}
+			}
+		}
 
 
 		// Vote Sources - Normally this is only updated when we are not in session
@@ -5877,6 +5903,7 @@ void CvLeague::FinishSession()
 				{
 					GET_PLAYER(eProposer).GetDiplomacyAI()->SetTurnsSinceTheySupportedOurProposal(*playerIt, 0);
 				}
+				GET_PLAYER(eProposer).ChangePassedPolicyVotes(1);
 			}
 
 			DoRepealResolution(it);
@@ -5917,6 +5944,7 @@ void CvLeague::FinishSession()
 				{
 					GET_PLAYER(eProposer).GetDiplomacyAI()->SetTurnsSinceTheySupportedOurProposal(*playerIt, 0);
 				}
+				GET_PLAYER(eProposer).ChangePassedPolicyVotes(1);
 			}
 
 			if (it->GetEffects()->bChangeLeagueHost)

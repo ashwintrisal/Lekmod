@@ -50,6 +50,7 @@ CvPolicyEntry::CvPolicyEntry(void):
 #endif
 #if defined(MISC_CHANGES) // Constructor
 	m_iNumExtraLeagueVotes(0),
+	m_iNumMinorBonusVotes(0),
 	m_iNumTradeRouteBonus(0),
 #endif
 	m_iMedianTechPercentChange(0),
@@ -420,6 +421,7 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #if defined(MISC_CHANGES) // Grab from the XML
 	m_iNumExtraLeagueVotes = kResults.GetInt("NumExtraLeagueVotes");
+	m_iNumMinorBonusVotes = kResults.GetInt("NumMinorBonusVotes");
 	m_iNumTradeRouteBonus = kResults.GetInt("NumTradeRouteBonus");
 #endif
 	m_iMedianTechPercentChange = kResults.GetInt("MedianTechPercentChange");
@@ -1185,6 +1187,11 @@ int CvPolicyEntry::GetNumExtraSpies() const
 int CvPolicyEntry::GetNumExtraLeagueVotes() const
 {
 	return m_iNumExtraLeagueVotes;
+}
+/// Number of bonus votes from CS from a policy
+int CvPolicyEntry::GetNumMinorBonusVotes() const
+{
+	return m_iNumMinorBonusVotes;
 }
 /// Number of extra Trade Routes from a policy
 int CvPolicyEntry::GetNumTradeRouteBonus() const

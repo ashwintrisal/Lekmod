@@ -207,6 +207,8 @@ CvPlayer::CvPlayer() :
 #if defined(MISC_CHANGES) // Initialize
 	, m_iTechExtraLeagueVotes(0)
 	, m_iPolicyExtraLeagueVotes(0)
+	, m_iMinorBonusVotes(0)
+	, m_iPassedPolicyVotes(0)
 	, m_iMiscTradeRoutes(0)
 #endif
 	, m_iSpecialPolicyBuildingHappiness("CvPlayer::m_iSpecialPolicyBuildingHappiness", m_syncArchive)
@@ -983,6 +985,8 @@ void CvPlayer::uninit()
 #if defined(MISC_CHANGES) // uninit()
 	m_iTechExtraLeagueVotes = 0;
 	m_iPolicyExtraLeagueVotes = 0;
+	m_iMinorBonusVotes = 0;
+	m_iPassedPolicyVotes = 0;
 	m_iMiscTradeRoutes = 0;
 #endif
 
@@ -16135,6 +16139,40 @@ void CvPlayer::ChangePolicyExtraLeagueVotes(int iChange)
 	}
 }
 // --------------------------------------------------------------------------------
+// Extra votes for allied CS
+int CvPlayer::GetMinorBonusVotes() const
+{
+	return m_iMinorBonusVotes;
+}
+// --------------------------------------------------------------------------------
+// Change votes for allied CS
+void CvPlayer::ChangeMinorBonusVotes(int iChange)
+{
+	m_iMinorBonusVotes += iChange;
+	CvAssert(m_iMinorBonusVotes >= 0);
+	if (m_iMinorBonusVotes < 0)
+	{
+		m_iMinorBonusVotes = 0;
+	}
+}
+// --------------------------------------------------------------------------------
+// Votes for passed proposals
+int CvPlayer::GetPassedPolicyVotes() const
+{
+	return m_iPassedPolicyVotes;
+}
+// --------------------------------------------------------------------------------
+// Change votes for passed proposals
+void CvPlayer::ChangePassedPolicyVotes(int iChange)
+{
+	m_iPassedPolicyVotes += iChange;
+	CvAssert(m_iPassedPolicyVotes >= 0);
+	if (m_iPassedPolicyVotes < 0)
+	{
+		m_iPassedPolicyVotes = 0;
+	}
+}
+// --------------------------------------------------------------------------------
 // Extra Trade Routes provided though Miscellaneous means
 int CvPlayer::GetNumMiscTradeRoutes() const
 {
@@ -26309,6 +26347,7 @@ void CvPlayer::processPolicies(PolicyTypes ePolicy, int iChange)
 #endif
 #if defined(MISC_CHANGES) // processPolicies
 	ChangePolicyExtraLeagueVotes(pPolicy->GetNumExtraLeagueVotes() * iChange);
+	ChangeMinorBonusVotes(pPolicy->GetNumMinorBonusVotes() * iChange);
 #endif
 	ChangeHappinessPerXPopulation(pPolicy->GetHappinessPerXPopulation() * iChange);
 	ChangeExtraHappinessPerLuxury(pPolicy->GetExtraHappinessPerLuxury() * iChange);
@@ -27639,6 +27678,8 @@ void CvPlayer::Read(FDataStream& kStream)
 #if defined(MISC_CHANGES) // Read
 	kStream >> m_iTechExtraLeagueVotes;
 	kStream >> m_iPolicyExtraLeagueVotes;
+	kStream >> m_iMinorBonusVotes;
+	kStream >> m_iPassedPolicyVotes;
 	kStream >> m_iMiscTradeRoutes;
 #endif
 #if defined(LEKMOD_v34)
@@ -28312,6 +28353,8 @@ void CvPlayer::Write(FDataStream& kStream) const
 #if defined(MISC_CHANGES) // Write
 	kStream << m_iTechExtraLeagueVotes;
 	kStream << m_iPolicyExtraLeagueVotes;
+	kStream << m_iMinorBonusVotes;
+	kStream << m_iPassedPolicyVotes;
 	kStream << m_iMiscTradeRoutes;
 #endif
 #if defined(LEKMOD_v34) // Write
