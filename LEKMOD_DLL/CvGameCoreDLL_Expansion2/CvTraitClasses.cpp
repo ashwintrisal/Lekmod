@@ -221,6 +221,7 @@ CvTraitEntry::CvTraitEntry() :
 	m_eCombatBonusImprovement(NO_IMPROVEMENT),
 	m_bRiverTradeRoad(false),
 	m_bAngerFreeIntrusionOfCityStates(false),
+	m_bMissionaryActsAsProphet(false),
 #endif
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 	m_ppiImprovementYieldChanges(std::pair<int**, size_t>(NULL, 0)),
@@ -1068,6 +1069,12 @@ bool CvTraitEntry::IsAngerFreeIntrusionOfCityStates() const
 	return m_bAngerFreeIntrusionOfCityStates;
 }
 
+/// Accessor: Do our missionaries spread religion like prophets (removing other religions)?
+bool CvTraitEntry::IsMissionaryActsAsProphet() const
+{
+	return m_bMissionaryActsAsProphet;
+}
+
 /// Accessor:: Get brief text description
 const char* CvTraitEntry::getShortDescription() const
 {
@@ -1735,6 +1742,7 @@ bool CvTraitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& 
 	m_bUniqueLuxuryRequiresNewArea = kResults.GetBool("UniqueLuxuryRequiresNewArea");
 	m_bRiverTradeRoad = kResults.GetBool("RiverTradeRoad");
 	m_bAngerFreeIntrusionOfCityStates = kResults.GetBool("AngerFreeIntrusionOfCityStates");
+	m_bMissionaryActsAsProphet = kResults.GetBool("MissionaryActsAsProphet");
 
 	//Arrays
 	const char* szTraitType = GetType();
@@ -2925,6 +2933,10 @@ void CvPlayerTraits::InitPlayerTraits()
 			{
 				m_bAngerFreeIntrusionOfCityStates = true;
 			}
+			if (trait->IsMissionaryActsAsProphet())
+			{
+				m_bMissionaryActsAsProphet = true;
+			}
 
 			for(int iYield = 0; iYield < NUM_YIELD_TYPES; iYield++)
 			{
@@ -3432,6 +3444,7 @@ void CvPlayerTraits::Reset()
 	m_bUniqueLuxuryRequiresNewArea = false;
 	m_bRiverTradeRoad = false;
 	m_bAngerFreeIntrusionOfCityStates = false;
+	m_bMissionaryActsAsProphet = false;
 
 	m_eCampGuardType = NO_UNIT;
 	m_eCombatBonusImprovement = NO_IMPROVEMENT;
@@ -5163,6 +5176,15 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 		m_bAngerFreeIntrusionOfCityStates = false;
 	}
 
+	if (uiVersion >= 20)
+	{
+		kStream >> m_bMissionaryActsAsProphet;
+	}
+	else
+	{
+		m_bMissionaryActsAsProphet = false;
+	}
+
 	kStream >> m_eCampGuardType;
 
 	kStream >> m_eCombatBonusImprovement;
@@ -5361,7 +5383,7 @@ void CvPlayerTraits::Read(FDataStream& kStream)
 void CvPlayerTraits::Write(FDataStream& kStream)
 {
 	// Current version number
-	uint uiVersion = 19;
+	uint uiVersion = 20;
 	kStream << uiVersion;
 
 	kStream << m_iGreatPeopleRateModifier;
@@ -5523,6 +5545,7 @@ void CvPlayerTraits::Write(FDataStream& kStream)
 	kStream << m_bUniqueLuxuryRequiresNewArea;
 	kStream << m_bRiverTradeRoad;
 	kStream << m_bAngerFreeIntrusionOfCityStates;
+	kStream << m_bMissionaryActsAsProphet;
 
 	kStream << m_eCampGuardType;
 	kStream << m_eCombatBonusImprovement;

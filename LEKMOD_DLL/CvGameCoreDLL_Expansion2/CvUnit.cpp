@@ -8852,7 +8852,16 @@ bool CvUnit::DoSpreadReligion()
 			}
 			else
 			{
-				pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
+				// Check if missionaries should act as prophets (trait-based)
+				bool bMissionaryActsAsProphet = GET_PLAYER(getOwner()).GetPlayerTraits()->IsMissionaryActsAsProphet();
+				if (bMissionaryActsAsProphet)
+				{
+					pCity->GetCityReligions()->AddProphetSpread(eReligion, iConversionStrength, getOwner());
+				}
+				else
+				{
+					pCity->GetCityReligions()->AddReligiousPressure(FOLLOWER_CHANGE_MISSIONARY, eReligion, iConversionStrength, getOwner());
+				}
 			}
             #ifdef LEKMOD_PROMO_YIELD_FROM_CONVERSION
             // Calculate the actual change after the spread
@@ -9039,7 +9048,8 @@ int CvUnit::GetNumFollowersAfterSpread() const
 
 	if (pCity != NULL)
 	{
-		if(IsGreatPerson())
+		bool bUseProphetSpread = IsGreatPerson() || GET_PLAYER(getOwner()).GetPlayerTraits()->IsMissionaryActsAsProphet();
+		if(bUseProphetSpread)
 		{
 			iRtnValue = pCity->GetCityReligions()->GetNumFollowersAfterProphetSpread (GetReligionData()->GetReligion(), GetConversionStrength());
 		}
@@ -9060,7 +9070,8 @@ ReligionTypes CvUnit::GetMajorityReligionAfterSpread() const
 
 	if (pCity != NULL)
 	{
-		if(IsGreatPerson())
+		bool bUseProphetSpread = IsGreatPerson() || GET_PLAYER(getOwner()).GetPlayerTraits()->IsMissionaryActsAsProphet();
+		if(bUseProphetSpread)
 		{
 			eRtnValue = pCity->GetCityReligions()->GetMajorityReligionAfterProphetSpread (GetReligionData()->GetReligion(), GetConversionStrength());
 		}

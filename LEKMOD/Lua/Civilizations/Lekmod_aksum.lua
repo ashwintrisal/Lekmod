@@ -1,59 +1,93 @@
--- Author: EnormousApplePie
+-- Author: EnormousApplePie (modified)
 
 include("Lekmod_utilities.lua")
-include("PlotIterators")
 
 local this_civ = GameInfoTypes["CIVILIZATION_AKSUM"]
 local is_active = LekmodUtilities:is_civilization_active(this_civ)
 
-------------------------------------------------------------------------------------------------------------------------
--- Aksum UA. Set all owned cities to follow the players religion upon founding one.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_aksum_ua_follow_religion(player_id, founded_city, religion_id)
+-- Building/resource/tech types
+local stone_works = GameInfoTypes["BUILDING_STONE_WORKS"]
+local walls = GameInfoTypes["BUILDING_WALLS"]
+local resource_stone = GameInfoTypes["RESOURCE_STONE"]
+local tech_masonry = GameInfoTypes["TECH_MASONRY"]
+local port_of_adulis = GameInfoTypes["BUILDING_AKSUM_PORT_OF_ADULIS"]
 
-   --local religion_id = arg["eReligion"]
+------------------------------------------------------------------------------------------------------------------------
+-- Aksum UA. Settling on Stone (if Masonry researched) grants free Stone Works and Walls.
+------------------------------------------------------------------------------------------------------------------------
+function lekmod_aksum_ua_stone_settling(player_id, x, y)
+
    local player = Players[player_id]
    if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
-   for city in player:Cities() do
-      if city and city:GetID() ~= founded_city then
-            city:AdoptReligionFully(religion_id)
-      end
+
+   -- Check if player has Masonry
+   if not Teams[player:GetTeam()]:IsHasTech(tech_masonry) then return end
+
+   -- Get the city plot and check for Stone resource
+   local plot = Map.GetPlot(x, y)
+   if not plot then return end
+
+   local resource_type = plot:GetResourceType()
+   if resource_type ~= resource_stone then return end
+
+   -- Get the city
+   local city = plot:GetPlotCity()
+   if not city then return end
+
+   -- Grant free Stone Works and Walls
+   city:SetNumRealBuilding(stone_works, 1)
+   city:SetNumRealBuilding(walls, 1)
+
+   -- Show notification to human player
+   if player:IsHuman() and Game.GetActivePlayer() == player_id then
+      local city_name = city:GetName()
+      Events.GameplayAlertMessage(city_name .. " was founded on Stone and received a free Stone Works and Walls!")
    end
 
 end
-------------------------------------------------------------------------------------------------------------------------
--- Aksum UI. Any unit healing next to or on the UI will grant the owner of the UI faith.
-------------------------------------------------------------------------------------------------------------------------
-function lekmod_aksum_ui_faith_on_heal(player_id, unit_id, _, x, y)
 
-   print("Aksum UI")
+------------------------------------------------------------------------------------------------------------------------
+-- Aksum UA. First coastal city receives Port of Adulis (free Lighthouse + trade bonuses + 33% caravan/cargo production).
+------------------------------------------------------------------------------------------------------------------------
+function lekmod_aksum_ua_port_of_adulis(player_id, x, y)
+
    local player = Players[player_id]
+   if not player:IsAlive() or player:GetCivilizationType() ~= this_civ then return end
 
-   local unit = player:GetUnitByID(unit_id)
-   local needs_same_player = false
-   print(GameInfoTypes["IMPROVEMENT_AKSUM"])
-   if unit:IsNearImprovementType(GameInfoTypes["IMPROVEMENT_AKSUM"], 1, needs_same_player) then
+   local plot = Map.GetPlot(x, y)
+   if not plot then return end
 
-      print("Unit healed next to Aksum UI")
-      local faith = 2
-      player:ChangeFaith(faith)
+   -- Must be coastal
+   if not plot:IsCoastalLand() then return end
 
-      local unit_plot = Map.GetPlot(x, y)
+   local city = plot:GetPlotCity()
+   if not city then return end
 
-      -- popup text for faith gain
-      if player_id == Game.GetActivePlayer() then
-         local hex_position = ToHexFromGrid{x = unit_plot:GetX(), y = unit_plot:GetY()}
-         local world_position = HexToWorld(hex_position)
-         Events.AddPopupTextEvent(world_position, "+2 [ICON_PEACE] Faith")
+   -- Count coastal cities (includes the one just founded); grant Port only if this is the first
+   local coastal_count = 0
+   for iCity = 0, player:GetNumCities() - 1 do
+      local pCity = player:GetCityByID(iCity)
+      if pCity then
+         local pCityPlot = Map.GetPlot(pCity:GetX(), pCity:GetY())
+         if pCityPlot and pCityPlot:IsCoastalLand() then
+            coastal_count = coastal_count + 1
+         end
       end
+   end
+   if coastal_count ~= 1 then return end
 
+   -- Grant Port of Adulis (includes free Lighthouse via FreeBuildingThisCity)
+   city:SetNumRealBuilding(port_of_adulis, 1)
+
+   if player:IsHuman() and Game.GetActivePlayer() == player_id then
+      local city_name = city:GetName()
+      Events.GameplayAlertMessage(city_name .. " became the Port of Adulis! Received a free Lighthouse and trade bonuses.")
    end
 
-
 end
+
 ------------------------------------------------------------------------------------------------------------------------
 if is_active then
-	GameEvents.ReligionFounded.Add(lekmod_aksum_ua_follow_religion)
+   GameEvents.PlayerCityFounded.Add(lekmod_aksum_ua_stone_settling)
+   GameEvents.PlayerCityFounded.Add(lekmod_aksum_ua_port_of_adulis)
 end
--- Note: UnitHealed is a Lekmod Event! Not available in the base game
-GameEvents.UnitHealed.Add(lekmod_aksum_ui_faith_on_heal)

@@ -6733,19 +6733,25 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 			<Text>[COLOR_CULTURE_STORED]* Unique National Wonder (only a specific civ may build one)[ENDCOLOR][NEWLINE][NEWLINE]Unique to Aksum. The cost goes up the more cities there are in the empire. Must have built a [ICON_BUILDING_MONUMENT] Monument in all cities. Provides +3 [ICON_CULTURE] Culture and +4 [ICON_PEACE] Faith in addition to its base yields. All [ICON_BUILDING_MONUMENT] Monuments in the empire provide an additional +1 [ICON_FOOD] Food, +1 [ICON_PRODUCTION] Production, +1 [ICON_PEACE] Faith, and +1 [ICON_GOLD] Gold.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_AKSUM_HELP">
-			<Text>Unique to Aksum. May be built on any terrain. May not be built on resources and may not be built next to another Rock-Hewn Church. Yields +2 [ICON_PEACE] Faith and an additional +1 [ICON_PEACE] Faith at [COLOR_CYAN]Theology[ENDCOLOR]. [ICON_QUARRY] Quarries yield +1 [ICON_PEACE] Faith for every adjacent Rock-Hewn Church. [COLOR_POSITIVE_TEXT]Land[ENDCOLOR] units next to a Rock-Hewn Church yield +2 [ICON_PEACE] Faith to the unit owner whenever one heals hitpoints for any amount.</Text>
+			<Text>Unique to Aksum. Can only be built on [ICON_RES_STONE] Stone, [ICON_RES_MARBLE] Marble, or [ICON_RES_OBSIDIAN] Obsidian. Same yields as [ICON_QUARRY] Quarry plus +2 [ICON_PEACE] Faith. Benefits from [COLOR_CYAN]Chemistry[ENDCOLOR] and Stone Circles belief.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_AKSUM">
-			<Text>Rock-Hewn</Text>
+			<Text>Rock-Hewn Church</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_AKSUM_BUILD_HELP">
-			<Text>[ICON_QUARRY] Quarries yield +1 [ICON_PEACE] Faith for every adjacent Rock-Hewn Church. [COLOR_POSITIVE_TEXT]Land[ENDCOLOR] units next to a Rock-Hewn Church yield +2 [ICON_PEACE] Faith for the unit owner whenever one heals hitpoints for any amount.</Text>
+			<Text>Construct a Rock-Hewn Church. Same as [ICON_QUARRY] Quarry plus +2 [ICON_PEACE] Faith. Stone, Marble, or Obsidian only. Available at [COLOR_CYAN]Mining[ENDCOLOR].</Text>
 		</Row>
 		<Row Tag="TXT_KEY_TRAIT_AKSUM">
-			<Text>Religious pressure exerted to [COLOR_POSITIVE_TEXT]Foreign[ENDCOLOR] cities is reduced by 100%. All your cities instantly follow your [ICON_RELIGION] Religion upon founding one.</Text>
+			<Text>[ICON_MISSIONARY] Missionaries spread religion like [ICON_PROPHET] Great Prophets, fully converting cities. Settling a city on [ICON_RES_STONE] Stone after researching [COLOR_CYAN]Masonry[ENDCOLOR] grants a free [ICON_BUILDING_STONEWALL] Stone Works and [ICON_BUILDING_WALLS] Walls. Your first [ICON_COAST] coastal city becomes the Port of Adulis: free [ICON_BUILDING_LIGHTHOUSE] Lighthouse, +3 [ICON_GOLD] Gold for both parties on international trade routes, and +33% [ICON_PRODUCTION] Production towards [ICON_UNIT_CARAVAN] Caravans and [ICON_UNIT_CARGO_SHIP] Cargo Ships.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_TRAIT_AKSUM_SHORT">
-			<Text>Saint Elesbaan's Blessing</Text>
+			<Text>Pillars of Aksum</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_AKSUM_PORT_OF_ADULIS">
+			<Text>Port of Adulis</Text>
+		</Row>
+		<Row Tag="TXT_KEY_BUILDING_AKSUM_PORT_OF_ADULIS_HELP">
+			<Text>Unique to Aksum. Granted to your first coastal city. Provides a free [ICON_BUILDING_LIGHTHOUSE] Lighthouse. +3 [ICON_GOLD] Gold for both parties on international trade routes to/from this city. +33% [ICON_PRODUCTION] Production towards [ICON_UNIT_CARAVAN] Caravans and [ICON_UNIT_CARGO_SHIP] Cargo Ships.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_CIV5_DMS_AKSUM_KALEB_HEADING_1">
 			<Text>History</Text>
@@ -6805,7 +6811,7 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 			<Text>Ezana of Axum</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_AKSUM_PEDIA">
-			<Text>An Improvement Unique to Aksum. It is available at Mining and yields +1 [ICON_PRODUCTION] Production and +2 [ICON_PEACE] Faith. It can only be built on Quarry Resources ( [ICON_RES_MARBLE] Marble, [ICON_RES_OBSIDIAN] Obsidian, [ICON_RES_STONE] Stone). +1 [ICON_PEACE] Faith at the Theology technology.</Text>
+			<Text>An Improvement Unique to Aksum. Available at [COLOR_CYAN]Mining[ENDCOLOR], it yields the same as a [ICON_QUARRY] Quarry plus +2 [ICON_PEACE] Faith. Can only be built on [ICON_RES_STONE] Stone, [ICON_RES_MARBLE] Marble, or [ICON_RES_OBSIDIAN] Obsidian. Benefits from [COLOR_CYAN]Chemistry[ENDCOLOR] and the Stone Circles belief.</Text>
 		</Row>
 		<Row Tag="TXT_KEY_LEADER_AKSUM_NAME">
 			<Text>Ezana of Axum</Text>

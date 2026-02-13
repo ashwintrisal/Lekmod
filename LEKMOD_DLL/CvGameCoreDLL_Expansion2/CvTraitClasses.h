@@ -212,6 +212,7 @@ public:
 	bool IsUniqueLuxuryRequiresNewArea() const;
 	bool IsRiverTradeRoad() const;
 	bool IsAngerFreeIntrusionOfCityStates() const;
+	bool IsMissionaryActsAsProphet() const;
 
 	const char* getShortDescription() const;
 	void setShortDescription(const char* szVal);
@@ -456,6 +457,7 @@ protected:
 	bool m_bUniqueLuxuryRequiresNewArea;
 	bool m_bRiverTradeRoad;
 	bool m_bAngerFreeIntrusionOfCityStates;
+	bool m_bMissionaryActsAsProphet;
 
 	CvString m_strShortDescription;
 
@@ -1113,6 +1115,10 @@ public:
 	{
 		return m_bAngerFreeIntrusionOfCityStates;
 	}
+	bool IsMissionaryActsAsProphet() const
+	{
+		return m_bMissionaryActsAsProphet;
+	}
 	int GetExtraYieldThreshold(YieldTypes eYield) const
 	{
 		return m_iExtraYieldThreshold[(int)eYield];
@@ -1435,6 +1441,7 @@ private:
 	bool m_bUniqueLuxuryRequiresNewArea;
 	bool m_bRiverTradeRoad;
 	bool m_bAngerFreeIntrusionOfCityStates;
+	bool m_bMissionaryActsAsProphet;
 
 	UnitTypes m_eCampGuardType;
 	unsigned int m_uiFreeUnitIndex;
