@@ -257436,7 +257436,7 @@
 			<AdjacentMod>0</AdjacentMod> 
 			<AttackMod>0</AttackMod> 
 			<DefenseMod>0</DefenseMod> 
-			<DropRange>40</DropRange> 
+			<DropRange>100</DropRange> 
 			<GreatGeneral>false</GreatGeneral> 
 			<GreatAdmiral>false</GreatAdmiral> 
 			<GreatGeneralModifier>0</GreatGeneralModifier> 

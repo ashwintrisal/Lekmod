@@ -2,6 +2,13 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+SKYRANGER / EXTENDED PARADROP (PROMOTION_EXTENDED_PARADROP)
+-------------------------------------------------------------
+Allows paradrops with a range of 100 hexes.
+Eligible: paratroopers (UNITCOMBAT_PARADROPPER).
+- Changed: paradrop range 40 -> 100
+
+
 HEAL INSTANTLY (PROMOTION_INSTA_HEAL)
 --------------------------------------
 Heals the unit for 40 HP instantly when activated. One-time use per acquisition.

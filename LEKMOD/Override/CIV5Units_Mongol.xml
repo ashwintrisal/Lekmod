@@ -119822,7 +119822,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_EXTENDED_PARADROP_HELP"> 
 			<Text>
-				May paradrop with extended range (40 hexes)
+				May paradrop with extended range (100 hexes)
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_FAMADIAHONA"> 
