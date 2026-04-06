@@ -845,6 +845,15 @@ public:
 	int getHillsMovementDiscountPercent() const;
 	void changeHillsMovementDiscountPercent(int iChange);
 
+	bool IsEmbarkFlatCost() const;
+	void ChangeEmbarkFlatCostCount(int iChange);
+	bool IsDisembarkFlatCost() const;
+	void ChangeDisembarkFlatCostCount(int iChange);
+	int GetMaxMovesAfterDomainChange() const;
+	void ChangeMaxMovesAfterDomainChange(int iChange);
+	bool IsHealWhileEmbarked() const;
+	void ChangeHealWhileEmbarkedCount(int iChange);
+
 	int getExtraNavalMoves() const;
 	void changeExtraNavalMoves(int iChange);
 
@@ -1581,6 +1590,10 @@ protected:
 	FAutoVariable<int, CvUnit> m_iGreatGeneralModifier;
 	int m_iGreatGeneralReceivesMovementCount;
 	int m_iEmbarkedUnitReceivesMovementCount; // NQMP GJS - Danish Longship
+	int m_iEmbarkFlatCostCount;
+	int m_iDisembarkFlatCostCount;
+	int m_iMaxMovesAfterDomainChange;
+	int m_iHealWhileEmbarkedCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	int m_iLandUnitReceivesMovementCount;
 #endif

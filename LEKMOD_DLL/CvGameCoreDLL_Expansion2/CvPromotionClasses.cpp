@@ -112,6 +112,10 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iExtraWithdrawal(0),
 	m_iEmbarkExtraVisibility(0),
 	m_iEmbarkDefenseModifier(0),
+	m_bEmbarkFlatCost(false),
+	m_bDisembarkFlatCost(false),
+	m_iMaxMovesAfterDomainChange(0),
+	m_bHealWhileEmbarked(false),
 	m_iCapitalDefenseModifier(0),
 	m_iCapitalDefenseFalloff(0),
 	m_iCityAttackPlunderModifier(0),
@@ -393,6 +397,10 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iExtraWithdrawal = kResults.GetInt("ExtraWithdrawal");
 	m_iEmbarkExtraVisibility = kResults.GetInt("EmbarkExtraVisibility");
 	m_iEmbarkDefenseModifier = kResults.GetInt("EmbarkDefenseModifier");
+	m_bEmbarkFlatCost = kResults.GetBool("EmbarkFlatCost");
+	m_bDisembarkFlatCost = kResults.GetBool("DisembarkFlatCost");
+	m_iMaxMovesAfterDomainChange = kResults.GetInt("MaxMovesAfterDomainChange");
+	m_bHealWhileEmbarked = kResults.GetBool("HealWhileEmbarked");
 	m_iCapitalDefenseModifier = kResults.GetInt("CapitalDefenseModifier");
 	m_iCapitalDefenseFalloff = kResults.GetInt("CapitalDefenseFalloff");
 	m_iCityAttackPlunderModifier = kResults.GetInt("CityAttackPlunderModifier");
@@ -1424,6 +1432,26 @@ int CvPromotionEntry::GetEmbarkExtraVisibility() const
 int CvPromotionEntry::GetEmbarkDefenseModifier() const
 {
 	return m_iEmbarkDefenseModifier;
+}
+
+bool CvPromotionEntry::IsEmbarkFlatCost() const
+{
+	return m_bEmbarkFlatCost;
+}
+
+bool CvPromotionEntry::IsDisembarkFlatCost() const
+{
+	return m_bDisembarkFlatCost;
+}
+
+int CvPromotionEntry::GetMaxMovesAfterDomainChange() const
+{
+	return m_iMaxMovesAfterDomainChange;
+}
+
+bool CvPromotionEntry::IsHealWhileEmbarked() const
+{
+	return m_bHealWhileEmbarked;
 }
 
 /// Accessor: bonus defending near capital

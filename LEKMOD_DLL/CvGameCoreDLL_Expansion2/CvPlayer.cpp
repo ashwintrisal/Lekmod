@@ -45,6 +45,7 @@
 #include "CvEnumSerialization.h"
 #include "FStlContainerSerialization.h"
 #include <sstream>
+#include <cstring>
 
 #include "CvInternalGameCoreUtils.h"
 #include "CvAchievementUnlocker.h"
@@ -5612,7 +5613,7 @@ void CvPlayer::DoUnitReset()
 	for (pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
 	{
 		// HEAL UNIT?
-		if (!pLoopUnit->isEmbarked())
+		if (!pLoopUnit->isEmbarked() || pLoopUnit->IsHealWhileEmbarked())
 		{
 			if (pLoopUnit->hasMoved())
 			{
@@ -6965,6 +6966,14 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		{
 			return false;
 		}
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		// Movement goody: ancient era only
+		if (strcmp(kGoodyInfo.GetType(), "GOODY_EXPERIENCE_MOVE") == 0)
+		{
+			if (GET_TEAM(getTeam()).GetCurrentEra() > 0)
+				return false;
+		}
+#endif
 	}
 
 	if (kGoodyInfo.getCityStateInfluence() > 0)
@@ -7039,8 +7048,13 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 			return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
 		}
 #else
-		return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
+		// fall through to GetFaith check and final return
 #endif
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		if (GetFaith() > 0)
+			return false;
+#endif
+		return (!GetReligions()->HasCreatedPantheon() && !GetReligions()->HasCreatedReligion());
 	}
 
 #ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
@@ -7198,9 +7212,12 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		}
 	}
 
-	// Tech
+	// Tech (LEKMOD: science instead, always allow)
 	if(kGoodyInfo.isTech())
 	{
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		// Science ruin - no tech prereq
+#else
 		bTechFound = false;
 
 		int iNumTechInfos = GC.getNumTechInfos();
@@ -7242,6 +7259,7 @@ bool CvPlayer::canReceiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit) 
 		{
 			return false;
 		}
+#endif
 	}
 
 	///////////////////////////////////////
@@ -7421,6 +7439,14 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	strBuffer = kGoodyInfo.GetDescription();
 
 	// Gold
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	if (strcmp(kGoodyInfo.GetType(), "GOODY_GOLD") == 0)
+	{
+		int iEra = GET_TEAM(getTeam()).GetCurrentEra() + 1;
+		iGold = 50 + 5 * (1 + GC.getGame().getJonRandNum(10, "Goody Gold Rand")) * iEra;
+	}
+	else
+#endif
 	iGold = kGoodyInfo.getGold() + (kGoodyInfo.getNumGoldRandRolls() * GC.getGame().getJonRandNum(kGoodyInfo.getGoldRandAmount(), "Goody Gold Rand"));
 
 	if (iGold != 0)
@@ -7437,6 +7463,34 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		iNumYieldBonuses += 1;
 
 #endif
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		if (strcmp(kGoodyInfo.GetType(), "GOODY_GOLD") == 0 && iGold >= 80)
+		{
+			bool bBarbSpawned = false;
+			int iEra = GET_TEAM(getTeam()).GetCurrentEra();
+			const char* szBarbClass = (iEra >= 2) ? "UNITCLASS_PIKEMAN" : (iEra == 1) ? "UNITCLASS_SWORDSMAN" : "UNITCLASS_WARRIOR";
+			UnitClassTypes eBarbClass = (UnitClassTypes)GC.getInfoTypeForString(szBarbClass, true);
+			if (eBarbClass != NO_UNITCLASS)
+			{
+				UnitTypes eBarbUnit = (UnitTypes)GET_PLAYER(BARBARIAN_PLAYER).getCivilizationInfo().getCivilizationUnits(eBarbClass);
+				if (eBarbUnit != NO_UNIT)
+				{
+					for (iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+					{
+						CvPlot* pSpawnPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)iI);
+						if (pSpawnPlot != NULL && pSpawnPlot->getArea() == pPlot->getArea() && !pSpawnPlot->isImpassable() && !pSpawnPlot->isMountain() && !pSpawnPlot->getPlotCity() && pSpawnPlot->getNumUnits() == 0)
+						{
+							GET_PLAYER(BARBARIAN_PLAYER).initUnit(eBarbUnit, pSpawnPlot->getX(), pSpawnPlot->getY(), pSpawnPlot->isWater() ? UNITAI_ATTACK_SEA : UNITAI_ATTACK);
+							bBarbSpawned = true;
+							break;
+						}
+					}
+				}
+			}
+			if (bBarbSpawned)
+				strBuffer = GetLocalizedText("TXT_KEY_GOODY_GOLD_BARB", iGold);
+		}
+#endif
 	}
 
 #ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
@@ -7452,26 +7506,16 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	int iFood = 0;
 	if (kGoodyInfo.getFoodMin() > 0 && kGoodyInfo.getFoodMax() > 0)
 	{
-		int iMinValue = kGoodyInfo.getFoodMin();
-		int iMaxValue = kGoodyInfo.getFoodMax();
-		iFood = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Food Rand") + iMinValue;
-
-		if (iFood > 0)
+		CvCity* pBestCity = findBestCityForGoody(pPlot);
+		if (pBestCity != NULL)
 		{
+			int iPop = pBestCity->getPopulation();
+			int iEra = GET_TEAM(getTeam()).GetCurrentEra() + 1;
+			iFood = (int)((7 + 2 * iPop) * iEra * 1.1);
+			if (iFood < 1) iFood = 1;
 
-			CvCity* pBestCity = findBestCityForGoody(pPlot);
-
-			if (pBestCity != NULL)
-			{
-				// is the value affected by the city's population?
-				if (kGoodyInfo.getIncreasePerPop() > 0)
-				{
-					iFood += kGoodyInfo.getIncreasePerPop() * pBestCity->getPopulation();
-				}
-
-
-				// Add the food to the city, and grow it if possible
-				pBestCity->changeFood(iFood);
+			// Add the food to the city, and grow it if possible
+			pBestCity->changeFood(iFood);
 				if (GetID() == GC.getGame().getActivePlayer())
 				{
 					// Notification
@@ -7486,33 +7530,43 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 				}
 
 
-				TestMidTurnPopGrowth(pBestCity, true /*bAlwaysShowNotification*/);
-			}
+			TestMidTurnPopGrowth(pBestCity, true /*bAlwaysShowNotification*/);
+		}
+		// Glutton promotion for food ruin
+		if (pUnit != NULL && strcmp(kGoodyInfo.GetType(), "GOODY_FOOD") == 0)
+		{
+			PromotionTypes eGlutton = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_GLUTTON", true);
+			if (eGlutton != NO_PROMOTION)
+				pUnit->setHasPromotion(eGlutton, true);
 		}
 	}
 
 	// Random Faith
 	int iRandomFaith = 0;
-	if (kGoodyInfo.getFaithMin() > 0 && kGoodyInfo.getFaithMax() > 0)
+	if (strcmp(kGoodyInfo.GetType(), "GOODY_RANDOM_FAITH") == 0 && kGoodyInfo.getHealing() == 100)
+	{
+		int iEra = GET_TEAM(getTeam()).GetCurrentEra() + 1;
+		int iTurn = GC.getGame().getElapsedGameTurns();
+		iRandomFaith = iTurn * 2 * iEra;
+	}
+	else if (kGoodyInfo.getFaithMin() > 0 && kGoodyInfo.getFaithMax() > 0)
 	{
 		int iMinValue = kGoodyInfo.getFaithMin();
 		int iMaxValue = kGoodyInfo.getFaithMax();
 		iRandomFaith = GC.getGame().getJonRandNum(iMaxValue - iMinValue + 1, "Goody Faith Rand") + iMinValue;
-		if (iRandomFaith > 0)
+	}
+	if (iRandomFaith > 0)
+	{
+		ChangeFaith(iRandomFaith);
+		if (GetID() == GC.getGame().getActivePlayer())
 		{
-			ChangeFaith(iRandomFaith);
-			if (GetID() == GC.getGame().getActivePlayer())
-			{
-				// Plot Popup Text
-				char text[256] = { 0 };
-				float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
-				text[0] = NULL;
-				sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iRandomFaith);
-				GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
-			}
-			// Notification
-			strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iRandomFaith);
+			char text[256] = { 0 };
+			float fDelay = GC.getPOST_COMBAT_TEXT_DELAY() * 3;
+			text[0] = NULL;
+			sprintf_s(text, "[COLOR_WHITE]+%d[ENDCOLOR][ICON_PEACE]", iRandomFaith);
+			GC.GetEngineUserInterface()->AddPopupText(pPlot->getX(), pPlot->getY(), text, fDelay);
 		}
+		strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iRandomFaith);
 	}
 
 	// Tile Growths
@@ -7704,6 +7758,14 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 
 	// Culture
 	int iCulture = kGoodyInfo.getCulture();
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	if (strcmp(kGoodyInfo.GetType(), "GOODY_CULTURE") == 0)
+	{
+		int iEra = GET_TEAM(getTeam()).GetCurrentEra() + 1;
+		int iTurn = GC.getGame().getElapsedGameTurns();
+		iCulture = iTurn * iEra;
+	}
+#endif
 	if(iCulture > 0)
 	{
 		// Game Speed Mod
@@ -7910,7 +7972,20 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 #endif
 #endif
 					{
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+						int iDist =
+#ifdef AUI_HEXSPACE_DX_LOOPS
+							hexDistance(iDX, iDY);
+#elif defined(AUI_FIX_HEX_DISTANCE_INSTEAD_OF_PLOT_DISTANCE)
+							hexDistance(iDX, iDY);
+#else
+							plotDistance(pBestPlot->getX(), pBestPlot->getY(), pLoopPlot->getX(), pLoopPlot->getY());
+#endif
+						int iProb = (iDist == 0) ? 100 : (iDist == 1) ? 90 : (iDist == 2) ? 80 : (iDist == 3) ? 40 : (iDist == 4) ? 20 : 3;
+						if (GC.getGame().getJonRandNum(100, "Goody Map") < iProb)
+#else
 						if(GC.getGame().getJonRandNum(100, "Goody Map") < kGoodyInfo.getMapProb())
+#endif
 						{
 							pLoopPlot->setRevealed(getTeam(), true);
 						}
@@ -7924,11 +7999,12 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 	if (pUnit != NULL)
 	{
 #ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+		if (kGoodyInfo.getMapRange() > 0)
+			pUnit->changeExperience(9);
 		if (kGoodyInfo.getExperience() > 0)
 		{
 			pUnit->changeExperience(kGoodyInfo.getExperience());
 			pUnit->testPromotionReady();
-			
 		}
 #else
 		pUnit->changeExperience(kGoodyInfo.getExperience());
@@ -8073,6 +8149,9 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 			if (pNewUnit != NULL)
 			{
 				pNewUnit->convert(pUnit, true);
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+				pNewUnit->changeDamage(15, NO_PLAYER);
+#endif
 #if defined(LEKMOD_CONVERT_PROMOTIONS_UPGRADE)
 				pUnit->ConvertPromotions(pUnit, pNewUnit);
 #endif
@@ -8099,7 +8178,28 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		}
 	}
 
-	// Tech
+	// Tech -> Science (LEKMOD ancient ruin spec)
+#ifdef LEKMOD_NEW_ANCIENT_RUIN_REWARDS
+	if (kGoodyInfo.isTech())
+	{
+		int iEra = GET_TEAM(getTeam()).GetCurrentEra() + 1;
+		int iScience = (20 + GC.getGame().getJonRandNum(11, "Goody Science Rand")) * iEra;
+		if (iScience > 90) iScience = 90;
+		TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+		if (eCurrentTech != NO_TECH)
+			GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iScience, GetID());
+		else
+			changeOverflowResearch(iScience);
+		if (pUnit != NULL)
+		{
+			pUnit->changeDamage(iScience, NO_PLAYER);
+			pUnit->changeExperience(iScience / 2);
+			pUnit->testPromotionReady();
+		}
+		strBuffer = GetLocalizedText(kGoodyInfo.GetDescriptionKey(), iScience);
+	}
+	else
+#endif
 	if(kGoodyInfo.isTech())
 	{
 		iBestValue = 0;

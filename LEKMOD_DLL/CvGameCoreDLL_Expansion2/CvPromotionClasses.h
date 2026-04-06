@@ -142,6 +142,10 @@ public:
 	int GetExtraWithdrawal() const;
 	int GetEmbarkExtraVisibility() const;
 	int GetEmbarkDefenseModifier() const;
+	bool IsEmbarkFlatCost() const;
+	bool IsDisembarkFlatCost() const;
+	int GetMaxMovesAfterDomainChange() const;
+	bool IsHealWhileEmbarked() const;
 	int GetCapitalDefenseModifier() const;
 	int GetCapitalDefenseFalloff() const;
 	int GetCityAttackPlunderModifier() const;
@@ -369,6 +373,10 @@ protected:
 	int m_iExtraWithdrawal;
 	int m_iEmbarkExtraVisibility;
 	int m_iEmbarkDefenseModifier;
+	bool m_bEmbarkFlatCost;
+	bool m_bDisembarkFlatCost;
+	int m_iMaxMovesAfterDomainChange;
+	bool m_bHealWhileEmbarked;
 	int m_iCapitalDefenseModifier;
 	int m_iCapitalDefenseFalloff;
 	int m_iCityAttackPlunderModifier;

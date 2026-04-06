@@ -229881,7 +229881,12 @@
 		<Column name="HeavyChargeDownhill" type="INTEGER"  default="0"/>
 		<Column name="GiveDomain" type="TEXT"  default="NULL" reference="Domains(Type)"/>
 		<Column name="CombatDifferentIdeology" type="INTEGER" default="0"/>
-	</Table> 
+		<Column name="HillsMovementDiscountPercent" type="integer" default="0"/>
+		<Column name="EmbarkFlatCost" type="boolean" default="0"/>
+		<Column name="DisembarkFlatCost" type="boolean" default="0"/>
+		<Column name="MaxMovesAfterDomainChange" type="integer" default="0"/>
+		<Column name="HealWhileEmbarked" type="boolean" default="0"/>
+	</Table>
 	<UnitPromotions>
 		<Delete />
 
@@ -232712,21 +232717,21 @@
 			<CtrlDown>false</CtrlDown> 
 			<CtrlDownAlt>false</CtrlDownAlt> 
 			<Sound>AS2D_IF_LEVELUP</Sound> 
-			<CannotBeChosen>false</CannotBeChosen> 
-			<LostWithUpgrade>false</LostWithUpgrade> 
-			<NotWithUpgrade>false</NotWithUpgrade> 
-			<InstaHeal>false</InstaHeal> 
-			<Leader>false</Leader> 
-			<Blitz>false</Blitz> 
-			<Amphib>true</Amphib> 
-			<River>true</River> 
-			<EnemyRoute>false</EnemyRoute> 
-			<RivalTerritory>false</RivalTerritory> 
-			<MustSetUpToRangedAttack>false</MustSetUpToRangedAttack> 
-			<RangedSupportFire>false</RangedSupportFire> 
-			<CanMoveAfterAttacking>false</CanMoveAfterAttacking> 
-			<AlwaysHeal>false</AlwaysHeal> 
-			<HealOutsideFriendly>false</HealOutsideFriendly> 
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>false</LostWithUpgrade>
+			<NotWithUpgrade>false</NotWithUpgrade>
+			<InstaHeal>false</InstaHeal>
+			<Leader>false</Leader>
+			<Blitz>false</Blitz>
+			<Amphib>false</Amphib>
+			<River>false</River>
+			<EnemyRoute>false</EnemyRoute>
+			<RivalTerritory>false</RivalTerritory>
+			<MustSetUpToRangedAttack>false</MustSetUpToRangedAttack>
+			<RangedSupportFire>false</RangedSupportFire>
+			<CanMoveAfterAttacking>false</CanMoveAfterAttacking>
+			<AlwaysHeal>false</AlwaysHeal>
+			<HealOutsideFriendly>false</HealOutsideFriendly>
 			<HillsDoubleMove>false</HillsDoubleMove> 
 			<RoughTerrainEndsTurn>false</RoughTerrainEndsTurn> 
 			<IgnoreTerrainCost>false</IgnoreTerrainCost> 
@@ -271712,6 +271717,15 @@
     </Table>
 	<UnitPromotions_PromotionPrereqOrs>
 		<Delete />
+		<!-- Amphibious -->
+		<Row>
+			<PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType>
+			<PrerequisitePromotion>PROMOTION_AMPHIBIOUS_1</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType>
+			<PrerequisitePromotion>PROMOTION_AMPHIBIOUS_2</PrerequisitePromotion>
+		</Row>
 		<!-- Shock -->
 		<Row>
 			<PromotionType>PROMOTION_SHOCK_2</PromotionType>
@@ -271857,15 +271871,7 @@
 			<PromotionType>PROMOTION_MEDIC_II</PromotionType>
 			<PrerequisitePromotion>PROMOTION_MEDIC</PrerequisitePromotion>
 		</Row>
-		<!-- Amphibious -->
-		<Row>
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
-			<PrerequisitePromotion>PROMOTION_SHOCK_1</PrerequisitePromotion>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType>
-			<PrerequisitePromotion>PROMOTION_DRILL_1</PrerequisitePromotion>
-		</Row>
+		<!-- Amphibious prereqs removed; line is now PROMOTION_AMPHIBIOUS_1/2/3 in UnitPromotions_PromotionPrereqOrs -->
 		<!-- Cover -->
 		<Row>
 			<PromotionType>PROMOTION_COVER_1</PromotionType>
@@ -273867,15 +273873,26 @@
 			<PromotionType>PROMOTION_MEDIC_II</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType> 
-		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType> 
-		</Row>
-		<Row> 
+		<!-- Amphibious 1/2/3: melee, gunpowder, mounted, armor, ranged, mounted ranged -->
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType></Row>
+		<Row>
 			<PromotionType>PROMOTION_COVER_1</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType> 
 		</Row>

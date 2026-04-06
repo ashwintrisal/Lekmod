@@ -121,6 +121,10 @@
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_1</Description>
 			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_1_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<River>true</River>
+			<EmbarkDefenseModifier>75</EmbarkDefenseModifier>
+			<EmbarkFlatCost>true</EmbarkFlatCost>
+			<MaxMovesAfterDomainChange>1</MaxMovesAfterDomainChange>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -132,7 +136,8 @@
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_2</Description>
 			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_2_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_AMPHIBIOUS_1</PromotionPrereqOr1>
+			<DisembarkFlatCost>true</DisembarkFlatCost>
+			<ExtraNavalMovement>1</ExtraNavalMovement>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -144,7 +149,10 @@
 			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_3</Description>
 			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PromotionPrereqOr1>PROMOTION_AMPHIBIOUS_2</PromotionPrereqOr1>
+			<Amphib>true</Amphib>
+			<ExtraNavalMovement>1</ExtraNavalMovement>
+			<MaxMovesAfterDomainChange>1</MaxMovesAfterDomainChange>
+			<HealWhileEmbarked>true</HealWhileEmbarked>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -334,13 +342,13 @@
 	<Language_en_US>
 
 		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_1"><Text>Amphibious I</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_1_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_1_HELP"><Text>No [ICON_STRENGTH] Combat Strength penalty when attacking across rivers. Embarked [ICON_STRENGTH] Combat Strength increased to 70% of base. Embarking costs 1 [ICON_MOVES] Movement (ZOC still applies), with at most 1 [ICON_MOVES] Movement remaining after crossing.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_2"><Text>Amphibious II</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_2_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_2_HELP"><Text>+1 [ICON_MOVES] Movement while embarked. Disembarking costs 1 [ICON_MOVES] Movement (ZOC still applies), with at most 1 [ICON_MOVES] Movement remaining after crossing.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3"><Text>Amphibious III</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP"><Text>No [ICON_STRENGTH] Combat Strength penalty when attacking from water. +1 [ICON_MOVES] Movement while embarked. Domain changes allow up to 2 [ICON_MOVES] Movement remaining after crossing. Can heal while embarked as if on land.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>TODO</Text></Row>

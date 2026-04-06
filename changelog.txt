@@ -97,6 +97,24 @@ NEW. Killing a unit yields Faith equal to their Combat Strength (max 30).
 - Note: previous Pictish Warrior behavior had no cap; now capped at 30
 
 
+EMBARKED UNIT DEFENSE (FORMULA CHANGE)
+---------------------------------------
+Embarked unit defense is now 40% of the unit's highest combat strength (melee or ranged), scaled by EmbarkDefenseModifier. Previously era-based (fixed value per era regardless of unit strength).
+- Changed: GetEmbarkedUnitDefense() formula from era lookup to max(meleCS, rangedCS) * 40%
+
+
+AMPHIBIOUS LINE (PROMOTION_AMPHIBIOUS_1/2/3)
+---------------------------------------------
+NEW 3-tier line replacing vanilla PROMOTION_AMPHIBIOUS. No prerequisites for tier 1.
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), mounted (UNITCOMBAT_MOUNTED), armor (UNITCOMBAT_ARMOR), ranged (UNITCOMBAT_ARCHER), mounted ranged (UNITCOMBAT_MOUNTED_RANGED).
+Tier 1 unlocks Tier 2; Tier 2 unlocks Tier 3 (and also unlocks Mobility).
+- Amphibious I: No river attack penalty. Embarked CS = 70% of base (EmbarkDefenseModifier=75 on new formula). Embarking costs 1 MP (ZOC applies); at most 1 MP remaining after.
+- Amphibious II: +1 embarked movement. Disembarking costs 1 MP (ZOC applies); at most 1 MP remaining after.
+- Amphibious III: No penalty attacking from water (Amphib). +1 embarked movement. At most 2 MP remaining after domain change. Can heal while embarked under normal land healing rules.
+- Removed: vanilla PROMOTION_AMPHIBIOUS (CannotBeChosen=true, no effects) — units that held it retain it as a dummy.
+- New DLL fields: EmbarkFlatCost, DisembarkFlatCost, MaxMovesAfterDomainChange, HealWhileEmbarked (promotion-level).
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.

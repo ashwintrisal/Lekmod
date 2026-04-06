@@ -1097,6 +1097,10 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iGreatGeneralModifier = 0;
 	m_iGreatGeneralReceivesMovementCount = 0;
 	m_iEmbarkedUnitReceivesMovementCount = 0; // NQMP GJS - Danish Longship
+	m_iEmbarkFlatCostCount = 0;
+	m_iDisembarkFlatCostCount = 0;
+	m_iMaxMovesAfterDomainChange = 0;
+	m_iHealWhileEmbarkedCount = 0;
 
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_iLandUnitReceivesMovementCount = 0;
@@ -6181,8 +6185,8 @@ bool CvUnit::canHeal(const CvPlot* pPlot, bool bTestVisible) const
 	// Unit now has to be able to Fortify to Heal (since they're very similar states, and Heal gives a defense bonus)
 	if(!bTestVisible)
 	{
-		// Embarked Units can't heal
-		if(isEmbarked())
+		// Embarked Units can't heal (unless they have HealWhileEmbarked)
+		if(isEmbarked() && !IsHealWhileEmbarked())
 		{
 			return false;
 		}
@@ -13273,7 +13277,11 @@ int CvUnit::GetEmbarkedUnitDefense() const
 	CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
 	EraTypes eEra = kPlayer.GetCurrentEra();
 
-	iRtnValue = GC.getEraInfo(eEra)->getEmbarkedUnitDefense() * 100;
+	// Embarked defense = 40% of the unit's highest combat strength (melee or ranged)
+	int iMeleeCS = m_iBaseCombat;
+	int iRangedCS = GetBaseRangedCombatStrength();
+	int iHighestCS = std::max(iMeleeCS, iRangedCS);
+	iRtnValue = iHighestCS * 40;
 
 	iModifier = GetEmbarkDefensiveModifier();
 	if(iModifier > 0)
@@ -19302,6 +19310,55 @@ void CvUnit::ChangeEmbarkedUnitReceivesMovementCount(int iChange)
 	m_iEmbarkedUnitReceivesMovementCount += iChange;
 }
 // NQMP GJS - Danish Longship END
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsEmbarkFlatCost() const
+{
+	return m_iEmbarkFlatCostCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeEmbarkFlatCostCount(int iChange)
+{
+	m_iEmbarkFlatCostCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsDisembarkFlatCost() const
+{
+	return m_iDisembarkFlatCostCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeDisembarkFlatCostCount(int iChange)
+{
+	m_iDisembarkFlatCostCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetMaxMovesAfterDomainChange() const
+{
+	return m_iMaxMovesAfterDomainChange;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeMaxMovesAfterDomainChange(int iChange)
+{
+	m_iMaxMovesAfterDomainChange += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsHealWhileEmbarked() const
+{
+	return m_iHealWhileEmbarkedCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeHealWhileEmbarkedCount(int iChange)
+{
+	m_iHealWhileEmbarkedCount += iChange;
+}
+
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsLandUnitReceivesMovement() const
@@ -21474,6 +21531,10 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeGreatGeneralModifier(thisPromotion.GetGreatGeneralModifier() * iChange);
 		ChangeGreatGeneralReceivesMovementCount(thisPromotion.IsGreatGeneralReceivesMovement() ? iChange: 0);
 		ChangeEmbarkedUnitReceivesMovementCount(thisPromotion.IsEmbarkedUnitReceivesMovement() ? iChange : 0); // NQMP GJS - Danish Longship
+		ChangeEmbarkFlatCostCount(thisPromotion.IsEmbarkFlatCost() ? iChange : 0);
+		ChangeDisembarkFlatCostCount(thisPromotion.IsDisembarkFlatCost() ? iChange : 0);
+		ChangeMaxMovesAfterDomainChange(thisPromotion.GetMaxMovesAfterDomainChange() * iChange);
+		ChangeHealWhileEmbarkedCount(thisPromotion.IsHealWhileEmbarked() ? iChange : 0);
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 		ChangeLandUnitReceivesMovementCount(thisPromotion.IsLandUnitReceivesMovement() ? iChange : 0);
 #endif
@@ -21855,6 +21916,10 @@ void CvUnit::read(FDataStream& kStream)
 
 	kStream >> m_iGreatGeneralReceivesMovementCount;
 	kStream >> m_iEmbarkedUnitReceivesMovementCount; // NQMP GJS - Danish Lonship
+	kStream >> m_iEmbarkFlatCostCount;
+	kStream >> m_iDisembarkFlatCostCount;
+	kStream >> m_iMaxMovesAfterDomainChange;
+	kStream >> m_iHealWhileEmbarkedCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22036,6 +22101,10 @@ void CvUnit::write(FDataStream& kStream) const
 
 	kStream << m_iGreatGeneralReceivesMovementCount;
 	kStream << m_iEmbarkedUnitReceivesMovementCount; // NQMP GJS - Danish Longship
+	kStream << m_iEmbarkFlatCostCount;
+	kStream << m_iDisembarkFlatCostCount;
+	kStream << m_iMaxMovesAfterDomainChange;
+	kStream << m_iHealWhileEmbarkedCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

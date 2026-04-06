@@ -160,6 +160,20 @@ int CvUnitMovement::MovementCost(const CvUnit* pUnit, const CvPlot* pFromPlot, c
 			return iMaxMoves;
 	}
 
+	// Flat embark/disembark cost with MaxMovesAfterDomainChange cap (ZOC already handled above)
+	if (pToPlot->isWater() != pFromPlot->isWater() && pUnit->CanEverEmbark())
+	{
+		bool bFlatCost = (pToPlot->isWater() && pUnit->IsEmbarkFlatCost()) ||
+		                 (!pToPlot->isWater() && pUnit->IsDisembarkFlatCost());
+		if (bFlatCost)
+		{
+			int iMaxAfter = pUnit->GetMaxMovesAfterDomainChange();
+			if (iMaxAfter > 0 && iMovesRemaining > iMaxAfter * GC.getMOVE_DENOMINATOR())
+				return iMovesRemaining - (iMaxAfter - 1) * GC.getMOVE_DENOMINATOR();
+			return GC.getMOVE_DENOMINATOR();
+		}
+	}
+
 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
 
 	return std::max(1, std::min(iRegularCost, std::min(iRouteCost, iRouteFlatCost)));
@@ -184,6 +198,20 @@ int CvUnitMovement::MovementCostNoZOC(const CvUnit* pUnit, const CvPlot* pFromPl
 	else if(CostsOnlyOne(pUnit, pFromPlot, pToPlot))
 	{
 		return GC.getMOVE_DENOMINATOR();
+	}
+
+	// Flat embark/disembark cost with MaxMovesAfterDomainChange cap
+	if (pToPlot->isWater() != pFromPlot->isWater() && pUnit->CanEverEmbark())
+	{
+		bool bFlatCost = (pToPlot->isWater() && pUnit->IsEmbarkFlatCost()) ||
+		                 (!pToPlot->isWater() && pUnit->IsDisembarkFlatCost());
+		if (bFlatCost)
+		{
+			int iMaxAfter = pUnit->GetMaxMovesAfterDomainChange();
+			if (iMaxAfter > 0 && iMovesRemaining > iMaxAfter * GC.getMOVE_DENOMINATOR())
+				return iMovesRemaining - (iMaxAfter - 1) * GC.getMOVE_DENOMINATOR();
+			return GC.getMOVE_DENOMINATOR();
+		}
 	}
 
 	GetCostsForMove(pUnit, pFromPlot, pToPlot, iBaseMoves, iRegularCost, iRouteCost, iRouteFlatCost);
@@ -226,6 +254,12 @@ bool CvUnitMovement::ConsumesAllMoves(const CvUnit* pUnit, const CvPlot* pFromPl
 		{
 			return false;
 		}
+
+		// Promotion-based flat embark/disembark cost (ZOC still applies)
+		if (pToPlot->isWater() && pUnit->IsEmbarkFlatCost())
+			return false;
+		if (!pToPlot->isWater() && pUnit->IsDisembarkFlatCost())
+			return false;
 
 #ifdef LEKMOD_TRAIT_CIVILIAN_EMBARK_ONE_MOVE
     // New: Civilian embark does not consume all moves if trait present
