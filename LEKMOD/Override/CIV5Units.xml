@@ -271611,6 +271611,12 @@
 			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
 			<Yield>100</Yield>
 		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ZEALOT</PromotionType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>100</Yield>
+			<Max>30</Max>
+		</Row>
 	</UnitPromotions_YieldFromKills>
 
 	<Table name="UnitPromotions_UnitCombatPromotionConversion">
@@ -282002,13 +282008,21 @@
 			<UnitType>UNIT_BABYLONIAN_BOWMAN</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType> 
-			<PromotionType>PROMOTION_FOREIGN_LANDS</PromotionType> 
+		<Row>
+			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType>
+			<PromotionType>PROMOTION_FOREIGN_LANDS</PromotionType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType> 
-			<PromotionType>PROMOTION_FREE_PILLAGE_MOVES</PromotionType> 
+		<Row>
+			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType>
+			<PromotionType>PROMOTION_FREE_PILLAGE_MOVES</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType>
+			<PromotionType>PROMOTION_ZEALOT</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ISRAEL_MACCABEE</UnitType>
+			<PromotionType>PROMOTION_ZEALOT</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_UPGRADED_SWORD_NO_IRON</UnitType> 
@@ -286619,11 +286633,6 @@
 		<Delete />
 
 		<Row> 
-			<UnitType>UNIT_CELT_PICTISH_WARRIOR</UnitType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>100</Yield> 
-		</Row>
-		<Row> 
 			<UnitType>UNIT_MC_OMANI_BAGHLAH</UnitType> 
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>100</Yield> 
@@ -286652,11 +286661,6 @@
 			<UnitType>UNIT_SWITZ</UnitType> 
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>100</Yield> 
-		</Row>
-		<Row>
-			<UnitType>UNIT_ISRAEL_MACCABEE</UnitType>
-			<YieldType>YIELD_FAITH</YieldType>
-			<Yield>100</Yield>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_SWISS_REISLAUFER</UnitType> 

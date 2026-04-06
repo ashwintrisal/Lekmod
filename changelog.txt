@@ -65,6 +65,15 @@ NEW. Granted by policy (not player-selectable). Two internal variants, same icon
 Policy wiring (Honor finisher / Iron Fist) pending.
 
 
+ZEALOT (PROMOTION_ZEALOT)
+-------------------------
+NEW. Killing a unit yields Faith equal to their Combat Strength (max 30).
+- Added: UnitPromotions_YieldFromKills entry (YIELD_FAITH, Yield=100%, Max=30)
+- Added: free promotion for UNIT_CELT_PICTISH_WARRIOR and UNIT_ISRAEL_MACCABEE
+- Removed: unit-level Unit_YieldFromKills YIELD_FAITH entries for both units (replaced by this promotion)
+- Note: previous Pictish Warrior behavior had no cap; now capped at 30
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.

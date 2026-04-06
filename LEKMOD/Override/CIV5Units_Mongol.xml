@@ -138982,7 +138982,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_CELT_PICTISH_WARRIOR"> 
 			<Text>
-				Only the Celts may build this unit. It has a combat bonus outside of friendly territory and can pillage enemy improvements at no additional movement cost. Earns 100% of opponents' strength as [ICON_PEACE] Faith for kills.
+				Only the Celts may build this unit. It has a combat bonus outside of friendly territory and can pillage enemy improvements at no additional movement cost. Earns [ICON_FAITH] Faith equal to opponents' [ICON_STRENGTH] Combat Strength when killing a unit (max 30).
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_CHARIOR_ARCHER"> 
