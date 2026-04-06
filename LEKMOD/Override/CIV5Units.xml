@@ -271959,11 +271959,7 @@
 		<!-- Woodsman -->
 		<Row>
 			<PromotionType>PROMOTION_WOODSMAN</PromotionType>
-			<PrerequisitePromotion>PROMOTION_SHOCK_2</PrerequisitePromotion>
-		</Row>
-		<Row>
-			<PromotionType>PROMOTION_WOODSMAN</PromotionType>
-			<PrerequisitePromotion>PROMOTION_DRILL_2</PrerequisitePromotion>
+			<PrerequisitePromotion>PROMOTION_DRILL_1</PrerequisitePromotion>
 		</Row>
 		<!-- Logistics -->
 		<Row>

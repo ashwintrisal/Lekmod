@@ -1,0 +1,17 @@
+LEKMOD PROMOTION CHANGELOG
+==========================
+
+
+HEAL INSTANTLY (PROMOTION_INSTA_HEAL)
+--------------------------------------
+Heals the unit for 40 HP instantly when activated. One-time use per acquisition.
+Eligible: all unit types (unchanged).
+- Changed: heal amount 50 -> 40
+
+
+WOODSMAN (PROMOTION_WOODSMAN)
+------------------------------
+Double movement in forest and jungle. +15% attack and defense in forest and jungle.
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), paratroopers (UNITCOMBAT_PARADROPPER).
+Requires: Drill 1.
+- Changed: prerequisite was Shock 2 OR Drill 2, now Drill 1 only
