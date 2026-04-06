@@ -65,6 +65,13 @@ NEW. Granted by policy (not player-selectable). Two internal variants, same icon
 Policy wiring (Honor finisher / Iron Fist) pending.
 
 
+SWIFT TRANSPORT (PROMOTION_SWIFT_TRANSPORT)
+-------------------------------------------
+NEW. Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn (movement only upgraded, never reduced).
+- Added: EmbarkedUnitReceivesMovement=true
+- Note: unit eligibility and assignment wired separately; not player-pickable
+
+
 MOBILITY (PROMOTION_MOBILITY)
 ------------------------------
 Now accessible to melee, gunpowder, and paratroopers via earlier prerequisites.

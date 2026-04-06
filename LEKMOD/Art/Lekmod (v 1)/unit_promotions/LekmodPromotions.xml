@@ -306,6 +306,8 @@
 			<Description>TXT_KEY_PROMOTION_SWIFT_TRANSPORT</Description>
 			<Help>TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<EmbarkedUnitReceivesMovement>true</EmbarkedUnitReceivesMovement>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -380,7 +382,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>TODO</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT"><Text>Swift Transport</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP"><Text>Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT"><Text>Zealot</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT_HELP"><Text>Killing a unit yields [ICON_FAITH] Faith equal to their [ICON_STRENGTH] Combat Strength (max 30).</Text></Row>
