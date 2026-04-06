@@ -271992,6 +271992,10 @@
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_LOGISTICS</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_3</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_LOGISTICS</PromotionType>
 			<PrerequisitePromotion>PROMOTION_WOLFPACK_3</PrerequisitePromotion>
 		</Row>
 		<Row>
@@ -272231,6 +272235,10 @@
 			<PromotionType>PROMOTION_AIR_LOGISTICS</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ANTI_NAVAL_HELI_2</PrerequisitePromotion>
 		</Row>
+		<Row>
+			<PromotionType>PROMOTION_AIR_LOGISTICS</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
+		</Row>
 		<!-- Evasion -->
 		<Row>
 			<PromotionType>PROMOTION_EVASION</PromotionType>
@@ -272293,6 +272301,10 @@
 		<Row>
 			<PromotionType>PROMOTION_HELI_REPAIR</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ANTI_NAVAL_HELI_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_HELI_REPAIR</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
 		</Row>
 		<!-- Coastal Raider -->
 		<Row>
@@ -274431,17 +274443,41 @@
 			<PromotionType>PROMOTION_FLIGHT_DECK_3</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_ARMOR_PLATING_1</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_ARMOR_PLATING_2</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_ARMOR_PLATING_3</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_1</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_2</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_ARMOR_PLATING_3</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_FASTER_HEAL</PromotionType> 

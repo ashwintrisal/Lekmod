@@ -9,6 +9,19 @@ Eligible: all unit types (unchanged).
 - Changed: heal amount 50 -> 40
 
 
+ARMOR PLATING LINE (PROMOTION_ARMOR_PLATING_1/2/3)
+----------------------------------------------------
+3-tier line, no prerequisites for tier 1.
+Eligible: carriers (UNITCOMBAT_CARRIER), naval melee (UNITCOMBAT_NAVALMELEE), helicopters (UNITCOMBAT_HELICOPTER).
+- Changed: was carrier-only; now also available to naval melee and helicopters.
+Unlocks (shared with other naval melee lines):
+- Armor Plating 1 -> Sentry, Mobility (unchanged, already wired)
+- Armor Plating 2 -> Supply (unchanged, already wired)
+- Armor Plating 3 -> Logistics (added; parity with Coastal Raider 3 / Boarding Party 3)
+Unlocks (helicopter-specific, added):
+- Armor Plating 2 -> Heli Repair, Air Logistics (parity with Heli Ambush 2 / Heli Mobility 2 / Anti-Naval Heli 2)
+
+
 DISCIPLINE (PROMOTION_DISCIPLINE / PROMOTION_DISCIPLINE_AIR)
 ---------------------------------------------------------------
 NEW. Granted by policy (not player-selectable). Two internal variants, same icon.
