@@ -1102,6 +1102,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iDisembarkFlatCostCount = 0;
 	m_iMaxMovesAfterDomainChange = 0;
 	m_iHealWhileEmbarkedCount = 0;
+	m_iCanCrossMountainsCount = 0;
 
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_iLandUnitReceivesMovementCount = 0;
@@ -2638,7 +2639,7 @@ bool CvUnit::canEnterTerrain(const CvPlot& enterPlot, byte bMoveFlags) const
 	if(enterPlot.isMountain())
 	{
 		CvPlayer& kPlayer = GET_PLAYER(getOwner());
-		if(!kPlayer.GetPlayerTraits()->IsAbleToCrossMountains() && !IsHoveringUnit() && !canMoveAllTerrain())
+		if(!kPlayer.GetPlayerTraits()->IsAbleToCrossMountains() && !IsHoveringUnit() && !canMoveAllTerrain() && !IsCanCrossMountains())
 		{
 			return false;
 		}
@@ -19372,6 +19373,18 @@ void CvUnit::ChangeHealWhileEmbarkedCount(int iChange)
 	m_iHealWhileEmbarkedCount += iChange;
 }
 
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsCanCrossMountains() const
+{
+	return m_iCanCrossMountainsCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCanCrossMountainsCount(int iChange)
+{
+	m_iCanCrossMountainsCount += iChange;
+}
+
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsLandUnitReceivesMovement() const
@@ -21550,6 +21563,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeDisembarkFlatCostCount(thisPromotion.IsDisembarkFlatCost() ? iChange : 0);
 		ChangeMaxMovesAfterDomainChange(thisPromotion.GetMaxMovesAfterDomainChange() * iChange);
 		ChangeHealWhileEmbarkedCount(thisPromotion.IsHealWhileEmbarked() ? iChange : 0);
+		ChangeCanCrossMountainsCount(thisPromotion.IsCanCrossMountains() ? iChange : 0);
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 		ChangeLandUnitReceivesMovementCount(thisPromotion.IsLandUnitReceivesMovement() ? iChange : 0);
 #endif
@@ -21936,6 +21950,7 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iMaxMovesAfterDomainChange;
 	kStream >> m_iHealWhileEmbarkedCount;
 	kStream >> m_iCitySplashDamage;
+	kStream >> m_iCanCrossMountainsCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22122,6 +22137,7 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iMaxMovesAfterDomainChange;
 	kStream << m_iHealWhileEmbarkedCount;
 	kStream << m_iCitySplashDamage;
+	kStream << m_iCanCrossMountainsCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

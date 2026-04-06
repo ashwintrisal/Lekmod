@@ -298,6 +298,7 @@
 			<Description>TXT_KEY_PROMOTION_MOUNTAINEERING</Description>
 			<Help>TXT_KEY_PROMOTION_MOUNTAINEERING_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CanCrossMountains>true</CanCrossMountains>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -420,7 +421,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_MARAUDER_HELP"><Text>+50% [ICON_GOLD] Gold from pillaging tiles.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING"><Text>Mountaineering</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING_HELP"><Text>Can cross mountain tiles. Units ending their turn on a mountain take 50 damage.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_ONE_GOOD_EYE"><Text>One Good Eye</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ONE_GOOD_EYE_HELP"><Text>TODO</Text></Row>

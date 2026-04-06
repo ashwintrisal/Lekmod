@@ -853,6 +853,8 @@ public:
 	void ChangeMaxMovesAfterDomainChange(int iChange);
 	bool IsHealWhileEmbarked() const;
 	void ChangeHealWhileEmbarkedCount(int iChange);
+	bool IsCanCrossMountains() const;
+	void ChangeCanCrossMountainsCount(int iChange);
 
 	int getExtraNavalMoves() const;
 	void changeExtraNavalMoves(int iChange);
@@ -1598,6 +1600,7 @@ protected:
 	int m_iDisembarkFlatCostCount;
 	int m_iMaxMovesAfterDomainChange;
 	int m_iHealWhileEmbarkedCount;
+	int m_iCanCrossMountainsCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	int m_iLandUnitReceivesMovementCount;
 #endif

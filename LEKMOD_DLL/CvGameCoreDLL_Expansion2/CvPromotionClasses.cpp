@@ -162,6 +162,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_bFreePillageMoves(false),
 	m_bHealOnPillage(false),
 	m_iPillageChange(0),
+	m_bCanCrossMountains(false),
 	m_bHealIfDefeatExcludesBarbarians(false),
 	m_bEmbarkedAllWater(false),
 	m_bCityAttackOnly(false),
@@ -297,6 +298,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bFreePillageMoves = kResults.GetBool("FreePillageMoves");
 	m_bHealOnPillage = kResults.GetBool("HealOnPillage");
 	m_iPillageChange = kResults.GetInt("PillageChange");
+	m_bCanCrossMountains = kResults.GetBool("CanCrossMountains");
 	m_bHealIfDefeatExcludesBarbarians = kResults.GetBool("HealIfDestroyExcludesBarbarians");
 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
 	m_bCityAttackOnly = kResults.GetBool("CityAttackOnly");
@@ -1721,6 +1723,11 @@ bool CvPromotionEntry::IsHealOnPillage() const
 int CvPromotionEntry::GetPillageChange() const
 {
 	return m_iPillageChange;
+}
+
+bool CvPromotionEntry::IsCanCrossMountains() const
+{
+	return m_bCanCrossMountains;
 }
 
 /// Accessor: Do we only get healed after a combat win if fighting a real civ or minor?
