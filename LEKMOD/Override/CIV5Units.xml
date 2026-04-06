@@ -229886,6 +229886,7 @@
 		<Column name="DisembarkFlatCost" type="boolean" default="0"/>
 		<Column name="MaxMovesAfterDomainChange" type="integer" default="0"/>
 		<Column name="HealWhileEmbarked" type="boolean" default="0"/>
+		<Column name="PillageChange" type="integer" default="0"/>
 	</Table>
 	<UnitPromotions>
 		<Delete />

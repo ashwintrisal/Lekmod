@@ -193,6 +193,7 @@ public:
 	bool IsRangeAttackIgnoreLOS() const;
 	bool IsFreePillageMoves() const;
 	bool IsHealOnPillage() const;
+	int GetPillageChange() const;
 	bool IsHealIfDefeatExcludeBarbarians() const;
 	bool IsEmbarkedAllWater() const;
 	bool IsCityAttackOnly() const;
@@ -422,6 +423,7 @@ protected:
 	bool m_bRangeAttackIgnoreLOS;
 	bool m_bFreePillageMoves;
 	bool m_bHealOnPillage;
+	int m_iPillageChange;
 	bool m_bHealIfDefeatExcludesBarbarians;
 	bool m_bEmbarkedAllWater;
 	bool m_bCityAttackOnly;

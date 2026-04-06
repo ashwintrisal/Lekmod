@@ -266,6 +266,8 @@
 			<Description>TXT_KEY_PROMOTION_MARAUDER</Description>
 			<Help>TXT_KEY_PROMOTION_MARAUDER_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PillageChange>50</PillageChange>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -393,7 +395,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_IAIJUTSU_HELP"><Text>TODO</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_MARAUDER"><Text>Marauder</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_MARAUDER_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_MARAUDER_HELP"><Text>+50% [ICON_GOLD] Gold from pillaging tiles.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING"><Text>Mountaineering</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING_HELP"><Text>TODO</Text></Row>
