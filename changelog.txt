@@ -2,6 +2,12 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+FAST SWIMMER (PROMOTION_PHIL_MARINE)
+-------------------------------------
++2 movement while embarked.
+- Changed: embarked movement bonus 3 -> 2
+
+
 SKYRANGER / EXTENDED PARADROP (PROMOTION_EXTENDED_PARADROP)
 -------------------------------------------------------------
 Allows paradrops with a range of 100 hexes.

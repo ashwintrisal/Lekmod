@@ -267908,7 +267908,7 @@
 			<InterceptionDefenseDamageModifier>0</InterceptionDefenseDamageModifier> 
 			<AirSweepCombatModifier>0</AirSweepCombatModifier> 
 			<ExtraAttacks>0</ExtraAttacks> 
-			<ExtraNavalMovement>3</ExtraNavalMovement> 
+			<ExtraNavalMovement>2</ExtraNavalMovement> 
 			<VisibilityChange>0</VisibilityChange> 
 			<MovesChange>0</MovesChange> 
 			<MoveDiscountChange>0</MoveDiscountChange> 
