@@ -166,6 +166,7 @@ CvUnit::CvUnit() :
 	, m_iExtraVisibilityRange("CvUnit::m_iExtraVisibilityRange", m_syncArchive)
 	, m_iExtraMoves("CvUnit::m_iExtraMoves", m_syncArchive)
 	, m_iExtraMoveDiscount("CvUnit::m_iExtraMoveDiscount", m_syncArchive)
+	, m_iHillsMovementDiscountPercent("CvUnit::m_iHillsMovementDiscountPercent", m_syncArchive)
 	, m_iExtraRange("CvUnit::m_iExtraRange", m_syncArchive)
 	, m_iExtraIntercept("CvUnit::m_iExtraIntercept", m_syncArchive)
 	, m_iExtraEvasion("CvUnit::m_iExtraEvasion", m_syncArchive)
@@ -1011,6 +1012,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iExtraVisibilityRange = 0;
 	m_iExtraMoves = 0;
 	m_iExtraMoveDiscount = 0;
+	m_iHillsMovementDiscountPercent = 0;
 	m_iExtraRange = 0;
 	m_iExtraIntercept = 0;
 	m_iExtraEvasion = 0;
@@ -18174,6 +18176,21 @@ void CvUnit::changeExtraMoveDiscount(int iChange)
 
 
 //	--------------------------------------------------------------------------------
+int CvUnit::getHillsMovementDiscountPercent() const
+{
+	VALIDATE_OBJECT
+	return m_iHillsMovementDiscountPercent;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeHillsMovementDiscountPercent(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iHillsMovementDiscountPercent = (m_iHillsMovementDiscountPercent + iChange);
+}
+
+
+//	--------------------------------------------------------------------------------
 int CvUnit::getExtraRange() const
 {
 	VALIDATE_OBJECT
@@ -21408,6 +21425,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraVisibilityRange(thisPromotion.GetVisibilityChange() * iChange);
 		changeExtraMoves(thisPromotion.GetMovesChange() * iChange);
 		changeExtraMoveDiscount(thisPromotion.GetMoveDiscountChange() * iChange);
+		changeHillsMovementDiscountPercent(thisPromotion.GetHillsMovementDiscountPercent() * iChange);
 		changeExtraNavalMoves(thisPromotion.GetExtraNavalMoves() * iChange);
 		changeHPHealedIfDefeatEnemy(thisPromotion.GetHPHealedIfDefeatEnemy() * iChange);
 		ChangeGoldenAgeValueFromKills(thisPromotion.GetGoldenAgeValueFromKills() * iChange);

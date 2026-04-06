@@ -2,6 +2,13 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+ALTITUDE TRAINING (PROMOTION_ALTITUDE_TRAINING)
+------------------------------------------------
+10% movement discount in hills (hills cost 1.8 movement instead of 2.0).
+- Changed: was double movement in hills (50% discount), now 10% discount via new DLL field HillsMovementDiscountPercent
+- Changed: removed +10% attack and defense in hills
+
+
 FAST SWIMMER (PROMOTION_PHIL_MARINE)
 -------------------------------------
 +2 movement while embarked.

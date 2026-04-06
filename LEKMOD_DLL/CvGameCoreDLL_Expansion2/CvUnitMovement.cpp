@@ -67,6 +67,11 @@ void CvUnitMovement::GetCostsForMove(const CvUnit* pUnit, const CvPlot* pFromPlo
 		{
 			iRegularCost /= 2;
 		}
+
+		if(pToPlot->isHills() && pUnit->getHillsMovementDiscountPercent() > 0)
+		{
+			iRegularCost = iRegularCost * (100 - pUnit->getHillsMovementDiscountPercent()) / 100;
+		}
 	}
 
 	if(pFromPlot->isValidRoute(pUnit) && pToPlot->isValidRoute(pUnit) && ((kUnitTeam.isBridgeBuilding() || !(pFromPlot->isRiverCrossing(directionXY(pFromPlot, pToPlot))))))

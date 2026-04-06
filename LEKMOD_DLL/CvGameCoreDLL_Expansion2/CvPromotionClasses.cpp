@@ -35,6 +35,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iVisibilityChange(0),
 	m_iMovesChange(0),
 	m_iMoveDiscountChange(0),
+	m_iHillsMovementDiscountPercent(0),
 	m_iRangeChange(0),
 	m_iRangedAttackModifier(0),
 	m_iInterceptionCombatModifier(0),
@@ -319,6 +320,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iVisibilityChange = kResults.GetInt("VisibilityChange");
 	m_iMovesChange = kResults.GetInt("MovesChange");
 	m_iMoveDiscountChange = kResults.GetInt("MoveDiscountChange");
+	m_iHillsMovementDiscountPercent = kResults.GetInt("HillsMovementDiscountPercent");
 	m_iRangeChange = kResults.GetInt("RangeChange");
 	m_iRangedAttackModifier = kResults.GetInt("RangedAttackModifier");
 	m_iInterceptionCombatModifier = kResults.GetInt("InterceptionCombatModifier");
@@ -1022,6 +1024,12 @@ int CvPromotionEntry::GetMovesChange() const
 int CvPromotionEntry::GetMoveDiscountChange() const
 {
 	return m_iMoveDiscountChange;
+}
+
+/// Accessor: Percentage discount applied to movement cost when entering hills (post-denominator scale)
+int CvPromotionEntry::GetHillsMovementDiscountPercent() const
+{
+	return m_iHillsMovementDiscountPercent;
 }
 
 /// Accessor: How much the air range of the unit is modified

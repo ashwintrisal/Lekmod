@@ -842,6 +842,9 @@ public:
 	int getExtraMoveDiscount() const;
 	void changeExtraMoveDiscount(int iChange);
 
+	int getHillsMovementDiscountPercent() const;
+	void changeHillsMovementDiscountPercent(int iChange);
+
 	int getExtraNavalMoves() const;
 	void changeExtraNavalMoves(int iChange);
 
@@ -1489,6 +1492,7 @@ protected:
 	FAutoVariable<int, CvUnit> m_iExtraVisibilityRange;
 	FAutoVariable<int, CvUnit> m_iExtraMoves;
 	FAutoVariable<int, CvUnit> m_iExtraMoveDiscount;
+	FAutoVariable<int, CvUnit> m_iHillsMovementDiscountPercent;
 	FAutoVariable<int, CvUnit> m_iExtraRange;
 	FAutoVariable<int, CvUnit> m_iExtraIntercept;
 	FAutoVariable<int, CvUnit> m_iExtraEvasion;

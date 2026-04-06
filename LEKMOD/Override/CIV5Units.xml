@@ -256001,11 +256001,11 @@
 			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement> 
 			<HeavyChargeDownhill>0</HeavyChargeDownhill> 
 		</Row>
-		<Row> 
-			<ID>213</ID> 
-			<Type>PROMOTION_ALTITUDE_TRAINING</Type> 
-			<Description>TXT_KEY_PROMOTION_ALTITUDE_TRAINING</Description> 
-			<Help>TXT_KEY_PROMOTION_ALTITUDE_TRAINING_HELP</Help> 
+		<Row>
+			<ID>213</ID>
+			<Type>PROMOTION_ALTITUDE_TRAINING</Type>
+			<Description>TXT_KEY_PROMOTION_ALTITUDE_TRAINING</Description>
+			<Help>TXT_KEY_PROMOTION_ALTITUDE_TRAINING_HELP</Help>
 			<PortraitIndex>0</PortraitIndex> 
 			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas> 
 			<HotKeyPriority>0</HotKeyPriority> 
@@ -256033,7 +256033,7 @@
 			<CanMoveAfterAttacking>false</CanMoveAfterAttacking> 
 			<AlwaysHeal>false</AlwaysHeal> 
 			<HealOutsideFriendly>false</HealOutsideFriendly> 
-			<HillsDoubleMove>true</HillsDoubleMove> 
+			<HillsDoubleMove>false</HillsDoubleMove> 
 			<RoughTerrainEndsTurn>false</RoughTerrainEndsTurn> 
 			<IgnoreTerrainCost>false</IgnoreTerrainCost> 
 			<HoveringUnit>false</HoveringUnit> 
@@ -256070,6 +256070,7 @@
 			<VisibilityChange>0</VisibilityChange> 
 			<MovesChange>0</MovesChange> 
 			<MoveDiscountChange>0</MoveDiscountChange> 
+			<HillsMovementDiscountPercent>10</HillsMovementDiscountPercent>
 			<RangeChange>0</RangeChange> 
 			<InterceptChanceChange>0</InterceptChanceChange> 
 			<NumInterceptionChange>0</NumInterceptionChange> 
@@ -273054,8 +273055,8 @@
 		<Row> 
 			<PromotionType>PROMOTION_ALTITUDE_TRAINING</PromotionType> 
 			<TerrainType>TERRAIN_HILL</TerrainType> 
-			<Attack>10</Attack> 
-			<Defense>10</Defense> 
+			<Attack>0</Attack> 
+			<Defense>0</Defense> 
 			<DoubleMove>false</DoubleMove> 
 			<Impassable>false</Impassable> 
 		</Row>

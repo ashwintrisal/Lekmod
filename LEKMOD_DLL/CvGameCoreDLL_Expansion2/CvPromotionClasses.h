@@ -65,6 +65,7 @@ public:
 	int  GetVisibilityChange() const;
 	int  GetMovesChange() const;
 	int  GetMoveDiscountChange() const;
+	int  GetHillsMovementDiscountPercent() const;
 	int  GetRangeChange() const;
 	int  GetRangedAttackModifier() const;
 	int  GetInterceptionCombatModifier() const;
@@ -294,6 +295,7 @@ protected:
 	int m_iVisibilityChange;
 	int m_iMovesChange;
 	int m_iMoveDiscountChange;
+	int m_iHillsMovementDiscountPercent;
 	int m_iRangeChange;
 	int m_iRangedAttackModifier;
 	int m_iInterceptionCombatModifier;
