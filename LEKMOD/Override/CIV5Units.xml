@@ -272037,11 +272037,27 @@
 		<!-- Mobility -->
 		<Row>
 			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<PrerequisitePromotion>PROMOTION_SHOCK_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
 			<PrerequisitePromotion>PROMOTION_SHOCK_3</PrerequisitePromotion>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<PrerequisitePromotion>PROMOTION_DRILL_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
 			<PrerequisitePromotion>PROMOTION_DRILL_3</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<PrerequisitePromotion>PROMOTION_AMPHIBIOUS_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<PrerequisitePromotion>PROMOTION_AMBUSH_FORMATION_2</PrerequisitePromotion>
 		</Row>
 		<Row>
 			<PromotionType>PROMOTION_MOBILITY</PromotionType>
@@ -273974,13 +273990,25 @@
 			<UnitCombatType>UNITCOMBAT_NAVALRANGED</UnitCombatType> 
 		</Row>
 		<!-- Mobility -->
-		<Row> 
-			<PromotionType>PROMOTION_MOBILITY</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_MOBILITY</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_GUN</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_PARADROPPER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MOBILITY</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_MOBILITY</PromotionType> 

@@ -65,6 +65,15 @@ NEW. Granted by policy (not player-selectable). Two internal variants, same icon
 Policy wiring (Honor finisher / Iron Fist) pending.
 
 
+MOBILITY (PROMOTION_MOBILITY)
+------------------------------
+Now accessible to melee, gunpowder, and paratroopers via earlier prerequisites.
+- Added UnitCombatTypes: MELEE, GUN, PARADROPPER
+- Added prerequisites: Drill 2, Shock 2, Ambush Formation 2, Amphibious 2
+- Note: Amphibious 2 prereq is inert until that line gets unit type eligibility defined
+- Existing prereqs (Drill 3, Shock 3, etc.) unchanged
+
+
 FEAR AURA (PROMOTION_FEAR_AURA)
 --------------------------------
 NEW. Enemies within 1 tile suffer -15% combat strength.
