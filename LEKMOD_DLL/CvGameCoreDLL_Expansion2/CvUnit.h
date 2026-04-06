@@ -926,6 +926,9 @@ public:
 	int getExtraCityDefensePercent() const;
 	void changeExtraCityDefensePercent(int iChange);
 
+	int GetCitySplashDamage() const;
+	void ChangeCitySplashDamage(int iChange);
+
 	int getExtraRangedDefenseModifier() const;
 	void changeExtraRangedDefenseModifier(int iChange);
 
@@ -1528,6 +1531,7 @@ protected:
 	FAutoVariable<int, CvUnit> m_iDefenseModifier;
 	FAutoVariable<int, CvUnit> m_iExtraCombatPercent;
 	FAutoVariable<int, CvUnit> m_iExtraCityAttackPercent;
+	int m_iCitySplashDamage;
 	FAutoVariable<int, CvUnit> m_iExtraCityDefensePercent;
 	FAutoVariable<int, CvUnit> m_iExtraRangedDefenseModifier;
 	FAutoVariable<int, CvUnit> m_iExtraHillsAttackPercent;

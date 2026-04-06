@@ -87,6 +87,7 @@ public:
 	int  GetCombatPercent() const;
 	int  GetCityAttackPercent() const;
 	int  GetCityDefensePercent() const;
+	int  GetCitySplashDamage() const;
 	int  GetRangedDefenseMod() const;
 	int  GetHillsAttackPercent() const;
 	int  GetHillsDefensePercent() const;
@@ -322,6 +323,7 @@ protected:
 	int m_iCombatPercent;
 	int m_iCityAttackPercent;
 	int m_iCityDefensePercent;
+	int m_iCitySplashDamage;
 	int m_iRangedDefenseMod;
 	int m_iHillsAttackPercent;
 	int m_iHillsDefensePercent;

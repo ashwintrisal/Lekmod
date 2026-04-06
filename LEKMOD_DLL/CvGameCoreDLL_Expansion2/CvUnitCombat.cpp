@@ -1216,6 +1216,20 @@ void CvUnitCombat::ResolveRangedUnitVsCombat(const CvCombatInfo& kCombatInfo, ui
 					bBarbarian = pCity->isBarbarian();
 					pCity->changeDamage(iDamage);
 
+					// CitySplashDamage: deal flat damage to all non-air units in the city
+					if (pkAttacker->GetCitySplashDamage() > 0)
+					{
+						int iSplash = pkAttacker->GetCitySplashDamage();
+						for (int iUnitLoop = pkTargetPlot->getNumUnits() - 1; iUnitLoop >= 0; iUnitLoop--)
+						{
+							CvUnit* pSplashUnit = pkTargetPlot->getUnitByIndex(iUnitLoop);
+							if (pSplashUnit && pSplashUnit->getDomainType() != DOMAIN_AIR)
+							{
+								pSplashUnit->changeDamage(iSplash, pkAttacker->getOwner());
+							}
+						}
+					}
+
 #ifdef ENHANCED_GRAPHS
 					GET_PLAYER(pCity->getOwner()).ChangeCitiesDamageTaken(iDamage);
 					GET_PLAYER(pkAttacker->getOwner()).ChangeCitiesDamageDealt(iDamage);
@@ -2084,6 +2098,21 @@ void CvUnitCombat::ResolveAirUnitVsCombat(const CvCombatInfo& kCombatInfo, uint 
 				if(pkAttacker)
 				{
 					pCity->changeDamage(iAttackerDamageInflicted);
+
+					// CitySplashDamage: deal flat damage to all non-air units in the city
+					if (pkAttacker->GetCitySplashDamage() > 0)
+					{
+						int iSplash = pkAttacker->GetCitySplashDamage();
+						for (int iUnitLoop = pkTargetPlot->getNumUnits() - 1; iUnitLoop >= 0; iUnitLoop--)
+						{
+							CvUnit* pSplashUnit = pkTargetPlot->getUnitByIndex(iUnitLoop);
+							if (pSplashUnit && pSplashUnit->getDomainType() != DOMAIN_AIR)
+							{
+								pSplashUnit->changeDamage(iSplash, pkAttacker->getOwner());
+							}
+						}
+					}
+
 #ifdef ENHANCED_GRAPHS
 					GET_PLAYER(pCity->getOwner()).ChangeCitiesDamageTaken(iAttackerDamageInflicted);
 					GET_PLAYER(pkAttacker->getOwner()).ChangeCitiesDamageDealt(iAttackerDamageInflicted);

@@ -31,6 +31,12 @@
 		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>envelopment_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>envelopment_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 
+		<!-- BUNKER_BUSTING -->
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>bunker_busting_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>bunker_busting_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>bunker_busting_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>bunker_busting_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
 		<!-- CARPET_BOMBING -->
 		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>carpet_bombing_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>carpet_bombing_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
@@ -175,6 +181,19 @@
 			<IconAtlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_ENVELOPMENT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_BUNKER_BUSTING</Type>
+			<Description>TXT_KEY_PROMOTION_BUNKER_BUSTING</Description>
+			<Help>TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityAttack>33</CityAttack>
+			<CitySplashDamage>10</CitySplashDamage>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_BUNKER_BUSTING</PediaEntry>
 		</Row>
 
 		<Row>
@@ -372,6 +391,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT"><Text>Envelopment</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT_HELP"><Text>Doubles flanking bonus: each adjacent friendly unit adds +20% [ICON_STRENGTH] Combat Strength when attacking (up from +10%).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING"><Text>Bunker Busting</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Each attack also deals 10 damage to all non-air units and civilians in the city.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>TODO</Text></Row>

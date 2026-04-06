@@ -229887,6 +229887,7 @@
 		<Column name="MaxMovesAfterDomainChange" type="integer" default="0"/>
 		<Column name="HealWhileEmbarked" type="boolean" default="0"/>
 		<Column name="PillageChange" type="integer" default="0"/>
+		<Column name="CitySplashDamage" type="integer" default="0"/>
 	</Table>
 	<UnitPromotions>
 		<Delete />
@@ -272041,6 +272042,15 @@
 			<PromotionType>PROMOTION_RANGE</PromotionType>
 			<PrerequisitePromotion>PROMOTION_BOMBARDMENT_NAVAL_2</PrerequisitePromotion>
 		</Row>
+		<!-- Bunker Busting -->
+		<Row>
+			<PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType>
+			<PrerequisitePromotion>PROMOTION_VOLLEY</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType>
+			<PrerequisitePromotion>PROMOTION_SIEGE</PrerequisitePromotion>
+		</Row>
 		<!-- Envelopment -->
 		<Row>
 			<PromotionType>PROMOTION_ENVELOPMENT</PromotionType>
@@ -273906,6 +273916,9 @@
 		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_ARCHER</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_AMPHIBIOUS_3</PromotionType><UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType></Row>
+		<!-- Bunker Busting: siege, bomber -->
+		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
 		<!-- Envelopment: melee, gunpowder, mounted, armor -->
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>

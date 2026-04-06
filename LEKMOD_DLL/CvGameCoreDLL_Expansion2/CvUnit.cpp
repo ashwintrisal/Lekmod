@@ -1040,6 +1040,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iDefenseModifier = 0;
 	m_iExtraCityAttackPercent = 0;
 	m_iExtraCityDefensePercent = 0;
+	m_iCitySplashDamage = 0;
 	m_iExtraRangedDefenseModifier = 0;
 	m_iExtraHillsAttackPercent = 0;
 	m_iExtraHillsDefensePercent = 0;
@@ -18538,6 +18539,18 @@ void CvUnit::changeExtraCityDefensePercent(int iChange)
 	}
 }
 
+//	--------------------------------------------------------------------------------
+int CvUnit::GetCitySplashDamage() const
+{
+	return m_iCitySplashDamage;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCitySplashDamage(int iChange)
+{
+	m_iCitySplashDamage += iChange;
+}
+
 
 //	--------------------------------------------------------------------------------
 int CvUnit::getExtraRangedDefenseModifier() const
@@ -21512,6 +21525,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraCombatPercent(thisPromotion.GetCombatPercent() * iChange);
 		changeExtraCityAttackPercent(thisPromotion.GetCityAttackPercent() * iChange);
 		changeExtraCityDefensePercent(thisPromotion.GetCityDefensePercent() * iChange);
+		ChangeCitySplashDamage(thisPromotion.GetCitySplashDamage() * iChange);
 		changeExtraRangedDefenseModifier(thisPromotion.GetRangedDefenseMod() * iChange);
 		changeExtraHillsAttackPercent(thisPromotion.GetHillsAttackPercent() * iChange);
 		changeExtraHillsDefensePercent(thisPromotion.GetHillsDefensePercent() * iChange);
@@ -21921,6 +21935,7 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iDisembarkFlatCostCount;
 	kStream >> m_iMaxMovesAfterDomainChange;
 	kStream >> m_iHealWhileEmbarkedCount;
+	kStream >> m_iCitySplashDamage;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22106,6 +22121,7 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iDisembarkFlatCostCount;
 	kStream << m_iMaxMovesAfterDomainChange;
 	kStream << m_iHealWhileEmbarkedCount;
+	kStream << m_iCitySplashDamage;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

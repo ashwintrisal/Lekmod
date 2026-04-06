@@ -57,6 +57,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iCombatPercent(0),
 	m_iCityAttackPercent(0),
 	m_iCityDefensePercent(0),
+	m_iCitySplashDamage(0),
 	m_iRangedDefenseMod(0),
 	m_iHillsAttackPercent(0),
 	m_iHillsDefensePercent(0),
@@ -348,6 +349,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iCombatPercent = kResults.GetInt("CombatPercent");
 	m_iCityAttackPercent = kResults.GetInt("CityAttack");
 	m_iCityDefensePercent = kResults.GetInt("CityDefense");
+	m_iCitySplashDamage = kResults.GetInt("CitySplashDamage");
 	m_iRangedDefenseMod = kResults.GetInt("RangedDefenseMod");
 	m_iHillsAttackPercent = kResults.GetInt("HillsAttack");
 	m_iHillsDefensePercent = kResults.GetInt("HillsDefense");
@@ -1166,6 +1168,11 @@ int CvPromotionEntry::GetCityAttackPercent() const
 int CvPromotionEntry::GetCityDefensePercent() const
 {
 	return m_iCityDefensePercent;
+}
+
+int CvPromotionEntry::GetCitySplashDamage() const
+{
+	return m_iCitySplashDamage;
 }
 
 /// Accessor: Bonus ranged defense percent
