@@ -155,10 +155,25 @@
 			<Description>TXT_KEY_PROMOTION_DISCIPLINE</Description>
 			<Help>TXT_KEY_PROMOTION_DISCIPLINE_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExperiencePercent>50</ExperiencePercent>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_DISCIPLINE</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_DISCIPLINE_AIR</Type>
+			<Description>TXT_KEY_PROMOTION_DISCIPLINE_AIR</Description>
+			<Help>TXT_KEY_PROMOTION_DISCIPLINE_AIR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExperiencePercent>25</ExperiencePercent>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_DISCIPLINE_AIR</PediaEntry>
 		</Row>
 
 		<Row>
@@ -291,7 +306,10 @@
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>TODO</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE"><Text>Discipline</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_HELP"><Text>+50% [ICON_EXPERIENCE] Experience gained (non-air units).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR"><Text>Discipline</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR_HELP"><Text>+25% [ICON_EXPERIENCE] Experience gained (air units).</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT"><Text>Feared Elephant</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT_HELP"><Text>TODO</Text></Row>

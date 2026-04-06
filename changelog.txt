@@ -9,6 +9,14 @@ Eligible: all unit types (unchanged).
 - Changed: heal amount 50 -> 40
 
 
+DISCIPLINE (PROMOTION_DISCIPLINE / PROMOTION_DISCIPLINE_AIR)
+---------------------------------------------------------------
+NEW. Granted by policy (not player-selectable). Two internal variants, same icon.
+- PROMOTION_DISCIPLINE: +50% XP gained. Applies to all non-air units (melee, ranged, gunpowder, mounted, armor, naval, helicopter, etc.).
+- PROMOTION_DISCIPLINE_AIR: +25% XP gained. Applies to air units (fighters and bombers, UNITCOMBAT_AIR) only.
+Policy wiring (Honor finisher / Iron Fist) pending.
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.
