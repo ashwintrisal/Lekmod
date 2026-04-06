@@ -115,6 +115,14 @@ Tier 1 unlocks Tier 2; Tier 2 unlocks Tier 3 (and also unlocks Mobility).
 - New DLL fields: EmbarkFlatCost, DisembarkFlatCost, MaxMovesAfterDomainChange, HealWhileEmbarked (promotion-level).
 
 
+ENVELOPMENT (PROMOTION_ENVELOPMENT)
+------------------------------------
+NEW. Doubles the flanking bonus per adjacent friendly unit (from +10% to +20% per unit).
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), mounted (UNITCOMBAT_MOUNTED), armor (UNITCOMBAT_ARMOR).
+Requires (any): Shock 2, Drill 2, Amphibious 2.
+- Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.

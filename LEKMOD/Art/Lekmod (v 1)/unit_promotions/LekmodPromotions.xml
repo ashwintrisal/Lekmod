@@ -25,6 +25,12 @@
 		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>amphibious_3_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>amphibious_3_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 
+		<!-- ENVELOPMENT -->
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>envelopment_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>envelopment_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>envelopment_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>envelopment_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
 		<!-- CARPET_BOMBING -->
 		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>carpet_bombing_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>carpet_bombing_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
@@ -157,6 +163,18 @@
 			<IconAtlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_AMPHIBIOUS_3</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_ENVELOPMENT</Type>
+			<Description>TXT_KEY_PROMOTION_ENVELOPMENT</Description>
+			<Help>TXT_KEY_PROMOTION_ENVELOPMENT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<FlankAttackModifier>100</FlankAttackModifier>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ENVELOPMENT</PediaEntry>
 		</Row>
 
 		<Row>
@@ -349,6 +367,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3"><Text>Amphibious III</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP"><Text>No [ICON_STRENGTH] Combat Strength penalty when attacking from water. +1 [ICON_MOVES] Movement while embarked. Domain changes allow up to 2 [ICON_MOVES] Movement remaining after crossing. Can heal while embarked as if on land.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT"><Text>Envelopment</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT_HELP"><Text>Doubles flanking bonus: each adjacent friendly unit adds +20% [ICON_STRENGTH] Combat Strength when attacking (up from +10%).</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>TODO</Text></Row>
