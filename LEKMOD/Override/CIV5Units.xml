@@ -95539,9 +95539,9 @@
 			<Name>FRIENDLY_HEAL_RATE</Name> 
 			<Value>20</Value> 
 		</Row>
-		<Row> 
-			<Name>INSTA_HEAL_RATE</Name> 
-			<Value>50</Value> 
+		<Row>
+			<Name>INSTA_HEAL_RATE</Name>
+			<Value>40</Value>
 		</Row>
 		<Row> 
 			<Name>CITY_HEAL_RATE</Name> 
@@ -109830,7 +109830,7 @@
 			<Healing>0</Healing> 
 			<DamagePrereq>0</DamagePrereq> 
 			<Population>0</Population> 
-			<Culture>20</Culture> 
+			<Culture>0</Culture> 
 			<Faith>0</Faith> 
 			<ProphetPercent>0</ProphetPercent> 
 			<RevealNearbyBarbariansRange>0</RevealNearbyBarbariansRange> 
@@ -109841,7 +109841,7 @@
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
 			<MinBarbarians>0</MinBarbarians>
-			<AfterTurn>12</AfterTurn>
+			<AfterTurn>6</AfterTurn>
 		</Row>
 		<Row> 
 			<ID>3</ID> 
@@ -109859,7 +109859,7 @@
 			<DamagePrereq>0</DamagePrereq> 
 			<Population>0</Population> 
 			<Culture>0</Culture> 
-			<Faith>5</Faith> 
+			<Faith>14</Faith> 
 			<ProphetPercent>0</ProphetPercent> 
 			<RevealNearbyBarbariansRange>0</RevealNearbyBarbariansRange> 
 			<Tech>false</Tech> 
@@ -109868,7 +109868,8 @@
 			<PantheonFaith>true</PantheonFaith> 
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
-			<MinBarbarians>0</MinBarbarians> 
+			<MinBarbarians>0</MinBarbarians>
+			<AfterTurn>6</AfterTurn>
 		</Row>
 		<Row> 
 			<ID>4</ID> 
@@ -110060,7 +110061,8 @@
 			<PantheonFaith>false</PantheonFaith> 
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
-			<MinBarbarians>0</MinBarbarians> 
+			<MinBarbarians>0</MinBarbarians>
+			<AfterTurn>6</AfterTurn>
 		</Row>
 		<Row> 
 			<ID>11</ID> 
@@ -110345,8 +110347,8 @@
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
 			<MinBarbarians>0</MinBarbarians>
-			<FoodMin>10</FoodMin>
-			<FoodMax>10</FoodMax>
+			<FoodMin>7</FoodMin>
+			<FoodMax>7</FoodMax>
 			<IncreasePerPop>2</IncreasePerPop>
 		</Row>
 		<Row> 
@@ -110375,9 +110377,9 @@
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
 			<MinBarbarians>0</MinBarbarians>
-			<FaithMin>30</FaithMin>
-			<FaithMax>34</FaithMax>
-			<ReligionFaith>true</ReligionFaith>
+			<Healing>100</Healing>
+			<FaithMin>0</FaithMin>
+			<FaithMax>0</FaithMax>
 		</Row>
 		<Row> 
 			<ID>22</ID>
@@ -110447,7 +110449,7 @@
 			<MapOffset>0</MapOffset> 
 			<MapRange>0</MapRange> 
 			<MapProb>0</MapProb> 
-			<Experience>15</Experience> 
+			<Experience>0</Experience> 
 			<Healing>0</Healing> 
 			<DamagePrereq>0</DamagePrereq> 
 			<Population>0</Population> 
@@ -110462,7 +110464,7 @@
 			<Bad>false</Bad> 
 			<BarbarianUnitProb>0</BarbarianUnitProb> 
 			<MinBarbarians>0</MinBarbarians>
-			<FreePromotion>PROMOTION_EXTRA_MOVES_RUIN</FreePromotion>
+			<FreePromotion>PROMOTION_MOBILITY</FreePromotion>
 			<ExcludeUnitClass>UNITCLASS_SCOUT</ExcludeUnitClass>
 		</Row>
 		<Row> 
