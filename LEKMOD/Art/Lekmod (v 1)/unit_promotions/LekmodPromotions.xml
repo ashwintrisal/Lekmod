@@ -97,6 +97,12 @@
 		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>swift_transport_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>swift_transport_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 
+		<!-- FEAR_AURA -->
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>fear_aura_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>fear_aura_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>fear_aura_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>fear_aura_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
 		<!-- ZEALOT -->
 		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>zealot_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>zealot_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
@@ -180,6 +186,20 @@
 			<IconAtlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_DISCIPLINE_AIR</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_FEAR_AURA</Type>
+			<Description>TXT_KEY_PROMOTION_FEAR_AURA</Description>
+			<Help>TXT_KEY_PROMOTION_FEAR_AURA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<NearbyEnemyCombatMod>-15</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>1</NearbyEnemyCombatRange>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_FEAR_AURA</PediaEntry>
 		</Row>
 
 		<Row>
@@ -297,6 +317,7 @@
 			<Description>TXT_KEY_PROMOTION_ZEALOT</Description>
 			<Help>TXT_KEY_PROMOTION_ZEALOT_HELP</Help>
 			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
@@ -327,6 +348,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR"><Text>Discipline</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR_HELP"><Text>+25% [ICON_EXPERIENCE] Experience gained (air units).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_FEAR_AURA"><Text>Fear Aura</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_FEAR_AURA_HELP"><Text>Enemies within 1 tile suffer -15% [ICON_STRENGTH] Combat Strength.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT"><Text>Feared Elephant</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT_HELP"><Text>TODO</Text></Row>

@@ -65,6 +65,13 @@ NEW. Granted by policy (not player-selectable). Two internal variants, same icon
 Policy wiring (Honor finisher / Iron Fist) pending.
 
 
+FEAR AURA (PROMOTION_FEAR_AURA)
+--------------------------------
+NEW. Enemies within 1 tile suffer -15% combat strength.
+- Added: NearbyEnemyCombatMod=-15, NearbyEnemyCombatRange=1
+- Note: no domain restriction (affects all unit types in range); Feared Elephant equivalent is -10%
+
+
 ZEALOT (PROMOTION_ZEALOT)
 -------------------------
 NEW. Killing a unit yields Faith equal to their Combat Strength (max 30).
