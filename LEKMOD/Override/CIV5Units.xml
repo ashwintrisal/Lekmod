@@ -272699,20 +272699,20 @@
 			<DomainType>DOMAIN_SEA</DomainType> 
 			<Modifier>15</Modifier> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_BOARDING_PARTY_1</PromotionType> 
-			<DomainType>DOMAIN_SEA</DomainType> 
-			<Modifier>15</Modifier> 
+		<Row>
+			<PromotionType>PROMOTION_BOARDING_PARTY_1</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>25</Modifier>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_BOARDING_PARTY_2</PromotionType> 
-			<DomainType>DOMAIN_SEA</DomainType> 
-			<Modifier>15</Modifier> 
+		<Row>
+			<PromotionType>PROMOTION_BOARDING_PARTY_2</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>25</Modifier>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_BOARDING_PARTY_3</PromotionType> 
-			<DomainType>DOMAIN_SEA</DomainType> 
-			<Modifier>15</Modifier> 
+		<Row>
+			<PromotionType>PROMOTION_BOARDING_PARTY_3</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>25</Modifier>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_AIR_TARGETING_1</PromotionType> 

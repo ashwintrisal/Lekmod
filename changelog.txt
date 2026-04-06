@@ -9,6 +9,13 @@ Eligible: all unit types (unchanged).
 - Changed: heal amount 50 -> 40
 
 
+BOARDING PARTY LINE (PROMOTION_BOARDING_PARTY_1/2/3)
+------------------------------------------------------
++25% combat strength when attacking naval units (DOMAIN_SEA) per tier.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+- Changed: bonus per tier 15% -> 25%
+
+
 ARMOR PLATING LINE (PROMOTION_ARMOR_PLATING_1/2/3)
 ----------------------------------------------------
 3-tier line, no prerequisites for tier 1.
