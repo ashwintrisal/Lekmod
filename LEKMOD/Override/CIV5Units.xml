@@ -238782,50 +238782,50 @@
 			<EnemyDamage>0</EnemyDamage> 
 			<NeutralDamage>0</NeutralDamage> 
 			<CombatPercent>0</CombatPercent> 
-			<CityAttack>15</CityAttack> 
-			<CityDefense>0</CityDefense> 
-			<RangedDefenseMod>0</RangedDefenseMod> 
-			<HillsAttack>0</HillsAttack> 
-			<HillsDefense>0</HillsDefense> 
-			<OpenAttack>0</OpenAttack> 
-			<OpenRangedAttackMod>0</OpenRangedAttackMod> 
-			<OpenDefense>0</OpenDefense> 
-			<RoughAttack>0</RoughAttack> 
-			<RoughRangedAttackMod>0</RoughRangedAttackMod> 
-			<RoughDefense>0</RoughDefense> 
-			<AttackFortifiedMod>0</AttackFortifiedMod> 
-			<AttackWoundedMod>0</AttackWoundedMod> 
-			<FlankAttackModifier>0</FlankAttackModifier> 
-			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod> 
-			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange> 
-			<UpgradeDiscount>0</UpgradeDiscount> 
-			<ExperiencePercent>0</ExperiencePercent> 
-			<AdjacentMod>0</AdjacentMod> 
-			<AttackMod>0</AttackMod> 
-			<DefenseMod>0</DefenseMod> 
-			<DropRange>0</DropRange> 
-			<GreatGeneral>false</GreatGeneral> 
-			<GreatAdmiral>false</GreatAdmiral> 
-			<GreatGeneralModifier>0</GreatGeneralModifier> 
-			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement> 
-			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier> 
-			<FriendlyLandsModifier>0</FriendlyLandsModifier> 
-			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier> 
-			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier> 
-			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy> 
-			<ExtraWithdrawal>0</ExtraWithdrawal> 
-			<EmbarkExtraVisibility>0</EmbarkExtraVisibility> 
-			<EmbarkDefenseModifier>0</EmbarkDefenseModifier> 
-			<CapitalDefenseModifier>0</CapitalDefenseModifier> 
-			<CapitalDefenseFalloff>0</CapitalDefenseFalloff> 
-			<CityAttackPlunderModifier>33</CityAttackPlunderModifier> 
-			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory> 
-			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier> 
-			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
-			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills> 
-			<Sapper>false</Sapper> 
-			<HeavyCharge>false</HeavyCharge> 
-			<PediaType>PEDIA_NAVAL</PediaType> 
+			<CityAttack>25</CityAttack>
+			<CityDefense>0</CityDefense>
+			<RangedDefenseMod>0</RangedDefenseMod>
+			<HillsAttack>0</HillsAttack>
+			<HillsDefense>0</HillsDefense>
+			<OpenAttack>0</OpenAttack>
+			<OpenRangedAttackMod>0</OpenRangedAttackMod>
+			<OpenDefense>0</OpenDefense>
+			<RoughAttack>0</RoughAttack>
+			<RoughRangedAttackMod>0</RoughRangedAttackMod>
+			<RoughDefense>0</RoughDefense>
+			<AttackFortifiedMod>0</AttackFortifiedMod>
+			<AttackWoundedMod>0</AttackWoundedMod>
+			<FlankAttackModifier>0</FlankAttackModifier>
+			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange>
+			<UpgradeDiscount>0</UpgradeDiscount>
+			<ExperiencePercent>0</ExperiencePercent>
+			<AdjacentMod>0</AdjacentMod>
+			<AttackMod>0</AttackMod>
+			<DefenseMod>0</DefenseMod>
+			<DropRange>0</DropRange>
+			<GreatGeneral>false</GreatGeneral>
+			<GreatAdmiral>false</GreatAdmiral>
+			<GreatGeneralModifier>0</GreatGeneralModifier>
+			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement>
+			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier>
+			<FriendlyLandsModifier>0</FriendlyLandsModifier>
+			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier>
+			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier>
+			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy>
+			<ExtraWithdrawal>0</ExtraWithdrawal>
+			<EmbarkExtraVisibility>0</EmbarkExtraVisibility>
+			<EmbarkDefenseModifier>0</EmbarkDefenseModifier>
+			<CapitalDefenseModifier>0</CapitalDefenseModifier>
+			<CapitalDefenseFalloff>0</CapitalDefenseFalloff>
+			<CityAttackPlunderModifier>0</CityAttackPlunderModifier>
+			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory>
+			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier>
+			<TradeMissionGoldModifier>0</TradeMissionGoldModifier>
+			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills>
+			<Sapper>false</Sapper>
+			<HeavyCharge>false</HeavyCharge>
+			<PediaType>PEDIA_NAVAL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_COASTAL_RAIDER_1</PediaEntry> 
 			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement> 
 			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement> 
@@ -238916,50 +238916,50 @@
 			<EnemyDamage>0</EnemyDamage> 
 			<NeutralDamage>0</NeutralDamage> 
 			<CombatPercent>0</CombatPercent> 
-			<CityAttack>15</CityAttack> 
-			<CityDefense>0</CityDefense> 
-			<RangedDefenseMod>0</RangedDefenseMod> 
-			<HillsAttack>0</HillsAttack> 
-			<HillsDefense>0</HillsDefense> 
-			<OpenAttack>0</OpenAttack> 
-			<OpenRangedAttackMod>0</OpenRangedAttackMod> 
-			<OpenDefense>0</OpenDefense> 
-			<RoughAttack>0</RoughAttack> 
-			<RoughRangedAttackMod>0</RoughRangedAttackMod> 
-			<RoughDefense>0</RoughDefense> 
-			<AttackFortifiedMod>0</AttackFortifiedMod> 
-			<AttackWoundedMod>0</AttackWoundedMod> 
-			<FlankAttackModifier>0</FlankAttackModifier> 
-			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod> 
-			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange> 
-			<UpgradeDiscount>0</UpgradeDiscount> 
-			<ExperiencePercent>0</ExperiencePercent> 
-			<AdjacentMod>0</AdjacentMod> 
-			<AttackMod>0</AttackMod> 
-			<DefenseMod>0</DefenseMod> 
-			<DropRange>0</DropRange> 
-			<GreatGeneral>false</GreatGeneral> 
-			<GreatAdmiral>false</GreatAdmiral> 
-			<GreatGeneralModifier>0</GreatGeneralModifier> 
-			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement> 
-			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier> 
-			<FriendlyLandsModifier>0</FriendlyLandsModifier> 
-			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier> 
-			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier> 
-			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy> 
-			<ExtraWithdrawal>0</ExtraWithdrawal> 
-			<EmbarkExtraVisibility>0</EmbarkExtraVisibility> 
-			<EmbarkDefenseModifier>0</EmbarkDefenseModifier> 
-			<CapitalDefenseModifier>0</CapitalDefenseModifier> 
-			<CapitalDefenseFalloff>0</CapitalDefenseFalloff> 
-			<CityAttackPlunderModifier>33</CityAttackPlunderModifier> 
-			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory> 
-			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier> 
-			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
-			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills> 
-			<Sapper>false</Sapper> 
-			<HeavyCharge>false</HeavyCharge> 
-			<PediaType>PEDIA_NAVAL</PediaType> 
+			<CityAttack>25</CityAttack>
+			<CityDefense>0</CityDefense>
+			<RangedDefenseMod>0</RangedDefenseMod>
+			<HillsAttack>0</HillsAttack>
+			<HillsDefense>0</HillsDefense>
+			<OpenAttack>0</OpenAttack>
+			<OpenRangedAttackMod>0</OpenRangedAttackMod>
+			<OpenDefense>0</OpenDefense>
+			<RoughAttack>0</RoughAttack>
+			<RoughRangedAttackMod>0</RoughRangedAttackMod>
+			<RoughDefense>0</RoughDefense>
+			<AttackFortifiedMod>0</AttackFortifiedMod>
+			<AttackWoundedMod>0</AttackWoundedMod>
+			<FlankAttackModifier>0</FlankAttackModifier>
+			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange>
+			<UpgradeDiscount>0</UpgradeDiscount>
+			<ExperiencePercent>0</ExperiencePercent>
+			<AdjacentMod>0</AdjacentMod>
+			<AttackMod>0</AttackMod>
+			<DefenseMod>0</DefenseMod>
+			<DropRange>0</DropRange>
+			<GreatGeneral>false</GreatGeneral>
+			<GreatAdmiral>false</GreatAdmiral>
+			<GreatGeneralModifier>0</GreatGeneralModifier>
+			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement>
+			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier>
+			<FriendlyLandsModifier>0</FriendlyLandsModifier>
+			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier>
+			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier>
+			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy>
+			<ExtraWithdrawal>0</ExtraWithdrawal>
+			<EmbarkExtraVisibility>0</EmbarkExtraVisibility>
+			<EmbarkDefenseModifier>0</EmbarkDefenseModifier>
+			<CapitalDefenseModifier>0</CapitalDefenseModifier>
+			<CapitalDefenseFalloff>0</CapitalDefenseFalloff>
+			<CityAttackPlunderModifier>0</CityAttackPlunderModifier>
+			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory>
+			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier>
+			<TradeMissionGoldModifier>0</TradeMissionGoldModifier>
+			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills>
+			<Sapper>false</Sapper>
+			<HeavyCharge>false</HeavyCharge>
+			<PediaType>PEDIA_NAVAL</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_COASTAL_RAIDER_2</PediaEntry> 
 			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement> 
 			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement> 
@@ -239050,7 +239050,7 @@
 			<EnemyDamage>0</EnemyDamage> 
 			<NeutralDamage>0</NeutralDamage> 
 			<CombatPercent>0</CombatPercent> 
-			<CityAttack>20</CityAttack> 
+			<CityAttack>25</CityAttack> 
 			<CityDefense>0</CityDefense> 
 			<RangedDefenseMod>0</RangedDefenseMod> 
 			<HillsAttack>0</HillsAttack> 
@@ -239086,7 +239086,7 @@
 			<EmbarkDefenseModifier>0</EmbarkDefenseModifier> 
 			<CapitalDefenseModifier>0</CapitalDefenseModifier> 
 			<CapitalDefenseFalloff>0</CapitalDefenseFalloff> 
-			<CityAttackPlunderModifier>34</CityAttackPlunderModifier> 
+			<CityAttackPlunderModifier>0</CityAttackPlunderModifier> 
 			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory> 
 			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier> 
 			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 

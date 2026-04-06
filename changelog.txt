@@ -9,6 +9,14 @@ Eligible: all unit types (unchanged).
 - Changed: heal amount 50 -> 40
 
 
+COASTAL RAIDER LINE (PROMOTION_COASTAL_RAIDER_1/2/3)
+------------------------------------------------------
++25% combat strength when attacking cities per tier.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+- Changed: city attack bonus per tier was 15/15/20, now 25/25/25
+- Changed: removed gold looting on city attack (CityAttackPlunderModifier was 33/33/34, now 0)
+
+
 BOARDING PARTY LINE (PROMOTION_BOARDING_PARTY_1/2/3)
 ------------------------------------------------------
 +25% combat strength when attacking naval units (DOMAIN_SEA) per tier.
