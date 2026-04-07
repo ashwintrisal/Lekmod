@@ -63,9 +63,19 @@
 
 	<!-- Remove standalone barb-reveal from handicap goody pool (merged into Map ruin) -->
 	<!-- Rename GOODY_EXPERIENCE_MOVE entries to GOODY_MOBILITY -->
+	<!-- Re-enable GOODY_PANTHEON_FAITH (was commented out in CIV5Units.xml for all difficulties) -->
 	<HandicapInfo_Goodies>
 		<Delete GoodyType="GOODY_REVEAL_NEARBY_BARBS"/>
 		<Delete GoodyType="GOODY_EXPERIENCE_MOVE"/>
+		<Row><HandicapType>HANDICAP_AI_DEFAULT</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_SETTLER</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_CHIEFTAIN</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_WARLORD</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_PRINCE</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_KING</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_EMPEROR</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_IMMORTAL</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_DEITY</HandicapType><GoodyType>GOODY_PANTHEON_FAITH</GoodyType></Row>
 		<Row><HandicapType>HANDICAP_AI_DEFAULT</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
 		<Row><HandicapType>HANDICAP_SETTLER</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
 		<Row><HandicapType>HANDICAP_CHIEFTAIN</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>

@@ -37,6 +37,7 @@ PANTHEON FAITH (GOODY_PANTHEON_FAITH)
 - Changed: flat faith 5 -> 14
 - Added: only available if player has 0 faith stockpile
 - Added: available from turn 6 (was turn 0)
+- Changed: re-enabled at all difficulties (was commented out in HandicapInfo_Goodies)
 
 RANDOM FAITH (GOODY_RANDOM_FAITH)
 - Changed: flat faith (30-34) replaced by era-scaled formula: turn * 2 * era
