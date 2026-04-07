@@ -236642,16 +236642,16 @@
 			<HasPostCombatPromotions>false</HasPostCombatPromotions> 
 			<PostCombatPromotionsExclusive>false</PostCombatPromotionsExclusive> 
 			<RangedAttackModifier>0</RangedAttackModifier> 
-			<InterceptionCombatModifier>0</InterceptionCombatModifier> 
-			<InterceptionDefenseDamageModifier>0</InterceptionDefenseDamageModifier> 
-			<AirSweepCombatModifier>0</AirSweepCombatModifier> 
-			<ExtraAttacks>0</ExtraAttacks> 
-			<ExtraNavalMovement>0</ExtraNavalMovement> 
-			<VisibilityChange>0</VisibilityChange> 
-			<MovesChange>0</MovesChange> 
-			<MoveDiscountChange>0</MoveDiscountChange> 
-			<RangeChange>0</RangeChange> 
-			<InterceptChanceChange>0</InterceptChanceChange> 
+			<InterceptionCombatModifier>0</InterceptionCombatModifier>
+			<InterceptionDefenseDamageModifier>-10</InterceptionDefenseDamageModifier>
+			<AirSweepCombatModifier>0</AirSweepCombatModifier>
+			<ExtraAttacks>0</ExtraAttacks>
+			<ExtraNavalMovement>0</ExtraNavalMovement>
+			<VisibilityChange>0</VisibilityChange>
+			<MovesChange>0</MovesChange>
+			<MoveDiscountChange>0</MoveDiscountChange>
+			<RangeChange>0</RangeChange>
+			<InterceptChanceChange>0</InterceptChanceChange>
 			<NumInterceptionChange>1</NumInterceptionChange> 
 			<EvasionChange>0</EvasionChange> 
 			<CargoChange>0</CargoChange> 

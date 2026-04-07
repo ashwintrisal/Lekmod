@@ -121075,9 +121075,9 @@ The ship has weather'd every rack; the prize we sought is won."
 				Sortie
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_SORTIE_HELP"> 
+		<Replace Tag="TXT_KEY_PROMOTION_SORTIE_HELP">
 			<Text>
-				1 extra [COLOR_POSITIVE_TEXT]Interception[ENDCOLOR] may be made per turn.
+				1 extra [COLOR_POSITIVE_TEXT]Interception[ENDCOLOR] may be made per turn. Takes 10% less damage from Air Sweeps.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_SPAWN_GENERALS_I"> 

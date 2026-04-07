@@ -2345,6 +2345,12 @@ void CvUnitCombat::GenerateAirSweepCombatInfo(CvUnit& kAttacker, CvUnit* pkDefen
 		int iAttackerDamageInflicted = kAttacker.getCombatDamage(iAttackerStrength, iDefenderStrength, kAttacker.getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
 		int iDefenderDamageInflicted = pkDefender->getCombatDamage(iDefenderStrength, iAttackerStrength, pkDefender->getDamage(), /*bIncludeRand*/ true, /*bAttackerIsCity*/ false, /*bDefenderIsCity*/ false);
 #endif
+		// Apply defender's air-sweep damage reduction (e.g. Sortie: InterceptionDefenseDamageModifier)
+		if (pkDefender->GetInterceptionDefenseDamageModifier() != 0)
+		{
+			iAttackerDamageInflicted = std::max(1, iAttackerDamageInflicted * (100 + pkDefender->GetInterceptionDefenseDamageModifier()) / 100);
+		}
+
 		int iAttackerTotalDamageInflicted = iAttackerDamageInflicted + pkDefender->getDamage();
 		int iDefenderTotalDamageInflicted = iDefenderDamageInflicted + kAttacker.getDamage();
 

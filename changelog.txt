@@ -148,6 +148,16 @@ Requires (any): Shock 2, Drill 2, Amphibious 2.
 - Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
 
 
+SORTIE (PROMOTION_SORTIE)
+---------------------------
+Changed: now also takes 10% less damage from Air Sweeps (air-vs-air sweep path).
+- Changed: InterceptionDefenseDamageModifier 0 -> -10
+- DLL: patched GenerateAirSweepCombatInfo to apply pkDefender->GetInterceptionDefenseDamageModifier()
+  to iAttackerDamageInflicted in the air-vs-air branch (was only applied in GetInterceptionDamage,
+  which is not called in that path)
+- Field already wired for regular interception; sweep path was the only gap
+
+
 REPAIR CREW (PROMOTION_REPAIR_CREW)
 --------------------------------------
 NEW. Aircraft based on this carrier heal +15 HP per turn when skipping a turn or with Air Repair.
