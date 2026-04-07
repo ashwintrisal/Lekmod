@@ -208,3 +208,8 @@ Double movement in forest and jungle. +15% attack and defense in forest and jung
 Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), paratroopers (UNITCOMBAT_PARADROPPER).
 Requires: Drill 1.
 - Changed: prerequisite was Shock 2 OR Drill 2, now Drill 1 only
+
+
+FEARED ELEPHANT (PROMOTION_FEARED_ELEPHANT)
+--------------------------------------------
+No gameplay change. Updated icon to Lekmod custom art.
