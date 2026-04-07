@@ -2,6 +2,56 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+ANCIENT RUINS (GOODY HUT) OVERHAUL
+====================================
+All ruin rewards are now era-scaled. New DLL columns added to GoodyHuts table.
+
+FOOD (GOODY_FOOD)
+- Changed: fixed food (10-10 + 2/pop) replaced by era-scaled formula: 7 + floor(2 * pop * era * 1.1), applied to capital
+- Added: unit receives PROMOTION_GLUTTON (-10% combat strength, lost on upgrade)
+
+UPGRADE (GOODY_UPGRADE_UNIT)
+- Changed: now available from turn 6 (was turn 0)
+- Added: unit loses 15 HP on upgrade (cannot kill the unit)
+
+SCIENCE (GOODY_TECH)
+- Changed: no longer grants a free technology
+- Added: yields X science (X = rand(20..30) * era, capped at 90) toward current research (overflow if none)
+- Added: unit loses X HP (minimum 1 HP remaining) and gains X/2 XP
+
+MOBILITY (GOODY_MOBILITY, formerly GOODY_EXPERIENCE)
+- Changed: renamed from GOODY_EXPERIENCE
+- Changed: no longer grants 9 XP
+- Added: grants PROMOTION_MOBILITY instead
+- Added: ancient era only (disabled from Classical era onward)
+
+MAP (GOODY_MAP)
+- Changed: reveal radius 5 -> 6, per-tile reveal probability 100% -> 75% (jagged reveal)
+- Added: +6 XP to the unit that popped the ruin
+
+CULTURE (GOODY_CULTURE)
+- Changed: flat 20 culture replaced by era-scaled formula: turn * era
+- Changed: available from turn 6 (was turn 0; previously delayed to turn 12 via DLL)
+
+PANTHEON FAITH (GOODY_PANTHEON_FAITH)
+- Changed: flat faith 5 -> 14
+- Added: only available if player has 0 faith stockpile
+- Added: available from turn 6 (was turn 0)
+
+RANDOM FAITH (GOODY_RANDOM_FAITH)
+- Changed: flat faith (30-34) replaced by era-scaled formula: turn * 2 * era
+- Added: heals unit to full HP
+
+GOLD (GOODY_GOLD)
+- Changed: fixed gold (50 + rand rolls) replaced by era-scaled formula: 45 + rand(1..10) * 5 * era
+- Added: if total gold >= 80, spawns one era-appropriate barbarian on an adjacent tile
+  (ancient=Warrior, classical=Swordsman, medieval=Knight, renaissance=Lancer, industrial=Gatling Gun)
+
+NEW PROMOTION: GLUTTON (PROMOTION_GLUTTON)
+- Internal only (CannotBeChosen), lost on upgrade
+- -10% combat strength
+
+
 ALTITUDE TRAINING (PROMOTION_ALTITUDE_TRAINING)
 ------------------------------------------------
 10% movement discount in hills (hills cost 1.8 movement instead of 2.0).
