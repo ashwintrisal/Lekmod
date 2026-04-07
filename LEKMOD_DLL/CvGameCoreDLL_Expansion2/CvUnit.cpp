@@ -1104,6 +1104,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iHealWhileEmbarkedCount = 0;
 	m_iCanCrossMountainsCount = 0;
 	m_iCarpetBombingCount = 0;
+	m_iAdjacentTileHealOutsideFriendly = 0;
 
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_iLandUnitReceivesMovementCount = 0;
@@ -6194,12 +6195,32 @@ bool CvUnit::canHeal(const CvPlot* pPlot, bool bTestVisible) const
 			return false;
 		}
 
-		// Boats can only heal in friendly territory (without promotion)
+		// Boats can only heal in friendly territory (without promotion or adjacent Supply Ship)
 		if(getDomainType() == DOMAIN_SEA)
 		{
 			if(!IsInFriendlyTerritory() && !isHealOutsideFriendly())
 			{
-				return false;
+				bool bSupplyShipAdjacent = false;
+				for(int iDir = 0; iDir < NUM_DIRECTION_TYPES && !bSupplyShipAdjacent; iDir++)
+				{
+					CvPlot* pAdjPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)iDir);
+					if(pAdjPlot)
+					{
+						const IDInfo* pAdjNode = pAdjPlot->headUnitNode();
+						while(pAdjNode != NULL)
+						{
+							const CvUnit* pAdjUnit = ::getUnit(*pAdjNode);
+							pAdjNode = pAdjPlot->nextUnitNode(pAdjNode);
+							if(pAdjUnit && pAdjUnit->getTeam() == getTeam() && pAdjUnit->GetAdjacentTileHealOutsideFriendly() > 0)
+							{
+								bSupplyShipAdjacent = true;
+								break;
+							}
+						}
+					}
+				}
+				if(!bSupplyShipAdjacent)
+					return false;
 			}
 		}
 	}
@@ -6238,12 +6259,32 @@ bool CvUnit::canSentry(const CvPlot* pPlot) const
 int CvUnit::healRate(const CvPlot* pPlot) const
 {
 	VALIDATE_OBJECT
-	// Boats can only heal in friendly territory
+	// Boats can only heal in friendly territory (unless adjacent Supply Ship unlocks it)
 	if(getDomainType() == DOMAIN_SEA)
 	{
 		if(!IsInFriendlyTerritory() && !isHealOutsideFriendly())
 		{
-			return 0;
+			bool bSupplyShipAdjacent = false;
+			for(int iDir = 0; iDir < NUM_DIRECTION_TYPES && !bSupplyShipAdjacent; iDir++)
+			{
+				CvPlot* pAdjPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)iDir);
+				if(pAdjPlot)
+				{
+					const IDInfo* pAdjNode = pAdjPlot->headUnitNode();
+					while(pAdjNode != NULL)
+					{
+						const CvUnit* pAdjUnit = ::getUnit(*pAdjNode);
+						pAdjNode = pAdjPlot->nextUnitNode(pAdjNode);
+						if(pAdjUnit && pAdjUnit->getTeam() == getTeam() && pAdjUnit->GetAdjacentTileHealOutsideFriendly() > 0)
+						{
+							bSupplyShipAdjacent = true;
+							break;
+						}
+					}
+				}
+			}
+			if(!bSupplyShipAdjacent)
+				return 0;
 		}
 	}
 
@@ -6323,6 +6364,12 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 					if(pLoopUnit && pLoopUnit->getTeam() == getTeam())
 					{
 						int iHeal = pLoopUnit->getAdjacentTileHeal();
+
+						// Supply Ship: bonus heal applies only outside friendly territory, non-air units
+						if(!IsInFriendlyTerritory() && getDomainType() != DOMAIN_AIR)
+						{
+							iHeal += pLoopUnit->GetAdjacentTileHealOutsideFriendly();
+						}
 
 						if(iHeal > iBestHealFromUnits)
 						{
@@ -19398,6 +19445,18 @@ void CvUnit::ChangeCarpetBombingCount(int iChange)
 	m_iCarpetBombingCount += iChange;
 }
 
+//	--------------------------------------------------------------------------------
+int CvUnit::GetAdjacentTileHealOutsideFriendly() const
+{
+	return m_iAdjacentTileHealOutsideFriendly;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeAdjacentTileHealOutsideFriendly(int iChange)
+{
+	m_iAdjacentTileHealOutsideFriendly += iChange;
+}
+
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsLandUnitReceivesMovement() const
@@ -21497,6 +21556,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeFreePillageMoveCount((thisPromotion.IsFreePillageMoves()) ? iChange: 0);
 		changePillageChange(thisPromotion.GetPillageChange() * iChange);
 		ChangeCarpetBombingCount((thisPromotion.IsCarpetBombing()) ? iChange : 0);
+		ChangeAdjacentTileHealOutsideFriendly(thisPromotion.GetAdjacentTileHealOutsideFriendly() * iChange);
 		ChangeEmbarkAllWaterCount((thisPromotion.IsEmbarkedAllWater()) ? iChange: 0);
 		ChangeCityAttackOnlyCount((thisPromotion.IsCityAttackOnly()) ? iChange: 0);
 		ChangeCaptureDefeatedEnemyCount((thisPromotion.IsCaptureDefeatedEnemy()) ? iChange: 0);
@@ -21966,6 +22026,7 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iCitySplashDamage;
 	kStream >> m_iCanCrossMountainsCount;
 	kStream >> m_iCarpetBombingCount;
+	kStream >> m_iAdjacentTileHealOutsideFriendly;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22154,6 +22215,7 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iCitySplashDamage;
 	kStream << m_iCanCrossMountainsCount;
 	kStream << m_iCarpetBombingCount;
+	kStream << m_iAdjacentTileHealOutsideFriendly;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

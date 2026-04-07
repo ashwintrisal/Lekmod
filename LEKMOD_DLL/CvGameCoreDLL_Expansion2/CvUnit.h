@@ -857,6 +857,8 @@ public:
 	void ChangeCanCrossMountainsCount(int iChange);
 	bool IsCarpetBombing() const;
 	void ChangeCarpetBombingCount(int iChange);
+	int  GetAdjacentTileHealOutsideFriendly() const;
+	void ChangeAdjacentTileHealOutsideFriendly(int iChange);
 
 	int getExtraNavalMoves() const;
 	void changeExtraNavalMoves(int iChange);
@@ -1604,6 +1606,7 @@ protected:
 	int m_iHealWhileEmbarkedCount;
 	int m_iCanCrossMountainsCount;
 	int m_iCarpetBombingCount;
+	int m_iAdjacentTileHealOutsideFriendly;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	int m_iLandUnitReceivesMovementCount;
 #endif

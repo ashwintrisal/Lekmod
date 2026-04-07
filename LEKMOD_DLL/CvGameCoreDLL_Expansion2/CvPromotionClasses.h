@@ -197,6 +197,7 @@ public:
 	int GetPillageChange() const;
 	bool IsCanCrossMountains() const;
 	bool IsCarpetBombing() const;
+	int  GetAdjacentTileHealOutsideFriendly() const;
 	bool IsHealIfDefeatExcludeBarbarians() const;
 	bool IsEmbarkedAllWater() const;
 	bool IsCityAttackOnly() const;
@@ -430,6 +431,7 @@ protected:
 	int m_iPillageChange;
 	bool m_bCanCrossMountains;
 	bool m_bCarpetBombing;
+	int  m_iAdjacentTileHealOutsideFriendly;
 	bool m_bHealIfDefeatExcludesBarbarians;
 	bool m_bEmbarkedAllWater;
 	bool m_bCityAttackOnly;

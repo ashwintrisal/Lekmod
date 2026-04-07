@@ -209,6 +209,18 @@
 		</Row>
 
 		<Row>
+			<Type>PROMOTION_SUPPLY_SHIP</Type>
+			<Description>TXT_KEY_PROMOTION_SUPPLY_SHIP</Description>
+			<Help>TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY_SHIP</PediaEntry>
+			<AdjacentTileHealOutsideFriendly>10</AdjacentTileHealOutsideFriendly>
+		</Row>
+
+		<Row>
 			<Type>PROMOTION_SAMBUCA</Type>
 			<Description>TXT_KEY_PROMOTION_SAMBUCA</Description>
 			<Help>TXT_KEY_PROMOTION_SAMBUCA_HELP</Help>
@@ -374,6 +386,7 @@
 			<IconAtlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY_SHIP</PediaEntry>
+			<AdjacentTileHealOutsideFriendly>10</AdjacentTileHealOutsideFriendly>
 		</Row>
 
 		<Row>
@@ -432,6 +445,9 @@
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles. City State units hit trigger an automatic declaration of war. Splash damage is reduced proportionally if the bomber is intercepted.</Text></Row>
 
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP"><Text>Supply Ship</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>Adjacent naval units may heal outside friendly territory. Adjacent non-air units heal +10 [ICON_HEALING] HP per turn outside friendly territory. Eligible: naval melee, naval ranged. Requires Coastal Raider II, Boarding Party II, or Armor Plating II.</Text></Row>
+
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE"><Text>Discipline</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_HELP"><Text>+50% [ICON_EXPERIENCE] Experience gained (non-air units).</Text></Row>
 
@@ -466,7 +482,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_STARGAZING_HELP"><Text>TODO</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP"><Text>Supply Ship</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>Adjacent naval units may heal outside friendly territory. Adjacent non-air units heal +10 [ICON_HEALING] HP per turn outside friendly territory. Eligible: naval melee, naval ranged. Requires Coastal Raider II, Boarding Party II, or Armor Plating II.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT"><Text>Swift Transport</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP"><Text>Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn.</Text></Row>

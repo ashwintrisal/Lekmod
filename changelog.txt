@@ -190,6 +190,18 @@ Requires: Bombardment 2.
 - Splash fires in ResolveAirUnitVsCombat for both city-target and unit-target branches
 
 
+SUPPLY SHIP (PROMOTION_SUPPLY_SHIP)
+------------------------------------
+NEW. Adjacent naval units may heal outside friendly territory (normally impossible without HealOutsideFriendly).
+Adjacent non-air units heal +10 HP per turn when outside friendly territory.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE), naval ranged (UNITCOMBAT_NAVALRANGED).
+Requires: Coastal Raider 2, Boarding Party 2, or Armor Plating 2 (any one).
+- Added: AdjacentTileHealOutsideFriendly=10 (new DLL field)
+- healRate() DOMAIN_SEA early-return is bypassed when an adjacent allied unit has AdjacentTileHealOutsideFriendly > 0
+- canHeal() DOMAIN_SEA gate is also bypassed in the same way
+- The +10 bonus from AdjacentTileHealOutsideFriendly is only applied when the healing unit is outside friendly territory and not air domain
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.

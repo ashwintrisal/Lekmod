@@ -164,6 +164,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iPillageChange(0),
 	m_bCanCrossMountains(false),
 	m_bCarpetBombing(false),
+	m_iAdjacentTileHealOutsideFriendly(0),
 	m_bHealIfDefeatExcludesBarbarians(false),
 	m_bEmbarkedAllWater(false),
 	m_bCityAttackOnly(false),
@@ -301,6 +302,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iPillageChange = kResults.GetInt("PillageChange");
 	m_bCanCrossMountains = kResults.GetBool("CanCrossMountains");
 	m_bCarpetBombing = kResults.GetBool("CarpetBombing");
+	m_iAdjacentTileHealOutsideFriendly = kResults.GetInt("AdjacentTileHealOutsideFriendly");
 	m_bHealIfDefeatExcludesBarbarians = kResults.GetBool("HealIfDestroyExcludesBarbarians");
 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
 	m_bCityAttackOnly = kResults.GetBool("CityAttackOnly");
@@ -1735,6 +1737,11 @@ bool CvPromotionEntry::IsCanCrossMountains() const
 bool CvPromotionEntry::IsCarpetBombing() const
 {
 	return m_bCarpetBombing;
+}
+
+int CvPromotionEntry::GetAdjacentTileHealOutsideFriendly() const
+{
+	return m_iAdjacentTileHealOutsideFriendly;
 }
 
 /// Accessor: Do we only get healed after a combat win if fighting a real civ or minor?
