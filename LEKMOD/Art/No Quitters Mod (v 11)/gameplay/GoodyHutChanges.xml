@@ -23,10 +23,10 @@
 			<Where Type="GOODY_TECH"/>
 		</Update>
 
-		<!-- MOBILITY: ancient era only; grant Mobility promotion instead of XP -->
+		<!-- MOBILITY: ancient era only; grant Mobility promotion instead of XP+movement (was GOODY_EXPERIENCE_MOVE) -->
 		<Update>
 			<Set Type="GOODY_MOBILITY" Experience="0" FreePromotion="PROMOTION_MOBILITY" BeforeEra="1"/>
-			<Where Type="GOODY_EXPERIENCE"/>
+			<Where Type="GOODY_EXPERIENCE_MOVE"/>
 		</Update>
 
 		<!-- MAP: slightly larger jagged reveal (75% per tile), +6 XP to unit -->
@@ -62,8 +62,19 @@
 	</GoodyHuts>
 
 	<!-- Remove standalone barb-reveal from handicap goody pool (merged into Map ruin) -->
+	<!-- Rename GOODY_EXPERIENCE_MOVE entries to GOODY_MOBILITY -->
 	<HandicapInfo_Goodies>
 		<Delete GoodyType="GOODY_REVEAL_NEARBY_BARBS"/>
+		<Delete GoodyType="GOODY_EXPERIENCE_MOVE"/>
+		<Row><HandicapType>HANDICAP_AI_DEFAULT</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_SETTLER</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_CHIEFTAIN</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_WARLORD</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_PRINCE</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_KING</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_EMPEROR</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_IMMORTAL</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
+		<Row><HandicapType>HANDICAP_DEITY</HandicapType><GoodyType>GOODY_MOBILITY</GoodyType></Row>
 	</HandicapInfo_Goodies>
 
 	<!-- === PROMOTION: GLUTTON (food ruin debuff) === -->

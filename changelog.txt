@@ -19,9 +19,9 @@ SCIENCE (GOODY_TECH)
 - Added: yields X science (X = rand(20..30) * era, capped at 90) toward current research (overflow if none)
 - Added: unit loses X HP (minimum 1 HP remaining) and gains X/2 XP
 
-MOBILITY (GOODY_MOBILITY, formerly GOODY_EXPERIENCE)
-- Changed: renamed from GOODY_EXPERIENCE
-- Changed: no longer grants 9 XP
+MOBILITY (GOODY_MOBILITY, formerly GOODY_EXPERIENCE_MOVE)
+- Changed: renamed from GOODY_EXPERIENCE_MOVE
+- Changed: no longer grants 15 XP or PROMOTION_EXTRA_MOVES_RUIN
 - Added: grants PROMOTION_MOBILITY instead
 - Added: ancient era only (disabled from Classical era onward)
 
