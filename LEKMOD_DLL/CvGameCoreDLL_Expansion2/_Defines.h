@@ -1153,6 +1153,10 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_HELICOPTER_EMBARK_FIX
 // Allows a belief to grant a free building in the founder's capital when adopted (FreeCapitalBuildingClass column in Beliefs table)
 #define LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+// Allows a belief to block the AI from auto-saving faith for prophets (BlockAutoProphetSpawn column in Beliefs table)
+#define LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+// Allows a belief to enable faith purchase of a specific unit class (Belief_FaithPurchaseUnitClass table)
+#define LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
 
 
 

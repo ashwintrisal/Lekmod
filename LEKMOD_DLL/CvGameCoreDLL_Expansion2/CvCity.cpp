@@ -5627,6 +5627,24 @@ int CvCity::GetFaithPurchaseCost(UnitTypes eUnit, bool bIncludeBeliefDiscounts)
 	{
 		// Cost goes up in later eras
 		iCost = pkUnitInfo->GetFaithCost();
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+		if (iCost == 0)
+		{
+			UnitClassTypes eUnitClass = (UnitClassTypes)pkUnitInfo->GetUnitClassType();
+			if (eUnitClass != NO_UNITCLASS)
+			{
+				ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
+				if (eMajority > RELIGION_PANTHEON)
+				{
+					const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, m_eOwner);
+					if (pReligion && pReligion->m_Beliefs.IsFaithPurchaseUnitClassEnabled(eUnitClass))
+					{
+						iCost = pkUnitInfo->GetProductionCost() * 130 / 100;
+					}
+				}
+			}
+		}
+#endif
 		EraTypes eEra = GET_TEAM(GET_PLAYER(getOwner()).getTeam()).GetCurrentEra();
 		int iMultiplier = GC.getEraInfo(eEra)->getFaithCostMultiplier();
 		iCost = iCost * iMultiplier / 100;

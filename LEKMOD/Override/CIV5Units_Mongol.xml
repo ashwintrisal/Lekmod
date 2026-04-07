@@ -15945,9 +15945,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Itinerant Preachers
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_JESUIT_EDUCATION"> 
+		<Replace Tag="TXT_KEY_BELIEF_JESUIT_EDUCATION">
 			<Text>
-				May build [COLOR_POSITIVE_TEXT]Libraries[ENDCOLOR], [COLOR_POSITIVE_TEXT]Universities[ENDCOLOR], [COLOR_POSITIVE_TEXT]Observatories[ENDCOLOR], [COLOR_POSITIVE_TEXT]Public Schools[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Research Labs[ENDCOLOR] with [ICON_PEACE] Faith.
+				May purchase [COLOR_POSITIVE_TEXT]Libraries[ENDCOLOR], [COLOR_POSITIVE_TEXT]Universities[ENDCOLOR], [COLOR_POSITIVE_TEXT]Observatories[ENDCOLOR], [COLOR_POSITIVE_TEXT]Public Schools[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Research Labs[ENDCOLOR] with [ICON_PEACE] Faith (cost = 1.3x [ICON_PRODUCTION]). +2 [ICON_PEACE] Faith from each. No [ICON_PROPHET] Prophet auto-purchase.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_JESUIT_EDUCATION_SHORT"> 
@@ -16665,9 +16665,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Work Ethic
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_WORK_ETHIQ"> 
+		<Replace Tag="TXT_KEY_BELIEF_WORK_ETHIQ">
 			<Text>
-				May purchase [COLOR_POSITIVE_TEXT]Workshops[ENDCOLOR], [COLOR_POSITIVE_TEXT]Windmills[ENDCOLOR], [COLOR_POSITIVE_TEXT]Factories[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Hydro Plants[ENDCOLOR] with [ICON_PEACE] Faith
+				May purchase [COLOR_POSITIVE_TEXT]Workshops[ENDCOLOR], [COLOR_POSITIVE_TEXT]Windmills[ENDCOLOR], [COLOR_POSITIVE_TEXT]Factories[ENDCOLOR], [COLOR_POSITIVE_TEXT]Hydro Plants[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Workers[ENDCOLOR] with [ICON_PEACE] Faith (cost = 1.3x [ICON_PRODUCTION]). No [ICON_PROPHET] Prophet auto-purchase.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_WORK_ETHIQ_SHORT"> 

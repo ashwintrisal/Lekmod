@@ -13,6 +13,29 @@ DISABLED BELIEFS (hidden from UI, kept in DB for save compatibility)
 - Initiation Rites (BELIEF_INITIATION_RITES): founder
 
 
+JESUIT EDUCATION (BELIEF_JESUIT_EDUCATION) & WORK ETHIC (BELIEF_WORK_ETHIQ)
+==========================================================================
+Both are Reformation beliefs.
+
+SHARED CHANGES (both beliefs):
+- Added: BlockAutoProphetSpawn=true — AI no longer auto-saves faith for prophets when this reformation is active (same mechanic as Industrial era)
+- Changed: FaithCost normalized to 1.3× ProductionCost (rounded to nearest 5) for all affected buildings and their unique variants
+
+JESUIT EDUCATION:
+Buildings affected: Library, University, Observatory, Public School, Research Lab (and all civ-unique variants)
+Faith cost changes: Library 60→100, University 220→210, Observatory 260 (unchanged), Public School 380→390, Research Lab 630→650
+Unique variants: Paper Maker 60→100, Royal Library 60→100, Akkad Library 48→80, Wat 165→155, Ayyubids University 220→210, Halkevleri 240→310, Armenia Observatory (unchanged 260)
+- Added: +2 Faith yield from each of the 5 science building classes (Library, University, Observatory, Public School, Laboratory)
+- New DLL: LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF — BlockAutoProphetSpawn column in Beliefs table
+
+WORK ETHIC:
+Buildings affected: Workshop, Windmill, Factory, Hydro Plant (and all civ-unique variants)
+Faith cost changes: Workshop 200→155, Windmill 320→325, Factory 450→470, Hydro Plant 533→470
+Unique variants: Longhouse (unchanged 100), Coralshop 200→155, Prussian Factory 340→350, Cooperative 450→470, Coffee House 188→195, Hacienda 320→325
+- Added: Workers can now be purchased with Faith (cost = 1.3× production = ~65 faith base, scaled by game speed)
+- New DLL: LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF — Belief_FaithPurchaseUnitClass table; CvBeliefEntry/CvReligionBeliefs::IsFaithPurchaseUnitClassEnabled; dynamic cost computed in CvCity::GetFaithPurchaseCost(UnitTypes) as ProductionCost×130/100 when unit class is enabled by belief
+
+
 SACRED SITES (BELIEF_ZACRED_SITES)
 ------------------------------------
 Reformation belief. +3 Gold and +3 Faith per religious building (purchased with Faith). Free Vihara in founder's capital.

@@ -26490,7 +26490,12 @@
 			<BuildingClassType>BUILDINGCLASS_PIETY_ADMIRAL</BuildingClassType> 
 		</Row>
 <!-- piety changes -->
-	</Belief_BuildingClassFaithPurchase> 
+	</Belief_BuildingClassFaithPurchase>
+
+	<!-- Work Ethic: faith purchase of workers -->
+	<Belief_FaithPurchaseUnitClass>
+		<Row><BeliefType>BELIEF_WORK_ETHIQ</BeliefType><UnitClassType>UNITCLASS_WORKER</UnitClassType></Row>
+	</Belief_FaithPurchaseUnitClass>
 
 	<Table name="Belief_BuildingClassHappiness">
 		<Column name="BeliefType" type="text"  />
@@ -27401,10 +27406,16 @@
 		</Row>
 		<Row> 
 			<BeliefType>BELIEF_SANCTIFIED_INNOVATIONS</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<YieldChange>1</YieldChange> 
+			<BuildingClassType>BUILDINGCLASS_OXFORD_UNIVERSITY</BuildingClassType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<YieldChange>1</YieldChange>
 		</Row>
+		<!-- Jesuit Education: +2 Faith from science buildings -->
+		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_LIBRARY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
+		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_UNIVERSITY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
+		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_OBSERVATORY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
+		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
+		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
 	</Belief_BuildingClassYieldChanges> 
 
 	<Table name="Belief_CityYieldChanges">
@@ -28646,6 +28657,11 @@
 		<Column name="GoldenAgeTurns" type="INTEGER"  default="0"/>
 		<Column name="NumFreeSettlers" type="INTEGER"  default="0"/>
 		<Column name="FreeCapitalBuildingClass" type="text"  default="NULL"/>
+		<Column name="BlockAutoProphetSpawn" type="boolean"  default="0"/>
+	</Table>
+	<Table name="Belief_FaithPurchaseUnitClass">
+		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
+		<Column name="UnitClassType" type="text" references="UnitClasses(Type)"/>
 	</Table>
 	<Beliefs>
 		<Delete />
@@ -30700,11 +30716,12 @@
 			<MissionaryExtraSpreads>0</MissionaryExtraSpreads> 
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
-			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities>
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<BlockAutoProphetSpawn>true</BlockAutoProphetSpawn>
 		</Row>
-		<Row> 
-			<ID>63</ID> 
+		<Row>
+			<ID>63</ID>
 			<Type>BELIEF_UNDERGROUND_SECT</Type> 
 			<Description>TXT_KEY_BELIEF_UNDERGROUND_SECT</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_UNDERGROUND_SECT_SHORT</ShortDescription> 
@@ -32354,10 +32371,11 @@
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
 			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<BlockAutoProphetSpawn>true</BlockAutoProphetSpawn>
 		</Row>
-		<Row> 
-			<ID>93</ID> 
+		<Row>
+			<ID>93</ID>
 			<Type>BELIEF_HORY_WARRIORS</Type> 
 			<Description>TXT_KEY_BELIEF_HORY_WARRIORS</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_HOLY_WARRIORS_SHORT</ShortDescription> 
@@ -44383,7 +44401,7 @@
 			<Help>TXT_KEY_BUILDING_LIBRARY_HELP</Help> 
 			<GoldMaintenance>1</GoldMaintenance> 
 			<Cost>75</Cost> 
-			<FaithCost>60</FaithCost> 
+			<FaithCost>100</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -44402,7 +44420,7 @@
 			<Strategy>TXT_KEY_BUILDING_PAPER_MAKER_STRATEGY</Strategy> 
 			<Help>TXT_KEY_BUILDING_PAPER_MAKER_HELP</Help> 
 			<Cost>75</Cost> 
-			<FaithCost>60</FaithCost> 
+			<FaithCost>100</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -44423,7 +44441,7 @@
 			<GoldMaintenance>1</GoldMaintenance> 
 			<NeverCapture>true</NeverCapture> 
 			<Cost>75</Cost> 
-			<FaithCost>60</FaithCost> 
+			<FaithCost>100</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier> 
 			<FreeStartEra>ERA_INDUSTRIAL</FreeStartEra> 
@@ -44441,7 +44459,7 @@
 			<Description>TXT_KEY_BUILDING_AKKAD_LIBRARY</Description>
 			<Help>TXT_KEY_BUILDING_AKKAD_LIBRARY_HELP</Help> 
 			<Cost>60</Cost> 
-			<FaithCost>48</FaithCost> 
+			<FaithCost>80</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -45491,7 +45509,7 @@
 			<Help>TXT_KEY_BUILDING_WORKSHOP_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>120</Cost> 
-			<FaithCost>200</FaithCost> 
+			<FaithCost>155</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -45537,7 +45555,7 @@
 			<Help>TXT_KEY_BUILDING_CORALSHOP_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>120</Cost> 
-			<FaithCost>200</FaithCost> 
+			<FaithCost>155</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -45655,7 +45673,7 @@
 			<Help>TXT_KEY_BUILDING_UNIVERSITY_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>160</Cost> 
-			<FaithCost>220</FaithCost> 
+			<FaithCost>210</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>15</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -45675,7 +45693,7 @@
 			<Strategy>TXT_KEY_BUILDING_WAT_STRATEGY</Strategy> 
 			<Help>TXT_KEY_BUILDING_WAT_HELP</Help> 
 			<Cost>120</Cost> 
-			<FaithCost>165</FaithCost> 
+			<FaithCost>155</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>15</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -45696,7 +45714,7 @@
 			<Help>TXT_KEY_BUILDING_AYYUBIDS_UNIVERSITYH_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>160</Cost> 
-			<FaithCost>220</FaithCost> 
+			<FaithCost>210</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>15</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -46229,7 +46247,7 @@
 			<Help>TXT_KEY_BUILDING_WINDMILL_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>250</Cost> 
-			<FaithCost>320</FaithCost> 
+			<FaithCost>325</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -46251,7 +46269,7 @@
 			<Help>TXT_KEY_BUILDING_COFFEE_HOUSE_HELP</Help> 
 			<GoldMaintenance>2</GoldMaintenance> 
 			<Cost>150</Cost> 
-			<FaithCost>188</FaithCost> 
+			<FaithCost>195</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -46272,7 +46290,7 @@
 			<Strategy>TXT_KEY_BUILDING_HACIENDA_STRATEGY</Strategy> 
 			<Help>TXT_KEY_BUILDING_HACIENDA_STRATEGY</Help> 
 			<Cost>250</Cost> 
-			<FaithCost>320</FaithCost> 
+			<FaithCost>325</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief> 
 			<HurryCostModifier>25</HurryCostModifier>
 			<ConquestProb>66</ConquestProb> 
@@ -46395,7 +46413,7 @@
 			<Help>TXT_KEY_BUILDING_PUBLIC_SCHOOL_HELP</Help> 
 			<GoldMaintenance>3</GoldMaintenance> 
 			<Cost>300</Cost> 
-			<FaithCost>380</FaithCost> 
+			<FaithCost>390</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb>
 			<PrereqTech>TECH_SCIENTIFIC_THEORY</PrereqTech> 
@@ -46415,7 +46433,7 @@
 			<Help>TXT_KEY_BUILDING_UC_HALKEVLERI_HELP</Help>
 			<GoldMaintenance>3</GoldMaintenance> 
 			<Cost>240</Cost> 
-			<FaithCost>240</FaithCost> 
+			<FaithCost>310</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb>  
 			<PrereqTech>TECH_SCIENTIFIC_THEORY</PrereqTech> 
@@ -46436,7 +46454,7 @@
 			<Help>TXT_KEY_BUILDING_FACTORY_HELP</Help> 
 			<GoldMaintenance>3</GoldMaintenance> 
 			<Cost>360</Cost> 
-			<FaithCost>450</FaithCost> 
+			<FaithCost>470</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb> 
 			<XBuiltTriggersIdeologyChoice>3</XBuiltTriggersIdeologyChoice> 
@@ -46457,7 +46475,7 @@
 			<Help>TXT_KEY_BUILDING_PRUSSIAN_FACTORY_HELP</Help> 
 			<GoldMaintenance>3</GoldMaintenance> 
 			<Cost>270</Cost> 
-			<FaithCost>340</FaithCost> 
+			<FaithCost>350</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb> 
 			<XBuiltTriggersIdeologyChoice>3</XBuiltTriggersIdeologyChoice> 
@@ -46477,7 +46495,7 @@
 			<Strategy>TXT_KEY_BUILDING_COOPERATIVE_STRATEGY</Strategy>
 			<Help>TXT_KEY_BUILDING_COOPERATIVE_HELP</Help>
 			<Cost>360</Cost> 
-			<FaithCost>450</FaithCost> 
+			<FaithCost>470</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb> 
 			<Happiness>2</Happiness> 
@@ -46567,7 +46585,7 @@
 			<GoldMaintenance>3</GoldMaintenance> 
 			<River>true</River> 
 			<Cost>360</Cost> 
-			<FaithCost>533</FaithCost> 
+			<FaithCost>470</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb> 
 			<PrereqTech>TECH_ELECTRICITY</PrereqTech> 
@@ -46765,7 +46783,7 @@
 			<Help>TXT_KEY_BUILDING_LABORATORY_HELP</Help> 
 			<GoldMaintenance>3</GoldMaintenance> 
 			<Cost>500</Cost> 
-			<FaithCost>630</FaithCost> 
+			<FaithCost>650</FaithCost> 
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>66</ConquestProb> 
 			<PrereqTech>TECH_PLASTIC</PrereqTech> 

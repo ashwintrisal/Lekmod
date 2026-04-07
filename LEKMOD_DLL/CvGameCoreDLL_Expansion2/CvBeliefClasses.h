@@ -95,6 +95,12 @@ public:
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	BuildingClassTypes GetFreeCapitalBuildingClass() const;
 #endif
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+	bool IsBlockAutoProphetSpawn() const;
+#endif
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+	bool IsFaithPurchaseUnitClassEnabled(int i) const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -215,6 +221,9 @@ protected:
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	BuildingClassTypes m_eFreeCapitalBuildingClass;
 #endif
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+	bool m_bBlockAutoProphetSpawn;
+#endif
 
 	bool m_bPantheon;
 	bool m_bFounder;
@@ -276,6 +285,9 @@ protected:
 	int* m_piMaxYieldModifierPerFollower;
 	bool* m_pbFaithPurchaseUnitEraEnabled;
     bool* m_pbBuildingClassEnabled;
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+	bool* m_pbFaithPurchaseUnitClass;
+#endif
 
 private:
 	CvBeliefEntry(const CvBeliefEntry&);
@@ -526,6 +538,12 @@ public:
 #endif
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	BuildingClassTypes GetFreeCapitalBuildingClass() const;
+#endif
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+	bool IsBlockAutoProphetSpawn() const;
+#endif
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+	bool IsFaithPurchaseUnitClassEnabled(UnitClassTypes eUnitClass) const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

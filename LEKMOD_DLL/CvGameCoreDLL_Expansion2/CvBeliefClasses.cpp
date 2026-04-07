@@ -85,6 +85,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	m_eFreeCapitalBuildingClass(NO_BUILDINGCLASS),
 #endif
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+	m_bBlockAutoProphetSpawn(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -143,6 +146,9 @@ CvBeliefEntry::CvBeliefEntry() :
 	m_piMaxYieldModifierPerFollower(NULL),
 	m_pbFaithPurchaseUnitEraEnabled(NULL),
 	m_pbBuildingClassEnabled(NULL)
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+	, m_pbFaithPurchaseUnitClass(NULL)
+#endif
 {
 }
 
@@ -473,6 +479,24 @@ int CvBeliefEntry::GetNumFreeSettlers() const
 BuildingClassTypes CvBeliefEntry::GetFreeCapitalBuildingClass() const
 {
 	return m_eFreeCapitalBuildingClass;
+}
+#endif
+
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+/// Accessor: does this belief block the AI from auto-saving faith for prophets?
+bool CvBeliefEntry::IsBlockAutoProphetSpawn() const
+{
+	return m_bBlockAutoProphetSpawn;
+}
+#endif
+
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+/// Accessor: can units of this class be purchased with faith via this belief?
+bool CvBeliefEntry::IsFaithPurchaseUnitClassEnabled(int i) const
+{
+	CvAssertMsg(i > -1, "Index out of bounds");
+	CvAssertMsg(i < GC.getNumUnitClassInfos(), "Index out of bounds");
+	return m_pbFaithPurchaseUnitClass ? m_pbFaithPurchaseUnitClass[i] : false;
 }
 #endif
 
@@ -877,6 +901,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	szTextVal						  = kResults.GetText("FreeCapitalBuildingClass");
 	m_eFreeCapitalBuildingClass		  = (BuildingClassTypes)GC.getInfoTypeForString(szTextVal, true);
 #endif
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+	m_bBlockAutoProphetSpawn		  = kResults.GetBool("BlockAutoProphetSpawn");
+#endif
 
 	//Arrays
 	const char* szBeliefType = GetType();
@@ -896,6 +923,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	kUtility.PopulateArrayByValue(m_paiYieldChangePerXForeignFollowers, "Yields", "Belief_YieldChangePerXForeignFollowers", "YieldType", "BeliefType", szBeliefType, "ForeignFollowers");
 	kUtility.PopulateArrayByExistence(m_pbFaithPurchaseUnitEraEnabled, "Eras", "Belief_EraFaithUnitPurchase", "EraType", "BeliefType", szBeliefType);
 	kUtility.PopulateArrayByExistence(m_pbBuildingClassEnabled, "BuildingClasses", "Belief_BuildingClassFaithPurchase", "BuildingClassType", "BeliefType", szBeliefType);
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+	kUtility.PopulateArrayByExistence(m_pbFaithPurchaseUnitClass, "UnitClasses", "Belief_FaithPurchaseUnitClass", "UnitClassType", "BeliefType", szBeliefType);
+#endif
 
 	//ImprovementYieldChanges
 	{
@@ -2015,6 +2045,34 @@ int CvReligionBeliefs::GetNumFreeSettlers() const
 BuildingClassTypes CvReligionBeliefs::GetFreeCapitalBuildingClass() const
 {
 	return m_eFreeCapitalBuildingClass;
+}
+#endif
+
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+/// Returns true if any active belief blocks the AI from auto-saving faith for prophets
+bool CvReligionBeliefs::IsBlockAutoProphetSpawn() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsBlockAutoProphetSpawn())
+			return true;
+	}
+	return false;
+}
+#endif
+
+#ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+/// Returns true if any active belief enables faith purchase of the given unit class
+bool CvReligionBeliefs::IsFaithPurchaseUnitClassEnabled(UnitClassTypes eUnitClass) const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFaithPurchaseUnitClassEnabled((int)eUnitClass))
+			return true;
+	}
+	return false;
 }
 #endif
 

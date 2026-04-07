@@ -5838,7 +5838,12 @@ void CvReligionAI::DoFaithPurchases()
 	{
 		// Do we need a prophet pronto to reestablish our religion?
 		UnitTypes eProphetType = (UnitTypes)GC.getInfoTypeForString("UNIT_PROPHET", true);
-		if (eProphetType != NO_UNIT && ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/) && m_pPlayer->GetReligions()->GetNumProphetsSpawned() <= 5)
+#ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
+		const bool bProphetBlocked = pMyReligion->m_Beliefs.IsBlockAutoProphetSpawn();
+#else
+		const bool bProphetBlocked = false;
+#endif
+		if (!bProphetBlocked && eProphetType != NO_UNIT && ChooseProphetConversionCity(true/*bOnlyBetterThanEnhancingReligion*/) && m_pPlayer->GetReligions()->GetNumProphetsSpawned() <= 5)
 		{
 			BuyGreatPerson(eProphetType);
 
