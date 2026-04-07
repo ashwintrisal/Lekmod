@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Beliefs that are kept in the DB (for save compatibility) but hidden from the selection UI.
+     Setting all category flags to false prevents them from appearing in any belief picker. -->
+<GameData>
+	<Beliefs>
+		<!-- Spirit Trees (BELIEF_SACRED_PATHS): +1 Faith/Food from Lumbermills -->
+		<Update>
+			<Set Pantheon="false" Founder="false" Follower="false" Enhancer="false" Reformation="false"/>
+			<Where Type="BELIEF_SACRED_PATHS"/>
+		</Update>
+		<!-- God of the Sea (BELIEF_GOD_SEA): pantheon -->
+		<Update>
+			<Set Pantheon="false" Founder="false" Follower="false" Enhancer="false" Reformation="false"/>
+			<Where Type="BELIEF_GOD_SEA"/>
+		</Update>
+		<!-- Goddess of Protection (BELIEF_WALLS): +50% city ranged strike, +1 Faith/Culture from Walls -->
+		<Update>
+			<Set Pantheon="false" Founder="false" Follower="false" Enhancer="false" Reformation="false"/>
+			<Where Type="BELIEF_WALLS"/>
+		</Update>
+		<!-- Promised Land (BELIEF_PROMISED_LAND): enhancer -->
+		<Update>
+			<Set Pantheon="false" Founder="false" Follower="false" Enhancer="false" Reformation="false"/>
+			<Where Type="BELIEF_PROMISED_LAND"/>
+		</Update>
+		<!-- Initiation Rites (BELIEF_INITIATION_RITES): founder -->
+		<Update>
+			<Set Pantheon="false" Founder="false" Follower="false" Enhancer="false" Reformation="false"/>
+			<Where Type="BELIEF_INITIATION_RITES"/>
+		</Update>
+	</Beliefs>
+</GameData>

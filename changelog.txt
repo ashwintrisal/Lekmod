@@ -2,6 +2,17 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+RELIGIOUS BELIEFS
+=================
+
+DISABLED BELIEFS (hidden from UI, kept in DB for save compatibility)
+- Spirit Trees (BELIEF_SACRED_PATHS): +1 Faith/Food from Lumbermills
+- God of the Sea (BELIEF_GOD_SEA): pantheon
+- Goddess of Protection (BELIEF_WALLS): +50% city ranged strike, +1 Faith/Culture from Walls
+- Promised Land (BELIEF_PROMISED_LAND): enhancer
+- Initiation Rites (BELIEF_INITIATION_RITES): founder
+
+
 ANCIENT RUINS (GOODY HUT) OVERHAUL
 ====================================
 All ruin rewards are now era-scaled. New DLL columns added to GoodyHuts table.
