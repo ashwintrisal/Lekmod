@@ -16695,9 +16695,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Gain [ICON_PEACE] Faith if you win a battle, and use [ICON_PEACE] Faith to purchase Classical Era land units.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_ZACRED_SITES"> 
+		<Replace Tag="TXT_KEY_BELIEF_ZACRED_SITES">
 			<Text>
-				+2 [ICON_CULTURE] Culture, +2 [ICON_GOLD] Gold, and +2 [ICON_PEACE] Faith from buildings unlocked by [COLOR_POSITIVE_TEXT]Religious Beliefs[ENDCOLOR]
+				+3 [ICON_GOLD] Gold and +3 [ICON_PEACE] Faith from buildings purchased with [ICON_PEACE] Faith. Free [COLOR_POSITIVE_TEXT]Vihara[ENDCOLOR] in your [COLOR_POSITIVE_TEXT]Capital[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_ZACRED_SITES_SHORT"> 

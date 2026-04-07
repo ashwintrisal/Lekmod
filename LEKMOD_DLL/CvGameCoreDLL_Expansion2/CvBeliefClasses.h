@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -91,6 +91,9 @@ public:
 	int GetFaithBuildingTourism() const;
 #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
 	int GetNumFreeSettlers() const;
+#endif
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	BuildingClassTypes GetFreeCapitalBuildingClass() const;
 #endif
 
 	bool IsPantheonBelief() const;
@@ -208,6 +211,9 @@ protected:
 	int m_iFaithBuildingTourism;
 #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
 	int m_iNumFreeSettlers;
+#endif
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	BuildingClassTypes m_eFreeCapitalBuildingClass;
 #endif
 
 	bool m_bPantheon;
@@ -518,6 +524,9 @@ public:
 #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
 	int GetNumFreeSettlers() const;
 #endif
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	BuildingClassTypes GetFreeCapitalBuildingClass() const;
+#endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;
 	bool IsFaithBuyingEnabled(EraTypes eEra) const;
@@ -585,6 +594,9 @@ private:
 	EraTypes m_eObsoleteEra;
 	ResourceTypes m_eResourceRevealed;
 	TechTypes m_eSpreadModifierDoublingTech;
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	BuildingClassTypes m_eFreeCapitalBuildingClass;
+#endif
 
 	BeliefList m_ReligionBeliefs;
 

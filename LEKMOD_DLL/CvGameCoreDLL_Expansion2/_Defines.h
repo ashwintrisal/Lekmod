@@ -1151,6 +1151,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_PREVENT_MINOR_CIV_KILL_VOTE_EXPLOIT
 // Prevent Helicopters from getting the Embark promotion upon upgrading
 #define LEKMOD_HELICOPTER_EMBARK_FIX
+// Allows a belief to grant a free building in the founder's capital when adopted (FreeCapitalBuildingClass column in Beliefs table)
+#define LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 
 
 

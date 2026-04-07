@@ -26931,149 +26931,101 @@
 			<YieldType>YIELD_GOLD</YieldType> 
 			<YieldChange>2</YieldChange> 
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_PAGODA</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_PAGODA</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_PAGODA</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_PAGODA</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_PAGODA</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MOSQUE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MOSQUE</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MOSQUE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MOSQUE</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CATHEDRAL</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MOSQUE</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_CATHEDRAL</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_CATHEDRAL</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GURDWARA</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_CATHEDRAL</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_GURDWARA</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_CATHEDRAL</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_SYNAGOGUE</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_GURDWARA</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_SYNAGOGUE</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_GURDWARA</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MITHRAEUM</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_GURDWARA</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MITHRAEUM</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_SYNAGOGUE</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_VIHARA</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_SYNAGOGUE</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_VIHARA</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_SYNAGOGUE</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MANDIR</BuildingClassType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MITHRAEUM</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MITHRAEUM</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MITHRAEUM</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_VIHARA</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_VIHARA</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_VIHARA</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MANDIR</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MANDIR</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_ZACRED_SITES</BeliefType> 
-			<BuildingClassType>BUILDINGCLASS_MANDIR</BuildingClassType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<YieldChange>2</YieldChange> 
+		<Row>
+			<BeliefType>BELIEF_ZACRED_SITES</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_MANDIR</BuildingClassType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<YieldChange>3</YieldChange>
 		</Row>
 		<Row> 
 			<BeliefType>BELIEF_WAR</BeliefType> 
@@ -28693,7 +28645,8 @@
 		<Column name="SpreadModifierUnownedCities" type="INTEGER"  default="0"/>
 		<Column name="GoldenAgeTurns" type="INTEGER"  default="0"/>
 		<Column name="NumFreeSettlers" type="INTEGER"  default="0"/>
-	</Table> 
+		<Column name="FreeCapitalBuildingClass" type="text"  default="NULL"/>
+	</Table>
 	<Beliefs>
 		<Delete />
 
@@ -32743,11 +32696,12 @@
 			<MissionaryExtraSpreads>0</MissionaryExtraSpreads> 
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
-			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities>
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<FreeCapitalBuildingClass>BUILDINGCLASS_VIHARA</FreeCapitalBuildingClass>
 		</Row>
-		<Row> 
-			<ID>99</ID> 
+		<Row>
+			<ID>99</ID>
 			<Type>BELIEF_TEARS_OF_NOOBS</Type> 
 			<Description>TXT_KEY_BELIEF_TEARS_OF_NOOBS</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_TEARS_OF_NOOBS_SHORT</ShortDescription> 

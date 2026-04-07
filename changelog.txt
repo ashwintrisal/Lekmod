@@ -13,6 +13,16 @@ DISABLED BELIEFS (hidden from UI, kept in DB for save compatibility)
 - Initiation Rites (BELIEF_INITIATION_RITES): founder
 
 
+SACRED SITES (BELIEF_ZACRED_SITES)
+------------------------------------
+Reformation belief. +3 Gold and +3 Faith per religious building (purchased with Faith). Free Vihara in founder's capital.
+- Changed: YIELD_CULTURE removed from Belief_BuildingClassYieldChanges for all 8 building classes (Pagoda, Mosque, Cathedral, Gurdwara, Synagogue, Mithraeum, Vihara, Mandir)
+- Changed: YIELD_GOLD 2 -> 3 for all 8 building classes
+- Changed: YIELD_FAITH 2 -> 3 for all 8 building classes
+- Added: FreeCapitalBuildingClass=BUILDINGCLASS_VIHARA (new DLL field; granted via DoReligionOneShots on reformation belief adoption)
+- New DLL field: FreeCapitalBuildingClass column in Beliefs table; CvBeliefEntry::GetFreeCapitalBuildingClass(); CvReligionBeliefs::GetFreeCapitalBuildingClass(); granted in CvPlayer::DoReligionOneShots under LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+
+
 ANCIENT RUINS (GOODY HUT) OVERHAUL
 ====================================
 All ruin rewards are now era-scaled. New DLL columns added to GoodyHuts table.

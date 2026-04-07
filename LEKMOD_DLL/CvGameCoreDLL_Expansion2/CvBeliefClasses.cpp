@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -81,6 +81,9 @@ CvBeliefEntry::CvBeliefEntry() :
 	m_iFaithBuildingTourism(0),
 #ifdef NQ_FREE_SETTLERS_FROM_BELIEF
 	m_iNumFreeSettlers(0),
+#endif
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	m_eFreeCapitalBuildingClass(NO_BUILDINGCLASS),
 #endif
 
 	m_bPantheon(false),
@@ -462,6 +465,14 @@ int CvBeliefEntry::GetFaithBuildingTourism() const
 int CvBeliefEntry::GetNumFreeSettlers() const
 {
 	return m_iNumFreeSettlers;
+}
+#endif
+
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+/// Accessor: which building class is granted for free in the capital when this belief is adopted?
+BuildingClassTypes CvBeliefEntry::GetFreeCapitalBuildingClass() const
+{
+	return m_eFreeCapitalBuildingClass;
 }
 #endif
 
@@ -862,6 +873,10 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_eResourceRevealed				  = (ResourceTypes)GC.getInfoTypeForString(szTextVal, true);
 	szTextVal						  = kResults.GetText("SpreadModifierDoublingTech");
 	m_eSpreadModifierDoublingTech     = (TechTypes)GC.getInfoTypeForString(szTextVal, true);
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	szTextVal						  = kResults.GetText("FreeCapitalBuildingClass");
+	m_eFreeCapitalBuildingClass		  = (BuildingClassTypes)GC.getInfoTypeForString(szTextVal, true);
+#endif
 
 	//Arrays
 	const char* szBeliefType = GetType();
@@ -1191,6 +1206,9 @@ CvReligionBeliefs::CvReligionBeliefs(const CvReligionBeliefs& source)
 	m_eObsoleteEra = source.m_eObsoleteEra;
 	m_eResourceRevealed = source.m_eResourceRevealed;
 	m_eSpreadModifierDoublingTech = source.m_eSpreadModifierDoublingTech;
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	m_eFreeCapitalBuildingClass = source.m_eFreeCapitalBuildingClass;
+#endif
 
 	m_ReligionBeliefs = source.m_ReligionBeliefs;
 
@@ -1270,6 +1288,9 @@ void CvReligionBeliefs::Reset()
 	m_eObsoleteEra = NO_ERA;
 	m_eResourceRevealed = NO_RESOURCE;
 	m_eSpreadModifierDoublingTech = NO_TECH;
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	m_eFreeCapitalBuildingClass = NO_BUILDINGCLASS;
+#endif
 
 	m_ReligionBeliefs.clear();
 
@@ -1354,6 +1375,10 @@ void CvReligionBeliefs::AddBelief(BeliefTypes eBelief)
 
 	m_eObsoleteEra = belief->GetObsoleteEra();
 	m_eResourceRevealed = belief->GetResourceRevealed();
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	if (belief->GetFreeCapitalBuildingClass() != NO_BUILDINGCLASS)
+		m_eFreeCapitalBuildingClass = belief->GetFreeCapitalBuildingClass();
+#endif
 
 #ifdef AUI_WARNING_FIXES
 	for (uint iI = 0; iI < GC.getNumBuildingClassInfos(); iI++)
@@ -1985,6 +2010,14 @@ int CvReligionBeliefs::GetNumFreeSettlers() const
 }
 #endif
 
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+/// Get the building class to grant for free in the capital (first one found among active beliefs)
+BuildingClassTypes CvReligionBeliefs::GetFreeCapitalBuildingClass() const
+{
+	return m_eFreeCapitalBuildingClass;
+}
+#endif
+
 /// Does this belief allow a building to be constructed?
 bool CvReligionBeliefs::IsBuildingClassEnabled(BuildingClassTypes eType) const
 {
@@ -2153,6 +2186,16 @@ void CvReligionBeliefs::Read(FDataStream& kStream)
 	kStream >> m_eObsoleteEra;
 	kStream >> m_eResourceRevealed;
 	kStream >> m_eSpreadModifierDoublingTech;
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	if (uiVersion >= 3)
+	{
+		kStream >> m_eFreeCapitalBuildingClass;
+	}
+	else
+	{
+		m_eFreeCapitalBuildingClass = NO_BUILDINGCLASS;
+	}
+#endif
 
 	m_ReligionBeliefs.clear();
 	uint uiBeliefCount;
@@ -2170,7 +2213,7 @@ void CvReligionBeliefs::Read(FDataStream& kStream)
 void CvReligionBeliefs::Write(FDataStream& kStream) const
 {
 	// Current version number
-	uint uiVersion = 2;
+	uint uiVersion = 3;
 	kStream << uiVersion;
 
 	kStream << m_iFaithFromDyingUnits;
@@ -2222,6 +2265,9 @@ void CvReligionBeliefs::Write(FDataStream& kStream) const
 	kStream << m_eObsoleteEra;
 	kStream << m_eResourceRevealed;
 	kStream << m_eSpreadModifierDoublingTech;
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	kStream << m_eFreeCapitalBuildingClass;
+#endif
 
 	// m_ReligionBeliefs contains the BeliefTypes, which are indices into the religion info table (GC.getBeliefInfo).  Write out the info hashes
 	kStream << m_ReligionBeliefs.size();

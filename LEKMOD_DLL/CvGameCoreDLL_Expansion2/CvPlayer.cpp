@@ -13936,6 +13936,24 @@ void CvPlayer::DoReligionOneShots(ReligionTypes eReligion)
 	}
 #endif
 
+#ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
+	{
+		BuildingClassTypes eFreeCapBuildClass = pReligion->m_Beliefs.GetFreeCapitalBuildingClass();
+		if (eFreeCapBuildClass != NO_BUILDINGCLASS)
+		{
+			CvCity* pCapital = getCapitalCity();
+			if (pCapital != NULL)
+			{
+				BuildingTypes eFreeCapBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eFreeCapBuildClass);
+				if (eFreeCapBuilding != NO_BUILDING && pCapital->GetCityBuildings()->GetNumBuilding(eFreeCapBuilding) == 0)
+				{
+					pCapital->GetCityBuildings()->SetNumFreeBuilding(eFreeCapBuilding, 1);
+				}
+			}
+		}
+	}
+#endif
+
 	if (setUnitReligion)
 	{
 		// make sure free religious units are of this religion (if they haven't had one assigned already)
