@@ -205,6 +205,7 @@
 			<IconAtlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</IconAtlas>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
 			<PediaEntry>TXT_KEY_PROMOTION_CARPET_BOMBING</PediaEntry>
+			<CarpetBombing>true</CarpetBombing>
 		</Row>
 
 		<Row>
@@ -397,7 +398,7 @@
 		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Each attack also deals 10 damage to all non-air units and civilians in the city.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
-		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>TODO</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles. City State units hit trigger an automatic declaration of war. Splash damage is reduced proportionally if the bomber is intercepted.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE"><Text>Discipline</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_HELP"><Text>+50% [ICON_EXPERIENCE] Experience gained (non-air units).</Text></Row>

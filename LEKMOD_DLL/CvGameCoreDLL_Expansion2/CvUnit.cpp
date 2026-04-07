@@ -1103,6 +1103,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iMaxMovesAfterDomainChange = 0;
 	m_iHealWhileEmbarkedCount = 0;
 	m_iCanCrossMountainsCount = 0;
+	m_iCarpetBombingCount = 0;
 
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_iLandUnitReceivesMovementCount = 0;
@@ -19385,6 +19386,18 @@ void CvUnit::ChangeCanCrossMountainsCount(int iChange)
 	m_iCanCrossMountainsCount += iChange;
 }
 
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsCarpetBombing() const
+{
+	return m_iCarpetBombingCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCarpetBombingCount(int iChange)
+{
+	m_iCarpetBombingCount += iChange;
+}
+
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsLandUnitReceivesMovement() const
@@ -21483,6 +21496,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeHealOnPillageCount((thisPromotion.IsHealOnPillage()) ? iChange : 0);
 		changeFreePillageMoveCount((thisPromotion.IsFreePillageMoves()) ? iChange: 0);
 		changePillageChange(thisPromotion.GetPillageChange() * iChange);
+		ChangeCarpetBombingCount((thisPromotion.IsCarpetBombing()) ? iChange : 0);
 		ChangeEmbarkAllWaterCount((thisPromotion.IsEmbarkedAllWater()) ? iChange: 0);
 		ChangeCityAttackOnlyCount((thisPromotion.IsCityAttackOnly()) ? iChange: 0);
 		ChangeCaptureDefeatedEnemyCount((thisPromotion.IsCaptureDefeatedEnemy()) ? iChange: 0);
@@ -21951,6 +21965,7 @@ void CvUnit::read(FDataStream& kStream)
 	kStream >> m_iHealWhileEmbarkedCount;
 	kStream >> m_iCitySplashDamage;
 	kStream >> m_iCanCrossMountainsCount;
+	kStream >> m_iCarpetBombingCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22138,6 +22153,7 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iHealWhileEmbarkedCount;
 	kStream << m_iCitySplashDamage;
 	kStream << m_iCanCrossMountainsCount;
+	kStream << m_iCarpetBombingCount;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

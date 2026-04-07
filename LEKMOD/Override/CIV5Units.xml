@@ -229889,6 +229889,7 @@
 		<Column name="PillageChange" type="integer" default="0"/>
 		<Column name="CitySplashDamage" type="integer" default="0"/>
 		<Column name="CanCrossMountains" type="boolean" default="0"/>
+		<Column name="CarpetBombing" type="boolean" default="0"/>
 	</Table>
 	<UnitPromotions>
 		<Delete />
@@ -272052,6 +272053,11 @@
 			<PromotionType>PROMOTION_MOUNTAINEERING</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ALTITUDE_TRAINING</PrerequisitePromotion>
 		</Row>
+		<!-- Carpet Bombing -->
+		<Row>
+			<PromotionType>PROMOTION_CARPET_BOMBING</PromotionType>
+			<PrerequisitePromotion>PROMOTION_BOMBARDMENT_2</PrerequisitePromotion>
+		</Row>
 		<!-- Bunker Busting -->
 		<Row>
 			<PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType>
@@ -273932,6 +273938,7 @@
 		<!-- Bunker Busting: siege, bomber -->
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_CARPET_BOMBING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
 		<!-- Envelopment: melee, gunpowder, mounted, armor -->
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>

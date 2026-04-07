@@ -1986,6 +1986,30 @@ void CvUnitCombat::ResolveAirUnitVsCombat(const CvCombatInfo& kCombatInfo, uint 
 					pkAttacker->changeDamage(iDefenderDamageInflicted, pkDefender->getOwner());
 					pkDefender->changeDamage(iAttackerDamageInflicted, pkAttacker->getOwner());
 
+					// Carpet Bombing: 20% splash to adjacent non-air units
+					if (pkAttacker->IsCarpetBombing() && iAttackerDamageInflicted > 0)
+					{
+						int iCarpetSplash = std::max(1, iAttackerDamageInflicted * 20 / 100);
+						for (int iDirLoop = 0; iDirLoop < NUM_DIRECTION_TYPES; iDirLoop++)
+						{
+							CvPlot* pAdjPlot = plotDirection(pkTargetPlot->getX(), pkTargetPlot->getY(), (DirectionTypes)iDirLoop);
+							if (!pAdjPlot) continue;
+							for (int iUnitLoop = pAdjPlot->getNumUnits() - 1; iUnitLoop >= 0; iUnitLoop--)
+							{
+								CvUnit* pCarpetUnit = pAdjPlot->getUnitByIndex(iUnitLoop);
+								if (!pCarpetUnit || pCarpetUnit->getDomainType() == DOMAIN_AIR) continue;
+								if (pkAttacker->getTeam() != pCarpetUnit->getTeam()
+									&& !GET_TEAM(pkAttacker->getTeam()).isAtWar(pCarpetUnit->getTeam()))
+								{
+									if (GET_PLAYER(pCarpetUnit->getOwner()).isMinorCiv())
+										GET_TEAM(pkAttacker->getTeam()).declareWar(pCarpetUnit->getTeam());
+									// Major civ not at war: damage without declaration
+								}
+								pCarpetUnit->changeDamage(iCarpetSplash, pkAttacker->getOwner());
+							}
+						}
+					}
+
 					// Update experience
 					pkDefender->changeExperience(
 					    kCombatInfo.getExperience(BATTLE_UNIT_DEFENDER),
@@ -2109,6 +2133,30 @@ void CvUnitCombat::ResolveAirUnitVsCombat(const CvCombatInfo& kCombatInfo, uint 
 							if (pSplashUnit && pSplashUnit->getDomainType() != DOMAIN_AIR)
 							{
 								pSplashUnit->changeDamage(iSplash, pkAttacker->getOwner());
+							}
+						}
+					}
+
+					// Carpet Bombing: 20% splash to adjacent non-air units
+					if (pkAttacker->IsCarpetBombing() && iAttackerDamageInflicted > 0)
+					{
+						int iCarpetSplash = std::max(1, iAttackerDamageInflicted * 20 / 100);
+						for (int iDirLoop = 0; iDirLoop < NUM_DIRECTION_TYPES; iDirLoop++)
+						{
+							CvPlot* pAdjPlot = plotDirection(pkTargetPlot->getX(), pkTargetPlot->getY(), (DirectionTypes)iDirLoop);
+							if (!pAdjPlot) continue;
+							for (int iUnitLoop = pAdjPlot->getNumUnits() - 1; iUnitLoop >= 0; iUnitLoop--)
+							{
+								CvUnit* pCarpetUnit = pAdjPlot->getUnitByIndex(iUnitLoop);
+								if (!pCarpetUnit || pCarpetUnit->getDomainType() == DOMAIN_AIR) continue;
+								if (pkAttacker->getTeam() != pCarpetUnit->getTeam()
+									&& !GET_TEAM(pkAttacker->getTeam()).isAtWar(pCarpetUnit->getTeam()))
+								{
+									if (GET_PLAYER(pCarpetUnit->getOwner()).isMinorCiv())
+										GET_TEAM(pkAttacker->getTeam()).declareWar(pCarpetUnit->getTeam());
+									// Major civ not at war: damage without declaration
+								}
+								pCarpetUnit->changeDamage(iCarpetSplash, pkAttacker->getOwner());
 							}
 						}
 					}

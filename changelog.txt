@@ -148,6 +148,17 @@ Requires (any): Shock 2, Drill 2, Amphibious 2.
 - Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
 
 
+CARPET BOMBING (PROMOTION_CARPET_BOMBING)
+------------------------------------------
+NEW. Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles (including friendlies).
+Eligible: bombers (UNITCOMBAT_BOMBER).
+Requires: Bombardment 2.
+- Added: CarpetBombing=true (new DLL field)
+- War declaration: hitting a City State unit triggers declareWar(); hitting a major civ unit not at war deals damage without declaration
+- Interception: iAttackerDamageInflicted is already interception-adjusted before splash is computed, so reduced bombing naturally reduces splash
+- Splash fires in ResolveAirUnitVsCombat for both city-target and unit-target branches
+
+
 WOODSMAN (PROMOTION_WOODSMAN)
 ------------------------------
 Double movement in forest and jungle. +15% attack and defense in forest and jungle.
