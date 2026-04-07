@@ -286,16 +286,10 @@
 			<PediaEntry>TXT_KEY_PROMOTION_FEAR_AURA</PediaEntry>
 		</Row>
 
-		<Row>
-			<Type>PROMOTION_FEARED_ELEPHANT</Type>
-			<Description>TXT_KEY_PROMOTION_FEARED_ELEPHANT</Description>
-			<Help>TXT_KEY_PROMOTION_FEARED_ELEPHANT_HELP</Help>
-			<Sound>AS2D_IF_LEVELUP</Sound>
-			<PortraitIndex>0</PortraitIndex>
-			<IconAtlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</IconAtlas>
-			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_FEARED_ELEPHANT</PediaEntry>
-		</Row>
+		<Update>
+			<Set PortraitIndex="0" IconAtlas="LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS"/>
+			<Where Type="PROMOTION_FEARED_ELEPHANT"/>
+		</Update>
 
 		<Row>
 			<Type>PROMOTION_HATAMOTO</Type>
