@@ -272053,6 +272053,11 @@
 			<PromotionType>PROMOTION_MOUNTAINEERING</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ALTITUDE_TRAINING</PrerequisitePromotion>
 		</Row>
+		<!-- Sapper (Naval) -->
+		<Row>
+			<PromotionType>PROMOTION_SAMBUCA</PromotionType>
+			<PrerequisitePromotion>PROMOTION_COASTAL_RAIDER_1</PrerequisitePromotion>
+		</Row>
 		<!-- Carpet Bombing -->
 		<Row>
 			<PromotionType>PROMOTION_CARPET_BOMBING</PromotionType>
@@ -273939,6 +273944,7 @@
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_CARPET_BOMBING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_SAMBUCA</PromotionType><UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType></Row>
 		<!-- Envelopment: melee, gunpowder, mounted, armor -->
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_GUN</UnitCombatType></Row>

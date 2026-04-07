@@ -148,6 +148,18 @@ Requires (any): Shock 2, Drill 2, Amphibious 2.
 - Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
 
 
+SAMBUCA (PROMOTION_SAMBUCA)
+---------------------------------
+NEW. Naval melee variant of the Assyrian Siege Tower's Sapper promotion.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+Requires: Coastal Raider I (PROMOTION_COASTAL_RAIDER_1).
+Effects: Sapper=true (reduces enemy city defense), -33% Combat Strength on defense, -1 Movement.
+- Note: PROMOTION_SAPPER (Siege Tower) is unchanged; this is a separate choosable promotion
+  with a different display name but with balance penalties for the naval melee context.
+- Penalties are built into PROMOTION_SAMBUCA; no separate PROMOTION_PENALTY_ON_DEFENSE
+  was created (vanilla Civ5 has no promotion-level FreePromotion field to auto-grant one).
+
+
 CARPET BOMBING (PROMOTION_CARPET_BOMBING)
 ------------------------------------------
 NEW. Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles (including friendlies).

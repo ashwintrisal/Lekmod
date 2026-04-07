@@ -197,6 +197,20 @@
 		</Row>
 
 		<Row>
+			<Type>PROMOTION_SAMBUCA</Type>
+			<Description>TXT_KEY_PROMOTION_SAMBUCA</Description>
+			<Help>TXT_KEY_PROMOTION_SAMBUCA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>6</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SAMBUCA</PediaEntry>
+			<Sapper>true</Sapper>
+			<DefenseMod>-33</DefenseMod>
+			<MovesChange>-1</MovesChange>
+		</Row>
+
+		<Row>
 			<Type>PROMOTION_CARPET_BOMBING</Type>
 			<Description>TXT_KEY_PROMOTION_CARPET_BOMBING</Description>
 			<Help>TXT_KEY_PROMOTION_CARPET_BOMBING_HELP</Help>
@@ -396,6 +410,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING"><Text>Bunker Busting</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Each attack also deals 10 damage to all non-air units and civilians in the city.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA"><Text>Sambuca</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA_HELP"><Text>Reduces enemy [ICON_STRENGTH] Combat Strength when attacking cities. -1 [ICON_MOVES] Movement. -33% [ICON_STRENGTH] Combat Strength on defense. Eligible: naval melee. Requires Coastal Raider I.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles. City State units hit trigger an automatic declaration of war. Splash damage is reduced proportionally if the bomber is intercepted.</Text></Row>
