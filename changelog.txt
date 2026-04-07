@@ -148,6 +148,15 @@ Requires (any): Shock 2, Drill 2, Amphibious 2.
 - Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
 
 
+REPAIR CREW (PROMOTION_REPAIR_CREW)
+--------------------------------------
+NEW. Aircraft based on this carrier heal +15 HP per turn when skipping a turn or with Air Repair.
+Eligible: carriers (UNITCOMBAT_CARRIER).
+Requires (any): Flight Deck II (PROMOTION_FLIGHT_DECK_2), Armor Plating II (PROMOTION_ARMOR_PLATING_2).
+- Added: SameTileHealChange=15 (existing vanilla field; picked up by air unit healRate() with no domain filter)
+- No DLL changes needed
+
+
 SAMBUCA (PROMOTION_SAMBUCA)
 ---------------------------------
 NEW. Naval melee variant of the Assyrian Siege Tower's Sapper promotion.

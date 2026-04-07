@@ -272053,6 +272053,15 @@
 			<PromotionType>PROMOTION_MOUNTAINEERING</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ALTITUDE_TRAINING</PrerequisitePromotion>
 		</Row>
+		<!-- Repair Crew -->
+		<Row>
+			<PromotionType>PROMOTION_REPAIR_CREW</PromotionType>
+			<PrerequisitePromotion>PROMOTION_FLIGHT_DECK_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_REPAIR_CREW</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
+		</Row>
 		<!-- Sapper (Naval) -->
 		<Row>
 			<PromotionType>PROMOTION_SAMBUCA</PromotionType>
@@ -273944,6 +273953,7 @@
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_BUNKER_BUSTING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_CARPET_BOMBING</PromotionType><UnitCombatType>UNITCOMBAT_BOMBER</UnitCombatType></Row>
+		<Row><PromotionType>PROMOTION_REPAIR_CREW</PromotionType><UnitCombatType>UNITCOMBAT_CARRIER</UnitCombatType></Row>
 		<Row><PromotionType>PROMOTION_SAMBUCA</PromotionType><UnitCombatType>UNITCOMBAT_NAVALMELEE</UnitCombatType></Row>
 		<!-- Envelopment: melee, gunpowder, mounted, armor -->
 		<Row><PromotionType>PROMOTION_ENVELOPMENT</PromotionType><UnitCombatType>UNITCOMBAT_MELEE</UnitCombatType></Row>

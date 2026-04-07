@@ -197,6 +197,18 @@
 		</Row>
 
 		<Row>
+			<Type>PROMOTION_REPAIR_CREW</Type>
+			<Description>TXT_KEY_PROMOTION_REPAIR_CREW</Description>
+			<Help>TXT_KEY_PROMOTION_REPAIR_CREW_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>9</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_REPAIR_CREW</PediaEntry>
+			<SameTileHealChange>15</SameTileHealChange>
+		</Row>
+
+		<Row>
 			<Type>PROMOTION_SAMBUCA</Type>
 			<Description>TXT_KEY_PROMOTION_SAMBUCA</Description>
 			<Help>TXT_KEY_PROMOTION_SAMBUCA_HELP</Help>
@@ -410,6 +422,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING"><Text>Bunker Busting</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Each attack also deals 10 damage to all non-air units and civilians in the city.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW"><Text>Repair Crew</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW_HELP"><Text>Aircraft based on this carrier heal +15 [ICON_HEALING] HP per turn when skipping a turn or with the Air Repair promotion. Requires Flight Deck II or Armor Plating II.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA"><Text>Sambuca</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA_HELP"><Text>Reduces enemy [ICON_STRENGTH] Combat Strength when attacking cities. -1 [ICON_MOVES] Movement. -33% [ICON_STRENGTH] Combat Strength on defense. Eligible: naval melee. Requires Coastal Raider I.</Text></Row>
