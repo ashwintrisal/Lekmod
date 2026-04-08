@@ -307983,10 +307983,10 @@
 			<DontShowYields>false</DontShowYields>
 			<ShowInPedia>true</ShowInPedia>
 			<MoveRate>WOODEN_BOAT</MoveRate>
-			<UnitFlagIconOffset>3</UnitFlagIconOffset>
+			<UnitFlagIconOffset>2</UnitFlagIconOffset>
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>TECH_ATLAS_DLC_03</IconAtlas>
-			<UnitFlagAtlas>KAMEHAMEHA_CIV_COLOR_ATLAS</UnitFlagAtlas>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
 		</Row>
 	</Units>
 	
