@@ -28661,6 +28661,7 @@
 		<Column name="SpyFromRenaissance" type="boolean"  default="0"/>
 		<Column name="InvisibleMissionary" type="boolean"  default="0"/>
 		<Column name="NonDominantFollowerYield" type="boolean"  default="0"/>
+		<Column name="JustWarMissionaryBuff" type="boolean"  default="0"/>
 	</Table>
 	<Table name="Belief_FaithPurchaseUnitClass">
 		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
@@ -29835,7 +29836,7 @@
 			<HappinessPerXPeacefulForeignFollowers>0</HappinessPerXPeacefulForeignFollowers> 
 			<PlotCultureCostModifier>0</PlotCultureCostModifier> 
 			<CityRangeStrikeModifier>0</CityRangeStrikeModifier> 
-			<CombatModifierEnemyCities>20</CombatModifierEnemyCities> 
+			<CombatModifierEnemyCities>15</CombatModifierEnemyCities>
 			<CombatModifierFriendlyCities>0</CombatModifierFriendlyCities> 
 			<FriendlyHealChange>0</FriendlyHealChange> 
 			<CityStateFriendshipModifier>0</CityStateFriendshipModifier> 
@@ -29864,11 +29865,12 @@
 			<MissionaryExtraSpreads>0</MissionaryExtraSpreads> 
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
-			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities>
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<JustWarMissionaryBuff>true</JustWarMissionaryBuff>
 		</Row>
-		<Row> 
-			<ID>34</ID> 
+		<Row>
+			<ID>34</ID>
 			<Type>BELIEF_DEFENDER_FAITH</Type> 
 			<Description>TXT_KEY_BELIEF_DEFENDER_FAITH</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_DEFENDER_FAITH_SHORT</ShortDescription> 

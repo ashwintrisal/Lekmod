@@ -757,6 +757,36 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 		}
 	}
 #endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	// Give missionaries prophet conversion strength and +1 movement if the founded religion has the Just War belief
+	if (getUnitInfo().IsSpreadReligion())
+	{
+		UnitClassTypes eMissionaryClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MISSIONARY", true);
+		if (eMissionaryClass != NO_UNITCLASS && getUnitClassType() == eMissionaryClass)
+		{
+			CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+			ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(kPlayer.GetID());
+			if (eFoundedReligion > RELIGION_PANTHEON)
+			{
+				const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+				if (pReligion && pReligion->m_Beliefs.IsJustWarMissionaryBuff())
+				{
+					// Override conversion strength to great prophet level
+					UnitTypes eProphetUnit = (UnitTypes)GC.getInfoTypeForString("UNIT_GREAT_PROPHET", true);
+					if (eProphetUnit != NO_UNIT)
+					{
+						CvUnitEntry* pProphetInfo = GC.getUnitInfo(eProphetUnit);
+						if (pProphetInfo)
+							GetReligionData()->SetReligiousStrength(pProphetInfo->GetReligiousStrength());
+					}
+					// +1 movement (setMoves ran before this block, so update both max and remaining)
+					changeExtraMoves(1);
+					changeMoves(GC.getMOVE_DENOMINATOR());
+				}
+			}
+		}
+	}
+#endif
 
 	if (getUnitInfo().GetOneShotTourism() > 0)
 	{

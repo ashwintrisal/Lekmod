@@ -97,6 +97,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 	m_bNonDominantFollowerYield(false),
 #endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	m_bJustWarMissionaryBuff(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -532,6 +535,13 @@ bool CvBeliefEntry::IsNonDominantFollowerYield() const
 	return m_bNonDominantFollowerYield;
 }
 #endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+/// Accessor: does this belief give missionaries prophet conversion strength and +1 movement?
+bool CvBeliefEntry::IsJustWarMissionaryBuff() const
+{
+	return m_bJustWarMissionaryBuff;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -945,6 +955,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 	m_bNonDominantFollowerYield		  = kResults.GetBool("NonDominantFollowerYield");
+#endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	m_bJustWarMissionaryBuff		  = kResults.GetBool("JustWarMissionaryBuff");
 #endif
 
 	//Arrays
@@ -2154,6 +2167,18 @@ bool CvReligionBeliefs::IsNonDominantFollowerYield() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsNonDominantFollowerYield())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+bool CvReligionBeliefs::IsJustWarMissionaryBuff() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsJustWarMissionaryBuff())
 			return true;
 	}
 	return false;

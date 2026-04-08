@@ -110,6 +110,9 @@ public:
 #ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 	bool IsNonDominantFollowerYield() const;
 #endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	bool IsJustWarMissionaryBuff() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -241,6 +244,9 @@ protected:
 #endif
 #ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 	bool m_bNonDominantFollowerYield;
+#endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	bool m_bJustWarMissionaryBuff;
 #endif
 
 	bool m_bPantheon;
@@ -571,6 +577,9 @@ public:
 #endif
 #ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 	bool IsNonDominantFollowerYield() const;
+#endif
+#ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
+	bool IsJustWarMissionaryBuff() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

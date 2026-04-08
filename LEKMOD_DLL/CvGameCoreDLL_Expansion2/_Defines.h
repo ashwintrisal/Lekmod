@@ -1165,6 +1165,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_INVISIBLE_MISSIONARY_BELIEF
 // Underground Sect: +2 science +2 gold per city where the religion has followers but is not the majority
 #define LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+// Just War: missionaries get prophet conversion strength and +1 movement
+#define LEKMOD_JUST_WAR_MISSIONARY_BUFF
 
 
 

@@ -15955,9 +15955,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Jesuit Education
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_JUST_WAR"> 
+		<Replace Tag="TXT_KEY_BELIEF_JUST_WAR">
 			<Text>
-				+20% [ICON_STRENGTH] Combat Strength near enemy cities that follow this [COLOR_POSITIVE_TEXT]Religion[ENDCOLOR]
+				+15% [ICON_STRENGTH] Combat Strength near enemy cities that follow this [COLOR_POSITIVE_TEXT]Religion[ENDCOLOR]. Your [COLOR_POSITIVE_TEXT]Missionaries[ENDCOLOR] have the conversion strength of [COLOR_POSITIVE_TEXT]Great Prophets[ENDCOLOR] and +1 [ICON_MOVES] Movement.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_JUST_WAR_SHORT"> 

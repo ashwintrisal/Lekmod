@@ -55,6 +55,14 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 - New DLL: NonDominantFollowerYield column in Beliefs table; loops all cities every turn checking GetNumFollowers > 0 && GetReligiousMajority != foundedReligion
 
 
+JUST WAR (BELIEF_JUST_WAR)
+--------------------------
+Enhancer belief.
+- Changed: CombatModifierEnemyCities 20 → 15
+- Added: missionaries of the founded religion gain the conversion strength of a Great Prophet and +1 [ICON_MOVES] Movement
+- New DLL: LEKMOD_JUST_WAR_MISSIONARY_BUFF — JustWarMissionaryBuff column in Beliefs table; applied in CvUnit::initWithNameOffset for UNITCLASS_MISSIONARY; overrides GetReligionData()->SetReligiousStrength() with UNIT_GREAT_PROPHET's value and calls changeExtraMoves(1) + changeMoves(MOVE_DENOMINATOR)
+
+
 HOUSES OF WORSHIP (BELIEF_HOUSES_OF_WORSHIP)
 ---------------------------------------------
 Enhancer belief. Use 100 Faith (quick speed) to purchase one of three unique buildings in any city.
