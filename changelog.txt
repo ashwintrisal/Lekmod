@@ -123,7 +123,7 @@ ASCETIC DISCIPLINE (BELIEF_ASCETIC_DISCIPLINE)
 NEW follower belief.
 - Effect: Shrines yield -1 Food, -1 Gold, +2 Production; whenever a city loses population through starvation, gain 20 Faith
 - Building yields: Belief_BuildingClassYieldChanges rows (XML only)
-- Starvation faith: New DLL LEKMOD_ASCETIC_DISCIPLINE_BELIEF (pending)
+- Starvation faith: LEKMOD_ASCETIC_DISCIPLINE_BELIEF hook in CvCity::doGrowth; on starvation pop loss checks capital belief via GetReligiousMajority() and calls ChangeFaith(20)
 
 
 KIN FORGED IN BLOOD (BELIEF_KIN_FORGED_IN_BLOOD)

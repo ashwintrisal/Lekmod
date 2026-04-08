@@ -17024,6 +17024,19 @@ void CvCity::doGrowth()
 			changeFoodTimes100(iNewDiff);
 			changeFoodKept(iNewDiff / 100);
 #endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+			{
+				ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
+				if (eMajority != NO_RELIGION)
+				{
+					const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
+					if (pReligion && pReligion->m_Beliefs.IsAsceticDiscipline())
+					{
+						GET_PLAYER(getOwner()).ChangeFaith(20);
+					}
+				}
+			}
+#endif
 		}
 	}
 }
