@@ -16280,6 +16280,186 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Mandate of God
 			</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_XIAN">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Enhancer Belief)[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith from [COLOR_POSITIVE_TEXT]Strategic Resources[ENDCOLOR] ([ICON_RES_IRON], [ICON_RES_HORSE], [ICON_RES_COAL], [ICON_RES_OIL], [ICON_RES_ALUMINUM], [ICON_RES_URANIUM]).
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_XIAN_SHORT">
+			<Text>
+				Xian
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_CHARTER_OF_SETTLEMENT">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Founder Belief)[ENDCOLOR][NEWLINE]One-time: +150 [ICON_CULTURE] Culture and +150 [ICON_GOLD] Gold. Every city expands its borders by 2 tiles.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_CHARTER_OF_SETTLEMENT_SHORT">
+			<Text>
+				Charter of Settlement
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SANCTUARY">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Follower Belief)[ENDCOLOR][NEWLINE]Allows construction of the [COLOR_POSITIVE_TEXT]Sanctuary[ENDCOLOR] ([ICON_PEACE]220 [ICON_PEACE] Faith). Sanctuary: +2 [ICON_HAPPINESS_1] Happiness, +2 [ICON_CULTURE] Culture.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SANCTUARY_SHORT">
+			<Text>
+				Sanctuary
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_SANCTUARY">
+			<Text>
+				Sanctuary
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_SANCTUARY_HELP">
+			<Text>
+				+2 [ICON_HAPPINESS_1] Happiness, +2 [ICON_CULTURE] Culture. Requires [COLOR_POSITIVE_TEXT]Sanctuary[ENDCOLOR] Belief.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_STUPA">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Follower Belief)[ENDCOLOR][NEWLINE]Allows construction of the [COLOR_POSITIVE_TEXT]Stupa[ENDCOLOR] (100 [ICON_PEACE] Faith). Stupa: +2 [ICON_FOOD] Food, +1 [ICON_HAPPINESS_1] Happiness.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_STUPA_SHORT">
+			<Text>
+				Stupa
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_STUPA">
+			<Text>
+				Stupa
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_STUPA_HELP">
+			<Text>
+				+2 [ICON_FOOD] Food, +1 [ICON_HAPPINESS_1] Happiness. Requires [COLOR_POSITIVE_TEXT]Stupa[ENDCOLOR] Belief.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_KIN_FORGED_IN_BLOOD">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]Clearing a [COLOR_POSITIVE_TEXT]Barbarian Encampment[ENDCOLOR] yields +1 [ICON_CITIZEN] Population in the [ICON_CAPITAL] Capital and 40 [ICON_PEACE] Faith. All units receive the [COLOR_POSITIVE_TEXT]Zealot[ENDCOLOR] Promotion.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_KIN_FORGED_IN_BLOOD_SHORT">
+			<Text>
+				Kin Forged in Blood
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_PILLARS_OF_HEAVEN">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+3 [ICON_PEACE] Faith and +1 [ICON_FOOD] Food for each city [COLOR_POSITIVE_TEXT]adjacent to a Mountain[ENDCOLOR].
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_PILLARS_OF_HEAVEN_SHORT">
+			<Text>
+				Pillars of Heaven
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SONGS_OF_LEVIATHAN">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+2 [ICON_PEACE] Faith from [ICON_RES_WHALE] Whales. [COLOR_POSITIVE_TEXT]Internal Trade Routes[ENDCOLOR] originating from the [ICON_CAPITAL] Capital yield +2 [ICON_CULTURE] Culture in the receiving city.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SONGS_OF_LEVIATHAN_SHORT">
+			<Text>
+				Songs of the Leviathan
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_MANGROVE_MYSTERIES">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith from [ICON_RES_FOREST] Forest and [ICON_RES_FISH] Fish. [ICON_RES_CORAL] Coral and [ICON_RES_PEARL] Pearls yield +1 [ICON_PRODUCTION] Production and +2 [ICON_RESEARCH] Science if adjacent to a city and a Forest tile.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_MANGROVE_MYSTERIES_SHORT">
+			<Text>
+				Mangrove Mysteries
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_HARVEST_CONFLUENCE">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from [ICON_RES_COW] Cattle, [ICON_RES_BISON] Bison, and [ICON_RES_CRAB] Crabs. +1 [ICON_GOLD] Gold from [ICON_RES_FISH] Fish and [ICON_RES_BANANA] Bananas.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_HARVEST_CONFLUENCE_SHORT">
+			<Text>
+				Harvest Confluence
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_TIDES_CALLING">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]The [COLOR_POSITIVE_TEXT]coastal[ENDCOLOR] [ICON_CAPITAL] Capital yields +1 [ICON_PEACE] Faith and +1 [ICON_GOLD] Gold for each [COLOR_POSITIVE_TEXT]inland city[ENDCOLOR] you own. +1 [ICON_PEACE] Faith and +1 [ICON_GOLD] Gold from [ICON_RES_STONE] Stone and [ICON_RES_WHEAT] Wheat. Spawns a [COLOR_POSITIVE_TEXT]Skiff[ENDCOLOR] upon adoption.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_TIDES_CALLING_SHORT">
+			<Text>
+				The Tide's Calling
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SACRED_CRAFTWORK">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture from [ICON_RES_HARDWOOD] Hardwood. +1 [ICON_PEACE] Faith from [ICON_RES_FOREST] Forest, [ICON_RES_CORAL] Coral, and [ICON_RES_PEARL] Pearls.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SACRED_CRAFTWORK_SHORT">
+			<Text>
+				Sacred Craftwork
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_OFFERING_OF_PLENTY">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith from [ICON_RES_FISH] Fish and [ICON_RES_WHEAT] Wheat. [COLOR_POSITIVE_TEXT]Granaries[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Lighthouses[ENDCOLOR] yield -1 [ICON_FOOD] Food.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_OFFERING_OF_PLENTY_SHORT">
+			<Text>
+				Offering of Plenty
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SALT_AND_STARS">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+2 [ICON_PRODUCTION] Production from [ICON_RES_SALT] Salt. +1 [ICON_PEACE] Faith from [ICON_RES_FISH] Fish, [ICON_RES_WHALE] Whales, [ICON_RES_CORAL] Coral, [ICON_RES_PEARL] Pearls, and [ICON_RES_CRAB] Crabs. Embarked units have +1 [ICON_RANGE] Sight (requires Pantheon in [ICON_CAPITAL] Capital).
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_SALT_AND_STARS_SHORT">
+			<Text>
+				Salt and Stars
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_HUNGERING_THRONE">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]Cities with this Pantheon have -1 [ICON_FOOD] Food. The [ICON_CAPITAL] Capital gains +1 [ICON_PRODUCTION] Production, +1 [ICON_RESEARCH] Science, and +1 [ICON_PEACE] Faith for each [COLOR_POSITIVE_TEXT]expand[ENDCOLOR] with this Pantheon. Whenever an expand loses a [ICON_CITIZEN] Population through starvation, the [ICON_CAPITAL] Capital expands 2 tiles.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_HUNGERING_THRONE_SHORT">
+			<Text>
+				The Hungering Throne
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_ASCETIC_DISCIPLINE">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE][COLOR_POSITIVE_TEXT]Shrines[ENDCOLOR] yield -1 [ICON_FOOD] Food, -1 [ICON_GOLD] Gold, and +2 [ICON_PRODUCTION] Production. Whenever a city loses a [ICON_CITIZEN] Population through starvation, gain 20 [ICON_PEACE] Faith.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_ASCETIC_DISCIPLINE_SHORT">
+			<Text>
+				Ascetic Discipline
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_RITE_OF_FIRST_BORN">
+			<Text>
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]Whenever a city grows to 2 [ICON_CITIZEN] Population for the first time: lose 1 [ICON_CITIZEN] Population, gain 20 [ICON_PEACE] Faith, and the city tile permanently gains +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BELIEF_RITE_OF_FIRST_BORN_SHORT">
+			<Text>
+				Rite of the First-Born
+			</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
 			<Text>
 				[COLOR_POSITIVE_TEXT]Temples[ENDCOLOR] provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_GOLD] Gold, and +1 [ICON_PRODUCTION] Production. Completing the [COLOR_POSITIVE_TEXT]Grand Temple[ENDCOLOR] spawns 2 [ICON_WORKER] Workers near your [COLOR_POSITIVE_TEXT]Holy City[ENDCOLOR].

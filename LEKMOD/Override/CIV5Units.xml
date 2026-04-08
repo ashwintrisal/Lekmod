@@ -26490,6 +26490,15 @@
 			<BuildingClassType>BUILDINGCLASS_PIETY_ADMIRAL</BuildingClassType> 
 		</Row>
 <!-- piety changes -->
+		<!-- Sanctuary and Stupa follower buildings -->
+		<Row>
+			<BeliefType>BELIEF_SANCTUARY</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_SANCTUARY</BuildingClassType>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_STUPA</BeliefType>
+			<BuildingClassType>BUILDINGCLASS_STUPA</BuildingClassType>
+		</Row>
 	</Belief_BuildingClassFaithPurchase>
 
 	<!-- Work Ethic: faith purchase of workers -->
@@ -27608,11 +27617,25 @@
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_SACRED_PATH</BeliefType> 
-			<FeatureType>FEATURE_FOREST</FeatureType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<BeliefType>BELIEF_SACRED_PATH</BeliefType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Sacred Craftwork: +1 faith from forest -->
+		<Row>
+			<BeliefType>BELIEF_SACRED_CRAFTWORK</BeliefType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Mangrove Mysteries: +1 faith from forest -->
+		<Row>
+			<BeliefType>BELIEF_MANGROVE_MYSTERIES</BeliefType>
+			<FeatureType>FEATURE_FOREST</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 	</Belief_FeatureYieldChanges> 
 
@@ -28391,10 +28414,179 @@
 			<Yield>1</Yield> 
 		</Row>
 		<Row>
-			<BeliefType>BELIEF_SACRED_PATH</BeliefType> 
-			<ResourceType>RESOURCE_HARDWOOD</ResourceType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>1</Yield> 
+			<BeliefType>BELIEF_SACRED_PATH</BeliefType>
+			<ResourceType>RESOURCE_HARDWOOD</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Xian: +1 faith from strategic resources -->
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_OIL</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_XIAN</BeliefType>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Harvest Confluence: +1 food from cattle/bison/crabs, +1 gold from fish/banana -->
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_CATTLE</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_BISON</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_CRAB</ResourceType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_BANANA</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Sacred Craftwork: +1 production +1 culture from hardwood, +1 faith from coral/pearls -->
+		<Row>
+			<BeliefType>BELIEF_SACRED_CRAFTWORK</BeliefType>
+			<ResourceType>RESOURCE_HARDWOOD</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SACRED_CRAFTWORK</BeliefType>
+			<ResourceType>RESOURCE_HARDWOOD</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SACRED_CRAFTWORK</BeliefType>
+			<ResourceType>RESOURCE_CORAL</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SACRED_CRAFTWORK</BeliefType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Mangrove Mysteries: +1 faith from fish -->
+		<Row>
+			<BeliefType>BELIEF_MANGROVE_MYSTERIES</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Offering of Plenty: +1 culture +1 faith from fish/wheat -->
+		<Row>
+			<BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType>
+			<ResourceType>RESOURCE_WHEAT</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType>
+			<ResourceType>RESOURCE_WHEAT</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Salt and Stars: +2 production from salt, +1 faith from fish/whales/coral/pearls/crabs -->
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_SALT</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_WHALE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_CORAL</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_SALT_AND_STARS</BeliefType>
+			<ResourceType>RESOURCE_CRAB</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<!-- Songs of the Leviathan: +2 faith from whales -->
+		<Row>
+			<BeliefType>BELIEF_SONGS_OF_LEVIATHAN</BeliefType>
+			<ResourceType>RESOURCE_WHALE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>2</Yield>
 		</Row>
 	</Belief_ResourceYieldChanges> 
 
@@ -28638,6 +28830,17 @@
 		<Column name="FlatTundraNoForestFood" type="boolean"  default="0"/>
 		<Column name="FishingBoatsLighthouseProduction" type="boolean"  default="0"/>
 		<Column name="MandateOfGod" type="boolean"  default="0"/>
+		<Column name="CharterOfSettlement" type="boolean"  default="0"/>
+		<Column name="KinForgedInBlood" type="boolean"  default="0"/>
+		<Column name="PillarsOfHeaven" type="boolean"  default="0"/>
+		<Column name="SongsOfLeviathan" type="boolean"  default="0"/>
+		<Column name="MangroveMysteriesConditional" type="boolean"  default="0"/>
+		<Column name="TidesCalling" type="boolean"  default="0"/>
+		<Column name="OfferingOfPlenty" type="boolean"  default="0"/>
+		<Column name="SaltAndStars" type="boolean"  default="0"/>
+		<Column name="HungeringThrone" type="boolean"  default="0"/>
+		<Column name="AsceticDiscipline" type="boolean"  default="0"/>
+		<Column name="RiteOfFirstBorn" type="boolean"  default="0"/>
 	</Table>
 	<Table name="Belief_FaithPurchaseUnitClass">
 		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
@@ -33615,6 +33818,193 @@
 			<Reformation>false</Reformation>
 			<MandateOfGod>true</MandateOfGod>
 		</Row>
+		<Row>
+			<ID>123</ID>
+			<Type>BELIEF_XIAN</Type>
+			<Description>TXT_KEY_BELIEF_XIAN</Description>
+			<ShortDescription>TXT_KEY_BELIEF_XIAN_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>true</Enhancer>
+			<Reformation>false</Reformation>
+		</Row>
+		<Row>
+			<ID>124</ID>
+			<Type>BELIEF_CHARTER_OF_SETTLEMENT</Type>
+			<Description>TXT_KEY_BELIEF_CHARTER_OF_SETTLEMENT</Description>
+			<ShortDescription>TXT_KEY_BELIEF_CHARTER_OF_SETTLEMENT_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>true</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<CharterOfSettlement>true</CharterOfSettlement>
+		</Row>
+		<Row>
+			<ID>125</ID>
+			<Type>BELIEF_SANCTUARY</Type>
+			<Description>TXT_KEY_BELIEF_SANCTUARY</Description>
+			<ShortDescription>TXT_KEY_BELIEF_SANCTUARY_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>false</Founder>
+			<Follower>true</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+		</Row>
+		<Row>
+			<ID>126</ID>
+			<Type>BELIEF_STUPA</Type>
+			<Description>TXT_KEY_BELIEF_STUPA</Description>
+			<ShortDescription>TXT_KEY_BELIEF_STUPA_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>false</Founder>
+			<Follower>true</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+		</Row>
+		<Row>
+			<ID>127</ID>
+			<Type>BELIEF_KIN_FORGED_IN_BLOOD</Type>
+			<Description>TXT_KEY_BELIEF_KIN_FORGED_IN_BLOOD</Description>
+			<ShortDescription>TXT_KEY_BELIEF_KIN_FORGED_IN_BLOOD_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<KinForgedInBlood>true</KinForgedInBlood>
+		</Row>
+		<Row>
+			<ID>128</ID>
+			<Type>BELIEF_PILLARS_OF_HEAVEN</Type>
+			<Description>TXT_KEY_BELIEF_PILLARS_OF_HEAVEN</Description>
+			<ShortDescription>TXT_KEY_BELIEF_PILLARS_OF_HEAVEN_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<PillarsOfHeaven>true</PillarsOfHeaven>
+		</Row>
+		<Row>
+			<ID>129</ID>
+			<Type>BELIEF_SONGS_OF_LEVIATHAN</Type>
+			<Description>TXT_KEY_BELIEF_SONGS_OF_LEVIATHAN</Description>
+			<ShortDescription>TXT_KEY_BELIEF_SONGS_OF_LEVIATHAN_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<SongsOfLeviathan>true</SongsOfLeviathan>
+		</Row>
+		<Row>
+			<ID>130</ID>
+			<Type>BELIEF_MANGROVE_MYSTERIES</Type>
+			<Description>TXT_KEY_BELIEF_MANGROVE_MYSTERIES</Description>
+			<ShortDescription>TXT_KEY_BELIEF_MANGROVE_MYSTERIES_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<MangroveMysteriesConditional>true</MangroveMysteriesConditional>
+		</Row>
+		<Row>
+			<ID>131</ID>
+			<Type>BELIEF_HARVEST_CONFLUENCE</Type>
+			<Description>TXT_KEY_BELIEF_HARVEST_CONFLUENCE</Description>
+			<ShortDescription>TXT_KEY_BELIEF_HARVEST_CONFLUENCE_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+		</Row>
+		<Row>
+			<ID>132</ID>
+			<Type>BELIEF_TIDES_CALLING</Type>
+			<Description>TXT_KEY_BELIEF_TIDES_CALLING</Description>
+			<ShortDescription>TXT_KEY_BELIEF_TIDES_CALLING_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<TidesCalling>true</TidesCalling>
+		</Row>
+		<Row>
+			<ID>133</ID>
+			<Type>BELIEF_SACRED_CRAFTWORK</Type>
+			<Description>TXT_KEY_BELIEF_SACRED_CRAFTWORK</Description>
+			<ShortDescription>TXT_KEY_BELIEF_SACRED_CRAFTWORK_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+		</Row>
+		<Row>
+			<ID>134</ID>
+			<Type>BELIEF_OFFERING_OF_PLENTY</Type>
+			<Description>TXT_KEY_BELIEF_OFFERING_OF_PLENTY</Description>
+			<ShortDescription>TXT_KEY_BELIEF_OFFERING_OF_PLENTY_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<OfferingOfPlenty>true</OfferingOfPlenty>
+		</Row>
+		<Row>
+			<ID>135</ID>
+			<Type>BELIEF_SALT_AND_STARS</Type>
+			<Description>TXT_KEY_BELIEF_SALT_AND_STARS</Description>
+			<ShortDescription>TXT_KEY_BELIEF_SALT_AND_STARS_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<SaltAndStars>true</SaltAndStars>
+		</Row>
+		<Row>
+			<ID>136</ID>
+			<Type>BELIEF_HUNGERING_THRONE</Type>
+			<Description>TXT_KEY_BELIEF_HUNGERING_THRONE</Description>
+			<ShortDescription>TXT_KEY_BELIEF_HUNGERING_THRONE_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<HungeringThrone>true</HungeringThrone>
+		</Row>
+		<Row>
+			<ID>137</ID>
+			<Type>BELIEF_ASCETIC_DISCIPLINE</Type>
+			<Description>TXT_KEY_BELIEF_ASCETIC_DISCIPLINE</Description>
+			<ShortDescription>TXT_KEY_BELIEF_ASCETIC_DISCIPLINE_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<AsceticDiscipline>true</AsceticDiscipline>
+		</Row>
+		<Row>
+			<ID>138</ID>
+			<Type>BELIEF_RITE_OF_FIRST_BORN</Type>
+			<Description>TXT_KEY_BELIEF_RITE_OF_FIRST_BORN</Description>
+			<ShortDescription>TXT_KEY_BELIEF_RITE_OF_FIRST_BORN_SHORT</ShortDescription>
+			<Pantheon>true</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<RiteOfFirstBorn>true</RiteOfFirstBorn>
+		</Row>
 	</Beliefs> 
 
 	<Table name="BuildFeatures">
@@ -36406,16 +36796,40 @@
 			<NoLimit>false</NoLimit> 
 			<Monument>false</Monument> 
 		</Row>
-		<Row> 
-			<ID>176</ID> 
-			<Type>BUILDINGCLASS_SWISS_SKI_GOLD</Type> 
-			<DefaultBuilding>BUILDING_SKI_GOLD</DefaultBuilding> 
-			<MaxGlobalInstances>-1</MaxGlobalInstances> 
-			<MaxTeamInstances>-1</MaxTeamInstances> 
-			<MaxPlayerInstances>-1</MaxPlayerInstances> 
-			<ExtraPlayerInstances>0</ExtraPlayerInstances> 
-			<NoLimit>false</NoLimit> 
-			<Monument>false</Monument> 
+		<Row>
+			<ID>176</ID>
+			<Type>BUILDINGCLASS_SWISS_SKI_GOLD</Type>
+			<DefaultBuilding>BUILDING_SKI_GOLD</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<ExtraPlayerInstances>0</ExtraPlayerInstances>
+			<NoLimit>false</NoLimit>
+			<Monument>false</Monument>
+		</Row>
+		<Row>
+			<ID>177</ID>
+			<Type>BUILDINGCLASS_SANCTUARY</Type>
+			<Description>TXT_KEY_BUILDING_SANCTUARY</Description>
+			<DefaultBuilding>BUILDING_SANCTUARY</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<ExtraPlayerInstances>0</ExtraPlayerInstances>
+			<NoLimit>false</NoLimit>
+			<Monument>false</Monument>
+		</Row>
+		<Row>
+			<ID>178</ID>
+			<Type>BUILDINGCLASS_STUPA</Type>
+			<Description>TXT_KEY_BUILDING_STUPA</Description>
+			<DefaultBuilding>BUILDING_STUPA</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<ExtraPlayerInstances>0</ExtraPlayerInstances>
+			<NoLimit>false</NoLimit>
+			<Monument>false</Monument>
 		</Row>
 	</BuildingClasses> 
 
@@ -43628,10 +44042,22 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-        <Row> 
-			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType> 
-			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType> 
-			<Yield>4</Yield> 
+        <Row>
+			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
+			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<!-- Sanctuary: +2 culture -->
+		<Row>
+			<BuildingType>BUILDING_SANCTUARY</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<!-- Stupa: +2 food -->
+		<Row>
+			<BuildingType>BUILDING_STUPA</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 	</Building_YieldChanges> 
 
@@ -49462,10 +49888,48 @@
 			<PortraitIndex>2</PortraitIndex> 
 			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas> 
 		</Row>
+		<!-- Sanctuary: follower building, 220 faith, +2 happiness +2 culture -->
+		<Row>
+			<ID>268</ID>
+			<Type>BUILDING_SANCTUARY</Type>
+			<BuildingClass>BUILDINGCLASS_SANCTUARY</BuildingClass>
+			<Description>TXT_KEY_BUILDING_SANCTUARY</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_SANCTUARY_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_SANCTUARY_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_SANCTUARY_HELP</Help>
+			<IsReligious>true</IsReligious>
+			<Cost>-1</Cost>
+			<FaithCost>220</FaithCost>
+			<UnlockedByBelief>true</UnlockedByBelief>
+			<ConquestProb>100</ConquestProb>
+			<Happiness>2</Happiness>
+			<ArtDefineTag>TEMPLE</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_SANCTUARY_ATLAS</IconAtlas>
+		</Row>
+		<!-- Stupa: follower building, 100 faith, +2 food +1 happiness -->
+		<Row>
+			<ID>269</ID>
+			<Type>BUILDING_STUPA</Type>
+			<BuildingClass>BUILDINGCLASS_STUPA</BuildingClass>
+			<Description>TXT_KEY_BUILDING_STUPA</Description>
+			<Civilopedia>TXT_KEY_CIV5_BUILDINGS_STUPA_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_STUPA_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_STUPA_HELP</Help>
+			<IsReligious>true</IsReligious>
+			<Cost>-1</Cost>
+			<FaithCost>100</FaithCost>
+			<UnlockedByBelief>true</UnlockedByBelief>
+			<ConquestProb>100</ConquestProb>
+			<Happiness>1</Happiness>
+			<ArtDefineTag>TEMPLE</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_STUPA_ATLAS</IconAtlas>
+		</Row>
 		<!-- [Unit Dummies] -->
 		<!-- Cuban UU -->
-		<Row> 
-			<ID>267</ID> 
+		<Row>
+			<ID>267</ID>
 			<Type>BUILDING_CUBA_TRAIT_UB3</Type> 
 			<BuildingClass>BUILDINGCLASS_CUBA_TRAIT_UB3</BuildingClass> 
 			<Description>Trait UU Gift</Description> 
@@ -119584,14 +120048,72 @@
 			<IconsPerRow>8</IconsPerRow> 
 			<IconsPerColumn>4</IconsPerColumn> 
 		</Row>
-		<Row> 
-			<Atlas>LEKMOD_BUILDING_ATLAS</Atlas> 
-			<IconSize>256</IconSize> 
-			<Filename>buildings_icons_256.dds</Filename> 
-			<IconsPerRow>8</IconsPerRow> 
-			<IconsPerColumn>4</IconsPerColumn> 
+		<Row>
+			<Atlas>LEKMOD_BUILDING_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>buildings_icons_256.dds</Filename>
+			<IconsPerRow>8</IconsPerRow>
+			<IconsPerColumn>4</IconsPerColumn>
 		</Row>
-		<Row> 
+		<!-- Sanctuary building icon -->
+		<Row>
+			<Atlas>LEKMOD_SANCTUARY_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>sanctuary_45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_SANCTUARY_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>sanctuary_64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_SANCTUARY_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>sanctuary_128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_SANCTUARY_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>sanctuary_256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<!-- Stupa building icon -->
+		<Row>
+			<Atlas>LEKMOD_STUPA_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>stupa_45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_STUPA_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>stupa_64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_STUPA_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>stupa_128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_STUPA_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>stupa_256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
 			<Atlas>LEKMOD_UNIT_ATLAS</Atlas> 
 			<IconSize>32</IconSize> 
 			<Filename>units_icons_32.dds</Filename> 
