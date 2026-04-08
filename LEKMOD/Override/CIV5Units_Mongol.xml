@@ -15665,9 +15665,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Flourishing of the Arts
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_FORMAL_LITURGY"> 
+		<Replace Tag="TXT_KEY_BELIEF_FORMAL_LITURGY">
 			<Text>
-				+1 [ICON_PEACE] Faith and +1 [ICON_CULTURE] from [ICON_RES_COPPER] Copper, [ICON_RES_SILVER] Silver, and [ICON_RES_GOLD] Gold
+				+2 [ICON_CULTURE] Culture from [ICON_RES_COPPER] Copper, [ICON_RES_SILVER] Silver, and [ICON_RES_GOLD] Gold
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_FORMAL_LITURGY_SHORT"> 
