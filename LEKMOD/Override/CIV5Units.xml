@@ -52075,8 +52075,41 @@
 			<ShowInPedia>false</ShowInPedia> 
 			<ShowInTechTree>false</ShowInTechTree> 
 		</Row>
-		<Row> 
-			<ID>69</ID> 
+		<!-- Pontoon bridge variant consumed on use (for Skiff/Nelayan) -->
+		<Row>
+			<ID>70</ID>
+			<Type>BUILD_PONTOON_BRIDGE_CONSUMED</Type>
+			<Description>TXT_KEY_BUILD_PONTOON_BRIDGE</Description>
+			<Help>TXT_KEY_BUILD_PONTOON_BRIDGE_HELP</Help>
+			<Recommendation>TXT_KEY_BUILD_PONTOON_BRIDGE_REC</Recommendation>
+			<HotKey>KB_Z</HotKey>
+			<HotKeyPriority>1</HotKeyPriority>
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt>
+			<OrderPriority>98</OrderPriority>
+			<AltDown>false</AltDown>
+			<AltDownAlt>false</AltDownAlt>
+			<ShiftDown>false</ShiftDown>
+			<ShiftDownAlt>false</ShiftDownAlt>
+			<CtrlDown>false</CtrlDown>
+			<CtrlDownAlt>false</CtrlDownAlt>
+			<Time>700</Time>
+			<Cost>0</Cost>
+			<CostIncreasePerImprovement>0</CostIncreasePerImprovement>
+			<Kill>true</Kill>
+			<Repair>false</Repair>
+			<RemoveRoute>false</RemoveRoute>
+			<Water>true</Water>
+			<CanBeEmbarked>true</CanBeEmbarked>
+			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<IconIndex>0</IconIndex>
+			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas>
+			<ShowInPedia>false</ShowInPedia>
+			<ShowInTechTree>false</ShowInTechTree>
+		</Row>
+		<Row>
+			<ID>69</ID>
 			<Type>BUILD_FISHING_BOATS_WORKER</Type> 
 			<Description>TXT_KEY_BUILD_FISHING_BOATS</Description> 
 			<HotKey>KB_F</HotKey> 
@@ -77088,7 +77121,14 @@
 			<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 		</Row>
-	</Civilization_UnitClassOverrides> 
+		<!-- Nelayan replaces Skiff for maritime civilizations -->
+		<Row><CivilizationType>CIVILIZATION_BRUNEI</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_POLYNESIA</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_MAORI</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_TONGA</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_INDONESIA</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_PHILIPPINES</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
+	</Civilization_UnitClassOverrides>
 
 	<Table name="Civilizations">
 		<Column name="ID" type="integer"  primarykey="true" autoincrement="true" />
@@ -229283,17 +229323,37 @@
 			<InstanceCostModifier>0</InstanceCostModifier> 
 			<DefaultUnit>UNIT_HEAVY_CRUISER</DefaultUnit> 
 		</Row>
-		<Row> 
-			<ID>112</ID> 
-			<Type>UNITCLASS_EXPEDITIONARY_FORCE</Type> 
-			<Description>TXT_KEY_UNIT_MARINE</Description> 
-			<MaxGlobalInstances>-1</MaxGlobalInstances> 
-			<MaxTeamInstances>-1</MaxTeamInstances> 
-			<MaxPlayerInstances>-1</MaxPlayerInstances> 
-			<InstanceCostModifier>0</InstanceCostModifier> 
-			<DefaultUnit>UNIT_EXPEDITIONARY_FORCE</DefaultUnit> 
+		<Row>
+			<ID>112</ID>
+			<Type>UNITCLASS_EXPEDITIONARY_FORCE</Type>
+			<Description>TXT_KEY_UNIT_MARINE</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_EXPEDITIONARY_FORCE</DefaultUnit>
 		</Row>
-	</UnitClasses> 
+		<Row>
+			<ID>113</ID>
+			<Type>UNITCLASS_SKIFF</Type>
+			<Description>TXT_KEY_UNIT_SKIFF</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_SKIFF</DefaultUnit>
+		</Row>
+		<Row>
+			<ID>114</ID>
+			<Type>UNITCLASS_NELAYAN</Type>
+			<Description>TXT_KEY_UNIT_NELAYAN</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_NELAYAN</DefaultUnit>
+		</Row>
+	</UnitClasses>
 
 	<Table name="UnitCombatInfos">
 		<Column name="ID" type="integer"  primarykey="true" autoincrement="true" />
@@ -284017,7 +284077,10 @@
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_CITY_MOVEMENT_PENALTY</PromotionType> 
 		</Row>
-	</Unit_FreePromotions> 
+		<!-- Skiff and Nelayan: same free promotion as Scout -->
+		<Row><UnitType>UNIT_SKIFF</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
+		<Row><UnitType>UNIT_NELAYAN</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
+	</Unit_FreePromotions>
 
 	<Table name="Unit_GreatPersons">
 		<Column name="UnitType" type="text" reference="Units(Type)" />
@@ -307746,7 +307809,186 @@
 			<IconAtlas>LEKMOD_MAURYA_ATLAS</IconAtlas> 
 			<UnitFlagAtlas>LEKMOD_MAURYA_MISSIONARY_FLAG</UnitFlagAtlas> 
 		</Row>
-	</Units> 
+
+		<!-- Skiff: early sea recon/worker unit, consumed when building fishing boats or pontoon bridges -->
+		<Row>
+			<Type>UNIT_SKIFF</Type>
+			<Description>TXT_KEY_UNIT_SKIFF</Description>
+			<Civilopedia>TXT_KEY_UNIT_SKIFF_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SKIFF_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_SKIFF_HELP</Help>
+			<Combat>3</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>21</Cost>
+			<FaithCost>0</FaithCost>
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>3</Moves>
+			<Immobile>false</Immobile>
+			<Range>0</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_SKIFF</Class>
+			<CombatClass>UNITCOMBAT_RECON</CombatClass>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_WORKER_SEA</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>false</Pillage>
+			<Found>false</Found>
+			<FoundAbroad>false</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>false</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
+			<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
+			<HurryCostModifier>0</HurryCostModifier>
+			<AdvancedStartCost>10</AdvancedStartCost>
+			<MinAreaSize>6</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>100</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>100</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>0</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_WORKBOAT</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>true</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+			<UnitFlagIconOffset>2</UnitFlagIconOffset>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+		<!-- Nelayan: UU replacing Skiff for Brunei/Polynesia/Maori/Tonga/Indonesia/Philippines; builds fishing boats without being consumed -->
+		<Row>
+			<Type>UNIT_NELAYAN</Type>
+			<Description>TXT_KEY_UNIT_NELAYAN</Description>
+			<Civilopedia>TXT_KEY_UNIT_NELAYAN_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_NELAYAN_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_NELAYAN_HELP</Help>
+			<Combat>3</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>21</Cost>
+			<FaithCost>0</FaithCost>
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>3</Moves>
+			<Immobile>false</Immobile>
+			<Range>0</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_NELAYAN</Class>
+			<CombatClass>UNITCOMBAT_RECON</CombatClass>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_WORKER_SEA</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>false</Pillage>
+			<Found>false</Found>
+			<FoundAbroad>false</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>false</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<PrereqTech>TECH_AGRICULTURE</PrereqTech>
+			<ObsoleteTech>TECH_EDUCATION</ObsoleteTech>
+			<HurryCostModifier>0</HurryCostModifier>
+			<AdvancedStartCost>10</AdvancedStartCost>
+			<MinAreaSize>6</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>100</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>100</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>0</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_WORKBOAT</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>true</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+			<UnitFlagIconOffset>2</UnitFlagIconOffset>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+	</Units>
 	
 	<Table name="Victories">
 		<Column name="ID" type="integer"  primarykey="true" autoincrement="true" />

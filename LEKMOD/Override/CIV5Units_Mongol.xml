@@ -140276,15 +140276,29 @@ The ship has weather'd every rack; the prize we sought is won."
 				Select a unit that needs orders before the turn can end.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_UNIT_NELAYAN"> 
-			<Text>
-				Nelayan
-			</Text>
+		<Replace Tag="TXT_KEY_UNIT_SKIFF">
+			<Text>Skiff</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_UNIT_NELAYAN_HELP"> 
-			<Text>
-				Unique Unit replacing the Workboat. I addition to the regular Workboat, this unit has a combat strength, meaning it does not immediately die upon coming into contact with enemy units (unless they get defeated with one attack). It also does not get consumed when constructing improvements, taking the regular 4 turns (quick speed) to build them.
-			</Text>
+		<Replace Tag="TXT_KEY_UNIT_SKIFF_HELP">
+			<Text>Early naval exploration and worker unit. Can build [COLOR_POSITIVE_TEXT]Fishing Boats[ENDCOLOR] instantly (unit consumed). Can build [COLOR_POSITIVE_TEXT]Pontoon Bridges[ENDCOLOR] (requires Engineering, unit consumed). Cannot be gifted to City-States. Obsoletes at Education.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_SKIFF_PEDIA">
+			<Text>A small fishing vessel used for early coastal exploration and resource improvement.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_SKIFF_STRATEGY">
+			<Text>Use the Skiff to build Fishing Boats early and explore the coast. It is consumed when building improvements.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_NELAYAN">
+			<Text>Nelayan</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_NELAYAN_HELP">
+			<Text>[COLOR_POSITIVE_TEXT]Unique Unit[ENDCOLOR] replacing the Skiff for maritime civilizations. Can build [COLOR_POSITIVE_TEXT]Fishing Boats[ENDCOLOR] without being consumed. Can build [COLOR_POSITIVE_TEXT]Pontoon Bridges[ENDCOLOR] (requires Engineering, unit consumed). Cannot be gifted to City-States. Obsoletes at Education.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_NELAYAN_PEDIA">
+			<Text>A skilled fisherman unit unique to maritime civilizations, able to build fishing improvements repeatedly without being expended.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_NELAYAN_STRATEGY">
+			<Text>Use the Nelayan to build Fishing Boats repeatedly along your coast. Unlike the Skiff, it is not consumed when building fishing improvements.</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_NEWWORLD_SCENARIO_HELP_INQUISITOR"> 
 			<Text>

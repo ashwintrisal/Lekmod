@@ -4476,6 +4476,14 @@ bool CvUnit::canGift(bool bTestVisible, bool bTestTransport) const
 		if (eScoutClass != NO_UNITCLASS && eScoutClass == getUnitClassType())
 			return false;
 
+		// No skiffs or nelayang (same restriction as Scout)
+		UnitClassTypes eSkiffClass = (UnitClassTypes) GC.getInfoTypeForString("UNITCLASS_SKIFF", true);
+		if (eSkiffClass != NO_UNITCLASS && eSkiffClass == getUnitClassType())
+			return false;
+		UnitClassTypes eNelayanClass = (UnitClassTypes) GC.getInfoTypeForString("UNITCLASS_NELAYAN", true);
+		if (eNelayanClass != NO_UNITCLASS && eNelayanClass == getUnitClassType())
+			return false;
+
 		// No non-combat units
 		if(!IsCombatUnit())
 		{

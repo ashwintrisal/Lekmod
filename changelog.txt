@@ -2,6 +2,30 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+UNITS
+=====
+
+SKIFF (UNIT_SKIFF / UNITCLASS_SKIFF)
+-------------------------------------
+NEW unit. Available at Agriculture, obsoletes at Education.
+- Stats: Combat 3, Moves 3, Sight 2, Cost 21, Domain Sea
+- Builds Fishing Boats instantly (unit consumed); builds Pontoon Bridge (requires Engineering, unit consumed)
+- Same free promotion as Scout (PROMOTION_IGNORE_TERRAIN_COST), UNITCOMBAT_RECON combat class
+- Cannot be gifted to City-States (canGift check in CvUnit.cpp, same as UNITCLASS_SCOUT)
+- Art: workboat (ART_DEF_UNIT_WORKBOAT)
+- New build action: BUILD_PONTOON_BRIDGE_CONSUMED (Kill=true variant of BUILD_PONTOON_BRIDGE)
+
+
+NELAYAN (UNIT_NELAYAN / UNITCLASS_NELAYAN)
+------------------------------------------
+NEW unit. UU replacing the Skiff for: Brunei, Polynesia, Maori, Tonga, Indonesia, Philippines.
+- Same stats as Skiff but builds Fishing Boats WITHOUT being consumed (uses BUILD_FISHING_BOATS_NO_KILL)
+- Still consumed when building Pontoon Bridges
+- Cannot be gifted to City-States
+- Art: workboat (ART_DEF_UNIT_WORKBOAT)
+- Wired via Civilization_UnitClassOverrides for the 6 maritime civilizations
+
+
 RELIGIOUS BELIEFS
 =================
 
