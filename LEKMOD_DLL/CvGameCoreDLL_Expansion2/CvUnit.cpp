@@ -16658,6 +16658,36 @@ void CvUnit::setXY(int iX, int iY, bool bGroup, bool bUpdate, bool bShow, bool b
 
 						kPlayer.GetTreasury()->ChangeGold(iNumGold);
 
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+						if (getOwner() < MAX_MAJOR_CIVS)
+						{
+							CvCity* pCapital = kPlayer.getCapitalCity();
+							if (pCapital)
+							{
+								ReligionTypes eMajority = pCapital->GetCityReligions()->GetReligiousMajority();
+								if (eMajority != NO_RELIGION)
+								{
+									const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
+									if (pReligion && pReligion->m_Beliefs.IsKinForgedInBlood())
+									{
+										pCapital->changePopulation(1);
+										kPlayer.ChangeFaith(40);
+										PromotionTypes eZealot = (PromotionTypes)GC.getInfoTypeForString("PROMOTION_ZEALOT", true);
+										if (eZealot != NO_PROMOTION)
+										{
+											int iUnitIdx = 0;
+											for (CvUnit* pUnit = kPlayer.firstUnit(&iUnitIdx); pUnit != NULL; pUnit = kPlayer.nextUnit(&iUnitIdx))
+											{
+												if (!pUnit->isHasPromotion(eZealot))
+													pUnit->setHasPromotion(eZealot, true);
+											}
+										}
+									}
+								}
+							}
+						}
+#endif
+
 						// Set who last cleared the camp here
 						pNewPlot->SetPlayerThatClearedBarbCampHere(getOwner());
 

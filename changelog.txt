@@ -111,6 +111,13 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+KIN FORGED IN BLOOD (BELIEF_KIN_FORGED_IN_BLOOD)
+-------------------------------------------------
+NEW pantheon belief.
+- Effect: clearing a barbarian encampment yields +1 Population in the capital, +40 Faith, and all current units receive the Zealot promotion
+- New DLL: LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF — KinForgedInBlood column in Beliefs table; hook in CvUnit::UnitMove (camp-clear branch) checks capital's religious majority, calls changePopulation(1), ChangeFaith(40), and setHasPromotion(PROMOTION_ZEALOT) for all player units
+
+
 CHARTER OF SETTLEMENT (BELIEF_CHARTER_OF_SETTLEMENT)
 -------------------------------------------------------
 NEW founder belief.
