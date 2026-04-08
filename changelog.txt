@@ -58,7 +58,7 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 SEAFOOD RITUALS (BELIEF_SEAFOOD)
 ---------------------------------
 Pantheon belief.
-- Removed: +1 Faith from Fish
+- Removed: +1 Faith and +1 Food from Fish
 - Changed: +1 Culture from Fish → +2 Culture
 
 

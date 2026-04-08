@@ -28073,12 +28073,6 @@
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_SEAFOOD</BeliefType> 
-			<ResourceType>RESOURCE_FISH</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
 		<Row>
 			<BeliefType>BELIEF_SUN_GOD</BeliefType>
 			<ResourceType>RESOURCE_COCONUT</ResourceType> 

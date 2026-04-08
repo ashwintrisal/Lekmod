@@ -16117,7 +16117,7 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SEAFOOD">
 			<Text>
-				+1 [ICON_FOOD] Food and +2 [ICON_CULTURE] Culture from [ICON_RES_FISH] Fish
+				+2 [ICON_CULTURE] Culture from [ICON_RES_FISH] Fish
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SEAFOOD_SHORT"> 
