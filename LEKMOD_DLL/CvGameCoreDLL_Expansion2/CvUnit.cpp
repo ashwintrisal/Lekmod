@@ -11982,6 +11982,22 @@ int CvUnit::visibilityRange() const
 	{
 		iRtnValue = m_pUnitInfo->GetBaseSightRange() + m_iExtraVisibilityRange;
 	}
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	if (isEmbarked() && getOwner() < MAX_MAJOR_CIVS)
+	{
+		CvCity* pCapital = GET_PLAYER(getOwner()).getCapitalCity();
+		if (pCapital)
+		{
+			ReligionTypes eMajority = pCapital->GetCityReligions()->GetReligiousMajority();
+			if (eMajority != NO_RELIGION)
+			{
+				const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
+				if (pReligion && pReligion->m_Beliefs.IsSaltAndStars())
+					iRtnValue += 1;
+			}
+		}
+	}
+#endif
 
 	return iRtnValue;
 }

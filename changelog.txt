@@ -111,6 +111,13 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+SALT AND STARS (BELIEF_SALT_AND_STARS)
+--------------------------------------
+NEW pantheon belief.
+- Effect: Embarked units have +1 Sight if this pantheon is present in your capital; +2 Production from Salt, +1 Faith from Fish/Whales/Coral/Pearls/Crabs (XML resource yields)
+- Sight DLL: LEKMOD_SALT_AND_STARS_BELIEF hook in CvUnit::visibilityRange(); checks capital's religious majority via GetReligiousMajority() and adds +1 when embarked
+
+
 OFFERING OF PLENTY (BELIEF_OFFERING_OF_PLENTY)
 ----------------------------------------------
 NEW pantheon belief.
