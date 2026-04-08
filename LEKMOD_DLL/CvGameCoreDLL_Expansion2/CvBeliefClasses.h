@@ -101,6 +101,15 @@ public:
 #ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
 	bool IsFaithPurchaseUnitClassEnabled(int i) const;
 #endif
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+	bool IsSpyFromRenaissance() const;
+#endif
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	bool IsInvisibleMissionary() const;
+#endif
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	bool IsNonDominantFollowerYield() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -223,6 +232,15 @@ protected:
 #endif
 #ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
 	bool m_bBlockAutoProphetSpawn;
+#endif
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+	bool m_bSpyFromRenaissance;
+#endif
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	bool m_bInvisibleMissionary;
+#endif
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	bool m_bNonDominantFollowerYield;
 #endif
 
 	bool m_bPantheon;
@@ -544,6 +562,15 @@ public:
 #endif
 #ifdef LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
 	bool IsFaithPurchaseUnitClassEnabled(UnitClassTypes eUnitClass) const;
+#endif
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+	bool IsSpyFromRenaissance() const;
+#endif
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	bool IsInvisibleMissionary() const;
+#endif
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	bool IsNonDominantFollowerYield() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

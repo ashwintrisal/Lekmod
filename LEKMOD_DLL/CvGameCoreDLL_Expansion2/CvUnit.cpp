@@ -735,6 +735,29 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 			}
 		}
 	}
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	// Grant submarine-style invisibility to missionaries whose religion has the Underground Sect belief
+	if (getUnitInfo().IsSpreadReligion())
+	{
+		UnitClassTypes eMissionaryClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MISSIONARY", true);
+		if (eMissionaryClass != NO_UNITCLASS && getUnitClassType() == eMissionaryClass)
+		{
+			CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+			ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(kPlayer.GetID());
+			if (eFoundedReligion > RELIGION_PANTHEON)
+			{
+				const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+				if (pReligion && pReligion->m_Beliefs.IsInvisibleMissionary())
+				{
+					InvisibleTypes eSubInvisible = (InvisibleTypes)GC.getInfoTypeForString("INVISIBLE_SUBMARINE");
+					if (eSubInvisible != NO_INVISIBLE)
+						setInvisibleType(eSubInvisible);
+				}
+			}
+		}
+	}
+#endif
+
 	if (getUnitInfo().GetOneShotTourism() > 0)
 	{
 		SetTourismBlastStrength(kPlayer.GetCulture()->GetTourismBlastStrength(getUnitInfo().GetOneShotTourism()));

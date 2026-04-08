@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -480,6 +480,33 @@ int CvTreasury::GetGoldPerTurnFromReligion() const
 			}
 		}
 	}
+
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	// +2 gold per city where this religion has followers but is not the dominant religion
+	if (eFoundedReligion != NO_RELIGION)
+	{
+		const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+		if (pReligion && pReligion->m_Beliefs.IsNonDominantFollowerYield())
+		{
+			int iLoop;
+			CvCity* pLoopCity;
+			for (int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+			{
+				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
+				if (!kLoopPlayer.isAlive())
+					continue;
+				for (pLoopCity = kLoopPlayer.firstCity(&iLoop); pLoopCity != NULL; pLoopCity = kLoopPlayer.nextCity(&iLoop))
+				{
+					if (pLoopCity->GetCityReligions()->GetNumFollowers(eFoundedReligion) > 0
+						&& pLoopCity->GetCityReligions()->GetReligiousMajority() != eFoundedReligion)
+					{
+						iGoldFromReligion += 2;
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	return iGoldFromReligion;
 }

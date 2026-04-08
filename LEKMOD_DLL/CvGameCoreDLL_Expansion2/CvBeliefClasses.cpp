@@ -88,6 +88,15 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
 	m_bBlockAutoProphetSpawn(false),
 #endif
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+	m_bSpyFromRenaissance(false),
+#endif
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	m_bInvisibleMissionary(false),
+#endif
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	m_bNonDominantFollowerYield(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -500,6 +509,30 @@ bool CvBeliefEntry::IsFaithPurchaseUnitClassEnabled(int i) const
 }
 #endif
 
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+/// Accessor: does this belief grant a free spy when the founder's team enters the Renaissance era?
+bool CvBeliefEntry::IsSpyFromRenaissance() const
+{
+	return m_bSpyFromRenaissance;
+}
+#endif
+
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+/// Accessor: does this belief make missionaries of the founded religion invisible (submarine-style)?
+bool CvBeliefEntry::IsInvisibleMissionary() const
+{
+	return m_bInvisibleMissionary;
+}
+#endif
+
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+/// Accessor: does this belief grant +2 science and +2 gold per city where the religion has followers but is not dominant?
+bool CvBeliefEntry::IsNonDominantFollowerYield() const
+{
+	return m_bNonDominantFollowerYield;
+}
+#endif
+
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
 {
@@ -903,6 +936,15 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
 	m_bBlockAutoProphetSpawn		  = kResults.GetBool("BlockAutoProphetSpawn");
+#endif
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+	m_bSpyFromRenaissance			  = kResults.GetBool("SpyFromRenaissance");
+#endif
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+	m_bInvisibleMissionary			  = kResults.GetBool("InvisibleMissionary");
+#endif
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	m_bNonDominantFollowerYield		  = kResults.GetBool("NonDominantFollowerYield");
 #endif
 
 	//Arrays
@@ -2070,6 +2112,48 @@ bool CvReligionBeliefs::IsFaithPurchaseUnitClassEnabled(UnitClassTypes eUnitClas
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFaithPurchaseUnitClassEnabled((int)eUnitClass))
+			return true;
+	}
+	return false;
+}
+#endif
+
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+/// Returns true if any active belief grants a free spy when entering the Renaissance era
+bool CvReligionBeliefs::IsSpyFromRenaissance() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsSpyFromRenaissance())
+			return true;
+	}
+	return false;
+}
+#endif
+
+#ifdef LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+/// Returns true if any active belief makes missionaries of this religion invisible
+bool CvReligionBeliefs::IsInvisibleMissionary() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsInvisibleMissionary())
+			return true;
+	}
+	return false;
+}
+#endif
+
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+/// Returns true if any active belief grants +2 science/gold per non-dominant follower city
+bool CvReligionBeliefs::IsNonDominantFollowerYield() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsNonDominantFollowerYield())
 			return true;
 	}
 	return false;

@@ -1159,6 +1159,12 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
 // Houses of Worship: dynamic culture bonus based on how many of the 3 house building classes are present in city (4/2/0)
 #define LEKMOD_HOUSES_OF_WORSHIP_CULTURE
+// Underground Sect: grants +1 spy to the religion founder when their team enters Renaissance era
+#define LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+// Underground Sect: missionaries of the founded religion are invisible like submarines
+#define LEKMOD_INVISIBLE_MISSIONARY_BELIEF
+// Underground Sect: +2 science +2 gold per city where the religion has followers but is not the majority
+#define LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
 
 
 

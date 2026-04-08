@@ -16585,10 +16585,8 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				To the Glory of God
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT"> 
-			<Text>
-				+1 [ICON_RESEARCH] Science for every 4 followers of this [ICON_RELIGION] Religion
-			</Text>
+		<Replace Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT">
+			<Text>Grants +1 [ICON_SPY] Spy when your team enters the Renaissance era. Your [ICON_RELIGION] Missionaries are invisible to enemies until an adjacent unit spots them. Gain +2 [ICON_RESEARCH] Science and +2 [ICON_GOLD] Gold per turn for each city that follows your religion without it being the dominant faith.</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_UNDERGROUND_SECT_SHORT"> 
 			<Text>

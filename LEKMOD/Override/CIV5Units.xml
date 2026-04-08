@@ -28658,6 +28658,9 @@
 		<Column name="NumFreeSettlers" type="INTEGER"  default="0"/>
 		<Column name="FreeCapitalBuildingClass" type="text"  default="NULL"/>
 		<Column name="BlockAutoProphetSpawn" type="boolean"  default="0"/>
+		<Column name="SpyFromRenaissance" type="boolean"  default="0"/>
+		<Column name="InvisibleMissionary" type="boolean"  default="0"/>
+		<Column name="NonDominantFollowerYield" type="boolean"  default="0"/>
 	</Table>
 	<Table name="Belief_FaithPurchaseUnitClass">
 		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
@@ -30774,11 +30777,14 @@
 			<MissionaryExtraSpreads>0</MissionaryExtraSpreads> 
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
-			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities>
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<SpyFromRenaissance>true</SpyFromRenaissance>
+			<InvisibleMissionary>true</InvisibleMissionary>
+			<NonDominantFollowerYield>true</NonDominantFollowerYield>
 		</Row>
-		<Row> 
-			<ID>64</ID> 
+		<Row>
+			<ID>64</ID>
 			<Type>BELIEF_UNITY_OF_PROPHETS</Type> 
 			<Description>TXT_KEY_BELIEF_UNITY_OF_PROPHETS</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_UNITY_OF_PROPHETS_SHORT</ShortDescription> 

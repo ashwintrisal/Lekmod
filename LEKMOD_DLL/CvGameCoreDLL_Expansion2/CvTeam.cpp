@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -7346,6 +7346,33 @@ void CvTeam::SetCurrentEra(EraTypes eNewValue)
 					}
 				}
 			}
+
+#ifdef LEKMOD_SPY_FROM_RENAISSANCE_BELIEF
+			{
+				EraTypes eRenaissanceEra = (EraTypes)GC.getInfoTypeForString("ERA_RENAISSANCE", true);
+				if (eNewValue == eRenaissanceEra && eRenaissanceEra != NO_ERA)
+				{
+					CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+					PlayerTypes ePlayer;
+					for (int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+					{
+						ePlayer = (PlayerTypes)iPlayerLoop;
+						CvPlayerAI& kPlayer = GET_PLAYER(ePlayer);
+						if (!kPlayer.isAlive() || kPlayer.getTeam() != GetID() || kPlayer.isMinorCiv() || kPlayer.isBarbarian())
+							continue;
+						ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(ePlayer);
+						if (eFoundedReligion != NO_RELIGION)
+						{
+							const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+							if (pReligion && pReligion->m_Beliefs.IsSpyFromRenaissance())
+							{
+								kPlayer.GetEspionage()->CreateSpy();
+							}
+						}
+					}
+				}
+			}
+#endif
 
 			if(pEraInfo->getSpiesGrantedForEveryone() > 0)
 			{

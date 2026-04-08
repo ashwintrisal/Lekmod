@@ -22040,6 +22040,33 @@ int CvPlayer::GetScienceFromOtherPlayersTimes100() const
 	}
 	// NQMP GJS - new Underground Sect end
 
+#ifdef LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF
+	// +2 science per city where our religion has followers but is not the dominant religion
+	if (eFoundedReligion != NO_RELIGION)
+	{
+		const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+		if (pReligion && pReligion->m_Beliefs.IsNonDominantFollowerYield())
+		{
+			CvCity* pLoopCity;
+			int iCityLoop;
+			for (int iPlayerLoop = 0; iPlayerLoop < MAX_CIV_PLAYERS; iPlayerLoop++)
+			{
+				CvPlayer& kLoopPlayer = GET_PLAYER((PlayerTypes)iPlayerLoop);
+				if (!kLoopPlayer.isAlive())
+					continue;
+				for (pLoopCity = kLoopPlayer.firstCity(&iCityLoop); pLoopCity != NULL; pLoopCity = kLoopPlayer.nextCity(&iCityLoop))
+				{
+					if (pLoopCity->GetCityReligions()->GetNumFollowers(eFoundedReligion) > 0
+						&& pLoopCity->GetCityReligions()->GetReligiousMajority() != eFoundedReligion)
+					{
+						iScience += 200; // 2 * 100
+					}
+				}
+			}
+		}
+	}
+#endif
+
 	return iScience;
 }
 
