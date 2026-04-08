@@ -103,6 +103,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 	m_bMineYieldRequiresResource(false),
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+	m_bGrandTempleGrantsMusician(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -552,6 +555,13 @@ bool CvBeliefEntry::IsMineYieldRequiresResource() const
 	return m_bMineYieldRequiresResource;
 }
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+/// Accessor: does completing the Grand Temple grant 1 free Great Musician to the religion founder?
+bool CvBeliefEntry::IsGrandTempleGrantsMusician() const
+{
+	return m_bGrandTempleGrantsMusician;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -971,6 +981,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 	m_bMineYieldRequiresResource	  = kResults.GetBool("MineYieldRequiresResource");
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+	m_bGrandTempleGrantsMusician	  = kResults.GetBool("GrandTempleGrantsMusician");
 #endif
 
 	//Arrays
@@ -2204,6 +2217,18 @@ bool CvReligionBeliefs::IsMineYieldRequiresResource() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsMineYieldRequiresResource())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+bool CvReligionBeliefs::IsGrandTempleGrantsMusician() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsGrandTempleGrantsMusician())
 			return true;
 	}
 	return false;

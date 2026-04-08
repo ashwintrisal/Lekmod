@@ -15440,9 +15440,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Choral Music
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_CHORAL_MUSIQ"> 
+		<Replace Tag="TXT_KEY_BELIEF_CHORAL_MUSIQ">
 			<Text>
-				+3 [ICON_CULTURE] Culture from [COLOR_POSITIVE_TEXT]Temples[ENDCOLOR]
+				+3 [ICON_CULTURE] Culture from [COLOR_POSITIVE_TEXT]Temples[ENDCOLOR]. Completing the [COLOR_POSITIVE_TEXT]Grand Temple[ENDCOLOR] grants 1 free [ICON_GREAT_MUSICIAN] Great Musician.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_CHORAL_MUSIQ_SHORT"> 

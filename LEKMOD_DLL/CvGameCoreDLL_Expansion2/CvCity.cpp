@@ -7440,6 +7440,37 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 #endif
 
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+		// Choral Music: completing the Grand Temple grants 1 free Great Musician to the religion founder
+		{
+			BuildingClassTypes eGrandTempleClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_GRAND_TEMPLE", true);
+			if (eGrandTempleClass != NO_BUILDINGCLASS && eBuildingClass == eGrandTempleClass)
+			{
+				CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+				ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(owningPlayer.GetID());
+				if (eFoundedReligion != NO_RELIGION)
+				{
+					const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+					if (pReligion && pReligion->m_Beliefs.IsGrandTempleGrantsMusician())
+					{
+						UnitTypes eMusicianUnit = (UnitTypes)thisCiv.getCivilizationUnits((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_MUSICIAN", true));
+						if (eMusicianUnit != NO_UNIT)
+						{
+							CvUnit* pMusician = owningPlayer.initUnit(eMusicianUnit, getX(), getY());
+							if (pMusician)
+							{
+#ifdef ENHANCED_GRAPHS
+								owningPlayer.ChangeNumMusiciansTotal(1);
+#endif
+								if (!pMusician->jumpToNearestValidPlot())
+									pMusician->kill(false);
+							}
+						}
+					}
+				}
+			}
+		}
+#endif
 
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 			// This is going to be really ugly. May Google forgive my eSoul. You should get a free great work with your first Royal Library.

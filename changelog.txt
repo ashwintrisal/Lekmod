@@ -55,6 +55,13 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 - New DLL: NonDominantFollowerYield column in Beliefs table; loops all cities every turn checking GetNumFollowers > 0 && GetReligiousMajority != foundedReligion
 
 
+CHORAL MUSIC (BELIEF_CHORAL_MUSIQ)
+------------------------------------
+Follower belief.
+- Added: completing the Grand Temple grants 1 free Great Musician to the religion founder
+- New DLL: LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF — GrandTempleGrantsMusician column in Beliefs table; spawned via owningPlayer.initUnit(UNITCLASS_MUSICIAN) in CvCity::processBuilding when BUILDINGCLASS_GRAND_TEMPLE is built bFirst
+
+
 EARTH MOTHER (BELIEF_EARTH_MOTHER)
 -----------------------------------
 Pantheon belief.

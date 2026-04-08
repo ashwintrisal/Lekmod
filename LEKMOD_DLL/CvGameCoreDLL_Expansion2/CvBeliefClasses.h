@@ -116,6 +116,9 @@ public:
 #ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 	bool IsMineYieldRequiresResource() const;
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+	bool IsGrandTempleGrantsMusician() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -253,6 +256,9 @@ protected:
 #endif
 #ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 	bool m_bMineYieldRequiresResource;
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+	bool m_bGrandTempleGrantsMusician;
 #endif
 
 	bool m_bPantheon;
@@ -589,6 +595,9 @@ public:
 #endif
 #ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 	bool IsMineYieldRequiresResource() const;
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+	bool IsGrandTempleGrantsMusician() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

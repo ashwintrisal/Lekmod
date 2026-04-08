@@ -1169,6 +1169,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_JUST_WAR_MISSIONARY_BUFF
 // Earth Mother: mine faith yield only applies when the mine sits on a resource
 #define LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+// Choral Music: completing the Grand Temple grants 1 free Great Musician to the religion founder
+#define LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 
 
 
