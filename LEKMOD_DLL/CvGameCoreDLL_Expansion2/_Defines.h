@@ -1171,6 +1171,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
 // Choral Music: completing the Grand Temple grants 1 free Great Musician to the religion founder
 #define LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
+// Religious Center: completing the Grand Temple spawns 2 free Workers at the religion's holy city
+#define LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 
 
 

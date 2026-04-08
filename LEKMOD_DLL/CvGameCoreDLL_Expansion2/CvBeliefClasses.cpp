@@ -106,6 +106,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 	m_bGrandTempleGrantsMusician(false),
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+	m_bGrandTempleSpawnsWorkers(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -562,6 +565,13 @@ bool CvBeliefEntry::IsGrandTempleGrantsMusician() const
 	return m_bGrandTempleGrantsMusician;
 }
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+/// Accessor: does completing the Grand Temple spawn 2 free Workers at the religion's holy city?
+bool CvBeliefEntry::IsGrandTempleSpawnsWorkers() const
+{
+	return m_bGrandTempleSpawnsWorkers;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -984,6 +994,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 	m_bGrandTempleGrantsMusician	  = kResults.GetBool("GrandTempleGrantsMusician");
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+	m_bGrandTempleSpawnsWorkers		  = kResults.GetBool("GrandTempleSpawnsWorkers");
 #endif
 
 	//Arrays
@@ -2229,6 +2242,18 @@ bool CvReligionBeliefs::IsGrandTempleGrantsMusician() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsGrandTempleGrantsMusician())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+bool CvReligionBeliefs::IsGrandTempleSpawnsWorkers() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsGrandTempleSpawnsWorkers())
 			return true;
 	}
 	return false;

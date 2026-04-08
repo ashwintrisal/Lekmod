@@ -16270,9 +16270,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Religious Art
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER"> 
+		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER">
 			<Text>
-				[COLOR_POSITIVE_TEXT]Temples[ENDCOLOR] provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_GOLD] Gold, and +1 [ICON_PRODUCTION] Production
+				[COLOR_POSITIVE_TEXT]Temples[ENDCOLOR] provide +1 [ICON_HAPPINESS_1] Happiness, +1 [ICON_GOLD] Gold, and +1 [ICON_PRODUCTION] Production. Completing the [COLOR_POSITIVE_TEXT]Grand Temple[ENDCOLOR] spawns 2 [ICON_WORKER] Workers near your [COLOR_POSITIVE_TEXT]Holy City[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_RELIGIOUS_CENTER_SHORT"> 

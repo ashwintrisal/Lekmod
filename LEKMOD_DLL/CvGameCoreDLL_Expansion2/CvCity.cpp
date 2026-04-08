@@ -7472,6 +7472,38 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 		}
 #endif
 
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+		// Religious Center: completing the Grand Temple spawns 2 Workers at the religion's holy city
+		{
+			BuildingClassTypes eGrandTempleClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_GRAND_TEMPLE", true);
+			if (eGrandTempleClass != NO_BUILDINGCLASS && eBuildingClass == eGrandTempleClass)
+			{
+				CvGameReligions* pReligions = GC.getGame().GetGameReligions();
+				ReligionTypes eFoundedReligion = pReligions->GetFounderBenefitsReligion(owningPlayer.GetID());
+				if (eFoundedReligion != NO_RELIGION)
+				{
+					const CvReligion* pReligion = pReligions->GetReligion(eFoundedReligion, NO_PLAYER);
+					if (pReligion && pReligion->m_Beliefs.IsGrandTempleSpawnsWorkers())
+					{
+						UnitTypes eWorkerUnit = (UnitTypes)thisCiv.getCivilizationUnits((UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WORKER", true));
+						if (eWorkerUnit != NO_UNIT)
+						{
+							CvPlot* pHolyCityPlot = GC.getMap().plot(pReligion->m_iHolyCityX, pReligion->m_iHolyCityY);
+							int iSpawnX = pHolyCityPlot ? pHolyCityPlot->getX() : getX();
+							int iSpawnY = pHolyCityPlot ? pHolyCityPlot->getY() : getY();
+							for (int iWorker = 0; iWorker < 2; iWorker++)
+							{
+								CvUnit* pWorker = owningPlayer.initUnit(eWorkerUnit, iSpawnX, iSpawnY);
+								if (pWorker && !pWorker->jumpToNearestValidPlot())
+									pWorker->kill(false);
+							}
+						}
+					}
+				}
+			}
+		}
+#endif
+
 #ifdef NQ_CHEAT_FIRST_ROYAL_LIBRARY_COMES_WITH_GREAT_WORK
 			// This is going to be really ugly. May Google forgive my eSoul. You should get a free great work with your first Royal Library.
 			if (eBuilding == (BuildingTypes)GC.getInfoTypeForString("BUILDING_ROYAL_LIBRARY") && !owningPlayer.GetHasEverBuiltRoyalLibrary())

@@ -119,6 +119,9 @@ public:
 #ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 	bool IsGrandTempleGrantsMusician() const;
 #endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+	bool IsGrandTempleSpawnsWorkers() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -259,6 +262,9 @@ protected:
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 	bool m_bGrandTempleGrantsMusician;
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+	bool m_bGrandTempleSpawnsWorkers;
 #endif
 
 	bool m_bPantheon;
@@ -598,6 +604,9 @@ public:
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_GRANTS_MUSICIAN_BELIEF
 	bool IsGrandTempleGrantsMusician() const;
+#endif
+#ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
+	bool IsGrandTempleSpawnsWorkers() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;
