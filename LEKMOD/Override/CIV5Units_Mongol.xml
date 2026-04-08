@@ -16105,9 +16105,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Mystic Rituals
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY"> 
+		<Replace Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY">
 			<Text>
-				+1 [ICON_PRODUCTION] Production from [COLOR_POSITIVE_TEXT]Fishing Boats[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Atolls[ENDCOLOR]
+				+1 [ICON_PRODUCTION] Production from [COLOR_POSITIVE_TEXT]Fishing Boats[ENDCOLOR] in cities with a [COLOR_POSITIVE_TEXT]Lighthouse[ENDCOLOR]. +2 [ICON_PRODUCTION] Production from [COLOR_POSITIVE_TEXT]Atolls[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_OCEANS_BOUNTY_SHORT"> 

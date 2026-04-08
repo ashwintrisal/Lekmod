@@ -55,6 +55,14 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 - New DLL: NonDominantFollowerYield column in Beliefs table; loops all cities every turn checking GetNumFollowers > 0 && GetReligiousMajority != foundedReligion
 
 
+OCEAN'S BOUNTY (BELIEF_OCEANS_BOUNTY)
+--------------------------------------
+Pantheon belief. Full rework.
+- Changed: +1 Production from Fishing Boats (all cities) → +1 Production from Fishing Boats only in cities with a Lighthouse
+- Changed: +1 Production from Atolls → +2 Production from Atolls
+- New DLL: LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF — FishingBoatsLighthouseProduction column; checks BUILDINGCLASS_LIGHTHOUSE presence in working city inside CvPlot::calculateImprovementYieldChange
+
+
 SEAFOOD RITUALS (BELIEF_SEAFOOD)
 ---------------------------------
 Pantheon belief.

@@ -125,6 +125,9 @@ public:
 #ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
 	bool IsFlatTundraNoForestFood() const;
 #endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+	bool IsFishingBoatsLighthouseProduction() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -271,6 +274,9 @@ protected:
 #endif
 #ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
 	bool m_bFlatTundraNoForestFood;
+#endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+	bool m_bFishingBoatsLighthouseProduction;
 #endif
 
 	bool m_bPantheon;
@@ -616,6 +622,9 @@ public:
 #endif
 #ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
 	bool IsFlatTundraNoForestFood() const;
+#endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+	bool IsFishingBoatsLighthouseProduction() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

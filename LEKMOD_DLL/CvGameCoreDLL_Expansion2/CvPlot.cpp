@@ -8081,6 +8081,24 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 				}
 #endif
 				iYield += iReligionChange;
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+				if (eYield == YIELD_PRODUCTION && pReligion->m_Beliefs.IsFishingBoatsLighthouseProduction())
+				{
+					ImprovementTypes eFishingBoats      = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_FISHING_BOATS", true);
+					ImprovementTypes eChileFishingBoats = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_CHILE_FISHING_BOATS", true);
+					if ((eFishingBoats != NO_IMPROVEMENT && eImprovement == eFishingBoats) ||
+						(eChileFishingBoats != NO_IMPROVEMENT && eImprovement == eChileFishingBoats))
+					{
+						BuildingClassTypes eLighthouseClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_LIGHTHOUSE", true);
+						if (eLighthouseClass != NO_BUILDINGCLASS)
+						{
+							BuildingTypes eLighthouse = (BuildingTypes)GET_PLAYER(pWorkingCity->getOwner()).getCivilizationInfo().getCivilizationBuildings(eLighthouseClass);
+							if (eLighthouse != NO_BUILDING && pWorkingCity->GetCityBuildings()->GetNumBuilding(eLighthouse) > 0)
+								iYield += 1;
+						}
+					}
+				}
+#endif
 			}
 		}
 	}

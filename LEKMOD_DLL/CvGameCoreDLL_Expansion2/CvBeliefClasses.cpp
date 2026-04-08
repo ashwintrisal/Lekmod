@@ -112,6 +112,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
 	m_bFlatTundraNoForestFood(false),
 #endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+	m_bFishingBoatsLighthouseProduction(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -582,6 +585,13 @@ bool CvBeliefEntry::IsFlatTundraNoForestFood() const
 	return m_bFlatTundraNoForestFood;
 }
 #endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+/// Accessor: does this belief grant +1 Production from Fishing Boats in cities with a Lighthouse?
+bool CvBeliefEntry::IsFishingBoatsLighthouseProduction() const
+{
+	return m_bFishingBoatsLighthouseProduction;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -1010,6 +1020,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
 	m_bFlatTundraNoForestFood		  = kResults.GetBool("FlatTundraNoForestFood");
+#endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+	m_bFishingBoatsLighthouseProduction = kResults.GetBool("FishingBoatsLighthouseProduction");
 #endif
 
 	//Arrays
@@ -2279,6 +2292,18 @@ bool CvReligionBeliefs::IsFlatTundraNoForestFood() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFlatTundraNoForestFood())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
+bool CvReligionBeliefs::IsFishingBoatsLighthouseProduction() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFishingBoatsLighthouseProduction())
 			return true;
 	}
 	return false;

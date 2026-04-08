@@ -1175,6 +1175,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 // Dance of the Aurora: +1 Food from flat tundra tiles without forest
 #define LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+// Ocean's Bounty: +1 Production from Fishing Boats only in cities that have a Lighthouse
+#define LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 
 
 
