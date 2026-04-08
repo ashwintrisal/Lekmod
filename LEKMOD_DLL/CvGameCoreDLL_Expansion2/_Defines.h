@@ -1179,6 +1179,28 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 // Mandate of God: +1 diplomatic vote for the religion founder
 #define LEKMOD_MANDATE_OF_GOD_BELIEF
+// Charter of Settlement: one-time 150 culture + 150 gold + 2 free plots per city
+#define LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+// Kin Forged in Blood: barb camp clear = +1 capital pop + 40 faith; all units get Zealot
+#define LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+// Pillars of Heaven: +3 faith +1 food for cities adjacent to a mountain
+#define LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+// Songs of the Leviathan: internal capital trade routes yield +2 culture in receiving city
+#define LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+// Mangrove Mysteries: coral/pearl yield +1 prod +2 science if adjacent to city and forest
+#define LEKMOD_MANGROVE_MYSTERIES_BELIEF
+// The Tide's Calling: coastal capital gets faith/gold per inland city; skiff spawn on adopt
+#define LEKMOD_TIDES_CALLING_BELIEF
+// Offering of Plenty: granaries and lighthouses yield -1 food
+#define LEKMOD_OFFERING_OF_PLENTY_BELIEF
+// Salt and Stars: embarked units +1 sight if pantheon in capital
+#define LEKMOD_SALT_AND_STARS_BELIEF
+// The Hungering Throne: expand -1 food; capital bonuses per expand; starvation = capital expands
+#define LEKMOD_HUNGERING_THRONE_BELIEF
+// Ascetic Discipline: shrines modified yields; starvation yields 20 faith
+#define LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+// Rite of the First-Born: city first reaches 2 pop = -1 pop + 20 faith + permanent tile yields
+#define LEKMOD_RITE_OF_FIRST_BORN_BELIEF
 
 
 

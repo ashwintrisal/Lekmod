@@ -131,6 +131,39 @@ public:
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
 	bool IsMandateOfGod() const;
 #endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	bool IsCharterOfSettlement() const;
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+	bool IsKinForgedInBlood() const;
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	bool IsPillarsOfHeaven() const;
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+	bool IsSongsOfLeviathan() const;
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	bool IsMangroveMysteriesConditional() const;
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	bool IsTidesCalling() const;
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+	bool IsOfferingOfPlenty() const;
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	bool IsSaltAndStars() const;
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	bool IsHungeringThrone() const;
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+	bool IsAsceticDiscipline() const;
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+	bool IsRiteOfFirstBorn() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -283,6 +316,39 @@ protected:
 #endif
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
 	bool m_bMandateOfGod;
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	bool m_bCharterOfSettlement;
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+	bool m_bKinForgedInBlood;
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	bool m_bPillarsOfHeaven;
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+	bool m_bSongsOfLeviathan;
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	bool m_bMangroveMysteriesConditional;
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	bool m_bTidesCalling;
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+	bool m_bOfferingOfPlenty;
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	bool m_bSaltAndStars;
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	bool m_bHungeringThrone;
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+	bool m_bAsceticDiscipline;
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+	bool m_bRiteOfFirstBorn;
 #endif
 
 	bool m_bPantheon;
@@ -634,6 +700,39 @@ public:
 #endif
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
 	bool IsMandateOfGod() const;
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	bool IsCharterOfSettlement() const;
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+	bool IsKinForgedInBlood() const;
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	bool IsPillarsOfHeaven() const;
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+	bool IsSongsOfLeviathan() const;
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	bool IsMangroveMysteriesConditional() const;
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	bool IsTidesCalling() const;
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+	bool IsOfferingOfPlenty() const;
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	bool IsSaltAndStars() const;
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	bool IsHungeringThrone() const;
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+	bool IsAsceticDiscipline() const;
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+	bool IsRiteOfFirstBorn() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

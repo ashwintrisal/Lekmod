@@ -118,6 +118,39 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
 	m_bMandateOfGod(false),
 #endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	m_bCharterOfSettlement(false),
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+	m_bKinForgedInBlood(false),
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	m_bPillarsOfHeaven(false),
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+	m_bSongsOfLeviathan(false),
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	m_bMangroveMysteriesConditional(false),
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	m_bTidesCalling(false),
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+	m_bOfferingOfPlenty(false),
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	m_bSaltAndStars(false),
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	m_bHungeringThrone(false),
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+	m_bAsceticDiscipline(false),
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+	m_bRiteOfFirstBorn(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -596,11 +629,40 @@ bool CvBeliefEntry::IsFishingBoatsLighthouseProduction() const
 }
 #endif
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
-/// Accessor: does this belief grant +1 diplomatic vote to the religion founder?
-bool CvBeliefEntry::IsMandateOfGod() const
-{
-	return m_bMandateOfGod;
-}
+bool CvBeliefEntry::IsMandateOfGod() const { return m_bMandateOfGod; }
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+bool CvBeliefEntry::IsCharterOfSettlement() const { return m_bCharterOfSettlement; }
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+bool CvBeliefEntry::IsKinForgedInBlood() const { return m_bKinForgedInBlood; }
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+bool CvBeliefEntry::IsPillarsOfHeaven() const { return m_bPillarsOfHeaven; }
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+bool CvBeliefEntry::IsSongsOfLeviathan() const { return m_bSongsOfLeviathan; }
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+bool CvBeliefEntry::IsMangroveMysteriesConditional() const { return m_bMangroveMysteriesConditional; }
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+bool CvBeliefEntry::IsTidesCalling() const { return m_bTidesCalling; }
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+bool CvBeliefEntry::IsOfferingOfPlenty() const { return m_bOfferingOfPlenty; }
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+bool CvBeliefEntry::IsSaltAndStars() const { return m_bSaltAndStars; }
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+bool CvBeliefEntry::IsHungeringThrone() const { return m_bHungeringThrone; }
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+bool CvBeliefEntry::IsAsceticDiscipline() const { return m_bAsceticDiscipline; }
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+bool CvBeliefEntry::IsRiteOfFirstBorn() const { return m_bRiteOfFirstBorn; }
 #endif
 
 /// Accessor: is this a belief a pantheon can adopt
@@ -1035,7 +1097,40 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 	m_bFishingBoatsLighthouseProduction = kResults.GetBool("FishingBoatsLighthouseProduction");
 #endif
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
-	m_bMandateOfGod					  = kResults.GetBool("MandateOfGod");
+	m_bMandateOfGod                      = kResults.GetBool("MandateOfGod");
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	m_bCharterOfSettlement               = kResults.GetBool("CharterOfSettlement");
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+	m_bKinForgedInBlood                  = kResults.GetBool("KinForgedInBlood");
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	m_bPillarsOfHeaven                   = kResults.GetBool("PillarsOfHeaven");
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+	m_bSongsOfLeviathan                  = kResults.GetBool("SongsOfLeviathan");
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	m_bMangroveMysteriesConditional      = kResults.GetBool("MangroveMysteriesConditional");
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	m_bTidesCalling                      = kResults.GetBool("TidesCalling");
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+	m_bOfferingOfPlenty                  = kResults.GetBool("OfferingOfPlenty");
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+	m_bSaltAndStars                      = kResults.GetBool("SaltAndStars");
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	m_bHungeringThrone                   = kResults.GetBool("HungeringThrone");
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+	m_bAsceticDiscipline                 = kResults.GetBool("AsceticDiscipline");
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+	m_bRiteOfFirstBorn                   = kResults.GetBool("RiteOfFirstBorn");
 #endif
 
 	//Arrays
@@ -2327,10 +2422,118 @@ bool CvReligionBeliefs::IsMandateOfGod() const
 {
 	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
-	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsMandateOfGod())
 			return true;
-	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+bool CvReligionBeliefs::IsCharterOfSettlement() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsCharterOfSettlement())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_KIN_FORGED_IN_BLOOD_BELIEF
+bool CvReligionBeliefs::IsKinForgedInBlood() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsKinForgedInBlood())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+bool CvReligionBeliefs::IsPillarsOfHeaven() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsPillarsOfHeaven())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_SONGS_OF_LEVIATHAN_BELIEF
+bool CvReligionBeliefs::IsSongsOfLeviathan() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsSongsOfLeviathan())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+bool CvReligionBeliefs::IsMangroveMysteriesConditional() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsMangroveMysteriesConditional())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+bool CvReligionBeliefs::IsTidesCalling() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsTidesCalling())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_OFFERING_OF_PLENTY_BELIEF
+bool CvReligionBeliefs::IsOfferingOfPlenty() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsOfferingOfPlenty())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_SALT_AND_STARS_BELIEF
+bool CvReligionBeliefs::IsSaltAndStars() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsSaltAndStars())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+bool CvReligionBeliefs::IsHungeringThrone() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsHungeringThrone())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_ASCETIC_DISCIPLINE_BELIEF
+bool CvReligionBeliefs::IsAsceticDiscipline() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsAsceticDiscipline())
+			return true;
+	return false;
+}
+#endif
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+bool CvReligionBeliefs::IsRiteOfFirstBorn() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsRiteOfFirstBorn())
+			return true;
 	return false;
 }
 #endif
