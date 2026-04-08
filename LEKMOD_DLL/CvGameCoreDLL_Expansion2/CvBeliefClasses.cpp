@@ -115,6 +115,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 	m_bFishingBoatsLighthouseProduction(false),
 #endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	m_bMandateOfGod(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -592,6 +595,13 @@ bool CvBeliefEntry::IsFishingBoatsLighthouseProduction() const
 	return m_bFishingBoatsLighthouseProduction;
 }
 #endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+/// Accessor: does this belief grant +1 diplomatic vote to the religion founder?
+bool CvBeliefEntry::IsMandateOfGod() const
+{
+	return m_bMandateOfGod;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -1023,6 +1033,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 	m_bFishingBoatsLighthouseProduction = kResults.GetBool("FishingBoatsLighthouseProduction");
+#endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	m_bMandateOfGod					  = kResults.GetBool("MandateOfGod");
 #endif
 
 	//Arrays
@@ -2304,6 +2317,18 @@ bool CvReligionBeliefs::IsFishingBoatsLighthouseProduction() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFishingBoatsLighthouseProduction())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+bool CvReligionBeliefs::IsMandateOfGod() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsMandateOfGod())
 			return true;
 	}
 	return false;

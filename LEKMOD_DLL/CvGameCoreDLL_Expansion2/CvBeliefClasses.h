@@ -128,6 +128,9 @@ public:
 #ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 	bool IsFishingBoatsLighthouseProduction() const;
 #endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	bool IsMandateOfGod() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -277,6 +280,9 @@ protected:
 #endif
 #ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 	bool m_bFishingBoatsLighthouseProduction;
+#endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	bool m_bMandateOfGod;
 #endif
 
 	bool m_bPantheon;
@@ -625,6 +631,9 @@ public:
 #endif
 #ifdef LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF
 	bool IsFishingBoatsLighthouseProduction() const;
+#endif
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	bool IsMandateOfGod() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

@@ -28637,6 +28637,7 @@
 		<Column name="GrandTempleSpawnsWorkers" type="boolean"  default="0"/>
 		<Column name="FlatTundraNoForestFood" type="boolean"  default="0"/>
 		<Column name="FishingBoatsLighthouseProduction" type="boolean"  default="0"/>
+		<Column name="MandateOfGod" type="boolean"  default="0"/>
 	</Table>
 	<Table name="Belief_FaithPurchaseUnitClass">
 		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
@@ -33590,17 +33591,29 @@
 			<Enhancer>true</Enhancer> 
 			<Reformation>false</Reformation> 
 		</Row>
-		<Row> 
-			<ID>121</ID> 
-			<Type>BELIEF_RELIQUARY</Type> 
-			<Description>TXT_KEY_BELIEF_RELIQUARY</Description> 
-			<ShortDescription>TXT_KEY_BELIEF_RELIQUARY_SHORT</ShortDescription> 
-			<Pantheon>false</Pantheon> 
-			<Founder>true</Founder> 
-			<Follower>false</Follower> 
-			<Enhancer>false</Enhancer> 
-			<Reformation>false</Reformation> 
-			<GreatPersonExpendedFaith>75</GreatPersonExpendedFaith> 
+		<Row>
+			<ID>121</ID>
+			<Type>BELIEF_RELIQUARY</Type>
+			<Description>TXT_KEY_BELIEF_RELIQUARY</Description>
+			<ShortDescription>TXT_KEY_BELIEF_RELIQUARY_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>true</Founder>
+			<Follower>false</Follower>
+			<Enhancer>false</Enhancer>
+			<Reformation>false</Reformation>
+			<GreatPersonExpendedFaith>75</GreatPersonExpendedFaith>
+		</Row>
+		<Row>
+			<ID>122</ID>
+			<Type>BELIEF_MANDATE_OF_GOD</Type>
+			<Description>TXT_KEY_BELIEF_MANDATE_OF_GOD</Description>
+			<ShortDescription>TXT_KEY_BELIEF_MANDATE_OF_GOD_SHORT</ShortDescription>
+			<Pantheon>false</Pantheon>
+			<Founder>false</Founder>
+			<Follower>false</Follower>
+			<Enhancer>true</Enhancer>
+			<Reformation>false</Reformation>
+			<MandateOfGod>true</MandateOfGod>
 		</Row>
 	</Beliefs> 
 

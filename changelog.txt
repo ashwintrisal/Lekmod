@@ -111,6 +111,13 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+MANDATE OF GOD (BELIEF_MANDATE_OF_GOD)
+---------------------------------------
+NEW enhancer belief.
+- Effect: the founder of this religion gains +1 Diplomatic Vote in the World Congress
+- New DLL: LEKMOD_MANDATE_OF_GOD_BELIEF — MandateOfGod column in Beliefs table; calls ChangeExtraLeagueVotes(1) in CvPlayer::DoReligionOneShots when religion is enhanced
+
+
 JUST WAR (BELIEF_JUST_WAR)
 --------------------------
 Enhancer belief.

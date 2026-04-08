@@ -13936,6 +13936,10 @@ void CvPlayer::DoReligionOneShots(ReligionTypes eReligion)
 	}
 #endif
 
+#ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
+	if (pReligion->m_Beliefs.IsMandateOfGod())
+		ChangeExtraLeagueVotes(1);
+#endif
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	{
 		BuildingClassTypes eFreeCapBuildClass = pReligion->m_Beliefs.GetFreeCapitalBuildingClass();
