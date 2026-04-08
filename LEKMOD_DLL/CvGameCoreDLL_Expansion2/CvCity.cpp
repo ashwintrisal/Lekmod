@@ -8512,6 +8512,45 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 		}
 	}
 #endif
+#ifdef LEKMOD_MANGROVE_MYSTERIES_BELIEF
+	if (eNewMajority != NO_RELIGION)
+	{
+		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eNewMajority, getOwner());
+		if (pReligion && pReligion->m_Beliefs.IsMangroveMysteriesConditional())
+		{
+			ResourceTypes eCoralType = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_CORAL", true);
+			ResourceTypes ePearlsType = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_PEARLS", true);
+			int iQualifyingPlots = 0;
+			for (int iCityPlotLoop = 0; iCityPlotLoop < NUM_CITY_PLOTS; iCityPlotLoop++)
+			{
+				CvPlot* pLoopPlot = plotCity(getX(), getY(), iCityPlotLoop);
+				if (pLoopPlot == NULL)
+					continue;
+				ResourceTypes eResource = pLoopPlot->getResourceType(getTeam());
+				if (eResource != eCoralType && eResource != ePearlsType)
+					continue;
+				// Check adjacency to a forest tile
+				bool bAdjacentForest = false;
+				for (int iDir = 0; iDir < NUM_DIRECTION_TYPES; ++iDir)
+				{
+					CvPlot* pAdjacentPlot = plotDirection(pLoopPlot->getX(), pLoopPlot->getY(), (DirectionTypes)iDir);
+					if (pAdjacentPlot && pAdjacentPlot->getFeatureType() == FEATURE_FOREST)
+					{
+						bAdjacentForest = true;
+						break;
+					}
+				}
+				if (bAdjacentForest)
+					iQualifyingPlots++;
+			}
+			if (iQualifyingPlots > 0)
+			{
+				ChangeBaseYieldRateFromReligion(YIELD_PRODUCTION, iQualifyingPlots);
+				ChangeBaseYieldRateFromReligion(YIELD_SCIENCE, iQualifyingPlots * 2);
+			}
+		}
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------

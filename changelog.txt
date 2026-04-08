@@ -135,6 +135,13 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+MANGROVE MYSTERIES (BELIEF_MANGROVE_MYSTERIES)
+----------------------------------------------
+NEW pantheon belief.
+- Effect: Coral and Pearls tiles adjacent to a Forest tile yield +1 Production +2 Science; +1 Faith from Forest (via Belief_FeatureYieldChanges XML)
+- Conditional yields: LEKMOD_MANGROVE_MYSTERIES_BELIEF hook in CvCity::UpdateReligion; iterates NUM_CITY_PLOTS to find Coral/Pearls resources that have an adjacent FEATURE_FOREST tile, then calls ChangeBaseYieldRateFromReligion(PRODUCTION +1, SCIENCE +2) per qualifying plot
+
+
 TIDE'S CALLING (BELIEF_TIDES_CALLING)
 --------------------------------------
 NEW pantheon belief.
