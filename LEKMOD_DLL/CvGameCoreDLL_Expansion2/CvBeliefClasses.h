@@ -113,6 +113,9 @@ public:
 #ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
 	bool IsJustWarMissionaryBuff() const;
 #endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+	bool IsMineYieldRequiresResource() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -247,6 +250,9 @@ protected:
 #endif
 #ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
 	bool m_bJustWarMissionaryBuff;
+#endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+	bool m_bMineYieldRequiresResource;
 #endif
 
 	bool m_bPantheon;
@@ -580,6 +586,9 @@ public:
 #endif
 #ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
 	bool IsJustWarMissionaryBuff() const;
+#endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+	bool IsMineYieldRequiresResource() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

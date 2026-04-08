@@ -8062,6 +8062,14 @@ int CvPlot::calculateImprovementYieldChange(ImprovementTypes eImprovement, Yield
 				{
 					iReligionChange += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetImprovementYieldChange(eImprovement, eYield);
 				}
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+				if (iReligionChange != 0 && pReligion->m_Beliefs.IsMineYieldRequiresResource())
+				{
+					ImprovementTypes eMine = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_MINE", true);
+					if (eMine != NO_IMPROVEMENT && eImprovement == eMine && getResourceType() == NO_RESOURCE)
+						iReligionChange = 0;
+				}
+#endif
 				iYield += iReligionChange;
 			}
 		}

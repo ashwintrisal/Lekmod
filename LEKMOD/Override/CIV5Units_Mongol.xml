@@ -15605,9 +15605,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				+2 [ICON_PEACE] Faith from each Iron, Gems, Gold, Silver, Copper, and Salt resource
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_EARTH_MOTHER"> 
+		<Replace Tag="TXT_KEY_BELIEF_EARTH_MOTHER">
 			<Text>
-				+1 [ICON_PEACE] Faith from [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR]. +2 [ICON_PEACE] Faith from [ICON_RES_IRON] Iron
+				+1 [ICON_PEACE] Faith from [COLOR_POSITIVE_TEXT]Mines[ENDCOLOR] on [COLOR_POSITIVE_TEXT]Resources[ENDCOLOR]. +2 [ICON_PEACE] Faith from [ICON_RES_IRON] Iron.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_EARTH_MOTHER_SHORT"> 

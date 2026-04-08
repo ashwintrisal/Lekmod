@@ -100,6 +100,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
 	m_bJustWarMissionaryBuff(false),
 #endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+	m_bMineYieldRequiresResource(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -542,6 +545,13 @@ bool CvBeliefEntry::IsJustWarMissionaryBuff() const
 	return m_bJustWarMissionaryBuff;
 }
 #endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+/// Accessor: does this belief restrict mine improvement yields to tiles that have a resource?
+bool CvBeliefEntry::IsMineYieldRequiresResource() const
+{
+	return m_bMineYieldRequiresResource;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -958,6 +968,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_JUST_WAR_MISSIONARY_BUFF
 	m_bJustWarMissionaryBuff		  = kResults.GetBool("JustWarMissionaryBuff");
+#endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+	m_bMineYieldRequiresResource	  = kResults.GetBool("MineYieldRequiresResource");
 #endif
 
 	//Arrays
@@ -2179,6 +2192,18 @@ bool CvReligionBeliefs::IsJustWarMissionaryBuff() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsJustWarMissionaryBuff())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_MINE_YIELD_REQUIRES_RESOURCE
+bool CvReligionBeliefs::IsMineYieldRequiresResource() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsMineYieldRequiresResource())
 			return true;
 	}
 	return false;
