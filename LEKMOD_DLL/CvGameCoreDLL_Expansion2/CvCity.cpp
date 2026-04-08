@@ -17058,6 +17058,25 @@ void CvCity::doGrowth()
 				}
 			}
 #endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+			if (isCapital())
+			{
+				ReligionTypes eMajority = GetCityReligions()->GetReligiousMajority();
+				if (eMajority != NO_RELIGION)
+				{
+					const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eMajority, getOwner());
+					if (pReligion && pReligion->m_Beliefs.IsHungeringThrone())
+					{
+						for (int iPlot = 0; iPlot < 2; iPlot++)
+						{
+							CvPlot* pNextPlot = GetNextBuyablePlot();
+							if (pNextPlot != NULL)
+								DoAcquirePlot(pNextPlot->getX(), pNextPlot->getY());
+						}
+					}
+				}
+			}
+#endif
 		}
 	}
 }

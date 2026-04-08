@@ -28595,7 +28595,10 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>2</Yield>
 		</Row>
-	</Belief_ResourceYieldChanges> 
+		<!-- Tide's Calling: +1 faith from Stone and Wheat -->
+		<Row><BeliefType>BELIEF_TIDES_CALLING</BeliefType><ResourceType>RESOURCE_STONE</ResourceType><YieldType>YIELD_FAITH</YieldType><Yield>1</Yield></Row>
+		<Row><BeliefType>BELIEF_TIDES_CALLING</BeliefType><ResourceType>RESOURCE_WHEAT</ResourceType><YieldType>YIELD_FAITH</YieldType><Yield>1</Yield></Row>
+	</Belief_ResourceYieldChanges>
 
 	<Table name="Belief_TerrainYieldChanges">
 		<Column name="BeliefType" type="text"  />

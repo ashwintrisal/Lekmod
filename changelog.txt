@@ -111,6 +111,20 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+TIDE'S CALLING (BELIEF_TIDES_CALLING)
+--------------------------------------
+NEW pantheon belief.
+- Effect: coastal capital gains +1 Faith +1 Gold per inland city (DLL, implemented previously); +1 Faith from Stone and Wheat (XML, Belief_ResourceYieldChanges); spawns a Skiff on pantheon adoption (pending Skiff unit implementation)
+- Added: Stone and Wheat resource yields via Belief_ResourceYieldChanges
+
+
+HUNGERING THRONE (BELIEF_HUNGERING_THRONE)
+------------------------------------------
+NEW follower belief.
+- Effect: capital gains +1 Production +1 Science +1 Faith per non-capital city following the religion (DLL, implemented previously); non-capital cities with the religion get -1 Food (DLL, implemented previously); when capital starves (loses pop), the capital expands 2 border tiles
+- Starvation expand: LEKMOD_HUNGERING_THRONE_BELIEF hook in CvCity::doGrowth starvation branch; checks capital, calls GetNextBuyablePlot() + DoAcquirePlot() x2
+
+
 RITE OF FIRST-BORN (BELIEF_RITE_OF_FIRST_BORN)
 ----------------------------------------------
 NEW pantheon belief.
