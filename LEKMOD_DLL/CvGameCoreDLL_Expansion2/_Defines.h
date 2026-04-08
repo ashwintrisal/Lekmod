@@ -1157,6 +1157,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_BLOCK_PROPHET_SPAWN_BELIEF
 // Allows a belief to enable faith purchase of a specific unit class (Belief_FaithPurchaseUnitClass table)
 #define LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF
+// Houses of Worship: dynamic culture bonus based on how many of the 3 house building classes are present in city (4/2/0)
+#define LEKMOD_HOUSES_OF_WORSHIP_CULTURE
 
 
 

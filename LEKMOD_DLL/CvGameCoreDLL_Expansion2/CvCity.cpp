@@ -7944,6 +7944,46 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 			}
 		} // NUM_YIELD_TYPES loop end
 
+#ifdef LEKMOD_HOUSES_OF_WORSHIP_CULTURE
+		{
+			// Dynamic culture bonus based on how many of the 3 House of Worship building classes are present in the city.
+			// 1st house = +4 culture, 2nd = +2, 3rd = +0 (total 4 / 6 / 6).
+			BuildingClassTypes eArtistHouseClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_ARTIST_HOUSE", true);
+			BuildingClassTypes eWriterHouseClass  = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_WRITER_HOUSE", true);
+			BuildingClassTypes eMusicHouseClass   = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_MUSIC_HOUSE", true);
+
+			if (eArtistHouseClass != NO_BUILDINGCLASS && eWriterHouseClass != NO_BUILDINGCLASS && eMusicHouseClass != NO_BUILDINGCLASS
+				&& (eBuildingClass == eArtistHouseClass || eBuildingClass == eWriterHouseClass || eBuildingClass == eMusicHouseClass))
+			{
+				int iCurrentCount = GetCityBuildings()->GetNumBuilding(eBuilding);
+				bool bWasPresent = (iCurrentCount - iChange) > 0;
+				bool bIsPresent  = iCurrentCount > 0;
+
+				if (bWasPresent != bIsPresent)
+				{
+					BuildingTypes eBuildingArtist = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eArtistHouseClass);
+					BuildingTypes eBuildingWriter = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eWriterHouseClass);
+					BuildingTypes eBuildingMusic  = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eMusicHouseClass);
+
+					int iNewCount = 0;
+					if (eBuildingArtist != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuildingArtist) > 0) iNewCount++;
+					if (eBuildingWriter != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuildingWriter) > 0) iNewCount++;
+					if (eBuildingMusic  != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBuildingMusic)  > 0) iNewCount++;
+
+					int iOldCount = iNewCount - (bIsPresent ? 1 : 0) + (bWasPresent ? 1 : 0);
+
+					int iNewBonus = (iNewCount >= 1 ? 4 : 0) + (iNewCount >= 2 ? 2 : 0);
+					int iOldBonus = (iOldCount >= 1 ? 4 : 0) + (iOldCount >= 2 ? 2 : 0);
+
+					if (iNewBonus != iOldBonus)
+					{
+						ChangeBaseYieldRateFromBuildings(YIELD_CULTURE, iNewBonus - iOldBonus);
+					}
+				}
+			}
+		}
+#endif
+
 #ifdef AUI_WARNING_FIXES
 		if (pBuildingInfo->GetSpecialistType() != NO_SPECIALIST)
 		{

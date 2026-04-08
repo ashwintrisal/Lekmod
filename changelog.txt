@@ -39,20 +39,21 @@ Unique variants: Longhouse (unchanged 100), Coralshop 200→155, Prussian Factor
 HOUSES OF WORSHIP (BELIEF_HOUSES_OF_WORSHIP)
 ---------------------------------------------
 Enhancer belief. Use 100 Faith (quick speed) to purchase one of three unique buildings in any city.
+City-level culture bonus scales with the count of Houses present: 1st = +4 Culture, 2nd adds +2 more (total 6), 3rd adds nothing.
+New DLL: LEKMOD_HOUSES_OF_WORSHIP_CULTURE — computed in CvCity::processBuilding; tracks presence changes for each of the 3 classes.
 
 ART HALL (BUILDING_ARTIST_HOUSE):
-- Added: +4 Culture, +2 Production, -1 Happiness (fixed culture assignment = "first" of the three)
+- Added: +2 Production, -1 Happiness
 - Kept: +3 Tourism (TechEnhancedTourism), ArtDefineTag=TEMPLE
 - Removed: old +4 Faith, +1 Culture yields
 
 WRITING AUDITORIUM (BUILDING_WRITER_HOUSE):
-- Added: +2 Culture, +2 Science, +1 Happiness, 4 Gold maintenance (fixed culture = "second")
-- Removed: old +1 Science, +2 Culture yields (science increased, culture kept at 2)
+- Added: +2 Science, +1 Happiness, 4 Gold maintenance
+- Removed: old +1 Science, +2 Culture yields
 
 VOCAL CHAMBER (BUILDING_MUSIC_HOUSE):
-- Added: +2 Food, -4 Faith (fixed culture = "third" = 0 culture)
-- Removed: +1 Happiness, old +4 Culture yield
-- Kept: 1 Great Musician Slot
+- Added: +2 Food, -4 Faith
+- Removed: +1 Happiness, old +4 Culture yield, Great Musician Slot
 
 
 SACRED SITES (BELIEF_ZACRED_SITES)

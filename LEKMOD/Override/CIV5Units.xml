@@ -43011,16 +43011,6 @@
 			<Yield>2</Yield>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_WRITER_HOUSE</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>2</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType>
-			<YieldType>YIELD_CULTURE</YieldType>
-			<Yield>4</Yield>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType>
 			<YieldType>YIELD_PRODUCTION</YieldType>
 			<Yield>2</Yield>
@@ -47080,8 +47070,6 @@
 			<FaithCost>150</FaithCost>
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>100</ConquestProb>
-			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
-			<SpecialistCount>1</SpecialistCount>
 			<ArtDefineTag>TEMPLE</ArtDefineTag>
 			<PortraitIndex>1</PortraitIndex>
 			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas>
