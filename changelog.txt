@@ -55,6 +55,12 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 - New DLL: NonDominantFollowerYield column in Beliefs table; loops all cities every turn checking GetNumFollowers > 0 && GetReligiousMajority != foundedReligion
 
 
+TEARS OF THE GODS (BELIEF_TEARS_OF_NOOBS)
+------------------------------------------
+Pantheon belief.
+- Added: +1 Faith and +2 Gold from Pearls (matching existing Gems/Amber/Lapis/Jade pattern)
+
+
 RELIGIOUS IDOLS / FORMAL LITURGY (BELIEF_FORMAL_LITURGY)
 ----------------------------------------------------------
 Pantheon belief.

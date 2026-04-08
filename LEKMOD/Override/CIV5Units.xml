@@ -28297,19 +28297,31 @@
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType> 
-			<ResourceType>RESOURCE_JADE</ResourceType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType>
+			<ResourceType>RESOURCE_JADE</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType> 
-			<ResourceType>RESOURCE_JADE</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType>
+			<ResourceType>RESOURCE_JADE</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
 		</Row>
-		<Row> 
+		<Row>
+			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_TEARS_OF_NOOBS</BeliefType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
 			<BeliefType>BELIEF_SPRING</BeliefType> 
 			<ResourceType>RESOURCE_DEER</ResourceType> 
 			<YieldType>YIELD_CULTURE</YieldType> 

@@ -16540,9 +16540,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Tears of the Gods
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_NOOBS"> 
+		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_NOOBS">
 			<Text>
-				+1 [ICON_PEACE] Faith and +2 [ICON_GOLD] Gold from [ICON_RES_GEMS] Gems, [ICON_RES_AMBER] Amber, [ICON_RES_LAPIS] Lapis Lazuli and [ICON_RES_JADE] Jade
+				+1 [ICON_PEACE] Faith and +2 [ICON_GOLD] Gold from [ICON_RES_GEMS] Gems, [ICON_RES_AMBER] Amber, [ICON_RES_LAPIS] Lapis Lazuli, [ICON_RES_JADE] Jade and [ICON_RES_PEARLS] Pearls
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_TEARS_OF_NOOBS_SHORT"> 
