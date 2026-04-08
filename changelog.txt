@@ -55,6 +55,13 @@ NON-DOMINANT FOLLOWER YIELD (LEKMOD_NON_DOMINANT_FOLLOWER_YIELD_BELIEF):
 - New DLL: NonDominantFollowerYield column in Beliefs table; loops all cities every turn checking GetNumFollowers > 0 && GetReligiousMajority != foundedReligion
 
 
+DANCE OF THE AURORA (BELIEF_DANCE_AURORA)
+-----------------------------------------
+Pantheon belief.
+- Added: +1 Food from flat Tundra tiles without Forest (no hills, no feature)
+- New DLL: LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF — FlatTundraNoForestFood column in Beliefs table; checked in CvPlot::calculateNatureYield after GetTerrainYieldChange, applies when TERRAIN_TUNDRA && !isHills() && NO_FEATURE && YIELD_FOOD
+
+
 RELIGIOUS CENTER (BELIEF_RELIGIOUS_CENTER)
 ------------------------------------------
 Follower belief.

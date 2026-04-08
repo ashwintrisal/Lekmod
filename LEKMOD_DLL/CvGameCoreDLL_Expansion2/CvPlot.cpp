@@ -7736,6 +7736,16 @@ int CvPlot::calculateNatureYield(YieldTypes eYield, TeamTypes eTeam, bool bIgnor
 				iReligionChange += GC.GetGameBeliefs()->GetEntry(eSecondaryPantheon)->GetTerrainYieldChange(getTerrainType(), eYield);
 			}
 			iYield += iReligionChange;
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+			if (eYield == YIELD_FOOD
+				&& getTerrainType() == TERRAIN_TUNDRA
+				&& !isHills()
+				&& getFeatureType() == NO_FEATURE
+				&& pReligion->m_Beliefs.IsFlatTundraNoForestFood())
+			{
+				iYield += 1;
+			}
+#endif
 		}
 	}
 

@@ -122,6 +122,9 @@ public:
 #ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 	bool IsGrandTempleSpawnsWorkers() const;
 #endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+	bool IsFlatTundraNoForestFood() const;
+#endif
 
 	bool IsPantheonBelief() const;
 	bool IsFounderBelief() const;
@@ -265,6 +268,9 @@ protected:
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 	bool m_bGrandTempleSpawnsWorkers;
+#endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+	bool m_bFlatTundraNoForestFood;
 #endif
 
 	bool m_bPantheon;
@@ -607,6 +613,9 @@ public:
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 	bool IsGrandTempleSpawnsWorkers() const;
+#endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+	bool IsFlatTundraNoForestFood() const;
 #endif
 
 	bool IsBuildingClassEnabled(BuildingClassTypes eType) const;

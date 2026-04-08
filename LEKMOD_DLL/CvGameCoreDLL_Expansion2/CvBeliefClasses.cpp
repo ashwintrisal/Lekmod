@@ -109,6 +109,9 @@ CvBeliefEntry::CvBeliefEntry() :
 #ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 	m_bGrandTempleSpawnsWorkers(false),
 #endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+	m_bFlatTundraNoForestFood(false),
+#endif
 
 	m_bPantheon(false),
 	m_bFounder(false),
@@ -572,6 +575,13 @@ bool CvBeliefEntry::IsGrandTempleSpawnsWorkers() const
 	return m_bGrandTempleSpawnsWorkers;
 }
 #endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+/// Accessor: does this belief grant +1 Food from flat tundra tiles without forest?
+bool CvBeliefEntry::IsFlatTundraNoForestFood() const
+{
+	return m_bFlatTundraNoForestFood;
+}
+#endif
 
 /// Accessor: is this a belief a pantheon can adopt
 bool CvBeliefEntry::IsPantheonBelief() const
@@ -997,6 +1007,9 @@ bool CvBeliefEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 #endif
 #ifdef LEKMOD_GRAND_TEMPLE_SPAWNS_WORKERS_BELIEF
 	m_bGrandTempleSpawnsWorkers		  = kResults.GetBool("GrandTempleSpawnsWorkers");
+#endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+	m_bFlatTundraNoForestFood		  = kResults.GetBool("FlatTundraNoForestFood");
 #endif
 
 	//Arrays
@@ -2254,6 +2267,18 @@ bool CvReligionBeliefs::IsGrandTempleSpawnsWorkers() const
 	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
 	{
 		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsGrandTempleSpawnsWorkers())
+			return true;
+	}
+	return false;
+}
+#endif
+#ifdef LEKMOD_FLAT_TUNDRA_NO_FOREST_FOOD_BELIEF
+bool CvReligionBeliefs::IsFlatTundraNoForestFood() const
+{
+	CvBeliefXMLEntries* pBeliefs = GC.GetGameBeliefs();
+	for (int i = 0; i < pBeliefs->GetNumBeliefs(); i++)
+	{
+		if (HasBelief((BeliefTypes)i) && pBeliefs->GetEntry(i)->IsFlatTundraNoForestFood())
 			return true;
 	}
 	return false;

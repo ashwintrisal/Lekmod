@@ -28665,6 +28665,7 @@
 		<Column name="MineYieldRequiresResource" type="boolean"  default="0"/>
 		<Column name="GrandTempleGrantsMusician" type="boolean"  default="0"/>
 		<Column name="GrandTempleSpawnsWorkers" type="boolean"  default="0"/>
+		<Column name="FlatTundraNoForestFood" type="boolean"  default="0"/>
 	</Table>
 	<Table name="Belief_FaithPurchaseUnitClass">
 		<Column name="BeliefType" type="text" references="Beliefs(Type)"/>
@@ -33523,11 +33524,12 @@
 			<MissionaryExtraSpreads>0</MissionaryExtraSpreads> 
 			<ExtraTradeRoutes>0</ExtraTradeRoutes> 
 			<FaithPerForeignTradeRoute>0</FaithPerForeignTradeRoute> 
-			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities> 
-			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities> 
+			<SpreadModifierOwnedCities>0</SpreadModifierOwnedCities>
+			<SpreadModifierUnownedCities>0</SpreadModifierUnownedCities>
+			<FlatTundraNoForestFood>true</FlatTundraNoForestFood>
 		</Row>
-		<Row> 
-			<ID>113</ID> 
+		<Row>
+			<ID>113</ID>
 			<Type>BELIEF_SACRED_PATHS</Type> 
 			<Description>TXT_KEY_BELIEF_SACRED_PATHS</Description> 
 			<ShortDescription>TXT_KEY_BELIEF_SACRED_PATHS_SHORT</ShortDescription> 

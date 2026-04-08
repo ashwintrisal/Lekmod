@@ -15490,9 +15490,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				+1 [ICON_PEACE] Faith and +1 [ICON_RESEARCH] Science from Plantations, and may build Libraries with [ICON_PEACE] Faith.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_DANCE_AURORA"> 
+		<Replace Tag="TXT_KEY_BELIEF_DANCE_AURORA">
 			<Text>
-				+1 [ICON_PEACE] Faith from [COLOR_POSITIVE_TEXT]Tundra[ENDCOLOR] tiles
+				+1 [ICON_PEACE] Faith from [COLOR_POSITIVE_TEXT]Tundra[ENDCOLOR] tiles. +1 [ICON_FOOD] Food from flat [COLOR_POSITIVE_TEXT]Tundra[ENDCOLOR] without [COLOR_POSITIVE_TEXT]Forest[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_DANCE_AURORA_NWS"> 
