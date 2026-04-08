@@ -244,6 +244,9 @@ CvPlayer::CvPlayer() :
 #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 	, m_bHasUsedDharma(false)
 #endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	, m_bHasUsedCharterOfSettlement(false)
+#endif
 	, m_iGreatScientistsCreated(0) // GJS
 	, m_iGreatEngineersCreated(0) // GJS
 	, m_iGreatMerchantsCreated(0) // GJS
@@ -1020,6 +1023,9 @@ void CvPlayer::uninit()
 #endif
 #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 	m_bHasUsedDharma = false;
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	m_bHasUsedCharterOfSettlement = false;
 #endif
 	m_iGreatScientistsCreated = 0; // GJS
 	m_iGreatEngineersCreated = 0; // GJS
@@ -13939,6 +13945,24 @@ void CvPlayer::DoReligionOneShots(ReligionTypes eReligion)
 #ifdef LEKMOD_MANDATE_OF_GOD_BELIEF
 	if (pReligion->m_Beliefs.IsMandateOfGod())
 		ChangeExtraLeagueVotes(1);
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	if (!m_bHasUsedCharterOfSettlement && pReligion->m_Beliefs.IsCharterOfSettlement())
+	{
+		m_bHasUsedCharterOfSettlement = true;
+		changeJONSCulture(150);
+		GetTreasury()->ChangeGold(150);
+		int iCityIdx = 0;
+		for (CvCity* pCity = firstCity(&iCityIdx); pCity != NULL; pCity = nextCity(&iCityIdx))
+		{
+			for (int iPlot = 0; iPlot < 2; iPlot++)
+			{
+				CvPlot* pNextPlot = pCity->GetNextBuyablePlot();
+				if (pNextPlot != NULL)
+					pCity->DoAcquirePlot(pNextPlot->getX(), pNextPlot->getY());
+			}
+		}
+	}
 #endif
 #ifdef LEKMOD_FREE_CAPITAL_BUILDING_BELIEF
 	{
@@ -27974,6 +27998,9 @@ void CvPlayer::Read(FDataStream& kStream)
 #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 	kStream >> m_bHasUsedDharma;
 #endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	kStream >> m_bHasUsedCharterOfSettlement;
+#endif
 	kStream >> m_iGreatScientistsCreated; // GJS
 	kStream >> m_iGreatEngineersCreated; // GJS
 	kStream >> m_iGreatMerchantsCreated; // GJS
@@ -28638,6 +28665,9 @@ void CvPlayer::Write(FDataStream& kStream) const
 #endif
 #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 	kStream << m_bHasUsedDharma;
+#endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	kStream << m_bHasUsedCharterOfSettlement;
 #endif
 	kStream << m_iGreatScientistsCreated; // GJS
 	kStream << m_iGreatEngineersCreated; // GJS

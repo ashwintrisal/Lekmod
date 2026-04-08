@@ -2061,6 +2061,9 @@ protected:
 #ifdef NQ_GOLDEN_AGE_TURNS_FROM_BELIEF
 	bool m_bHasUsedDharma;
 #endif
+#ifdef LEKMOD_CHARTER_OF_SETTLEMENT_BELIEF
+	bool m_bHasUsedCharterOfSettlement;
+#endif
 	int m_iGreatScientistsCreated; // GJS
 	int m_iGreatEngineersCreated; // GJS
 	int m_iGreatMerchantsCreated; // GJS
