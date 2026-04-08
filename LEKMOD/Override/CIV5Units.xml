@@ -307976,17 +307976,17 @@
 			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
 			<NoMaintenance>false</NoMaintenance>
 			<Unhappiness>0</Unhappiness>
-			<UnitArtInfo>ART_DEF_UNIT_WORKBOAT</UnitArtInfo>
+			<UnitArtInfo>ART_DEF_UNIT_U_POLYNESIAN_WAR_CANOE</UnitArtInfo>
 			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
-			<UnitArtInfoEraVariation>true</UnitArtInfoEraVariation>
+			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation>
 			<LeaderExperience>0</LeaderExperience>
 			<DontShowYields>false</DontShowYields>
 			<ShowInPedia>true</ShowInPedia>
 			<MoveRate>WOODEN_BOAT</MoveRate>
-			<UnitFlagIconOffset>2</UnitFlagIconOffset>
-			<PortraitIndex>2</PortraitIndex>
-			<IconAtlas>UNIT_ATLAS_1</IconAtlas>
-			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+			<UnitFlagIconOffset>3</UnitFlagIconOffset>
+			<PortraitIndex>4</PortraitIndex>
+			<IconAtlas>TECH_ATLAS_DLC_03</IconAtlas>
+			<UnitFlagAtlas>KAMEHAMEHA_CIV_COLOR_ATLAS</UnitFlagAtlas>
 		</Row>
 	</Units>
 	
