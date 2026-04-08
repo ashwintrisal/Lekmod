@@ -16115,9 +16115,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Ocean's Bounty
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BELIEF_SEAFOOD"> 
+		<Replace Tag="TXT_KEY_BELIEF_SEAFOOD">
 			<Text>
-				+1 [ICON_FOOD] Food, +1 [ICON_CULTURE] Culture, and +1 [ICON_PEACE] Faith from [ICON_RES_FISH] Fish
+				+1 [ICON_FOOD] Food and +2 [ICON_CULTURE] Culture from [ICON_RES_FISH] Fish
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_SEAFOOD_SHORT"> 

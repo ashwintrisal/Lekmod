@@ -28085,17 +28085,11 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield>
 		</Row>
-		<Row> 
-			<BeliefType>BELIEF_SEAFOOD</BeliefType> 
-			<ResourceType>RESOURCE_FISH</ResourceType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<BeliefType>BELIEF_SEAFOOD</BeliefType> 
-			<ResourceType>RESOURCE_FISH</ResourceType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<BeliefType>BELIEF_SEAFOOD</BeliefType>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
 		</Row>
 		<!--
 		<Row> 
