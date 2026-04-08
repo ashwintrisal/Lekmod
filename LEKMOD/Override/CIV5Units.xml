@@ -27425,7 +27425,14 @@
 		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_OBSERVATORY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
 		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
 		<Row><BeliefType>BELIEF_JESUIT_EDUCATION</BeliefType><BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType><YieldType>YIELD_FAITH</YieldType><YieldChange>2</YieldChange></Row>
-	</Belief_BuildingClassYieldChanges> 
+		<!-- Offering of Plenty: Granaries and Lighthouses -1 Food -->
+		<Row><BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType><BuildingClassType>BUILDINGCLASS_GRANARY</BuildingClassType><YieldType>YIELD_FOOD</YieldType><YieldChange>-1</YieldChange></Row>
+		<Row><BeliefType>BELIEF_OFFERING_OF_PLENTY</BeliefType><BuildingClassType>BUILDINGCLASS_LIGHTHOUSE</BuildingClassType><YieldType>YIELD_FOOD</YieldType><YieldChange>-1</YieldChange></Row>
+		<!-- Ascetic Discipline: Shrines -1 Food, -1 Gold, +2 Production -->
+		<Row><BeliefType>BELIEF_ASCETIC_DISCIPLINE</BeliefType><BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType><YieldType>YIELD_FOOD</YieldType><YieldChange>-1</YieldChange></Row>
+		<Row><BeliefType>BELIEF_ASCETIC_DISCIPLINE</BeliefType><BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType><YieldType>YIELD_GOLD</YieldType><YieldChange>-1</YieldChange></Row>
+		<Row><BeliefType>BELIEF_ASCETIC_DISCIPLINE</BeliefType><BuildingClassType>BUILDINGCLASS_SHRINE</BuildingClassType><YieldType>YIELD_PRODUCTION</YieldType><YieldChange>2</YieldChange></Row>
+	</Belief_BuildingClassYieldChanges>
 
 	<Table name="Belief_CityYieldChanges">
 		<Column name="BeliefType" type="text"  />

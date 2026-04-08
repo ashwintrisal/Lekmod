@@ -111,6 +111,21 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+OFFERING OF PLENTY (BELIEF_OFFERING_OF_PLENTY)
+----------------------------------------------
+NEW pantheon belief.
+- Effect: Granaries and Lighthouses each yield -1 Food
+- Implementation: Belief_BuildingClassYieldChanges rows (XML only, no DLL)
+
+
+ASCETIC DISCIPLINE (BELIEF_ASCETIC_DISCIPLINE)
+----------------------------------------------
+NEW follower belief.
+- Effect: Shrines yield -1 Food, -1 Gold, +2 Production; whenever a city loses population through starvation, gain 20 Faith
+- Building yields: Belief_BuildingClassYieldChanges rows (XML only)
+- Starvation faith: New DLL LEKMOD_ASCETIC_DISCIPLINE_BELIEF (pending)
+
+
 KIN FORGED IN BLOOD (BELIEF_KIN_FORGED_IN_BLOOD)
 -------------------------------------------------
 NEW pantheon belief.
