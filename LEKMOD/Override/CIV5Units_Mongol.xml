@@ -2549,7 +2549,7 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 			<Text>Houses of Worship</Text>
 	</Row>
 	<Row Tag="TXT_KEY_BELIEF_HOUSES_OF_WORSHIP">
-			<Text>Use 100 [ICON_PEACE] Faith to buy an Art Hall (+1 [ICON_CULTURE] Culture, +4 [ICON_PEACE] Faith, +3 [ICON_TOURISM] Tourism), Writing Auditorium (+2 [ICON_CULTURE] Culture, +1 [ICON_RESEARCH] Science) and a Vocal Chamber (+4 [ICON_CULTURE] Culture, +1 [ICON_HAPPINESS_1] Happiness, 1 [ICON_GREAT_MUSICIAN] Great Musician Slot) </Text>
+			<Text>Use 100 [ICON_PEACE] Faith to buy an Art Hall (+4 [ICON_CULTURE] Culture, +2 [ICON_PRODUCTION] Production, -1 [ICON_HAPPINESS_1] Happiness, +3 [ICON_TOURISM] Tourism), Writing Auditorium (+2 [ICON_CULTURE] Culture, +2 [ICON_RESEARCH] Science, +1 [ICON_HAPPINESS_1] Happiness, 4 [ICON_GOLD] Maintenance) and a Vocal Chamber (+2 [ICON_FOOD] Food, -4 [ICON_PEACE] Faith, 1 [ICON_GREAT_MUSICIAN] Great Musician Slot)</Text>
 	</Row>
 	
 	<Row Tag="TXT_KEY_BELIEF_DEVOTED_ELITE_SHORT">

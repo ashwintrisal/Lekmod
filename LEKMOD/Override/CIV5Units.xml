@@ -43005,30 +43005,35 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>5</Yield> 
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_WRITER_HOUSE</BuildingType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<BuildingType>BUILDING_WRITER_HOUSE</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>2</Yield>
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_WRITER_HOUSE</BuildingType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<BuildingType>BUILDING_WRITER_HOUSE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>4</Yield> 
+		<Row>
+			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>4</Yield>
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<BuildingType>BUILDING_ARTIST_HOUSE</BuildingType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>2</Yield>
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_MUSIC_HOUSE</BuildingType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>4</Yield> 
+		<Row>
+			<BuildingType>BUILDING_MUSIC_HOUSE</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_MUSIC_HOUSE</BuildingType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>-4</Yield>
 		</Row>
 		<Row> 
 			<BuildingType>BUILDING_MOSQUE</BuildingType> 
@@ -47055,44 +47060,46 @@
 			<Type>BUILDING_ARTIST_HOUSE</Type> 
 			<BuildingClass>BUILDINGCLASS_ARTIST_HOUSE</BuildingClass> 
 			<Description>TXT_KEY_BUILDING_ARTIST_HOUSE</Description>
-			<Cost>-1</Cost> 
-			<FaithCost>150</FaithCost> 
+			<Cost>-1</Cost>
+			<FaithCost>150</FaithCost>
 			<UnlockedByBelief>true</UnlockedByBelief>
-			<ConquestProb>100</ConquestProb> 
-			<EnhancedYieldTech>TECH_AGRICULTURE</EnhancedYieldTech>			
+			<Happiness>-1</Happiness>
+			<ConquestProb>100</ConquestProb>
+			<EnhancedYieldTech>TECH_AGRICULTURE</EnhancedYieldTech>
 			<TechEnhancedTourism>3</TechEnhancedTourism>
-			<ArtDefineTag>TEMPLE</ArtDefineTag> 
-			<PortraitIndex>2</PortraitIndex> 
-			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas> 
+			<ArtDefineTag>TEMPLE</ArtDefineTag>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas>
 		</Row>
-		<Row> 
-			<ID>151</ID> 
-			<Type>BUILDING_MUSIC_HOUSE</Type> 
-			<BuildingClass>BUILDINGCLASS_MUSIC_HOUSE</BuildingClass> 
+		<Row>
+			<ID>151</ID>
+			<Type>BUILDING_MUSIC_HOUSE</Type>
+			<BuildingClass>BUILDINGCLASS_MUSIC_HOUSE</BuildingClass>
 			<Description>TXT_KEY_BUILDING_MUSIC_HOUSE</Description>
-			<Cost>-1</Cost> 
-			<FaithCost>150</FaithCost> 
-			<UnlockedByBelief>true</UnlockedByBelief>
-			<Happiness>1</Happiness> 
-			<ConquestProb>100</ConquestProb> 
-			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType> 
-			<SpecialistCount>1</SpecialistCount>	
-			<ArtDefineTag>TEMPLE</ArtDefineTag>		
-			<PortraitIndex>1</PortraitIndex> 
-			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas> 
-		</Row>
-		<Row> 
-			<ID>152</ID> 
-			<Type>BUILDING_WRITER_HOUSE</Type> 
-			<BuildingClass>BUILDINGCLASS_WRITER_HOUSE</BuildingClass> 
-			<Description>TXT_KEY_BUILDING_WRITER_HOUSE</Description>
-			<Cost>-1</Cost> 
+			<Cost>-1</Cost>
 			<FaithCost>150</FaithCost>
 			<UnlockedByBelief>true</UnlockedByBelief>
 			<ConquestProb>100</ConquestProb>
-			<ArtDefineTag>TEMPLE</ArtDefineTag> 
-			<PortraitIndex>0</PortraitIndex> 
-			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas> 
+			<SpecialistType>SPECIALIST_MUSICIAN</SpecialistType>
+			<SpecialistCount>1</SpecialistCount>
+			<ArtDefineTag>TEMPLE</ArtDefineTag>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas>
+		</Row>
+		<Row>
+			<ID>152</ID>
+			<Type>BUILDING_WRITER_HOUSE</Type>
+			<BuildingClass>BUILDINGCLASS_WRITER_HOUSE</BuildingClass>
+			<Description>TXT_KEY_BUILDING_WRITER_HOUSE</Description>
+			<Cost>-1</Cost>
+			<FaithCost>150</FaithCost>
+			<UnlockedByBelief>true</UnlockedByBelief>
+			<Happiness>1</Happiness>
+			<Maintenance>4</Maintenance>
+			<ConquestProb>100</ConquestProb>
+			<ArtDefineTag>TEMPLE</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_AESTHETICS_BUILDINGS</IconAtlas>
 		</Row>
 		<Row> 
 			<ID>153</ID> 

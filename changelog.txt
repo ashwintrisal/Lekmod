@@ -36,6 +36,25 @@ Unique variants: Longhouse (unchanged 100), Coralshop 200→155, Prussian Factor
 - New DLL: LEKMOD_FAITH_PURCHASE_UNIT_CLASS_BELIEF — Belief_FaithPurchaseUnitClass table; CvBeliefEntry/CvReligionBeliefs::IsFaithPurchaseUnitClassEnabled; dynamic cost computed in CvCity::GetFaithPurchaseCost(UnitTypes) as ProductionCost×130/100 when unit class is enabled by belief
 
 
+HOUSES OF WORSHIP (BELIEF_HOUSES_OF_WORSHIP)
+---------------------------------------------
+Enhancer belief. Use 100 Faith (quick speed) to purchase one of three unique buildings in any city.
+
+ART HALL (BUILDING_ARTIST_HOUSE):
+- Added: +4 Culture, +2 Production, -1 Happiness (fixed culture assignment = "first" of the three)
+- Kept: +3 Tourism (TechEnhancedTourism), ArtDefineTag=TEMPLE
+- Removed: old +4 Faith, +1 Culture yields
+
+WRITING AUDITORIUM (BUILDING_WRITER_HOUSE):
+- Added: +2 Culture, +2 Science, +1 Happiness, 4 Gold maintenance (fixed culture = "second")
+- Removed: old +1 Science, +2 Culture yields (science increased, culture kept at 2)
+
+VOCAL CHAMBER (BUILDING_MUSIC_HOUSE):
+- Added: +2 Food, -4 Faith (fixed culture = "third" = 0 culture)
+- Removed: +1 Happiness, old +4 Culture yield
+- Kept: 1 Great Musician Slot
+
+
 SACRED SITES (BELIEF_ZACRED_SITES)
 ------------------------------------
 Reformation belief. +3 Gold and +3 Faith per religious building (purchased with Faith). Free Vihara in founder's capital.
