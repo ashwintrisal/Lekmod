@@ -16340,6 +16340,11 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				+2 [ICON_FOOD] Food, +1 [ICON_HAPPINESS_1] Happiness. Requires [COLOR_POSITIVE_TEXT]Stupa[ENDCOLOR] Belief.
 			</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_RITE_OF_FIRST_BORN_BONUS">
+			<Text>
+				Rite of First-Born Blessing
+			</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_KIN_FORGED_IN_BLOOD">
 			<Text>
 				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]Clearing a [COLOR_POSITIVE_TEXT]Barbarian Encampment[ENDCOLOR] yields +1 [ICON_CITIZEN] Population in the [ICON_CAPITAL] Capital and 40 [ICON_PEACE] Faith. All units receive the [COLOR_POSITIVE_TEXT]Zealot[ENDCOLOR] Promotion.

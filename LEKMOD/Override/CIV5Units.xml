@@ -36838,7 +36838,19 @@
 			<NoLimit>false</NoLimit>
 			<Monument>false</Monument>
 		</Row>
-	</BuildingClasses> 
+		<Row>
+			<ID>179</ID>
+			<Type>BUILDINGCLASS_RITE_OF_FIRST_BORN_BONUS</Type>
+			<Description>TXT_KEY_BUILDING_RITE_OF_FIRST_BORN_BONUS</Description>
+			<DefaultBuilding>BUILDING_RITE_OF_FIRST_BORN_BONUS</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<ExtraPlayerInstances>0</ExtraPlayerInstances>
+			<NoLimit>false</NoLimit>
+			<Monument>false</Monument>
+		</Row>
+	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
 		<Column name="BuildingType" type="text"  reference="Buildings(Type)" />
@@ -44066,7 +44078,10 @@
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>2</Yield>
 		</Row>
-	</Building_YieldChanges> 
+		<!-- Rite of First-Born bonus: +1 production +1 culture -->
+		<Row><BuildingType>BUILDING_RITE_OF_FIRST_BORN_BONUS</BuildingType><YieldType>YIELD_PRODUCTION</YieldType><Yield>1</Yield></Row>
+		<Row><BuildingType>BUILDING_RITE_OF_FIRST_BORN_BONUS</BuildingType><YieldType>YIELD_CULTURE</YieldType><Yield>1</Yield></Row>
+	</Building_YieldChanges>
 
 	<Table name="Building_YieldChangesPerPop">
 		<Column name="BuildingType" type="text"  />
@@ -49932,6 +49947,24 @@
 			<ArtDefineTag>TEMPLE</ArtDefineTag>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_STUPA_ATLAS</IconAtlas>
+		</Row>
+		<!-- Rite of First-Born bonus: dummy building granting +1 prod +1 culture, used as both yield source and "triggered" marker -->
+		<Row>
+			<ID>270</ID>
+			<Type>BUILDING_RITE_OF_FIRST_BORN_BONUS</Type>
+			<BuildingClass>BUILDINGCLASS_RITE_OF_FIRST_BORN_BONUS</BuildingClass>
+			<Description>TXT_KEY_BUILDING_RITE_OF_FIRST_BORN_BONUS</Description>
+			<Civilopedia>Trait</Civilopedia>
+			<Strategy>Trait</Strategy>
+			<Help>Trait</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
 		</Row>
 		<!-- [Unit Dummies] -->
 		<!-- Cuban UU -->

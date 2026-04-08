@@ -111,6 +111,14 @@ Pantheon belief.
 - New DLL: LEKMOD_MINE_YIELD_REQUIRES_RESOURCE — MineYieldRequiresResource column in Beliefs table; checked in CvPlot::calculateImprovementYieldChange, zeroes mine improvement yield from beliefs when plot has no resource
 
 
+RITE OF FIRST-BORN (BELIEF_RITE_OF_FIRST_BORN)
+----------------------------------------------
+NEW pantheon belief.
+- Effect: when a city grows to 2 population for the first time, lose 1 population, gain 20 Faith, and receive a permanent +1 Production +1 Culture bonus on that city
+- New dummy building BUILDING_RITE_OF_FIRST_BORN_BONUS (class 179, ID 270) with +1 Production +1 Culture via Building_YieldChanges; building also serves as the "already triggered" guard
+- New DLL: LEKMOD_RITE_OF_FIRST_BORN_BELIEF hook in CvCity::doGrowth; when population reaches 2 and belief is present in majority religion and dummy building not yet built, adds the building and does changePopulation(-1) + ChangeFaith(20)
+
+
 SALT AND STARS (BELIEF_SALT_AND_STARS)
 --------------------------------------
 NEW pantheon belief.

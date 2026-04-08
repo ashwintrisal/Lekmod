@@ -16988,6 +16988,27 @@ void CvCity::doGrowth()
 #endif
 			changePopulation(1);
 
+#ifdef LEKMOD_RITE_OF_FIRST_BORN_BELIEF
+			if (getPopulation() == 2)
+			{
+				ReligionTypes eMajorityRite = GetCityReligions()->GetReligiousMajority();
+				if (eMajorityRite != NO_RELIGION)
+				{
+					const CvReligion* pRiteReligion = GC.getGame().GetGameReligions()->GetReligion(eMajorityRite, getOwner());
+					if (pRiteReligion && pRiteReligion->m_Beliefs.IsRiteOfFirstBorn())
+					{
+						BuildingTypes eBonus = (BuildingTypes)GC.getInfoTypeForString("BUILDING_RITE_OF_FIRST_BORN_BONUS", true);
+						if (eBonus != NO_BUILDING && GetCityBuildings()->GetNumBuilding(eBonus) == 0)
+						{
+							GetCityBuildings()->SetNumRealBuilding(eBonus, 1);
+							changePopulation(-1);
+							GET_PLAYER(getOwner()).ChangeFaith(20);
+						}
+					}
+				}
+			}
+#endif
+
 			// Only show notification if the city is small
 #ifndef NQ_ALWAYS_SHOW_POP_GROWTH_NOTIFICATION
 			if(getPopulation() <= 5)
