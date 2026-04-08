@@ -8526,6 +8526,9 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 				CvPlot* pLoopPlot = plotCity(getX(), getY(), iCityPlotLoop);
 				if (pLoopPlot == NULL)
 					continue;
+				// Only plots directly adjacent (distance 1) to city center qualify
+				if (plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY()) != 1)
+					continue;
 				ResourceTypes eResource = pLoopPlot->getResourceType(getTeam());
 				if (eResource != eCoralType && eResource != ePearlsType)
 					continue;
