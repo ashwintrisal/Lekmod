@@ -8426,6 +8426,92 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 	}
 
 	GET_PLAYER(getOwner()).UpdateReligion();
+
+#ifdef LEKMOD_PILLARS_OF_HEAVEN_BELIEF
+	// Pillars of Heaven: +3 faith +1 food if city is adjacent to a mountain
+	if (eNewMajority != NO_RELIGION)
+	{
+		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eNewMajority, getOwner());
+		if (pReligion && pReligion->m_Beliefs.IsPillarsOfHeaven())
+		{
+			bool bAdjacentMountain = false;
+			for (int iDirectionLoop = 0; iDirectionLoop < NUM_DIRECTION_TYPES; ++iDirectionLoop)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), ((DirectionTypes)iDirectionLoop));
+				if (pAdjacentPlot && pAdjacentPlot->isMountain())
+				{
+					bAdjacentMountain = true;
+					break;
+				}
+			}
+			if (bAdjacentMountain)
+			{
+				ChangeFaithPerTurnFromReligion(3);
+				ChangeBaseYieldRateFromReligion(YIELD_FOOD, 1);
+			}
+		}
+	}
+#endif
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	// Tide's Calling: coastal capital gets +1 faith +1 gold per inland city
+	if (eNewMajority != NO_RELIGION)
+	{
+		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eNewMajority, getOwner());
+		if (pReligion && pReligion->m_Beliefs.IsTidesCalling() && isCapital() && isCoastal())
+		{
+			CvPlayer& kOwner = GET_PLAYER(getOwner());
+			int iInlandCities = 0;
+			int iCityIdx = 0;
+			for (CvCity* pCity = kOwner.firstCity(&iCityIdx); pCity != NULL; pCity = kOwner.nextCity(&iCityIdx))
+			{
+				if (!pCity->isCoastal())
+					iInlandCities++;
+			}
+			if (iInlandCities > 0)
+			{
+				ChangeFaithPerTurnFromReligion(iInlandCities);
+				ChangeBaseYieldRateFromReligion(YIELD_GOLD, iInlandCities);
+			}
+		}
+	}
+#endif
+#ifdef LEKMOD_HUNGERING_THRONE_BELIEF
+	// Hungering Throne: expand cities have -1 food; capital gets +1 prod/science/faith per expand
+	if (eNewMajority != NO_RELIGION)
+	{
+		const CvReligion* pReligion = GC.getGame().GetGameReligions()->GetReligion(eNewMajority, getOwner());
+		if (pReligion && pReligion->m_Beliefs.IsHungeringThrone())
+		{
+			if (isCapital())
+			{
+				// Count non-capital cities with this pantheon majority
+				CvPlayer& kOwner = GET_PLAYER(getOwner());
+				int iExpands = 0;
+				int iCityIdx = 0;
+				for (CvCity* pCity = kOwner.firstCity(&iCityIdx); pCity != NULL; pCity = kOwner.nextCity(&iCityIdx))
+				{
+					if (!pCity->isCapital())
+					{
+						ReligionTypes eCityMajority = pCity->GetCityReligions()->GetReligiousMajority();
+						if (eCityMajority == eNewMajority)
+							iExpands++;
+					}
+				}
+				if (iExpands > 0)
+				{
+					ChangeBaseYieldRateFromReligion(YIELD_PRODUCTION, iExpands);
+					ChangeBaseYieldRateFromReligion(YIELD_SCIENCE, iExpands);
+					ChangeFaithPerTurnFromReligion(iExpands);
+				}
+			}
+			else
+			{
+				// Expands: -1 food
+				ChangeBaseYieldRateFromReligion(YIELD_FOOD, -1);
+			}
+		}
+	}
+#endif
 }
 
 //	--------------------------------------------------------------------------------
