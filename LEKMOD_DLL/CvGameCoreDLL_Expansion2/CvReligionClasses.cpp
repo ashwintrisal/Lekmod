@@ -894,6 +894,23 @@ void CvGameReligions::FoundPantheon(PlayerTypes ePlayer, BeliefTypes eBelief)
 		}
 	}
 
+#ifdef LEKMOD_TIDES_CALLING_BELIEF
+	if (newReligion.m_Beliefs.IsTidesCalling())
+	{
+		CvCity* pCapital = kPlayer.getCapitalCity();
+		if (pCapital)
+		{
+			UnitClassTypes eSkiffClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_SKIFF", true);
+			if (eSkiffClass != NO_UNITCLASS)
+			{
+				UnitTypes eUnit = (UnitTypes)kPlayer.getCivilizationInfo().getCivilizationUnits(eSkiffClass);
+				if (eUnit != NO_UNIT)
+					kPlayer.initUnit(eUnit, pCapital->getX(), pCapital->getY());
+			}
+		}
+	}
+#endif
+
 	GC.GetEngineUserInterface()->setDirty(CityInfo_DIRTY_BIT, true);
 }
 

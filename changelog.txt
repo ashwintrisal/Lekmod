@@ -140,6 +140,7 @@ TIDE'S CALLING (BELIEF_TIDES_CALLING)
 NEW pantheon belief.
 - Effect: coastal capital gains +1 Faith +1 Gold per inland city (DLL, implemented previously); +1 Faith from Stone and Wheat (XML, Belief_ResourceYieldChanges); spawns a Skiff on pantheon adoption (pending Skiff unit implementation)
 - Added: Stone and Wheat resource yields via Belief_ResourceYieldChanges
+- Skiff spawn: LEKMOD_TIDES_CALLING_BELIEF hook in CvGameReligions::FoundPantheon; calls kPlayer.getCivilizationInfo().getCivilizationUnits(UNITCLASS_SKIFF) to spawn the correct unit (Skiff or Nelayan) at the capital on pantheon adoption
 
 
 HUNGERING THRONE (BELIEF_HUNGERING_THRONE)
