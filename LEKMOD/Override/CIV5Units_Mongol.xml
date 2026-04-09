@@ -63615,9 +63615,9 @@ The second sack of Ulundi is considered by historians to be the definitive end o
 				[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]They are already allowing Open Borders![ENDCOLOR]
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_DIPLO_OPEN_BORDERS_TT"> 
+		<Replace Tag="TXT_KEY_DIPLO_OPEN_BORDERS_TT">
 			<Text>
-				Allows the other player's military or civilian Units to pass through one's territory (lasts {1_Num} turns)[NEWLINE][NEWLINE]Note: Units belonging to different players may never stack.
+				Allows the other player's military or civilian Units to pass through one's territory (lasts 10 turns)[NEWLINE][NEWLINE]Note: Units belonging to different players may never stack.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_DIPLO_OPEN_CHAT"> 
