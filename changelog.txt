@@ -5,6 +5,22 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+GIANT DEATH ROBOT CAN PILLAGE (HEALS 0 HP)
+--------------------------------------------
+- UNIT_MECH can now pillage but receives no HP healing from it
+- New XML bool NoHealFromPillage added to Units table; new getter CvUnitEntry::IsNoHealFromPillage()
+- DLL hook in CvUnit.cpp: pillage() skips heal when IsNoHealFromPillage() is true
+
+GREAT GENERALS ALWAYS SPAWN IN CAPITAL
+----------------------------------------
+- Great Generals now always spawn in the capital city
+- Previously spawned in a semi-random highest-ranked city (yield + population + random noise)
+- DLL hook in CvPlayer.cpp: replaced city-selection loop with getCapitalCity()
+
+
+MISCELLANEOUS
+=============
+
 NAVAL UNITS NO LONGER EXERT ZOC AGAINST LAND UNITS
 -----------------------------------------------------
 - Naval units no longer apply zone of control to land units

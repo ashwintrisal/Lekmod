@@ -88,6 +88,7 @@ CvUnitEntry::CvUnitEntry(void) :
 	m_bMilitarySupport(false),
 	m_bMilitaryProduction(false),
 	m_bPillage(false),
+	m_bNoHealFromPillage(false),
 	m_bFound(false),
 	m_bFoundAbroad(false),
 	m_iCultureBombRadius(0),
@@ -227,6 +228,7 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_bMilitarySupport = kResults.GetBool("MilitarySupport");
 	m_bMilitaryProduction = kResults.GetBool("MilitaryProduction");
 	m_bPillage = kResults.GetBool("Pillage");
+	m_bNoHealFromPillage = kResults.GetBool("NoHealFromPillage");
 	m_bFound = kResults.GetBool("Found");
 	m_bFoundAbroad = kResults.GetBool("FoundAbroad");
 #ifdef LEKMOD_CUSTOM_SETTLERS
@@ -899,6 +901,12 @@ bool CvUnitEntry::IsMilitaryProduction() const
 bool CvUnitEntry::IsPillage() const
 {
 	return m_bPillage;
+}
+
+/// Does pillaging heal 0 HP for this unit?
+bool CvUnitEntry::IsNoHealFromPillage() const
+{
+	return m_bNoHealFromPillage;
 }
 
 /// Can it start a city?

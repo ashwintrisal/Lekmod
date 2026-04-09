@@ -109,6 +109,7 @@ public:
 	bool IsMilitarySupport() const;
 	bool IsMilitaryProduction() const;
 	bool IsPillage() const;
+	bool IsNoHealFromPillage() const;
 	bool IsFound() const;
 	bool IsFoundAbroad() const;
 #ifdef LEKMOD_CUSTOM_SETTLERS
@@ -255,6 +256,7 @@ private:
 	bool m_bMilitarySupport;
 	bool m_bMilitaryProduction;
 	bool m_bPillage;
+	bool m_bNoHealFromPillage;
 	bool m_bFound;
 	bool m_bFoundAbroad;
 #ifdef LEKMOD_CUSTOM_SETTLERS

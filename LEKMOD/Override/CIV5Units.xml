@@ -287426,6 +287426,7 @@
 		<Column name="MilitarySupport" type="boolean"  default="0"/>
 		<Column name="MilitaryProduction" type="boolean"  default="0"/>
 		<Column name="Pillage" type="boolean"  default="0"/>
+		<Column name="NoHealFromPillage" type="boolean"  default="0"/>
 		<Column name="PillagePrereqTech" type="text"  default="NULL"/>
 		<Column name="Found" type="boolean"  default="0"/>
 		<Column name="FoundAbroad" type="boolean"  default="0"/>
@@ -289567,13 +289568,14 @@
 			<Class>UNITCLASS_MECH</Class> 
 			<CombatClass>UNITCOMBAT_ARMOR</CombatClass> 
 			<Domain>DOMAIN_LAND</Domain> 
-			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI> 
-			<Food>false</Food> 
-			<NoBadGoodies>false</NoBadGoodies> 
-			<RivalTerritory>false</RivalTerritory> 
-			<MilitarySupport>true</MilitarySupport> 
-			<MilitaryProduction>true</MilitaryProduction> 
-			<Pillage>false</Pillage> 
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<NoHealFromPillage>true</NoHealFromPillage>
 			<Found>false</Found> 
 			<FoundAbroad>false</FoundAbroad> 
 			<CultureBombRadius>0</CultureBombRadius> 

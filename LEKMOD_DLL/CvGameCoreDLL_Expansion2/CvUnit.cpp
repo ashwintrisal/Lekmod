@@ -8346,7 +8346,11 @@ bool CvUnit::pillage()
 
 	if(bSuccessfulNonRoadPillage)
 	{
-		if (hasHealOnPillage())
+		if(getUnitInfo().IsNoHealFromPillage())
+		{
+			// unit can pillage but receives no healing from it
+		}
+		else if (hasHealOnPillage())
 		{
 			// completely heal unit
 			changeDamage(-getDamage());
