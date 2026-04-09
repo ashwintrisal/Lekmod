@@ -954,6 +954,10 @@
 #define LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
 // No Combat Randomness Game Option
 #define LEKMOD_NO_COMBAT_RANDOMNESS
+// Hardcode city-state tribute (bully) comparison radius to 5 regardless of map size
+#define LEKMOD_TRIBUTE_RANGE_FIXED
+// Hardcode open borders deal duration to 10 turns regardless of game speed
+#define LEKMOD_OPEN_BORDERS_FIXED_DURATION
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings

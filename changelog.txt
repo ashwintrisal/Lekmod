@@ -5,6 +5,23 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+TRIBUTE RANGE FIXED TO 5
+--------------------------
+- City-state bully/tribute comparison radius is now hardcoded to 5 tiles regardless of map size
+- Previously scaled as max(gridWidth / 10, 5), which grew on larger maps
+- DLL hook in CvMinorCivAI.cpp: LEKMOD_TRIBUTE_RANGE_FIXED
+
+
+OPEN BORDERS DURATION 10 TURNS
+--------------------------------
+- Open borders agreements now last exactly 10 turns regardless of game speed
+- Tooltip updated to show "10 turns" instead of the game-speed-scaled value
+- DLL hook in CvDealClasses.cpp: LEKMOD_OPEN_BORDERS_FIXED_DURATION
+
+
+MISCELLANEOUS
+=============
+
 PROPHET KILLED ON CAPTURE
 --------------------------
 - Great Prophets are now killed when captured instead of changing ownership (same as other great people)
