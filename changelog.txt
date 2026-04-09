@@ -5,6 +5,14 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+WLTKD DURATION AND DEMAND INTERVAL FIXED TO 10 TURNS
+------------------------------------------------------
+- We Love The King Day duration hardcoded to 10 turns (was ~13 on quick after speed scaling)
+- Demanded luxury switches every 10 turns (was ~26 on quick after speed scaling)
+- UAE wonder UA kingsday bonus also set to 10 turns (was 15)
+- DLL hooks in CvCity.cpp: DoTestResourceDemanded() and DoPickResourceDemanded()
+- Lua change in Lekmod_uae.lua: kings_day_length = 10
+
 GIANT DEATH ROBOT CAN PILLAGE (HEALS 0 HP)
 --------------------------------------------
 - UNIT_MECH can now pillage but receives no HP healing from it

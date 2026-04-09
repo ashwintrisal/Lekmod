@@ -4026,9 +4026,13 @@ void CvCity::DoPickResourceDemanded(bool bCurrentResourceInvalid)
 #ifdef NQ_WLTKD_RESOURCE_DEMAND_EXPIRES
 			// after doing so, reset the timer so that this demand expires and a new one
 			// will replace it if it isn't fulfilled. The duration is 2x the length of the WTLKD
+#ifdef LEKMOD_WLTKD_FIXED
+			ChangeResourceDemandedCountdown(10);
+#else
 			int iNumTurns = GC.getCITY_RESOURCE_WLTKD_TURNS() * 2;
 			iNumTurns = iNumTurns * GC.getGame().getGameSpeedInfo().getCulturePercent() / 100;
 			ChangeResourceDemandedCountdown(iNumTurns);
+#endif
 #endif
 
 			// Notification
@@ -4102,7 +4106,9 @@ void CvCity::DoTestResourceDemanded()
 			// Do we have the right Resource?
 			if(GET_PLAYER(getOwner()).getNumResourceTotal(eResource) > 0)
 			{
-#ifdef NQ_WLTKD_SCALES_BY_GAME_SPEED
+#ifdef LEKMOD_WLTKD_FIXED
+				SetWeLoveTheKingDayCounter(10);
+#elif defined(NQ_WLTKD_SCALES_BY_GAME_SPEED)
 				int iNumTurns = GC.getCITY_RESOURCE_WLTKD_TURNS();
 				iNumTurns = iNumTurns * GC.getGame().getGameSpeedInfo().getCulturePercent() / 100;
 				SetWeLoveTheKingDayCounter(iNumTurns); // 12/18/27/54

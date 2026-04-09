@@ -18,7 +18,7 @@ function lekmod_uae_wonder_ua(player_id, city_id, building_id)
    if building_class_info.MaxGlobalInstances ~= 1 then return end
 
    local gold_boost = 100
-   local kings_day_length = 15
+   local kings_day_length = 10
    player:ChangeGold(gold_boost)
    city:ChangeWeLoveTheKingDayCounter(kings_day_length)
 
