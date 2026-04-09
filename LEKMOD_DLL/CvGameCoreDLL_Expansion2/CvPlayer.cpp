@@ -20402,6 +20402,9 @@ void CvPlayer::setCombatExperience(int iExperience)
 			if(m_iCombatExperience >= iExperienceThreshold && iExperienceThreshold > 0)
 			{
 				// create great person
+#ifdef LEKMOD_GREAT_GENERAL_SPAWN_CAPITAL
+				CvCity* pBestCity = getCapitalCity();
+#else
 				CvCity* pBestCity = NULL;
 				int iBestValue = INT_MAX;
 				int iLoop;
@@ -20421,6 +20424,7 @@ void CvPlayer::setCombatExperience(int iExperience)
 						iBestValue = iValue;
 					}
 				}
+#endif
 
 				if(pBestCity)
 				{

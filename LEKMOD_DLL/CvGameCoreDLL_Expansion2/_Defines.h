@@ -962,6 +962,8 @@
 #define LEKMOD_NO_NAVAL_ZOC_VS_LAND
 // Fortified ranged land units apply their fortification bonus when defending against ranged attacks
 #define LEKMOD_RANGED_FORTIFY_BONUS
+// Great Generals always spawn in the capital city
+#define LEKMOD_GREAT_GENERAL_SPAWN_CAPITAL
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings
