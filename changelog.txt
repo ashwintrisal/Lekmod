@@ -5,6 +5,22 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+NAVAL UNITS NO LONGER EXERT ZOC AGAINST LAND UNITS
+-----------------------------------------------------
+- Naval units no longer apply zone of control to land units
+- Previously DOMAIN_SEA units could slow DOMAIN_LAND units due to an explicit cross-domain exception
+- DLL hook in CvUnitMovement.cpp: LEKMOD_NO_NAVAL_ZOC_VS_LAND
+
+FORTIFIED RANGED LAND UNITS BENEFIT FROM FORTIFICATION BONUS AGAINST RANGED ATTACKS
+--------------------------------------------------------------------------------------
+- Ranged land units now apply their fortification bonus when defending against ranged attacks
+- Previously their defender strength was calculated from ranged combat strength (no fortification)
+- DLL hook in CvUnit.cpp: LEKMOD_RANGED_FORTIFY_BONUS
+
+
+MISCELLANEOUS
+=============
+
 TRIBUTE RANGE FIXED TO 5
 --------------------------
 - City-state bully/tribute comparison radius is now hardcoded to 5 tiles regardless of map size

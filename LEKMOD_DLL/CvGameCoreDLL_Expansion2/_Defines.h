@@ -958,6 +958,10 @@
 #define LEKMOD_TRIBUTE_RANGE_FIXED
 // Hardcode open borders deal duration to 10 turns regardless of game speed
 #define LEKMOD_OPEN_BORDERS_FIXED_DURATION
+// Naval units do not exert zone of control against land units
+#define LEKMOD_NO_NAVAL_ZOC_VS_LAND
+// Fortified ranged land units apply their fortification bonus when defending against ranged attacks
+#define LEKMOD_RANGED_FORTIFY_BONUS
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings

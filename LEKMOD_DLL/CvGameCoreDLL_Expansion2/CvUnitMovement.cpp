@@ -411,6 +411,9 @@ bool CvUnitMovement::IsSlowedByZOC(const CvUnit* pUnit, const CvPlot* pFromPlot,
 						DomainTypes loop_unit_domain_type = pLoopUnit->getDomainType();
 						if(loop_unit_domain_type != unit_domain_type)
 						{
+#ifdef LEKMOD_NO_NAVAL_ZOC_VS_LAND
+							continue;
+#else
 							// this is valid
 							if(loop_unit_domain_type == DOMAIN_SEA && unit_domain_type)
 							{
@@ -420,6 +423,7 @@ bool CvUnitMovement::IsSlowedByZOC(const CvUnit* pUnit, const CvPlot* pFromPlot,
 							{
 								continue;
 							}
+#endif
 						}
 
 						// Embarked?
