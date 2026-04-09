@@ -2,6 +2,15 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+MISCELLANEOUS
+=============
+
+PROPHET KILLED ON CAPTURE
+--------------------------
+- Great Prophets are now killed when captured instead of changing ownership (same as other great people)
+- Removed <Capture>UNITCLASS_PROPHET</Capture> from UNIT_PROPHET XML row
+
+
 UNITS
 =====
 

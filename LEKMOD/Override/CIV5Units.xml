@@ -297163,9 +297163,8 @@
 			<Immobile>false</Immobile> 
 			<Range>0</Range> 
 			<BaseSightRange>2</BaseSightRange> 
-			<Class>UNITCLASS_PROPHET</Class> 
-			<Special>SPECIALUNIT_PEOPLE</Special> 
-			<Capture>UNITCLASS_PROPHET</Capture> 
+			<Class>UNITCLASS_PROPHET</Class>
+			<Special>SPECIALUNIT_PEOPLE</Special>
 			<Domain>DOMAIN_LAND</Domain> 
 			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_HIGH</CivilianAttackPriority> 
 			<DefaultUnitAI>UNITAI_PROPHET</DefaultUnitAI> 
