@@ -100281,11 +100281,16 @@ The ship has weather'd every rack; the prize we sought is won."
 				You have captured an enemy {@1_UnitName}
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_MISC_YOU_CIRC_GLOBE"> 
+		<Replace Tag="TXT_KEY_MISC_YOU_CIRC_GLOBE">
 			<Text>
 				Your maps have proven that the world is round! Your ships receive a {1_Change} Movement bonus.
 			</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_MISC_YOU_CIRC_GLOBE_GOLD">
+			<Text>
+				You have circumnavigated the Globe and earned {1_Num} [ICON_GOLD] Gold!
+			</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_MISC_YOU_CITY_RANSOMED_BY_BARBARIANS"> 
 			<Text>
 				Your City of {@1_CityName} was raided by Barbarians, and {2_Num} Gold was stolen from the national treasury!

@@ -5,6 +5,13 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CIRCUMNAVIGATION AWARDS 200 GOLD WITH GLOBAL NOTIFICATION
+----------------------------------------------------------
+- First team to circumnavigate the globe earns 200 gold per player on the team
+- All players receive a notification (met: named civ; unmet: unknown civ)
+- DLL hook in CvTeam.cpp: testCircumnavigated() after existing player loop
+- New text key TXT_KEY_MISC_YOU_CIRC_GLOBE_GOLD added to CIV5Units_Mongol.xml
+
 WLTKD DURATION AND DEMAND INTERVAL FIXED TO 10 TURNS
 ------------------------------------------------------
 - We Love The King Day duration hardcoded to 10 turns (was ~13 on quick after speed scaling)

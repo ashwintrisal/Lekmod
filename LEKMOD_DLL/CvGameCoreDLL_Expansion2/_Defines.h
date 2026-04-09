@@ -966,6 +966,8 @@
 #define LEKMOD_GREAT_GENERAL_SPAWN_CAPITAL
 // WLTKD duration and demand countdown hardcoded to 10 turns (quick speed literal)
 #define LEKMOD_WLTKD_FIXED
+// Circumnavigation awards 200 gold to first team with global notification
+#define LEKMOD_CIRCUMNAVIGATION_GOLD
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings
