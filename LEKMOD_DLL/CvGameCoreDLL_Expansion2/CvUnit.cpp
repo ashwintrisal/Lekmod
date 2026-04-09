@@ -14084,6 +14084,13 @@ int CvUnit::GetRangeCombatDamage(const CvUnit* pDefender, CvCity* pCity, bool bI
 			// Ranged units take less damage from one another
 			iDefenderStrength *= /*125*/ GC.getRANGE_ATTACK_RANGED_DEFENDER_MOD();
 			iDefenderStrength /= 100;
+
+#ifdef LEKMOD_RANGED_FORTIFY_BONUS
+			// Fortified ranged land units benefit from their fortification bonus
+			int iFortifyMod = pDefender->fortifyModifier();
+			if(iFortifyMod > 0)
+				iDefenderStrength = iDefenderStrength * (100 + iFortifyMod) / 100;
+#endif
 		}
 		else
 		{
