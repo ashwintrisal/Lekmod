@@ -12759,6 +12759,9 @@ void CvPlayer::setJONSCultureTimes100(int iNewValue)
 {
 	if (getJONSCultureTimes100() != iNewValue)
 	{
+#ifdef LEKMOD_MIDTURN_NOTIFICATIONS
+		bool bIncrease = iNewValue > getJONSCultureTimes100();
+#endif
 		// Add to the total we've ever had
 		if (iNewValue > getJONSCultureTimes100())
 		{
@@ -12771,6 +12774,13 @@ void CvPlayer::setJONSCultureTimes100(int iNewValue)
 		{
 			GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 		}
+
+#ifdef LEKMOD_MIDTURN_NOTIFICATIONS
+		if (bIncrease && isAlive() && isHuman() && getNumCities() > 0)
+		{
+			TestMidTurnPolicyNotification();
+		}
+#endif
 	}
 }
 
@@ -14449,12 +14459,35 @@ void CvPlayer::SetFaith(int iNewValue)
 			ChangeFaithEverGenerated(iNewValue - m_iFaith);
 		}
 
+#ifdef LEKMOD_MIDTURN_NOTIFICATIONS
+		int iFaithBefore = m_iFaith;
+#endif
 		m_iFaith = iNewValue;
 
 		if(GC.getGame().getActivePlayer() == GetID())
 		{
 			GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 		}
+
+#ifdef LEKMOD_MIDTURN_NOTIFICATIONS
+		if(iNewValue > iFaithBefore && isAlive() && isHuman() && getNumCities() > 0)
+		{
+			int iMinFaith = GC.getGame().GetGameReligions()->GetMinimumFaithNextPantheon();
+			if(iFaithBefore < iMinFaith && iNewValue >= iMinFaith)
+			{
+				if(GC.getGame().GetGameReligions()->CanCreatePantheon(GetID(), true) == FOUNDING_OK)
+				{
+					CvNotifications* pNotifications = GetNotifications();
+					if(pNotifications)
+					{
+						CvString strBuffer = GetLocalizedText("TXT_KEY_NOTIFICATION_ENOUGH_FAITH_FOR_PANTHEON");
+						CvString strSummary = GetLocalizedText("TXT_KEY_NOTIFICATION_SUMMARY_ENOUGH_FAITH_FOR_PANTHEON");
+						pNotifications->Add(NOTIFICATION_FOUND_PANTHEON, strBuffer, strSummary, -1, -1, -1);
+					}
+				}
+			}
+		}
+#endif
 	}
 }
 
