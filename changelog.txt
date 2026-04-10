@@ -5,6 +5,21 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CITY-STATE TRIBUTE RANGE HOVER DISPLAY
+---------------------------------------
+- Hovering over a city-state's city tile now highlights all plots within tribute range (5 tiles)
+- Uses the same red FireRangeBorder style as the bomber air-strike range preview
+- Only active during normal selection mode; clears automatically when leaving
+- Pure Lua implementation in Lekmod_cs_tribute_range.lua
+
+DEMOGRAPHICS SCREEN NO LONGER UN-ENDS TURN (MULTIPLAYER)
+---------------------------------------------------------
+- Opening the Demographics screen no longer interacts with whether a player's turn is ended
+- Root causes: UI.incTurnTimerSemaphore() on show was pausing the turn state, and InGameUtmost
+  popup priority could trigger turn-unready in simultaneous turns multiplayer
+- Fix: Lua UI override (Lua/UI/Demographics.lua) removes semaphore calls and always uses
+  Demographics popup priority instead of InGameUtmost
+
 MID-TURN POLICY AND PANTHEON NOTIFICATIONS
 -------------------------------------------
 - Policy notification now fires immediately when culture crosses the adoption threshold mid-turn
