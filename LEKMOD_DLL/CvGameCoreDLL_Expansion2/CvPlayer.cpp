@@ -29740,7 +29740,12 @@ int CvPlayer::GetBuyPlotCost() const
 	// Cost Mod (Policies, etc.)
 	if(GetPlotGoldCostMod() != 0)
 	{
+#ifdef LEKMOD_PLOT_BUY_DISCOUNT_CAP
+		int iMod = max(GetPlotGoldCostMod(), -75);
+		iCost *= (100 + iMod);
+#else
 		iCost *= (100 + GetPlotGoldCostMod());
+#endif
 		iCost /= 100;
 	}
 
