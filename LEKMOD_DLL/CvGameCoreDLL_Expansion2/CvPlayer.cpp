@@ -3686,6 +3686,65 @@ void CvPlayer::getCivilizationCityName(CvString& szBuffer, CivilizationTypes eCi
 	else
 	{
 		CvCivilizationInfo& kCivInfo = *pkCivilizationInfo;
+#ifdef LEKMOD_RANDOMIZE_CITY_NAMES
+		{
+			int iNumNames = kCivInfo.getNumCityNames();
+
+			// Exception civs keep capital + 2nd city fixed; all others keep only capital
+			int iFixedNames = 1;
+			CivilizationTypes eAmerica  = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_AMERICA");
+			CivilizationTypes eRussia   = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_RUSSIA");
+			CivilizationTypes eAksum    = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_AKSUM");
+			CivilizationTypes eTimurids = (CivilizationTypes)GC.getInfoTypeForString("CIVILIZATION_TIMURIDS");
+			if(eCivilization == eAmerica || eCivilization == eRussia ||
+			   eCivilization == eAksum   || eCivilization == eTimurids)
+			{
+				iFixedNames = 2;
+			}
+
+			// Try the fixed leading names first (in order)
+			for(int iI = 0; iI < iFixedNames && iI < iNumNames; iI++)
+			{
+				const CvString strCityName = kCivInfo.getCityNames(iI);
+				CvString strName = GetLocalizedText(strCityName.c_str());
+				if(isCityNameValid(strName, true))
+				{
+					szBuffer = strCityName;
+					return;
+				}
+			}
+
+			// Shuffle remaining names with a deterministic player-specific seed
+			if(iNumNames > iFixedNames)
+			{
+				int iCount = min(iNumNames - iFixedNames, 128);
+				int aiPerm[128];
+				for(int iI = 0; iI < iCount; iI++)
+					aiPerm[iI] = iFixedNames + iI;
+
+				// LCG seeded from player ID and starting plot position
+				CvPlot* pStartPlot = getStartingPlot();
+				int iSeed = GetID() * 13337 + (pStartPlot ? pStartPlot->GetPlotIndex() : 0);
+				for(int iI = iCount - 1; iI > 0; iI--)
+				{
+					iSeed = (iSeed * 1103515245 + 12345) & 0x7fffffff;
+					int j = iSeed % (iI + 1);
+					int tmp = aiPerm[iI]; aiPerm[iI] = aiPerm[j]; aiPerm[j] = tmp;
+				}
+
+				for(int iI = 0; iI < iCount; iI++)
+				{
+					const CvString strCityName = kCivInfo.getCityNames(aiPerm[iI]);
+					CvString strName = GetLocalizedText(strCityName.c_str());
+					if(isCityNameValid(strName, true))
+					{
+						szBuffer = strCityName;
+						return;
+					}
+				}
+			}
+		}
+#else
 		for(int iI = 0; iI < kCivInfo.getNumCityNames(); iI++)
 		{
 			iLoopName = ((iI + iRandOffset) % kCivInfo.getNumCityNames());
@@ -3699,6 +3758,7 @@ void CvPlayer::getCivilizationCityName(CvString& szBuffer, CivilizationTypes eCi
 				break;
 			}
 		}
+#endif
 	}
 }
 

@@ -972,6 +972,10 @@
 #define LEKMOD_TURN_ZERO_TIMER
 // Tile purchase discount stacking capped at 75%
 #define LEKMOD_PLOT_BUY_DISCOUNT_CAP
+// City names after the capital (and 2nd city for exception civs) are shuffled randomly
+#define LEKMOD_RANDOMIZE_CITY_NAMES
+// Mid-turn notifications for policy and pantheon becoming available
+#define LEKMOD_MIDTURN_NOTIFICATIONS
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings

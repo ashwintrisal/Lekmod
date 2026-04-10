@@ -5,6 +5,20 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+MID-TURN POLICY AND PANTHEON NOTIFICATIONS
+-------------------------------------------
+- Policy notification now fires immediately when culture crosses the adoption threshold mid-turn
+- Pantheon notification now fires immediately when faith crosses the founding threshold mid-turn
+- Previously both only triggered at the start of the following turn
+- DLL hooks in CvPlayer.cpp: setJONSCultureTimes100() and SetFaith()
+
+CITY NAMES RANDOMIZED AFTER CAPITAL (+ 2ND CITY FOR EXCEPTIONS)
+-----------------------------------------------------------------
+- City names after the capital are now assigned in a random shuffled order
+- Exception civs (America, Russia, Aksum, Timurids) keep their 2nd city name fixed; shuffle starts at 3rd
+- Shuffle is deterministic per player per game (seeded from player ID + starting position)
+- DLL hook in CvPlayer.cpp: getCivilizationCityName() major civ loop
+
 TURN 0 TIMER: 2 MINUTES (SIMULTANEOUS TURNS MULTIPLAYER)
 ---------------------------------------------------------
 - Added 120-second timer on turn 0 for simultaneous turns multiplayer games
