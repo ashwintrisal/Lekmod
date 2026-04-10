@@ -2259,9 +2259,37 @@ bool CvGame::hasTurnTimerExpired(PlayerTypes playerID)
 		}
 #endif
 		else if(isLocalPlayer){
+#ifdef LEKMOD_TURN_ZERO_TIMER
+			// Apply 2-minute timer on turn 0 for simultaneous turns multiplayer
+			if(isGameMultiPlayer() && playerID != NO_PLAYER && GET_PLAYER(playerID).isSimultaneousTurns())
+			{
+				const float fTurnZeroLen = 120.0f;
+				float timeSinceGameTurnStart = m_timeSinceGameTurnStart.Peek() + m_fCurrentTurnTimerPauseDelta;
+				if(GET_PLAYER(playerID).isTurnActive() && timeSinceGameTurnStart > fTurnZeroLen)
+				{
+					if(s_unitMoveTurnSlice == 0)
+						gameTurnTimerExpired = true;
+#ifdef NQM_GAME_MORE_RELAXED_TURN_SLICE_LIMIT_FOR_NETWORK_MULTIPLAYER
+					else if(s_unitMoveTurnSlice + (CvPreGame::isNetworkMultiplayerGame() ? 100 : 10) < getTurnSlice())
+#else
+					else if(s_unitMoveTurnSlice + 10 < getTurnSlice())
+#endif
+						gameTurnTimerExpired = true;
+				}
+				CvPreGame::setEndTurnTimerLength(fTurnZeroLen);
+				iface->updateEndTurnTimer(timeSinceGameTurnStart / fTurnZeroLen);
+			}
+			else
+			{
+				//hold the turn timer at 0 seconds with 0% completion
+				CvPreGame::setEndTurnTimerLength(0.0f);
+				iface->updateEndTurnTimer(0.0f);
+			}
+#else
 			//hold the turn timer at 0 seconds with 0% completion
 			CvPreGame::setEndTurnTimerLength(0.0f);
 			iface->updateEndTurnTimer(0.0f);
+#endif
 		}
 	}
 

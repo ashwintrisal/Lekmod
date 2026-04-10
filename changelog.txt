@@ -5,6 +5,19 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+TURN 0 TIMER: 2 MINUTES (SIMULTANEOUS TURNS MULTIPLAYER)
+---------------------------------------------------------
+- Added 120-second timer on turn 0 for simultaneous turns multiplayer games
+- Previously turn 0 had no timer (held at 0% indefinitely)
+- Timer only applies when isGameMultiPlayer() and player isSimultaneousTurns()
+- DLL hook in CvGame.cpp: hasTurnTimerExpired() else-if(isLocalPlayer) branch
+
+TILE PURCHASE DISCOUNT STACKING CAPPED AT 75%
+----------------------------------------------
+- Plot gold cost modifier (from traits, buildings, policies) now capped at -75
+- Prevents stacking effects like America UA + Stonehenge from exceeding 75% off
+- DLL hook in CvPlayer.cpp: GetBuyPlotCost() cost mod application
+
 CIRCUMNAVIGATION AWARDS 200 GOLD WITH GLOBAL NOTIFICATION
 ----------------------------------------------------------
 - First team to circumnavigate the globe earns 200 gold per player on the team

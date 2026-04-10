@@ -968,6 +968,10 @@
 #define LEKMOD_WLTKD_FIXED
 // Circumnavigation awards 200 gold to first team with global notification
 #define LEKMOD_CIRCUMNAVIGATION_GOLD
+// Turn 0 has a 2-minute timer in simultaneous turns multiplayer
+#define LEKMOD_TURN_ZERO_TIMER
+// Tile purchase discount stacking capped at 75%
+#define LEKMOD_PLOT_BUY_DISCOUNT_CAP
 // Additional plot influence modifiers
 //#define LEKMOD_ADDITIONAL_PLOT_INFLUENCE_MODIFIERS
 // Culture per pop from buildings
