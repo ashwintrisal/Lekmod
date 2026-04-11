@@ -5,6 +5,11 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+BARBARIAN CAMP CLEAR YIELDS 40 GOLD
+------------------------------------
+- Clearing a barbarian encampment now yields 40 gold (at quick speed) on all difficulty levels
+- Replaces the previous varying values per difficulty (25-50 gold)
+
 MARSH CHOP YIELDS FOOD INSTEAD OF PRODUCTION
 ---------------------------------------------
 - Clearing a marsh tile now grants food to the nearest city instead of production

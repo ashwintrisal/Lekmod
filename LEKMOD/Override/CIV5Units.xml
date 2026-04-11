@@ -114641,7 +114641,7 @@
 			<AttitudeChange>2</AttitudeChange> 
 			<NoTechTradeModifier>100</NoTechTradeModifier> 
 			<TechTradeKnownModifier>-100</TechTradeKnownModifier> 
-			<BarbCampGold>50</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>8</BarbSpawnMod> 
 			<BarbarianBonus>70</BarbarianBonus> 
 			<AIBarbarianBonus>75</AIBarbarianBonus> 
@@ -114708,7 +114708,7 @@
 			<AttitudeChange>1</AttitudeChange> 
 			<NoTechTradeModifier>90</NoTechTradeModifier> 
 			<TechTradeKnownModifier>-50</TechTradeKnownModifier> 
-			<BarbCampGold>40</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>5</BarbSpawnMod> 
 			<BarbarianBonus>60</BarbarianBonus> 
 			<AIBarbarianBonus>70</AIBarbarianBonus> 
@@ -114775,7 +114775,7 @@
 			<AttitudeChange>0</AttitudeChange> 
 			<NoTechTradeModifier>80</NoTechTradeModifier> 
 			<TechTradeKnownModifier>-25</TechTradeKnownModifier> 
-			<BarbCampGold>30</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>3</BarbSpawnMod> 
 			<BarbarianBonus>50</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -114842,7 +114842,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>70</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>40</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -114909,7 +114909,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>50</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>30</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -114976,7 +114976,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>40</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>20</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -115043,7 +115043,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>30</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>10</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -115110,7 +115110,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>20</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>0</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
@@ -115177,7 +115177,7 @@
 			<AttitudeChange>-1</AttitudeChange> 
 			<NoTechTradeModifier>70</NoTechTradeModifier> 
 			<TechTradeKnownModifier>0</TechTradeKnownModifier> 
-			<BarbCampGold>25</BarbCampGold> 
+			<BarbCampGold>60</BarbCampGold> 
 			<BarbSpawnMod>0</BarbSpawnMod> 
 			<BarbarianBonus>40</BarbarianBonus> 
 			<AIBarbarianBonus>60</AIBarbarianBonus> 
