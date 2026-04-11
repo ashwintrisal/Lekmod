@@ -7190,33 +7190,36 @@ int CvMinorCivAI::GetCurrentScienceFriendshipBonusTimes100(PlayerTypes ePlayer)
 // Flat culture bonus when Friends with a minor
 int CvMinorCivAI::GetCultureFlatFriendshipBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
 {
-	//antonjs: consider: here it was assumed that this CS is cultured type, which is nice for me prototyping, but later maybe add in a check for this
 	int iCultureBonus = 0;
 
 	EraTypes eCurrentEra = eAssumeEra;
 	if(eCurrentEra == NO_ERA)
 		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
+	EraTypes eInformation = (EraTypes) GC.getInfoTypeForString("ERA_INFORMATION", true);
+	EraTypes eAtomic = (EraTypes) GC.getInfoTypeForString("ERA_ATOMIC", true);
+	EraTypes eModern = (EraTypes) GC.getInfoTypeForString("ERA_MODERN", true);
 	EraTypes eIndustrial = (EraTypes) GC.getInfoTypeForString("ERA_INDUSTRIAL", true);
+	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
 	EraTypes eMedieval = (EraTypes) GC.getInfoTypeForString("ERA_MEDIEVAL", true);
+	EraTypes eClassical = (EraTypes) GC.getInfoTypeForString("ERA_CLASSICAL", true);
 
-	// Industrial era or Later
-	if(eCurrentEra >= eIndustrial)
-	{
-		iCultureBonus += /*10*/ GC.getFRIENDS_CULTURE_BONUS_AMOUNT_INDUSTRIAL();
-	}
-
-	// Medieval era or later
+	if(eCurrentEra >= eInformation)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_INFORMATION();
+	else if(eCurrentEra >= eAtomic)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_ATOMIC();
+	else if(eCurrentEra >= eModern)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_MODERN();
+	else if(eCurrentEra >= eIndustrial)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_INDUSTRIAL();
+	else if(eCurrentEra >= eRenaissance)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_RENAISSANCE();
 	else if(eCurrentEra >= eMedieval)
-	{
-		iCultureBonus += /*6*/ GC.getFRIENDS_CULTURE_BONUS_AMOUNT_MEDIEVAL();
-	}
-
-	// Pre-Medieval
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_MEDIEVAL();
+	else if(eCurrentEra >= eClassical)
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_CLASSICAL();
 	else
-	{
-		iCultureBonus += /*4*/ GC.getFRIENDS_CULTURE_BONUS_AMOUNT_ANCIENT();
-	}
+		iCultureBonus += GC.getFRIENDS_CULTURE_BONUS_AMOUNT_ANCIENT();
 
 	return iCultureBonus;
 }
@@ -7224,33 +7227,36 @@ int CvMinorCivAI::GetCultureFlatFriendshipBonus(PlayerTypes ePlayer, EraTypes eA
 // Flat culture bonus when Allies with a minor
 int CvMinorCivAI::GetCultureFlatAlliesBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
 {
-	//antonjs: consider: here it was assumed that this CS is cultured type, which is nice for me prototyping, but later maybe add in a check for this
 	int iCultureBonus = 0;
 
 	EraTypes eCurrentEra = eAssumeEra;
 	if(eCurrentEra == NO_ERA)
 		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
+	EraTypes eInformation = (EraTypes) GC.getInfoTypeForString("ERA_INFORMATION", true);
+	EraTypes eAtomic = (EraTypes) GC.getInfoTypeForString("ERA_ATOMIC", true);
+	EraTypes eModern = (EraTypes) GC.getInfoTypeForString("ERA_MODERN", true);
 	EraTypes eIndustrial = (EraTypes) GC.getInfoTypeForString("ERA_INDUSTRIAL", true);
+	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
 	EraTypes eMedieval = (EraTypes) GC.getInfoTypeForString("ERA_MEDIEVAL", true);
+	EraTypes eClassical = (EraTypes) GC.getInfoTypeForString("ERA_CLASSICAL", true);
 
-	// Industrial era or Later
-	if(eCurrentEra >= eIndustrial)
-	{
-		iCultureBonus += /*10*/ GC.getALLIES_CULTURE_BONUS_AMOUNT_INDUSTRIAL();
-	}
-
-	// Medieval era or later
+	if(eCurrentEra >= eInformation)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_INFORMATION();
+	else if(eCurrentEra >= eAtomic)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_ATOMIC();
+	else if(eCurrentEra >= eModern)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_MODERN();
+	else if(eCurrentEra >= eIndustrial)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_INDUSTRIAL();
+	else if(eCurrentEra >= eRenaissance)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_RENAISSANCE();
 	else if(eCurrentEra >= eMedieval)
-	{
-		iCultureBonus += /*6*/ GC.getALLIES_CULTURE_BONUS_AMOUNT_MEDIEVAL();
-	}
-
-	// Pre-Medieval
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_MEDIEVAL();
+	else if(eCurrentEra >= eClassical)
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_CLASSICAL();
 	else
-	{
-		iCultureBonus += /*4*/ GC.getALLIES_CULTURE_BONUS_AMOUNT_ANCIENT();
-	}
+		iCultureBonus += GC.getALLIES_CULTURE_BONUS_AMOUNT_ANCIENT();
 
 	return iCultureBonus;
 }

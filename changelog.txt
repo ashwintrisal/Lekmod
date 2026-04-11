@@ -21,6 +21,13 @@ MARSH CHOP YIELDS FOOD INSTEAD OF PRODUCTION
 - Clearing a marsh tile now grants food to the nearest city instead of production
 - Applies to all build actions that remove marsh (dedicated remove, or placing an improvement)
 
+CULTURED CITY-STATE FLAT CULTURE (PER ERA)
+------------------------------------------
+- Cultured CS friend and ally flat culture now use eight era buckets (Ancient through Information)
+  instead of three (pre-Medieval / Medieval–pre-Industrial / Industrial+)
+- Default defines: friends 2/4/6/8/10/12/14/16 per era; allies use the same values so the existing
+  friend+ally stack yields double the friend line when allied (tunable in CIV5Units.xml Defines)
+
 CITY-STATE TRIBUTE RANGE HOVER DISPLAY
 ---------------------------------------
 - Hovering over a city-state's city tile now highlights all plots within tribute range (5 tiles)

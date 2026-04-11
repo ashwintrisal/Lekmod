@@ -98008,27 +98008,67 @@
 		</Row>
 		<Row> 
 			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_ANCIENT</Name> 
-			<Value>3</Value> 
+			<Value>2</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_CLASSICAL</Name> 
+			<Value>4</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_MEDIEVAL</Name> 
-			<Value>5</Value> 
+			<Value>6</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>8</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_INDUSTRIAL</Name> 
 			<Value>10</Value> 
 		</Row>
 		<Row> 
+			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_MODERN</Name> 
+			<Value>12</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>14</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CULTURE_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>16</Value> 
+		</Row>
+		<Row> 
 			<Name>ALLIES_CULTURE_BONUS_AMOUNT_ANCIENT</Name> 
-			<Value>3</Value> 
+			<Value>2</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CULTURE_BONUS_AMOUNT_CLASSICAL</Name> 
+			<Value>4</Value> 
 		</Row>
 		<Row> 
 			<Name>ALLIES_CULTURE_BONUS_AMOUNT_MEDIEVAL</Name> 
-			<Value>5</Value> 
+			<Value>6</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CULTURE_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>8</Value> 
 		</Row>
 		<Row> 
 			<Name>ALLIES_CULTURE_BONUS_AMOUNT_INDUSTRIAL</Name> 
 			<Value>10</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CULTURE_BONUS_AMOUNT_MODERN</Name> 
+			<Value>12</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CULTURE_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>14</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CULTURE_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>16</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_PRE_RENAISSANCE</Name> 
