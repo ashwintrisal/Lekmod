@@ -444,8 +444,8 @@ public:
 	// Food bonuses
 	int GetFriendsCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra = NO_ERA);
 	int GetFriendsOtherCityFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra = NO_ERA);
-	int GetAlliesCapitalFoodBonus(PlayerTypes ePlayer);
-	int GetAlliesOtherCityFoodBonus(PlayerTypes ePlayer);
+	int GetAlliesCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra = NO_ERA);
+	int GetAlliesOtherCityFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra = NO_ERA);
 	int GetCurrentCapitalFoodBonus(PlayerTypes ePlayer);
 	int GetCurrentOtherCityFoodBonus(PlayerTypes ePlayer);
 

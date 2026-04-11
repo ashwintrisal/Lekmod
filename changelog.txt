@@ -21,6 +21,17 @@ MARSH CHOP YIELDS FOOD INSTEAD OF PRODUCTION
 - Clearing a marsh tile now grants food to the nearest city instead of production
 - Applies to all build actions that remove marsh (dedicated remove, or placing an improvement)
 
+MARITIME CITY-STATE FOOD (PER ERA, CAPITAL VS OTHER)
+----------------------------------------------------
+- Maritime CS food from friendship and alliance now uses eight era buckets for
+  capital food and for other cities (hundredths of food per turn, as before)
+- Replaces pre/post Renaissance friends split and single global allies cap/other
+- Era transitions now apply the new-era value to allies capital and other-city
+  bonuses when recalculating deltas (same pattern as friends)
+- Default tables: friends cap 2/2/2/2 then 4 from Industrial onward, friends other
+  cities 0; allies cap 2/4/2/3 then 4, allies other 0/0/1/1 then 1 (whole food;
+  stored ×100 in Defines)
+
 RELIGIOUS CITY-STATE FLAT FAITH (PER ERA)
 -----------------------------------------
 - Religious CS friend and ally flat faith now use eight era buckets through Information

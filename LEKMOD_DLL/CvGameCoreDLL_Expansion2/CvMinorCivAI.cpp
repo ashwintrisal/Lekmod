@@ -7007,7 +7007,7 @@ bool CvMinorCivAI::DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra)
 
 			// Capital
 			iOldFood = GetAlliesCapitalFoodBonus(ePlayer);
-			iNewFood = GetAlliesCapitalFoodBonus(ePlayer);
+			iNewFood = GetAlliesCapitalFoodBonus(ePlayer, eNewEra);
 
 			if(iOldFood != iNewFood)
 			{
@@ -7017,7 +7017,7 @@ bool CvMinorCivAI::DoMajorCivEraChange(PlayerTypes ePlayer, EraTypes eNewEra)
 
 			// Other Cities
 			iOldFood = GetAlliesOtherCityFoodBonus(ePlayer);
-			iNewFood = GetAlliesOtherCityFoodBonus(ePlayer);
+			iNewFood = GetAlliesOtherCityFoodBonus(ePlayer, eNewEra);
 
 			if(iOldFood != iNewFood)
 			{
@@ -7693,128 +7693,164 @@ int CvMinorCivAI::GetCurrentFaithBonus(PlayerTypes ePlayer)
 	return iValue;
 }
 
-// Food bonus when Friends with a minor - additive with general city bonus
-int CvMinorCivAI::GetFriendsCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
+namespace
 {
-	int iBonus;
+enum MaritimeFoodSlot
+{
+	MARITIME_FRIENDS_CAPITAL,
+	MARITIME_FRIENDS_OTHER,
+	MARITIME_ALLIES_CAPITAL,
+	MARITIME_ALLIES_OTHER,
+};
 
-	EraTypes eCurrentEra = eAssumeEra;
-	if(eCurrentEra == NO_ERA)
-		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
-
+static int GetMaritimeRawFoodTimes100(EraTypes eCurrentEra, MaritimeFoodSlot eSlot)
+{
+	EraTypes eInformation = (EraTypes) GC.getInfoTypeForString("ERA_INFORMATION", true);
+	EraTypes eAtomic = (EraTypes) GC.getInfoTypeForString("ERA_ATOMIC", true);
+	EraTypes eModern = (EraTypes) GC.getInfoTypeForString("ERA_MODERN", true);
+	EraTypes eIndustrial = (EraTypes) GC.getInfoTypeForString("ERA_INDUSTRIAL", true);
 	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
+	EraTypes eMedieval = (EraTypes) GC.getInfoTypeForString("ERA_MEDIEVAL", true);
+	EraTypes eClassical = (EraTypes) GC.getInfoTypeForString("ERA_CLASSICAL", true);
 
-	// Medieval era or sooner
-	if(eCurrentEra < eRenaissance)
-		iBonus = /*200*/ GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_PRE_RENAISSANCE();
+	if(eCurrentEra >= eInformation)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_INFORMATION();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_INFORMATION();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_INFORMATION();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_INFORMATION();
+		}
+	}
+	if(eCurrentEra >= eAtomic)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_ATOMIC();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_ATOMIC();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_ATOMIC();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_ATOMIC();
+		}
+	}
+	if(eCurrentEra >= eModern)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_MODERN();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_MODERN();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_MODERN();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_MODERN();
+		}
+	}
+	if(eCurrentEra >= eIndustrial)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_INDUSTRIAL();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_INDUSTRIAL();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_INDUSTRIAL();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_INDUSTRIAL();
+		}
+	}
+	if(eCurrentEra >= eRenaissance)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_RENAISSANCE();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_RENAISSANCE();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_RENAISSANCE();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_RENAISSANCE();
+		}
+	}
+	if(eCurrentEra >= eMedieval)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_MEDIEVAL();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_MEDIEVAL();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_MEDIEVAL();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_MEDIEVAL();
+		}
+	}
+	if(eCurrentEra >= eClassical)
+	{
+		switch(eSlot)
+		{
+		case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_CLASSICAL();
+		case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_CLASSICAL();
+		case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_CLASSICAL();
+		default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_CLASSICAL();
+		}
+	}
+	switch(eSlot)
+	{
+	case MARITIME_FRIENDS_CAPITAL: return GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_ANCIENT();
+	case MARITIME_FRIENDS_OTHER: return GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_ANCIENT();
+	case MARITIME_ALLIES_CAPITAL: return GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT_ANCIENT();
+	default: return GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_ANCIENT();
+	}
+}
 
-	// Renaissance era or later
-	else
-		iBonus = /*200*/ GC.getFRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_POST_RENAISSANCE();
-
+static int ApplyMaritimeFoodModifier(PlayerTypes ePlayer, int iBonus)
+{
 #if !defined(LEKMOD_FIX_PATRO_FOOD)
-	// Modify the bonus if called for by our trait
 	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
-
-	//NQMP GJS - Patronage Finisher
 	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
 #else
 	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
 #endif
-
 	if(iModifier > 0)
 	{
 		iBonus *= (iModifier + 100);
 		iBonus /= 100;
 	}
-
 	return iBonus;
+}
+}
+
+// Food bonus when Friends with a minor - additive with general city bonus
+int CvMinorCivAI::GetFriendsCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
+{
+	EraTypes eCurrentEra = eAssumeEra;
+	if(eCurrentEra == NO_ERA)
+		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
+
+	int iBonus = GetMaritimeRawFoodTimes100(eCurrentEra, MARITIME_FRIENDS_CAPITAL);
+	return ApplyMaritimeFoodModifier(ePlayer, iBonus);
 }
 
 // Food bonus when Friends with a minor
 int CvMinorCivAI::GetFriendsOtherCityFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
 {
-	int iBonus;
-
 	EraTypes eCurrentEra = eAssumeEra;
 	if(eCurrentEra == NO_ERA)
 		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
-	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
-
-	// Medieval era or sooner
-	if(eCurrentEra < eRenaissance)
-		iBonus = /*0*/ GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_PRE_RENAISSANCE();
-
-	// Renaissance era or later
-	else
-		iBonus = /*0*/ GC.getFRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_POST_RENAISSANCE();
-
-#if !defined(LEKMOD_FIX_PATRO_FOOD)
-	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
-
-	//NQMP GJS - Patronage Finisher
-	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
-#else
-	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
-#endif
-
-	if(iModifier > 0)
-	{
-		iBonus *= (iModifier + 100);
-		iBonus /= 100;
-	}
-
-	return iBonus;
+	int iBonus = GetMaritimeRawFoodTimes100(eCurrentEra, MARITIME_FRIENDS_OTHER);
+	return ApplyMaritimeFoodModifier(ePlayer, iBonus);
 }
 
 // Food bonus when Allies with a minor - additive with general city bonus
-int CvMinorCivAI::GetAlliesCapitalFoodBonus(PlayerTypes ePlayer)
+int CvMinorCivAI::GetAlliesCapitalFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
 {
-	int iBonus = /*100*/ GC.getALLIES_CAPITAL_FOOD_BONUS_AMOUNT();
+	EraTypes eCurrentEra = eAssumeEra;
+	if(eCurrentEra == NO_ERA)
+		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
-#if !defined(LEKMOD_FIX_PATRO_FOOD)
-	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
-
-	//NQMP GJS - Patronage Finisher
-	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
-#else
-	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
-#endif
-
-	if(iModifier > 0)
-	{
-		iBonus *= (iModifier + 100);
-		iBonus /= 100;
-	}
-
-	return iBonus;
+	int iBonus = GetMaritimeRawFoodTimes100(eCurrentEra, MARITIME_ALLIES_CAPITAL);
+	return ApplyMaritimeFoodModifier(ePlayer, iBonus);
 }
 
 // Food bonus when Allies with a minor
-int CvMinorCivAI::GetAlliesOtherCityFoodBonus(PlayerTypes ePlayer)
+int CvMinorCivAI::GetAlliesOtherCityFoodBonus(PlayerTypes ePlayer, EraTypes eAssumeEra)
 {
-	int iBonus = /*100*/ GC.getALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT();
+	EraTypes eCurrentEra = eAssumeEra;
+	if(eCurrentEra == NO_ERA)
+		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
-#if !defined(LEKMOD_FIX_PATRO_FOOD)
-	// Modify the bonus if called for by our trait
-	int iModifier = GET_PLAYER(ePlayer).GetPlayerTraits()->GetCityStateBonusModifier();
-
-	//NQMP GJS - Patronage Finisher
-	iModifier += GET_PLAYER(ePlayer).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CITY_STATE_BONUS_MODIFIER);
-#else
-	int iModifier = GET_PLAYER(ePlayer).GetCityStateBonusModifier();
-#endif
-
-	if(iModifier > 0)
-	{
-		iBonus *= (iModifier + 100);
-		iBonus /= 100;
-	}
-
-	return iBonus;
+	int iBonus = GetMaritimeRawFoodTimes100(eCurrentEra, MARITIME_ALLIES_OTHER);
+	return ApplyMaritimeFoodModifier(ePlayer, iBonus);
 }
 
 /// How much are we getting RIGHT NOW (usually 0)

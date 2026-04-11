@@ -98071,27 +98071,131 @@
 			<Value>16</Value> 
 		</Row>
 		<Row> 
-			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_PRE_RENAISSANCE</Name> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_ANCIENT</Name> 
 			<Value>200</Value> 
 		</Row>
 		<Row> 
-			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_POST_RENAISSANCE</Name> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_CLASSICAL</Name> 
 			<Value>200</Value> 
 		</Row>
 		<Row> 
-			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_PRE_RENAISSANCE</Name> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_MEDIEVAL</Name> 
+			<Value>200</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>200</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_MODERN</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_CAPITAL_FOOD_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_ANCIENT</Name> 
 			<Value>0</Value> 
 		</Row>
 		<Row> 
-			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_POST_RENAISSANCE</Name> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_CLASSICAL</Name> 
 			<Value>0</Value> 
 		</Row>
 		<Row> 
-			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT</Name> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_MEDIEVAL</Name> 
 			<Value>0</Value> 
 		</Row>
 		<Row> 
-			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT</Name> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_MODERN</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_OTHER_CITIES_FOOD_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_ANCIENT</Name> 
+			<Value>200</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_CLASSICAL</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_MEDIEVAL</Name> 
+			<Value>200</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>300</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_MODERN</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_CAPITAL_FOOD_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>400</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_ANCIENT</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_CLASSICAL</Name> 
+			<Value>0</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_MEDIEVAL</Name> 
+			<Value>100</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_RENAISSANCE</Name> 
+			<Value>100</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>100</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_MODERN</Name> 
+			<Value>100</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>100</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_OTHER_CITIES_FOOD_BONUS_AMOUNT_INFORMATION</Name> 
 			<Value>100</Value> 
 		</Row>
 		<Row> 
