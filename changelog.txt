@@ -5,6 +5,14 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CITY-STATE TERRITORY BORDER COLORS BY TRAIT
+--------------------------------------------
+- Each minor civ trait (Maritime, Cultured, Religious, Mercantile, Militaristic) now
+  has a single shared secondary border color; primary remains black as before
+- New Colors and PlayerColors entries (high-contrast green / purple / light gray /
+  yellow / salmon); all MinorCivilizations DefaultPlayerColor rows point at the
+  matching PLAYERCOLOR_CS_* for their MinorCivTrait
+
 TRADE ROUTES LAST EXACTLY 15 TURNS
 ------------------------------------
 - Trade routes now always run for exactly 15 turns (at quick speed) regardless of route distance

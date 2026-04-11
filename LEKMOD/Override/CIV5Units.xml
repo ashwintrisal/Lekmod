@@ -82827,6 +82827,46 @@
 			<Blue>0.458823529411765</Blue>
 			<Alpha>1</Alpha>
 		</Row>
+		<Row>
+			<ID>373</ID>
+			<Type>COLOR_CS_TRAIT_MARITIME</Type>
+			<Red>0.2</Red>
+			<Green>0.88</Green>
+			<Blue>0.38</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<ID>374</ID>
+			<Type>COLOR_CS_TRAIT_CULTURED</Type>
+			<Red>0.62</Red>
+			<Green>0.32</Green>
+			<Blue>0.95</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<ID>375</ID>
+			<Type>COLOR_CS_TRAIT_RELIGIOUS</Type>
+			<Red>0.78</Red>
+			<Green>0.8</Green>
+			<Blue>0.82</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<ID>376</ID>
+			<Type>COLOR_CS_TRAIT_MERCANTILE</Type>
+			<Red>1</Red>
+			<Green>0.88</Green>
+			<Blue>0.18</Blue>
+			<Alpha>1</Alpha>
+		</Row>
+		<Row>
+			<ID>377</ID>
+			<Type>COLOR_CS_TRAIT_MILITARISTIC</Type>
+			<Red>1</Red>
+			<Green>0.52</Green>
+			<Blue>0.44</Blue>
+			<Alpha>1</Alpha>
+		</Row>
 	</Colors> 
 
 	<Table name="Commands">
@@ -177252,7 +177292,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KUWAIT</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KUWAIT_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_WHITE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177266,7 +177306,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_TROI</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_TROI_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GRAY</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177280,7 +177320,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_GENEVA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_GENEVA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177294,7 +177334,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_RIGA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_RIGA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177308,7 +177348,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_TALLINN</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_TALLINN_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
@@ -177322,7 +177362,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_LJUBLJANA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_LJUBLJANA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
@@ -177336,7 +177376,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_SANTO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_SANTO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177350,7 +177390,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_PHNOM_PENH</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_PHNOM_PENH_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177364,7 +177404,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_ISLAM</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_ISLAM_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177378,7 +177418,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_BUCHAREST</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_BUCHAREST_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177392,7 +177432,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_BELGRADE</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_BELGRADE_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177406,7 +177446,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MEXICO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MEXICO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN </ArtStylePrefix> 
@@ -177420,7 +177460,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MONACO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MONACO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
@@ -177434,7 +177474,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KATHMANDU</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KATHMANDU_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177448,7 +177488,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_HARAPPA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_HARAPPA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177462,7 +177502,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_SARAJEVO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_SARAJEVO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177476,7 +177516,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_CARACAS</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_CARACAS_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_ORANGE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177490,7 +177530,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KUALA_LUMPUR</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KUALA_LUMPUR_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_YELLOW</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177504,7 +177544,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_SINGAPORE</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_SINGAPORE_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_YELLOW</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177518,7 +177558,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_PANAMA_CITY</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_PANAMA_CITY</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_YELLOW</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN</ArtStylePrefix> 
@@ -177532,7 +177572,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_CAPE_TOWN</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_CAPE_TOWN_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_ORANGE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177546,7 +177586,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_TBILSI</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_TBILSI_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177560,7 +177600,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MOHENJO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MOHENJO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177574,7 +177614,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_LEK10STEIN</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_LEK10STEIN_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177588,7 +177628,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_CAHOKIA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_CAHOKIA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_WHITE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN</ArtStylePrefix> 
@@ -177602,7 +177642,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_COLOMBO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_COLOMBO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177616,7 +177656,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_HONG_KONG</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_HONG_KONG_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177630,7 +177670,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_ORMUS</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_ORMUS_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GRAY</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177644,7 +177684,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_TAIPEI</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_TAIPEI_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_WHITE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177658,7 +177698,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_LA_VENTA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_LA_VENTA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN</ArtStylePrefix> 
@@ -177672,7 +177712,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_LIMA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_LIMA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177686,7 +177726,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_PORTAU</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_PORTAU_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177700,7 +177740,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_ZIMBA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_ZIMBA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PEACH</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177714,7 +177754,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_DJIBOUTI</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_DJIBOUTI_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_ORANGE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_MED</ArtStyleSuffix> 
 			<ArtStylePrefix>MEDITERRANEAN</ArtStylePrefix> 
@@ -177728,7 +177768,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MOMBASA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MOMBASA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177742,7 +177782,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_PRAGUE</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_PRAGUE_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177756,7 +177796,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_VALLETTA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_VALLETTA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_YELLOW</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177770,7 +177810,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_QUFU</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_QUFU_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_YELLOW</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_GRECO_ROMAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177784,7 +177824,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_WITTENBERG</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_WITTENBERG_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177798,7 +177838,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_CHACO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_CHACO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PEACH</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177812,7 +177852,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_ZANZIBAR</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_ZANZIBAR_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177826,7 +177866,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_ZURICH</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_ZURICH_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GRAY</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177840,7 +177880,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_DUBAI</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_DUBAI_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177854,7 +177894,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MALACCA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MALACCA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177868,7 +177908,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MOGADISHU</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MOGADISHU_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177882,7 +177922,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KILWA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KILWA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177896,7 +177936,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KYZYL</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KYZYL_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177910,7 +177950,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_IFE</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_IFE_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GRAY</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_RELIGIOUS</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177924,7 +177964,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_THIMPHU</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_THIMPHU_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_BLUE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177938,7 +177978,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_BUENOS_AIRES</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_BUENOS_AIRES_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN</ArtStylePrefix> 
@@ -177952,7 +177992,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_KYRENE</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_KYRENE_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_CYAN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_MIDDLE_EAST</ArtStyleType> 
 			<ArtStyleSuffix>_AFRI</ArtStyleSuffix> 
 			<ArtStylePrefix>AFRICAN</ArtStylePrefix> 
@@ -177966,7 +178006,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_MONTEVIDEO</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_MONTEVIDEO_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN</ArtStylePrefix> 
@@ -177980,7 +178020,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_HAVANA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_HAVANA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MILITARISTIC</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -177994,7 +178034,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_BANGKOK</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_BANGKOK_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_ASIAN</ArtStyleType> 
 			<ArtStyleSuffix>_ASIA</ArtStyleSuffix> 
 			<ArtStylePrefix>ASIAN </ArtStylePrefix> 
@@ -178008,7 +178048,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_LAGOS</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_LAGOS_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_GREEN</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -178022,7 +178062,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_BOGOTA</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_BOGOTA_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_MIDDLE_PURPLE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_CULTURED</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_SOUTH_AMERICA</ArtStyleType> 
 			<ArtStyleSuffix>_AMER</ArtStyleSuffix> 
 			<ArtStylePrefix>AMERICAN</ArtStylePrefix> 
@@ -178036,7 +178076,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_AUCK</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_AUCK_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_LIGHT_ORANGE</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MERCANTILE</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -178050,7 +178090,7 @@
 			<ShortDescription>TXT_KEY_CITYSTATE_WELLINGTON</ShortDescription> 
 			<Adjective>TXT_KEY_CITYSTATE_WELLINGTON_ADJ</Adjective> 
 			<ArtDefineTag>ART_DEF_CIVILIZATION_MINOR</ArtDefineTag> 
-			<DefaultPlayerColor>PLAYERCOLOR_MINOR_PEACH</DefaultPlayerColor> 
+			<DefaultPlayerColor>PLAYERCOLOR_CS_MARITIME</DefaultPlayerColor> 
 			<ArtStyleType>ARTSTYLE_EUROPEAN</ArtStyleType> 
 			<ArtStyleSuffix>_EURO</ArtStyleSuffix> 
 			<ArtStylePrefix>EUROPEAN</ArtStylePrefix> 
@@ -187177,6 +187217,41 @@
 			<Type>PLAYERCOLOR_TUNISIA</Type>
 			<PrimaryColor>COLOR_PLAYER_TUNISIA_ICON</PrimaryColor>
 			<SecondaryColor>COLOR_PLAYER_TUNISIA_BACKGROUND</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+		<Row>
+			<ID>182</ID>
+			<Type>PLAYERCOLOR_CS_MARITIME</Type>
+			<PrimaryColor>COLOR_PLAYER_MINOR_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_CS_TRAIT_MARITIME</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+		<Row>
+			<ID>183</ID>
+			<Type>PLAYERCOLOR_CS_CULTURED</Type>
+			<PrimaryColor>COLOR_PLAYER_MINOR_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_CS_TRAIT_CULTURED</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+		<Row>
+			<ID>184</ID>
+			<Type>PLAYERCOLOR_CS_RELIGIOUS</Type>
+			<PrimaryColor>COLOR_PLAYER_MINOR_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_CS_TRAIT_RELIGIOUS</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+		<Row>
+			<ID>185</ID>
+			<Type>PLAYERCOLOR_CS_MERCANTILE</Type>
+			<PrimaryColor>COLOR_PLAYER_MINOR_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_CS_TRAIT_MERCANTILE</SecondaryColor>
+			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
+		</Row>
+		<Row>
+			<ID>186</ID>
+			<Type>PLAYERCOLOR_CS_MILITARISTIC</Type>
+			<PrimaryColor>COLOR_PLAYER_MINOR_ICON</PrimaryColor>
+			<SecondaryColor>COLOR_CS_TRAIT_MILITARISTIC</SecondaryColor>
 			<TextColor>COLOR_PLAYER_WHITE_TEXT</TextColor>
 		</Row>
 	</PlayerColors> 
