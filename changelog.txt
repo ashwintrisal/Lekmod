@@ -5,6 +5,12 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+TRADE ROUTES LAST EXACTLY 15 TURNS
+------------------------------------
+- Trade routes now always run for exactly 15 turns (at quick speed) regardless of route distance
+- Previously duration varied based on distance (~20 turns at quick speed)
+- Scales with game speed (22 turns at standard, 33 at epic, 67 at marathon)
+
 BARBARIAN CAMP CLEAR YIELDS 40 GOLD
 ------------------------------------
 - Clearing a barbarian encampment now yields 40 gold (at quick speed) on all difficulty levels

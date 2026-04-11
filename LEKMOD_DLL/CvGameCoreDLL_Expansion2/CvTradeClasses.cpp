@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -409,9 +409,17 @@ bool CvGameTrade::CreateTradeRoute(CvCity* pOriginCity, CvCity* pDestCity, Domai
 		iCircuitsToComplete = max(iTargetTurns / iTurnsPerCircuit, 2);
 	}
 
+#ifdef LEKMOD_TRADE_ROUTE_FIXED_DURATION
+	// Always run for exactly 15 turns at quick speed (scales with game speed via culture percent; quick=67)
+	int iFixedDuration = 15 * GC.getGame().getGameSpeedInfo().getCulturePercent() / 67;
+	m_aTradeConnections[iNewTradeRouteIndex].m_iCircuitsCompleted = 0;
+	m_aTradeConnections[iNewTradeRouteIndex].m_iCircuitsToComplete = 99999; // never expire by circuit count
+	m_aTradeConnections[iNewTradeRouteIndex].m_iTurnRouteComplete = GC.getGame().getGameTurn() + iFixedDuration;
+#else
 	m_aTradeConnections[iNewTradeRouteIndex].m_iCircuitsCompleted = 0;
 	m_aTradeConnections[iNewTradeRouteIndex].m_iCircuitsToComplete = iCircuitsToComplete;
 	m_aTradeConnections[iNewTradeRouteIndex].m_iTurnRouteComplete = (iTurnsPerCircuit * iCircuitsToComplete) + GC.getGame().getGameTurn();
+#endif
 
 	GET_PLAYER(eOriginPlayer).GetTrade()->UpdateTradeConnectionValues();
 	if (eDestPlayer != eOriginPlayer)
@@ -2304,8 +2312,12 @@ void CvPlayerTrade::MoveUnits (void)
 		{
 			pTrade->MoveUnit(ui);
 
-			// check to see if the trade route is still active but the circuit is completed
+			// check to see if the trade route is still active but has expired
+#ifdef LEKMOD_TRADE_ROUTE_FIXED_DURATION
+			if (!pTrade->IsTradeRouteIndexEmpty(ui) && GC.getGame().getGameTurn() >= pTradeConnection->m_iTurnRouteComplete)
+#else
 			if (!pTrade->IsTradeRouteIndexEmpty(ui) && pTradeConnection->m_iCircuitsCompleted >= pTradeConnection->m_iCircuitsToComplete)
+#endif
 			{
 				m_aRecentlyExpiredConnections.push_back(*pTradeConnection);
 

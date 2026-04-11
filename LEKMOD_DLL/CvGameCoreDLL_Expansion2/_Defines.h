@@ -869,6 +869,8 @@
 #define NQ_WLTKD_SEED_SCALES_WITH_GAME_SPEED
 // Trade Route duration now scales with game speed
 #define NQ_TRADE_ROUTE_DURATION_SCALES_WITH_GAME_SPEED
+// Trade routes always run for exactly 15 turns (at quick speed), using a flat turn counter instead of circuit count
+#define LEKMOD_TRADE_ROUTE_FIXED_DURATION
 // Remove random extra turns from seed of WTLKD resource demand
 #define NQ_DISABLE_WLTKD_SEED_RANDOM_EXTRA_TURNS
 // Adjacent Mod (PROMOTION_ADJACENT_BONUS) now requires same combat type
