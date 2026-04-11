@@ -5,6 +5,11 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+MARSH CHOP YIELDS FOOD INSTEAD OF PRODUCTION
+---------------------------------------------
+- Clearing a marsh tile now grants food to the nearest city instead of production
+- Applies to all build actions that remove marsh (dedicated remove, or placing an improvement)
+
 CITY-STATE TRIBUTE RANGE HOVER DISPLAY
 ---------------------------------------
 - Hovering over a city-state's city tile now highlights all plots within tribute range (5 tiles)
