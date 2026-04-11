@@ -98163,8 +98163,20 @@
 			<Value>0</Value> 
 		</Row>
 		<Row> 
-			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>16</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>14</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_MODERN</Name> 
 			<Value>12</Value> 
+		</Row>
+		<Row> 
+			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>10</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_RENAISSANCE</Name> 
@@ -98172,19 +98184,31 @@
 		</Row>
 		<Row> 
 			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_MEDIEVAL</Name> 
-			<Value>4</Value> 
+			<Value>6</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_CLASSICAL</Name> 
-			<Value>3</Value> 
+			<Value>4</Value> 
 		</Row>
 		<Row> 
 			<Name>FRIENDS_FAITH_FLAT_BONUS_AMOUNT_ANCIENT</Name> 
 			<Value>2</Value> 
 		</Row>
 		<Row> 
-			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_INFORMATION</Name> 
+			<Value>16</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_ATOMIC</Name> 
+			<Value>14</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_MODERN</Name> 
 			<Value>12</Value> 
+		</Row>
+		<Row> 
+			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL</Name> 
+			<Value>10</Value> 
 		</Row>
 		<Row> 
 			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_RENAISSANCE</Name> 
@@ -98192,11 +98216,11 @@
 		</Row>
 		<Row> 
 			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_MEDIEVAL</Name> 
-			<Value>4</Value> 
+			<Value>6</Value> 
 		</Row>
 		<Row> 
 			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_CLASSICAL</Name> 
-			<Value>3</Value> 
+			<Value>4</Value> 
 		</Row>
 		<Row> 
 			<Name>ALLIES_FAITH_FLAT_BONUS_AMOUNT_ANCIENT</Name> 

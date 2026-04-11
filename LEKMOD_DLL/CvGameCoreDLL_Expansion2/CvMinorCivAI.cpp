@@ -7580,40 +7580,30 @@ int CvMinorCivAI::GetFaithFlatFriendshipBonus(PlayerTypes ePlayer, EraTypes eAss
 	if(eCurrentEra == NO_ERA)
 		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
+	EraTypes eInformation = (EraTypes) GC.getInfoTypeForString("ERA_INFORMATION", true);
+	EraTypes eAtomic = (EraTypes) GC.getInfoTypeForString("ERA_ATOMIC", true);
+	EraTypes eModern = (EraTypes) GC.getInfoTypeForString("ERA_MODERN", true);
 	EraTypes eIndustrial = (EraTypes) GC.getInfoTypeForString("ERA_INDUSTRIAL", true);
 	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
 	EraTypes eMedieval = (EraTypes) GC.getInfoTypeForString("ERA_MEDIEVAL", true);
 	EraTypes eClassical = (EraTypes) GC.getInfoTypeForString("ERA_CLASSICAL", true);
 
-	// Industrial era or later
-	if(eCurrentEra >= eIndustrial)
-	{
+	if(eCurrentEra >= eInformation)
+		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_INFORMATION();
+	else if(eCurrentEra >= eAtomic)
+		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_ATOMIC();
+	else if(eCurrentEra >= eModern)
+		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_MODERN();
+	else if(eCurrentEra >= eIndustrial)
 		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL();
-	}
-
-	// Renaissance era
 	else if(eCurrentEra >= eRenaissance)
-	{
 		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_RENAISSANCE();
-	}
-
-	// Medieval era
 	else if(eCurrentEra >= eMedieval)
-	{
 		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_MEDIEVAL();
-	}
-
-	// Classical era
 	else if(eCurrentEra >= eClassical)
-	{
 		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_CLASSICAL();
-	}
-
-	// Ancient era
 	else
-	{
 		iFaithBonus += GC.getFRIENDS_FAITH_FLAT_BONUS_AMOUNT_ANCIENT();
-	}
 
 	return iFaithBonus;
 }
@@ -7626,40 +7616,30 @@ int CvMinorCivAI::GetFaithFlatAlliesBonus(PlayerTypes ePlayer, EraTypes eAssumeE
 	if(eCurrentEra == NO_ERA)
 		eCurrentEra = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).GetCurrentEra();
 
+	EraTypes eInformation = (EraTypes) GC.getInfoTypeForString("ERA_INFORMATION", true);
+	EraTypes eAtomic = (EraTypes) GC.getInfoTypeForString("ERA_ATOMIC", true);
+	EraTypes eModern = (EraTypes) GC.getInfoTypeForString("ERA_MODERN", true);
 	EraTypes eIndustrial = (EraTypes) GC.getInfoTypeForString("ERA_INDUSTRIAL", true);
 	EraTypes eRenaissance = (EraTypes) GC.getInfoTypeForString("ERA_RENAISSANCE", true);
 	EraTypes eMedieval = (EraTypes) GC.getInfoTypeForString("ERA_MEDIEVAL", true);
 	EraTypes eClassical = (EraTypes) GC.getInfoTypeForString("ERA_CLASSICAL", true);
 
-	// Industrial era or later
-	if(eCurrentEra >= eIndustrial)
-	{
+	if(eCurrentEra >= eInformation)
+		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_INFORMATION();
+	else if(eCurrentEra >= eAtomic)
+		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_ATOMIC();
+	else if(eCurrentEra >= eModern)
+		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_MODERN();
+	else if(eCurrentEra >= eIndustrial)
 		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_INDUSTRIAL();
-	}
-
-	// Renaissance era
 	else if(eCurrentEra >= eRenaissance)
-	{
 		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_RENAISSANCE();
-	}
-
-	// Medieval era
 	else if(eCurrentEra >= eMedieval)
-	{
 		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_MEDIEVAL();
-	}
-
-	// Classical era
 	else if(eCurrentEra >= eClassical)
-	{
 		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_CLASSICAL();
-	}
-
-	// Ancient era
 	else
-	{
 		iFaithBonus += GC.getALLIES_FAITH_FLAT_BONUS_AMOUNT_ANCIENT();
-	}
 
 	return iFaithBonus;
 }

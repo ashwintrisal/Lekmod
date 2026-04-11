@@ -21,6 +21,13 @@ MARSH CHOP YIELDS FOOD INSTEAD OF PRODUCTION
 - Clearing a marsh tile now grants food to the nearest city instead of production
 - Applies to all build actions that remove marsh (dedicated remove, or placing an improvement)
 
+RELIGIOUS CITY-STATE FLAT FAITH (PER ERA)
+-----------------------------------------
+- Religious CS friend and ally flat faith now use eight era buckets through Information
+  (Modern, Atomic, and Information no longer share the Industrial define)
+- Default defines match cultured CS: 2/4/6/8/10/12/14/16 per era for friends and the same
+  for allies so friend+ally stacking doubles the friend line when allied
+
 CULTURED CITY-STATE FLAT CULTURE (PER ERA)
 ------------------------------------------
 - Cultured CS friend and ally flat culture now use eight era buckets (Ancient through Information)
