@@ -5,6 +5,16 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CITY-STATE QUEST INFLUENCE REWARDS (GLOBALDEFINES)
+--------------------------------------------------
+- Retuned `MINOR_QUEST_FRIENDSHIP_*` in `LEKMOD/Override/CIV5Units.xml` (values are the
+  raw influence applied on quest complete at all game speeds; LEKMOD balance assumes quick)
+- Defaults: most quest types −5 vs prior LEKMOD except fixed totals for route (40),
+  kill camp (35), trade route (35), contest culture/faith/tech (35 each); connect resource 30,
+  construct wonder 35, great person 30, kill CS 75, find player / natural wonder 30,
+  give gold / pledge to protect 15, bully CS 45, denounce major / spread religion 35;
+  invest remains 0
+
 CITY-STATE STATUS UI BREAKDOWN
 -------------------------------
 - City-state status tooltip now shows a full breakdown of the resting influence anchor:
