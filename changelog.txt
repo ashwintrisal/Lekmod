@@ -5,6 +5,16 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CITY-STATE STATUS UI BREAKDOWN
+-------------------------------
+- City-state status tooltip now shows a full breakdown of the resting influence anchor:
+  base (0), Pledge to Protect (+10), Wary penalty (negative, shown in red),
+  policy/effect bonuses, and any remaining "Other" component (religion/etc.)
+- Tooltip also shows decay modifiers when any are active:
+  Alienated (red, faster decay), Trait bonus (slower decay), and Policy modifiers
+- When a city-state is your nemesis, the diplo popup shows a red "NEMESIS" label
+  in place of the Make Peace button, with flavour body text explaining the permanent war
+
 CITY-STATE WAR DECLARATION PENALTIES
 -------------------------------------
 - Declaring war on city-states now tracks four escalating tiers per player:

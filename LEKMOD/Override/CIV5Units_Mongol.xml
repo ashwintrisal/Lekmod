@@ -38356,11 +38356,21 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				We hope that you have come to end this conflict.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CITY_STATE_DIPLO_HELLO_WARMONGER"> 
+		<Replace Tag="TXT_KEY_CITY_STATE_DIPLO_HELLO_WARMONGER">
 			<Text>
 				We have no business with bloodthirsty tyrants such as yourself. Begone.
 			</Text>
 		</Replace>
+		<Row Tag="TXT_KEY_CITY_STATE_DIPLO_HELLO_NEMESIS">
+			<Text>
+				You have attacked us too many times. We will never forgive this. There can be no peace between us.
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_POP_CSTATE_NEMESIS">
+			<Text>
+				[COLOR_NEGATIVE_TEXT]NEMESIS[ENDCOLOR]
+			</Text>
+		</Row>
 		<Replace Tag="TXT_KEY_CITY_STATE_DIPLO_JUST_BULLIED"> 
 			<Text>
 				It appears we have no choice.  Take your gold, just don't hurt us.

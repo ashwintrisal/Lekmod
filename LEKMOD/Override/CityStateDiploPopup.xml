@@ -91,6 +91,11 @@
 							</AlphaAnim>
 						</ShowOnMouseOver>
 					</Button>
+					<!-- NEMESIS LABEL (shown instead of peace button when player is nemesis) -->
+					<Box Size="500,32" Hidden="1" Anchor="C,C" Offset="0,0" ID="NemesisBlock">
+						<Label ID="NemesisLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_NEMESIS" ColorSet="COLOR_RED" Font="TitleFont14"/>
+						<Image Anchor="C,B" Offset="0,0" Texture="bar500x2.dds" Size="500.1"/>
+					</Box>
 					<!-- GIVE BUTTON -->
 					<Button Size="500,32" Anchor="C,C" Offset="0,0" ID="GiveButton" ToolTip="TXT_KEY_POP_CSTATE_GIFT_GOLD_TT">
 						<Label ID="GiveLabel" Anchor="C,C" Offset="0,0" String="TXT_KEY_POP_CSTATE_GIFT_GOLD"/>
