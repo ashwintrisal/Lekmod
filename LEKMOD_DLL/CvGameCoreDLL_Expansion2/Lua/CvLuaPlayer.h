@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	© 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ï¿½ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -623,6 +623,14 @@ protected:
 	static int lIsInfluenceTooLowForPeace(lua_State* L);
 #endif
 	static int lIsMinorPermanentWar(lua_State* L);
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	static int lGetWaryLevel(lua_State* L);
+	static int lGetAlienatedLevel(lua_State* L);
+	static int lIsNemesisOf(lua_State* L);
+#endif
+	static int lGetMinorFriendshipAnchorMod(lua_State* L);
+	static int lGetMinorFriendshipDecayMod(lua_State* L);
+	static int lGetCityStateFriendshipModifier(lua_State* L);
 	static int lGetNumMinorCivsMet(lua_State* L);
 	static int lDoMinorLiberationByMajor(lua_State* L);
 	static int lIsProtectedByMajor(lua_State* L);

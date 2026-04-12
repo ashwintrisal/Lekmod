@@ -640,6 +640,14 @@ void CvLuaPlayer::PushMethods(lua_State* L, int t)
 	Method(IsInfluenceTooLowForPeace);
 #endif
 	Method(IsMinorPermanentWar);
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	Method(GetWaryLevel);
+	Method(GetAlienatedLevel);
+	Method(IsNemesisOf);
+#endif
+	Method(GetMinorFriendshipAnchorMod);
+	Method(GetMinorFriendshipDecayMod);
+	Method(GetCityStateFriendshipModifier);
 	Method(GetNumMinorCivsMet);
 	Method(DoMinorLiberationByMajor);
 	Method(IsProtectedByMajor);
@@ -6362,6 +6370,53 @@ int CvLuaPlayer::lIsMinorPermanentWar(lua_State* L)
 
 	const bool bResult = pkPlayer->GetMinorCivAI()->IsPermanentWar(eTeam);
 	lua_pushboolean(L, bResult);
+	return 1;
+}
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetWaryLevel(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const PlayerTypes eMajor = (PlayerTypes)lua_tointeger(L, 2);
+	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetWaryLevel(eMajor));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetAlienatedLevel(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const PlayerTypes eMajor = (PlayerTypes)lua_tointeger(L, 2);
+	lua_pushinteger(L, pkPlayer->GetMinorCivAI()->GetAlienatedLevel(eMajor));
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lIsNemesisOf(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	const PlayerTypes eMajor = (PlayerTypes)lua_tointeger(L, 2);
+	lua_pushboolean(L, pkPlayer->GetMinorCivAI()->IsNemesisOf(eMajor));
+	return 1;
+}
+#endif
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetMinorFriendshipAnchorMod(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	lua_pushinteger(L, pkPlayer->GetMinorFriendshipAnchorMod());
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetMinorFriendshipDecayMod(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	lua_pushinteger(L, pkPlayer->GetMinorFriendshipDecayMod());
+	return 1;
+}
+//------------------------------------------------------------------------------
+int CvLuaPlayer::lGetCityStateFriendshipModifier(lua_State* L)
+{
+	CvPlayerAI* pkPlayer = GetInstance(L);
+	lua_pushinteger(L, pkPlayer->GetPlayerTraits()->GetCityStateFriendshipModifier());
 	return 1;
 }
 //------------------------------------------------------------------------------
