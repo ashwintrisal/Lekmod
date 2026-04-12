@@ -5,6 +5,21 @@ LEKMOD PROMOTION CHANGELOG
 MISCELLANEOUS
 =============
 
+CITY-STATE WAR DECLARATION PENALTIES
+-------------------------------------
+- Declaring war on city-states now tracks four escalating tiers per player:
+  antagonist (1), provocateur (2), aggressor (3), warmonger (4+)
+- Wary: each CS you declared war on suffers a resting influence penalty
+  (antagonist: -10; provocateur/aggressor/warmonger: -30)
+- Alienated: each CS you declared war on has an increased influence decay rate
+  (antagonist: +50%; provocateur/aggressor/warmonger: +100%)
+- Provocateur: the 2 closest met CSs you have not declared war on become wary (-20)
+- Aggressor: all CSs become wary (-20) and alienated (+50%)
+- Warmonger: all CSs become wary (-30) and alienated (+100%)
+- Ally exception: CSs that are currently your ally do not receive additional penalties
+- Declaring war 3 times on the same CS makes it nemesis — that CS will never accept peace
+- Penalties only ever increase (never downgrade); replaces old aggressor/warmonger wary system
+
 CITY-STATE TERRITORY BORDER COLORS BY TRAIT
 --------------------------------------------
 - Each minor civ trait (Maritime, Cultured, Religious, Mercantile, Militaristic) now

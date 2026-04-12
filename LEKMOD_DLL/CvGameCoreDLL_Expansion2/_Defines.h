@@ -1226,6 +1226,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Rite of the First-Born: city first reaches 2 pop = -1 pop + 20 faith + permanent tile yields
 #define LEKMOD_RITE_OF_FIRST_BORN_BELIEF
 
+// City-state war declaration penalty tiers: wary (resting influence penalty), alienated (decay boost), nemesis (no peace)
+#define LEKMOD_CS_WAR_DEC_PENALTIES
 
 
 // Generic define for temp changes

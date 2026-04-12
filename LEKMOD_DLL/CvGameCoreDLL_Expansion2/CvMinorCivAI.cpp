@@ -1708,6 +1708,12 @@ void CvMinorCivAI::Reset()
 #ifdef CS_ALLYING_WAR_RESCTRICTION
 		m_aiMajorPriority[iI] = MAX_MAJOR_CIVS;
 #endif
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+		m_aiWaryLevel[iI] = 0;
+		m_aiAlienatedLevel[iI] = 0;
+		m_aiWarDecsAgainstMe[iI] = 0;
+		m_abNemesisOf[iI] = false;
+#endif
 	}
 
 	for(iI = 0; iI < REALLY_MAX_TEAMS; iI++)
@@ -1813,6 +1819,12 @@ void CvMinorCivAI::Read(FDataStream& kStream)
 	kStream >> m_abPermanentWar;
 
 	kStream >> m_abWaryOfTeam;
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	kStream >> m_aiWaryLevel;
+	kStream >> m_aiAlienatedLevel;
+	kStream >> m_aiWarDecsAgainstMe;
+	kStream >> m_abNemesisOf;
+#endif
 
 	// List of quests given
 	ResetQuestList();
@@ -1895,6 +1907,12 @@ void CvMinorCivAI::Write(FDataStream& kStream) const
 	kStream << m_abPledgeToProtect;
 	kStream << m_abPermanentWar;
 	kStream << m_abWaryOfTeam; // Version 12
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	kStream << m_aiWaryLevel;
+	kStream << m_aiAlienatedLevel;
+	kStream << m_aiWarDecsAgainstMe;
+	kStream << m_abNemesisOf;
+#endif
 
 	// List of quests given
 	CvAssertMsg(m_QuestsGiven.size() == MAX_MAJOR_CIVS, "Number of entries in minor's quest list does not match MAX_MAJOR_CIVS when writing to memory!");
@@ -5530,9 +5548,11 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 		// Hostile Minors have Friendship decay quicker
 		if(GetPersonality() == MINOR_CIV_PERSONALITY_HOSTILE)
 			iChangeThisTurn += /*-150*/ GC.getMINOR_FRIENDSHIP_DROP_PER_TURN_HOSTILE();
-		// Aggressor!
+#ifndef LEKMOD_CS_WAR_DEC_PENALTIES
+		// Aggressor! (replaced by alienated system)
 		else if(GET_TEAM(kPlayer.getTeam()).IsMinorCivAggressor())
 			iChangeThisTurn += /*-200*/ GC.getMINOR_FRIENDSHIP_DROP_PER_TURN_AGGRESSOR();
+#endif
 		// Normal decay
 		else
 			iChangeThisTurn += /*-100*/ GC.getMINOR_FRIENDSHIP_DROP_PER_TURN();
@@ -5542,7 +5562,11 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 		iDecayMod += GET_PLAYER(ePlayer).GetMinorFriendshipDecayMod();
 		iDecayMod += (-1) * (iTraitMod / 2);
 		iDecayMod += (-1) * (iReligionMod / 2);
-		
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+		// Alienated: +50% or +100% decay rate
+		iDecayMod += GetAlienatedLevel(ePlayer);
+#endif
+
 		if (iDecayMod < 0)
 			iDecayMod = 0;
 
@@ -5730,10 +5754,14 @@ int CvMinorCivAI::GetFriendshipAnchorWithMajor(PlayerTypes eMajor)
 	}
 
 	// Wary Of?
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	iAnchor -= GetWaryLevel(eMajor);
+#else
 	if (IsWaryOfTeam(pMajor->getTeam()))
 	{
 		iAnchor += GC.getMINOR_FRIENDSHIP_ANCHOR_MOD_WARY_OF();
 	}
+#endif
 
 	// Social Policies
 	iAnchor += pMajor->GetMinorFriendshipAnchorMod();
@@ -9882,6 +9910,17 @@ bool CvMinorCivAI::IsPeaceBlocked(TeamTypes eTeam) const
 	if(IsPermanentWar(eTeam))
 		return true;
 
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	// Nemesis: never accept peace with a player who declared war 3+ times on this CS
+	for(int iMajorLoop = 0; iMajorLoop < MAX_MAJOR_CIVS; iMajorLoop++)
+	{
+		PlayerTypes eMajor = (PlayerTypes)iMajorLoop;
+		if(!GET_PLAYER(eMajor).isAlive()) continue;
+		if(GET_PLAYER(eMajor).getTeam() != eTeam) continue;
+		if(IsNemesisOf(eMajor)) return true;
+	}
+#endif
+
 	// Allies with someone at war with this guy?
 	PlayerTypes eMajor;
 	for(int iMajorLoop = 0; iMajorLoop < MAX_MAJOR_CIVS; iMajorLoop++)
@@ -9917,22 +9956,122 @@ bool CvMinorCivAI::IsInfluenceTooLowForPeace(PlayerTypes ePlayer)
 void CvMinorCivAI::DoTeamDeclaredWarOnMe(TeamTypes eEnemyTeam)
 {
 	CvTeam* pEnemyTeam = &GET_TEAM(eEnemyTeam);
-	CivsList veMinorsNowWary;
-	int iRand;
 
-	// Since eEnemyTeam was the aggressor, drop the base influence to the minimum
+	// Drop the base influence to the minimum for all players on the attacking team
 	for(int iEnemyMajorLoop = 0; iEnemyMajorLoop < MAX_MAJOR_CIVS; iEnemyMajorLoop++)
 	{
 		PlayerTypes eEnemyMajorLoop = (PlayerTypes) iEnemyMajorLoop;
 		if(!GET_PLAYER(eEnemyMajorLoop).isAlive())
 			continue;
 		if(GET_PLAYER(eEnemyMajorLoop).getTeam() != eEnemyTeam)
-			continue;		
+			continue;
 
 		//antonjs: consider: forcibly revoke PtP here instead, and have negative INF / broken PtP fallout
-		
+
 		SetFriendshipWithMajor(eEnemyMajorLoop, GC.getMINOR_FRIENDSHIP_AT_WAR());
 	}
+
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	// War declaration penalty tiers: antagonist/provocateur/aggressor/warmonger
+	for(int iEnemyMajorLoop = 0; iEnemyMajorLoop < MAX_MAJOR_CIVS; iEnemyMajorLoop++)
+	{
+		PlayerTypes eAttacker = (PlayerTypes)iEnemyMajorLoop;
+		if(!GET_PLAYER(eAttacker).isAlive())
+			continue;
+		if(GET_PLAYER(eAttacker).getTeam() != eEnemyTeam)
+			continue;
+
+		// Track per-CS war decs; set nemesis after 3 declarations on this specific CS
+		ChangeWarDecsAgainstMe(eAttacker, 1);
+		if(GetWarDecsAgainstMe(eAttacker) >= 3)
+			SetNemesisOf(eAttacker, true);
+
+		// Total war decs by this team — already incremented in CvTeam::declareWar before this call
+		int iTotalWarDecs = GET_TEAM(eEnemyTeam).GetNumMinorCivsAttacked();
+
+		// --- Local penalties for this CS (never downgrade) ---
+		int iNewWary      = (iTotalWarDecs >= 2) ? 30 : 10;
+		int iNewAlienated = (iTotalWarDecs >= 2) ? 100 : 50;
+		if(iNewWary > GetWaryLevel(eAttacker))
+			SetWaryLevel(eAttacker, iNewWary);
+		if(iNewAlienated > GetAlienatedLevel(eAttacker))
+			SetAlienatedLevel(eAttacker, iNewAlienated);
+
+		// --- Global penalties based on tier ---
+		if(iTotalWarDecs >= 4)
+		{
+			// Warmonger: all CSs -> wary(30), alienated(100)
+			for(int iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+			{
+				PlayerTypes eMinor = (PlayerTypes)iMinorLoop;
+				if(!GET_PLAYER(eMinor).isAlive()) continue;
+				CvMinorCivAI* pMinorAI = GET_PLAYER(eMinor).GetMinorCivAI();
+				if(!pMinorAI) continue;
+				if(pMinorAI->IsAllies(eAttacker)) continue; // allies exempt
+				if(30 > pMinorAI->GetWaryLevel(eAttacker))
+					pMinorAI->SetWaryLevel(eAttacker, 30);
+				if(100 > pMinorAI->GetAlienatedLevel(eAttacker))
+					pMinorAI->SetAlienatedLevel(eAttacker, 100);
+			}
+		}
+		else if(iTotalWarDecs >= 3)
+		{
+			// Aggressor: all CSs -> wary(20), alienated(50)
+			for(int iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+			{
+				PlayerTypes eMinor = (PlayerTypes)iMinorLoop;
+				if(!GET_PLAYER(eMinor).isAlive()) continue;
+				CvMinorCivAI* pMinorAI = GET_PLAYER(eMinor).GetMinorCivAI();
+				if(!pMinorAI) continue;
+				if(pMinorAI->IsAllies(eAttacker)) continue; // allies exempt
+				if(20 > pMinorAI->GetWaryLevel(eAttacker))
+					pMinorAI->SetWaryLevel(eAttacker, 20);
+				if(50 > pMinorAI->GetAlienatedLevel(eAttacker))
+					pMinorAI->SetAlienatedLevel(eAttacker, 50);
+			}
+		}
+		else if(iTotalWarDecs >= 2)
+		{
+			// Provocateur: 2 closest met CSs (not ones declared war on, not allies) -> wary(20)
+			CvCity* pAttackerCapital = GET_PLAYER(eAttacker).getCapitalCity();
+			if(pAttackerCapital)
+			{
+				int iCapX = pAttackerCapital->getX();
+				int iCapY = pAttackerCapital->getY();
+
+				std::vector<std::pair<int, PlayerTypes>> vCandidates;
+				for(int iMinorLoop = MAX_MAJOR_CIVS; iMinorLoop < MAX_CIV_PLAYERS; iMinorLoop++)
+				{
+					PlayerTypes eMinor = (PlayerTypes)iMinorLoop;
+					if(!GET_PLAYER(eMinor).isAlive()) continue;
+					if(eMinor == GetPlayer()->GetID()) continue; // not the current CS
+					CvMinorCivAI* pMinorAI = GET_PLAYER(eMinor).GetMinorCivAI();
+					if(!pMinorAI) continue;
+					if(!GET_TEAM(GET_PLAYER(eAttacker).getTeam()).isHasMet(GET_PLAYER(eMinor).getTeam())) continue;
+					if(pMinorAI->GetWarDecsAgainstMe(eAttacker) > 0) continue; // skip ones already attacked
+					if(pMinorAI->IsAllies(eAttacker)) continue; // allies exempt
+					CvCity* pMinorCapital = GET_PLAYER(eMinor).getCapitalCity();
+					if(!pMinorCapital) continue;
+					int iDist = plotDistance(iCapX, iCapY, pMinorCapital->getX(), pMinorCapital->getY());
+					vCandidates.push_back(std::make_pair(iDist, eMinor));
+				}
+
+				std::sort(vCandidates.begin(), vCandidates.end());
+				int iApplied = 0;
+				for(size_t i = 0; i < vCandidates.size() && iApplied < 2; i++)
+				{
+					CvMinorCivAI* pMinorAI = GET_PLAYER(vCandidates[i].second).GetMinorCivAI();
+					if(20 > pMinorAI->GetWaryLevel(eAttacker))
+						pMinorAI->SetWaryLevel(eAttacker, 20);
+					iApplied++;
+				}
+			}
+		}
+		// Tier 1 (Antagonist): local penalties only, no global effect
+	}
+#else
+	CivsList veMinorsNowWary;
+	int iRand;
 
 	//antonjs: todo: xml, rename xml to indicate it is for WaryOf, not Permanent War
 	// Minor Civ Warmonger
@@ -10089,6 +10228,7 @@ void CvMinorCivAI::DoTeamDeclaredWarOnMe(TeamTypes eEnemyTeam)
 			AddNotification(strMessage, strSummary, eEnemyMajorLoop);
 		}
 	}
+#endif
 
 	GC.GetEngineUserInterface()->setDirty(GameData_DIRTY_BIT, true);
 }
@@ -10136,6 +10276,64 @@ void CvMinorCivAI::SetWaryOfTeam(TeamTypes eTeam, bool bValue)
 
 	m_abWaryOfTeam[eTeam] = bValue;
 }
+
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+int CvMinorCivAI::GetWaryLevel(PlayerTypes ePlayer) const
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return 0;
+	return m_aiWaryLevel[ePlayer];
+}
+
+void CvMinorCivAI::SetWaryLevel(PlayerTypes ePlayer, int iLevel)
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+	m_aiWaryLevel[ePlayer] = iLevel;
+}
+
+int CvMinorCivAI::GetAlienatedLevel(PlayerTypes ePlayer) const
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return 0;
+	return m_aiAlienatedLevel[ePlayer];
+}
+
+void CvMinorCivAI::SetAlienatedLevel(PlayerTypes ePlayer, int iLevel)
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+	m_aiAlienatedLevel[ePlayer] = iLevel;
+}
+
+int CvMinorCivAI::GetWarDecsAgainstMe(PlayerTypes ePlayer) const
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return 0;
+	return m_aiWarDecsAgainstMe[ePlayer];
+}
+
+void CvMinorCivAI::ChangeWarDecsAgainstMe(PlayerTypes ePlayer, int iChange)
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+	m_aiWarDecsAgainstMe[ePlayer] += iChange;
+}
+
+bool CvMinorCivAI::IsNemesisOf(PlayerTypes ePlayer) const
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return false;
+	return m_abNemesisOf[ePlayer];
+}
+
+void CvMinorCivAI::SetNemesisOf(PlayerTypes ePlayer, bool bValue)
+{
+	CvAssertMsg(ePlayer >= 0 && ePlayer < MAX_MAJOR_CIVS, "ePlayer out of bounds");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+	m_abNemesisOf[ePlayer] = bValue;
+}
+#endif
 
 
 // ******************************

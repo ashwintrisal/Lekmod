@@ -558,6 +558,17 @@ public:
 	bool IsWaryOfTeam(TeamTypes eTeam) const;
 	void SetWaryOfTeam(TeamTypes eTeam, bool bValue);
 
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	int  GetWaryLevel(PlayerTypes ePlayer) const;
+	void SetWaryLevel(PlayerTypes ePlayer, int iLevel);
+	int  GetAlienatedLevel(PlayerTypes ePlayer) const;
+	void SetAlienatedLevel(PlayerTypes ePlayer, int iLevel);
+	int  GetWarDecsAgainstMe(PlayerTypes ePlayer) const;
+	void ChangeWarDecsAgainstMe(PlayerTypes ePlayer, int iChange);
+	bool IsNemesisOf(PlayerTypes ePlayer) const;
+	void SetNemesisOf(PlayerTypes ePlayer, bool bValue);
+#endif
+
 	// ******************************
 	// ***** Misc Helper Functions *****
 	// ******************************
@@ -633,6 +644,12 @@ private:
 	bool m_abPledgeToProtect[MAX_MAJOR_CIVS];
 	bool m_abPermanentWar[REALLY_MAX_TEAMS];
 	bool m_abWaryOfTeam[REALLY_MAX_TEAMS];
+#ifdef LEKMOD_CS_WAR_DEC_PENALTIES
+	int  m_aiWaryLevel[MAX_MAJOR_CIVS];       // 0/10/20/30 — resting influence penalty per player
+	int  m_aiAlienatedLevel[MAX_MAJOR_CIVS];  // 0/50/100 — decay rate bonus % per player
+	int  m_aiWarDecsAgainstMe[MAX_MAJOR_CIVS];// times this player declared war on this CS
+	bool m_abNemesisOf[MAX_MAJOR_CIVS];       // this CS never accepts peace with this player
+#endif
 	QuestListForAllPlayers m_QuestsGiven;
 
 	int m_aiMajorScratchPad[MAX_MAJOR_CIVS];
