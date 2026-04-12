@@ -44,6 +44,42 @@ ktQuestsDisplayOrder = {
 }
 
 ------------------------------------------------------
+-- Quest completion influence (matches GlobalDefines + CvMinorCivQuest::GetInfluenceReward)
+------------------------------------------------------
+function GetQuestInfluenceDefineKey(eType)
+	if (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_ROUTE) then return "MINOR_QUEST_FRIENDSHIP_ROUTE";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_KILL_CAMP) then return "MINOR_QUEST_FRIENDSHIP_KILL_CAMP";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_CONNECT_RESOURCE) then return "MINOR_QUEST_FRIENDSHIP_CONNECT_RESOURCE";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_CONSTRUCT_WONDER) then return "MINOR_QUEST_FRIENDSHIP_CONSTRUCT_WONDER";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_GREAT_PERSON) then return "MINOR_QUEST_FRIENDSHIP_GREAT_PERSON";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_KILL_CITY_STATE) then return "MINOR_QUEST_FRIENDSHIP_KILL_CITY_STATE";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_FIND_PLAYER) then return "MINOR_QUEST_FRIENDSHIP_FIND_PLAYER";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_FIND_NATURAL_WONDER) then return "MINOR_QUEST_FRIENDSHIP_FIND_NATURAL_WONDER";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_GIVE_GOLD) then return "MINOR_QUEST_FRIENDSHIP_GIVE_GOLD";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_PLEDGE_TO_PROTECT) then return "MINOR_QUEST_FRIENDSHIP_PLEDGE_TO_PROTECT";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_CONTEST_CULTURE) then return "MINOR_QUEST_FRIENDSHIP_CONTEST_CULTURE";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_CONTEST_FAITH) then return "MINOR_QUEST_FRIENDSHIP_CONTEST_FAITH";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_CONTEST_TECHS) then return "MINOR_QUEST_FRIENDSHIP_CONTEST_TECHS";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_INVEST) then return "MINOR_QUEST_FRIENDSHIP_INVEST";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_BULLY_CITY_STATE) then return "MINOR_QUEST_FRIENDSHIP_BULLY_CITY_STATE";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_DENOUNCE_MAJOR) then return "MINOR_QUEST_FRIENDSHIP_DENOUNCE_MAJOR";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_SPREAD_RELIGION) then return "MINOR_QUEST_FRIENDSHIP_SPREAD_RELIGION";
+	elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_TRADE_ROUTE) then return "MINOR_QUEST_FRIENDSHIP_TRADE_ROUTE";
+	end
+	return nil;
+end
+
+function FormatQuestInfluenceRewardSuffix(eType)
+	local key = GetQuestInfluenceDefineKey(eType);
+	if (key == nil) then return ""; end
+	local v = GameDefines[key];
+	if (v == nil or type(v) ~= "number") then return ""; end
+	local n = math.floor(v + 0.5);
+	if (n <= 0) then return ""; end
+	return " [COLOR_POSITIVE_TEXT]+" .. tostring(n) .. "[ENDCOLOR][ICON_INFLUENCE]";
+end
+
+------------------------------------------------------
 
 function GetCityStateStatusRow(iMajor, iMinor)
 	local pMajor = Players[iMajor];
@@ -569,6 +605,7 @@ function GetActiveQuestText(iMajor, iMinor)
 			elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_TRADE_ROUTE) then
 				sIconText = sIconText .. "[ICON_INTERNATIONAL_TRADE]";
 			end
+			sIconText = sIconText .. FormatQuestInfluenceRewardSuffix(eType);
 		end
 	end
 	
@@ -697,6 +734,7 @@ function GetActiveQuestToolTip(iMajor, iMinor)
 			elseif (eType == MinorCivQuestTypes.MINOR_CIV_QUEST_TRADE_ROUTE) then
 				sToolTipText = sToolTipText .. Locale.Lookup("TXT_KEY_CITY_STATE_QUEST_TRADE_ROUTE_FORMAL");
 			end
+			sToolTipText = sToolTipText .. FormatQuestInfluenceRewardSuffix(eType);
 			
 			if (iTurnsRemaining >= 0) then
 				sToolTipText = sToolTipText .. " " .. Locale.Lookup( "TXT_KEY_CITY_STATE_QUEST_TURNS_REMAINING_FORMAL", iTurnsRemaining );

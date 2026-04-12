@@ -15,6 +15,12 @@ CITY-STATE QUEST INFLUENCE REWARDS (GLOBALDEFINES)
   give gold / pledge to protect 15, bully CS 45, denounce major / spread religion 35;
   invest remains 0
 
+CITY-STATE QUEST INFLUENCE (UI)
+-------------------------------
+- City-state diplo popup quest row and per-quest tooltip lines now append `+N [ICON_INFLUENCE]`
+  when `GameDefines["MINOR_QUEST_FRIENDSHIP_*"]` is positive (same keys as DLL quest completion)
+- No suffix for 0/missing defines (e.g. invest) or event-only lines without a matching define
+
 CITY-STATE STATUS UI BREAKDOWN
 -------------------------------
 - City-state status tooltip now shows a full breakdown of the resting influence anchor:
