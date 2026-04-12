@@ -1,118 +1,194 @@
 # Manual testing: city-state quest influence (balance + UI)
 
-This note is for **Windows LEKMOD** playtests (game speed **Quick** is the usual LEKMOD assumption in changelog copy). You cannot run the game on macOS for this; run through the checklist when you are back on a Windows install with LEKMOD loaded.
+This note is for **Windows LEKMOD** playtests when you are back from macOS (roughly **three weeks** out). It ties together **two independent changes** so you do not have to reconstruct intent from memory.
 
-There are **two separate changes** in two commits:
+---
 
-1. **GlobalDefines** — `MINOR_QUEST_FRIENDSHIP_*` in `LEKMOD/Override/CIV5Units.xml` (quest completion influence).
-2. **Lua UI** — `LEKMOD/Lua/UI/CityStateStatusHelper.lua` appends `+N [ICON_INFLUENCE]` next to each active-quest icon and on each quest bullet in the formal tooltip (reads the same values from **`GameDefines`**).
+## 0. Memory jog — what you are validating
+
+**Problem we solved for players:** quest influence was opaque; tuning lived only in XML/DLL. **UI change:** every standard quest shown on the city-state diplo screen now shows **`+N`** next to the icon and in the formal tooltip, where **N** comes from **`GameDefines["MINOR_QUEST_FRIENDSHIP_*"]`** — the same keys the game uses when the quest **completes**.
+
+**Problem we solved for balance:** those `MINOR_QUEST_FRIENDSHIP_*` numbers were retuned (separate commit). **Gameplay check:** when a quest completes, the **influence bar** should move by **N** from that define (subject to isolation; see §B0).
+
+If **UI shows +40** but **completion only +20**, you have a **DLL vs XML vs Lua** mismatch (wrong mod load order, stale cache, or edited XML not in the build). If **UI matches XML** but **completion differs**, suspect **other systems** same turn (Patronage, religion resting anchor, multiple quests completing, etc.).
 
 ---
 
 ## A. Prerequisites
 
-- **Build / install** the LEKMOD version that contains both commits (or at least the commits you intend to ship).
-- Start a **new game** (or use a save from **after** loading this mod version) so XML defines and Lua are both current.
-- **Quick** speed is enough; defines are **not** scaled by game speed in DLL for quest completion — the number you see in XML is the influence **added on complete** at any speed (changelog still describes “quick” as the design reference).
+- **Build / install** the LEKMOD build that includes:
+  - **Commit 1 (balance):** `7154d53` — `CIV5Units.xml` + changelog *CITY-STATE QUEST INFLUENCE REWARDS (GLOBALDEFINES)*.
+  - **Commit 2 (UI):** `1f30ea3` (or later on `dev`) — `CityStateStatusHelper.lua` + changelog *CITY-STATE QUEST INFLUENCE (UI)* + this doc.
+- Prefer a **new game** started **after** installing that build. Old saves can carry odd state; at minimum note the save’s mod fingerprint.
+- **Game speed:** Quick is fine. Quest completion influence from these defines is **not** scaled by game speed in the usual BNW DLL pattern for this hook — the **integer in XML is the completion grant** regardless of Standard/Epic/Marathon. (Changelog still mentions Quick as the design language LEKMOD uses elsewhere.)
+
+### A1. Where logs live (Windows)
+
+Typical paths (Steam):
+
+- **Lua:** `Documents\My Games\Sid Meier's Civilization 5\Logs\Lua.log`
+- **Database / mod load issues:** same folder, `Database.log` if present
+
+Before a session: delete or rename `Lua.log`, reproduce once, then open the fresh file — easier than scrolling a huge log.
+
+### A2. Quick file sanity (no truncated XML)
+
+If Civ V fails to load or assets vanish after a bad merge: `CIV5Units.xml` should still be on the order of **~308k+ lines**. A prior accident stripped most of the file — if line count is **~76k**, stop and restore from git before testing.
 
 ---
 
-## B. GlobalDefines — did the reward actually change?
+## B. Reference table — expected `MINOR_QUEST_FRIENDSHIP_*` (current tuning)
 
-These checks confirm **`CvMinorCivQuest::GetInfluenceReward`** (DLL) still reads the same keys you edited in XML.
+Use this when comparing **tooltip `+N`**, **XML**, and **observed influence delta** on quest complete.
 
-### B1. Route quest (fixed **40** in current tuning)
+| Global define | Value | Quest type (informal) |
+|---------------|------:|------------------------|
+| `MINOR_QUEST_FRIENDSHIP_ROUTE` | 40 | Connect capital by road |
+| `MINOR_QUEST_FRIENDSHIP_KILL_CAMP` | 35 | Clear barbarian encampment |
+| `MINOR_QUEST_FRIENDSHIP_CONNECT_RESOURCE` | 30 | Connect resource |
+| `MINOR_QUEST_FRIENDSHIP_CONSTRUCT_WONDER` | 35 | Build specific wonder |
+| `MINOR_QUEST_FRIENDSHIP_GREAT_PERSON` | 30 | Spawn specific GP |
+| `MINOR_QUEST_FRIENDSHIP_KILL_CITY_STATE` | 75 | Eliminate target CS |
+| `MINOR_QUEST_FRIENDSHIP_FIND_PLAYER` | 30 | Discover civ |
+| `MINOR_QUEST_FRIENDSHIP_FIND_NATURAL_WONDER` | 30 | Discover natural wonder |
+| `MINOR_QUEST_FRIENDSHIP_GIVE_GOLD` | 15 | Give gold to target major |
+| `MINOR_QUEST_FRIENDSHIP_PLEDGE_TO_PROTECT` | 15 | Pledge to protect target |
+| `MINOR_QUEST_FRIENDSHIP_CONTEST_CULTURE` | 35 | Win culture contest |
+| `MINOR_QUEST_FRIENDSHIP_CONTEST_FAITH` | 35 | Win faith contest |
+| `MINOR_QUEST_FRIENDSHIP_CONTEST_TECHS` | 35 | Win tech contest |
+| `MINOR_QUEST_FRIENDSHIP_INVEST` | 0 | Invest (no suffix in UI) |
+| `MINOR_QUEST_FRIENDSHIP_BULLY_CITY_STATE` | 45 | Bully target CS |
+| `MINOR_QUEST_FRIENDSHIP_DENOUNCE_MAJOR` | 35 | Denounce target major |
+| `MINOR_QUEST_FRIENDSHIP_SPREAD_RELIGION` | 35 | Spread religion |
+| `MINOR_QUEST_FRIENDSHIP_TRADE_ROUTE` | 35 | Establish trade route to CS |
 
-1. Meet a maritime (or any) city-state that can offer a **road connection** quest (capital not yet connected by road).
-2. Note your **influence** with them (hover meter or diplo line).
-3. Complete the quest (road/rail connection when the game counts it satisfied).
-4. **Expect:** influence jumps by **exactly 40** (before other modifiers like Patronage, religion anchor, etc. — if you have stacking effects, isolate: fresh game, no policies, no religion).
+**War / special quests** may use other code paths; this table is the **standard** `MinorCivQuestTypes` set wired in `GetQuestInfluenceDefineKey` in Lua.
 
-### B2. Kill barbarian camp (**35**)
+### B0. Isolating “exactly +N” on completion (important)
 
-1. Get the **clear nearby encampment** quest (very common early).
-2. Note influence, kill the camp (unit melee on camp tile as usual).
-3. **Expect:** **+35** from that completion notification / before other same-turn changes.
+The **number on the UI** is the **raw define**. Your **visible influence** can still change for other reasons **the same turn**:
 
-### B3. Trade route quest (**35**)
+- **Another quest** completes the same turn → sum of rewards.
+- **Patronage** (or other policies) changing resting influence or completion bonuses.
+- **Religion / resting influence “anchor”** tooltip math (your other CS work) — the bar is not always a simple “old + quest only”.
+- **First meeting** or **era** transitions unrelated to the quest.
 
-1. When a CS asks for a **trade route** to them, note influence.
-2. Send a caravan/cargo ship; wait until the quest completes (not just route established — follow the normal quest completion flow).
+**Clean test recipe:** tiny duel or pangaea, **Immortal or lower**, **no religion** (or ignore religion CS), **avoid opening Patronage**, meet **one** CS, **complete only one** quest type, **save the turn before** completion, note influence from the **diplo line or hover**, then **load → complete → re-check** same screen.
+
+If you cannot isolate, still check: **UI `+N` equals XML**; then separately “completion feels in the ballpark” — file a bug with **save + mod list** if completion is wildly off with isolation.
+
+---
+
+## C. GlobalDefines — did the reward actually apply in-game?
+
+These checks confirm the DLL still reads the same keys as XML (`CvMinorCivQuest::GetInfluenceReward` in LEKMOD DLL sources).
+
+### C1. Route quest (**40**)
+
+1. Meet a CS offering **road connection to capital** (often early maritime).
+2. **Save** one turn before the last tile connects.
+3. Note **influence** (write the integer down).
+4. Complete connection; on the **quest complete** notification turn, note influence again.
+5. **Expect:** **+40** delta from that quest alone under isolation (§B0).
+
+### C2. Kill barbarian camp (**35**)
+
+1. Early game CS with **clear encampment**.
+2. Save adjacent to camp, note influence, melee the camp.
 3. **Expect:** **+35**.
 
-### B4. Contest culture / faith / tech (**35** each)
+### C3. Trade route quest (**35**)
 
-1. Wait for a **global contest** quest (culture / faith / tech). Multiple majors may be in it.
-2. **Win** the contest (your delta highest when it resolves).
-3. **Expect:** **+35** when the “you won the contest” resolution fires for that CS.
+1. CS asks for **international trade route** to them.
+2. Note influence before the game marks the quest **completed** (sometimes one turn after the unit arrives).
+3. **Expect:** **+35** at completion.
 
-### B5. A generic “−5” line (sanity)
+### C4. Contest culture / faith / tech (**35** each)
 
-Pick something that used to be **50** and is now **45** (e.g. **bully city-state** quest if you can trigger it safely in a test game), or **connect resource** (**30** vs old **35**):
+1. Wait for a **global contest**; ensure you **win** when it resolves.
+2. **Expect:** **+35** from that CS for that contest type.
 
-- Complete one such quest once.
-- **Expect:** increment matches the **current** XML value for that `MINOR_QUEST_FRIENDSHIP_*` key (quick spreadsheet: open `CIV5Units.xml` and grep `MINOR_QUEST_FRIENDSHIP_`).
+### C5. Spot-check a “retuned” line
 
-### B6. Invest quest (**0**)
+Examples: **connect resource 30**, **bully 45**, **denounce 35** — pick whichever you can trigger without breaking the test save.
 
-- If you ever see **Invest** active: completing it should **not** grant flat influence from this define (still **0**). Other systems may still change gold-gift efficiency — that is separate.
+### C6. Invest (**0**)
 
-### B7. Regression: other systems unchanged
+- UI: **no `+N` suffix** next to invest icon.
+- Gameplay: no flat influence from this define on invest complete (other gold mechanics unchanged).
 
-- **War quests** (if any) use different defines — not part of this retune; just confirm nothing crashes.
-- **No XML truncation:** if the game fails to load assets, verify `CIV5Units.xml` line count is still **~308k** lines and `Colors` / `PlayerColors` blocks intact (once burned by a bad patch — full file should load).
+### C7. Regression smoke
+
+- No CTD opening CS diplo with **0**, **1**, or **2+** quests.
+- **Barbarian threat** / **proxy war** event icons still appear; no `+N` on those lines.
 
 ---
 
-## C. Lua UI — do players see `+N` next to quest icons?
+## D. Lua UI — icon strip and tooltip
 
-**Where:** **City-state diplomacy popup** — the line labeled like “Quests” with the **small icon strip** (`Controls.QuestInfo` in `CityStateDiploPopup.lua`, fed by `GetActiveQuestText`).
+**Surface:** **City-state diplomacy popup** — quest **icon row** (`GetActiveQuestText`) and **hover formal list** (`GetActiveQuestToolTip`), both in `CityStateStatusHelper.lua`.
 
-### C1. Icon strip (primary ask)
+### D1. Icon strip
 
 1. Open diplomacy with a CS that has **at least one** displayed quest for you.
-2. Look at the **quest icon row** (connected / war / trade / etc.).
-3. **Expect:** immediately after each quest-type icon, text like **`+35[ICON_INFLUENCE]`** (green `+` if `[COLOR_POSITIVE_TEXT]` works in that control) where **N** matches `GameDefines["MINOR_QUEST_FRIENDSHIP_*"]` for that quest.
-4. If you have **two** active displayed quests, you should see **two** `+N` groups (order follows `ktQuestsDisplayOrder` in `CityStateStatusHelper.lua`).
+2. After each **standard** quest icon, expect a green **`+`** then **N** then **influence icon** (implementation: `[COLOR_POSITIVE_TEXT]+N[ENDCOLOR][ICON_INFLUENCE]`).
+3. **Two quests** → two suffixes; order matches **`ktQuestsDisplayOrder`** in the helper (not necessarily quest-assignment order).
 
-### C2. Tooltip (same helper)
+### D2. Tooltip bullets
 
-1. **Hover** the quest icon strip (or the “Information” / quest info control if that opens the same tooltip — follow whatever the popup uses).
-2. **Expect:** each **bullet** line for a standard quest ends with the **same `+N [ICON_INFLUENCE]`** suffix before the “turns remaining” clause (if any).
+1. Hover the control that shows the **formal** multi-line quest text (same popup).
+2. Each **bullet** line for a standard quest should end with the **same `+N` suffix** as the strip for that type, **before** “(N turns remaining)” if that clause exists.
 
-### C3. `GameDefines` missing (fallback behaviour)
+### D3. Events without defines
 
-If `GameDefines["MINOR_QUEST_FRIENDSHIP_ROUTE"]` (etc.) is **nil** in your build (unlikely for BNW-style data):
+**Threatening barbarians** and **proxy war:** icons/tooltip lines **without** `+N` — by design (no `MINOR_QUEST_FRIENDSHIP_*` mapping in Lua).
 
-- **Expect:** icons still show **without** numbers; no Lua error spam in `Lua.log` (or only a soft failure). If you see errors, copy the stack from `Documents/My Games/Sid Meier's Civilization 5/Logs/Lua.log`.
+### D4. Missing `GameDefines` (edge build)
 
-### C4. Events without define rewards
+If a define key were missing: suffix should be **empty**, icons still render; scan **Lua.log** for errors.
 
-**Threatening barbarians** and **proxy war** lines still add icons in the strip but **no** `+N` suffix (no matching `MINOR_QUEST_FRIENDSHIP_*` row). Confirm no crash and tooltip still reads sensibly.
+### D5. Other mods
 
-### C5. Invest quest (**0**)
-
-- If Invest is displayed: **no** suffix (reward 0 — formatter hides non-positive).
-
-### C6. Other UIs
-
-Only **`CityStateDiploPopup`** includes `CityStateStatusHelper` in this repo path for those functions. If you use **another mod** that also includes the helper, sync the same file or merge manually.
+Another mod that **overrides** `CityStateStatusHelper.lua` without merging will **hide** this feature. Check **Mods → installed** load order if numbers never appear.
 
 ---
 
-## D. Order of operations when you test in three weeks
+## E. Order of operations (when you sit down in three weeks)
 
-1. **Load mod** → confirm main menu / mod list shows expected version.
-2. **Skim `CIV5Units.xml`** grep `MINOR_QUEST_FRIENDSHIP_` — values should match design (route 40, camp 35, trade 35, contests 35, …).
-3. **Quick game** → spawn / meet CS → **UI (C)** first (fast feedback).
-4. **Gameplay (B)** with **logging** or careful note of influence before/after one quest type at a time.
-5. If anything disagrees: **Lua.log** for UI; **save + version** for DLL/XML mismatches.
+1. Confirm **git / build** has both commits above.
+2. **Grep XML** (repo or installed override) for `MINOR_QUEST_FRIENDSHIP_` — values match §B table.
+3. **New quick game** → meet CS → **UI (D)** first (30 seconds of feedback).
+4. **Gameplay (C)** with **save before complete** for at least **camp** and **route** (fastest repro).
+5. On mismatch: **Lua.log** + **save** + **screenshot** of diplo line (influence) before/after.
+
+### E1. Repo grep (from dev machine)
+
+From repo root:
+
+```bash
+grep -n "MINOR_QUEST_FRIENDSHIP_" LEKMOD/Override/CIV5Units.xml | head -40
+```
+
+On Windows without Git Bash, use findstr / PowerShell Select-String on the same path inside your checkout.
 
 ---
 
-## E. Files touched (for code review when you return)
+## F. Files touched (code review)
 
-| Commit | Files |
-|--------|--------|
+| Area | Files |
+|------|--------|
 | Quest balance | `LEKMOD/Override/CIV5Units.xml`, `changelog.txt` |
-| Quest UI | `LEKMOD/Lua/UI/CityStateStatusHelper.lua`, `changelog.txt`, `docs/MANUAL_TESTING_CITY_STATE_QUESTS.md` |
+| Quest UI + doc | `LEKMOD/Lua/UI/CityStateStatusHelper.lua`, `changelog.txt`, `docs/MANUAL_TESTING_CITY_STATE_QUESTS.md` |
+
+---
+
+## G. Bug report template (paste into issue / notes)
+
+- **Build / branch / commit:**  
+- **Game speed:**  
+- **Quest type:**  
+- **XML value for that define (from installed file):**  
+- **UI showed +N:**  
+- **Influence before / after (if measured):**  
+- **Policies / religion / other mods:**  
+- **Lua.log excerpt (if any):**  
