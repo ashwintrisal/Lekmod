@@ -3,6 +3,18 @@ LEKMOD PROMOTION CHANGELOG
 
 
 MISCELLANEOUS
+
+AI MINOR CIV RING ROADS (DLL)
+------------------------------
+- City-state AI workers now eventually build roads on the six land tiles directly adjacent
+  to the city center (first ring), after all normal worker jobs (resources, improvements,
+  chops, repairs) are finished
+- Implemented via `UpdateMinorCivFirstRingRoutePlots()` in `CvBuilderTaskingAI`, called
+  from `Update()` after `UpdateRoutePlots()`; reuses the existing `AddRouteDirectives`
+  pipeline by setting a scratch-pad value of 1 (minimum) on unroaded first-ring plots
+- Existing scratch-pad flags from `ConnectCities*` (two-city CS or quest roads) are never
+  lowered; those routes remain higher priority than cosmetic ring fill
+- Gated by `#define LEKMOD_MINOR_CIV_RING_ROADS` in `_Defines.h`
 =============
 
 CITY-STATE QUEST INFLUENCE REWARDS (GLOBALDEFINES)

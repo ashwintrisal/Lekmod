@@ -1229,6 +1229,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // City-state war declaration penalty tiers: wary (resting influence penalty), alienated (decay boost), nemesis (no peace)
 #define LEKMOD_CS_WAR_DEC_PENALTIES
 
+// AI minor civs (city-states) build roads on the first ring of land tiles after other worker tasks
+#define LEKMOD_MINOR_CIV_RING_ROADS
+
 
 // Generic define for temp changes
 #define CLEAN_UP

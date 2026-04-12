@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	� 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	� 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -181,6 +181,9 @@ void CvBuilderTaskingAI::Write(FDataStream& kStream)
 void CvBuilderTaskingAI::Update(void)
 {
 	UpdateRoutePlots();
+#ifdef LEKMOD_MINOR_CIV_RING_ROADS
+	UpdateMinorCivFirstRingRoutePlots();
+#endif
 	m_iNumCities = m_pPlayer->getNumCities();
 
 	int iLoop;
@@ -723,6 +726,58 @@ void CvBuilderTaskingAI::UpdateRoutePlots(void)
 		}
 	}
 }
+
+#ifdef LEKMOD_MINOR_CIV_RING_ROADS
+/// Marks the six land plots adjacent to each city center of a minor civ so workers will
+/// eventually build roads there — at lowest priority (scratch value 1), only if the plot
+/// wasn't already flagged this turn by the normal ConnectCities path.
+void CvBuilderTaskingAI::UpdateMinorCivFirstRingRoutePlots(void)
+{
+	if (!m_pPlayer->isMinorCiv())
+		return;
+
+	RouteTypes eBestRoute = m_pPlayer->getBestRoute();
+	if (eBestRoute == NO_ROUTE)
+		return;
+
+	int iGameTurn = GC.getGame().getGameTurn();
+
+	int iLoop;
+	CvCity* pCity;
+	for (pCity = m_pPlayer->firstCity(&iLoop); pCity != NULL; pCity = m_pPlayer->nextCity(&iLoop))
+	{
+		for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+		{
+			CvPlot* pAdjacentPlot = plotDirection(pCity->getX(), pCity->getY(), ((DirectionTypes)iI));
+			if (!pAdjacentPlot)
+				continue;
+
+			if (pAdjacentPlot->isWater())
+				continue;
+
+			if (pAdjacentPlot->getOwner() != m_pPlayer->GetID())
+				continue;
+
+			// road already present and intact — nothing to do
+			if (pAdjacentPlot->getRouteType() == eBestRoute && !pAdjacentPlot->IsRoutePillaged())
+				continue;
+
+			// already flagged this turn (by ConnectCities* or an earlier city) — never lower value
+			if (pAdjacentPlot->GetBuilderAIScratchPadTurn() == iGameTurn &&
+				pAdjacentPlot->GetBuilderAIScratchPadPlayer() == m_pPlayer->GetID())
+			{
+				continue;
+			}
+
+			// mark at minimum weight so ring roads rank below any normal connection road
+			pAdjacentPlot->SetBuilderAIScratchPadTurn(iGameTurn);
+			pAdjacentPlot->SetBuilderAIScratchPadPlayer(m_pPlayer->GetID());
+			pAdjacentPlot->SetBuilderAIScratchPadValue(1);
+			pAdjacentPlot->SetBuilderAIScratchPadRoute(eBestRoute);
+		}
+	}
+}
+#endif
 
 int CorrectWeight(int iWeight)
 {
