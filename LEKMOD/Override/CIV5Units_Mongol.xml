@@ -118127,9 +118127,9 @@ The ship has weather'd every rack; the prize we sought is won."
 				Pledge to Protect
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POP_CSTATE_PLEDGE_TT"> 
+		<Replace Tag="TXT_KEY_POP_CSTATE_PLEDGE_TT">
 			<Text>
-				Pledging to protect a City-State lets the other major powers in the game know that you will protect the City-State from attacks and tribute demands. This may deter players who don't want to risk a conflict with you, but the City-State will expect you to take its side when it is attacked or bullied.[NEWLINE][NEWLINE]During protection, your resting point for [ICON_INFLUENCE] Influence with this City-State is increased by {1_InfluenceMinimum}.  Protection cannot be revoked until {2_TurnsMinimum} turns after the pledge is made.
+				Pledging to protect a City-State lets the other major powers in the game know that you will protect the City-State from attacks and tribute demands. This may deter players who don't want to risk a conflict with you, but the City-State will expect you to take its side when it is attacked or bullied.[NEWLINE][NEWLINE]During protection, your resting [ICON_INFLUENCE] Influence anchor with this City-State is increased by {1_InfluenceMinimum}, and your recovery rate below that anchor is 50% faster.[NEWLINE][NEWLINE][COLOR_WARNING_TEXT]Extracting tribute while pledged removes your pledge and prevents re-pledging for 20 turns.[ENDCOLOR] A global announcement will be sent to all players.[NEWLINE][NEWLINE]Protection cannot be revoked until {2_TurnsMinimum} turns after the pledge is made.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POP_CSTATE_PROVIDE_GOLD_GIFT"> 
@@ -144947,6 +144947,16 @@ The ship has weather'd every rack; the prize we sought is won."
 		<Row Tag="TXT_KEY_GAME_OPTION_CS_ALLYING_WAR_RESCTRICTION"> 
 			<Text>
 				No War When Replacing City-State Allies
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED">
+			<Text>
+				{1_CivName:textkey} has extracted tribute from {2_MinorName:textkey}, a [ICON_CITY_STATE] City-State you pledged to protect! Players who pledged will lose [ICON_INFLUENCE] Influence with {2_MinorName:textkey} each turn for the next 10 turns (unless at war with {1_CivName:textkey}).
+			</Text>
+		</Row>
+		<Row Tag="TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED_SUMMARY">
+			<Text>
+				{1_CivName:textkey} tributed pledged {2_MinorName:textkey}
 			</Text>
 		</Row>
 		<Row Tag="TXT_KEY_GAME_OPTION_CS_ALLYING_WAR_RESCTRICTION_HELP"> 

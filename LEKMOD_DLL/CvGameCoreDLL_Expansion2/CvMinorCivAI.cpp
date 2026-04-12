@@ -1714,6 +1714,9 @@ void CvMinorCivAI::Reset()
 		m_aiWarDecsAgainstMe[iI] = 0;
 		m_abNemesisOf[iI] = false;
 #endif
+#ifdef LEKMOD_PLEDGE_REWORK
+		m_aiTurnTributedWhilePledged[iI] = -1;
+#endif
 	}
 
 	for(iI = 0; iI < REALLY_MAX_TEAMS; iI++)
@@ -1825,6 +1828,9 @@ void CvMinorCivAI::Read(FDataStream& kStream)
 	kStream >> m_aiWarDecsAgainstMe;
 	kStream >> m_abNemesisOf;
 #endif
+#ifdef LEKMOD_PLEDGE_REWORK
+	kStream >> m_aiTurnTributedWhilePledged;
+#endif
 
 	// List of quests given
 	ResetQuestList();
@@ -1912,6 +1918,9 @@ void CvMinorCivAI::Write(FDataStream& kStream) const
 	kStream << m_aiAlienatedLevel;
 	kStream << m_aiWarDecsAgainstMe;
 	kStream << m_abNemesisOf;
+#endif
+#ifdef LEKMOD_PLEDGE_REWORK
+	kStream << m_aiTurnTributedWhilePledged;
 #endif
 
 	// List of quests given
@@ -5479,6 +5488,37 @@ void CvMinorCivAI::DoFriendship()
 				DoFriendshipChangeEffects(ePlayer, iOldFriendship, iNewFriendship);
 			}
 
+#ifdef LEKMOD_PLEDGE_REWORK
+			// Pledge consequences: players who pledged lose/gain influence based on tribute/war events against this CS
+			if (IsProtectedByMajor(ePlayer))
+			{
+				int iTurn = GC.getGame().getGameTurn();
+
+				// Tribute trigger: for 10 turns after any major tributed this CS while it was pledged
+				for (int iBullyLoop = 0; iBullyLoop < MAX_MAJOR_CIVS; iBullyLoop++)
+				{
+					if (iBullyLoop == ePlayer) continue;
+					if (m_aiTurnTributedWhilePledged[iBullyLoop] < 0) continue;
+					if (iTurn - m_aiTurnTributedWhilePledged[iBullyLoop] > 10) continue;
+					PlayerTypes eBullyLoop = (PlayerTypes) iBullyLoop;
+					if (!GET_PLAYER(eBullyLoop).isAlive()) continue;
+					bool bAtWar = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWar(GET_PLAYER(eBullyLoop).getTeam());
+					ChangeFriendshipWithMajorTimes100(ePlayer, bAtWar ? 100 : -300);
+				}
+
+				// War trigger: every turn a major is actively at war with this CS
+				for (int iWarLoop = 0; iWarLoop < MAX_MAJOR_CIVS; iWarLoop++)
+				{
+					if (iWarLoop == ePlayer) continue;
+					PlayerTypes eWarLoop = (PlayerTypes) iWarLoop;
+					if (!GET_PLAYER(eWarLoop).isAlive()) continue;
+					if (!GET_TEAM(GET_PLAYER(eWarLoop).getTeam()).isAtWar(GetPlayer()->getTeam())) continue;
+					bool bAtWar = GET_TEAM(GET_PLAYER(ePlayer).getTeam()).isAtWar(GET_PLAYER(eWarLoop).getTeam());
+					ChangeFriendshipWithMajorTimes100(ePlayer, bAtWar ? 100 : -300);
+				}
+			}
+#endif
+
 			// Notification for status changes
 			if(GetPlayer()->isAlive() && IsHasMetPlayer(ePlayer))
 			{
@@ -5581,7 +5621,12 @@ int CvMinorCivAI::GetFriendshipChangePerTurnTimes100(PlayerTypes ePlayer)
 		int iRecoveryMod = 100;
 		iRecoveryMod += iTraitMod;
 		iRecoveryMod += iReligionMod;
-		
+#ifdef LEKMOD_PLEDGE_REWORK
+		// Active pledge: +50% recovery rate while below anchor
+		if (IsProtectedByMajor(ePlayer))
+			iRecoveryMod += 50;
+#endif
+
 		if (iRecoveryMod < 0)
 			iRecoveryMod = 0;
 
@@ -9062,6 +9107,30 @@ void CvMinorCivAI::DoMajorBullyGold(PlayerTypes eBully, int iGold)
 		}
 
 		GET_PLAYER(eBully).GetTreasury()->ChangeGold(iGold);
+#ifdef LEKMOD_PLEDGE_REWORK
+		// Tribute breaks the bully's own pledge; record timer for consequence ticks on other pledgers
+		if (IsProtectedByMajor(eBully))
+		{
+			m_aiTurnTributedWhilePledged[eBully] = GC.getGame().getGameTurn();
+			DoChangeProtectionFromMajor(eBully, false, /*bPledgeNowBroken=*/true);
+
+			// Global announcement to all alive players who have met this CS
+			const char* strBullyName = GET_PLAYER(eBully).getCivilizationShortDescriptionKey();
+			const char* strMinorName = GetPlayer()->getNameKey();
+			for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; iNotifyLoop++)
+			{
+				PlayerTypes eNotify = (PlayerTypes) iNotifyLoop;
+				if (!GET_PLAYER(eNotify).isAlive()) continue;
+				if (!IsHasMetPlayer(eNotify)) continue;
+
+				Localization::String strMessage = Localization::Lookup("TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED");
+				strMessage << strBullyName << strMinorName;
+				Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED_SUMMARY");
+				strSummary << strBullyName << strMinorName;
+				AddNotification(strMessage.toUTF8(), strSummary.toUTF8(), eNotify);
+			}
+		}
+#endif
 #ifdef NQ_MINOR_FRIENDSHIP_GAIN_BULLY_GOLD_SUCCESS_FROM_POLICIES
 		int iInfluenceChange = 0;
 		int iBullyInfluenceGain = GET_PLAYER(eBully).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_MINOR_FRIENDSHIP_GAIN_BULLY_GOLD_SUCCESS);
@@ -9138,6 +9207,29 @@ void CvMinorCivAI::DoMajorBullyUnit(PlayerTypes eBully, UnitTypes eUnitType)
 			pNewUnit->kill(false);	// Could not find a spot for the unit!
 #ifdef ENHANCED_GRAPHS
 		ChangeBullyWorkersAmountTotalByPlayer(eBully, 1);
+#endif
+#ifdef LEKMOD_PLEDGE_REWORK
+		// Worker extraction also breaks the bully's pledge (same behavior as gold tribute)
+		if (IsProtectedByMajor(eBully))
+		{
+			m_aiTurnTributedWhilePledged[eBully] = GC.getGame().getGameTurn();
+			DoChangeProtectionFromMajor(eBully, false, /*bPledgeNowBroken=*/true);
+
+			const char* strBullyName = GET_PLAYER(eBully).getCivilizationShortDescriptionKey();
+			const char* strMinorName = GetPlayer()->getNameKey();
+			for (int iNotifyLoop = 0; iNotifyLoop < MAX_MAJOR_CIVS; iNotifyLoop++)
+			{
+				PlayerTypes eNotify = (PlayerTypes) iNotifyLoop;
+				if (!GET_PLAYER(eNotify).isAlive()) continue;
+				if (!IsHasMetPlayer(eNotify)) continue;
+
+				Localization::String strMessage = Localization::Lookup("TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED");
+				strMessage << strBullyName << strMinorName;
+				Localization::String strSummary = Localization::Lookup("TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED_SUMMARY");
+				strSummary << strBullyName << strMinorName;
+				AddNotification(strMessage.toUTF8(), strSummary.toUTF8(), eNotify);
+			}
+		}
 #endif
 	}
 

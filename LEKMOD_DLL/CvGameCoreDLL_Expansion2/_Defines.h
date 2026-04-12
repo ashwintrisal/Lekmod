@@ -1232,6 +1232,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // AI minor civs (city-states) build roads on the first ring of land tiles after other worker tasks
 #define LEKMOD_MINOR_CIV_RING_ROADS
 
+// Pledge to Protect rework: tribute breaks pledge (+20-turn cooldown), anchor +10, recovery below anchor +50%, global bully announcement, pledger consequence ticks
+#define LEKMOD_PLEDGE_REWORK
+
 
 // Generic define for temp changes
 #define CLEAN_UP

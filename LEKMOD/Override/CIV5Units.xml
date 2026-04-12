@@ -96051,8 +96051,8 @@
 			<Value>0</Value> 
 		</Row>
 		<Row> 
-			<Name>MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED</Name> 
-			<Value>5</Value> 
+			<Name>MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED</Name>
+			<Value>10</Value>
 		</Row>
 		<Row> 
 			<Name>MINOR_FRIENDSHIP_ANCHOR_MOD_WARY_OF</Name> 

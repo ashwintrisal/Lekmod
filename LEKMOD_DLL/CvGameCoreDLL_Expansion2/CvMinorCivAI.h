@@ -650,6 +650,9 @@ private:
 	int  m_aiWarDecsAgainstMe[MAX_MAJOR_CIVS];// times this player declared war on this CS
 	bool m_abNemesisOf[MAX_MAJOR_CIVS];       // this CS never accepts peace with this player
 #endif
+#ifdef LEKMOD_PLEDGE_REWORK
+	int m_aiTurnTributedWhilePledged[MAX_MAJOR_CIVS]; // turn when this major tributed this CS while pledge was active; -1 if never
+#endif
 	QuestListForAllPlayers m_QuestsGiven;
 
 	int m_aiMajorScratchPad[MAX_MAJOR_CIVS];

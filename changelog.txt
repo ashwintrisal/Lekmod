@@ -2,6 +2,21 @@ LEKMOD PROMOTION CHANGELOG
 ==========================
 
 
+PLEDGE TO PROTECT REWORK (DLL + XML)
+--------------------------------------
+- Resting influence anchor increased from +5 to +10 (GlobalDefine MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED)
+- Recovery rate below anchor is +50% faster when an active pledge is held
+- Extracting tribute from a pledged city-state now removes the bully's pledge (with bPledgeNowBroken=true,
+  imposing the existing 20-turn re-pledge cooldown); the pledge-button tooltip already displays this countdown
+- Tributing a pledged CS triggers a global notification to all players who have met the city-state
+- Per-turn consequence ticks (stacks per aggressor):
+    - For 10 turns after a tribute-while-pledged event, and every turn a major is at war with the CS:
+        - Other pledgers lose 3 Influence/turn with the CS (unless at war with the aggressor → gain 1/turn)
+- Updated TXT_KEY_POP_CSTATE_PLEDGE_TT tooltip to describe all rework changes
+- New text keys: TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED, TXT_KEY_NOTIFICATION_PLEDGED_CS_TRIBUTED_SUMMARY
+- Gated under #define LEKMOD_PLEDGE_REWORK
+
+
 MISCELLANEOUS
 
 AI MINOR CIV RING ROADS (DLL)
