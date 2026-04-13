@@ -1,6 +1,20 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CIVILOPEDIA (GAME CONCEPTS)
+--------------------------
+- Added `LEKMOD/Override/CIV5LekmodCityStateConcepts.xml`: master hub **LEKMOD City-State Mechanics**
+  plus related articles (influence sources, war declarations, four aggression tiers, Wary /
+  Alienated / Nemesis, pledge rework, quest influence numbers, trait yields by era). Vanilla
+  **City-States** overview links to the hub via `Concepts_RelatedConcept`.
+- Text in `Language_en_US` plus `Language_de_DE` / `Language_pl_PL` / `Language_ru_RU` placeholders
+  (English body duplicated). When balance edits `MINOR_QUEST_FRIENDSHIP_*` or trait GlobalDefines,
+  update this XML to match.
+- `No Quitters Mod (v 11).modinfo` loads the file last in `OnModActivated` (after other gameplay DB);
+  if your distribution uses another root `LEKMOD.modinfo`, add the same `UpdateDatabase` path there.
+  Packagers: this file must run **after** any `UpdateDatabase` that replaces the whole `Concepts`
+  table (e.g. `CIV5Units.xml` with `<Delete />`), or these rows disappear on load.
+
 
 PLEDGE TO PROTECT REWORK (DLL + XML)
 --------------------------------------

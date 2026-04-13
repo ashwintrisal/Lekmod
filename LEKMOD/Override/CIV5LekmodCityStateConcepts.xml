@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LEKMOD Civilopedia: city-state mechanics hub and sub-articles. Load after CIV5Units.xml (Concepts table replace). -->
+<GameData>
+	<Concepts>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_MECHANICS</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_CITY_STATE</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_MECHANICS</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_TIER_ANTAGONIST</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_TIER_ANTAGONIST</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_TIER_AGGRESSOR</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_TIER_WARMONGER</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_TIER_AGGRESSOR</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_STATUS_WARY</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_TIER_WARMONGER</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_STATUS_ALIENATED</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_STATUS_WARY</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_STATUS_NEMESIS</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_STATUS_ALIENATED</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_STATUS_NEMESIS</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_QUEST_INFLUENCE</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT</InsertAfter>
+		</Row>
+		<Row>
+			<Type>CONCEPT_LEKMOD_CS_TRAIT_YIELDS</Type>
+			<Topic>TXT_KEY_TOPIC_CITYSTATE</Topic>
+			<Description>TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_DESCRIPTION</Description>
+			<Summary>TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_SUMMARY</Summary>
+			<AdvisorQuestion>TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST</AdvisorQuestion>
+			<Advisor>FOREIGN</Advisor>
+			<CivilopediaHeaderType>HEADER_CITYSTATE</CivilopediaHeaderType>
+			<InsertAfter>CONCEPT_LEKMOD_CS_QUEST_INFLUENCE</InsertAfter>
+			<InsertBefore>CONCEPT_CITY_STATE_TYPES</InsertBefore>
+		</Row>
+	</Concepts>
+
+	<Concepts_RelatedConcept>
+		<Row>
+			<ConceptType>CONCEPT_CITY_STATE</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_CITY_STATE</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_QUEST_INFLUENCE</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_MECHANICS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_TRAIT_YIELDS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_QUEST_INFLUENCE</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_TIER_ANTAGONIST</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_TIER_AGGRESSOR</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_TIER_WARMONGER</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_STATUS_WARY</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_STATUS_ALIENATED</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_STATUS_NEMESIS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_TIER_ANTAGONIST</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_TIER_AGGRESSOR</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_TIER_WARMONGER</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_STATUS_WARY</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_STATUS_ALIENATED</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_STATUS_NEMESIS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_WAR_DECLARATIONS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_QUEST_INFLUENCE</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+		<Row>
+			<ConceptType>CONCEPT_LEKMOD_CS_TRAIT_YIELDS</ConceptType>
+			<RelatedConcept>CONCEPT_LEKMOD_CS_MECHANICS</RelatedConcept>
+		</Row>
+	</Concepts_RelatedConcept>
+
+	<Language_en_US>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST"><Text>How does LEKMOD treat city-states?</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_DESCRIPTION"><Text>LEKMOD City-State Mechanics</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_SUMMARY"><Text>This hub summarizes LEKMOD-specific city-state rules: influence sources and resting anchor, pledge to protect, quest completion influence (GlobalDefines), per-era cultured / maritime / religious yields, and escalating penalties for declaring war on city-states (tiers, Wary, Alienated, Nemesis). Use the related articles for full detail.[NEWLINE][NEWLINE]Numbers in this Civilopedia match LEKMOD XML at release; if balance patches change GlobalDefines, the in-game tooltips and CIV5Units.xml are authoritative.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_DESCRIPTION"><Text>Influence Sources (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_SUMMARY"><Text>Influence (friendship points) moves from gifts, quests, special actions, and resting rules.[NEWLINE][NEWLINE][ICON_BULLET]Gold and faith gifts, unit gifts, tile-improvement gifts.[NEWLINE][ICON_BULLET]Quest completion grants listed in the Quest Influence article (raw values from MINOR_QUEST_FRIENDSHIP_* defines; not scaled by game speed for those grants in LEKMOD).[NEWLINE][ICON_BULLET]Pledge to Protect: resting anchor bonus and recovery behavior — see Pledge to Protect (LEKMOD).[NEWLINE][ICON_BULLET]Resting anchor components shown in the city-state status UI: base 0, pledge modifier, Wary penalty (negative), policies, religion, and other modifiers; decay can be faster when Alienated or modified by traits and policies.[NEWLINE][ICON_BULLET]Bullying and diplomacy choices can cost influence or trigger pledge breaks (pledge article).[NEWLINE][ICON_BULLET]Declaring war on city-states drives Wary / Alienated / Nemesis — see War Declarations (LEKMOD).</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_DESCRIPTION"><Text>War Declarations (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_SUMMARY"><Text>LEKMOD tracks how many times you have declared war on city-states and escalates four aggression tiers: Antagonist (1), Provocateur (2), Aggressor (3), Warmonger (4+). Penalties only increase; they never downgrade.[NEWLINE][NEWLINE]On each city-state you personally declared war on: Wary resting penalty is -10 at Antagonist and -30 at Provocateur or higher; Alienated decay is +50% at Antagonist and +100% at Provocateur or higher.[NEWLINE][NEWLINE]Provocateur also applies Wary -20 to the two closest met city-states you are not at war with (excluding allies). Aggressor applies Wary -20 and Alienated +50% decay to [COLOR_NEGATIVE_TEXT]all[ENDCOLOR] city-states (ally exception below). Warmonger applies Wary -30 and Alienated +100% decay to all city-states.[NEWLINE][NEWLINE]City-states that are currently your ally do not receive these extra global spreads.[NEWLINE][NEWLINE]Declaring war three times on the same city-state makes that city-state your Nemesis: it will never accept peace (permanent war for that pair).[NEWLINE][NEWLINE]See the tier and status articles for exact wording.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_DESCRIPTION"><Text>Aggression Tier: Antagonist</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]one[ENDCOLOR] declaration of war on any city-state (total across the game for that player).[NEWLINE][NEWLINE]Effects are [COLOR_POSITIVE_TEXT]local[ENDCOLOR] only: each city-state you declared war on gets Wary -10 resting influence and +50% Alienated influence decay. There is no extra Wary spread to city-states you have not attacked.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_DESCRIPTION"><Text>Aggression Tier: Provocateur</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]two[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on city-states you attacked: Wary -30 resting influence and +100% Alienated decay (same as higher tiers on those targets).[NEWLINE][NEWLINE]Additionally, the two closest [COLOR_NEGATIVE_TEXT]met[ENDCOLOR] city-states you are not at war with (and that are not your allies) gain Wary -20.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_DESCRIPTION"><Text>Aggression Tier: Aggressor</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]three[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -20 resting influence and +50% Alienated decay, except allies (current ally) do not receive this extra global effect.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_DESCRIPTION"><Text>Aggression Tier: Warmonger</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]four or more[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -30 resting influence and +100% Alienated decay, with the same ally exception as Aggressor.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_DESCRIPTION"><Text>Status: Wary (Resting Influence)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_SUMMARY"><Text>Wary is a [COLOR_NEGATIVE_TEXT]negative[ENDCOLOR] modifier to your resting influence anchor with a city-state — it pulls peacetime influence downward so you recover more slowly toward neutral or friendship thresholds.[NEWLINE][NEWLINE]Typical magnitudes from LEKMOD war declaration rules: -10 on city-states you attacked while Antagonist; -30 on those targets at Provocateur+; global spreads use -20 (Aggressor) or -30 (Warmonger) on other city-states; Provocateur’s “two closest met” spread uses -20.[NEWLINE][NEWLINE]The city-state diplo/status UI surfaces this as its own line in the resting anchor breakdown.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_DESCRIPTION"><Text>Status: Alienated (Influence Decay)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_SUMMARY"><Text>Alienated speeds up how fast your influence [COLOR_NEGATIVE_TEXT]decays[ENDCOLOR] when you are above the resting anchor (it does not change the anchor itself the way Wary does).[NEWLINE][NEWLINE]From LEKMOD war declarations on a given target city-state: +50% decay rate while you are Antagonist toward that relationship stack, and +100% while you are Provocateur or higher. Aggressor adds +50% decay globally (except allies); Warmonger adds +100% globally (except allies).[NEWLINE][NEWLINE]The status tooltip lists Alienated when any decay modifier of this kind applies.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_DESCRIPTION"><Text>Status: Nemesis (Permanent War)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_SUMMARY"><Text>If you declare war on the same city-state three times over the course of the game, that city-state becomes your Nemesis.[NEWLINE][NEWLINE]A Nemesis city-state will [COLOR_NEGATIVE_TEXT]never[ENDCOLOR] accept peace: the relationship is stuck at permanent war for you and that city-state. The diplo screen replaces the Make Peace control with a Nemesis label.[NEWLINE][NEWLINE]This is separate from Wary and Alienated; it does not downgrade once earned.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_DESCRIPTION"><Text>Pledge to Protect (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_SUMMARY"><Text>LEKMOD pledge changes (see GlobalDefines / DLL):[NEWLINE][NEWLINE][ICON_BULLET]Resting influence anchor while pledged: MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED = [COLOR_POSITIVE_TEXT]+10[ENDCOLOR] (was +5 in vanilla BNW).[NEWLINE][ICON_BULLET]While pledged, influence [COLOR_POSITIVE_TEXT]recovers faster[ENDCOLOR] when below the resting anchor (+50% recovery below anchor).[NEWLINE][ICON_BULLET]If a player extracts tribute from a pledged city-state, that player’s pledge is removed (with the normal re-pledge cooldown) and other players who have met the city-state receive a global notification.[NEWLINE][ICON_BULLET]After a tribute-while-pledged event, for 10 turns and additionally every turn a major civ remains at war with that city-state: other pledgers lose 3 influence per turn with that city-state unless they are at war with the aggressor (in which case they gain 1 per turn instead).[NEWLINE][NEWLINE]Tooltips on the pledge button in-game include cooldown and mistrust details.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_DESCRIPTION"><Text>Quest Influence Rewards (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_SUMMARY"><Text>Each quest type uses a GlobalDefine MINOR_QUEST_FRIENDSHIP_*; the value is the influence applied when the quest completes (LEKMOD uses the integer as-is across game speeds for these grants). Current LEKMOD defaults:[NEWLINE][NEWLINE]Route 40; Kill barbarian camp 35; Trade route 35; Connect resource 30; Construct wonder 35; Great person 30; Kill city-state 75; Find player 30; Find natural wonder 30; Give gold 15; Pledge-to-protect quest 15; Contest culture / faith / tech 35 each; Invest 0; Bully city-state 45; Denounce major 35; Spread religion 35.[NEWLINE][NEWLINE]If a define is zero or missing, the UI may omit a +N hint for that line. Re-check CIV5Units.xml if balance patches land.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_DESCRIPTION"><Text>Trait Yields by Era (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_SUMMARY"><Text>Cultured, Maritime, and Religious city-states use [COLOR_POSITIVE_TEXT]eight era buckets[ENDCOLOR] (Ancient through Information) so bonuses track the owning major’s current era.[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Cultured[ENDCOLOR] — Friends and Allies each add flat culture per turn from FRIENDS_CULTURE_BONUS_AMOUNT_* and ALLIES_CULTURE_BONUS_AMOUNT_* (2/4/6/8/10/12/14/16 by era). Allies stack with friends (same magnitudes in LEKMOD defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Religious[ENDCOLOR] — Friends and Allies add flat faith per turn from FRIENDS_FAITH_FLAT_BONUS_AMOUNT_* and ALLIES_FAITH_FLAT_BONUS_AMOUNT_* (same 2→16 progression by era in current defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Maritime[ENDCOLOR] — Food amounts are stored in hundredths (divide by 100 for food per turn). Friends capital: 2/2/2/2 then 4 from Industrial onward; friends other cities 0. Allies capital: 2/4/2/3 then 4; allies other cities 0/0/1/1 then 1 (per-era defines FRIENDS_CAPITAL_FOOD_* / ALLIES_* in GlobalDefines).[NEWLINE][NEWLINE]Mercantile and Militaristic behaviors follow their standard BNW rules unless separately patched in LEKMOD.</Text></Row>
+	</Language_en_US>
+
+	<Language_DE_DE>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST"><Text>How does LEKMOD treat city-states?</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_DESCRIPTION"><Text>LEKMOD City-State Mechanics</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_SUMMARY"><Text>This hub summarizes LEKMOD-specific city-state rules: influence sources and resting anchor, pledge to protect, quest completion influence (GlobalDefines), per-era cultured / maritime / religious yields, and escalating penalties for declaring war on city-states (tiers, Wary, Alienated, Nemesis). Use the related articles for full detail.[NEWLINE][NEWLINE]Numbers in this Civilopedia match LEKMOD XML at release; if balance patches change GlobalDefines, the in-game tooltips and CIV5Units.xml are authoritative.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_DESCRIPTION"><Text>Influence Sources (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_SUMMARY"><Text>Influence (friendship points) moves from gifts, quests, special actions, and resting rules.[NEWLINE][NEWLINE][ICON_BULLET]Gold and faith gifts, unit gifts, tile-improvement gifts.[NEWLINE][ICON_BULLET]Quest completion grants listed in the Quest Influence article (raw values from MINOR_QUEST_FRIENDSHIP_* defines; not scaled by game speed for those grants in LEKMOD).[NEWLINE][ICON_BULLET]Pledge to Protect: resting anchor bonus and recovery behavior — see Pledge to Protect (LEKMOD).[NEWLINE][ICON_BULLET]Resting anchor components shown in the city-state status UI: base 0, pledge modifier, Wary penalty (negative), policies, religion, and other modifiers; decay can be faster when Alienated or modified by traits and policies.[NEWLINE][ICON_BULLET]Bullying and diplomacy choices can cost influence or trigger pledge breaks (pledge article).[NEWLINE][ICON_BULLET]Declaring war on city-states drives Wary / Alienated / Nemesis — see War Declarations (LEKMOD).</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_DESCRIPTION"><Text>War Declarations (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_SUMMARY"><Text>LEKMOD tracks how many times you have declared war on city-states and escalates four aggression tiers: Antagonist (1), Provocateur (2), Aggressor (3), Warmonger (4+). Penalties only increase; they never downgrade.[NEWLINE][NEWLINE]On each city-state you personally declared war on: Wary resting penalty is -10 at Antagonist and -30 at Provocateur or higher; Alienated decay is +50% at Antagonist and +100% at Provocateur or higher.[NEWLINE][NEWLINE]Provocateur also applies Wary -20 to the two closest met city-states you are not at war with (excluding allies). Aggressor applies Wary -20 and Alienated +50% decay to [COLOR_NEGATIVE_TEXT]all[ENDCOLOR] city-states (ally exception below). Warmonger applies Wary -30 and Alienated +100% decay to all city-states.[NEWLINE][NEWLINE]City-states that are currently your ally do not receive these extra global spreads.[NEWLINE][NEWLINE]Declaring war three times on the same city-state makes that city-state your Nemesis: it will never accept peace (permanent war for that pair).[NEWLINE][NEWLINE]See the tier and status articles for exact wording.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_DESCRIPTION"><Text>Aggression Tier: Antagonist</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]one[ENDCOLOR] declaration of war on any city-state (total across the game for that player).[NEWLINE][NEWLINE]Effects are [COLOR_POSITIVE_TEXT]local[ENDCOLOR] only: each city-state you declared war on gets Wary -10 resting influence and +50% Alienated influence decay. There is no extra Wary spread to city-states you have not attacked.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_DESCRIPTION"><Text>Aggression Tier: Provocateur</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]two[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on city-states you attacked: Wary -30 resting influence and +100% Alienated decay (same as higher tiers on those targets).[NEWLINE][NEWLINE]Additionally, the two closest [COLOR_NEGATIVE_TEXT]met[ENDCOLOR] city-states you are not at war with (and that are not your allies) gain Wary -20.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_DESCRIPTION"><Text>Aggression Tier: Aggressor</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]three[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -20 resting influence and +50% Alienated decay, except allies (current ally) do not receive this extra global effect.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_DESCRIPTION"><Text>Aggression Tier: Warmonger</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]four or more[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -30 resting influence and +100% Alienated decay, with the same ally exception as Aggressor.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_DESCRIPTION"><Text>Status: Wary (Resting Influence)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_SUMMARY"><Text>Wary is a [COLOR_NEGATIVE_TEXT]negative[ENDCOLOR] modifier to your resting influence anchor with a city-state — it pulls peacetime influence downward so you recover more slowly toward neutral or friendship thresholds.[NEWLINE][NEWLINE]Typical magnitudes from LEKMOD war declaration rules: -10 on city-states you attacked while Antagonist; -30 on those targets at Provocateur+; global spreads use -20 (Aggressor) or -30 (Warmonger) on other city-states; Provocateur’s “two closest met” spread uses -20.[NEWLINE][NEWLINE]The city-state diplo/status UI surfaces this as its own line in the resting anchor breakdown.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_DESCRIPTION"><Text>Status: Alienated (Influence Decay)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_SUMMARY"><Text>Alienated speeds up how fast your influence [COLOR_NEGATIVE_TEXT]decays[ENDCOLOR] when you are above the resting anchor (it does not change the anchor itself the way Wary does).[NEWLINE][NEWLINE]From LEKMOD war declarations on a given target city-state: +50% decay rate while you are Antagonist toward that relationship stack, and +100% while you are Provocateur or higher. Aggressor adds +50% decay globally (except allies); Warmonger adds +100% globally (except allies).[NEWLINE][NEWLINE]The status tooltip lists Alienated when any decay modifier of this kind applies.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_DESCRIPTION"><Text>Status: Nemesis (Permanent War)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_SUMMARY"><Text>If you declare war on the same city-state three times over the course of the game, that city-state becomes your Nemesis.[NEWLINE][NEWLINE]A Nemesis city-state will [COLOR_NEGATIVE_TEXT]never[ENDCOLOR] accept peace: the relationship is stuck at permanent war for you and that city-state. The diplo screen replaces the Make Peace control with a Nemesis label.[NEWLINE][NEWLINE]This is separate from Wary and Alienated; it does not downgrade once earned.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_DESCRIPTION"><Text>Pledge to Protect (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_SUMMARY"><Text>LEKMOD pledge changes (see GlobalDefines / DLL):[NEWLINE][NEWLINE][ICON_BULLET]Resting influence anchor while pledged: MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED = [COLOR_POSITIVE_TEXT]+10[ENDCOLOR] (was +5 in vanilla BNW).[NEWLINE][ICON_BULLET]While pledged, influence [COLOR_POSITIVE_TEXT]recovers faster[ENDCOLOR] when below the resting anchor (+50% recovery below anchor).[NEWLINE][ICON_BULLET]If a player extracts tribute from a pledged city-state, that player’s pledge is removed (with the normal re-pledge cooldown) and other players who have met the city-state receive a global notification.[NEWLINE][ICON_BULLET]After a tribute-while-pledged event, for 10 turns and additionally every turn a major civ remains at war with that city-state: other pledgers lose 3 influence per turn with that city-state unless they are at war with the aggressor (in which case they gain 1 per turn instead).[NEWLINE][NEWLINE]Tooltips on the pledge button in-game include cooldown and mistrust details.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_DESCRIPTION"><Text>Quest Influence Rewards (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_SUMMARY"><Text>Each quest type uses a GlobalDefine MINOR_QUEST_FRIENDSHIP_*; the value is the influence applied when the quest completes (LEKMOD uses the integer as-is across game speeds for these grants). Current LEKMOD defaults:[NEWLINE][NEWLINE]Route 40; Kill barbarian camp 35; Trade route 35; Connect resource 30; Construct wonder 35; Great person 30; Kill city-state 75; Find player 30; Find natural wonder 30; Give gold 15; Pledge-to-protect quest 15; Contest culture / faith / tech 35 each; Invest 0; Bully city-state 45; Denounce major 35; Spread religion 35.[NEWLINE][NEWLINE]If a define is zero or missing, the UI may omit a +N hint for that line. Re-check CIV5Units.xml if balance patches land.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_DESCRIPTION"><Text>Trait Yields by Era (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_SUMMARY"><Text>Cultured, Maritime, and Religious city-states use [COLOR_POSITIVE_TEXT]eight era buckets[ENDCOLOR] (Ancient through Information) so bonuses track the owning major’s current era.[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Cultured[ENDCOLOR] — Friends and Allies each add flat culture per turn from FRIENDS_CULTURE_BONUS_AMOUNT_* and ALLIES_CULTURE_BONUS_AMOUNT_* (2/4/6/8/10/12/14/16 by era). Allies stack with friends (same magnitudes in LEKMOD defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Religious[ENDCOLOR] — Friends and Allies add flat faith per turn from FRIENDS_FAITH_FLAT_BONUS_AMOUNT_* and ALLIES_FAITH_FLAT_BONUS_AMOUNT_* (same 2→16 progression by era in current defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Maritime[ENDCOLOR] — Food amounts are stored in hundredths (divide by 100 for food per turn). Friends capital: 2/2/2/2 then 4 from Industrial onward; friends other cities 0. Allies capital: 2/4/2/3 then 4; allies other cities 0/0/1/1 then 1 (per-era defines FRIENDS_CAPITAL_FOOD_* / ALLIES_* in GlobalDefines).[NEWLINE][NEWLINE]Mercantile and Militaristic behaviors follow their standard BNW rules unless separately patched in LEKMOD.</Text></Row>
+	</Language_DE_DE>
+
+	<Language_PL_PL>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST"><Text>How does LEKMOD treat city-states?</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_DESCRIPTION"><Text>LEKMOD City-State Mechanics</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_SUMMARY"><Text>This hub summarizes LEKMOD-specific city-state rules: influence sources and resting anchor, pledge to protect, quest completion influence (GlobalDefines), per-era cultured / maritime / religious yields, and escalating penalties for declaring war on city-states (tiers, Wary, Alienated, Nemesis). Use the related articles for full detail.[NEWLINE][NEWLINE]Numbers in this Civilopedia match LEKMOD XML at release; if balance patches change GlobalDefines, the in-game tooltips and CIV5Units.xml are authoritative.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_DESCRIPTION"><Text>Influence Sources (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_SUMMARY"><Text>Influence (friendship points) moves from gifts, quests, special actions, and resting rules.[NEWLINE][NEWLINE][ICON_BULLET]Gold and faith gifts, unit gifts, tile-improvement gifts.[NEWLINE][ICON_BULLET]Quest completion grants listed in the Quest Influence article (raw values from MINOR_QUEST_FRIENDSHIP_* defines; not scaled by game speed for those grants in LEKMOD).[NEWLINE][ICON_BULLET]Pledge to Protect: resting anchor bonus and recovery behavior — see Pledge to Protect (LEKMOD).[NEWLINE][ICON_BULLET]Resting anchor components shown in the city-state status UI: base 0, pledge modifier, Wary penalty (negative), policies, religion, and other modifiers; decay can be faster when Alienated or modified by traits and policies.[NEWLINE][ICON_BULLET]Bullying and diplomacy choices can cost influence or trigger pledge breaks (pledge article).[NEWLINE][ICON_BULLET]Declaring war on city-states drives Wary / Alienated / Nemesis — see War Declarations (LEKMOD).</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_DESCRIPTION"><Text>War Declarations (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_SUMMARY"><Text>LEKMOD tracks how many times you have declared war on city-states and escalates four aggression tiers: Antagonist (1), Provocateur (2), Aggressor (3), Warmonger (4+). Penalties only increase; they never downgrade.[NEWLINE][NEWLINE]On each city-state you personally declared war on: Wary resting penalty is -10 at Antagonist and -30 at Provocateur or higher; Alienated decay is +50% at Antagonist and +100% at Provocateur or higher.[NEWLINE][NEWLINE]Provocateur also applies Wary -20 to the two closest met city-states you are not at war with (excluding allies). Aggressor applies Wary -20 and Alienated +50% decay to [COLOR_NEGATIVE_TEXT]all[ENDCOLOR] city-states (ally exception below). Warmonger applies Wary -30 and Alienated +100% decay to all city-states.[NEWLINE][NEWLINE]City-states that are currently your ally do not receive these extra global spreads.[NEWLINE][NEWLINE]Declaring war three times on the same city-state makes that city-state your Nemesis: it will never accept peace (permanent war for that pair).[NEWLINE][NEWLINE]See the tier and status articles for exact wording.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_DESCRIPTION"><Text>Aggression Tier: Antagonist</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]one[ENDCOLOR] declaration of war on any city-state (total across the game for that player).[NEWLINE][NEWLINE]Effects are [COLOR_POSITIVE_TEXT]local[ENDCOLOR] only: each city-state you declared war on gets Wary -10 resting influence and +50% Alienated influence decay. There is no extra Wary spread to city-states you have not attacked.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_DESCRIPTION"><Text>Aggression Tier: Provocateur</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]two[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on city-states you attacked: Wary -30 resting influence and +100% Alienated decay (same as higher tiers on those targets).[NEWLINE][NEWLINE]Additionally, the two closest [COLOR_NEGATIVE_TEXT]met[ENDCOLOR] city-states you are not at war with (and that are not your allies) gain Wary -20.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_DESCRIPTION"><Text>Aggression Tier: Aggressor</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]three[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -20 resting influence and +50% Alienated decay, except allies (current ally) do not receive this extra global effect.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_DESCRIPTION"><Text>Aggression Tier: Warmonger</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]four or more[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -30 resting influence and +100% Alienated decay, with the same ally exception as Aggressor.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_DESCRIPTION"><Text>Status: Wary (Resting Influence)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_SUMMARY"><Text>Wary is a [COLOR_NEGATIVE_TEXT]negative[ENDCOLOR] modifier to your resting influence anchor with a city-state — it pulls peacetime influence downward so you recover more slowly toward neutral or friendship thresholds.[NEWLINE][NEWLINE]Typical magnitudes from LEKMOD war declaration rules: -10 on city-states you attacked while Antagonist; -30 on those targets at Provocateur+; global spreads use -20 (Aggressor) or -30 (Warmonger) on other city-states; Provocateur’s “two closest met” spread uses -20.[NEWLINE][NEWLINE]The city-state diplo/status UI surfaces this as its own line in the resting anchor breakdown.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_DESCRIPTION"><Text>Status: Alienated (Influence Decay)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_SUMMARY"><Text>Alienated speeds up how fast your influence [COLOR_NEGATIVE_TEXT]decays[ENDCOLOR] when you are above the resting anchor (it does not change the anchor itself the way Wary does).[NEWLINE][NEWLINE]From LEKMOD war declarations on a given target city-state: +50% decay rate while you are Antagonist toward that relationship stack, and +100% while you are Provocateur or higher. Aggressor adds +50% decay globally (except allies); Warmonger adds +100% globally (except allies).[NEWLINE][NEWLINE]The status tooltip lists Alienated when any decay modifier of this kind applies.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_DESCRIPTION"><Text>Status: Nemesis (Permanent War)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_SUMMARY"><Text>If you declare war on the same city-state three times over the course of the game, that city-state becomes your Nemesis.[NEWLINE][NEWLINE]A Nemesis city-state will [COLOR_NEGATIVE_TEXT]never[ENDCOLOR] accept peace: the relationship is stuck at permanent war for you and that city-state. The diplo screen replaces the Make Peace control with a Nemesis label.[NEWLINE][NEWLINE]This is separate from Wary and Alienated; it does not downgrade once earned.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_DESCRIPTION"><Text>Pledge to Protect (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_SUMMARY"><Text>LEKMOD pledge changes (see GlobalDefines / DLL):[NEWLINE][NEWLINE][ICON_BULLET]Resting influence anchor while pledged: MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED = [COLOR_POSITIVE_TEXT]+10[ENDCOLOR] (was +5 in vanilla BNW).[NEWLINE][ICON_BULLET]While pledged, influence [COLOR_POSITIVE_TEXT]recovers faster[ENDCOLOR] when below the resting anchor (+50% recovery below anchor).[NEWLINE][ICON_BULLET]If a player extracts tribute from a pledged city-state, that player’s pledge is removed (with the normal re-pledge cooldown) and other players who have met the city-state receive a global notification.[NEWLINE][ICON_BULLET]After a tribute-while-pledged event, for 10 turns and additionally every turn a major civ remains at war with that city-state: other pledgers lose 3 influence per turn with that city-state unless they are at war with the aggressor (in which case they gain 1 per turn instead).[NEWLINE][NEWLINE]Tooltips on the pledge button in-game include cooldown and mistrust details.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_DESCRIPTION"><Text>Quest Influence Rewards (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_SUMMARY"><Text>Each quest type uses a GlobalDefine MINOR_QUEST_FRIENDSHIP_*; the value is the influence applied when the quest completes (LEKMOD uses the integer as-is across game speeds for these grants). Current LEKMOD defaults:[NEWLINE][NEWLINE]Route 40; Kill barbarian camp 35; Trade route 35; Connect resource 30; Construct wonder 35; Great person 30; Kill city-state 75; Find player 30; Find natural wonder 30; Give gold 15; Pledge-to-protect quest 15; Contest culture / faith / tech 35 each; Invest 0; Bully city-state 45; Denounce major 35; Spread religion 35.[NEWLINE][NEWLINE]If a define is zero or missing, the UI may omit a +N hint for that line. Re-check CIV5Units.xml if balance patches land.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_DESCRIPTION"><Text>Trait Yields by Era (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_SUMMARY"><Text>Cultured, Maritime, and Religious city-states use [COLOR_POSITIVE_TEXT]eight era buckets[ENDCOLOR] (Ancient through Information) so bonuses track the owning major’s current era.[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Cultured[ENDCOLOR] — Friends and Allies each add flat culture per turn from FRIENDS_CULTURE_BONUS_AMOUNT_* and ALLIES_CULTURE_BONUS_AMOUNT_* (2/4/6/8/10/12/14/16 by era). Allies stack with friends (same magnitudes in LEKMOD defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Religious[ENDCOLOR] — Friends and Allies add flat faith per turn from FRIENDS_FAITH_FLAT_BONUS_AMOUNT_* and ALLIES_FAITH_FLAT_BONUS_AMOUNT_* (same 2→16 progression by era in current defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Maritime[ENDCOLOR] — Food amounts are stored in hundredths (divide by 100 for food per turn). Friends capital: 2/2/2/2 then 4 from Industrial onward; friends other cities 0. Allies capital: 2/4/2/3 then 4; allies other cities 0/0/1/1 then 1 (per-era defines FRIENDS_CAPITAL_FOOD_* / ALLIES_* in GlobalDefines).[NEWLINE][NEWLINE]Mercantile and Militaristic behaviors follow their standard BNW rules unless separately patched in LEKMOD.</Text></Row>
+	</Language_PL_PL>
+
+	<Language_RU_RU>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_GENERIC_ADV_QUEST"><Text>How does LEKMOD treat city-states?</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_DESCRIPTION"><Text>LEKMOD City-State Mechanics</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_MECHANICS_SUMMARY"><Text>This hub summarizes LEKMOD-specific city-state rules: influence sources and resting anchor, pledge to protect, quest completion influence (GlobalDefines), per-era cultured / maritime / religious yields, and escalating penalties for declaring war on city-states (tiers, Wary, Alienated, Nemesis). Use the related articles for full detail.[NEWLINE][NEWLINE]Numbers in this Civilopedia match LEKMOD XML at release; if balance patches change GlobalDefines, the in-game tooltips and CIV5Units.xml are authoritative.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_DESCRIPTION"><Text>Influence Sources (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_INFLUENCE_SOURCES_SUMMARY"><Text>Influence (friendship points) moves from gifts, quests, special actions, and resting rules.[NEWLINE][NEWLINE][ICON_BULLET]Gold and faith gifts, unit gifts, tile-improvement gifts.[NEWLINE][ICON_BULLET]Quest completion grants listed in the Quest Influence article (raw values from MINOR_QUEST_FRIENDSHIP_* defines; not scaled by game speed for those grants in LEKMOD).[NEWLINE][ICON_BULLET]Pledge to Protect: resting anchor bonus and recovery behavior — see Pledge to Protect (LEKMOD).[NEWLINE][ICON_BULLET]Resting anchor components shown in the city-state status UI: base 0, pledge modifier, Wary penalty (negative), policies, religion, and other modifiers; decay can be faster when Alienated or modified by traits and policies.[NEWLINE][ICON_BULLET]Bullying and diplomacy choices can cost influence or trigger pledge breaks (pledge article).[NEWLINE][ICON_BULLET]Declaring war on city-states drives Wary / Alienated / Nemesis — see War Declarations (LEKMOD).</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_DESCRIPTION"><Text>War Declarations (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_WAR_DECLARATIONS_SUMMARY"><Text>LEKMOD tracks how many times you have declared war on city-states and escalates four aggression tiers: Antagonist (1), Provocateur (2), Aggressor (3), Warmonger (4+). Penalties only increase; they never downgrade.[NEWLINE][NEWLINE]On each city-state you personally declared war on: Wary resting penalty is -10 at Antagonist and -30 at Provocateur or higher; Alienated decay is +50% at Antagonist and +100% at Provocateur or higher.[NEWLINE][NEWLINE]Provocateur also applies Wary -20 to the two closest met city-states you are not at war with (excluding allies). Aggressor applies Wary -20 and Alienated +50% decay to [COLOR_NEGATIVE_TEXT]all[ENDCOLOR] city-states (ally exception below). Warmonger applies Wary -30 and Alienated +100% decay to all city-states.[NEWLINE][NEWLINE]City-states that are currently your ally do not receive these extra global spreads.[NEWLINE][NEWLINE]Declaring war three times on the same city-state makes that city-state your Nemesis: it will never accept peace (permanent war for that pair).[NEWLINE][NEWLINE]See the tier and status articles for exact wording.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_DESCRIPTION"><Text>Aggression Tier: Antagonist</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_ANTAGONIST_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]one[ENDCOLOR] declaration of war on any city-state (total across the game for that player).[NEWLINE][NEWLINE]Effects are [COLOR_POSITIVE_TEXT]local[ENDCOLOR] only: each city-state you declared war on gets Wary -10 resting influence and +50% Alienated influence decay. There is no extra Wary spread to city-states you have not attacked.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_DESCRIPTION"><Text>Aggression Tier: Provocateur</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_PROVOCATEUR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]two[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on city-states you attacked: Wary -30 resting influence and +100% Alienated decay (same as higher tiers on those targets).[NEWLINE][NEWLINE]Additionally, the two closest [COLOR_NEGATIVE_TEXT]met[ENDCOLOR] city-states you are not at war with (and that are not your allies) gain Wary -20.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_DESCRIPTION"><Text>Aggression Tier: Aggressor</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_AGGRESSOR_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]three[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -20 resting influence and +50% Alienated decay, except allies (current ally) do not receive this extra global effect.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_DESCRIPTION"><Text>Aggression Tier: Warmonger</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TIER_WARMONGER_SUMMARY"><Text>Reached after [COLOR_NEGATIVE_TEXT]four or more[ENDCOLOR] total declarations of war on city-states.[NEWLINE][NEWLINE]Local penalties on targets remain as at Provocateur.[NEWLINE][NEWLINE][COLOR_NEGATIVE_TEXT]Every[ENDCOLOR] city-state becomes Wary -30 resting influence and +100% Alienated decay, with the same ally exception as Aggressor.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_DESCRIPTION"><Text>Status: Wary (Resting Influence)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_WARY_SUMMARY"><Text>Wary is a [COLOR_NEGATIVE_TEXT]negative[ENDCOLOR] modifier to your resting influence anchor with a city-state — it pulls peacetime influence downward so you recover more slowly toward neutral or friendship thresholds.[NEWLINE][NEWLINE]Typical magnitudes from LEKMOD war declaration rules: -10 on city-states you attacked while Antagonist; -30 on those targets at Provocateur+; global spreads use -20 (Aggressor) or -30 (Warmonger) on other city-states; Provocateur’s “two closest met” spread uses -20.[NEWLINE][NEWLINE]The city-state diplo/status UI surfaces this as its own line in the resting anchor breakdown.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_DESCRIPTION"><Text>Status: Alienated (Influence Decay)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_ALIENATED_SUMMARY"><Text>Alienated speeds up how fast your influence [COLOR_NEGATIVE_TEXT]decays[ENDCOLOR] when you are above the resting anchor (it does not change the anchor itself the way Wary does).[NEWLINE][NEWLINE]From LEKMOD war declarations on a given target city-state: +50% decay rate while you are Antagonist toward that relationship stack, and +100% while you are Provocateur or higher. Aggressor adds +50% decay globally (except allies); Warmonger adds +100% globally (except allies).[NEWLINE][NEWLINE]The status tooltip lists Alienated when any decay modifier of this kind applies.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_DESCRIPTION"><Text>Status: Nemesis (Permanent War)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_STATUS_NEMESIS_SUMMARY"><Text>If you declare war on the same city-state three times over the course of the game, that city-state becomes your Nemesis.[NEWLINE][NEWLINE]A Nemesis city-state will [COLOR_NEGATIVE_TEXT]never[ENDCOLOR] accept peace: the relationship is stuck at permanent war for you and that city-state. The diplo screen replaces the Make Peace control with a Nemesis label.[NEWLINE][NEWLINE]This is separate from Wary and Alienated; it does not downgrade once earned.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_DESCRIPTION"><Text>Pledge to Protect (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_PLEDGE_TO_PROTECT_SUMMARY"><Text>LEKMOD pledge changes (see GlobalDefines / DLL):[NEWLINE][NEWLINE][ICON_BULLET]Resting influence anchor while pledged: MINOR_FRIENDSHIP_ANCHOR_MOD_PROTECTED = [COLOR_POSITIVE_TEXT]+10[ENDCOLOR] (was +5 in vanilla BNW).[NEWLINE][ICON_BULLET]While pledged, influence [COLOR_POSITIVE_TEXT]recovers faster[ENDCOLOR] when below the resting anchor (+50% recovery below anchor).[NEWLINE][ICON_BULLET]If a player extracts tribute from a pledged city-state, that player’s pledge is removed (with the normal re-pledge cooldown) and other players who have met the city-state receive a global notification.[NEWLINE][ICON_BULLET]After a tribute-while-pledged event, for 10 turns and additionally every turn a major civ remains at war with that city-state: other pledgers lose 3 influence per turn with that city-state unless they are at war with the aggressor (in which case they gain 1 per turn instead).[NEWLINE][NEWLINE]Tooltips on the pledge button in-game include cooldown and mistrust details.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_DESCRIPTION"><Text>Quest Influence Rewards (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_QUEST_INFLUENCE_SUMMARY"><Text>Each quest type uses a GlobalDefine MINOR_QUEST_FRIENDSHIP_*; the value is the influence applied when the quest completes (LEKMOD uses the integer as-is across game speeds for these grants). Current LEKMOD defaults:[NEWLINE][NEWLINE]Route 40; Kill barbarian camp 35; Trade route 35; Connect resource 30; Construct wonder 35; Great person 30; Kill city-state 75; Find player 30; Find natural wonder 30; Give gold 15; Pledge-to-protect quest 15; Contest culture / faith / tech 35 each; Invest 0; Bully city-state 45; Denounce major 35; Spread religion 35.[NEWLINE][NEWLINE]If a define is zero or missing, the UI may omit a +N hint for that line. Re-check CIV5Units.xml if balance patches land.</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_DESCRIPTION"><Text>Trait Yields by Era (LEKMOD)</Text></Row>
+		<Row Tag="TXT_KEY_CONCEPT_LEKMOD_CS_TRAIT_YIELDS_SUMMARY"><Text>Cultured, Maritime, and Religious city-states use [COLOR_POSITIVE_TEXT]eight era buckets[ENDCOLOR] (Ancient through Information) so bonuses track the owning major’s current era.[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Cultured[ENDCOLOR] — Friends and Allies each add flat culture per turn from FRIENDS_CULTURE_BONUS_AMOUNT_* and ALLIES_CULTURE_BONUS_AMOUNT_* (2/4/6/8/10/12/14/16 by era). Allies stack with friends (same magnitudes in LEKMOD defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Religious[ENDCOLOR] — Friends and Allies add flat faith per turn from FRIENDS_FAITH_FLAT_BONUS_AMOUNT_* and ALLIES_FAITH_FLAT_BONUS_AMOUNT_* (same 2→16 progression by era in current defaults).[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Maritime[ENDCOLOR] — Food amounts are stored in hundredths (divide by 100 for food per turn). Friends capital: 2/2/2/2 then 4 from Industrial onward; friends other cities 0. Allies capital: 2/4/2/3 then 4; allies other cities 0/0/1/1 then 1 (per-era defines FRIENDS_CAPITAL_FOOD_* / ALLIES_* in GlobalDefines).[NEWLINE][NEWLINE]Mercantile and Militaristic behaviors follow their standard BNW rules unless separately patched in LEKMOD.</Text></Row>
+	</Language_RU_RU>
+</GameData>

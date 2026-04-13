@@ -379,6 +379,7 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
     <File md5="F00164C275321FC8704F744D9C8C8DED" import="0">_from_AuI/AuI_CIV5MultiUnitFormations.xml</File>
     <File md5="9A6C3FFC72E82B4A7F4BC1EB7D53151E" import="0">_from_AuI/AuI_CIV5TacticalMoves.xml</File>
     <File md5="66C46EE74307AFF546BC901FCF0ED324" import="0">_from_AuI/AuI_CIV5Units.xml</File>
+    <File md5="4321EE12ED0C0332BB38C32AA9707CED" import="0">../../Override/CIV5LekmodCityStateConcepts.xml</File>
     <File md5="963BC3CEE71B665D9365574B780DC585" import="0">_from_AuI/AuI_GlobalAIDefines.xml</File>
     <File md5="55AE22C43A6BEB1167F3CB513C73D654" import="0">_from_AuI/AuI_GlobalDefines.xml</File>
     <File md5="140CAE485AFCC60EE1DC4A34491E817F" import="0">_from_AuI/AuI_GlobalDiplomacyAIDefines.xml</File>
@@ -705,6 +706,7 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
       <UpdateDatabase>gameplay/CIV5GameOptions_Binomial_RNG_Combat.xml</UpdateDatabase>
       <UpdateDatabase>gameplay/CIV5GameOptions_Automation_Resets_TurnTimer.xml</UpdateDatabase>
       <UpdateDatabase>gameplay/FlatlandCityExtraFood.xml</UpdateDatabase>
+      <UpdateDatabase>../../Override/CIV5LekmodCityStateConcepts.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
   <EntryPoints>
