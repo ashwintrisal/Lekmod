@@ -838,6 +838,8 @@
 #define NQ_INTERNAL_TRADE_ROUTE_PRODUCTION_YIELD_CHANGE_FROM_POLICIES
 // disables resistance time via policies
 #define NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
+// captured city resistance is capped to a minimum of 1 turn
+#define LEKMOD_RESISTANCE_TURNS_MIN_ONE
 // unhappiness modifier for ideology pressure from policies
 #define NQ_IDEOLOGY_PRESSURE_UNHAPPINESS_MODIFIER_FROM_POLICIES
 // happineses from railway connections

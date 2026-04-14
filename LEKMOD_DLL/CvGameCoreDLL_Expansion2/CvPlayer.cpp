@@ -3352,6 +3352,9 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 				if (iResistanceTurns % 20000 != 0)
 					iResistanceTurns += 20000; // acts as ceil(), but without any weird int <-> float conversions
 				iResistanceTurns /= 20000;
+#ifdef LEKMOD_RESISTANCE_TURNS_MIN_ONE
+				iResistanceTurns = max(1, iResistanceTurns); // future reduction effects must not drop below 1
+#endif
 			}
 #else
 			// NQMP GJS - reduce resistance time BEGIN

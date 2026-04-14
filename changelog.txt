@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CITY CAPTURE
+------------
+- Captured city resistance time is now floored at 1 turn; future effects that reduce resistance cannot bring it to 0.
+
 BUG FIXES
 ---------
 - Clausewitz's Legacy (Autocracy policy): attack bonus now correctly applies to ranged combat (land ranged, naval ranged, air strikes) in addition to melee. The bonus was already shown in the combat preview for ranged units but not actually applied during combat resolution.
