@@ -13816,6 +13816,14 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 	if(bAttacking)
 	{
 		iModifier += getAttackModifier();
+
+		// Temporary attack bonus (Policies, etc.) - e.g. Clausewitz's Legacy
+		if(GET_PLAYER(getOwner()).GetAttackBonusTurns() > 0)
+		{
+			iTempModifier = /*20*/ GC.getPOLICY_ATTACK_BONUS_MOD();
+			iModifier += iTempModifier;
+		}
+
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 		// Hills
 		if (pMyPlot && pMyPlot->isHills())

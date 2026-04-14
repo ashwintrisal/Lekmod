@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+BUG FIXES
+---------
+- Clausewitz's Legacy (Autocracy policy): attack bonus now correctly applies to ranged combat (land ranged, naval ranged, air strikes) in addition to melee. The bonus was already shown in the combat preview for ranged units but not actually applied during combat resolution.
+
 LOBBY OPTIONS
 -------------
 - Added **Disable All Strategic Resource Trading** lobby option (GAMEOPTION_NO_STRATEGIC_TRADING): when enabled, no strategic resources can be traded between players under any circumstances. Available in both singleplayer and multiplayer.
