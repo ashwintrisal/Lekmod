@@ -142,6 +142,21 @@ CvBuildingEntry::CvBuildingEntry(void):
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus(0),
 #endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+	m_iCityHealPerTurn(0),
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	m_iNearbyEnemyDamageBuilding(0),
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	m_iMountainAdjacentStrength(0),
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	m_iHillStrength(0),
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	m_iCityAttackRangeChange(0),
+#endif
 	m_iPreferredDisplayPosition(0),
 	m_iPortraitIndex(-1),
 	m_bTeamShare(false),
@@ -508,6 +523,21 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus = kResults.GetInt("GarrisonStrengthBonus");
+#endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+	m_iCityHealPerTurn = kResults.GetInt("CityHealPerTurn");
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	m_iNearbyEnemyDamageBuilding = kResults.GetInt("NearbyEnemyDamage");
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	m_iMountainAdjacentStrength = kResults.GetInt("MountainAdjacentStrength");
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	m_iHillStrength = kResults.GetInt("HillStrength");
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	m_iCityAttackRangeChange = kResults.GetInt("CityAttackRangeChange");
 #endif
 	m_iPreferredDisplayPosition = kResults.GetInt("DisplayPosition");
 	m_iPortraitIndex = kResults.GetInt("PortraitIndex");
@@ -1884,6 +1914,36 @@ int CvBuildingEntry::GetGarrisonStrengthBonus() const
 	return m_iGarrisonStrengthBonus;
 }
 #endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+int CvBuildingEntry::GetCityHealPerTurn() const
+{
+	return m_iCityHealPerTurn;
+}
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+int CvBuildingEntry::GetNearbyEnemyDamageBuilding() const
+{
+	return m_iNearbyEnemyDamageBuilding;
+}
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+int CvBuildingEntry::GetMountainAdjacentStrength() const
+{
+	return m_iMountainAdjacentStrength;
+}
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+int CvBuildingEntry::GetHillStrength() const
+{
+	return m_iHillStrength;
+}
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+int CvBuildingEntry::GetCityAttackRangeChange() const
+{
+	return m_iCityAttackRangeChange;
+}
+#endif
 /// What ring the engine will try to display this building
 int CvBuildingEntry::GetPreferredDisplayPosition() const
 {
@@ -2869,6 +2929,18 @@ CvCityBuildings::CvCityBuildings():
 	m_iBuildingDefensePerCitizen(0),
 #endif
 	m_iBuildingDefenseMod(0),
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	m_iBuildingNearbyEnemyDamage(0),
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	m_iBuildingMountainAdjacentStrength(0),
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	m_iBuildingHillStrength(0),
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	m_iBuildingCityAttackRangeChange(0),
+#endif
 	m_iMissionaryExtraSpreads(0),
 	m_iLandmarksTourismPercent(0),
 	m_iGreatWorksTourismModifier(0),
@@ -2955,6 +3027,18 @@ void CvCityBuildings::Reset()
 	m_iBuildingDefensePerCitizen = 0;
 #endif
 	m_iBuildingDefenseMod = 0;
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	m_iBuildingNearbyEnemyDamage = 0;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	m_iBuildingMountainAdjacentStrength = 0;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	m_iBuildingHillStrength = 0;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	m_iBuildingCityAttackRangeChange = 0;
+#endif
 	m_iMissionaryExtraSpreads = 0;
 	m_iLandmarksTourismPercent = 0;
 	m_iGreatWorksTourismModifier = 0;
@@ -2994,6 +3078,18 @@ void CvCityBuildings::Read(FDataStream& kStream)
 	kStream >> m_iBuildingDefensePerCitizen;
 #endif
 	kStream >> m_iBuildingDefenseMod;
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	kStream >> m_iBuildingNearbyEnemyDamage;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	kStream >> m_iBuildingMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	kStream >> m_iBuildingHillStrength;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	kStream >> m_iBuildingCityAttackRangeChange;
+#endif
 	kStream >> m_iMissionaryExtraSpreads;
 	kStream >> m_iLandmarksTourismPercent;
 	kStream >> m_iGreatWorksTourismModifier;
@@ -3030,6 +3126,18 @@ void CvCityBuildings::Write(FDataStream& kStream)
 	kStream << m_iBuildingDefensePerCitizen;
 #endif
 	kStream << m_iBuildingDefenseMod;
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	kStream << m_iBuildingNearbyEnemyDamage;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	kStream << m_iBuildingMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	kStream << m_iBuildingHillStrength;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	kStream << m_iBuildingCityAttackRangeChange;
+#endif
 	kStream << m_iMissionaryExtraSpreads;
 	kStream << m_iLandmarksTourismPercent;
 	kStream << m_iGreatWorksTourismModifier;
@@ -4422,6 +4530,75 @@ void CvCityBuildings::ChangeBuildingDefenseMod(int iChange)
 		m_pCity->plot()->plotAction(PUF_makeInfoBarDirty);
 	}
 }
+
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+/// Accessor: Find the highest CityHealPerTurn across all buildings in this city
+int CvCityBuildings::GetMaxCityHealPerTurn() const
+{
+	int iMax = 0;
+	for(int iI = 0; iI < GC.getNumBuildingInfos(); iI++)
+	{
+		BuildingTypes eBuilding = (BuildingTypes)iI;
+		if(GetNumBuilding(eBuilding) > 0)
+		{
+			CvBuildingEntry* pkInfo = GC.getBuildingInfo(eBuilding);
+			if(pkInfo)
+				iMax = std::max(iMax, pkInfo->GetCityHealPerTurn());
+		}
+	}
+	return iMax;
+}
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+int CvCityBuildings::GetBuildingNearbyEnemyDamage() const
+{
+	return m_iBuildingNearbyEnemyDamage;
+}
+void CvCityBuildings::ChangeBuildingNearbyEnemyDamage(int iChange)
+{
+	if(iChange != 0)
+		m_iBuildingNearbyEnemyDamage += iChange;
+}
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+int CvCityBuildings::GetBuildingMountainAdjacentStrength() const
+{
+	return m_iBuildingMountainAdjacentStrength;
+}
+void CvCityBuildings::ChangeBuildingMountainAdjacentStrength(int iChange)
+{
+	if(iChange != 0)
+	{
+		m_iBuildingMountainAdjacentStrength += iChange;
+		m_pCity->UpdateStrengthValue();
+	}
+}
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+int CvCityBuildings::GetBuildingHillStrength() const
+{
+	return m_iBuildingHillStrength;
+}
+void CvCityBuildings::ChangeBuildingHillStrength(int iChange)
+{
+	if(iChange != 0)
+	{
+		m_iBuildingHillStrength += iChange;
+		m_pCity->UpdateStrengthValue();
+	}
+}
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+int CvCityBuildings::GetBuildingCityAttackRangeChange() const
+{
+	return m_iBuildingCityAttackRangeChange;
+}
+void CvCityBuildings::ChangeBuildingCityAttackRangeChange(int iChange)
+{
+	if(iChange != 0)
+		m_iBuildingCityAttackRangeChange += iChange;
+}
+#endif
 
 /// Accessor: Get extra times to spread religion for missionaries from this city
 int CvCityBuildings::GetMissionaryExtraSpreads() const

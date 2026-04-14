@@ -942,6 +942,16 @@
 #define LEKMOD_FREE_BUILDING_FIX
 // Added a new tag to the buildings table in xml "gold cost". This overrides the gold cost of a building regardless of hurry cost modifiers but will be discounted by other effects.
 #define LEKMOD_BUILDING_GOLD_COST
+// Buildings can set city HP regeneration per turn (takes max across all buildings in city)
+#define LEKMOD_BUILDING_CITY_HEAL_RATE
+// Buildings can deal damage to adjacent enemy units at the start of the city owner's turn
+#define LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE
+// Buildings can add city combat strength when the city is adjacent to a mountain
+#define LEKMOD_BUILDING_MOUNTAIN_STRENGTH
+// Buildings can add city combat strength when the city is on a hill
+#define LEKMOD_BUILDING_HILL_STRENGTH
+// Buildings can increase the city's ranged attack range
+#define LEKMOD_BUILDING_ATTACK_RANGE
 // Uncouples an assumption that belief buildings cannot have production costs
 #define LEKMOD_BELIEF_BUILDING_PRODUCTION_COST
 // New buildingentry table that awards a certain yield whenever a great person is expended (mausoelum effect)

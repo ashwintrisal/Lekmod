@@ -1,6 +1,22 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+DEFENSE BUILDINGS REWORK
+-------------------------
+- Walls (and UB variants): Defense stat -1 str (500->400; Babylon/Murus 600->500); cost unchanged (50 at quick).
+  Adjacent enemy units take 10 damage/turn (DLL: LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE).
+  +1 city str if city is on a hill (DLL: LEKMOD_BUILDING_HILL_STRENGTH).
+  +1 city str if adjacent to a mountain (DLL: LEKMOD_BUILDING_MOUNTAIN_STRENGTH).
+  City HP regeneration set to 15/turn (DLL: LEKMOD_BUILDING_CITY_HEAL_RATE).
+- Castle (and UB variants): provides 3 Horses. City HP regeneration set to 20/turn.
+  +3 city str if adjacent to a mountain.
+- Arsenal: requires Chemistry (was Metallurgy). +15% Production towards gunpowder and siege units.
+  City HP regeneration set to 30/turn.
+- Military Base renamed to Command Bunker: requires Radar (was Replaceable Parts). Cost +15% (500->575 XML).
+  HP bonus +75 (was +25). City attack range extended to 3 (DLL: LEKMOD_BUILDING_ATTACK_RANGE).
+  City HP regeneration set to 50/turn.
+- All defense building tooltips updated to reflect new stats.
+
 PONTOON BRIDGES
 ---------------
 - Available at Construction technology (was Engineering); all three build variants updated

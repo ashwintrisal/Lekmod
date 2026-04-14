@@ -1878,12 +1878,39 @@ void CvCity::doTurn()
 		CvAssertMsg(m_iDamage <= GetMaxHitPoints(), "Somehow a city has more damage than hit points. Please show this to a gameplay programmer immediately.");
 
 		int iHitsHealed = GC.getCITY_HIT_POINTS_HEALED_PER_TURN();
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+		iHitsHealed = std::max(iHitsHealed, m_pCityBuildings->GetMaxCityHealPerTurn());
+#endif
 		changeDamage(-iHitsHealed);
 	}
 	if(getDamage() < 0)
 	{
 		setDamage(0);
 	}
+
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	{
+		int iBuildingEnemyDamage = m_pCityBuildings->GetBuildingNearbyEnemyDamage();
+		if(iBuildingEnemyDamage > 0)
+		{
+			for(int iDir = 0; iDir < NUM_DIRECTION_TYPES; iDir++)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iDir);
+				if(pAdjacentPlot != NULL)
+				{
+					for(int iUnitIdx = pAdjacentPlot->getNumUnits() - 1; iUnitIdx >= 0; iUnitIdx--)
+					{
+						CvUnit* pUnit = pAdjacentPlot->getUnitByIndex(iUnitIdx);
+						if(pUnit != NULL && GET_TEAM(getTeam()).isAtWar(pUnit->getTeam()))
+						{
+							pUnit->changeDamage(iBuildingEnemyDamage, getOwner());
+						}
+					}
+				}
+			}
+		}
+	}
+#endif
 
 	setDrafted(false);
 	setMadeAttack(false);
@@ -8088,6 +8115,18 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 		m_pCityBuildings->ChangeBuildingDefensePerCitizen(pBuildingInfo->GetDefensePerCitizen() * iChange);
 #endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+		m_pCityBuildings->ChangeBuildingNearbyEnemyDamage(pBuildingInfo->GetNearbyEnemyDamageBuilding() * iChange);
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+		m_pCityBuildings->ChangeBuildingMountainAdjacentStrength(pBuildingInfo->GetMountainAdjacentStrength() * iChange);
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+		m_pCityBuildings->ChangeBuildingHillStrength(pBuildingInfo->GetHillStrength() * iChange);
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+		m_pCityBuildings->ChangeBuildingCityAttackRangeChange(pBuildingInfo->GetCityAttackRangeChange() * iChange);
+#endif
 
 		owningTeam.changeBuildingClassCount(eBuildingClass, iChange);
 		owningPlayer.changeBuildingClassCount(eBuildingClass, iChange);
@@ -13515,6 +13554,30 @@ void CvCity::updateStrengthValue()
 		m_iStrengthValue += /*3*/ GC.getCITY_STRENGTH_HILL_CHANGE();
 	}
 
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	if(plot()->isHills())
+	{
+		m_iStrengthValue += m_pCityBuildings->GetBuildingHillStrength() * 100;
+	}
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	{
+		int iBuildingMtnStr = m_pCityBuildings->GetBuildingMountainAdjacentStrength();
+		if(iBuildingMtnStr > 0)
+		{
+			bool bAdjacentMountain = false;
+			for(int iDir = 0; iDir < NUM_DIRECTION_TYPES && !bAdjacentMountain; iDir++)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iDir);
+				if(pAdjacentPlot != NULL && pAdjacentPlot->isMountain())
+					bAdjacentMountain = true;
+			}
+			if(bAdjacentMountain)
+				m_iStrengthValue += iBuildingMtnStr * 100;
+		}
+	}
+#endif
+
 	DLLUI->setDirty(CityInfo_DIRTY_BIT, true);
 }
 
@@ -18567,6 +18630,9 @@ bool CvCity::CanRangeStrikeNow() const
 	}
 
 	int iRange = GC.getCITY_ATTACK_RANGE();
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	iRange += m_pCityBuildings->GetBuildingCityAttackRangeChange();
+#endif
 	bool bIndirectFireAllowed = GC.getCAN_CITY_USE_INDIRECT_FIRE();
 	CvPlot* pPlot = plot();
 	int iX = getX();
@@ -18697,6 +18763,9 @@ bool CvCity::canRangeStrikeAt(int iX, int iY) const
 	}
 
 	int iAttackRange = GC.getCITY_ATTACK_RANGE();
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	iAttackRange += m_pCityBuildings->GetBuildingCityAttackRangeChange();
+#endif
 
 	if(plotDistance(plot()->getX(), plot()->getY(), pTargetPlot->getX(), pTargetPlot->getY()) > iAttackRange)
 	{
@@ -19026,6 +19095,9 @@ void CvCity::DoNearbyEnemy()
 		return;
 
 	int iSearchRange = GC.getCITY_ATTACK_RANGE();
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	iSearchRange += m_pCityBuildings->GetBuildingCityAttackRangeChange();
+#endif
 #ifndef AUI_HEXSPACE_DX_LOOPS
 	CvPlot* pBestPlot = NULL;
 #endif

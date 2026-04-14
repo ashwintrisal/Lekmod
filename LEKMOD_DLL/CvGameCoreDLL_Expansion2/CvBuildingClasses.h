@@ -218,6 +218,21 @@ public:
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int GetGarrisonStrengthBonus() const;
 #endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+	int GetCityHealPerTurn() const;
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	int GetNearbyEnemyDamageBuilding() const;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	int GetMountainAdjacentStrength() const;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	int GetHillStrength() const;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	int GetCityAttackRangeChange() const;
+#endif
 	int GetPreferredDisplayPosition() const;
 	int GetPortraitIndex() const;
 	bool IsTeamShare() const;
@@ -496,6 +511,21 @@ private:
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int m_iGarrisonStrengthBonus;
+#endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+	int m_iCityHealPerTurn;
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	int m_iNearbyEnemyDamageBuilding;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	int m_iMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	int m_iHillStrength;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	int m_iCityAttackRangeChange;
 #endif
 	int m_iPreferredDisplayPosition;
 	int m_iPortraitIndex;
@@ -795,6 +825,25 @@ public:
 	int GetGarrisonStrengthBonus() const;
 	void ChangeGarrisonStrengthBonus(int iChange);
 #endif
+#if defined(LEKMOD_BUILDING_CITY_HEAL_RATE)
+	int GetMaxCityHealPerTurn() const;
+#endif
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	int GetBuildingNearbyEnemyDamage() const;
+	void ChangeBuildingNearbyEnemyDamage(int iChange);
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	int GetBuildingMountainAdjacentStrength() const;
+	void ChangeBuildingMountainAdjacentStrength(int iChange);
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	int GetBuildingHillStrength() const;
+	void ChangeBuildingHillStrength(int iChange);
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	int GetBuildingCityAttackRangeChange() const;
+	void ChangeBuildingCityAttackRangeChange(int iChange);
+#endif
 #ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
 	int GetBuildingDefensePerCitizen() const;
 	void ChangeBuildingDefensePerCitizen(int iChange);
@@ -826,6 +875,18 @@ private:
 	int m_iBuildingDefensePerCitizen;
 #endif
 	int m_iBuildingDefenseMod;
+#if defined(LEKMOD_BUILDING_NEARBY_ENEMY_DAMAGE)
+	int m_iBuildingNearbyEnemyDamage;
+#endif
+#if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
+	int m_iBuildingMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_BUILDING_HILL_STRENGTH)
+	int m_iBuildingHillStrength;
+#endif
+#if defined(LEKMOD_BUILDING_ATTACK_RANGE)
+	int m_iBuildingCityAttackRangeChange;
+#endif
 	int m_iMissionaryExtraSpreads;
 	int m_iLandmarksTourismPercent;
 	int m_iGreatWorksTourismModifier;

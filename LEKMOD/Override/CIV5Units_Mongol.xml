@@ -17271,14 +17271,14 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				neuter:an
 			</Gender>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_ARSENAL_HELP"> 
+		<Replace Tag="TXT_KEY_BUILDING_ARSENAL_HELP">
 			<Text>
-				City must have a Castle or Mughal Fort.
+				City must have Walls and a Castle.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_ARSENAL_STRATEGY"> 
+		<Replace Tag="TXT_KEY_BUILDING_ARSENAL_STRATEGY">
 			<Text>
-				The Arsenal is a mid-game military building that increases a city's Defense Strength by 9 and Hit Points by 25, making the city more difficult to capture. The city must possess a Castle before it can construct an Arsenal.
+				The Arsenal is a mid-game military building that increases a city's Defense Strength by 9 and Hit Points by 25. +15% [ICON_PRODUCTION] Production towards gunpowder and siege units. City HP regeneration: 30/turn. Requires [ICON_RESEARCH] Chemistry and a Castle.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_ARTISTS_GUILD"> 
@@ -17610,14 +17610,14 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Castle
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_CASTLE_HELP"> 
+		<Replace Tag="TXT_KEY_BUILDING_CASTLE_HELP">
 			<Text>
 				City must have Walls.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_CASTLE_STRATEGY"> 
+		<Replace Tag="TXT_KEY_BUILDING_CASTLE_STRATEGY">
 			<Text>
-				The Castle is a Medieval-era building which increases the city's Defensive Strength by 7 and Hit Points by 25. The city must possess Walls before the Castle can be constructed.
+				The Castle is a Medieval-era building which increases the city's Defensive Strength by 7 and Hit Points by 25. Provides 3 [ICON_RES_HORSE] Horses. City HP regeneration: 20/turn. +3 city strength if adjacent to a mountain.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_CATHDEDRAL_HELP"> 
@@ -19036,19 +19036,19 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				The Military Academy is a mid-game building which increases the number of experience points of units constructed in the city. The city must already possess an Armory before the Military Academy can be constructed.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE"> 
+		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE">
 			<Text>
-				Military Base
+				Command Bunker
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE_HELP"> 
+		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE_HELP">
 			<Text>
 				City must have an Arsenal.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE_STRATEGY"> 
+		<Replace Tag="TXT_KEY_BUILDING_MILITARY_BASE_STRATEGY">
 			<Text>
-				The Military Base is a mid-game building which increases the city's Defensive Strength by 12 and Hit Points by 25. The city must possess an Arsenal before a Military Base may be constructed.
+				The Command Bunker increases the city's Defensive Strength by 12 and Hit Points by 75. Extends city attack range to 3. City HP regeneration: 50/turn. Requires [ICON_RESEARCH] Radar and an Arsenal.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_MINT"> 
@@ -20432,9 +20432,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				2
 			</Plurality>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_WALLS_STRATEGY"> 
+		<Replace Tag="TXT_KEY_BUILDING_WALLS_STRATEGY">
 			<Text>
-				Walls increase a city's Defense Strength by 5 and Hit Points by 50, making the city more difficult to capture. Walls are quite useful for cities located along a civilization's frontier.
+				Walls increase a city's Defense Strength by 4 and Hit Points by 50. Adjacent enemy units take 10 damage per turn. City HP regeneration: 15/turn. +1 city strength if on a hill. +1 city strength if adjacent to a mountain.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_WATCH_TOWER"> 
