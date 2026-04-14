@@ -45420,7 +45420,7 @@
 			<ConquestProb>66</ConquestProb> 
 			<TradeRouteLandDistanceModifier>50</TradeRouteLandDistanceModifier> 
 			<TradeRouteLandGoldBonus>200</TradeRouteLandGoldBonus> 
-			<GarrisonStrengthBonus>500</GarrisonStrengthBonus> 
+			<GarrisonStrengthBonus>0</GarrisonStrengthBonus> 
 			<PrereqTech>TECH_CURRENCY</PrereqTech> 
 			<ArtDefineTag>ART_DEF_BUILDING_CARAVANSARY</ArtDefineTag> 
 			<PortraitIndex>2</PortraitIndex> 

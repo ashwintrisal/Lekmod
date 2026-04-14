@@ -17,6 +17,8 @@ CITY CAPTURE
 CITY HP REGENERATION
 --------------------
 - Base city HP regeneration reduced by half: `CITY_HIT_POINTS_HEALED_PER_TURN` 20 -> 10.
+- City HP regeneration is now flat-only: removed capital +1 and all defense-derived healing contributions.
+- Mughal Caravansary `GarrisonStrengthBonus` set to 0 (no city-healing side effects from garrison bonus values).
 
 BUG FIXES
 ---------

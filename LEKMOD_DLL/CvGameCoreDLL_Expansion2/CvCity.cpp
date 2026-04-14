@@ -1878,28 +1878,6 @@ void CvCity::doTurn()
 		CvAssertMsg(m_iDamage <= GetMaxHitPoints(), "Somehow a city has more damage than hit points. Please show this to a gameplay programmer immediately.");
 
 		int iHitsHealed = GC.getCITY_HIT_POINTS_HEALED_PER_TURN();
-		if(isCapital() && !GET_PLAYER(getOwner()).isMinorCiv())
-		{
-			iHitsHealed++;
-		}
-		int iBuildingDefense = m_pCityBuildings->GetBuildingDefense();
-#if defined(LEKMOD_GARRISON_YIELD_EFFECTS) // CvCity::doTurn - add garrisoned unit defense
-		if (GetGarrisonedUnit())
-		{
-			int iBonusDefense = m_pCityBuildings->GetGarrisonStrengthBonus();
-			if (iBonusDefense > 0)
-			{
-				iBuildingDefense += iBonusDefense;
-			}
-		}
-#endif
-#ifdef NQ_BUILDING_DEFENSE_FROM_CITIZENS
-		// add in defense per citizen here
-		iBuildingDefense += (m_pCityBuildings->GetBuildingDefensePerCitizen() * getPopulation());
-#endif
-		iBuildingDefense *= (100 + m_pCityBuildings->GetBuildingDefenseMod());
-		iBuildingDefense /= 100;
-		iHitsHealed += iBuildingDefense / 500;
 		changeDamage(-iHitsHealed);
 	}
 	if(getDamage() < 0)
