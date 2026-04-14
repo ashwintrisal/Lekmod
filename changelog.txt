@@ -1,6 +1,15 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+PONTOON BRIDGES
+---------------
+- Available at Construction technology (was Engineering); all three build variants updated
+- Defense penalty reduced from -75% to -50%
+- Worker construction time decreases by 2 turns (quick speed) when Railroad is researched: 5 turns → 3 turns; implemented via Build_TechTimeChanges
+- A road is placed automatically on the tile when a Pontoon Bridge is completed (DLL: LEKMOD_PONTOON_BRIDGE_ROAD in CvPlot.cpp)
+- Bridges can be built on Lake tiles in addition to Coast tiles (Water=true already covered this; text updated to reflect it)
+- Updated all tooltip and Civilopedia text to accurately describe current mechanics
+
 CITY CAPTURE
 ------------
 - Captured city resistance time is now floored at 1 turn; future effects that reduce resistance cannot bring it to 0.

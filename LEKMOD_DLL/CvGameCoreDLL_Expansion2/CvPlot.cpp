@@ -9848,6 +9848,21 @@ bool CvPlot::changeBuildProgress(BuildTypes eBuild, int iChange, PlayerTypes ePl
 			{
 				setImprovementType(eImprovement, ePlayer);
 
+#ifdef LEKMOD_PONTOON_BRIDGE_ROAD
+				// Pontoon bridge: place a road automatically on completion
+				{
+					ImprovementTypes ePontoonBridge = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_PONTOON_BRIDGE", true);
+					if (ePontoonBridge != NO_IMPROVEMENT && eImprovement == ePontoonBridge)
+					{
+						RouteTypes eRoad = (RouteTypes)GC.getInfoTypeForString("ROUTE_ROAD", true);
+						if (eRoad != NO_ROUTE && getRouteType() != eRoad)
+						{
+							setRouteType(eRoad);
+						}
+					}
+				}
+#endif
+
 				// Unowned plot, someone has to foot the bill
 				if(getOwner() == NO_PLAYER)
 				{

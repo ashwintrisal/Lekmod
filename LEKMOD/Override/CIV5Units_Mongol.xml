@@ -20945,9 +20945,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Construct a [LINK=IMPROVEMENT_PONTOON_BRIDGE]Pontoon Bridge[\LINK]
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILD_PONTOON_BRIDGE_HELP"> 
+		<Replace Tag="TXT_KEY_BUILD_PONTOON_BRIDGE_HELP">
 			<Text>
-				Both land and naval units can traverse this Coast tile. May only be constructed in a Coast tile with 2 or more land tiles adjacent to it. Constructed by a Work Boat, which is consumed by the construction of the Pontoon Bridge. <!-- Thanks szope! -->
+				Construct a Pontoon Bridge on a Coast or Lake tile adjacent to at least 2 land tiles. Land and naval units can cross it freely. Units stationed here receive [COLOR_WARNING_TEXT]-50%[ENDCOLOR] [ICON_STRENGTH] Defensive Strength. A road is placed automatically upon completion. Requires [LINK=TECH_CONSTRUCTION]Construction[\\LINK] (5 turns). Construction time decreases to 3 turns when [LINK=TECH_RAILROAD]Railroad[\\LINK] is researched.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILD_PONTOON_BRIDGE_REC"> 
@@ -55397,14 +55397,14 @@ The second sack of Ulundi is considered by historians to be the definitive end o
 				Pontoon Bridge
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIVIL_WAR_SCENARIO_PONTOON_BRIDGE_HELP"> 
+		<Replace Tag="TXT_KEY_CIVIL_WAR_SCENARIO_PONTOON_BRIDGE_HELP">
 			<Text>
-				Allows land units to traverse this Coast tile. May only be constructed in a Coast tile with 4 or more land tiles adjacent to it. Constructed by an embarked Military Engineer, who is consumed by the construction of the Pontoon Bridge.
+				Land and naval units can cross this tile freely. Units stationed here receive [COLOR_WARNING_TEXT]-50%[ENDCOLOR] [ICON_STRENGTH] Defensive Strength. A road is placed automatically upon completion. Can be built on Coast or Lake tiles adjacent to at least 2 land tiles. Requires [LINK=TECH_CONSTRUCTION]Construction[\\LINK].
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIVIL_WAR_SCENARIO_PONTOON_BRIDGE_TEXT"> 
+		<Replace Tag="TXT_KEY_CIVIL_WAR_SCENARIO_PONTOON_BRIDGE_TEXT">
 			<Text>
-				Pontoon (or "floating") bridges were used by both sides during the war to allow the rapid crossing of rivers by infantry, artillery and wagons; an innovative, light-weight design known as Cumberland Pontoons was especially crucial during the Union campaigns across the deep South.
+				A Pontoon Bridge is a floating bridge built on water that allows land units to cross without embarking.[NEWLINE][NEWLINE][COLOR_POSITIVE_TEXT]Mechanics:[ENDCOLOR][NEWLINE]- Can be built by Workers on any Coast or Lake tile adjacent to at least 2 land tiles.[NEWLINE]- Requires the [LINK=TECH_CONSTRUCTION]Construction[\\LINK] technology (5 turns to build at quick speed).[NEWLINE]- When [LINK=TECH_RAILROAD]Railroad[\\LINK] is researched, Worker construction time decreases to 3 turns.[NEWLINE]- Both land and naval units can traverse the tile freely.[NEWLINE]- A road is placed on the tile automatically when construction finishes, improving movement speed.[NEWLINE]- Units stationed on a Pontoon Bridge receive a [COLOR_WARNING_TEXT]-50%[ENDCOLOR] [ICON_STRENGTH] defensive penalty.[NEWLINE]- Can be built outside your cultural borders.[NEWLINE]- Destroyed when pillaged; the pillager is displaced from the tile.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIVIL_WAR_SCENARIO_PROMOTION_ANDERSON"> 

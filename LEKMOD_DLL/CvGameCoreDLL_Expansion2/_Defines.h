@@ -904,6 +904,8 @@
 
 // Disembarkes the worker when it finishes a water walk improvement (polders/pontoon bridges)
 #define LEKMOD_WATER_IMPROVEMENT_FIX
+// Places a road automatically on IMPROVEMENT_PONTOON_BRIDGE when construction completes
+#define LEKMOD_PONTOON_BRIDGE_ROAD
 //added a civ requirement tag to the builds table
 #define LEKMOD_BUILD_CIV_REQ
 //new longship-transfer-movement promotion applying to land units

@@ -34727,6 +34727,17 @@
 	<Build_TechTimeChanges>
 		<Delete />
 
+		<!-- Pontoon Bridge: -2 turns at quick speed when Railroad is researched (700->400 base time) -->
+		<Row>
+			<BuildType>BUILD_PONTOON_BRIDGE</BuildType>
+			<TechType>TECH_RAILROAD</TechType>
+			<TimeChange>-300</TimeChange>
+		</Row>
+		<Row>
+			<BuildType>BUILD_BRUNEI_PONTOON_BRIDGE</BuildType>
+			<TechType>TECH_RAILROAD</TechType>
+			<TimeChange>-300</TimeChange>
+		</Row>
 	</Build_TechTimeChanges> 
 
 	<Table name="BuildingClass_VictoryThresholds">
@@ -51345,21 +51356,21 @@
 			<Time>700</Time>
 			<Cost>0</Cost> 
 			<CostIncreasePerImprovement>0</CostIncreasePerImprovement>
-			<Kill>false</Kill> 
-			<Repair>false</Repair> 
-			<RemoveRoute>false</RemoveRoute> 
-			<Water>true</Water> 
-			<CanBeEmbarked>true</CanBeEmbarked> 
-			<PrereqTech>TECH_ENGINEERING</PrereqTech> 
-			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType> 
-			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent> 
-			<IconIndex>0</IconIndex> 
-			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas> 
-			<ShowInPedia>true</ShowInPedia> 
-			<ShowInTechTree>true</ShowInTechTree> 
+			<Kill>false</Kill>
+			<Repair>false</Repair>
+			<RemoveRoute>false</RemoveRoute>
+			<Water>true</Water>
+			<CanBeEmbarked>true</CanBeEmbarked>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<IconIndex>0</IconIndex>
+			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas>
+			<ShowInPedia>true</ShowInPedia>
+			<ShowInTechTree>true</ShowInTechTree>
 		</Row>
-		<Row> 
-			<ID>43</ID> 
+		<Row>
+			<ID>43</ID>
 			<Type>BUILD_DOCK</Type> 
 			<Description>TXT_KEY_BUILD_DOCK</Description> 
 			<Help>TXT_KEY_BUILD_CONSUMED_HELP</Help> 
@@ -52050,19 +52061,19 @@
 			<Cost>0</Cost> 
 			<CostIncreasePerImprovement>0</CostIncreasePerImprovement>
 			<Time>700</Time>
-			<Kill>false</Kill> 
-			<Repair>false</Repair> 
-			<RemoveRoute>false</RemoveRoute> 
-			<Water>true</Water> 
-			<CanBeEmbarked>true</CanBeEmbarked> 
-			<PrereqTech>TECH_ENGINEERING</PrereqTech> 
-			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType> 
-			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent> 
-			<IconIndex>0</IconIndex> 
-			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas> 
-			<ShowInPedia>false</ShowInPedia> 
+			<Kill>false</Kill>
+			<Repair>false</Repair>
+			<RemoveRoute>false</RemoveRoute>
+			<Water>true</Water>
+			<CanBeEmbarked>true</CanBeEmbarked>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
+			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
+			<IconIndex>0</IconIndex>
+			<IconAtlas>CIVIL_WAR_UNIT_ACTION_ICON_ATLAS</IconAtlas>
+			<ShowInPedia>false</ShowInPedia>
 			<ShowInTechTree>false</ShowInTechTree>
-			<SpecificCivRequired>true</SpecificCivRequired> 
+			<SpecificCivRequired>true</SpecificCivRequired>
 			<CivilizationType>CIVILIZATION_BRUNEI</CivilizationType>
 		</Row>
 		<Row> 
@@ -52120,7 +52131,7 @@
 			<RemoveRoute>false</RemoveRoute>
 			<Water>true</Water>
 			<CanBeEmbarked>true</CanBeEmbarked>
-			<PrereqTech>TECH_ENGINEERING</PrereqTech>
+			<PrereqTech>TECH_CONSTRUCTION</PrereqTech>
 			<ImprovementType>IMPROVEMENT_PONTOON_BRIDGE</ImprovementType>
 			<EntityEvent>ENTITY_EVENT_BUILD</EntityEvent>
 			<IconIndex>0</IconIndex>
@@ -142291,13 +142302,13 @@
 			<HillsUpgradeMod>0</HillsUpgradeMod> 
 			<FreshWaterUpgradeMod>0</FreshWaterUpgradeMod> 
 			<DefenseModifier>0</DefenseModifier>
-			<DefenseModifierGlobal>-75</DefenseModifierGlobal> 
-			<NearbyEnemyDamage>0</NearbyEnemyDamage> 
-			<PillageGold>0</PillageGold> 
-			<ResourceExtractionMod>0</ResourceExtractionMod> 
-			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor> 
-			<GoldMaintenance>0</GoldMaintenance> 
-			<CultureBombRadius>0</CultureBombRadius> 
+			<DefenseModifierGlobal>-50</DefenseModifierGlobal>
+			<NearbyEnemyDamage>0</NearbyEnemyDamage>
+			<PillageGold>0</PillageGold>
+			<ResourceExtractionMod>0</ResourceExtractionMod>
+			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor>
+			<GoldMaintenance>0</GoldMaintenance>
+			<CultureBombRadius>0</CultureBombRadius>
 			<RequiresXAdjacentLand>2</RequiresXAdjacentLand> 
 			<PortraitIndex>0</PortraitIndex> 
 			<IconAtlas>CIVIL_WAR_IMPROVEMENT_ICON_ATLAS</IconAtlas> 
