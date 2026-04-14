@@ -6,5 +6,10 @@
 			<Name>CITY_STRENGTH_DEFAULT</Name>
 			<Value>900</Value>
 		</Row>
+		<!-- Hill city strength bonus: 5 -> 3 displayed (BNW default was 500) -->
+		<Row>
+			<Name>CITY_STRENGTH_HILL_CHANGE</Name>
+			<Value>300</Value>
+		</Row>
 	</Defines>
 </GameData>

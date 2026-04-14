@@ -4,6 +4,7 @@ LEKMOD PROMOTION CHANGELOG
 CITY STRENGTH TUNING
 --------------------
 - Base city strength increased by 1 (CITY_STRENGTH_DEFAULT: 800 -> 900 internal; displayed strength +1).
+- Hill city strength bonus reduced from 5 to 3 (CITY_STRENGTH_HILL_CHANGE: 500 -> 300 internal).
 
 DEFENSE BUILDINGS REWORK
 -------------------------
