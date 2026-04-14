@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+	<Defines>
+		<!-- City base strength: +1 displayed (internal units /100); BNW default was 800 -->
+		<Row>
+			<Name>CITY_STRENGTH_DEFAULT</Name>
+			<Value>900</Value>
+		</Row>
+	</Defines>
+</GameData>

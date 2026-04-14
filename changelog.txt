@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CITY STRENGTH TUNING
+--------------------
+- Base city strength increased by 1 (CITY_STRENGTH_DEFAULT: 800 -> 900 internal; displayed strength +1).
+
 DEFENSE BUILDINGS REWORK
 -------------------------
 - Walls (and UB variants): Defense stat -1 str (500->400; Babylon/Murus 600->500); cost unchanged (50 at quick).
