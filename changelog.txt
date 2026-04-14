@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+LOBBY OPTIONS
+-------------
+- Added **Disable All Strategic Resource Trading** lobby option (GAMEOPTION_NO_STRATEGIC_TRADING): when enabled, no strategic resources can be traded between players under any circumstances. Available in both singleplayer and multiplayer.
+
 CIVILOPEDIA (GAME CONCEPTS)
 --------------------------
 - Added `LEKMOD/Override/CIV5LekmodCityStateConcepts.xml`: master hub **LEKMOD City-State Mechanics**

@@ -542,6 +542,13 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 			}
 #endif
 
+#ifdef NO_STRATEGIC_TRADING
+			if (eUsage == RESOURCEUSAGE_STRATEGIC && GC.getGame().isOption("GAMEOPTION_NO_STRATEGIC_TRADING"))
+			{
+				return false;
+			}
+#endif
+
 			// Can't trade them something they're already giving us in the deal
 			if(IsResourceTrade(eToPlayer, eResource))
 				return false;

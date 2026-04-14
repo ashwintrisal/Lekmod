@@ -1445,6 +1445,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define UPDATE_MINOR_BG_ICON_ON_UNIT_MOVE_OR_SET_DAMAGE
 // No trading strategic resources unless the tech for them is not researched by both players.
 #define TECH_RESTRICTION_FOR_STRATEGIC_DEAL
+// Lobby toggle: completely disallow all strategic resource trading between players.
+#define NO_STRATEGIC_TRADING
 // EnemyUnitPanel shows City AttackStrength correctly
 #define CORRECT_ATTACK_CITY_STRENGTH
 // Max durationing for policies results in policy being assigned randomly with 1 turn of grace period

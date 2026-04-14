@@ -906,15 +906,27 @@
 			</Text>
 		</Replace>
 		
-		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRAT_TRADING_WITHOUT_TECH"> 
+		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRAT_TRADING_WITHOUT_TECH">
 			<Text>
 				Disable Unrevealed Strategic Resource Trading
 			</Text>
 		</Replace>
-		
-		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRAT_TRADING_WITHOUT_TECH_HELP"> 
+
+		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRAT_TRADING_WITHOUT_TECH_HELP">
 			<Text>
 				If enabled, players may not longer trade strategic resources if one of the traders does not have the required technology for said strategic resource
+			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRATEGIC_TRADING">
+			<Text>
+				Disable All Strategic Resource Trading
+			</Text>
+		</Replace>
+
+		<Replace Tag="TXT_KEY_GAME_OPTION_NO_STRATEGIC_TRADING_HELP">
+			<Text>
+				If enabled, players may not trade strategic resources under any circumstances.
 			</Text>
 		</Replace>
 		
