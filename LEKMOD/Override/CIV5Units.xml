@@ -96095,7 +96095,7 @@
 		</Row>
 		<Row> 
 			<Name>CITY_HIT_POINTS_HEALED_PER_TURN</Name> 
-			<Value>20</Value> 
+			<Value>10</Value> 
 		</Row>
 		<Row> 
 			<Name>FLAT_LAND_EXTRA_DEFENSE</Name> 

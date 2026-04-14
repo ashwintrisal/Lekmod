@@ -14,6 +14,10 @@ CITY CAPTURE
 ------------
 - Captured city resistance time is now floored at 1 turn; future effects that reduce resistance cannot bring it to 0.
 
+CITY HP REGENERATION
+--------------------
+- Base city HP regeneration reduced by half: `CITY_HIT_POINTS_HEALED_PER_TURN` 20 -> 10.
+
 BUG FIXES
 ---------
 - Clausewitz's Legacy (Autocracy policy): attack bonus now correctly applies to ranged combat (land ranged, naval ranged, air strikes) in addition to melee. The bonus was already shown in the combat preview for ranged units but not actually applied during combat resolution.
