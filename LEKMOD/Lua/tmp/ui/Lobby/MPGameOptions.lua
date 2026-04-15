@@ -1281,18 +1281,21 @@ function OnTournamentModeSelected(value)
 	if not CanEditGameOptions() then return end
 
 	if value == 1 then
-		-- Switching to Tournament: set sentinel then bulk-apply preset
+		-- Switching to Tournament: set sentinel then bulk-apply preset.
+		-- ApplyTournamentPreset() broadcasts once at the end.
 		PreGame.SetGameOption("GAMEOPTION_LEKMOD_MODE_TOURNAMENT", true);
 		ApplyTournamentPreset();
 	else
-		-- Switching to Custom: clear sentinel, no preset applied
+		-- Switching to Custom: clear sentinel, broadcast once.
 		PreGame.SetGameOption("GAMEOPTION_LEKMOD_MODE_TOURNAMENT", false);
 		if Matchmaking.IsHost() then
 			Network.BroadcastGameSettings();
 		end
 	end
 
-	UpdateGameOptionsDisplay();
+	-- bUpdateOnly=true: broadcast already fired above; skip the redundant
+	-- SendGameOptionChanged() call at the end of UpdateGameOptionsDisplay().
+	UpdateGameOptionsDisplay(true);
 end
 Controls.TournamentModePullDown:RegisterSelectionCallback(OnTournamentModeSelected);
 
