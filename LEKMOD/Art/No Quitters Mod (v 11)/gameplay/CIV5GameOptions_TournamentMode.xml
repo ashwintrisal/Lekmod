@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <!-- Hidden sentinel option used to sync Tournament/Custom mode state across all clients.
+         Never shown in any option list (Visible=0). Must have SupportsMultiplayer=1 so
+         PreGame.SetGameOption / BroadcastGameSettings carries it to joining clients. -->
+    <GameOptions>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_MODE_TOURNAMENT</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_MODE_TOURNAMENT</Description>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+    </GameOptions>
+    <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_MODE_TOURNAMENT">
+            <Text>Tournament Mode Active (internal sync sentinel)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_LEKMOD_TOURNAMENT_MODE_LABEL">
+            <Text>Mode</Text>
+        </Row>
+    </Language_en_US>
+</GameData>
