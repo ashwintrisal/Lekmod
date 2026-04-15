@@ -332,12 +332,12 @@ function ApplyTournamentPreset()
 	SafeSetGameOption("GAMEOPTION_RANDOM_PERSONALITIES", false);
 
 	-- NQ/LEK-specific options
-	SafeSetGameOption("SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED", true);
-	SafeSetGameOption("NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER", false);
-	SafeSetGameOption("ALLOW_EXTRA_RELIGIONS", true);
+	SafeSetGameOption("GAMEOPTION_SIMULTANEOUS_PLAYER_TURN_ACTIVATION_ORDER_RANDOMIZED", true);
+	SafeSetGameOption("GAMEOPTION_NO_TECH_COST_TOTAL_KNOWN_TEAM_MODIFIER", false);
+	SafeSetGameOption("GAMEOPTION_ALLOW_EXTRA_RELIGIONS", true);
 	-- Partial-confidence options (existence-guarded)
-	SafeSetGameOption("NO_STRATEGIC_TRADING", true);
-	SafeSetGameOption("LEKMOD_NO_COMBAT_RANDOMNESS", true);
+	SafeSetGameOption("GAMEOPTION_NO_STRATEGIC_TRADING", true);
+	SafeSetGameOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS", true);
 
 	isApplyingModePreset = false;
 	-- Single broadcast after all values are set
@@ -723,25 +723,34 @@ function UpdateGameOptionsDisplay(bUpdateOnly)
 		Controls.DLCHeaderBox:SetHide(true);
 		Controls.DLCAllowedStack:SetHide(true);
 	else
-		-- Custom mode: restore normal visibility for all sections
+		-- Custom mode: un-hide only what Tournament explicitly hid.
+		-- Controls that the normal code above already manages are intentionally
+		-- omitted here; we do not override their state a second time.
 		Controls.CityStateBox:SetHide(false);
 		Controls.MapTypeContainer:SetHide(false);
 		Controls.MapSizeContainer:SetHide(false);
 		Controls.GameSpeedContainer:SetHide(false);
 		Controls.EraContainer:SetHide(false);
+		-- TurnModeRoot: original code already set this above (line ~327); restore
+		-- here only to undo Tournament's unconditional hide.
 		Controls.TurnModeRoot:SetHide(PreGame.IsHotSeatGame());
 		Controls.VictoryConditionsHeaderBox:SetHide(false);
 		Controls.VictoryConditionsStack:SetHide(false);
 		Controls.AdvancedOptionsHeaderBox:SetHide(false);
+		-- MaxTurnsBox / TurnTimerBox outer containers: normal code never hides
+		-- these, so showing them here purely undoes the Tournament hide.
 		Controls.MaxTurnsBox:SetHide(false);
 		Controls.TurnTimerBox:SetHide(false);
+		-- GameOptionsStack: dynamic content; normal code never hides the stack.
 		Controls.GameOptionsStack:SetHide(false);
+		-- Parent boxes for AI / Additional: normal code never hides the parent,
+		-- only the child rows. Showing here purely undoes the Tournament hide.
 		Controls.AIOptionsBox:SetHide(false);
 		Controls.AdditionalOptionsBox:SetHide(false);
 		Controls.DLCHeaderBox:SetHide(false);
 		Controls.DLCAllowedStack:SetHide(false);
-		-- Note: AI sub-boxes and Additional sub-boxes visibility is handled
-		-- above by the existing AI_OPTIONS / ADDITIONAL logic.
+		-- AI sub-boxes and Additional sub-boxes: already correctly set by the
+		-- AI_OPTIONS / ADDITIONAL logic that ran earlier in this function.
 	end
 
 	if (not bUpdateOnly) then
@@ -1257,6 +1266,15 @@ do
 	ct.Button:SetVoid1(0);
 
 	pd:CalculateInternals();
+
+	-- On fresh lobby, the sentinel defaults to 1 (Tournament).
+	-- Apply the preset immediately so all game options match.
+	-- Non-hosts skip this; they receive the host's broadcast.
+	local savedMode = PreGame.GetGameOption("GAMEOPTION_LEKMOD_MODE_TOURNAMENT");
+	if CanEditGameOptions() and (savedMode == nil or savedMode == 1) then
+		PreGame.SetGameOption("GAMEOPTION_LEKMOD_MODE_TOURNAMENT", true);
+		ApplyTournamentPreset();
+	end
 end
 
 function OnTournamentModeSelected(value)

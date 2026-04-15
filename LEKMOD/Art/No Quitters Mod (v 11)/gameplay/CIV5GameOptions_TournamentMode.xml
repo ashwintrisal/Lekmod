@@ -7,6 +7,7 @@
         <Row>
             <Type>GAMEOPTION_LEKMOD_MODE_TOURNAMENT</Type>
             <Description>TXT_KEY_GAME_OPTION_LEKMOD_MODE_TOURNAMENT</Description>
+            <Default>1</Default>
             <Visible>false</Visible>
             <SupportsSinglePlayer>false</SupportsSinglePlayer>
             <SupportsMultiplayer>true</SupportsMultiplayer>
