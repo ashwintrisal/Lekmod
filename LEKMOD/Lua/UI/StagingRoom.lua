@@ -466,8 +466,11 @@ end
 -------------------------------------------------
 function SetSlotToHuman(playerID)
 	-- Sets the given playerID slot to be human. Assumes that slot hasn't already been done so.
+	-- Default to Immortal (ID=6) instead of Prince (ID=3): city-state yields scale with difficulty
+	-- and Immortal is the Lekmod tournament standard.
+	local immortalID = GameInfo.HandicapInfos["HANDICAP_IMMORTAL"] and GameInfo.HandicapInfos["HANDICAP_IMMORTAL"].ID or 6;
 	PreGame.SetSlotStatus( playerID, SlotStatus.SS_TAKEN );
-	PreGame.SetHandicap( playerID, 3 );
+	PreGame.SetHandicap( playerID, immortalID );
 	if (PreGame.GetNickName(playerID) == "") then
 		PreGame.SetNickName( playerID, Locale.ConvertTextKey( "TXT_KEY_MULTIPLAYER_DEFAULT_PLAYER_NAME", playerID + 1 ) );
 	end
