@@ -48,6 +48,8 @@ BUG FIXES
 LOBBY OPTIONS
 -------------
 - Added **Disable All Strategic Resource Trading** lobby option (GAMEOPTION_NO_STRATEGIC_TRADING): when enabled, no strategic resources can be traded between players under any circumstances. Available in both singleplayer and multiplayer.
+- Added **Tournament / Custom** multiplayer lobby mode selector, synchronized through hidden sentinel option `GAMEOPTION_LEKMOD_MODE_TOURNAMENT`; Tournament applies the LEKMOD/NQ preset and hides non-editable option groups, while Custom leaves host-editable options visible.
+- Fixed multiplayer mode-switch synchronization by avoiding a redundant second broadcast after mode changes (internal lobby networking cleanup; no gameplay rule change).
 
 CIVILOPEDIA (GAME CONCEPTS)
 --------------------------
