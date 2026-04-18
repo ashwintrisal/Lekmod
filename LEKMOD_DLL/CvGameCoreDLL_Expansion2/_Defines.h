@@ -1249,6 +1249,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Pledge to Protect rework: tribute breaks pledge (+20-turn cooldown), anchor +10, recovery below anchor +50%, global bully announcement, pledger consequence ticks
 #define LEKMOD_PLEDGE_REWORK
 
+// All major civs declare war on each other on meeting; peace locked until a configured turn (set via MP lobby)
+#define LEKMOD_WARSTART
+
 
 // Generic define for temp changes
 #define CLEAN_UP

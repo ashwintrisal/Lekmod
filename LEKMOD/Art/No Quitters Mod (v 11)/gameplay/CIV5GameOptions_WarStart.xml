@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+    <!-- Hidden warstart options: mutually exclusive, one per peace-unlock turn.
+         All Visible=false; the lobby pulldown manages exactly one being set.
+         SupportsMultiplayer=true so BroadcastGameSettings carries them to clients. -->
+    <GameOptions>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_WARSTART_T15</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T15</Description>
+            <Default>0</Default>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_WARSTART_T20</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T20</Description>
+            <Default>0</Default>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_WARSTART_T25</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T25</Description>
+            <Default>0</Default>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_WARSTART_T30</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T30</Description>
+            <Default>0</Default>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+        <Row>
+            <Type>GAMEOPTION_LEKMOD_WARSTART_T35</Type>
+            <Description>TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T35</Description>
+            <Default>0</Default>
+            <Visible>false</Visible>
+            <SupportsSinglePlayer>false</SupportsSinglePlayer>
+            <SupportsMultiplayer>true</SupportsMultiplayer>
+        </Row>
+    </GameOptions>
+    <Language_en_US>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T15">
+            <Text>War Start: peace unlocked at turn 15 (internal sync)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T20">
+            <Text>War Start: peace unlocked at turn 20 (internal sync)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T25">
+            <Text>War Start: peace unlocked at turn 25 (internal sync)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T30">
+            <Text>War Start: peace unlocked at turn 30 (internal sync)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_GAME_OPTION_LEKMOD_WARSTART_T35">
+            <Text>War Start: peace unlocked at turn 35 (internal sync)</Text>
+        </Row>
+        <Row Tag="TXT_KEY_LEKMOD_WARSTART_LABEL">
+            <Text>Start at War</Text>
+        </Row>
+    </Language_en_US>
+</GameData>

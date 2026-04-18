@@ -1,6 +1,14 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+MP LOBBY: WAR START OPTION
+---------------------------
+- Added "War Start" dropdown to the MP lobby (hidden in Tournament mode).
+- Options: Off / Turn 15 / Turn 20 / Turn 25 / Turn 30 / Turn 35.
+- When active: all major civs declare war on each other on first contact.
+- Peace is locked in the trade menu until the selected turn is reached.
+- Tournament preset defaults to Turn 25.
+
 CITY STRENGTH TUNING
 --------------------
 - Base city strength increased by 1 (CITY_STRENGTH_DEFAULT: 800 -> 900 internal; displayed strength +1).

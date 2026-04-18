@@ -39,6 +39,49 @@ local function SafeSetGameOption(key, value)
 end
 
 -------------------------------------------------
+-- War Start helpers
+-- Warstart state is encoded as five mutually-exclusive hidden game options
+-- (one per non-zero turn value). Having none set = off (no war start).
+-------------------------------------------------
+local g_warStartOptions = {
+	{ value = 0,  label = "Off" },
+	{ value = 15, label = "Turn 15" },
+	{ value = 20, label = "Turn 20" },
+	{ value = 25, label = "Turn 25" },
+	{ value = 30, label = "Turn 30" },
+	{ value = 35, label = "Turn 35" },
+};
+
+local g_warStartKeys = {
+	[15] = "GAMEOPTION_LEKMOD_WARSTART_T15",
+	[20] = "GAMEOPTION_LEKMOD_WARSTART_T20",
+	[25] = "GAMEOPTION_LEKMOD_WARSTART_T25",
+	[30] = "GAMEOPTION_LEKMOD_WARSTART_T30",
+	[35] = "GAMEOPTION_LEKMOD_WARSTART_T35",
+};
+
+local function GetWarStartTurn()
+	for turn, key in pairs(g_warStartKeys) do
+		local v = PreGame.GetGameOption(key);
+		if v ~= nil and v == 1 then return turn; end
+	end
+	return 0;
+end
+
+-- Set exactly one warstart option; clears all others.
+local function SetWarStart(turn)
+	for t, key in pairs(g_warStartKeys) do
+		SafeSetGameOption(key, t == turn);
+	end
+end
+
+local function GetWarStartLabel()
+	local t = GetWarStartTurn();
+	if t == 0 then return "Off"; end
+	return "Turn " .. t;
+end
+
+-------------------------------------------------
 -- Return true if the play is in an active lobby
 -------------------------------------------------
 function IsInLobby()
@@ -338,6 +381,9 @@ function ApplyTournamentPreset()
 	-- Partial-confidence options (existence-guarded)
 	SafeSetGameOption("GAMEOPTION_NO_STRATEGIC_TRADING", true);
 	SafeSetGameOption("GAMEOPTION_LEKMOD_NO_COMBAT_RANDOMNESS", true);
+
+	-- War Start: all majors at war, peace unlocked at turn 25
+	SetWarStart(25);
 
 	isApplyingModePreset = false;
 	-- Single broadcast after all values are set
@@ -677,6 +723,10 @@ function UpdateGameOptionsDisplay(bUpdateOnly)
 	Controls.TournamentModePullDown:GetButton():SetText(bTournament and "Tournament" or "Custom");
 	Controls.TournamentModePullDown:SetDisabled(not bCanEdit);
 
+	-- War Start pulldown display
+	Controls.WarStartPullDown:GetButton():SetText(GetWarStartLabel());
+	Controls.WarStartPullDown:SetDisabled(not bCanEdit);
+
 	if bTournament then
 		-- Hide everything except the mode selector and dynamic map script options
 		Controls.CityStateBox:SetHide(true);
@@ -722,6 +772,7 @@ function UpdateGameOptionsDisplay(bUpdateOnly)
 		Controls.RandomPersonalitiesBox:SetHide(true);
 		Controls.DLCHeaderBox:SetHide(true);
 		Controls.DLCAllowedStack:SetHide(true);
+		Controls.WarStartRoot:SetHide(true);
 	else
 		-- Custom mode: un-hide only what Tournament explicitly hid.
 		-- Controls that the normal code above already manages are intentionally
@@ -749,6 +800,7 @@ function UpdateGameOptionsDisplay(bUpdateOnly)
 		Controls.AdditionalOptionsBox:SetHide(false);
 		Controls.DLCHeaderBox:SetHide(false);
 		Controls.DLCAllowedStack:SetHide(false);
+		Controls.WarStartRoot:SetHide(false);
 		-- AI sub-boxes and Additional sub-boxes: already correctly set by the
 		-- AI_OPTIONS / ADDITIONAL logic that ran earlier in this function.
 	end
@@ -1298,6 +1350,31 @@ function OnTournamentModeSelected(value)
 	UpdateGameOptionsDisplay(true);
 end
 Controls.TournamentModePullDown:RegisterSelectionCallback(OnTournamentModeSelected);
+
+
+----------------------------------------------------------------
+-- WAR START
+----------------------------------------------------------------
+do
+	local pd = Controls.WarStartPullDown;
+	pd:ClearEntries();
+
+	for _, opt in ipairs(g_warStartOptions) do
+		local ct = {};
+		pd:BuildEntry("InstanceOne", ct);
+		ct.Button:SetText(opt.label);
+		ct.Button:SetVoid1(opt.value);
+	end
+
+	pd:CalculateInternals();
+end
+
+function OnWarStartSelected(value)
+	if not CanEditGameOptions() then return end
+	SetWarStart(value);
+	UpdateGameOptionsDisplay();
+end
+Controls.WarStartPullDown:RegisterSelectionCallback(OnWarStartSelected);
 
 
 ----------------------------------------------------------------

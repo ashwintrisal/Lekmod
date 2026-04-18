@@ -3692,6 +3692,23 @@ void CvTeam::makeHasMet(TeamTypes eIndex, bool bSuppressMessages)
 			}
 		}
 
+#ifdef LEKMOD_WARSTART
+		{
+			bool bIsWarStart = GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T15")
+				|| GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T20")
+				|| GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T25")
+				|| GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T30")
+				|| GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T35");
+			if(bIsWarStart && !isBarbarian() && !GET_TEAM(eIndex).isBarbarian() && GetID() != eIndex)
+			{
+				if(!isAtWar(eIndex))
+				{
+					declareWar(eIndex);
+				}
+			}
+		}
+#endif
+
 		int iMyPlayersLoop;
 		PlayerTypes eMyPlayer;
 

@@ -859,6 +859,19 @@ bool CvDeal::IsPossibleToTradeItem(PlayerTypes ePlayer, PlayerTypes eToPlayer, T
 		if(!pToTeam->isAtWar(eFromTeam))
 			return false;
 
+#ifdef LEKMOD_WARSTART
+		{
+			int iPeaceTurn = 0;
+			if(GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T15")) iPeaceTurn = 15;
+			else if(GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T20")) iPeaceTurn = 20;
+			else if(GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T25")) iPeaceTurn = 25;
+			else if(GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T30")) iPeaceTurn = 30;
+			else if(GC.getGame().isOption("GAMEOPTION_LEKMOD_WARSTART_T35")) iPeaceTurn = 35;
+			if(iPeaceTurn > 0 && GC.getGame().getGameTurn() < iPeaceTurn)
+				return false;
+		}
+#endif
+
 		ICvEngineScriptSystem1* pkScriptSystem = gDLL->GetScriptSystem();
 		if (pkScriptSystem)
 		{

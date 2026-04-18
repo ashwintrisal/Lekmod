@@ -92,6 +92,7 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
     <File md5="EE6A6A5D8EC4E0BE248B11475B164542" import="0">gameplay/CIV5GameOptions_No_Tech_Cost_Total_Known_Team_Modifier.xml</File>
     <File md5="38D02F944A4B021C55AF3597F5E49723" import="0">gameplay/CIV5GameOptions_Randomized_Turn_Activation.xml</File>
     <File md5="28F4D5FBD2201DE502EBC782443B7632" import="0">gameplay/CIV5GameOptions_TournamentMode.xml</File>
+    <File md5="" import="0">gameplay/CIV5GameOptions_WarStart.xml</File>
     <File md5="E76E1F3CCCDDB38FCBA1D179BE698FF6" import="0">gameplay/CIV5GameOptions_Ranged_Counterattacks.xml</File>
     <File md5="86D9304804B2D89E8CC18F9151C34CEB" import="0">gameplay/CIV5GameOptions_Relative_TurnTimers.xml</File>
     <File md5="8257E75C2CBAD69DF4661DE835C6888D" import="0">gameplay/FlatlandCityExtraFood.xml</File>
@@ -707,6 +708,7 @@ Big thanks to Delnar_Ersike for all of his code, fixes, and knowledge!!</Descrip
       <UpdateDatabase>gameplay/CIV5GameOptions_Binomial_RNG_Combat.xml</UpdateDatabase>
       <UpdateDatabase>gameplay/CIV5GameOptions_Automation_Resets_TurnTimer.xml</UpdateDatabase>
       <UpdateDatabase>gameplay/CIV5GameOptions_TournamentMode.xml</UpdateDatabase>
+      <UpdateDatabase>gameplay/CIV5GameOptions_WarStart.xml</UpdateDatabase>
       <UpdateDatabase>gameplay/FlatlandCityExtraFood.xml</UpdateDatabase>
       <UpdateDatabase>../../Override/CIV5LekmodCityStateConcepts.xml</UpdateDatabase>
     </OnModActivated>

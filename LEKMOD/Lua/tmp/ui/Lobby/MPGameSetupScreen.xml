@@ -39,6 +39,12 @@
               <PullDown Style="GenericPullDown" ScrollThreshold="400" Offset="150,0" Size="300,27" SpaceForScroll="0" ID="TournamentModePullDown"/>
             </Container>
 
+            <!-- War Start (hidden in Tournament mode) -->
+            <Container Anchor="L,T" Size="450,36" Offset="20,0" ID="WarStartRoot">
+              <Label Anchor="L,C" ColorSet="Beige_Black" Font="TwCenMT20" FontStyle="Shadow" String="TXT_KEY_LEKMOD_WARSTART_LABEL" />
+              <PullDown Style="GenericPullDown" ScrollThreshold="400" Offset="150,0" Size="300,27" SpaceForScroll="0" ID="WarStartPullDown"/>
+            </Container>
+
             <!-- City State Options -->
             <Box Anchor="L,T" Size="480,36" Offset="0,0" Color="255.255.255.0" ID="CityStateBox">
               <Stack ID="CityStateStack" Anchor="L,T" Size="463,32" StackGrowth="Right">
