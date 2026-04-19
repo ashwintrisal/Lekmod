@@ -9745,6 +9745,9 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 		<Row Tag="TXT_KEY_RESOURCE_RUBBER">
 			<Text>Rubber</Text>
 		</Row>
+		<Row Tag="TXT_KEY_RESOURCE_RUBBER_HELP">
+			<Text>Founding a city directly on Rubber grants +40% [ICON_PRODUCTION] Armored unit production.</Text>
+		</Row>
 		<Row Tag="TXT_KEY_RESOURCE_MAIZE">
 			<Text>Maize</Text>
 		</Row>
@@ -123065,9 +123068,14 @@ The ship has weather'd every rack; the prize we sought is won."
 				[ICON_MINUS] Luxury Resources
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_RESOURCE_MARBLE"> 
+		<Replace Tag="TXT_KEY_RESOURCE_MARBLE">
 			<Text>
 				Marble
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_RESOURCE_MARBLE_HELP">
+			<Text>
+				Grants +10% [ICON_PRODUCTION] Wonder production to the city that controls it (obsoletes at Medieval era). Founding a city directly on Marble grants an additional +20% Wonder production.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_RESOURCE_NUTMEG"> 

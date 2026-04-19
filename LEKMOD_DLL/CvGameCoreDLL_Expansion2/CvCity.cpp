@@ -888,6 +888,36 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 #endif
 
+#ifdef LEKMOD_RUBBER_SETTLE_ARMOR
+	// Rubber: founding city on rubber tile grants +40% armored unit production (dummy building)
+	{
+		ResourceTypes eRubber = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_RUBBER", true);
+		if (eRubber != NO_RESOURCE && plot()->getResourceType() == eRubber)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_RUBBER_SETTLE_ARMOR", true);
+			if (eBuilding != NO_BUILDING)
+			{
+				m_pCityBuildings->SetNumRealBuilding(eBuilding, 1);
+			}
+		}
+	}
+#endif
+
+#ifdef LEKMOD_MARBLE_SETTLE_WONDER
+	// Marble: founding city directly on marble tile grants +20% wonder production (dummy building)
+	{
+		ResourceTypes eMarble = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_MARBLE", true);
+		if (eMarble != NO_RESOURCE && plot()->getResourceType() == eMarble)
+		{
+			BuildingTypes eBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_MARBLE_SETTLE_WONDER", true);
+			if (eBuilding != NO_BUILDING)
+			{
+				m_pCityBuildings->SetNumRealBuilding(eBuilding, 1);
+			}
+		}
+	}
+#endif
+
 	AI_init();
 
 #ifdef AUI_PLAYER_FIX_VENICE_ONLY_BANS_SETTLERS_NOT_SETTLING

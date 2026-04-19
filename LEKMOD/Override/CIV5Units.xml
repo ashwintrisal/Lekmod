@@ -36913,6 +36913,22 @@
 			<NoLimit>false</NoLimit>
 			<Monument>false</Monument>
 		</Row>
+		<Row>
+			<ID>181</ID>
+			<Type>BUILDINGCLASS_RUBBER_SETTLE_ARMOR</Type>
+			<DefaultBuilding>BUILDING_RUBBER_SETTLE_ARMOR</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+		</Row>
+		<Row>
+			<ID>182</ID>
+			<Type>BUILDINGCLASS_MARBLE_SETTLE_WONDER</Type>
+			<DefaultBuilding>BUILDING_MARBLE_SETTLE_WONDER</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+		</Row>
 	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
@@ -42878,6 +42894,11 @@
 			<BuildingType>BUILDING_ARSENAL</BuildingType>
 			<UnitCombatType>UNITCOMBAT_SIEGE</UnitCombatType>
 			<Modifier>15</Modifier>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_RUBBER_SETTLE_ARMOR</BuildingType>
+			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType>
+			<Modifier>40</Modifier>
 		</Row>
 	</Building_UnitCombatProductionModifiers> 
 
@@ -50134,6 +50155,43 @@
 			<NukeImmune>true</NukeImmune>
 			<Cost>-1</Cost>
 			<HurryCostModifier>-1</HurryCostModifier>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
+		</Row>
+		<!-- Rubber: cities founded on rubber tile get +40% armored unit production -->
+		<Row>
+			<ID>271</ID>
+			<Type>BUILDING_RUBBER_SETTLE_ARMOR</Type>
+			<BuildingClass>BUILDINGCLASS_RUBBER_SETTLE_ARMOR</BuildingClass>
+			<Description>Rubber Settlement</Description>
+			<Civilopedia>Natural Resource</Civilopedia>
+			<Strategy>Natural Resource</Strategy>
+			<Help>Natural Resource</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
+		</Row>
+		<!-- Marble: cities founded directly on marble tile get +20% wonder production -->
+		<Row>
+			<ID>272</ID>
+			<Type>BUILDING_MARBLE_SETTLE_WONDER</Type>
+			<BuildingClass>BUILDINGCLASS_MARBLE_SETTLE_WONDER</BuildingClass>
+			<Description>Marble Settlement</Description>
+			<Civilopedia>Natural Resource</Civilopedia>
+			<Strategy>Natural Resource</Strategy>
+			<Help>Natural Resource</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<WonderProductionModifier>20</WonderProductionModifier>
 			<ArtDefineTag>MONUMENT</ArtDefineTag>
 			<GreatWorkCount>-1</GreatWorkCount>
 			<PortraitIndex>2</PortraitIndex>
@@ -138036,11 +138094,11 @@
 			<YieldType>YIELD_PRODUCTION</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_RUBBER_PLANTATION</ImprovementType> 
-			<ResourceType>RESOURCE_RUBBER</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_RUBBER_PLANTATION</ImprovementType>
+			<ResourceType>RESOURCE_RUBBER</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>3</Yield>
 		</Row>
 		<Row> 
 			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType> 
@@ -213801,11 +213859,7 @@
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_RUBBER</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
+
 		<Row> 
 			<ResourceType>RESOURCE_COCONUT</ResourceType> 
 			<YieldType>YIELD_GOLD</YieldType> 
@@ -214659,6 +214713,7 @@
 			<ID>18</ID> 
 			<Type>RESOURCE_MARBLE</Type> 
 			<Description>TXT_KEY_RESOURCE_MARBLE</Description> 
+			<Help>TXT_KEY_RESOURCE_MARBLE_HELP</Help>
 			<Civilopedia>TXT_KEY_CIV5_RESOURCE_MARBLE_TEXT</Civilopedia> 
 			<ResourceClassType>RESOURCECLASS_LUXURY</ResourceClassType> 
 			<ArtDefineTag>ART_DEF_RESOURCE_MARBLE</ArtDefineTag> 
@@ -216156,6 +216211,7 @@
 			<ID>55</ID> 
 			<Type>RESOURCE_RUBBER</Type> 
 			<Description>TXT_KEY_RESOURCE_RUBBER</Description> 
+			<Help>TXT_KEY_RESOURCE_RUBBER_HELP</Help>
 			<Civilopedia>TXT_KEY_RESOURCE_RUBBER</Civilopedia>
 			<ResourceClassType>RESOURCECLASS_LUXURY</ResourceClassType> 
 			<ArtDefineTag>ART_DEF_RESOURCE_RUBBER</ArtDefineTag>
