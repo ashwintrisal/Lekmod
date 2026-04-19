@@ -108141,15 +108141,20 @@
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>4</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_MESA</FeatureType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>3</Yield> 
+		<Row>
+			<FeatureType>FEATURE_MESA</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>3</Yield>
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_MESA</FeatureType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>3</Yield> 
+		<Row>
+			<FeatureType>FEATURE_MESA</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_MESA</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_REEF</FeatureType> 
@@ -108246,10 +108251,10 @@
 			<YieldType>YIELD_PRODUCTION</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_MESA</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>3</Yield> 
+		<Row>
+			<FeatureType>FEATURE_MESA</FeatureType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<FeatureType>FEATURE_VOLCANO</FeatureType>

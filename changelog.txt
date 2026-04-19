@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GRAND MESA
+----------
+- Removed gold yield (+3 Gold -> 0); food reduced (3 -> 1); production unchanged (3)
+- Added +1 Culture and +1 Faith
+
 LAKE VICTORIA
 -------------
 - Removed gold yield (+2 Gold -> 0); retains 6 Food
