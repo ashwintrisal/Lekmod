@@ -42602,7 +42602,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				The sacred peak of Mount Kailash, found in the Himalayas of Tibet, is cherished by a number of religions, particularly the followers of Hinduism. It is believed to be the home of Lord Shiva, who dwells on the mountain in a state of eternal bliss. Mount Kailash is said to be among the most difficult of all religious pilgrimages, as the harsh conditions dissuade many would-be pilgrims, and the mountain is not accessible by any forms of modern transportation.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_SINAI_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_SINAI_HELP">
+			<Text>
+				Yields +5 [ICON_PEACE] Faith. Also yields +5 [ICON_PRODUCTION] Production when worked by a Holy City.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_SINAI_TEXT">
 			<Text>
 				Found on the Sinai Peninsula of Egypt, Mount Sinai is among the most revered holy sites recognized by the followers of Judaism, Christianity, and Islam. Mount Sinai is believed to be the location where Moses first received the Ten Commandments from God during the Israelites' exodus from Egypt, making the peak an important site for religious pilgrims from around the world.
 			</Text>

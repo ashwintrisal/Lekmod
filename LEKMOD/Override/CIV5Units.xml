@@ -108201,10 +108201,10 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>3</Yield>
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_MT_SINAI</FeatureType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>8</Yield> 
+		<Row>
+			<FeatureType>FEATURE_MT_SINAI</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>5</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_MT_KAILASH</FeatureType> 
@@ -109069,10 +109069,11 @@
 		</Row>
 		<Row> 
 			<ID>19</ID> 
-			<Type>FEATURE_MT_SINAI</Type> 
-			<Description>TXT_KEY_FEATURE_MT_SINAI</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_SINAI_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_MT_SINAI</ArtDefineTag> 
+			<Type>FEATURE_MT_SINAI</Type>
+			<Description>TXT_KEY_FEATURE_MT_SINAI</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_SINAI_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_MT_SINAI_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_MT_SINAI</ArtDefineTag>
 			<StartingLocationWeight>0</StartingLocationWeight> 
 			<Movement>1</Movement> 
 			<SeeThrough>2</SeeThrough> 

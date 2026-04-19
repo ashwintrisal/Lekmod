@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+MT. SINAI
+---------
+- Faith yield reduced (8 -> 5); Holy City working the tile yields +5 additional Production (DLL: LEKMOD_SINAI_HOLY_CITY_PRODUCTION in CvPlot.cpp)
+- Tooltip added
+
 MT. FUJI
 --------
 - Removed happiness (+2 -> 0); gold yield removed; culture reduced (2 -> 3 net: was 2, now 3); faith reduced (4 -> 1)
