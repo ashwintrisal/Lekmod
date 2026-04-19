@@ -214214,6 +214214,7 @@
 			<ID>7</ID> 
 			<Type>RESOURCE_COW</Type> 
 			<Description>TXT_KEY_RESOURCE_CATTLE</Description> 
+			<Help>TXT_KEY_RESOURCE_CATTLE_HELP</Help>
 			<Civilopedia>TXT_KEY_CIV5_RESOURCE_COWS_TEXT</Civilopedia> 
 			<ResourceClassType>RESOURCECLASS_BONUS</ResourceClassType> 
 			<ArtDefineTag>ART_DEF_RESOURCE_COW</ArtDefineTag> 
@@ -214414,6 +214415,7 @@
 			<ID>12</ID> 
 			<Type>RESOURCE_STONE</Type> 
 			<Description>TXT_KEY_RESOURCE_STONE</Description> 
+			<Help>TXT_KEY_RESOURCE_STONE_HELP</Help>
 			<Civilopedia>TXT_KEY_CIV5_RESOURCE_STONE_TEXT</Civilopedia> 
 			<ResourceClassType>RESOURCECLASS_BONUS</ResourceClassType> 
 			<ArtDefineTag>ART_DEF_RESOURCE_STONE</ArtDefineTag> 
@@ -215183,6 +215185,7 @@
 			<ID>31</ID> 
 			<Type>RESOURCE_SALT</Type> 
 			<Description>TXT_KEY_RESOURCE_SALT</Description> 
+			<Help>TXT_KEY_RESOURCE_SALT_HELP</Help>
 			<Civilopedia>TXT_KEY_CIV5_RESOURCE_SALT_TEXT</Civilopedia> 
 			<ResourceClassType>RESOURCECLASS_LUXURY</ResourceClassType> 
 			<ArtDefineTag>ART_DEF_RESOURCE_SALT</ArtDefineTag> 

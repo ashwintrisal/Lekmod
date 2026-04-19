@@ -48581,7 +48581,12 @@ Nebuchadnezzar II died in Babylon in 562 BC. He is remembered as a successful mi
 				First created in China nearly 3,000 years ago, porcelain is a type of ceramic material formed by heating clay to create semi-translucent vessels of varying shapes and sizes. Artists and craftsmen spent centuries developing the techniques that allowed for control of both the aesthetic qualities as well as the physical strength and usability of porcelain objects. Having originated in China, porcelain dinnerware was often referred to simply as "China" during the height of its popularity in Europe.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_RESOURCE_SALT_TEXT"> 
+		<Replace Tag="TXT_KEY_RESOURCE_SALT_HELP">
+			<Text>
+				Founding a city directly on Salt grants +1 [ICON_CITIZEN] Population if [ICON_RESEARCH] Pottery has been researched.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_RESOURCE_SALT_TEXT">
 			<Text>
 				One of the necessities of human life, salt, is found throughout the world in both natural and man-made environments. Used for thousands of years as a means of preserving meat, salt was crucial in efforts to store food prior to the invention of artificial refrigeration. A common method of producing and harvesting salt for consumption is through the use of evaporation. By creating large ponds or pools of saltwater, over time the natural evaporation process will remove the water and leave behind the salt residue for collection.
 			</Text>
@@ -48736,7 +48741,12 @@ Nebuchadnezzar II died in Babylon in 562 BC. He is remembered as a successful mi
 				Happiness Bonus
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_RESOURCE_STONE_TEXT"> 
+		<Replace Tag="TXT_KEY_RESOURCE_STONE_HELP">
+			<Text>
+				Founding a city directly on Stone grants a free [ICON_STRENGTH] Walls if [ICON_RESEARCH] Masonry has been researched.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_RESOURCE_STONE_TEXT">
 			<Text>
 				Found in the Earth's crust and upper mantle, stone is perhaps the most crucial element in human construction efforts throughout history. There are three major classifications of stone - Sedimentary, Igneous, and Metamorphic - each differing in their origin.
 			</Text>
@@ -122851,13 +122861,18 @@ The ship has weather'd every rack; the prize we sought is won."
 				[ICON_MINUS] Bonus Resources
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_RESOURCE_CATTLE"> 
+		<Replace Tag="TXT_KEY_RESOURCE_CATTLE">
 			<Text>
 				Cattle
 			</Text>
 			<Plurality>
 				2
 			</Plurality>
+		</Replace>
+		<Replace Tag="TXT_KEY_RESOURCE_CATTLE_HELP">
+			<Text>
+				Founding a city directly on Cattle adds +4 [ICON_FOOD] Food to the city's food stockpile if [ICON_RESEARCH] Animal Husbandry has been researched.
+			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_RESOURCE_CITRUS"> 
 			<Text>

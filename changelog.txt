@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+SALT / STONE / CATTLE — SETTLE-ON EFFECTS
+------------------------------------------
+- Salt: founding city on Salt grants +1 Population if Pottery is researched (DLL: LEKMOD_SALT_SETTLE_POP)
+- Stone: founding city on Stone grants free Walls if Masonry is researched (DLL: LEKMOD_STONE_SETTLE_WALLS)
+- Cattle: founding city on Cattle adds +4 Food to the city's food stockpile if Animal Husbandry is researched (DLL: LEKMOD_CATTLE_SETTLE_FOOD)
+- Tooltips added for all three
+
 GEMS
 ----
 - Base yield changed: +3 Gold -> +1 Gold +1 Science

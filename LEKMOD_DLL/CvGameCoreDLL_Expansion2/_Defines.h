@@ -1280,6 +1280,21 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Sinai: +5 production when worked by a holy city
 #define LEKMOD_SINAI_HOLY_CITY_PRODUCTION
 
+// Salt: +1 population when city is founded on salt tile and pottery is researched
+#define LEKMOD_SALT_SETTLE_POP
+
+// Stone: free walls when city is founded on stone tile and masonry is researched
+#define LEKMOD_STONE_SETTLE_WALLS
+
+// Cattle: +4 food stockpile when city is founded on cattle tile and animal husbandry is researched
+#define LEKMOD_CATTLE_SETTLE_FOOD
+
+// Rubber: +40% armored unit production when city is founded on rubber tile (dummy building)
+#define LEKMOD_RUBBER_SETTLE_ARMOR
+
+// Marble: +20% wonder production when city is founded directly on marble tile (on top of existing +10% local)
+#define LEKMOD_MARBLE_SETTLE_WONDER
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

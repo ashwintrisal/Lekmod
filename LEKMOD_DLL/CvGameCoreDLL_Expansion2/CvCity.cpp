@@ -835,6 +835,59 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 	}
 #endif
 
+#ifdef LEKMOD_SALT_SETTLE_POP
+	// Salt: founding city on salt tile grants +1 population if Pottery is researched
+	{
+		ResourceTypes eSalt = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_SALT", true);
+		TechTypes ePottery = (TechTypes)GC.getInfoTypeForString("TECH_POTTERY", true);
+		if (eSalt != NO_RESOURCE && ePottery != NO_TECH)
+		{
+			if (plot()->getResourceType() == eSalt && GET_TEAM(getTeam()).GetTeamTechs()->HasTech(ePottery))
+			{
+				changePopulation(1);
+			}
+		}
+	}
+#endif
+
+#ifdef LEKMOD_STONE_SETTLE_WALLS
+	// Stone: founding city on stone tile grants free Walls if Masonry is researched
+	{
+		ResourceTypes eStone = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_STONE", true);
+		TechTypes eMasonry = (TechTypes)GC.getInfoTypeForString("TECH_MASONRY", true);
+		if (eStone != NO_RESOURCE && eMasonry != NO_TECH)
+		{
+			if (plot()->getResourceType() == eStone && GET_TEAM(getTeam()).GetTeamTechs()->HasTech(eMasonry))
+			{
+				BuildingClassTypes eWallsClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_WALLS", true);
+				if (eWallsClass != NO_BUILDINGCLASS)
+				{
+					BuildingTypes eWalls = (BuildingTypes)GC.getCivilizationInfo(getCivilizationType()).getCivilizationBuildings(eWallsClass);
+					if (eWalls != NO_BUILDING)
+					{
+						m_pCityBuildings->SetNumRealBuilding(eWalls, 1);
+					}
+				}
+			}
+		}
+	}
+#endif
+
+#ifdef LEKMOD_CATTLE_SETTLE_FOOD
+	// Cattle: founding city on cattle tile adds +4 food to stockpile if Animal Husbandry is researched
+	{
+		ResourceTypes eCattle = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_COW", true);
+		TechTypes eAnimalHusbandry = (TechTypes)GC.getInfoTypeForString("TECH_ANIMAL_HUSBANDRY", true);
+		if (eCattle != NO_RESOURCE && eAnimalHusbandry != NO_TECH)
+		{
+			if (plot()->getResourceType() == eCattle && GET_TEAM(getTeam()).GetTeamTechs()->HasTech(eAnimalHusbandry))
+			{
+				changeFoodTimes100(400);
+			}
+		}
+	}
+#endif
+
 	AI_init();
 
 #ifdef AUI_PLAYER_FIX_VENICE_ONLY_BANS_SETTLERS_NOT_SETTLING
