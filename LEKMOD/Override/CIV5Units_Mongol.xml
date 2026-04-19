@@ -42677,7 +42677,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Old Faithful is a geyser found in Yellowstone National Park, in Wyoming, United States of America. First seen by Europeans in 1870 (and by natives some 10,000 years before that), Old Faithful was thus named because of the regularity of its eruption. The geyser shoots a column of boiling water to a height of some 100-175 feet every 60-90 minutes (the interval determined by the ferocity of the previous eruption). Geysers occur when subterranean water hits magma (molten rock). The water is instantly turned to steam, which rushes out the nearest available opening at tremendously high pressure. Old Faithful and the other 250 geysers in Yellowstone are enjoyed by some three million visitors each year.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_POTOSI_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_POTOSI_HELP">
+			<Text>
+				Yields +1 [ICON_PRODUCTION] Production and +5 [ICON_GOLD] Gold. All tiles adjacent to it yield +1 [ICON_GOLD] Gold.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_POTOSI_TEXT">
 			<Text>
 				Located in southern Bolivia, the mountain of Potosi produced nearly all of the silver mined by the Spanish during their imperial days.  Once removed from the mountain, it was taken by llama and mule to the coast where it was then loaded onto treasure ships sailing back to Europe.   Nearly 41,000 tons of pure silver were mined over the course of 200 years, 8,200 of which went directly to the Spanish crown.  After 1800, the main silver mines were depleted, but the mining of Potosi still continues today - some for silver but now mostly for tin.
 			</Text>

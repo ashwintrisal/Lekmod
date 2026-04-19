@@ -1,6 +1,12 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CERRO DE POTOSI
+---------------
+- Gold yield reduced (10 -> 5); production unchanged (1)
+- All tiles adjacent to Potosi yield +1 Gold (DLL: LEKMOD_POTOSI_ADJACENT_GOLD in CvPlot.cpp)
+- Tooltip added
+
 GRAND MESA
 ----------
 - Removed gold yield (+3 Gold -> 0); food reduced (3 -> 1); production unchanged (3)

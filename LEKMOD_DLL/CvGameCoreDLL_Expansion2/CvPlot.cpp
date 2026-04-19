@@ -8454,6 +8454,105 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		}
 #endif
 
+#ifdef LEKMOD_POTOSI_ADJACENT_GOLD
+		// All tiles adjacent to Cerro de Potosi yield +1 gold
+		if (eYield == YIELD_GOLD && ePlayer != NO_PLAYER)
+		{
+			FeatureTypes ePotosi = (FeatureTypes)GC.getInfoTypeForString("FEATURE_POTOSI", true);
+			if (ePotosi != NO_FEATURE)
+			{
+				for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+				{
+					CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+					if (pAdjacentPlot != NULL && pAdjacentPlot->getFeatureType() == ePotosi)
+					{
+						iYield += 1;
+						break;
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_CRATER_LIBRARY_SCIENCE
+		// Barringer Crater: +4 science when worked by a city with a library
+		if (eYield == YIELD_SCIENCE && getFeatureType() != NO_FEATURE)
+		{
+			FeatureTypes eCrater = (FeatureTypes)GC.getInfoTypeForString("FEATURE_CRATER", true);
+			if (eCrater != NO_FEATURE && getFeatureType() == eCrater && pWorkingCity != NULL)
+			{
+				BuildingClassTypes eLibrary = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_LIBRARY", true);
+				if (eLibrary != NO_BUILDINGCLASS)
+				{
+					BuildingTypes eLibBuilding = (BuildingTypes)pWorkingCity->getCivilizationInfo().getCivilizationBuildings(eLibrary);
+					if (eLibBuilding != NO_BUILDING && pWorkingCity->GetCityBuildings()->GetNumBuilding(eLibBuilding) > 0)
+					{
+						iYield += 4;
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_FUJI_NATIONAL_EPIC_CULTURE
+		// Fuji: +7 culture when worked by a city with a National Epic
+		if (eYield == YIELD_CULTURE && getFeatureType() != NO_FEATURE)
+		{
+			FeatureTypes eFuji = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FUJI", true);
+			if (eFuji != NO_FEATURE && getFeatureType() == eFuji && pWorkingCity != NULL)
+			{
+				BuildingClassTypes eNationalEpic = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_NATIONAL_EPIC", true);
+				if (eNationalEpic != NO_BUILDINGCLASS)
+				{
+					BuildingTypes eNEBuilding = (BuildingTypes)pWorkingCity->getCivilizationInfo().getCivilizationBuildings(eNationalEpic);
+					if (eNEBuilding != NO_BUILDING && pWorkingCity->GetCityBuildings()->GetNumBuilding(eNEBuilding) > 0)
+					{
+						iYield += 7;
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_FUJI_FOREST_CULTURE
+		// Fuji: forest tiles adjacent to Fuji yield +1 culture
+		if (eYield == YIELD_CULTURE && getFeatureType() != NO_FEATURE)
+		{
+			FeatureTypes eForest = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOREST", true);
+			if (eForest != NO_FEATURE && getFeatureType() == eForest)
+			{
+				FeatureTypes eFuji = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FUJI", true);
+				if (eFuji != NO_FEATURE)
+				{
+					for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+					{
+						CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+						if (pAdjacentPlot != NULL && pAdjacentPlot->getFeatureType() == eFuji)
+						{
+							iYield += 1;
+							break;
+						}
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_SINAI_HOLY_CITY_PRODUCTION
+		// Mt. Sinai: +5 production when worked by a holy city
+		if (eYield == YIELD_PRODUCTION && getFeatureType() != NO_FEATURE)
+		{
+			FeatureTypes eSinai = (FeatureTypes)GC.getInfoTypeForString("FEATURE_MT_SINAI", true);
+			if (eSinai != NO_FEATURE && getFeatureType() == eSinai && pWorkingCity != NULL)
+			{
+				if (pWorkingCity->GetCityReligions()->IsHolyCityAnyReligion())
+				{
+					iYield += 5;
+				}
+			}
+		}
+#endif
+
 		// Extra yield for terrain
 		if(getTerrainType() != NO_TERRAIN)
 		{
@@ -9310,6 +9409,30 @@ bool CvPlot::setRevealed(TeamTypes eTeam, bool bNewValue, bool bTerrainOnly, Tea
 
 							// Does it yields gold to the first major civ finder?
 							iFinderGold = GC.getFeatureInfo(getFeatureType())->getFirstFinderGold();
+
+#ifdef LEKMOD_EL_DORADO_ERA_GOLD
+							// El Dorado: override with 100 * (era + 1) gold, scaled to the discoverer's era
+							{
+								FeatureTypes eElDorado = (FeatureTypes)GC.getInfoTypeForString("FEATURE_EL_DORADO", true);
+								if (eElDorado != NO_FEATURE && getFeatureType() == eElDorado)
+								{
+									EraTypes eCurrentEra = NO_ERA;
+									for (int iJ = 0; iJ < MAX_MAJOR_CIVS; ++iJ)
+									{
+										CvPlayerAI& playerJ = GET_PLAYER((PlayerTypes)iJ);
+										if (playerJ.isAlive() && playerJ.getTeam() == eTeam)
+										{
+											eCurrentEra = playerJ.GetCurrentEra();
+											break;
+										}
+									}
+									if (eCurrentEra != NO_ERA)
+									{
+										iFinderGold = 100 * ((int)eCurrentEra + 1);
+									}
+								}
+							}
+#endif
 
 							// Does a player on this team have a trait that gives first finder gold?
 							for(iI = 0; iI < MAX_MAJOR_CIVS; ++iI)

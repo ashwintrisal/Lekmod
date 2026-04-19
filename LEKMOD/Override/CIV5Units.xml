@@ -108191,10 +108191,10 @@
 			<YieldType>YIELD_SCIENCE</YieldType> 
 			<Yield>4</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_POTOSI</FeatureType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>10</Yield> 
+		<Row>
+			<FeatureType>FEATURE_POTOSI</FeatureType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>5</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_EL_DORADO</FeatureType> 
@@ -108921,10 +108921,11 @@
 		</Row>
 		<Row> 
 			<ID>15</ID> 
-			<Type>FEATURE_POTOSI</Type> 
-			<Description>TXT_KEY_FEATURE_POTOSI</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_POTOSI_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_POTOSI</ArtDefineTag> 
+			<Type>FEATURE_POTOSI</Type>
+			<Description>TXT_KEY_FEATURE_POTOSI</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_POTOSI_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_POTOSI_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_POTOSI</ArtDefineTag>
 			<StartingLocationWeight>0</StartingLocationWeight> 
 			<Movement>1</Movement> 
 			<SeeThrough>2</SeeThrough> 

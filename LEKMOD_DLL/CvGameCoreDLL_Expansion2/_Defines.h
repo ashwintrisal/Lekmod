@@ -1264,6 +1264,22 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Kailash: Holy Site improvements adjacent to Kailash yield +2 culture
 #define LEKMOD_KAILASH_HOLY_SITE
 
+// Potosi: all tiles adjacent to Potosi yield +1 gold
+#define LEKMOD_POTOSI_ADJACENT_GOLD
+
+// Barringer Crater: +4 science when worked by a city with a library
+#define LEKMOD_CRATER_LIBRARY_SCIENCE
+
+// El Dorado: discovery gold scales with discoverer's era (100 * (era + 1))
+#define LEKMOD_EL_DORADO_ERA_GOLD
+
+// Fuji: +7 culture when worked by a city with a National Epic; adjacent forests +1 culture
+#define LEKMOD_FUJI_NATIONAL_EPIC_CULTURE
+#define LEKMOD_FUJI_FOREST_CULTURE
+
+// Sinai: +5 production when worked by a holy city
+#define LEKMOD_SINAI_HOLY_CITY_PRODUCTION
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
