@@ -139,3 +139,14 @@ For a worked plot:
   Internal keys in `CIV5Units.xml` ≠ player-visible names in `CIV5Units_Mongol.xml`.
 - **CIV5Units.xml has trailing spaces** on many closing tags — use exact surrounding context
   when using Edit tool to target the right block.
+- **Natural wonder tile yields are not speed-scaled.** `Feature_YieldChanges` values are used
+  directly — no `× 100 / 67` conversion needed for wonder yields.
+- **Natural wonder hover tooltip** is driven by the `Help` column in the `Features` table. Many
+  wonders have no `Help` key (defaults to NULL = no tooltip). To add one: add
+  `<Help>TXT_KEY_CIV5_FEATURES_FOO_HELP</Help>` in the Features row in `CIV5Units.xml`, and a
+  `<Replace Tag="TXT_KEY_CIV5_FEATURES_FOO_HELP">` block in `CIV5Units_Mongol.xml`.
+- **Feature_BuildingClassYieldChanges does not exist** — conditional feature yields based on
+  city buildings (e.g. "yields X if city has a shrine") require a DLL hook in `CvPlot.cpp`
+  checking `pWorkingCity->GetCityBuildings()->GetNumBuilding(...)`.
+- **Krakatoa is `FEATURE_VOLCANO`** (not `FEATURE_KRAKATOA`) — the internal type key differs
+  from the display name.
