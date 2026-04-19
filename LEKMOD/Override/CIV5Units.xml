@@ -108171,13 +108171,8 @@
 			<YieldType>YIELD_SCIENCE</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_VOLCANO</FeatureType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<Yield>8</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_GIBRALTAR</FeatureType> 
+		<Row>
+			<FeatureType>FEATURE_GIBRALTAR</FeatureType>
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>3</Yield> 
 		</Row>
