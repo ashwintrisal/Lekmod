@@ -108221,15 +108221,10 @@
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>6</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_LAKE_VICTORIA</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>6</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_LAKE_VICTORIA</FeatureType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<FeatureType>FEATURE_LAKE_VICTORIA</FeatureType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>6</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_KILIMANJARO</FeatureType> 

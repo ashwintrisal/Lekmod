@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+LAKE VICTORIA
+-------------
+- Removed gold yield (+2 Gold -> 0); retains 6 Food
+
 SOLOMON'S MINES
 ---------------
 - Production yield reduced (6 -> 5)
