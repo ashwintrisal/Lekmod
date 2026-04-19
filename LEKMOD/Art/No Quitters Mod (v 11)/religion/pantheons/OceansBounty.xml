@@ -2,7 +2,7 @@
 <!-- Created by ModBuddy on 2016-09-24 14:15:24 -->
 <GameData>
 
-	<!-- +1 Production from Fishing Boats and Atolls. -->
+	<!-- Yields and localization are defined in LEKMOD Override/CIV5Units.xml. Fishing boats +1 Production is DLL-gated (LEKMOD_FISHING_BOATS_LIGHTHOUSE_PRODUCTION_BELIEF). -->
 	<Beliefs>
 		<Row>
 			<Type>BELIEF_OCEANS_BOUNTY</Type>
@@ -11,22 +11,6 @@
 			<Pantheon>true</Pantheon>
 		</Row>
 	</Beliefs>
-	<Belief_ImprovementYieldChanges>
-		<Row>
-			<BeliefType>BELIEF_OCEANS_BOUNTY</BeliefType>
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-	</Belief_ImprovementYieldChanges>
-	<Belief_FeatureYieldChanges>
-		<Row>
-			<BeliefType>BELIEF_OCEANS_BOUNTY</BeliefType>
-			<FeatureType>FEATURE_ATOLL</FeatureType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-	</Belief_FeatureYieldChanges>
 
 	<!-- localization -->
 	<Language_en_US>
