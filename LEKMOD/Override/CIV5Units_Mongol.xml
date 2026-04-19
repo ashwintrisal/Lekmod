@@ -42682,6 +42682,11 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Yields +1 [ICON_PRODUCTION] Production and +5 [ICON_GOLD] Gold. All tiles adjacent to it yield +1 [ICON_GOLD] Gold.
 			</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_BARRINGER_HELP">
+			<Text>
+				Yields +2 [ICON_PRODUCTION] Production and +3 [ICON_RESEARCH] Science. Also yields +4 [ICON_RESEARCH] Science when worked by a city with a Library.
+			</Text>
+		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_POTOSI_TEXT">
 			<Text>
 				Located in southern Bolivia, the mountain of Potosi produced nearly all of the silver mined by the Spanish during their imperial days.  Once removed from the mountain, it was taken by llama and mule to the coast where it was then loaded onto treasure ships sailing back to Europe.   Nearly 41,000 tons of pure silver were mined over the course of 200 years, 8,200 of which went directly to the Spanish crown.  After 1800, the main silver mines were depleted, but the mining of Potosi still continues today - some for silver but now mostly for tin.

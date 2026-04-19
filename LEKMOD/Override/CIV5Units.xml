@@ -108116,15 +108116,10 @@
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>-3</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_CRATER</FeatureType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>3</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_CRATER</FeatureType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<Yield>5</Yield> 
+		<Row>
+			<FeatureType>FEATURE_CRATER</FeatureType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>3</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_FUJI</FeatureType> 
@@ -108622,10 +108617,11 @@
 		</Row>
 		<Row> 
 			<ID>7</ID> 
-			<Type>FEATURE_CRATER</Type> 
-			<Description>TXT_KEY_FEATURE_CRATER</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_BARRINGER_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_CRATER</ArtDefineTag> 
+			<Type>FEATURE_CRATER</Type>
+			<Description>TXT_KEY_FEATURE_CRATER</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_BARRINGER_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_BARRINGER_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_CRATER</ArtDefineTag>
 			<StartingLocationWeight>0</StartingLocationWeight> 
 			<Movement>1</Movement> 
 			<SeeThrough>2</SeeThrough> 
