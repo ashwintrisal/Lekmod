@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+SPICES
+------
+- Base yield changed: +2 Gold -> +1 Food +1 Gold
+- Improvement changed to IMPROVEMENT_SPICES_PLANTATION (Calendar prereq, 6 turns at quick speed)
+- Improved yield: +5 Gold (total +1 Food +6 Gold)
+- Oral Tradition belief applies to spices plantation (+1 Culture)
+
 PERFUME
 -------
 - Base yield changed: removed +2 Gold, added +1 Culture
