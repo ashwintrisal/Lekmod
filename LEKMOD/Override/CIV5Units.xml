@@ -108191,10 +108191,15 @@
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>5</Yield>
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_EL_DORADO</FeatureType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>5</Yield> 
+		<Row>
+			<FeatureType>FEATURE_EL_DORADO</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>4</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_EL_DORADO</FeatureType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>4</Yield>
 		</Row>
 		<Row>
 			<FeatureType>FEATURE_SRI_PADA</FeatureType>
@@ -108969,7 +108974,7 @@
 			<DisappearanceProbability>0</DisappearanceProbability> 
 			<Growth>0</Growth> 
 			<TurnDamage>0</TurnDamage> 
-			<FirstFinderGold>150</FirstFinderGold> 
+			<FirstFinderGold>0</FirstFinderGold> 
 			<InBorderHappiness>0</InBorderHappiness> 
 			<OccurrenceFrequency>2</OccurrenceFrequency> 
 			<YieldNotAdditive>true</YieldNotAdditive> 

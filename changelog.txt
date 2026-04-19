@@ -1,6 +1,12 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+EL DORADO
+---------
+- Discovery gold changed from flat 500 to era-scaled: 100 * era number (100 in Ancient, 200 in Classical, etc.) (DLL: LEKMOD_EL_DORADO_ERA_GOLD in CvPlot.cpp)
+- Culture reduced (5 -> 4); added +4 Gold tile yield
+- Tooltip updated
+
 BARRINGER CRATER
 ----------------
 - Removed gold yield (+3 Gold -> 0); science reduced (5 -> 3); production unchanged (2)

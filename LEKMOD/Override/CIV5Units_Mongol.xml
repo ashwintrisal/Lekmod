@@ -42357,9 +42357,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				The Barringer Crater is a huge meteorite crater located in Arizona, in the United States of America. The crater is four thousand feet in diameter, and scientists believe that it was created some 50,000 years ago when the site was hit by a large nickel-iron meteorite weighing, at time of impact, 160,000 tons and moving at perhaps 27,000 miles per hour.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_EL_DORADO_HELP"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_EL_DORADO_HELP">
 			<Text>
-				Grants 500 [ICON_GOLD] Gold to the first player to discover it.
+				Yields +4 [ICON_CULTURE] Culture and +4 [ICON_GOLD] Gold. Grants the first discoverer Gold equal to 100 times their current Era number (100 in Ancient, 200 in Classical, etc.).
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_EL_DORADO_TEXT"> 
