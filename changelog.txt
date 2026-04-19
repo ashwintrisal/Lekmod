@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+SOLOMON'S MINES
+---------------
+- Production yield reduced (6 -> 5)
+
 KRAKATOA REWORK
 ---------------
 - Removed food yield (+2 Food -> 0)
