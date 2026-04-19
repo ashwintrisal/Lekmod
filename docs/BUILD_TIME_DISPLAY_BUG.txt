@@ -1,0 +1,137 @@
+BUILD TIME DISPLAY MISMATCH — ANALYSIS (April 2026)
+=====================================================
+
+The worker action panel (shown when a worker unit sits on a tile) sometimes displays
+a number of turns to complete an improvement that doesn't match how long it actually
+takes. This document explains the two root causes and what the intended fix is.
+
+Neither cause has been fixed yet because the fix cannot be tested on Mac (no in-game
+testing available). Fix carefully and verify in-game before committing.
+
+
+ROOT CAUSE 1 — Double work on the first turn of building
+---------------------------------------------------------
+File: LEKMOD_DLL/CvGameCoreDLL_Expansion2/CvUnit.cpp, around line 10997
+Define: NQ_FIX_BUILD_TIMES_UI (currently DISABLED / commented out in _Defines.h:788)
+
+The function CvUnit::build() is called once per turn when a worker performs a build
+action. On the FIRST turn of a new improvement (detected by iStartedYet == 0), the
+code currently calls changeBuildProgress() TWICE:
+
+    if(iStartedYet == 0)
+    {
+        // clear old improvement type...
+    #ifndef NQ_FIX_BUILD_TIMES_UI
+        bFinished = pPlot->changeBuildProgress(eBuild, workRate(false), getOwner()); // call #1
+    #endif
+    }
+    if (!bFinished)
+        bFinished = pPlot->changeBuildProgress(eBuild, workRate(false), getOwner()); // call #2 (always runs)
+
+Because NQ_FIX_BUILD_TIMES_UI is commented out, the #ifndef block executes, and the
+worker contributes TWICE their normal work rate on turn 1 only. All subsequent turns
+are normal (one call, 1x work rate).
+
+Concrete example — a 3-turn improvement at standard speed (buildTime=300, workRate=100):
+  Turn 1: 100 + 100 = 200 progress  (double work)
+  Turn 2: 200 + 100 = 300 >= 300 -> DONE
+  Actual turns: 2
+  UI shows: 3  (calculated as buildTime / workRate = 300 / 100 = 3)
+
+At quick speed the mismatch is the same — the improvement completes one turn faster
+than the UI predicts.
+
+The NQ_FIX_BUILD_TIMES_UI define was added by the No Quitters mod (attributed to
+Delnar's fixes) to solve exactly this. The comment "// Cirra Edit" next to the disabled
+line suggests someone deliberately re-disabled it — the reason is unknown. Before
+re-enabling, observe whether any improvement builds behave strangely (e.g. instant
+completion edge cases, or AI worker logic that depended on the double-work speed).
+
+When NQ_FIX_BUILD_TIMES_UI is ENABLED:
+  - The #ifndef block is skipped (call #1 removed).
+  - changeBuildProgress() is called exactly once per turn for every turn.
+  - The improvement correctly takes ceil(buildTime / workRate) turns.
+  - The UI turn count (see Root Cause 2 below) also becomes accurate.
+
+
+ROOT CAUSE 2 — Wrong player passed to build time calculation in Lua
+-------------------------------------------------------------------
+Files: LEKMOD_DLL/CvGameCoreDLL_Expansion2/CvPlot.cpp
+       LEKMOD_DLL/CvGameCoreDLL_Expansion2/Lua/CvLuaPlot.cpp
+
+The DLL functions getBuildTime, getBuildTurnsLeft, and getBuildTurnsTotal each had a
+PlayerTypes ePlayer parameter added (to support Trait_BuildImprovementBuildTimeOverride
+— see below). However, the Lua-facing comment and the Lua wrapper were never updated.
+
+Old (vanilla) Lua signatures — still shown in the comments:
+    getBuildTime(BuildTypes eBuild)                          -- 1 Lua arg
+    getBuildTurnsLeft(BuildTypes eBuild, int iNow, int iThen) -- 3 Lua args
+    getBuildTurnsTotal(BuildTypes eBuild)                    -- 1 Lua arg
+
+Actual C++ signatures (with added ePlayer):
+    getBuildTime(BuildTypes eBuild, PlayerTypes ePlayer)
+    getBuildTurnsLeft(BuildTypes eBuild, PlayerTypes ePlayer, int iNow, int iThen)
+    getBuildTurnsTotal(BuildTypes eBuild, PlayerTypes ePlayer)
+
+The Lua wrappers use BasicLuaMethod, which is a template that reads arguments
+positionally from the Lua stack based on the C++ function's argument count. Since the
+C++ functions now have one extra argument, every Lua call shifts the arguments:
+
+Example — base game UI calls plot:GetBuildTurnsLeft(eBuild, 0, 0):
+    C++ receives: eBuild = correct
+                  ePlayer = 0  (was the old iNow=0 argument)  <- WRONG PLAYER
+                  iNow   = 0  (was the old iThen=0 argument)
+                  iThen  = nil -> 0
+
+ePlayer ends up as player index 0 (the first player in the game), not the player
+who actually owns the worker. getBuildTime() then checks player 0's trait for any
+BuildTimeOverride instead of the real player's trait.
+
+Impact: Only matters when the playing civ has a Trait_BuildImprovementBuildTimeOverride
+entry (currently TRAIT_STRATEGIC_RICHES and TRAIT_ARGENTINA) AND the player's index
+is not 0. In single-player the human is almost always player 0, so this is rarely
+visible. In multiplayer it can cause the UI to show the wrong (unmodified) build time
+for the affected civs.
+
+The fix requires writing custom Lua wrapper functions for lGetBuildTime, lGetBuildTurnsLeft,
+and lGetBuildTurnsTotal (in CvLuaPlot.cpp) that manually extract the ePlayer argument
+from the Lua stack before forwarding to the C++ function. The base game UI Lua would
+then need to be updated to pass the player type, OR the wrapper could infer the player
+from context (e.g., the owner of the worker unit currently on the tile).
+
+CURRENT TRAIT_BUILDIMPROVEMENTBUILDTIMEOVERRIDE ENTRIES (as of April 2026):
+    TRAIT_STRATEGIC_RICHES — BUILD_MINE (Time=0) for RESOURCECLASS_RUSH
+                           — BUILD_PASTURE (Time=0) for RESOURCECLASS_RUSH
+                           — BUILD_WELL (Time=0) for RESOURCECLASS_MODERN
+                           — BUILD_OFFSHORE_PLATFORM_WORKER (Time=0) for RESOURCECLASS_MODERN
+                           — BUILD_MINE (Time=0) for RESOURCECLASS_MODERN
+    TRAIT_ARGENTINA        — BUILD_PASTURE (Time=400)
+                           — BUILD_FARM (Time=400)
+
+
+SUMMARY TABLE
+-------------
+Bug | Cause                             | Scope               | Fix
+----|-----------------------------------|---------------------|------------------------------------
+1   | Double changeBuildProgress call   | All improvements,   | Enable NQ_FIX_BUILD_TIMES_UI
+    | on first build turn               | all civs            | in _Defines.h (remove leading //)
+    | (_Defines.h:788 commented out)    |                     |
+----|-----------------------------------|---------------------|------------------------------------
+2   | ePlayer arg shifted in Lua calls  | Only civs with      | Write custom lGetBuildTime /
+    | (CvLuaPlot.cpp wrappers use old   | BuildTimeOverride   | lGetBuildTurnsLeft / lGetBuildTurnsTotal
+    | arg count comment as truth)       | traits, multiplayer | wrappers in CvLuaPlot.cpp
+
+
+RECOMMENDED ORDER OF CHANGES
+-----------------------------
+1. Re-enable NQ_FIX_BUILD_TIMES_UI and test:
+   - Check that improvements take the expected number of turns (should now match the UI).
+   - Check edge cases: improvements with buildTime that is an exact multiple of workRate.
+   - Check instant-complete improvements (buildTime=0 from override trait) still work.
+   - Check AI worker behavior — AI uses CvBuilderTaskingAI which calls getBuildTime
+     directly (with correct player), so AI is unaffected by Bug 2 and was already
+     protected from the UI discrepancy.
+   - Watch for any regression where improvements seem to take LONGER than before
+     (this would be correct behavior — they were previously too fast due to double work).
+
+2. After Bug 1 is confirmed fixed, address Bug 2 with custom Lua wrappers.
