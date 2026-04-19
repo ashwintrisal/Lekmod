@@ -108121,20 +108121,15 @@
 			<YieldType>YIELD_SCIENCE</YieldType>
 			<Yield>3</Yield>
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_FUJI</FeatureType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>0</Yield> 
+		<Row>
+			<FeatureType>FEATURE_FUJI</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>3</Yield>
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_FUJI</FeatureType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_FUJI</FeatureType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>4</Yield> 
+		<Row>
+			<FeatureType>FEATURE_FUJI</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row>
 			<FeatureType>FEATURE_MESA</FeatureType>
@@ -108660,10 +108655,11 @@
 		</Row>
 		<Row> 
 			<ID>8</ID> 
-			<Type>FEATURE_FUJI</Type> 
-			<Description>TXT_KEY_FEATURE_MT_FUJI</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_FUJI_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_FUJI</ArtDefineTag> 
+			<Type>FEATURE_FUJI</Type>
+			<Description>TXT_KEY_FEATURE_MT_FUJI</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_FUJI_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_FUJI_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_FUJI</ArtDefineTag>
 			<StartingLocationWeight>0</StartingLocationWeight> 
 			<Movement>1</Movement> 
 			<SeeThrough>2</SeeThrough> 
@@ -108674,8 +108670,8 @@
 			<Growth>0</Growth> 
 			<TurnDamage>0</TurnDamage> 
 			<FirstFinderGold>0</FirstFinderGold> 
-			<InBorderHappiness>2</InBorderHappiness> 
-			<OccurrenceFrequency>10</OccurrenceFrequency> 
+			<InBorderHappiness>0</InBorderHappiness>
+			<OccurrenceFrequency>10</OccurrenceFrequency>
 			<YieldNotAdditive>true</YieldNotAdditive> 
 			<NoCoast>false</NoCoast> 
 			<NoRiver>false</NoRiver> 

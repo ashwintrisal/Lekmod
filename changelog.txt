@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+MT. FUJI
+--------
+- Removed happiness (+2 -> 0); gold yield removed; culture reduced (2 -> 3 net: was 2, now 3); faith reduced (4 -> 1)
+- Cities with a National Epic yield +7 additional Culture from the tile (DLL: LEKMOD_FUJI_NATIONAL_EPIC_CULTURE in CvPlot.cpp)
+- Adjacent Forest tiles yield +1 Culture (DLL: LEKMOD_FUJI_FOREST_CULTURE in CvPlot.cpp)
+- Tooltip added
+
 EL DORADO
 ---------
 - Discovery gold changed from flat 500 to era-scaled: 100 * era number (100 in Ancient, 200 in Classical, etc.) (DLL: LEKMOD_EL_DORADO_ERA_GOLD in CvPlot.cpp)

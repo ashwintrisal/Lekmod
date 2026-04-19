@@ -42452,7 +42452,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				One of the earliest accounts of this legendary spring comes from Herodotus, who describes it as a special "Water of Life" giving any who drinks of it exceptionally long life.  Similar stories have also been told among the indigenous people of the Caribbean and South America, which brought the Fountain of Youth to prominence during Spain's era of exploration.  According to one popular story, in 1513 the Spanish conquistador Juan Ponce de Leon heard tales of the fountain during his travels in Puerto Rico, and set sail to search for eternal life.  In doing so, he discovered Florida (and become one of the first Europeans to set foot on American soil) but never did locate the mythical fountain.  The Fountain of Youth continues to captivate audiences today - movies, books, comics, and games have all featured the fabled spring and man's eternal quest to obtain it.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_FUJI_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_FUJI_HELP">
+			<Text>
+				Yields +3 [ICON_CULTURE] Culture and +1 [ICON_PEACE] Faith. Cities with a National Epic yield +7 additional Culture from the tile. Adjacent Forest tiles yield +1 [ICON_CULTURE] Culture.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_FUJI_TEXT">
 			<Text>
 				An active volcano, Mount Fuji is the highest mountain in Japan. Standing some 12,000 feet high and often wreathed in clouds, its famous snow-capped silhouette can be seen from Tokyo. The stately mountain is the subject of uncounted works of art - poems, songs, photographs, sculptures and paintings. Mount Fuji is a symbol of pride and beauty for all of Japan.
 			</Text>
