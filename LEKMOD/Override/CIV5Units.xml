@@ -27693,6 +27693,12 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
+		<Row>
+			<BeliefType>BELIEF_ORAL_TRADITION</BeliefType>
+			<ImprovementType>IMPROVEMENT_PERFUME_PLANTATION</ImprovementType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
 		<Row> 
 			<BeliefType>BELIEF_OPEN_SKY</BeliefType> 
 			<ImprovementType>IMPROVEMENT_PASTURE</ImprovementType> 
@@ -51652,6 +51658,36 @@
 			<IconAtlas>UNIT_ACTION_ATLAS</IconAtlas> 
 			<ShowInPedia>false</ShowInPedia> 
 			<ShowInTechTree>false</ShowInTechTree> 
+		</Row>
+		<Row>
+			<ID>71</ID>
+			<Type>BUILD_PERFUME_PLANTATION</Type>
+			<Description>TXT_KEY_BUILD_PLANTATION</Description>
+			<HotKey>KB_P</HotKey>
+			<HotKeyPriority>0</HotKeyPriority>
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt>
+			<OrderPriority>98</OrderPriority>
+			<AltDown>false</AltDown>
+			<AltDownAlt>false</AltDownAlt>
+			<ShiftDown>false</ShiftDown>
+			<ShiftDownAlt>false</ShiftDownAlt>
+			<CtrlDown>false</CtrlDown>
+			<CtrlDownAlt>false</CtrlDownAlt>
+			<Time>1050</Time>
+			<Cost>0</Cost>
+			<CostIncreasePerImprovement>0</CostIncreasePerImprovement>
+			<Kill>false</Kill>
+			<Repair>false</Repair>
+			<RemoveRoute>false</RemoveRoute>
+			<Water>false</Water>
+			<CanBeEmbarked>false</CanBeEmbarked>
+			<PrereqTech>TECH_CALENDAR</PrereqTech>
+			<ImprovementType>IMPROVEMENT_PERFUME_PLANTATION</ImprovementType>
+			<EntityEvent>ENTITY_EVENT_IRRIGATE</EntityEvent>
+			<IconIndex>27</IconIndex>
+			<IconAtlas>UNIT_ACTION_ATLAS</IconAtlas>
+			<ShowInPedia>false</ShowInPedia>
+			<ShowInTechTree>false</ShowInTechTree>
 		</Row>
 		<Row> 
 			<ID>51</ID> 
@@ -137821,19 +137857,17 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<!--
-		<Row> 
-			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType> 
-			<ResourceType>RESOURCE_PERFUME</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_PERFUME_PLANTATION</ImprovementType>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>3</Yield>
 		</Row>
-		-->
-		<Row> 
-			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType> 
-			<ResourceType>RESOURCE_PERFUME</ResourceType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_PERFUME_PLANTATION</ImprovementType>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
 		</Row>
 		<Row> 
 			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
@@ -138643,13 +138677,13 @@
 			<DiscoveryRand>0</DiscoveryRand> 
 			<QuantityRequirement>0</QuantityRequirement> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType> 
-			<ResourceType>RESOURCE_PERFUME</ResourceType> 
-			<ResourceMakesValid>true</ResourceMakesValid> 
-			<ResourceTrade>true</ResourceTrade> 
-			<DiscoveryRand>0</DiscoveryRand> 
-			<QuantityRequirement>0</QuantityRequirement> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_PERFUME_PLANTATION</ImprovementType>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<ResourceMakesValid>true</ResourceMakesValid>
+			<ResourceTrade>true</ResourceTrade>
+			<DiscoveryRand>0</DiscoveryRand>
+			<QuantityRequirement>0</QuantityRequirement>
 		</Row>
 		<Row> 
 			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
@@ -142977,6 +143011,61 @@
 			<RequiresXAdjacentLand>-1</RequiresXAdjacentLand> 
 			<PortraitIndex>24</PortraitIndex> 
 			<IconAtlas>TERRAIN_ATLAS</IconAtlas> 
+		</Row>
+		<Row>
+			<ID>46</ID>
+			<Type>IMPROVEMENT_PERFUME_PLANTATION</Type>
+			<Description>TXT_KEY_IMPROVEMENT_PLANTATION</Description>
+			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_PLANTATION_TEXT</Civilopedia>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_PLANTATION</ArtDefineTag>
+			<SpecificCivRequired>false</SpecificCivRequired>
+			<HillsMakesValid>false</HillsMakesValid>
+			<FreshWaterMakesValid>false</FreshWaterMakesValid>
+			<RiverSideMakesValid>false</RiverSideMakesValid>
+			<NoFreshWater>false</NoFreshWater>
+			<RequiresFlatlands>false</RequiresFlatlands>
+			<RequiresFlatlandsOrFreshWater>false</RequiresFlatlandsOrFreshWater>
+			<RequiresFeature>false</RequiresFeature>
+			<RequiresImprovement>false</RequiresImprovement>
+			<RemovesResource>false</RemovesResource>
+			<PromptWhenComplete>false</PromptWhenComplete>
+			<Coastal>false</Coastal>
+			<Water>false</Water>
+			<DestroyedWhenPillaged>false</DestroyedWhenPillaged>
+			<DisplacePillager>false</DisplacePillager>
+			<BuildableOnResources>false</BuildableOnResources>
+			<BarbarianCamp>false</BarbarianCamp>
+			<Goody>false</Goody>
+			<Permanent>false</Permanent>
+			<OutsideBorders>false</OutsideBorders>
+			<InAdjacentFriendly>false</InAdjacentFriendly>
+			<IgnoreOwnership>false</IgnoreOwnership>
+			<OnlyCityStateTerritory>false</OnlyCityStateTerritory>
+			<GraphicalOnly>false</GraphicalOnly>
+			<CreatedByGreatPerson>false</CreatedByGreatPerson>
+			<NoTwoAdjacent>false</NoTwoAdjacent>
+			<AdjacentLuxury>false</AdjacentLuxury>
+			<AllowsWalkWater>false</AllowsWalkWater>
+			<CultureAdjacentSameType>0</CultureAdjacentSameType>
+			<TilesPerGoody>0</TilesPerGoody>
+			<GoodyRange>0</GoodyRange>
+			<FeatureGrowth>0</FeatureGrowth>
+			<UpgradeTime>0</UpgradeTime>
+			<RiverSideUpgradeMod>0</RiverSideUpgradeMod>
+			<CoastalLandUpgradeMod>0</CoastalLandUpgradeMod>
+			<HillsUpgradeMod>0</HillsUpgradeMod>
+			<FreshWaterUpgradeMod>0</FreshWaterUpgradeMod>
+			<DefenseModifier>0</DefenseModifier>
+			<NearbyEnemyDamage>0</NearbyEnemyDamage>
+			<PillageGold>10</PillageGold>
+			<ResourceExtractionMod>0</ResourceExtractionMod>
+			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor>
+			<GoldMaintenance>0</GoldMaintenance>
+			<CultureBombRadius>0</CultureBombRadius>
+			<RequiresXAdjacentLand>-1</RequiresXAdjacentLand>
+			<PortraitIndex>30</PortraitIndex>
+			<IconAtlas>TERRAIN_ATLAS</IconAtlas>
+			<IconString>[ICON_PLANTATION]</IconString>
 		</Row>
 	</Improvements> 
 
@@ -213494,10 +213583,10 @@
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_PERFUME</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<ResourceType>RESOURCE_PERFUME</ResourceType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row> 
 			<ResourceType>RESOURCE_CORAL</ResourceType> 
@@ -278535,6 +278624,10 @@
 			<UnitType>UNIT_WORKER</UnitType> 
 			<BuildType>BUILD_RUBBER_PLANTATION</BuildType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_WORKER</UnitType>
+			<BuildType>BUILD_PERFUME_PLANTATION</BuildType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_WORKER</UnitType> 
 			<BuildType>BUILD_QUARRY</BuildType> 
@@ -278797,6 +278890,10 @@
 			<UnitType>UNIT_AUSTRALIA_WORKER</UnitType> 
 			<BuildType>BUILD_RUBBER_PLANTATION</BuildType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_AUSTRALIA_WORKER</UnitType>
+			<BuildType>BUILD_PERFUME_PLANTATION</BuildType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_AUSTRALIA_WORKER</UnitType> 
 			<BuildType>BUILD_QUARRY</BuildType> 
@@ -278872,6 +278969,10 @@
 		<Row> 
 			<UnitType>UNIT_FAST_WORKER</UnitType> 
 			<BuildType>BUILD_RUBBER_PLANTATION</BuildType> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_FAST_WORKER</UnitType>
+			<BuildType>BUILD_PERFUME_PLANTATION</BuildType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_FAST_WORKER</UnitType> 

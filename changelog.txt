@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+PERFUME
+-------
+- Base yield changed: removed +2 Gold, added +1 Culture
+- Improvement changed to IMPROVEMENT_PERFUME_PLANTATION (Calendar prereq, 6 turns at quick speed vs 4 for standard plantation)
+- Improved yield: +3 Gold +2 Culture (total +3 Gold +3 Culture)
+- Oral Tradition belief applies to perfume plantation (+1 Culture)
+
 MT. SINAI
 ---------
 - Faith yield reduced (8 -> 5); Holy City working the tile yields +5 additional Production (DLL: LEKMOD_SINAI_HOLY_CITY_PRODUCTION in CvPlot.cpp)
