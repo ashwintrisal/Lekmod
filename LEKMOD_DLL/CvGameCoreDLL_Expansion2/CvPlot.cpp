@@ -8360,16 +8360,100 @@ int CvPlot::calculateYield(YieldTypes eYield, bool bDisplay)
 		{
 			if(pWorkingCity != NULL)
 			{
-		
+
 				//pPlot = plotDirection(getX(), getY(), DIRECTION_NORTHEAST);
 				pWorkingCity = getWorkingCity();
 				//CvCity* pOwningCity = getOwningCity(pPlot);
 				CvPlayer &kPlayer = GET_PLAYER(ePlayer);
 				iYield += pWorkingCity->GetImprovementExtraYield(eImprovement, eYield);
 				iYield += kPlayer.GetImprovementExtraYield(eImprovement, eYield);
-		
+
 			}
 		}
+
+#ifdef LEKMOD_KILIMANJARO_PASTURE_FOOD
+		// Pastures adjacent to Kilimanjaro yield +1 food
+		if (eYield == YIELD_FOOD && eImprovement != NO_IMPROVEMENT && !IsImprovementPillaged())
+		{
+			CvImprovementEntry* pkImprovInfo = GC.getImprovementInfo(eImprovement);
+			if (pkImprovInfo && strcmp(pkImprovInfo->GetType(), "IMPROVEMENT_PASTURE") == 0)
+			{
+				FeatureTypes eKilimanjaro = (FeatureTypes)GC.getInfoTypeForString("FEATURE_KILIMANJARO", true);
+				if (eKilimanjaro != NO_FEATURE)
+				{
+					for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+					{
+						CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+						if (pAdjacentPlot != NULL && pAdjacentPlot->getFeatureType() == eKilimanjaro)
+						{
+							iYield += 1;
+							break;
+						}
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_KAILASH_HOLY_SITE
+		// Holy Sites adjacent to Mt. Kailash yield +2 culture
+		if (eYield == YIELD_CULTURE && eImprovement != NO_IMPROVEMENT && !IsImprovementPillaged())
+		{
+			CvImprovementEntry* pkImprovInfo = GC.getImprovementInfo(eImprovement);
+			if (pkImprovInfo && strcmp(pkImprovInfo->GetType(), "IMPROVEMENT_HOLY_SITE") == 0)
+			{
+				FeatureTypes eKailash = (FeatureTypes)GC.getInfoTypeForString("FEATURE_MT_KAILASH", true);
+				if (eKailash != NO_FEATURE)
+				{
+					for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+					{
+						CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+						if (pAdjacentPlot != NULL && pAdjacentPlot->getFeatureType() == eKailash)
+						{
+							iYield += 2;
+							break;
+						}
+					}
+				}
+			}
+		}
+#endif
+
+#ifdef LEKMOD_SRI_PADA_SHRINE_TEMPLE
+		// Sri Pada: +3 culture for working city with shrine; +3 food for working city with temple
+		if (getFeatureType() != NO_FEATURE)
+		{
+			FeatureTypes eSriPada = (FeatureTypes)GC.getInfoTypeForString("FEATURE_SRI_PADA", true);
+			if (eSriPada != NO_FEATURE && getFeatureType() == eSriPada && pWorkingCity != NULL)
+			{
+				if (eYield == YIELD_CULTURE)
+				{
+					BuildingClassTypes eShrine = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_SHRINE", true);
+					if (eShrine != NO_BUILDINGCLASS)
+					{
+						BuildingTypes eShrineBuilding = (BuildingTypes)pWorkingCity->getCivilizationInfo().getCivilizationBuildings(eShrine);
+						if (eShrineBuilding != NO_BUILDING && pWorkingCity->GetCityBuildings()->GetNumBuilding(eShrineBuilding) > 0)
+						{
+							iYield += 3;
+						}
+					}
+				}
+				else if (eYield == YIELD_FOOD)
+				{
+					BuildingClassTypes eTemple = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_TEMPLE", true);
+					if (eTemple != NO_BUILDINGCLASS)
+					{
+						BuildingTypes eTempleBuilding = (BuildingTypes)pWorkingCity->getCivilizationInfo().getCivilizationBuildings(eTemple);
+						if (eTempleBuilding != NO_BUILDING && pWorkingCity->GetCityBuildings()->GetNumBuilding(eTempleBuilding) > 0)
+						{
+							iYield += 3;
+						}
+					}
+				}
+			}
+		}
+#endif
+
 		// Extra yield for terrain
 		if(getTerrainType() != NO_TERRAIN)
 		{

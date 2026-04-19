@@ -812,6 +812,29 @@ void CvCity::init(int iID, PlayerTypes eOwner, int iX, int iY, bool bBumpUnits, 
 		ChangeJONSCulturePerTurnFromPolicies(GET_PLAYER(getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_CULTURE_FROM_GARRISON));
 #endif
 	}
+#ifdef LEKMOD_FOUNTAIN_YOUTH_CITY_FOOD
+	// Cities founded adjacent to Fountain of Youth receive +10% food (via dummy building)
+	{
+		FeatureTypes eFountainYouth = (FeatureTypes)GC.getInfoTypeForString("FEATURE_FOUNTAIN_YOUTH", true);
+		if (eFountainYouth != NO_FEATURE)
+		{
+			for (int iI = 0; iI < NUM_DIRECTION_TYPES; iI++)
+			{
+				CvPlot* pAdjacentPlot = plotDirection(getX(), getY(), (DirectionTypes)iI);
+				if (pAdjacentPlot != NULL && pAdjacentPlot->getFeatureType() == eFountainYouth)
+				{
+					BuildingTypes eFoyBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_FOUNTAIN_YOUTH_FOOD", true);
+					if (eFoyBuilding != NO_BUILDING)
+					{
+						m_pCityBuildings->SetNumRealBuilding(eFoyBuilding, 1);
+					}
+					break;
+				}
+			}
+		}
+	}
+#endif
+
 	AI_init();
 
 #ifdef AUI_PLAYER_FIX_VENICE_ONLY_BANS_SETTLERS_NOT_SETTLING

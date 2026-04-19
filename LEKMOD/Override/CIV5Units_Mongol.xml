@@ -42442,9 +42442,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Appears in
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_FOUNTAIN_YOUTH_HELP"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_FOUNTAIN_YOUTH_HELP">
 			<Text>
-				All units that are next to it heal at double rate for the rest of the game.
+				Yields +2 [ICON_FOOD] Food, +2 [ICON_FAITH] Faith, +2 [ICON_CULTURE] Culture. Cities founded adjacent to it receive +10% [ICON_FOOD] Food. All units next to it heal at double rate for the rest of the game.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_FOUNTAIN_YOUTH_TEXT"> 
@@ -42517,9 +42517,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Appears in
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_KILIMANJARO_HELP"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_KILIMANJARO_HELP">
 			<Text>
-				All units that are next to it move at double speed through Hills and receive a combat bonus on Hills for the rest of the game.
+				Provides fresh water to adjacent tiles. Pasture improvements on adjacent tiles yield +1 [ICON_FOOD] Food. All units next to it gain Altitude Training (10% movement discount on Hills) for the rest of the game.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_CIV5_FEATURES_KILIMANJARO_TEXT"> 
@@ -42527,7 +42527,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Composed of three volcanic cones, the highest reaching 19,340 feet - making it the highest point in Africa and the highest free-standing mountain in the world - the Kilimanjaro massif lies in northeastern Tanzania. Considered a strato-volcano, two of its peaks (Mawenzi and Shira) are extinct, while its highest (Kibo) is dormant; its last eruption dates back approximately 150 thousand years. According to Johann Krapf in 1860 the mountain was called "Kilimanjaro" by the Swahilis along the coast, meaning either "mountain of greatness" or "mountain of caravans."
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_KRAKATOA_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_KRAKATOA_HELP">
+			<Text>
+				Yields +10 [ICON_RESEARCH] Science.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_KRAKATOA_TEXT">
 			<Text>
 				Krakatoa is a volcanic island located in Indonesia, between the islands of Java and Sumatra. The volcano exploded violently in August 1883 with a force equivalent to 13,000 times the power of the Hiroshima nuclear bomb. The eruption destroyed over half of the island, and was heard in parts of Australia, some 2,000 miles away. Some 37,000 people were killed by the eruption and subsequent tsunamis. The volcano has been emitting lava steadily for the past eighty years, rebuilding the cone at a rate of about 15 feet per year.
 			</Text>
@@ -42582,7 +42587,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				Appears in
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_KAILASH_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_KAILASH_HELP">
+			<Text>
+				Yields +6 [ICON_FAITH] Faith. Holy Site improvements on adjacent tiles yield +2 [ICON_CULTURE] Culture.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_MT_KAILASH_TEXT">
 			<Text>
 				The sacred peak of Mount Kailash, found in the Himalayas of Tibet, is cherished by a number of religions, particularly the followers of Hinduism. It is believed to be the home of Lord Shiva, who dwells on the mountain in a state of eternal bliss. Mount Kailash is said to be among the most difficult of all religious pilgrimages, as the harsh conditions dissuade many would-be pilgrims, and the mountain is not accessible by any forms of modern transportation.
 			</Text>
@@ -42692,7 +42702,12 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				King Solomon's Mines exerted a pull on European explorers in 19th Century Africa akin to that of El Dorado on Spanish conquistadors in the 16th Century New World. When Europeans first encountered the mysterious ruins of the ancient city of Zimbabwe in East Africa, they were baffled by its location. Numerous explanations were put forth for its existence, but the one that captured the popular imagination was that Great Zimbabwe served to shelter and protect the workers in King Solomon's mines in the nearby Chimanimani Mountains. Here, it was believed, could be found the source of the Biblical king's legendary treasure of precious metals and gems. For several decades adventurers and fortune hunters sought the legendary mines without success.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_FEATURES_SRI_PADA_TEXT"> 
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_SRI_PADA_HELP">
+			<Text>
+				Yields +3 [ICON_FAITH] Faith. Also yields +3 [ICON_CULTURE] Culture if worked by a city with a Shrine, and +3 [ICON_FOOD] Food if worked by a city with a Temple.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_FEATURES_SRI_PADA_TEXT">
 			<Text>
 				Towering above Sri Lanka, Sri Pada is a large mountain peak with an unusually conical shape that is held sacred by a number of religions for the "footprint" found at its peak. The footprint, a large depression found in a rock formation on the mountain's summit, has been attributed to Buddha, Shiva, and the biblical figure Adam, leading to the mountain's reverence among followers of Buddhism, Hinduism, and Islam. Each year, thousands of pilgrims trek for hours up the mountain to pay their respects at the holy site.
 			</Text>

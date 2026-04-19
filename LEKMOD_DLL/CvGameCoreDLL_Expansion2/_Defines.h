@@ -1252,6 +1252,17 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // All major civs declare war on each other on meeting; peace locked until a configured turn (set via MP lobby)
 #define LEKMOD_WARSTART
 
+// Kilimanjaro: adjacent pasture tiles yield +1 food
+#define LEKMOD_KILIMANJARO_PASTURE_FOOD
+
+// Fountain of Youth: cities settled adjacent to the wonder get +10% food
+#define LEKMOD_FOUNTAIN_YOUTH_CITY_FOOD
+
+// Sri Pada: +3 culture if working city has a shrine; +3 food if working city has a temple
+#define LEKMOD_SRI_PADA_SHRINE_TEMPLE
+
+// Kailash: Holy Site improvements adjacent to Kailash yield +2 culture
+#define LEKMOD_KAILASH_HOLY_SITE
 
 // Generic define for temp changes
 #define CLEAN_UP

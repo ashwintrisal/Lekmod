@@ -1,6 +1,46 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+KRAKATOA REWORK
+---------------
+- Removed food yield (+2 Food -> 0)
+- Now yields +10 Science
+- Tooltip added
+
+KAILASH REWORK
+--------------
+- Removed happiness (InBorderHappiness 2 -> 0)
+- Retains 6 Faith tile yield
+- Holy Site improvements on adjacent tiles yield +2 Culture (DLL: LEKMOD_KAILASH_HOLY_SITE in CvPlot.cpp)
+- Tooltip added
+
+SRI PADA REWORK
+---------------
+- Removed happiness (InBorderHappiness 2 -> 0)
+- Removed food yield (+2 Food -> 0); reduced faith yield (4 -> 3 Faith)
+- +3 Culture when worked by a city with a Shrine (DLL: LEKMOD_SRI_PADA_SHRINE_TEMPLE in CvPlot.cpp)
+- +3 Food when worked by a city with a Temple (DLL: LEKMOD_SRI_PADA_SHRINE_TEMPLE in CvPlot.cpp)
+- Tooltip added
+
+FOUNTAIN OF YOUTH REWORK
+------------------------
+- Removed happiness (InBorderHappiness 6 -> 0)
+- Now yields +2 Food, +2 Faith, +2 Culture
+- Cities founded adjacent to it receive +10% Food via dummy building BUILDING_FOUNTAIN_YOUTH_FOOD (DLL: LEKMOD_FOUNTAIN_YOUTH_CITY_FOOD in CvCity.cpp)
+- Tooltip updated
+
+KILIMANJARO REWORK
+------------------
+- Now provides fresh water to adjacent tiles (AddsFreshWater=true)
+- Pasture improvements on adjacent tiles yield +1 Food (DLL: LEKMOD_KILIMANJARO_PASTURE_FOOD in CvPlot.cpp)
+- Tooltip updated
+
+KILIMANJARO REWORK
+------------------
+- Now provides fresh water to adjacent tiles (AddsFreshWater=true), matching Fountain of Youth
+- Pasture improvements on adjacent tiles yield +1 Food (DLL: LEKMOD_KILIMANJARO_PASTURE_FOOD in CvPlot.cpp)
+- Tooltip updated to describe all effects (fresh water, pasture bonus, altitude training)
+
 MP LOBBY: WAR START OPTION
 ---------------------------
 - Added "War Start" dropdown to the MP lobby (hidden in Tournament mode).

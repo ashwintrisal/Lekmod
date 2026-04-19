@@ -36884,6 +36884,17 @@
 			<NoLimit>false</NoLimit>
 			<Monument>false</Monument>
 		</Row>
+		<Row>
+			<ID>180</ID>
+			<Type>BUILDINGCLASS_FOUNTAIN_YOUTH_FOOD</Type>
+			<DefaultBuilding>BUILDING_FOUNTAIN_YOUTH_FOOD</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<ExtraPlayerInstances>0</ExtraPlayerInstances>
+			<NoLimit>false</NoLimit>
+			<Monument>false</Monument>
+		</Row>
 	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
@@ -44473,9 +44484,15 @@
 		</Row>
 		<!-- Religious Buildings -->
 		<Row>
-			<BuildingType>BUILDING_VIHARA</BuildingType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>15</Yield> 
+			<BuildingType>BUILDING_VIHARA</BuildingType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>15</Yield>
+		</Row>
+		<!-- Natural Wonders -->
+		<Row>
+			<BuildingType>BUILDING_FOUNTAIN_YOUTH_FOOD</BuildingType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>10</Yield>
 		</Row>
 	</Building_YieldModifiers> 
 
@@ -50071,7 +50088,7 @@
 		<!-- Cuban UU -->
 		<Row>
 			<ID>267</ID>
-			<Type>BUILDING_CUBA_TRAIT_UB3</Type> 
+			<Type>BUILDING_CUBA_TRAIT_UB3</Type>
 			<BuildingClass>BUILDINGCLASS_CUBA_TRAIT_UB3</BuildingClass> 
 			<Description>Trait UU Gift</Description> 
 			<Civilopedia>Trait</Civilopedia> 
@@ -50084,9 +50101,27 @@
 			<ArtDefineTag>MONUMENT</ArtDefineTag> 
 			<GreatWorkCount>-1</GreatWorkCount> 
 			<PortraitIndex>2</PortraitIndex> 
-			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas> 
+			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
 		</Row>
-	</Buildings> 
+		<!-- Fountain of Youth: cities founded adjacent to the wonder get +10% food -->
+		<Row>
+			<ID>268</ID>
+			<Type>BUILDING_FOUNTAIN_YOUTH_FOOD</Type>
+			<BuildingClass>BUILDINGCLASS_FOUNTAIN_YOUTH_FOOD</BuildingClass>
+			<Description>Fountain of Youth</Description>
+			<Civilopedia>Natural Wonder</Civilopedia>
+			<Strategy>Natural Wonder</Strategy>
+			<Help>Natural Wonder</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<PortraitIndex>2</PortraitIndex>
+			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
+		</Row>
+	</Buildings>
 	<Table name="Builds">
 		<Column name="ID" type="integer"  primarykey="true" autoincrement="true" />
 		<Column name="Type" type="text"  unique="true" notnull="true" />
@@ -108166,15 +108201,10 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>5</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_SRI_PADA</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_SRI_PADA</FeatureType> 
-			<YieldType>YIELD_FAITH</YieldType> 
-			<Yield>4</Yield> 
+		<Row>
+			<FeatureType>FEATURE_SRI_PADA</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>3</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_MT_SINAI</FeatureType> 
@@ -108231,10 +108261,10 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>3</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_VOLCANO</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>2</Yield> 
+		<Row>
+			<FeatureType>FEATURE_VOLCANO</FeatureType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>10</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_POTOSI</FeatureType> 
@@ -108256,10 +108286,25 @@
 			<YieldType>YIELD_PRODUCTION</YieldType> 
 			<Yield>2</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_WATER_DUMMY_SHEEP</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>-1</Yield> 
+		<Row>
+			<FeatureType>FEATURE_WATER_DUMMY_SHEEP</FeatureType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>-1</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>2</Yield>
+		</Row>
+		<Row>
+			<FeatureType>FEATURE_FOUNTAIN_YOUTH</FeatureType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>2</Yield>
 		</Row>
 	</Feature_YieldChanges> 
 
@@ -108730,10 +108775,11 @@
 		</Row>
 		<Row> 
 			<ID>11</ID> 
-			<Type>FEATURE_VOLCANO</Type> 
-			<Description>TXT_KEY_FEATURE_VOLCANO</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_KRAKATOA_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_VOLCANO</ArtDefineTag> 
+			<Type>FEATURE_VOLCANO</Type>
+			<Description>TXT_KEY_FEATURE_VOLCANO</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_KRAKATOA_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_KRAKATOA_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_VOLCANO</ArtDefineTag>
 			<StartingLocationWeight>0</StartingLocationWeight> 
 			<Movement>1</Movement> 
 			<SeeThrough>2</SeeThrough> 
@@ -108855,9 +108901,9 @@
 			<DisappearanceProbability>0</DisappearanceProbability> 
 			<Growth>0</Growth> 
 			<TurnDamage>0</TurnDamage> 
-			<AdjacentUnitFreePromotion>PROMOTION_FASTER_HEAL</AdjacentUnitFreePromotion> 
-			<FirstFinderGold>0</FirstFinderGold> 
-			<InBorderHappiness>6</InBorderHappiness> 
+			<AdjacentUnitFreePromotion>PROMOTION_FASTER_HEAL</AdjacentUnitFreePromotion>
+			<FirstFinderGold>0</FirstFinderGold>
+			<InBorderHappiness>0</InBorderHappiness>
 			<OccurrenceFrequency>1</OccurrenceFrequency> 
 			<YieldNotAdditive>true</YieldNotAdditive> 
 			<NoCoast>false</NoCoast> 
@@ -108991,22 +109037,23 @@
 			<IconAtlas>NEW_TERRAIN_ATLAS_DLC</IconAtlas> 
 		</Row>
 		<Row> 
-			<ID>18</ID> 
-			<Type>FEATURE_SRI_PADA</Type> 
-			<Description>TXT_KEY_FEATURE_SRI_PADA</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_SRI_PADA_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_SRI_PADA</ArtDefineTag> 
-			<StartingLocationWeight>0</StartingLocationWeight> 
-			<Movement>1</Movement> 
-			<SeeThrough>2</SeeThrough> 
-			<Defense>0</Defense> 
-			<InfluenceCost>-3</InfluenceCost> 
-			<AppearanceProbability>0</AppearanceProbability> 
-			<DisappearanceProbability>0</DisappearanceProbability> 
-			<Growth>0</Growth> 
-			<TurnDamage>0</TurnDamage> 
-			<FirstFinderGold>0</FirstFinderGold> 
-			<InBorderHappiness>2</InBorderHappiness> 
+			<ID>18</ID>
+			<Type>FEATURE_SRI_PADA</Type>
+			<Description>TXT_KEY_FEATURE_SRI_PADA</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_SRI_PADA_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_SRI_PADA_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_SRI_PADA</ArtDefineTag>
+			<StartingLocationWeight>0</StartingLocationWeight>
+			<Movement>1</Movement>
+			<SeeThrough>2</SeeThrough>
+			<Defense>0</Defense>
+			<InfluenceCost>-3</InfluenceCost>
+			<AppearanceProbability>0</AppearanceProbability>
+			<DisappearanceProbability>0</DisappearanceProbability>
+			<Growth>0</Growth>
+			<TurnDamage>0</TurnDamage>
+			<FirstFinderGold>0</FirstFinderGold>
+			<InBorderHappiness>0</InBorderHappiness>
 			<OccurrenceFrequency>10</OccurrenceFrequency> 
 			<YieldNotAdditive>true</YieldNotAdditive> 
 			<NoCoast>false</NoCoast> 
@@ -109066,21 +109113,22 @@
 		</Row>
 		<Row> 
 			<ID>20</ID> 
-			<Type>FEATURE_MT_KAILASH</Type> 
-			<Description>TXT_KEY_FEATURE_MT_KAILASH</Description> 
-			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_KAILASH_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_FEATURE_MT_KAILASH</ArtDefineTag> 
-			<StartingLocationWeight>0</StartingLocationWeight> 
-			<Movement>1</Movement> 
-			<SeeThrough>2</SeeThrough> 
-			<Defense>0</Defense> 
-			<InfluenceCost>-3</InfluenceCost> 
-			<AppearanceProbability>0</AppearanceProbability> 
-			<DisappearanceProbability>0</DisappearanceProbability> 
-			<Growth>0</Growth> 
-			<TurnDamage>0</TurnDamage> 
-			<FirstFinderGold>0</FirstFinderGold> 
-			<InBorderHappiness>2</InBorderHappiness> 
+			<Type>FEATURE_MT_KAILASH</Type>
+			<Description>TXT_KEY_FEATURE_MT_KAILASH</Description>
+			<Civilopedia>TXT_KEY_CIV5_FEATURES_MT_KAILASH_TEXT</Civilopedia>
+			<Help>TXT_KEY_CIV5_FEATURES_MT_KAILASH_HELP</Help>
+			<ArtDefineTag>ART_DEF_FEATURE_MT_KAILASH</ArtDefineTag>
+			<StartingLocationWeight>0</StartingLocationWeight>
+			<Movement>1</Movement>
+			<SeeThrough>2</SeeThrough>
+			<Defense>0</Defense>
+			<InfluenceCost>-3</InfluenceCost>
+			<AppearanceProbability>0</AppearanceProbability>
+			<DisappearanceProbability>0</DisappearanceProbability>
+			<Growth>0</Growth>
+			<TurnDamage>0</TurnDamage>
+			<FirstFinderGold>0</FirstFinderGold>
+			<InBorderHappiness>0</InBorderHappiness>
 			<OccurrenceFrequency>10</OccurrenceFrequency> 
 			<YieldNotAdditive>true</YieldNotAdditive> 
 			<NoCoast>false</NoCoast> 
@@ -109191,27 +109239,27 @@
 			<DisappearanceProbability>0</DisappearanceProbability> 
 			<Growth>0</Growth> 
 			<TurnDamage>0</TurnDamage> 
-			<AdjacentUnitFreePromotion>PROMOTION_ALTITUDE_TRAINING</AdjacentUnitFreePromotion> 
-			<FirstFinderGold>0</FirstFinderGold> 
-			<InBorderHappiness>0</InBorderHappiness> 
-			<OccurrenceFrequency>10</OccurrenceFrequency> 
-			<YieldNotAdditive>true</YieldNotAdditive> 
-			<NoCoast>false</NoCoast> 
-			<NoRiver>false</NoRiver> 
-			<NoAdjacent>false</NoAdjacent> 
-			<RequiresFlatlands>false</RequiresFlatlands> 
-			<RequiresRiver>false</RequiresRiver> 
-			<AddsFreshWater>false</AddsFreshWater> 
-			<Impassable>true</Impassable> 
-			<NoCity>false</NoCity> 
-			<NoImprovement>true</NoImprovement> 
-			<VisibleAlways>false</VisibleAlways> 
-			<NukeImmune>false</NukeImmune> 
-			<NaturalWonder>true</NaturalWonder> 
-			<Rough>true</Rough> 
-			<EffectProbability>0</EffectProbability> 
-			<AdvancedStartRemoveCost>0</AdvancedStartRemoveCost> 
-			<PortraitIndex>4</PortraitIndex> 
+			<AdjacentUnitFreePromotion>PROMOTION_ALTITUDE_TRAINING</AdjacentUnitFreePromotion>
+			<FirstFinderGold>0</FirstFinderGold>
+			<InBorderHappiness>0</InBorderHappiness>
+			<OccurrenceFrequency>10</OccurrenceFrequency>
+			<YieldNotAdditive>true</YieldNotAdditive>
+			<NoCoast>false</NoCoast>
+			<NoRiver>false</NoRiver>
+			<NoAdjacent>false</NoAdjacent>
+			<RequiresFlatlands>false</RequiresFlatlands>
+			<RequiresRiver>false</RequiresRiver>
+			<AddsFreshWater>true</AddsFreshWater>
+			<Impassable>true</Impassable>
+			<NoCity>false</NoCity>
+			<NoImprovement>true</NoImprovement>
+			<VisibleAlways>false</VisibleAlways>
+			<NukeImmune>false</NukeImmune>
+			<NaturalWonder>true</NaturalWonder>
+			<Rough>true</Rough>
+			<EffectProbability>0</EffectProbability>
+			<AdvancedStartRemoveCost>0</AdvancedStartRemoveCost>
+			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>EXPANSION2_WONDER_ATLAS</IconAtlas> 
 		</Row>
 		<Row> 
