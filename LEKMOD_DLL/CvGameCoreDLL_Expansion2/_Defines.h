@@ -1307,6 +1307,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Ministry of Truth: world wonder; disables demographics for others, grants 3 spies, wonder owner's spies skip surveillance
 #define LEKMOD_MINISTRY_OF_TRUTH
 
+// Great Firewall: evicts foreign spies on build and blocks future placement
+#define LEKMOD_GREAT_FIREWALL_EVICT
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

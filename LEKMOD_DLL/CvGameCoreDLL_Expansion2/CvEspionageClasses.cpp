@@ -1361,6 +1361,17 @@ bool CvPlayerEspionage::CanMoveSpyTo(CvCity* pCity, uint uiSpyIndex, bool bAsDip
 		return false;
 	}
 
+#ifdef LEKMOD_GREAT_FIREWALL_EVICT
+	if(pCity->getTeam() != m_pPlayer->getTeam())
+	{
+		BuildingClassTypes eGFClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_GREAT_FIREWALL", true);
+		if(eGFClass != NO_BUILDINGCLASS && pCity->GetCityBuildings()->GetNumBuildingClass(eGFClass) > 0)
+		{
+			return false;
+		}
+	}
+#endif
+
 	CvAssertMsg(uiSpyIndex < m_aSpyList.size(), "iSpyIndex is out of bounds");
 	if(uiSpyIndex >= m_aSpyList.size())
 	{

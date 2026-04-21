@@ -7776,6 +7776,28 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				}
 			}
 #endif
+
+#ifdef LEKMOD_GREAT_FIREWALL_EVICT
+			{
+				BuildingClassTypes eGFClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_GREAT_FIREWALL", true);
+				if(eGFClass != NO_BUILDINGCLASS && eBuildingClass == eGFClass)
+				{
+					for(uint ui = 0; ui < MAX_MAJOR_CIVS; ui++)
+					{
+						PlayerTypes eEnemyPlayer = (PlayerTypes)ui;
+						if(GET_PLAYER(eEnemyPlayer).isAlive() && GET_PLAYER(eEnemyPlayer).getTeam() != getTeam())
+						{
+							CvPlayerEspionage* pEspionage = GET_PLAYER(eEnemyPlayer).GetEspionage();
+							int iSpyIndex = pEspionage->GetSpyIndexInCity(this);
+							if(iSpyIndex >= 0)
+							{
+								pEspionage->ExtractSpyFromCity((uint)iSpyIndex);
+							}
+						}
+					}
+				}
+			}
+#endif
 		}
 
 		if(pBuildingInfo->GetTrainedFreePromotion() != NO_PROMOTION)

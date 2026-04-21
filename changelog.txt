@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GREAT FIREWALL (update)
+------------------------
+- When built, immediately evicts all foreign [ICON_SPY] Spies and Diplomats from the city
+- Foreign [ICON_SPY] Spies and Diplomats can no longer be deployed to this city
+
 MINISTRY OF TRUTH (new world wonder)
 --------------------------------------
 - New world wonder requiring Telecommunications technology (~2000 [ICON_PRODUCTION] at quick speed)

@@ -18263,9 +18263,9 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 				neuter:the
 			</Gender>
 		</Replace>
-		<Replace Tag="TXT_KEY_BUILDING_GREAT_FIREWALL_HELP"> 
+		<Replace Tag="TXT_KEY_BUILDING_GREAT_FIREWALL_HELP">
 			<Text>
-				99.9% reduction in effectiveness of enemy spies in the city in which it is built. All other cities in the civilization get a 25% reduction in enemy spy effectiveness. Negates the [ICON_TOURISM] Tourism bonus from other players' Internet technology.
+				99.9% reduction in effectiveness of enemy spies in the city in which it is built. All other cities in the civilization get a 25% reduction in enemy spy effectiveness. Negates the [ICON_TOURISM] Tourism bonus from other players' Internet technology. When built, immediately evicts all foreign [ICON_SPY] Spies and Diplomats from this city. Foreign [ICON_SPY] Spies and Diplomats cannot be deployed here.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BUILDING_GREAT_LIBRARY"> 
