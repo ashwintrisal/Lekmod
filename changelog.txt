@@ -1,6 +1,18 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+COASTAL TILE & RESOURCE REWORK
+-------------------------------
+- Coast terrain base yield: +1 Food -> +2 Food
+- Atoll feature: no longer adds +1 Food (net tile yield unchanged at 2 Food +1 Production)
+- Fish: base yield changed from +1 Food to +1 Production (unimproved 2F+1P; improved 3F+1P)
+- Whale: base yield changed from +1 Food +1 Gold to +1 Production; improved yield +2 Production (no gold)
+- Crab: base yield changed from +1 Food +1 Gold to +1 Food; improved yield +2 Food (no gold)
+- Coral: base yield changed from +2 Gold to +1 Faith; improved yield +3 Gold +2 Faith
+- Pearls: base yield changed from +1 Gold to +2 Gold; improved yield +4 Gold +1 Culture
+- All improvement yields also updated for Chile Fishing Boats
+- NQ FishingBoatsChanges.xml Pearls entry removed; all coastal resource yields now defined solely in CIV5Units.xml
+
 RUBBER / MARBLE — SETTLE-ON EFFECTS
 -------------------------------------
 - Rubber: base yield removed (+2 Gold -> 0); improved yield adjusted to keep total unchanged (+3 Gold +1 Production)

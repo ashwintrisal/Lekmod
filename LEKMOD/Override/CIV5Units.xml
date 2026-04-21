@@ -108257,15 +108257,10 @@
 			<YieldType>YIELD_PRODUCTION</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<FeatureType>FEATURE_ATOLL</FeatureType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<FeatureType>FEATURE_ATOLL</FeatureType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<FeatureType>FEATURE_ATOLL</FeatureType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row> 
 			<FeatureType>FEATURE_FALLOUT</FeatureType> 
@@ -137672,17 +137667,11 @@
 			<YieldType>YIELD_PRODUCTION</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_WHALE</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_PEARLS</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 		
 		<Row> 
@@ -137695,18 +137684,6 @@
 			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
 			<ResourceType>RESOURCE_WHALE</ResourceType> 
 			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_WHALE</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_PEARLS</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
 		<Row> 
@@ -137786,18 +137763,6 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CRAB</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CRAB</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
 		<!--
 		<Row> 
 			<ImprovementType>IMPROVEMENT_PLANTATION</ImprovementType> 
@@ -137850,17 +137815,11 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_PEARLS</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_PEARLS</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 
 		<Row> 
@@ -138006,29 +137965,17 @@
 			<YieldType>YIELD_FAITH</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CORAL</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType>
+			<ResourceType>RESOURCE_CORAL</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>3</Yield>
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CORAL</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CORAL</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType> 
-			<ResourceType>RESOURCE_CORAL</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_CHILE_FISHING_BOATS</ImprovementType>
+			<ResourceType>RESOURCE_CORAL</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>3</Yield>
 		</Row>
 		<!--
 		<Row> 
@@ -213618,10 +213565,10 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_FISH</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ResourceType>RESOURCE_FISH</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
 		</Row>
 		<Row> 
 			<ResourceType>RESOURCE_BISON</ResourceType> 
@@ -213639,20 +213586,15 @@
 			<Yield>1</Yield> 
 		</Row>
 		<!-- Luxury Resources -->
-		<Row> 
-			<ResourceType>RESOURCE_WHALE</ResourceType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ResourceType>RESOURCE_WHALE</ResourceType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>1</Yield>
 		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_WHALE</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_PEARLS</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<ResourceType>RESOURCE_PEARLS</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 		<Row> 
 			<ResourceType>RESOURCE_GOLD</ResourceType> 
@@ -213764,12 +213706,7 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ResourceType>RESOURCE_CRAB</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
+		<Row>
 			<ResourceType>RESOURCE_TRUFFLES</ResourceType> 
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>2</Yield> 
@@ -213840,11 +213777,11 @@
 			<Yield>1</Yield>
 		</Row>
 		<Row> 
-			<ResourceType>RESOURCE_CORAL</ResourceType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<Yield>2</Yield> 
+			<ResourceType>RESOURCE_CORAL</ResourceType>
+			<YieldType>YIELD_FAITH</YieldType>
+			<Yield>1</Yield>
 		</Row>
-		<Row> 
+		<Row>
 			<ResourceType>RESOURCE_LAPIS</ResourceType> 
 			<YieldType>YIELD_GOLD</YieldType> 
 			<Yield>2</Yield> 
@@ -223655,10 +223592,10 @@
 			<YieldType>YIELD_FOOD</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<TerrainType>TERRAIN_COAST</TerrainType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
+		<Row>
+			<TerrainType>TERRAIN_COAST</TerrainType>
+			<YieldType>YIELD_FOOD</YieldType>
+			<Yield>2</Yield>
 		</Row>
 		<Row> 
 			<TerrainType>TERRAIN_OCEAN</TerrainType> 
