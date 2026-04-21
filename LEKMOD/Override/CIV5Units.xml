@@ -41081,10 +41081,16 @@
 	<Building_ResourceQuantity>
 		<Delete />
 
-		<Row> 
-			<BuildingType>BUILDING_RECYCLING_CENTER</BuildingType> 
-			<ResourceType>RESOURCE_ALUMINUM</ResourceType> 
-			<Quantity>2</Quantity> 
+		<!-- Ironworks: provides 8 Iron -->
+		<Row>
+			<BuildingType>BUILDING_IRONWORKS</BuildingType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Quantity>8</Quantity>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_RECYCLING_CENTER</BuildingType>
+			<ResourceType>RESOURCE_ALUMINUM</ResourceType>
+			<Quantity>2</Quantity>
 		</Row>
 		<Row> 
 			<BuildingType>BUILDING_QARA</BuildingType> 
@@ -44730,6 +44736,7 @@
 		<Column name="LocalPopulationChange" type="INTEGER" default="0" /> <!-- Instant Population change in this city. -->
 		<Column name="MaliTreasury" type="BOOLEAN" default="false" /> <!-- Spawns a Horse on a valid nearby tile -->
 		<Column name="TourismPerMountain" type="INTEGER" default="0" /> <!-- Gives X Tourism for each mountain in territory owned by the player, and within 3 tiles of this city -->
+		<Column name="ProductionPerMountain" type="INTEGER" default="0" /> <!-- Gives X flat Production for each non-natural-wonder mountain in the city BFC -->
 		<Column name="GarrisonStrengthBonus" type="INTEGER" default="0" /> <!-- Raw strength added to the city if it has a garrison, regardless of the unit. Only effects defensive strenght and not Ranfed Strikes. Not In Hundredths, unlike <Defense> -->
 		<Column name="FreeGreatWorkCount" type="integer" default="0" /> <!-- Spawns X free great works of the kind the building can hold, of the Era the player is currently in. -->
     </Table>
@@ -48060,14 +48067,15 @@
 			<Cost>125</Cost> 
 			<NumCityCostMod>30</NumCityCostMod> 
 			<HurryCostModifier>-1</HurryCostModifier>
-			<PrereqTech>TECH_MACHINERY</PrereqTech> 
-			<ArtDefineTag>ART_DEF_BUILDING_IRONWORKS</ArtDefineTag> 
-			<PortraitIndex>47</PortraitIndex> 
-			<IconAtlas>BW_ATLAS_1</IconAtlas> 
+			<PrereqTech>TECH_MACHINERY</PrereqTech>
+			<ProductionPerMountain>2</ProductionPerMountain>
+			<ArtDefineTag>ART_DEF_BUILDING_IRONWORKS</ArtDefineTag>
+			<PortraitIndex>47</PortraitIndex>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
 		</Row>
-		<Row> 
-			<ID>171</ID> 
-			<Type>BUILDING_FALU_GRUVA</Type> 
+		<Row>
+			<ID>171</ID>
+			<Type>BUILDING_FALU_GRUVA</Type>
 			<BuildingClass>BUILDINGCLASS_IRONWORKS</BuildingClass> 
 			<Description>TXT_KEY_BUILDING_FALU_GRUVA</Description> 
 			<Civilopedia>TXT_KEY_BUILDING_FALU_GRUVA_PEDIA</Civilopedia> 

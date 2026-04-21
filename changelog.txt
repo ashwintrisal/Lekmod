@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+IRONWORKS (update)
+------------------
+- Now provides 8 [ICON_RES_IRON] Iron
+- Now grants +2 [ICON_PRODUCTION] Production for each mountain (not Natural Wonders) in the city's working radius
+
 APOLLO PROGRAM (update)
 ------------------------
 - Completing the Apollo Program project now grants +20% Science in the city that built it

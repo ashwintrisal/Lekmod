@@ -139,6 +139,9 @@ CvBuildingEntry::CvBuildingEntry(void):
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	m_iTourismPerMountain(0),
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	m_iProductionPerMountain(0),
+#endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus(0),
 #endif
@@ -520,6 +523,9 @@ bool CvBuildingEntry::CacheResults(Database::Results& kResults, CvDatabaseUtilit
 	m_iExtraLeagueVotes = kResults.GetInt("ExtraLeagueVotes");
 #if defined(MISC_CHANGES) // CvBuildingClasses read XML
 	m_iTourismPerMountain = kResults.GetInt("TourismPerMountain");
+#endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	m_iProductionPerMountain = kResults.GetInt("ProductionPerMountain");
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	m_iGarrisonStrengthBonus = kResults.GetInt("GarrisonStrengthBonus");
@@ -1907,6 +1913,13 @@ int CvBuildingEntry::GetMountainTourism() const
 	return m_iTourismPerMountain;
 }
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+/// Flat production bonus per non-natural-wonder mountain in city BFC
+int CvBuildingEntry::GetProductionPerMountain() const
+{
+	return m_iProductionPerMountain;
+}
+#endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 /// Amount of Extra strenght a city gets for having a Garrisoned unit
 int CvBuildingEntry::GetGarrisonStrengthBonus() const
@@ -2935,6 +2948,9 @@ CvCityBuildings::CvCityBuildings():
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 	m_iBuildingMountainAdjacentStrength(0),
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	m_iProductionPerMountain(0),
+#endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	m_iBuildingHillStrength(0),
 #endif
@@ -3033,6 +3049,9 @@ void CvCityBuildings::Reset()
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 	m_iBuildingMountainAdjacentStrength = 0;
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	m_iProductionPerMountain = 0;
+#endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	m_iBuildingHillStrength = 0;
 #endif
@@ -3084,6 +3103,9 @@ void CvCityBuildings::Read(FDataStream& kStream)
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 	kStream >> m_iBuildingMountainAdjacentStrength;
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	kStream >> m_iProductionPerMountain;
+#endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	kStream >> m_iBuildingHillStrength;
 #endif
@@ -3131,6 +3153,9 @@ void CvCityBuildings::Write(FDataStream& kStream)
 #endif
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 	kStream << m_iBuildingMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	kStream << m_iProductionPerMountain;
 #endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	kStream << m_iBuildingHillStrength;
@@ -4571,6 +4596,20 @@ void CvCityBuildings::ChangeBuildingMountainAdjacentStrength(int iChange)
 	{
 		m_iBuildingMountainAdjacentStrength += iChange;
 		m_pCity->UpdateStrengthValue();
+	}
+}
+#endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+/// Total production-per-mountain bonus from all buildings in this city
+int CvCityBuildings::GetProductionPerMountain() const
+{
+	return m_iProductionPerMountain;
+}
+void CvCityBuildings::ChangeProductionPerMountain(int iChange)
+{
+	if(iChange != 0)
+	{
+		m_iProductionPerMountain += iChange;
 	}
 }
 #endif

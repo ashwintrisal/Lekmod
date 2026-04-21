@@ -215,6 +215,9 @@ public:
 #if defined(MISC_CHANGES) // CvBuildingClasses Getters
 	int GetMountainTourism() const;
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	int GetProductionPerMountain() const;
+#endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int GetGarrisonStrengthBonus() const;
 #endif
@@ -508,6 +511,9 @@ private:
 	int m_iExtraLeagueVotes;
 #if defined(MISC_CHANGES) // CvBuildingClasses member variables
 	int m_iTourismPerMountain;
+#endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	int m_iProductionPerMountain;
 #endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	int m_iGarrisonStrengthBonus;
@@ -836,6 +842,10 @@ public:
 	int GetBuildingMountainAdjacentStrength() const;
 	void ChangeBuildingMountainAdjacentStrength(int iChange);
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	int GetProductionPerMountain() const;
+	void ChangeProductionPerMountain(int iChange);
+#endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	int GetBuildingHillStrength() const;
 	void ChangeBuildingHillStrength(int iChange);
@@ -880,6 +890,9 @@ private:
 #endif
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 	int m_iBuildingMountainAdjacentStrength;
+#endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	int m_iProductionPerMountain;
 #endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 	int m_iBuildingHillStrength;

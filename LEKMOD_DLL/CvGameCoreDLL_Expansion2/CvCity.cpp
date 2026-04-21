@@ -8227,6 +8227,9 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 #if defined(LEKMOD_BUILDING_MOUNTAIN_STRENGTH)
 		m_pCityBuildings->ChangeBuildingMountainAdjacentStrength(pBuildingInfo->GetMountainAdjacentStrength() * iChange);
 #endif
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+		m_pCityBuildings->ChangeProductionPerMountain(pBuildingInfo->GetProductionPerMountain() * iChange);
+#endif
 #if defined(LEKMOD_BUILDING_HILL_STRENGTH)
 		m_pCityBuildings->ChangeBuildingHillStrength(pBuildingInfo->GetHillStrength() * iChange);
 #endif
@@ -12419,6 +12422,23 @@ int CvCity::getBaseYieldRate(YieldTypes eIndex) const
 	iValue += GetBaseYieldRateFromMisc(eIndex);
 	iValue += GetBaseYieldRateFromReligion(eIndex);
 	iValue += GetBaseYieldRateFromGreatWorks(eIndex); // NQMP GJS - Artistic Genius fix to add science to Great Works
+#if defined(LEKMOD_PRODUCTION_PER_MOUNTAIN)
+	if(eIndex == YIELD_PRODUCTION)
+	{
+		int iProductionPerMtn = GetCityBuildings()->GetProductionPerMountain();
+		if(iProductionPerMtn > 0)
+		{
+			for(int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+			{
+				CvPlot* pLoopPlot = GetCityCitizens()->GetCityPlotFromIndex(iI);
+				if(pLoopPlot != NULL && pLoopPlot->isMountain() && !pLoopPlot->IsNaturalWonder())
+				{
+					iValue += iProductionPerMtn;
+				}
+			}
+		}
+	}
+#endif
 #if defined(LEKMOD_GARRISON_YIELD_EFFECTS)
 	iValue += GetBaseYieldRateFromGarrison(eIndex);
 #endif
