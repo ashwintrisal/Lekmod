@@ -16402,7 +16402,7 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_HARVEST_CONFLUENCE">
 			<Text>
-				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_FOOD] Food from [ICON_RES_COW] Cattle, [ICON_RES_BISON] Bison, and [ICON_RES_CRAB] Crabs. +1 [ICON_GOLD] Gold from [ICON_RES_FISH] Fish and [ICON_RES_BANANA] Bananas.
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_GOLD] Gold from [ICON_RES_CRAB] Crabs, [ICON_RES_WHALE] Whales, [ICON_RES_FISH] Fish, [ICON_RES_WHEAT] Wheat, [ICON_RES_BANANA] Bananas, and [ICON_RES_COW] Cattle.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_HARVEST_CONFLUENCE_SHORT">

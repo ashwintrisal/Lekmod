@@ -28481,23 +28481,17 @@
 			<YieldType>YIELD_FAITH</YieldType>
 			<Yield>1</Yield>
 		</Row>
-		<!-- Harvest Confluence: +1 food from cattle/bison/crabs, +1 gold from fish/banana -->
-		<Row>
-			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
-			<ResourceType>RESOURCE_CATTLE</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
-			<ResourceType>RESOURCE_BISON</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
-			<Yield>1</Yield>
-		</Row>
+		<!-- Harvest Confluence: +1 gold from crabs, whales, fish, wheat, banana, cattle -->
 		<Row>
 			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
 			<ResourceType>RESOURCE_CRAB</ResourceType>
-			<YieldType>YIELD_FOOD</YieldType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_WHALE</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>
 		<Row>
@@ -28508,7 +28502,19 @@
 		</Row>
 		<Row>
 			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_WHEAT</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
 			<ResourceType>RESOURCE_BANANA</ResourceType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<BeliefType>BELIEF_HARVEST_CONFLUENCE</BeliefType>
+			<ResourceType>RESOURCE_CATTLE</ResourceType>
 			<YieldType>YIELD_GOLD</YieldType>
 			<Yield>1</Yield>
 		</Row>

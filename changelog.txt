@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+HARVEST CONFLUENCE (rework)
+----------------------------
+- Reworked from scratch: removed +1 Food from Cattle/Bison/Crabs and +1 Gold from Fish/Bananas
+- New effect: +1 Gold from Crabs, Whales, Fish, Wheat, Bananas, and Cattle
+
 COASTAL TILE & RESOURCE REWORK
 -------------------------------
 - Coast terrain base yield: +1 Food -> +2 Food
