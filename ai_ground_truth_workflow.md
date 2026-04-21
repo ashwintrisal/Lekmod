@@ -128,6 +128,13 @@ For a worked plot:
 
 - **NQM source XML yield rows are dead code** for the tables listed above. Don't fix "stacking"
   there — the `<Delete />` in CIV5Units.xml already handles it.
+- **NQM improvement sub-files can silently stack** for tables that CIV5Units.xml does NOT own
+  via `<Delete />`. For example, `Art/No Quitters Mod (v 11)/improvements/FishingBoatsChanges.xml`
+  inserts rows into `Improvement_ResourceType_Yields` *after* CIV5Units.xml's Delete+reinsert
+  runs, so those rows are added on top of whatever CIV5Units.xml set — potentially doubling a
+  yield. **Rule:** when editing any improvement resource yield in CIV5Units.xml, grep all NQM
+  sub-files for duplicate rows on the same (ImprovementType, ResourceType, YieldType) key and
+  remove or comment them out. CIV5Units.xml should be the single source of truth.
 - **Changelog ≠ runtime.** Changelog describes intent. If you suspect a mismatch, grep the XML.
 - **`<Delete />` without a condition** wipes the entire table. `<Delete BeliefType="X" ...>` deletes
   a specific row. Know which one you're looking at.
