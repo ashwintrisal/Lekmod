@@ -1,5 +1,5 @@
 /*	-------------------------------------------------------------------------------------------------------
-	ù 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
+	ÔøΩ 1991-2012 Take-Two Interactive Software and its subsidiaries.  Developed by Firaxis Games.  
 	Sid Meier's Civilization V, Civ, Civilization, 2K Games, Firaxis Games, Take-Two Interactive Software 
 	and their respective logos are all trademarks of Take-Two interactive Software, Inc.  
 	All other marks and trademarks are the property of their respective owners.  
@@ -2507,6 +2507,10 @@ public:
 	inline int getMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER()
 	{
 		return m_iMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER;
+	}
+	inline int getMINOR_CIV_PERSONAL_QUEST_RECYCLE_TURNS()
+	{
+		return m_iMINOR_CIV_PERSONAL_QUEST_RECYCLE_TURNS;
 	}
 	inline int getMINOR_CIV_QUEST_KILL_CAMP_RANGE()
 	{
@@ -8629,6 +8633,7 @@ protected:
 	int m_iMINOR_CIV_PERSONAL_QUEST_MIN_TURNS_BETWEEN;
 	int m_iMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN;
 	int m_iMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER;
+	int m_iMINOR_CIV_PERSONAL_QUEST_RECYCLE_TURNS;
 	int m_iMINOR_CIV_QUEST_KILL_CAMP_RANGE;
 	int m_iMINOR_CIV_QUEST_WONDER_COMPLETION_THRESHOLD;
 	int m_iMINOR_CIV_THREATENED_BY_BARBS_NOTIF_THRESHOLD;

@@ -174,7 +174,7 @@ int CvMinorCivQuest::GetInfluenceReward() const
 		iReward = /*50*/ GC.getMINOR_QUEST_FRIENDSHIP_ROUTE();
 		break;
 	case MINOR_CIV_QUEST_KILL_CAMP:
-		iReward = /*50*/ GC.getMINOR_QUEST_FRIENDSHIP_KILL_CAMP();
+		iReward = /*35*/ GC.getMINOR_QUEST_FRIENDSHIP_KILL_CAMP();
 		break;
 	case MINOR_CIV_QUEST_CONNECT_RESOURCE:
 		iReward = /*40*/ GC.getMINOR_QUEST_FRIENDSHIP_CONNECT_RESOURCE();
@@ -2982,6 +2982,15 @@ void CvMinorCivAI::DoTurnQuests()
 					DoTestStartPersonalQuest(ePlayer);
 				}
 			}
+
+			// Recycle stale personal quests and immediately replace them
+			if(GC.getGame().getElapsedGameTurns() > iFirstTurnForPersonalQuests || ENABLE_QUESTS_AT_START)
+			{
+				if(!IsAtWarWithPlayersTeam(ePlayer))
+				{
+					DoRecyclePersonalQuestsForPlayer(ePlayer);
+				}
+			}
 		}
 	}
 }
@@ -3132,6 +3141,76 @@ void CvMinorCivAI::DoTestStartPersonalQuest(PlayerTypes ePlayer)
 
 	// Check if we need to seed the countdown timer to allow for another quest
 	DoTestSeedQuestCountdownForPlayer(ePlayer);
+}
+
+/// Revoke personal quests that have been active too long without completion, and immediately assign replacements.
+void CvMinorCivAI::DoRecyclePersonalQuestsForPlayer(PlayerTypes ePlayer)
+{
+	CvAssertMsg(ePlayer >= 0, "ePlayer is expected to be non-negative (invalid Index)");
+	CvAssertMsg(ePlayer < MAX_MAJOR_CIVS, "ePlayer is expected to be within maximum bounds (invalid Index)");
+	if(ePlayer < 0 || ePlayer >= MAX_MAJOR_CIVS) return;
+
+	int iRecycleTurns = /*23 (= 15 at quick speed)*/ GC.getMINOR_CIV_PERSONAL_QUEST_RECYCLE_TURNS();
+	iRecycleTurns *= GC.getGame().getGameSpeedInfo().getGreatPeoplePercent();
+	iRecycleTurns /= 100;
+	if(iRecycleTurns < 1) iRecycleTurns = 1;
+
+	int iCurrentTurn = GC.getGame().getGameTurn();
+	int iRecycled = 0;
+
+	// Mark stale personal quests for removal
+	QuestListForPlayer::iterator itr;
+	for(itr = m_QuestsGiven[ePlayer].begin(); itr != m_QuestsGiven[ePlayer].end(); itr++)
+	{
+		if(!IsPersonalQuest(itr->GetType())) continue;
+		if(itr->IsHandled()) continue;
+		if(itr->IsComplete()) continue;
+
+		int iAge = iCurrentTurn - itr->GetStartTurn();
+		if(iAge >= iRecycleTurns)
+		{
+			itr->SetHandled(true);
+			iRecycled++;
+		}
+	}
+
+	if(iRecycled == 0)
+		return;
+
+	// Remove stale quests inline (without seeding countdown — replacement takes the slot)
+	for(itr = m_QuestsGiven[ePlayer].begin(); itr != m_QuestsGiven[ePlayer].end(); itr++)
+	{
+		if(itr->IsHandled())
+		{
+			m_QuestsGiven[ePlayer].erase(itr);
+			itr--;
+		}
+	}
+
+	// Assign one replacement per recycled slot
+	for(int i = 0; i < iRecycled; i++)
+	{
+		FStaticVector<MinorCivQuestTypes, NUM_MINOR_CIV_QUEST_TYPES, true, c_eCiv5GameplayDLL, 0> veValidQuests;
+		int iCount, iCountLoop;
+		MinorCivQuestTypes eQuest;
+
+		for(int iQuestLoop = 0; iQuestLoop < NUM_MINOR_CIV_QUEST_TYPES; iQuestLoop++)
+		{
+			eQuest = (MinorCivQuestTypes) iQuestLoop;
+			if(IsValidQuestForPlayer(ePlayer, eQuest) && IsPersonalQuest(eQuest))
+			{
+				iCount = GetPersonalityQuestBias(eQuest);
+				for(iCountLoop = 0; iCountLoop < iCount; iCountLoop++)
+					veValidQuests.push_back(eQuest);
+			}
+		}
+
+		if(veValidQuests.size() > 0)
+		{
+			int iRandIndex = GC.getGame().getJonRandNum(veValidQuests.size(), "Picking replacement quest after personal quest recycle.");
+			AddQuestForPlayer(ePlayer, veValidQuests[iRandIndex], iCurrentTurn);
+		}
+	}
 }
 
 /// Begin a quest, initializing it with data
@@ -4427,10 +4506,10 @@ void CvMinorCivAI::DoTestSeedGlobalQuestCountdown(bool bForceSeed)
 	{
 		iNumTurns += /*40*/ GC.getMINOR_CIV_GLOBAL_QUEST_MIN_TURNS_BETWEEN();
 
-		int iRand = /*25*/ GC.getMINOR_CIV_GLOBAL_QUEST_RAND_TURNS_BETWEEN();
+		int iRand = /*5*/ GC.getMINOR_CIV_GLOBAL_QUEST_RAND_TURNS_BETWEEN();
 		if(GetPersonality() == MINOR_CIV_PERSONALITY_HOSTILE)
 		{
-			iRand *= /*200*/ GC.getMINOR_CIV_GLOBAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER();
+			iRand *= /*100*/ GC.getMINOR_CIV_GLOBAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER();
 			iRand /= 100;
 		}
 		iNumTurns += GC.getGame().getJonRandNum(iRand, "Random # of turns for Minor Civ global quest counter.");
@@ -4488,10 +4567,10 @@ void CvMinorCivAI::DoTestSeedQuestCountdownForPlayer(PlayerTypes ePlayer, bool b
 	{
 		iNumTurns += /*20*/ GC.getMINOR_CIV_PERSONAL_QUEST_MIN_TURNS_BETWEEN();
 
-		int iRand = /*25*/ GC.getMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN();
+		int iRand = /*5*/ GC.getMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN();
 		if(GetPersonality() == MINOR_CIV_PERSONALITY_HOSTILE)
 		{
-			iRand *= /*200*/ GC.getMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER();
+			iRand *= /*100*/ GC.getMINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN_HOSTILE_MULTIPLIER();
 			iRand /= 100;
 		}
 		iNumTurns += GC.getGame().getJonRandNum(iRand, "Random # of turns for Minor Civ personal quest counter.");

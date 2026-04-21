@@ -250,6 +250,7 @@ public:
 
 	void DoTestStartGlobalQuest();
 	void DoTestStartPersonalQuest(PlayerTypes ePlayer);
+	void DoRecyclePersonalQuestsForPlayer(PlayerTypes ePlayer);
 	void AddQuestForPlayer(PlayerTypes ePlayer, MinorCivQuestTypes eType, int iStartTurn);
 	void AddQuestCopyForPlayer(PlayerTypes ePlayer, CvMinorCivQuest* pQuest);
 	void DoTestQuestsOnFirstContact(PlayerTypes eMajor);

@@ -269,6 +269,30 @@ CITY-STATE STATUS UI BREAKDOWN
 - When a city-state is your nemesis, the diplo popup shows a red "NEMESIS" label
   in place of the Make Peace button, with flavour body text explaining the permanent war
 
+CITY-STATE QUEST TIMING & PACING
+---------------------------------
+- Kill camp (barbarian encampment) quest influence reward DLL comment synced to XML value (35, no gameplay change)
+- Reduced random component of quest cadence to 0–5 turns for all CS personalities (was 0–24):
+  `MINOR_CIV_GLOBAL_QUEST_RAND_TURNS_BETWEEN`: 25 → 5
+  `MINOR_CIV_PERSONAL_QUEST_RAND_TURNS_BETWEEN`: 25 → 5
+  Both hostile multipliers: 200 → 100 (hostile CS now same randomness as others)
+- Increased static minimum to compensate, preserving average cadence:
+  `MINOR_CIV_GLOBAL_QUEST_MIN_TURNS_BETWEEN`: 30 → 38
+  `MINOR_CIV_PERSONAL_QUEST_MIN_TURNS_BETWEEN`: 17 → 25
+- Reduced first-quest random window (first-turn rand): 20 → 5 for both global and personal
+- First possible turn for quests moved earlier:
+  `MINOR_CIV_GLOBAL_QUEST_FIRST_POSSIBLE_TURN`: 30 → 25
+  `MINOR_CIV_PERSONAL_QUEST_FIRST_POSSIBLE_TURN`: 25 → 20
+- Each player-CS pair remains fully independent (no cross-player fairness mechanism)
+
+CITY-STATE PERSONAL QUEST RECYCLING (DLL)
+------------------------------------------
+- Personal quests that remain incomplete for 15 turns (quick speed) are revoked and immediately
+  replaced with a new randomly-weighted personal quest from the valid pool
+- Recycling is orthogonal to the quest countdown; the replacement takes the existing slot
+- Controlled by `MINOR_CIV_PERSONAL_QUEST_RECYCLE_TURNS` (XML: 23, = 15 at quick speed)
+- Implemented in `DoRecyclePersonalQuestsForPlayer()` called per-player from `DoTurnQuests()`
+
 CITY-STATE WAR DECLARATION PENALTIES
 -------------------------------------
 - Declaring war on city-states now tracks four escalating tiers per player:
