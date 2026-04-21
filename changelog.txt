@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+MANGROVE MYSTERIES (update)
+----------------------------
+- Atoll tiles now qualify for the +1 Production +2 Science adjacency effect (alongside Coral and Pearls)
+
 HARVEST CONFLUENCE (rework)
 ----------------------------
 - Reworked from scratch: removed +1 Food from Cattle/Bison/Crabs and +1 Gold from Fish/Bananas

@@ -16392,7 +16392,7 @@ strongest around the Gulf of Bothnia, where land steadily rises about 1 cm a yea
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_MANGROVE_MYSTERIES">
 			<Text>
-				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith from [ICON_RES_FOREST] Forest and [ICON_RES_FISH] Fish. [ICON_RES_CORAL] Coral and [ICON_RES_PEARL] Pearls yield +1 [ICON_PRODUCTION] Production and +2 [ICON_RESEARCH] Science if adjacent to a city and a Forest tile.
+				[COLOR_POSITIVE_TEXT](Pantheon)[ENDCOLOR][NEWLINE]+1 [ICON_PEACE] Faith from [ICON_RES_FOREST] Forest and [ICON_RES_FISH] Fish. [ICON_RES_CORAL] Coral, [ICON_RES_PEARL] Pearls, and Atolls yield +1 [ICON_PRODUCTION] Production and +2 [ICON_RESEARCH] Science if adjacent to a city and a Forest tile.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_BELIEF_MANGROVE_MYSTERIES_SHORT">

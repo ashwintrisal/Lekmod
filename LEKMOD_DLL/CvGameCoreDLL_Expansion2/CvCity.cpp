@@ -8659,7 +8659,10 @@ void CvCity::UpdateReligion(ReligionTypes eNewMajority)
 				if (plotDistance(getX(), getY(), pLoopPlot->getX(), pLoopPlot->getY()) != 1)
 					continue;
 				ResourceTypes eResource = pLoopPlot->getResourceType(getTeam());
-				if (eResource != eCoralType && eResource != ePearlsType)
+				bool bQualifies = (eResource == eCoralType || eResource == ePearlsType);
+				if (!bQualifies && pLoopPlot->getFeatureType() == FEATURE_ATOLL)
+					bQualifies = true;
+				if (!bQualifies)
 					continue;
 				// Check adjacency to a forest tile
 				bool bAdjacentForest = false;
