@@ -36953,6 +36953,15 @@
 			<MaxTeamInstances>-1</MaxTeamInstances>
 			<MaxPlayerInstances>1</MaxPlayerInstances>
 		</Row>
+		<!-- Ministry of Truth: world wonder; demographics hidden for others, 3 spies, instant spy establishment -->
+		<Row>
+			<ID>185</ID>
+			<Type>BUILDINGCLASS_MINISTRY_OF_TRUTH</Type>
+			<DefaultBuilding>BUILDING_MINISTRY_OF_TRUTH</DefaultBuilding>
+			<MaxGlobalInstances>1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+		</Row>
 	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
@@ -50272,6 +50281,24 @@
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_URANIUM_MAPPING_ATLAS</IconAtlas>
 		</Row>
+		<!-- Ministry of Truth: world wonder; disables demographics for others, grants 3 spies, wonder owner spies skip surveillance -->
+		<Row>
+			<ID>275</ID>
+			<Type>BUILDING_MINISTRY_OF_TRUTH</Type>
+			<BuildingClass>BUILDINGCLASS_MINISTRY_OF_TRUTH</BuildingClass>
+			<Description>TXT_KEY_BUILDING_MINISTRY_OF_TRUTH</Description>
+			<Civilopedia>TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_HELP</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>2985</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<PrereqTech>TECH_TELECOMMUNICATIONS</PrereqTech>
+			<ArtDefineTag>ART_DEF_BUILDING_BROADCAST_TOWER</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_MINISTRY_OF_TRUTH_ATLAS</IconAtlas>
+		</Row>
 	</Buildings>
 	<Table name="Builds">
 		<Column name="ID" type="integer"  primarykey="true" autoincrement="true" />
@@ -54381,6 +54408,14 @@
 		<Row>
 			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
 			<BuildingClassType>BUILDINGCLASS_URANIUM_MAPPING_PROJECT</BuildingClassType>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_MINISTRY_OF_TRUTH</BuildingClassType>
+		</Row>
+		<Row>
+			<CivilizationType>CIVILIZATION_MINOR</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_MINISTRY_OF_TRUTH</BuildingClassType>
 		</Row>
 	</Civilization_BuildingClassOverrides>
 
@@ -137507,6 +137542,35 @@
 			<Atlas>LEKMOD_URANIUM_MAPPING_ATLAS</Atlas>
 			<IconSize>256</IconSize>
 			<Filename>uranium_mapping_project_256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<!-- Ministry of Truth icon -->
+		<Row>
+			<Atlas>LEKMOD_MINISTRY_OF_TRUTH_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>ministry_of_truth_45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_MINISTRY_OF_TRUTH_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>ministry_of_truth_64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_MINISTRY_OF_TRUTH_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>ministry_of_truth_128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_MINISTRY_OF_TRUTH_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>ministry_of_truth_256.dds</Filename>
 			<IconsPerRow>1</IconsPerRow>
 			<IconsPerColumn>1</IconsPerColumn>
 		</Row>

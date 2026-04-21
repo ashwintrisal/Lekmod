@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+MINISTRY OF TRUTH (new world wonder)
+--------------------------------------
+- New world wonder requiring Telecommunications technology (~2000 [ICON_PRODUCTION] at quick speed)
+- Effect 1: rival civilizations see "?" for all comparative demographics (best, worst, average, rank) — own stats remain visible to each player
+- Effect 2: grants 3 [ICON_SPY] Spies immediately upon construction
+- Effect 3: the builder's spies skip the surveillance phase and begin operating immediately upon arrival (1 turn travel only)
+
 URANIUM MAPPING PROJECT (new national wonder)
 ----------------------------------------------
 - New national wonder requiring Plastics technology (~335 [ICON_PRODUCTION] at quick speed)

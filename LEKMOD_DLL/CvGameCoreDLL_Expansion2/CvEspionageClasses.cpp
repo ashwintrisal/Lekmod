@@ -353,10 +353,58 @@ void CvPlayerEspionage::ProcessSpy(uint uiSpyIndex)
 			}
 			else // moved to an opponent's city
 			{
-				pSpy->m_eSpyState = SPY_STATE_SURVEILLANCE;
-				int iRate = CalcPerTurn(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
-				int iGoal = CalcRequired(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
-				pCityEspionage->SetActivity(ePlayer, 0, iRate, iGoal);
+#ifdef LEKMOD_MINISTRY_OF_TRUTH
+				BuildingTypes eMoTBuilding = (BuildingTypes)GC.getInfoTypeForString("BUILDING_MINISTRY_OF_TRUTH", true);
+				bool bSkipSurveillance = (eMoTBuilding != NO_BUILDING && m_pPlayer->countNumBuildings(eMoTBuilding) > 0);
+				if(bSkipSurveillance)
+				{
+					if(GET_PLAYER(eCityOwner).isMinorCiv())
+					{
+						pSpy->m_eSpyState = SPY_STATE_RIG_ELECTION;
+						int iRate = CalcPerTurn(SPY_STATE_RIG_ELECTION, pCity, uiSpyIndex);
+						int iGoal = CalcRequired(SPY_STATE_RIG_ELECTION, pCity, uiSpyIndex);
+						pCityEspionage->SetActivity(ePlayer, 0, iRate, iGoal);
+						pCityEspionage->SetLastProgress(ePlayer, iRate);
+					}
+					else
+					{
+#ifndef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+						BuildStealableTechList(eCityOwner);
+#endif
+						int iBasePotentialRate = CalcPerTurn(SPY_STATE_GATHERING_INTEL, pCity, -1);
+						pCityEspionage->SetLastBasePotential(ePlayer, iBasePotentialRate);
+#ifdef BUILD_STEALABLE_TECH_LIST_ONCE_PER_TURN
+						if(GetNumTechsToSteal(eCityOwner) > 0)
+#else
+						if(m_aaPlayerStealableTechList[eCityOwner].size() > 0)
+#endif
+						{
+							pSpy->m_eSpyState = SPY_STATE_GATHERING_INTEL;
+							int iPotentialRate = CalcPerTurn(SPY_STATE_GATHERING_INTEL, pCity, uiSpyIndex);
+							int iGoal = CalcRequired(SPY_STATE_GATHERING_INTEL, pCity, uiSpyIndex);
+							pCityEspionage->SetActivity(ePlayer, 0, iPotentialRate, iGoal);
+							pCityEspionage->SetLastProgress(ePlayer, iPotentialRate);
+							pCityEspionage->SetLastPotential(ePlayer, iPotentialRate);
+						}
+						else
+						{
+							// No stealable techs yet; enter surveillance pre-completed so it advances next turn
+							pSpy->m_eSpyState = SPY_STATE_SURVEILLANCE;
+							int iRate = CalcPerTurn(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
+							int iGoal = CalcRequired(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
+							pCityEspionage->SetActivity(ePlayer, iGoal, iRate, iGoal);
+							pCityEspionage->SetLastProgress(ePlayer, iRate);
+						}
+					}
+				}
+				else
+#endif
+				{
+					pSpy->m_eSpyState = SPY_STATE_SURVEILLANCE;
+					int iRate = CalcPerTurn(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
+					int iGoal = CalcRequired(SPY_STATE_SURVEILLANCE, pCity, uiSpyIndex);
+					pCityEspionage->SetActivity(ePlayer, 0, iRate, iGoal);
+				}
 			}
 		}
 		break;

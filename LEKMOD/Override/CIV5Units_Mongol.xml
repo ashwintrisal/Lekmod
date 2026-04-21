@@ -145066,6 +145066,26 @@ The ship has weather'd every rack; the prize we sought is won."
 				Reveals all [ICON_RES_URANIUM] Uranium deposits on the map for your civilization.
 			</Text>
 		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_MINISTRY_OF_TRUTH">
+			<Text>
+				Ministry of Truth
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_PEDIA">
+			<Text>
+				A centralised institution dedicated to information control. All competing accounts are reclassified, archived, and corrected. The demographics of rival civilizations become unverifiable — their growth, prosperity, and military strength obscured behind a wall of silence.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_STRATEGY">
+			<Text>
+				Build in any city to hide demographics from rival civilizations, gain 3 [ICON_SPY] Spies, and have your spies deploy instantly in enemy cities.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_MINISTRY_OF_TRUTH_HELP">
+			<Text>
+				Rival civilizations cannot see each other's demographics (your own statistics are still visible to you). Grants 3 [ICON_SPY] Spies. Your [ICON_SPY] Spies skip the surveillance phase and begin operating immediately upon arrival.
+			</Text>
+		</Replace>
 	</Language_en_US>
 	<Language_de_DE>
 	</Language_de_DE>

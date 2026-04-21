@@ -7764,6 +7764,18 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				}
 			}
 #endif
+
+#ifdef LEKMOD_MINISTRY_OF_TRUTH
+			{
+				BuildingClassTypes eMoTClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_MINISTRY_OF_TRUTH", true);
+				if(eMoTClass != NO_BUILDINGCLASS && eBuildingClass == eMoTClass)
+				{
+					owningPlayer.GetEspionage()->CreateSpy();
+					owningPlayer.GetEspionage()->CreateSpy();
+					owningPlayer.GetEspionage()->CreateSpy();
+				}
+			}
+#endif
 		}
 
 		if(pBuildingInfo->GetTrainedFreePromotion() != NO_PROMOTION)

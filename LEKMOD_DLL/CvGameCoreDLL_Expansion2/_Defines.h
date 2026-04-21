@@ -1304,6 +1304,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Uranium Mapping Project: national wonder that force-reveals uranium for the team
 #define LEKMOD_URANIUM_MAPPING_PROJECT
 
+// Ministry of Truth: world wonder; disables demographics for others, grants 3 spies, wonder owner's spies skip surveillance
+#define LEKMOD_MINISTRY_OF_TRUTH
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\
