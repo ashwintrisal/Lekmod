@@ -54378,7 +54378,11 @@
             <CivilizationType>CIVILIZATION_MINOR</CivilizationType>
             <BuildingClassType>BUILDINGCLASS_TOWER_OF_BELEM</BuildingClassType>
         </Row>
-	</Civilization_BuildingClassOverrides> 
+		<Row>
+			<CivilizationType>CIVILIZATION_BARBARIAN</CivilizationType>
+			<BuildingClassType>BUILDINGCLASS_URANIUM_MAPPING_PROJECT</BuildingClassType>
+		</Row>
+	</Civilization_BuildingClassOverrides>
 
 	<Table name="Civilization_CityNames">
 		<Column name="CivilizationType" type="text"  />
@@ -137477,7 +137481,36 @@
             <IconsPerRow>2</IconsPerRow>
             <IconsPerColumn>2</IconsPerColumn>
         </Row>
-	</IconTextureAtlases> 
+		<!-- Uranium Mapping Project icon -->
+		<Row>
+			<Atlas>LEKMOD_URANIUM_MAPPING_ATLAS</Atlas>
+			<IconSize>45</IconSize>
+			<Filename>uranium_mapping_project_45.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_URANIUM_MAPPING_ATLAS</Atlas>
+			<IconSize>64</IconSize>
+			<Filename>uranium_mapping_project_64.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_URANIUM_MAPPING_ATLAS</Atlas>
+			<IconSize>128</IconSize>
+			<Filename>uranium_mapping_project_128.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+		<Row>
+			<Atlas>LEKMOD_URANIUM_MAPPING_ATLAS</Atlas>
+			<IconSize>256</IconSize>
+			<Filename>uranium_mapping_project_256.dds</Filename>
+			<IconsPerRow>1</IconsPerRow>
+			<IconsPerColumn>1</IconsPerColumn>
+		</Row>
+	</IconTextureAtlases>
 
 	<Table name="Improvement_EraYieldChanges">
 		<Column name="ImprovementType" type="text" reference="Improvements(Type)" />

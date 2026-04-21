@@ -7750,6 +7750,20 @@ void CvCity::processBuilding(BuildingTypes eBuilding, int iChange, bool bFirst, 
 				}
 			}
 			// END TERRA COTTA AWESOME
+
+#ifdef LEKMOD_URANIUM_MAPPING_PROJECT
+			{
+				BuildingClassTypes eUMPClass = (BuildingClassTypes)GC.getInfoTypeForString("BUILDINGCLASS_URANIUM_MAPPING_PROJECT", true);
+				if(eUMPClass != NO_BUILDINGCLASS && eBuildingClass == eUMPClass)
+				{
+					ResourceTypes eUranium = (ResourceTypes)GC.getInfoTypeForString("RESOURCE_URANIUM", true);
+					if(eUranium != NO_RESOURCE)
+					{
+						owningTeam.setForceRevealedResource(eUranium, true);
+					}
+				}
+			}
+#endif
 		}
 
 		if(pBuildingInfo->GetTrainedFreePromotion() != NO_PROMOTION)

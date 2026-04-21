@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+URANIUM MAPPING PROJECT (new national wonder)
+----------------------------------------------
+- New national wonder requiring Plastics technology (~335 [ICON_PRODUCTION] at quick speed)
+- Effect: reveals all [ICON_RES_URANIUM] Uranium deposits on the map for your civilization
+
 IRONWORKS (update)
 ------------------
 - Now provides 8 [ICON_RES_IRON] Iron
