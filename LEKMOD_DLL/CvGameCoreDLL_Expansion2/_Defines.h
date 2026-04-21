@@ -1295,6 +1295,15 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Marble: +20% wonder production when city is founded directly on marble tile (on top of existing +10% local)
 #define LEKMOD_MARBLE_SETTLE_WONDER
 
+// Apollo Program: city that builds it gets +20% science
+#define LEKMOD_APOLLO_SCIENCE_BONUS
+
+// Ironworks: production bonus per non-natural-wonder mountain in city BFC
+#define LEKMOD_PRODUCTION_PER_MOUNTAIN
+
+// Uranium Mapping Project: national wonder that force-reveals uranium for the team
+#define LEKMOD_URANIUM_MAPPING_PROJECT
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

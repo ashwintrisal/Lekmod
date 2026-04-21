@@ -36935,6 +36935,24 @@
 			<MaxTeamInstances>-1</MaxTeamInstances>
 			<MaxPlayerInstances>-1</MaxPlayerInstances>
 		</Row>
+		<!-- Apollo Program: science bonus dummy (auto-granted via DLL to city that builds the project) -->
+		<Row>
+			<ID>183</ID>
+			<Type>BUILDINGCLASS_APOLLO_SCIENCE_BONUS</Type>
+			<DefaultBuilding>BUILDING_APOLLO_SCIENCE_BONUS</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+		</Row>
+		<!-- Uranium Mapping Project: national wonder that reveals uranium -->
+		<Row>
+			<ID>184</ID>
+			<Type>BUILDINGCLASS_URANIUM_MAPPING_PROJECT</Type>
+			<DefaultBuilding>BUILDING_URANIUM_MAPPING_PROJECT</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>1</MaxPlayerInstances>
+		</Row>
 	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
@@ -44539,7 +44557,13 @@
 			<YieldType>YIELD_FOOD</YieldType>
 			<Yield>10</Yield>
 		</Row>
-	</Building_YieldModifiers> 
+		<!-- Apollo Program: +20% science in the city that built it -->
+		<Row>
+			<BuildingType>BUILDING_APOLLO_SCIENCE_BONUS</BuildingType>
+			<YieldType>YIELD_SCIENCE</YieldType>
+			<Yield>20</Yield>
+		</Row>
+	</Building_YieldModifiers>
 
 	<Table name="Buildings">
 		<Column name="ID" type="integer" primarykey="true" autoincrement="true" />
@@ -50202,6 +50226,43 @@
 			<GreatWorkCount>-1</GreatWorkCount>
 			<PortraitIndex>2</PortraitIndex>
 			<IconAtlas>LEKMOD_AKKAD_ATLAS</IconAtlas>
+		</Row>
+		<!-- Apollo Program science bonus: +20% science; auto-granted via DLL to city that builds the Apollo project -->
+		<Row>
+			<ID>273</ID>
+			<Type>BUILDING_APOLLO_SCIENCE_BONUS</Type>
+			<BuildingClass>BUILDINGCLASS_APOLLO_SCIENCE_BONUS</BuildingClass>
+			<Description>TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS</Description>
+			<Civilopedia>TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS</Strategy>
+			<Help>TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS_HELP</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<ArtDefineTag>MONUMENT</ArtDefineTag>
+			<GreatWorkCount>-1</GreatWorkCount>
+			<PortraitIndex>33</PortraitIndex>
+			<IconAtlas>BW_ATLAS_2</IconAtlas>
+		</Row>
+		<!-- Uranium Mapping Project: national wonder; reveals uranium for the team -->
+		<Row>
+			<ID>274</ID>
+			<Type>BUILDING_URANIUM_MAPPING_PROJECT</Type>
+			<BuildingClass>BUILDINGCLASS_URANIUM_MAPPING_PROJECT</BuildingClass>
+			<Description>TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT</Description>
+			<Civilopedia>TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_STRATEGY</Strategy>
+			<Help>TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_HELP</Help>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>500</Cost>
+			<NumCityCostMod>30</NumCityCostMod>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<PrereqTech>TECH_PLASTIC</PrereqTech>
+			<ArtDefineTag>ART_DEF_BUILDING_LABORATORY</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_URANIUM_MAPPING_ATLAS</IconAtlas>
 		</Row>
 	</Buildings>
 	<Table name="Builds">

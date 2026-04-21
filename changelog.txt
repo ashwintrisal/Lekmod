@@ -1,6 +1,10 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+APOLLO PROGRAM (update)
+------------------------
+- Completing the Apollo Program project now grants +20% Science in the city that built it
+
 MANGROVE MYSTERIES (update)
 ----------------------------
 - Atoll tiles now qualify for the +1 Production +2 Science adjacency effect (alongside Coral and Pearls)

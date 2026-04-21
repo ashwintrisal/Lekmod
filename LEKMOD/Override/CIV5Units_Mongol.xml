@@ -145029,11 +145029,43 @@ The ship has weather'd every rack; the prize we sought is won."
 				{1_CivName:textkey} tributed pledged {2_MinorName:textkey}
 			</Text>
 		</Row>
-		<Row Tag="TXT_KEY_GAME_OPTION_CS_ALLYING_WAR_RESCTRICTION_HELP"> 
+		<Row Tag="TXT_KEY_GAME_OPTION_CS_ALLYING_WAR_RESCTRICTION_HELP">
 			<Text>
 				If this and the turn timer are enabled, whenever a player replaces another player's ally status of a [ICON_CITY_STATE] City-State, that player may not declare war on the replaced player for a full 120 seconds. During this time, the replaced player may still declare war on the replacing player even if the replaced player regains the ally status of the [ICON_CITY_STATE] City-State. If the replaced player does regain ally status, the timer resets, and the replacing player has to wait another 120 seconds. If the replaced player fails to regain the ally status within the allotted time, the replacing player will gain priority over the [ICON_CITY_STATE] City-State, reversing the roles. This timer is independent for each [ICON_CITY_STATE] City-State.
 			</Text>
 		</Row>
+		<!-- Apollo Program science bonus dummy building -->
+		<Replace Tag="TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS">
+			<Text>
+				Apollo Science Bonus
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_APOLLO_SCIENCE_BONUS_HELP">
+			<Text>
+				[COLOR_POSITIVE_TEXT]+20%[ENDCOLOR] [ICON_RESEARCH] Science in this city (granted when the [COLOR_POSITIVE_TEXT]Apollo Program[ENDCOLOR] project is completed here).
+			</Text>
+		</Replace>
+		<!-- Uranium Mapping Project -->
+		<Replace Tag="TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT">
+			<Text>
+				Uranium Mapping Project
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_PEDIA">
+			<Text>
+				A systematic survey of the earth's crust to locate uranium deposits, combining geological analysis with aerial and ground-based radiation detection. The resulting maps allow nuclear programmes to proceed without reliance on chance discovery.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_STRATEGY">
+			<Text>
+				Build in any city to reveal all [ICON_RES_URANIUM] Uranium deposits on the map.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_BUILDING_URANIUM_MAPPING_PROJECT_HELP">
+			<Text>
+				Reveals all [ICON_RES_URANIUM] Uranium deposits on the map for your civilization.
+			</Text>
+		</Replace>
 	</Language_en_US>
 	<Language_de_DE>
 	</Language_de_DE>

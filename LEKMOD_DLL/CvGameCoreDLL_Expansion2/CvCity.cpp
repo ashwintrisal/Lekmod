@@ -16265,6 +16265,15 @@ bool CvCity::CreateProject(ProjectTypes eProjectType)
 			gDLL->GameplaySpaceshipRemoved(pDllPlot.get());
 			gDLL->GameplaySpaceshipCreated(pDllPlot.get(), eUnderConstruction + eFrame);
 		}
+#ifdef LEKMOD_APOLLO_SCIENCE_BONUS
+		{
+			BuildingTypes eApolloBonus = (BuildingTypes)GC.getInfoTypeForString("BUILDING_APOLLO_SCIENCE_BONUS", true);
+			if(eApolloBonus != NO_BUILDING)
+			{
+				m_pCityBuildings->SetNumRealBuilding(eApolloBonus, 1);
+			}
+		}
+#endif
 	}
 	else if(GC.getProjectInfo(eProjectType)->IsSpaceship())
 	{
