@@ -1,6 +1,17 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+TOWER OF BELÉM (rework)
+------------------------
+- Removed: landmass yield bonuses
+- Kept: Exploration policy requirement
+- Cost: 300 → 400 [ICON_PRODUCTION] (quick speed)
+- Requires Compass and the Exploration Policy Tree
+- +5 [ICON_HAPPINESS_1] Happiness
+- +5 City Strength
+- +1 [ICON_GREAT_MERCHANT] Great Merchant Point per turn
+- Spawns 1 Great Admiral and 2 Conquistadors upon completion
+
 GREAT FIREWALL (update)
 ------------------------
 - When built, immediately evicts all foreign [ICON_SPY] Spies and Diplomats from the city

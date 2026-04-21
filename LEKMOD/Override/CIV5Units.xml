@@ -116,16 +116,6 @@
     </Table>
 
 	<Building_SameLandMassYieldChanges>
-		<Row>
-			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
-			<YieldType>YIELD_PRODUCTION</YieldType>
-			<Yield>1</Yield>
-		</Row>
-		<Row>
-			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
-			<YieldType>YIELD_GOLD</YieldType>
-			<Yield>1</Yield>
-		</Row>
     </Building_SameLandMassYieldChanges>
 
     <Table name="Building_DifferentLandMassYieldChanges">
@@ -135,11 +125,6 @@
     </Table>
 
 	<Building_DifferentLandMassYieldChanges>
-        <Row>
-            <BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
-            <YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
-            <Yield>2</Yield>
-        </Row>
     </Building_DifferentLandMassYieldChanges>
 
     <!-- Building_UnitCombatProductionCostModifiers -->
@@ -40575,10 +40560,20 @@
 			<UnitType>UNIT_MERCHANT</UnitType> 
 			<NumUnits>1</NumUnits> 
 		</Row>
-		<Row> 
-			<BuildingType>BUILDING_SWISS_REISLAUFER</BuildingType> 
-			<UnitType>UNIT_SWISS_REISLAUFER</UnitType> 
-			<NumUnits>1</NumUnits> 
+		<Row>
+			<BuildingType>BUILDING_SWISS_REISLAUFER</BuildingType>
+			<UnitType>UNIT_SWISS_REISLAUFER</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
+			<UnitType>UNIT_GREAT_ADMIRAL</UnitType>
+			<NumUnits>1</NumUnits>
+		</Row>
+		<Row>
+			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<NumUnits>2</NumUnits>
 		</Row>
 	</Building_FreeUnits> 
 
@@ -44208,16 +44203,6 @@
 			<BuildingType>BUILDING_ARSENAL_OF_VENICE</BuildingType> 
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>3</Yield> 
-		</Row>
-		 <Row> 
-			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
-        <Row>
-			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
-			<YieldType>YIELD_GOLDEN_AGE_POINTS</YieldType>
-			<Yield>4</Yield>
 		</Row>
 		<!-- Sanctuary: +2 culture -->
 		<Row>
@@ -48733,25 +48718,27 @@
 		</Row>
 		<Row>
 			<ID>198</ID>
-            <Type>BUILDING_TOWER_OF_BELEM</Type> 
-			<BuildingClass>BUILDINGCLASS_TOWER_OF_BELEM</BuildingClass> 
-			<Description>TXT_KEY_BUILDING_TOWER_OF_BELEM</Description> 
-			<Civilopedia>TXT_KEY_WONDER_TOWER_OF_BELEM_DESC</Civilopedia> 
-			<Help>TXT_KEY_WONDER_TOWER_OF_BELEM_HELP</Help> 
-			<Quote>TXT_KEY_WONDER_TOWER_OF_BELEM_QUOTE</Quote> 
-			<NukeImmune>true</NukeImmune> 
-			<Cost>300</Cost> 
+            <Type>BUILDING_TOWER_OF_BELEM</Type>
+			<BuildingClass>BUILDINGCLASS_TOWER_OF_BELEM</BuildingClass>
+			<Description>TXT_KEY_BUILDING_TOWER_OF_BELEM</Description>
+			<Civilopedia>TXT_KEY_WONDER_TOWER_OF_BELEM_DESC</Civilopedia>
+			<Help>TXT_KEY_WONDER_TOWER_OF_BELEM_HELP</Help>
+			<Quote>TXT_KEY_WONDER_TOWER_OF_BELEM_QUOTE</Quote>
+			<NukeImmune>true</NukeImmune>
+			<Cost>400</Cost>
 			<HurryCostModifier>-1</HurryCostModifier>
-			<ConquestProb>100</ConquestProb> 
-			<MaxStartEra>ERA_RENAISSANCE</MaxStartEra> 
-			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>  
-			<PrereqTech>TECH_COMPASS</PrereqTech> 
-			<ArtDefineTag>GREAT LIGHTHOUSE</ArtDefineTag> 
-			<DisplayPosition>2</DisplayPosition> 
-			<PortraitIndex>0</PortraitIndex> 
-			<WonderSplashImage>WonderConceptGreatLighthouse.dds</WonderSplashImage> 
-			<WonderSplashAudio>AS2D_WONDER_SPEECH_THE_GREAT_LIGHTHOUSE_01</WonderSplashAudio> 
-			<IconAtlas>LEKMOD_TOWER_OF_BELEM_ATLAS</IconAtlas> 
+			<ConquestProb>100</ConquestProb>
+			<PrereqTech>TECH_COMPASS</PrereqTech>
+			<PolicyBranchType>POLICY_BRANCH_EXPLORATION</PolicyBranchType>
+			<Happiness>5</Happiness>
+			<Defense>500</Defense>
+			<SpecialistType>SPECIALIST_MERCHANT</SpecialistType>
+			<GreatPeopleRateChange>1</GreatPeopleRateChange>
+			<ArtDefineTag>GREAT LIGHTHOUSE</ArtDefineTag>
+			<PortraitIndex>0</PortraitIndex>
+			<WonderSplashImage>WonderConceptGreatLighthouse.dds</WonderSplashImage>
+			<WonderSplashAudio>AS2D_WONDER_SPEECH_THE_GREAT_LIGHTHOUSE_01</WonderSplashAudio>
+			<IconAtlas>LEKMOD_TOWER_OF_BELEM_ATLAS</IconAtlas>
 		</Row>
 		<Row> 
 			<ID>199</ID> 
