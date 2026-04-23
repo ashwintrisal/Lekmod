@@ -1,6 +1,12 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GREAT MUSICIAN / FESTIVAL CHANGES
+----------------------------------
+FESTIVAL (IMPROVEMENT_CONCERT):
+- Removed flat +4 [ICON_CULTURE] Culture
+- Now yields +1 [ICON_CULTURE] Culture and +1 [ICON_GOLD] Gold per era (via Improvement_YieldPerEra)
+
 GREAT ADMIRAL / DRYDOCK CHANGES
 ---------------------------------
 DRYDOCK (IMPROVEMENT_DOCK):

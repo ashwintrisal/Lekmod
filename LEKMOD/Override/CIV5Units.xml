@@ -140498,6 +140498,16 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_CONCERT</ImprovementType>
+			<YieldType>YIELD_CULTURE</YieldType>
+			<Yield>1</Yield>
+		</Row>
+		<Row>
+			<ImprovementType>IMPROVEMENT_CONCERT</ImprovementType>
+			<YieldType>YIELD_GOLD</YieldType>
+			<Yield>1</Yield>
+		</Row>
 	</Improvement_YieldPerEra> 
 
 	<Table name="Improvement_Yields">
@@ -140541,11 +140551,6 @@
 			<ImprovementType>IMPROVEMENT_ACADEMY</ImprovementType> 
 			<YieldType>YIELD_SCIENCE</YieldType> 
 			<Yield>8</Yield> 
-		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CONCERT</ImprovementType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>4</Yield> 
 		</Row>
 		<Row> 
 			<ImprovementType>IMPROVEMENT_CUSTOMS_HOUSE</ImprovementType> 

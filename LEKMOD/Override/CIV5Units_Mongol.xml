@@ -6731,7 +6731,7 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 			<Text>Festival</Text>
 		</Row>
 		<Row Tag="TXT_KEY_IMPROVEMENT_CONCERT_HELP">
-			<Text>Can be build by a musician. Gives extra [ICON_CULTURE] Culture</Text>
+			<Text>Can be built by a Great Musician. Yields +1 [ICON_CULTURE] Culture and +1 [ICON_GOLD] Gold per era.</Text>
 		</Row>
 	<!-- Aksum new civ v25 -->
 		
