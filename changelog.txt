@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+TREBUCHET CHANGES
+-----------------
+TREBUCHET (UNIT_TREBUCHET):
+- Melee strength: 12 → 11
+- Ranged strength: 14 → 13
+- Production cost: 120 → 114 (−5%)
+
 SPEARMAN / PIKEMAN CHANGES
 --------------------------
 PROMOTION_ANTI_MOUNTED_I (Spearman, Pikeman, and UU replacements):

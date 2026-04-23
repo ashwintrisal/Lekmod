@@ -293579,9 +293579,9 @@
 			<Civilopedia>TXT_KEY_CIVILOPEDIA_UNITS_MEDIEVAL_TREBUCHET_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_UNIT_TREBUCHET_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_TREBUCHET</Help> 
-			<Combat>12</Combat> 
-			<RangedCombat>14</RangedCombat> 
-			<Cost>120</Cost> 
+			<Combat>11</Combat> 
+			<RangedCombat>13</RangedCombat> 
+			<Cost>114</Cost> 
 			<FaithCost>240</FaithCost> 
 			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
