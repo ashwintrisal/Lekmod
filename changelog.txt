@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GALLEY CHANGES
+--------------
+GALLEY (UNIT_GALLEY):
+- Melee strength: 8 → 6
+- Ranged strength: 10 → 8
+- Production cost: 60 → 48 XML (32 at quick speed)
+
 CANNON CHANGES
 --------------
 CANNON (UNIT_CANNON):

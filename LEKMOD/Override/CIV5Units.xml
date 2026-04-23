@@ -296001,9 +296001,9 @@
 			<Description>TXT_KEY_UNIT_GALLEY</Description> 
 			<Civilopedia>TXT_KEY_UNIT_GALLEY_PEDIA</Civilopedia> 
 			<Help>TXT_KEY_UNIT_GALLEY_HELP</Help> 			
-			<Combat>8</Combat> 
-			<RangedCombat>10</RangedCombat> 
-			<Cost>60</Cost> 
+			<Combat>6</Combat> 
+			<RangedCombat>8</RangedCombat> 
+			<Cost>48</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
