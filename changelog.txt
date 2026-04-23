@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GREAT MERCHANT / CUSTOMS HOUSE CHANGES
+----------------------------------------
+CUSTOMS HOUSE:
+- Strategic resources on a Customs House tile yield 50% more (e.g. 6 Iron → 9)
+  [DLL: LEKMOD_CUSTOMS_HOUSE_STRATEGIC_BONUS in CvPlot::getNumResourceForPlayer]
+- Added help tooltip to improvement
+
 GREAT GENERAL / CITADEL CHANGES
 ---------------------------------
 GREAT GENERAL:

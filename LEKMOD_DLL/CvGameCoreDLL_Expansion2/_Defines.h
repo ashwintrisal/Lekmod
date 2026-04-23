@@ -1316,6 +1316,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Citadel applies Zone of Control to naval units (enemy naval units must stop when moving adjacent to an enemy Citadel)
 #define LEKMOD_CITADEL_NAVAL_ZOC
 
+// Custom House: strategic tiles with a Customs House yield 50% more strategic resources
+#define LEKMOD_CUSTOMS_HOUSE_STRATEGIC_BONUS
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

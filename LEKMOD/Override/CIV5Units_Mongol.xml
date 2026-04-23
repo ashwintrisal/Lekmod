@@ -76291,9 +76291,14 @@ The ship has weather'd every rack; the prize we sought is won."
 				City Ruins are the remnants of cities destroyed in the game. They are of no particular value in themselves, but they often sit atop valuable locations. A worker may clean up a City Ruin or simply replace it with another improvement.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE"> 
+		<Replace Tag="TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE">
 			<Text>
 				Customs House
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE_HELP">
+			<Text>
+				+4 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Strategic resources on this tile yield 50% more.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_IMPROVEMENT_DOCK"> 

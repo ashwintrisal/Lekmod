@@ -141738,9 +141738,10 @@
 		</Row>
 		<Row> 
 			<ID>17</ID> 
-			<Type>IMPROVEMENT_CUSTOMS_HOUSE</Type> 
-			<Description>TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE</Description> 
-			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_CUSTOMS_HOUSE_TEXT</Civilopedia> 
+			<Type>IMPROVEMENT_CUSTOMS_HOUSE</Type>
+			<Description>TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE</Description>
+			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_CUSTOMS_HOUSE_TEXT</Civilopedia>
+			<Help>TXT_KEY_IMPROVEMENT_CUSTOMS_HOUSE_HELP</Help>
 			<ArtDefineTag>ART_DEF_IMPROVEMENT_CUSTOMS_HOUSE</ArtDefineTag> 
 			<SpecificCivRequired>false</SpecificCivRequired> 
 			<HillsMakesValid>false</HillsMakesValid> 
@@ -141780,13 +141781,13 @@
 			<HillsUpgradeMod>0</HillsUpgradeMod> 
 			<FreshWaterUpgradeMod>0</FreshWaterUpgradeMod> 
 			<DefenseModifier>0</DefenseModifier> 
-			<NearbyEnemyDamage>0</NearbyEnemyDamage> 
-			<PillageGold>20</PillageGold> 
-			<ResourceExtractionMod>0</ResourceExtractionMod> 
-			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor> 
-			<GoldMaintenance>0</GoldMaintenance> 
-			<CultureBombRadius>0</CultureBombRadius> 
-			<RequiresXAdjacentLand>-1</RequiresXAdjacentLand> 
+			<NearbyEnemyDamage>0</NearbyEnemyDamage>
+			<PillageGold>20</PillageGold>
+			<ResourceExtractionMod>50</ResourceExtractionMod>
+			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor>
+			<GoldMaintenance>0</GoldMaintenance>
+			<CultureBombRadius>0</CultureBombRadius>
+			<RequiresXAdjacentLand>-1</RequiresXAdjacentLand>
 			<PortraitIndex>33</PortraitIndex> 
 			<IconAtlas>TERRAIN_ATLAS</IconAtlas> 
 		</Row>

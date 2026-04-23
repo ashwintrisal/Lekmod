@@ -6366,6 +6366,23 @@ int CvPlot::getNumResourceForPlayer(PlayerTypes ePlayer) const
 					iRtnValue *= 100 + iQuantityMod;
 					iRtnValue /= 100;
 				}
+
+#ifdef LEKMOD_CUSTOMS_HOUSE_STRATEGIC_BONUS
+				// Custom House: +50% strategic resources (uses ResourceExtractionMod on the improvement)
+				if(pkResource->getResourceUsage() == RESOURCEUSAGE_STRATEGIC)
+				{
+					ImprovementTypes eImprovement = getImprovementType();
+					if(eImprovement != NO_IMPROVEMENT)
+					{
+						CvImprovementEntry* pkImprovement = GC.getImprovementInfo(eImprovement);
+						if(pkImprovement != NULL && pkImprovement->GetResourceExtractionMod() > 0)
+						{
+							iRtnValue *= 100 + pkImprovement->GetResourceExtractionMod();
+							iRtnValue /= 100;
+						}
+					}
+				}
+#endif
 			}
 		}
 	}
