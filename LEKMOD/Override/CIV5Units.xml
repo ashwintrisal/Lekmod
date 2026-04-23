@@ -40581,7 +40581,7 @@
 		</Row>
 		<Row>
 			<BuildingType>BUILDING_TOWER_OF_BELEM</BuildingType>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<NumUnits>2</NumUnits>
 		</Row>
 	</Building_FreeUnits> 
@@ -77546,12 +77546,12 @@
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 		</Row>
 		<!-- Conquistador UU for colonial civilizations: unlocked by Civil Service instead of Exploration policy -->
-		<Row><CivilizationType>CIVILIZATION_SPAIN</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
-		<Row><CivilizationType>CIVILIZATION_PORTUGAL</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
-		<Row><CivilizationType>CIVILIZATION_NETHERLANDS</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
-		<Row><CivilizationType>CIVILIZATION_FRANCE</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
-		<Row><CivilizationType>CIVILIZATION_BELGIUM</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
-		<!-- Nelayan replaces Skiff for maritime civilizations -->
+		<Row><CivilizationType>CIVILIZATION_SPAIN</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_PORTUGAL</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_NETHERLANDS</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_FRANCE</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_BELGIUM</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType></Row>
+		<!-- Nelayan replaces Skiff for Pacific and Southeast Asian island civilizations -->
 		<Row><CivilizationType>CIVILIZATION_BRUNEI</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
 		<Row><CivilizationType>CIVILIZATION_POLYNESIA</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
 		<Row><CivilizationType>CIVILIZATION_MAORI</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
@@ -230095,7 +230095,7 @@
 			<MaxTeamInstances>-1</MaxTeamInstances>
 			<MaxPlayerInstances>-1</MaxPlayerInstances>
 			<InstanceCostModifier>0</InstanceCostModifier>
-			<DefaultUnit>UNIT_CONQUISTADOR</DefaultUnit> 
+			<DefaultUnit>UNIT_CONQUISTADOR_EXPLORATION</DefaultUnit> 
 		</Row>
 		<Row> 
 			<ID>98</ID> 
@@ -230944,7 +230944,7 @@
 			<FirstSelectionSound>AS2D_BIRTH_HORSEMAN</FirstSelectionSound> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<SelectionSound>AS2D_SELECT_KNIGHT</SelectionSound> 
 			<FirstSelectionSound>AS2D_BIRTH_KNIGHT</FirstSelectionSound> 
 		</Row>
@@ -278265,15 +278265,15 @@
 			<UnitAIType>UNITAI_EXPLORE</UnitAIType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<UnitAIType>UNITAI_ATTACK</UnitAIType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<UnitAIType>UNITAI_DEFENSE</UnitAIType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<UnitAIType>UNITAI_FAST_ATTACK</UnitAIType> 
 		</Row>
 		<Row> 
@@ -281908,17 +281908,17 @@
 			<Flavor>16</Flavor> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<FlavorType>FLAVOR_OFFENSE</FlavorType> 
 			<Flavor>12</Flavor> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<FlavorType>FLAVOR_DEFENSE</FlavorType> 
 			<Flavor>4</Flavor> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<FlavorType>FLAVOR_MOBILE</FlavorType> 
 			<Flavor>10</Flavor> 
 		</Row>
@@ -283815,35 +283815,35 @@
 			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<PromotionType>PROMOTION_NO_DEFENSIVE_BONUSES</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
 		<Row>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
 		</Row>
 		<Row>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<PromotionType>PROMOTION_EMBARK_FLAT_COST</PromotionType>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<PromotionType>PROMOTION_NO_DEFENSIVE_BONUSES</PromotionType>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<PromotionType>PROMOTION_EMBARK_FLAT_COST</PromotionType>
 		</Row>
 		<Row>
@@ -284455,7 +284455,7 @@
 			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType> 
 		</Row>
 		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType> 
 			<PromotionType>PROMOTION_CITY_PENALTY</PromotionType> 
 		</Row>
 		<Row> 
@@ -285406,22 +285406,22 @@
 			<Cost>1</Cost>
 		</Row>
 		<Row>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<ResourceType>RESOURCE_HORSE</ResourceType>
 			<Cost>2</Cost>
 		</Row>
 		<Row>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<ResourceType>RESOURCE_IRON</ResourceType>
 			<Cost>1</Cost>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<ResourceType>RESOURCE_HORSE</ResourceType>
 			<Cost>2</Cost>
 		</Row>
 		<Row>
-			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_EXPLORATION</UnitType>
 			<ResourceType>RESOURCE_IRON</ResourceType>
 			<Cost>1</Cost>
 		</Row>
@@ -296691,7 +296691,7 @@
 		</Row>
 		<Row> 
 			<ID>94</ID> 
-			<Type>UNIT_SPANISH_CONQUISTADOR</Type> 
+			<Type>UNIT_CONQUISTADOR_UNIQUE_UNIT</Type> 
 			<Description>TXT_KEY_UNIT_SPANISH_CONQUISTADOR</Description> 
 			<Civilopedia>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY</Strategy> 
@@ -308969,7 +308969,7 @@
 		</Row>
 		<!-- Conquistador (policy version): unlocked by Exploration policy for all civs -->
 		<Row>
-			<Type>UNIT_CONQUISTADOR</Type>
+			<Type>UNIT_CONQUISTADOR_EXPLORATION</Type>
 			<Description>TXT_KEY_UNIT_SPANISH_CONQUISTADOR</Description>
 			<Civilopedia>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_TEXT</Civilopedia>
 			<Strategy>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY</Strategy>

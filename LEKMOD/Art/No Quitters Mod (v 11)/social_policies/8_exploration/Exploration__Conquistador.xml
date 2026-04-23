@@ -7,27 +7,27 @@
 		<Row>
 			<Type>UNITCLASS_CONQUISTADOR</Type>
 			<Description>TXT_KEY_UNIT_CONQUISTADOR</Description>
-			<DefaultUnit>UNIT_SPANISH_CONQUISTADOR</DefaultUnit>
+			<DefaultUnit>UNIT_CONQUISTADOR_UNIQUE_UNIT</DefaultUnit>
 		</Row>
 	</UnitClasses>
 	<Units>
 		<Update>
 			<!-- If both FoundAbroad and Found are set to true, Venice will only allow FoundAbroad while everyone else can use Found -->
 			<Set Moves="4" Combat="16" Cost="32" FoundAbroad="true" Found="true" PrereqTech="NULL" Class="UNITCLASS_CONQUISTADOR" ObsoleteTech="NULL" GoodyHutUpgradeUnitClass="NULL" />
-			<Where Type="UNIT_SPANISH_CONQUISTADOR" />
+			<Where Type="UNIT_CONQUISTADOR_UNIQUE_UNIT" />
 		</Update>
 	</Units>
 	<Unit_ResourceQuantityRequirements>
-		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+		<Delete UnitType="UNIT_CONQUISTADOR_UNIQUE_UNIT" />
 	</Unit_ResourceQuantityRequirements>
 	<Unit_FreePromotions>
 		<Row>
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<UnitType>UNIT_CONQUISTADOR_UNIQUE_UNIT</UnitType>
 			<PromotionType>PROMOTION_CITY_PENALTY</PromotionType>
 		</Row>
 	</Unit_FreePromotions>
 	<Unit_ClassUpgrades>
-		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+		<Delete UnitType="UNIT_CONQUISTADOR_UNIQUE_UNIT" />
 	</Unit_ClassUpgrades>
 	<Language_en_US>
 		<Delete Tag="TXT_KEY_NO_ACTION_SETTLER_SIZE_LIMIT" />

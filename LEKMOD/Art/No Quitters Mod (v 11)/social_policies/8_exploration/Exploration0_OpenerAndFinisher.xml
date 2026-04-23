@@ -36,7 +36,7 @@
 	<Units>
 		<Update>
 			<Set PolicyType="POLICY_EXPLORATION" />
-			<Where Type="UNIT_SPANISH_CONQUISTADOR" />
+			<Where Type="UNIT_CONQUISTADOR_UNIQUE_UNIT" />
 		</Update>
 	</Units>
 	

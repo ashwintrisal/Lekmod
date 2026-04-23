@@ -38,7 +38,7 @@
 	<!-- Replace Conquistador for Spain with New Unique -->
 	<!-- PLAZA DE TOROS (Unique Building): Replaces Circus. Provides an additional +2 Culture and can also be constructed with an improved source of Cows. -->
 	<Civilization_UnitClassOverrides>
-		<Delete UnitType="UNIT_SPANISH_CONQUISTADOR" />
+		<Delete UnitType="UNIT_CONQUISTADOR_UNIQUE_UNIT" />
 	</Civilization_UnitClassOverrides>
 	<Buildings>
 		<Row>
