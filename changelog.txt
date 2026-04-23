@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CANNON CHANGES
+--------------
+CANNON (UNIT_CANNON):
+- Ranged strength: 20 → 21
+
 LANCER CHANGES
 --------------
 LANCER (UNIT_LANCER):

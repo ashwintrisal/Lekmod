@@ -292950,7 +292950,7 @@
 			<Strategy>TXT_KEY_UNIT_CANNON_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_CANNON</Help> 
 			<Combat>14</Combat> 
-			<RangedCombat>20</RangedCombat> 
+			<RangedCombat>21</RangedCombat> 
 			<Cost>185</Cost> 
 			<FaithCost>370</FaithCost> 
 			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled> 
