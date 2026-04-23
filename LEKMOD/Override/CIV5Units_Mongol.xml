@@ -4966,7 +4966,7 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 	
 	<Row Tag="TXT_KEY_TRAIT_BY_REASON">
 			<Text>
-				[ICON_BUILD_FISHING_BOATS] Fishing Boats and [COLOR_GREEN]Dry Docks[ENDCOLOR] instantly claim all surrounding Neutral Tiles. Receive a free [ICON_GREAT_ADMIRAL] Great Admiral at the [ICON_TECH_COMPASS] [COLOR_CYAN]Compass[ENDCOLOR] technology. Sword and Gunpowder units reduce nearby enemy Naval units' and Naval Melee units reduce nearby enemy Land units’ combat strength by 25%. 
+				[ICON_BUILD_FISHING_BOATS] Fishing Boats instantly claim all surrounding Neutral Tiles. Receive a free [ICON_GREAT_ADMIRAL] Great Admiral at the [ICON_TECH_COMPASS] [COLOR_CYAN]Compass[ENDCOLOR] technology. Sword and Gunpowder units reduce nearby enemy Naval units' and Naval Melee units reduce nearby enemy Land units’ combat strength by 25%. 
 			</Text>
 	</Row>
 	<Row Tag="TXT_KEY_TRAIT_BY_REASON_SHORT">
