@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+WORKER CHANGES
+--------------
+WORKER (UNIT_WORKER):
+- Can now upgrade to Archaeologist
+
 GREAT MUSICIAN / FESTIVAL CHANGES
 ----------------------------------
 FESTIVAL (IMPROVEMENT_CONCERT):

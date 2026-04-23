@@ -279744,8 +279744,12 @@
 	</Table> 
 	<Unit_ClassUpgrades>
 		<Delete />
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
+		<Row>
+			<UnitType>UNIT_WORKER</UnitType>
+			<UnitClassType>UNITCLASS_ARCHAEOLOGIST</UnitClassType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType>
 			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType> 
 		</Row>
 		<Row> 
