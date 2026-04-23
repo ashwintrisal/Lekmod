@@ -1,6 +1,12 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+SPEARMAN / PIKEMAN CHANGES
+--------------------------
+PROMOTION_ANTI_MOUNTED_I (Spearman, Pikeman, and UU replacements):
+- vs Mounted Melee: 50% → 33% (attack and defense)
+- vs Mounted Ranged: 50% flat → 33% defending / 66% attacking
+
 WORKER CHANGES
 --------------
 WORKER (UNIT_WORKER):

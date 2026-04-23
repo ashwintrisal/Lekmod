@@ -274767,10 +274767,10 @@
 			<UnitCombatType>UNITCOMBAT_ARMOR</UnitCombatType> 
 			<Modifier>25</Modifier> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType> 
-			<Modifier>50</Modifier>  
+		<Row>
+			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED</UnitCombatType>
+			<Modifier>33</Modifier>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_ROCKET_CROPS</PromotionType> 
@@ -274932,10 +274932,11 @@
 			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType> 
 			<Modifier>33</Modifier> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType> 
-			<Modifier>50</Modifier> 
+		<Row>
+			<PromotionType>PROMOTION_ANTI_MOUNTED_I</PromotionType>
+			<UnitCombatType>UNITCOMBAT_MOUNTED_RANGED</UnitCombatType>
+			<Attack>66</Attack>
+			<Defense>33</Defense>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_ANTI_MOUNTED_WEAK</PromotionType> 

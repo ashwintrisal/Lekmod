@@ -119458,9 +119458,9 @@ The ship has weather'd every rack; the prize we sought is won."
 				100% Bonus vs Mounted.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_I_HELP"> 
+		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_I_HELP">
 			<Text>
-				50% Bonus vs Mounted.
+				33% Bonus vs Mounted Melee. 33% Defense vs Mounted Ranged. 66% Attack vs Mounted Ranged.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ANTI_MOUNTED_WEAK_HELP"> 
