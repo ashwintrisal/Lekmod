@@ -145086,6 +145086,30 @@ The ship has weather'd every rack; the prize we sought is won."
 				Rival civilizations cannot see each other's demographics (your own statistics are still visible to you). Grants 3 [ICON_SPY] Spies. Your [ICON_SPY] Spies skip the surveillance phase and begin operating immediately upon arrival.
 			</Text>
 		</Replace>
+		<!-- Vanguard Corps -->
+		<Replace Tag="TXT_KEY_UNIT_VANGUARD_CORPS">
+			<Text>Vanguard Corps</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_VANGUARD_CORPS_HELP">
+			<Text>Unlocked by [COLOR_POSITIVE_TEXT]Railroad[ENDCOLOR]. Replaces the Settler. [COLOR_POSITIVE_TEXT]Does not consume population when trained.[ENDCOLOR] Founds cities with +4 [ICON_CITIZEN] Population, [COLOR_POSITIVE_TEXT]Walls[ENDCOLOR], [COLOR_POSITIVE_TEXT]Castle[ENDCOLOR], [COLOR_POSITIVE_TEXT]Barracks[ENDCOLOR], [COLOR_POSITIVE_TEXT]Workshop[ENDCOLOR], and [COLOR_POSITIVE_TEXT]Field Hospital[ENDCOLOR] (+4 [ICON_HAPPINESS_1]). Also claims 6 extra tiles and spawns a [COLOR_POSITIVE_TEXT]Worker[ENDCOLOR] on founding. Embark and disembark each cost 1 [ICON_MOVES] Movement.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_VANGUARD_CORPS_PEDIA">
+			<Text>The Vanguard Corps represents the organized military expedition that follows in the wake of industrial expansion, establishing fully equipped frontier cities overnight. Where earlier settlers arrived with little more than hope, the Vanguard Corps brings walls, craftsmen, soldiers, and surgeons — everything needed to hold new territory against the modern world.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_VANGUARD_CORPS_STRATEGY">
+			<Text>Use the Vanguard Corps to found late-game cities that hit the ground running. It does not consume population, making expansion cheap. The founded city begins with significant infrastructure, happiness, and a free Worker. Plan around the Railroad tech requirement.</Text>
+		</Replace>
+		<!-- Field Hospital building (granted by Vanguard Corps) -->
+		<Replace Tag="TXT_KEY_BUILDING_FIELD_HOSPITAL">
+			<Text>Field Hospital</Text>
+		</Replace>
+		<!-- Embark Flat Cost promotion -->
+		<Replace Tag="TXT_KEY_PROMOTION_EMBARK_FLAT_COST">
+			<Text>Swift Embarkation</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_EMBARK_FLAT_COST_HELP">
+			<Text>Embarking and disembarking each cost only 1 [ICON_MOVES] Movement instead of all remaining movement.</Text>
+		</Replace>
 	</Language_en_US>
 	<Language_de_DE>
 	</Language_de_DE>

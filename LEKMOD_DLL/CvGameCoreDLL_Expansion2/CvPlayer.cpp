@@ -9021,6 +9021,62 @@ void CvPlayer::found(int iX, int iY, UnitTypes eSettlerUnit)
 	if(eSettlerUnit != NO_UNIT)
 	{
 		pCity->SetSettlerUnit(eSettlerUnit);
+
+		CvUnitEntry* pkSettlerInfo = GC.getUnitInfo(eSettlerUnit);
+		if(pkSettlerInfo)
+		{
+#ifdef LEKMOD_CUSTOM_SETTLERS
+			// Apply population bonus to the newly founded city
+			if(pkSettlerInfo->GetFoundedCityPopChange() != 0)
+			{
+				pCity->changePopulation(pkSettlerInfo->GetFoundedCityPopChange());
+			}
+#endif
+#ifdef LEKMOD_VANGUARD_CORPS
+			// Vanguard Corps founding effects
+			UnitClassTypes eVanguardClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_VANGUARD_CORPS", true);
+			if(eVanguardClass != NO_UNITCLASS && pkSettlerInfo->GetUnitClassType() == eVanguardClass)
+			{
+				// Free buildings: Wall, Castle, Barracks, Workshop, Field Hospital
+				const char* aFreeBuildings[] = {
+					"BUILDINGCLASS_WALLS", "BUILDINGCLASS_CASTLE",
+					"BUILDINGCLASS_BARRACKS", "BUILDINGCLASS_WORKSHOP",
+					"BUILDINGCLASS_FIELD_HOSPITAL"
+				};
+				for(int iBldg = 0; iBldg < 5; iBldg++)
+				{
+					BuildingClassTypes eBuildingClass = (BuildingClassTypes)GC.getInfoTypeForString(aFreeBuildings[iBldg], true);
+					if(eBuildingClass != NO_BUILDINGCLASS)
+					{
+						BuildingTypes eBuilding = (BuildingTypes)getCivilizationInfo().getCivilizationBuildings(eBuildingClass);
+						if(eBuilding != NO_BUILDING)
+						{
+							pCity->GetCityBuildings()->SetNumRealBuilding(eBuilding, 1);
+						}
+					}
+				}
+				// Claim 6 extra tiles
+				for(int iTile = 0; iTile < 6; iTile++)
+				{
+					CvPlot* pPlotToAcquire = pCity->GetNextBuyablePlot();
+					if(pPlotToAcquire)
+					{
+						pCity->DoAcquirePlot(pPlotToAcquire->getX(), pPlotToAcquire->getY());
+					}
+				}
+				// Spawn a Worker
+				UnitClassTypes eWorkerClass = (UnitClassTypes)GC.getInfoTypeForString("UNITCLASS_WORKER", true);
+				if(eWorkerClass != NO_UNITCLASS)
+				{
+					UnitTypes eWorker = (UnitTypes)getCivilizationInfo().getCivilizationUnits(eWorkerClass);
+					if(eWorker != NO_UNIT)
+					{
+						initUnit(eWorker, pCity->getX(), pCity->getY());
+					}
+				}
+			}
+#endif
+		}
 	}
 #endif
 #if defined(TRAITIFY)

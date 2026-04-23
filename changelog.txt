@@ -1,6 +1,47 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CONQUISTADOR REWORK + VANGUARD CORPS
+--------------------------------------
+CONQUISTADOR (UNIT_SPANISH_CONQUISTADOR — UU version):
+- Now a shared UU for Spain, Portugal, Netherlands, France, Belgium
+- Unlocked by: Civil Service tech (PrereqTech=TECH_CIVIL_SERVICE)
+- Combat: 16 → 17
+- Cost: 32 → 104 production (standard; ~70 at quick)
+  NOTE: Production cost discrepancy — XML previously listed 32 (would be ~21 at quick),
+  but this seemed wrong vs. in-game observations (~60 quick gold purchase / ~3x). Verify
+  in-game production cost at quick speed after this change.
+- Requires: 2 Horse, 1 Iron
+- Founded city gets +2 Population
+- Removed free promotion: PROMOTION_EXTRA_SIGHT_II
+- Added free promotion: PROMOTION_EMBARK_FLAT_COST (embark/disembark cost 1 move each)
+- Obsoletes at Railroad; upgrades to Vanguard Corps
+
+CONQUISTADOR (UNIT_CONQUISTADOR — policy version):
+- NEW. Identical to the UU version except: accessible to all civs via Exploration policy opener,
+  no PrereqTech, obsoletes at Railroad with tooltip noting the era limit
+
+SETTLER:
+- Obsoletes at Railroad; upgrades to Vanguard Corps
+
+NEW UNIT: VANGUARD CORPS (UNIT_VANGUARD_CORPS, UNITCLASS_VANGUARD_CORPS)
+- Unlocked by: Railroad
+- Cost: 420 production (standard; ~281 at quick)
+- Does not consume population (Food=false)
+- Moves: 3; free promotion: PROMOTION_EMBARK_FLAT_COST
+- Founded city gets: +4 Population, Walls, Castle, Barracks, Workshop, Field Hospital (+4 happiness)
+- Also claims 6 extra tiles and spawns a Worker on founding
+- Visual: reuses Great General Late model (ART_DEF_UNIT_GENERAL_LATE)
+
+NEW BUILDING: FIELD HOSPITAL (BUILDING_FIELD_HOSPITAL)
+- Dummy building granted automatically by Vanguard Corps on city founding
+- +4 Happiness; Cost=-1 (cannot be built); NeverCapture=true; NukeImmune=true
+
+NEW PROMOTION: SWIFT EMBARKATION (PROMOTION_EMBARK_FLAT_COST)
+- Embarking and disembarking each cost 1 move instead of all remaining movement
+- Cannot be chosen (granted automatically)
+
+
 TOWER OF BELÉM (rework)
 ------------------------
 - Removed: landmass yield bonuses

@@ -235,6 +235,7 @@ bool CvUnitEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility& k
 	m_iPopulationReq = kResults.GetInt("PopulationReq");
 	m_iSettlerCostModifier = kResults.GetInt("SettlerCostModifier");
 	m_iLocalPopChange = kResults.GetInt("LocalPopChange");
+	m_iFoundedCityPopChange = kResults.GetInt("FoundedCityPopChange");
 #endif
 	m_iCultureBombRadius = kResults.GetInt("CultureBombRadius");
 	m_iGoldenAgeTurns = kResults.GetInt("GoldenAgeTurns");
@@ -938,6 +939,12 @@ int CvUnitEntry::GetSettlerCostModifier() const
 int CvUnitEntry::GetLocalPopChange() const
 {
 	return m_iLocalPopChange;
+}
+
+/// Population change applied to the newly founded city when this unit settles
+int CvUnitEntry::GetFoundedCityPopChange() const
+{
+	return m_iFoundedCityPopChange;
 }
 #endif
 

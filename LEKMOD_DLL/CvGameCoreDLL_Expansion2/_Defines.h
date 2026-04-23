@@ -1310,6 +1310,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Great Firewall: evicts foreign spies on build and blocks future placement
 #define LEKMOD_GREAT_FIREWALL_EVICT
 
+// Vanguard Corps: founding effects (free buildings, worker spawn, extra tile claim)
+#define LEKMOD_VANGUARD_CORPS
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

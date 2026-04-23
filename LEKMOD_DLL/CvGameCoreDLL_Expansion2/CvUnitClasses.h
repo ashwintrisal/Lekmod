@@ -116,6 +116,7 @@ public:
 	int GetPopulationReq() const;
 	int GetSettlerCostModifier() const;
 	int GetLocalPopChange() const;
+	int GetFoundedCityPopChange() const;
 #endif
 	int GetCultureBombRadius() const;
 	int GetCultureBombRadiusNeutral() const;
@@ -263,6 +264,7 @@ private:
 	int m_iPopulationReq;
 	int m_iSettlerCostModifier;
 	int m_iLocalPopChange;
+	int m_iFoundedCityPopChange;
 #endif
 	int m_iCultureBombRadius;
 	int m_iCultureBombRadiusNeutral;

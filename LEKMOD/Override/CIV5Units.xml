@@ -36947,6 +36947,15 @@
 			<MaxTeamInstances>-1</MaxTeamInstances>
 			<MaxPlayerInstances>-1</MaxPlayerInstances>
 		</Row>
+		<!-- Field Hospital: dummy building spawned by Vanguard Corps; +4 happiness -->
+		<Row>
+			<ID>186</ID>
+			<Type>BUILDINGCLASS_FIELD_HOSPITAL</Type>
+			<DefaultBuilding>BUILDING_FIELD_HOSPITAL</DefaultBuilding>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+		</Row>
 	</BuildingClasses>
 
 	<Table name="Building_AreaYieldModifiers">
@@ -50267,6 +50276,21 @@
 			<ArtDefineTag>ART_DEF_BUILDING_LABORATORY</ArtDefineTag>
 			<PortraitIndex>0</PortraitIndex>
 			<IconAtlas>LEKMOD_URANIUM_MAPPING_ATLAS</IconAtlas>
+		</Row>
+		<!-- Field Hospital: dummy building granted by Vanguard Corps on founding; +4 happiness, cannot be captured or destroyed -->
+		<Row>
+			<ID>276</ID>
+			<Type>BUILDING_FIELD_HOSPITAL</Type>
+			<BuildingClass>BUILDINGCLASS_FIELD_HOSPITAL</BuildingClass>
+			<Description>TXT_KEY_BUILDING_FIELD_HOSPITAL</Description>
+			<NeverCapture>true</NeverCapture>
+			<NukeImmune>true</NukeImmune>
+			<Cost>-1</Cost>
+			<HurryCostModifier>-1</HurryCostModifier>
+			<Happiness>4</Happiness>
+			<ArtDefineTag>ART_DEF_BUILDING_HOSPITAL</ArtDefineTag>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>BW_ATLAS_1</IconAtlas>
 		</Row>
 		<!-- Ministry of Truth: world wonder; disables demographics for others, grants 3 spies, wonder owner spies skip surveillance -->
 		<Row>
@@ -77521,6 +77545,12 @@
 			<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 		</Row>
+		<!-- Conquistador UU for colonial civilizations: unlocked by Civil Service instead of Exploration policy -->
+		<Row><CivilizationType>CIVILIZATION_SPAIN</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_PORTUGAL</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_NETHERLANDS</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_FRANCE</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
+		<Row><CivilizationType>CIVILIZATION_BELGIUM</CivilizationType><UnitClassType>UNITCLASS_CONQUISTADOR</UnitClassType><UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType></Row>
 		<!-- Nelayan replaces Skiff for maritime civilizations -->
 		<Row><CivilizationType>CIVILIZATION_BRUNEI</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
 		<Row><CivilizationType>CIVILIZATION_POLYNESIA</CivilizationType><UnitClassType>UNITCLASS_SKIFF</UnitClassType><UnitType>UNIT_NELAYAN</UnitType></Row>
@@ -230059,13 +230089,13 @@
 		</Row>
 		<Row> 
 			<ID>97</ID> 
-			<Type>UNITCLASS_CONQUISTADOR</Type> 
-			<Description>TXT_KEY_UNIT_CONQUISTADOR</Description> 
-			<MaxGlobalInstances>-1</MaxGlobalInstances> 
-			<MaxTeamInstances>-1</MaxTeamInstances> 
-			<MaxPlayerInstances>-1</MaxPlayerInstances> 
-			<InstanceCostModifier>0</InstanceCostModifier> 
-			<DefaultUnit>UNIT_SPANISH_CONQUISTADOR</DefaultUnit> 
+			<Type>UNITCLASS_CONQUISTADOR</Type>
+			<Description>TXT_KEY_UNIT_CONQUISTADOR</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_CONQUISTADOR</DefaultUnit> 
 		</Row>
 		<Row> 
 			<ID>98</ID> 
@@ -230186,6 +230216,17 @@
 			<MaxPlayerInstances>-1</MaxPlayerInstances>
 			<InstanceCostModifier>0</InstanceCostModifier>
 			<DefaultUnit>UNIT_NELAYAN</DefaultUnit>
+		</Row>
+		<!-- Vanguard Corps: late-game settler UU upgraded to from Conquistador and Settler -->
+		<Row>
+			<ID>115</ID>
+			<Type>UNITCLASS_VANGUARD_CORPS</Type>
+			<Description>TXT_KEY_UNIT_VANGUARD_CORPS</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_VANGUARD_CORPS</DefaultUnit>
 		</Row>
 	</UnitClasses>
 
@@ -273005,7 +273046,28 @@
 			<ShiftDownAlt>false</ShiftDownAlt> 
 			<CtrlDown>false</CtrlDown> 
 			<CtrlDownAlt>false</CtrlDownAlt> 
-			<Sound>AS2D_IF_LEVELUP</Sound> 
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+		</Row>
+		<!-- Embark/disembark each cost 1 move instead of all movement -->
+		<Row>
+			<Type>PROMOTION_EMBARK_FLAT_COST</Type>
+			<Description>TXT_KEY_PROMOTION_EMBARK_FLAT_COST</Description>
+			<Help>TXT_KEY_PROMOTION_EMBARK_FLAT_COST_HELP</Help>
+			<PortraitIndex>58</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<HotKeyPriority>0</HotKeyPriority>
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt>
+			<OrderPriority>0</OrderPriority>
+			<AltDown>false</AltDown>
+			<AltDownAlt>false</AltDownAlt>
+			<ShiftDown>false</ShiftDown>
+			<ShiftDownAlt>false</ShiftDownAlt>
+			<CtrlDown>false</CtrlDown>
+			<CtrlDownAlt>false</CtrlDownAlt>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<EmbarkFlatCost>true</EmbarkFlatCost>
+			<DisembarkFlatCost>true</DisembarkFlatCost>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
 	</UnitPromotions>
@@ -283760,13 +283822,33 @@
 			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
-			<PromotionType>PROMOTION_EXTRA_SIGHT_II</PromotionType> 
+		<Row>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType> 
-			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType> 
+		<Row>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_EMBARK_FLAT_COST</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_NO_DEFENSIVE_BONUSES</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<PromotionType>PROMOTION_EMBARK_FLAT_COST</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_VANGUARD_CORPS</UnitType>
+			<PromotionType>PROMOTION_EMBARK_FLAT_COST</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_PROPHET</UnitType> 
@@ -285318,10 +285400,30 @@
 			<ResourceType>RESOURCE_ALUMINUM</ResourceType> 
 			<Cost>1</Cost> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_IRONCLAD</UnitType> 
-			<ResourceType>RESOURCE_COAL</ResourceType> 
-			<Cost>1</Cost> 
+		<Row>
+			<UnitType>UNIT_IRONCLAD</UnitType>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<Cost>1</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<Cost>2</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_SPANISH_CONQUISTADOR</UnitType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Cost>1</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<ResourceType>RESOURCE_HORSE</ResourceType>
+			<Cost>2</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_CONQUISTADOR</UnitType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Cost>1</Cost>
 		</Row>
 	</Unit_ResourceQuantityRequirements> 
 
@@ -288370,6 +288472,7 @@
 		<Column name="PopulationReq" type="integer"  default="0"/>
 		<Column name="SettlerCostModifier" type="integer"  default="0"/>
 		<Column name="LocalPopChange" type="integer"  default="0"/>
+		<Column name="FoundedCityPopChange" type="integer"  default="0"/>
 	</Table> 
 	<Units>
 		<Delete />
@@ -288444,6 +288547,8 @@
 			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS> 
 			<Trade>false</Trade> 
 			<NumExoticGoods>0</NumExoticGoods> 
+				<ObsoleteTech>TECH_RAILROAD</ObsoleteTech>
+				<UpgradeUnitClass>UNITCLASS_VANGUARD_CORPS</UpgradeUnitClass>
 			<RangedCombatLimit>0</RangedCombatLimit> 
 			<XPValueAttack>0</XPValueAttack> 
 			<XPValueDefense>0</XPValueDefense> 
@@ -296591,9 +296696,9 @@
 			<Civilopedia>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY</Strategy> 
 			<Help>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP</Help> 
-			<Combat>16</Combat> 
-			<RangedCombat>0</RangedCombat> 
-			<Cost>32</Cost> 
+			<Combat>17</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>104</Cost> 
 			<FaithCost>270</FaithCost> 
 			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
@@ -296652,7 +296757,10 @@
 			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS> 
 			<Trade>false</Trade> 
 			<NumExoticGoods>0</NumExoticGoods> 
-			<PolicyType>POLICY_EXPLORATION</PolicyType> 
+			<PrereqTech>TECH_CIVIL_SERVICE</PrereqTech>
+			<ObsoleteTech>TECH_RAILROAD</ObsoleteTech>
+			<UpgradeUnitClass>UNITCLASS_VANGUARD_CORPS</UpgradeUnitClass>
+			<FoundedCityPopChange>2</FoundedCityPopChange>
 			<RangedCombatLimit>0</RangedCombatLimit> 
 			<XPValueAttack>3</XPValueAttack> 
 			<XPValueDefense>3</XPValueDefense> 
@@ -308857,6 +308965,186 @@
 			<UnitFlagIconOffset>2</UnitFlagIconOffset>
 			<PortraitIndex>4</PortraitIndex>
 			<IconAtlas>TECH_ATLAS_DLC_03</IconAtlas>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+		<!-- Conquistador (policy version): unlocked by Exploration policy for all civs -->
+		<Row>
+			<Type>UNIT_CONQUISTADOR</Type>
+			<Description>TXT_KEY_UNIT_SPANISH_CONQUISTADOR</Description>
+			<Civilopedia>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_STRATEGY</Strategy>
+			<Help>TXT_KEY_CIV5_SPAIN_CONQUISTADOR_HELP</Help>
+			<Combat>17</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>104</Cost>
+			<FaithCost>270</FaithCost>
+			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>4</Moves>
+			<Immobile>false</Immobile>
+			<Range>0</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_CONQUISTADOR</Class>
+			<CombatClass>UNITCOMBAT_MOUNTED</CombatClass>
+			<Domain>DOMAIN_LAND</Domain>
+			<DefaultUnitAI>UNITAI_ATTACK</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<Found>true</Found>
+			<FoundAbroad>true</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>false</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<HurryCostModifier>0</HurryCostModifier>
+			<AdvancedStartCost>25</AdvancedStartCost>
+			<MinAreaSize>-1</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>0</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>100</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<PolicyType>POLICY_EXPLORATION</PolicyType>
+			<ObsoleteTech>TECH_RAILROAD</ObsoleteTech>
+			<UpgradeUnitClass>UNITCLASS_VANGUARD_CORPS</UpgradeUnitClass>
+			<FoundedCityPopChange>2</FoundedCityPopChange>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>3</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_U_SPANISH_CONQUISTADOR</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>BIPED</MoveRate>
+			<UnitFlagIconOffset>1</UnitFlagIconOffset>
+			<PortraitIndex>1</PortraitIndex>
+			<IconAtlas>DLC02_UNIT_ATLAS</IconAtlas>
+			<UnitFlagAtlas>DLC02_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+		<!-- Vanguard Corps: late-game settler that founds cities with infrastructure -->
+		<Row>
+			<Type>UNIT_VANGUARD_CORPS</Type>
+			<Description>TXT_KEY_UNIT_VANGUARD_CORPS</Description>
+			<Civilopedia>TXT_KEY_UNIT_VANGUARD_CORPS_PEDIA</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_VANGUARD_CORPS_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_VANGUARD_CORPS_HELP</Help>
+			<Combat>0</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>420</Cost>
+			<FaithCost>0</FaithCost>
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>3</Moves>
+			<Immobile>false</Immobile>
+			<Range>0</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_VANGUARD_CORPS</Class>
+			<Domain>DOMAIN_LAND</Domain>
+			<CivilianAttackPriority>CIVILIAN_ATTACK_PRIORITY_HIGH_EARLY_GAME_ONLY</CivilianAttackPriority>
+			<DefaultUnitAI>UNITAI_SETTLE</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>false</MilitarySupport>
+			<MilitaryProduction>false</MilitaryProduction>
+			<Pillage>false</Pillage>
+			<Found>true</Found>
+			<FoundAbroad>true</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>false</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<HurryCostModifier>0</HurryCostModifier>
+			<AdvancedStartCost>-1</AdvancedStartCost>
+			<MinAreaSize>-1</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>0</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>0</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<PrereqTech>TECH_RAILROAD</PrereqTech>
+			<FoundedCityPopChange>4</FoundedCityPopChange>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>0</XPValueAttack>
+			<XPValueDefense>0</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_GENERAL_LATE</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>GREAT_PERSON</MoveRate>
+			<UnitFlagIconOffset>90</UnitFlagIconOffset>
+			<PortraitIndex>48</PortraitIndex>
+			<IconAtlas>UNIT_ATLAS_2</IconAtlas>
 			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
 		</Row>
 	</Units>
