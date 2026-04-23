@@ -1,6 +1,18 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GREAT GENERAL / CITADEL CHANGES
+---------------------------------
+GREAT GENERAL:
+- UnitArtInfoEraVariation: true → false (always shows the early general model; easier to revert if needed)
+
+CITADEL:
+- Yields +3 [ICON_CULTURE] Culture
+- Applies Zone of Control to naval units: enemy naval units must stop when moving
+  adjacent to a tile that is adjacent to a hostile Citadel (same ZoC mechanic as enemy cities)
+  [DLL: LEKMOD_CITADEL_NAVAL_ZOC in CvUnitMovement::IsSlowedByZOC]
+
+
 CONQUISTADOR REWORK + VANGUARD CORPS
 --------------------------------------
 CONQUISTADOR (UNIT_SPANISH_CONQUISTADOR — UU version):

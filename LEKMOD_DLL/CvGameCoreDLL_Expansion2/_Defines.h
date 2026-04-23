@@ -1313,6 +1313,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Vanguard Corps: founding effects (free buildings, worker spawn, extra tile claim)
 #define LEKMOD_VANGUARD_CORPS
 
+// Citadel applies Zone of Control to naval units (enemy naval units must stop when moving adjacent to an enemy Citadel)
+#define LEKMOD_CITADEL_NAVAL_ZOC
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

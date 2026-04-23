@@ -368,6 +368,29 @@ bool CvUnitMovement::IsSlowedByZOC(const CvUnit* pUnit, const CvPlot* pFromPlot,
 						}
 					}
 				}
+#ifdef LEKMOD_CITADEL_NAVAL_ZOC
+				// Enemy Citadel applies ZoC to naval units
+				if (unit_domain_type == DOMAIN_SEA)
+				{
+					ImprovementTypes eCitadel = (ImprovementTypes)GC.getInfoTypeForString("IMPROVEMENT_CITADEL", true);
+					if (eCitadel != NO_IMPROVEMENT && pAdjPlot->getImprovementType() == eCitadel
+						&& (pAdjPlot->isRevealed(pUnit->getTeam()) || pUnit->plot() == pFromPlot))
+					{
+						PlayerTypes ePlotOwner = pAdjPlot->getOwner();
+						if (ePlotOwner != NO_PLAYER && kUnitTeam.isAtWar(GET_PLAYER(ePlotOwner).getTeam()))
+						{
+							for (int iDir = 0; iDir < NUM_DIRECTION_TYPES; iDir++)
+							{
+								CvPlot* pCitadelAdjPlot = plotDirection(pAdjPlot->getX(), pAdjPlot->getY(), (DirectionTypes)iDir);
+								if (pCitadelAdjPlot && pCitadelAdjPlot->getX() == iToPlotX && pCitadelAdjPlot->getY() == iToPlotY)
+								{
+									return true;
+								}
+							}
+						}
+					}
+				}
+#endif
 				if (!pAdjPlot->isVisible(pUnit->getTeam()) && pUnit->plot() != pFromPlot)
 					continue;
 
