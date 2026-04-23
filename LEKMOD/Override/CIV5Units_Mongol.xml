@@ -76301,9 +76301,14 @@ The ship has weather'd every rack; the prize we sought is won."
 				+4 [ICON_GOLD] Gold.[NEWLINE][NEWLINE]Strategic resources on this tile yield 50% more.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_IMPROVEMENT_DOCK"> 
+		<Replace Tag="TXT_KEY_IMPROVEMENT_DOCK">
 			<Text>
 				Drydock
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_IMPROVEMENT_DOCK_HELP">
+			<Text>
+				+4 [ICON_PRODUCTION] Production. 25% [ICON_STRENGTH] Defense.[NEWLINE][NEWLINE]Claims adjacent tiles. May be built 1 tile outside friendly borders (requires coast adjacency).
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_IMPROVEMENT_ENCAMPMENT"> 
@@ -100941,9 +100946,9 @@ The ship has weather'd every rack; the prize we sought is won."
 				Repair Fleet
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_MISSION_REPAIR_FLEET_HELP"> 
+		<Replace Tag="TXT_KEY_MISSION_REPAIR_FLEET_HELP">
 			<Text>
-				This order will consume the Great Admiral and heal all of your naval units and embarked units in this tile and all adjacent tiles.
+				This order will consume the Great Admiral and heal all of your naval units and embarked units in this tile and all adjacent tiles for up to 25 [ICON_DAMAGE] HP.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_MISSION_ROUTE_TO"> 

@@ -9936,7 +9936,11 @@ bool CvUnit::repairFleet()
 		CvUnit *pUnit = pPlot->getUnitByIndex(iUnitLoop);
 		if (pUnit->getOwner() == getOwner() && (pUnit->isEmbarked() || pUnit->getDomainType() == DOMAIN_SEA))
 		{
+#ifdef LEKMOD_ADMIRAL_DRYDOCK_HEAL_CAP
+			pUnit->changeDamage(-25);
+#else
 			pUnit->changeDamage(-pUnit->getDamage());
+#endif
 		}
 	}
 
@@ -9948,11 +9952,15 @@ bool CvUnit::repairFleet()
 		if(pAdjacentPlot != NULL)
 		{
 			for (iUnitLoop = 0; iUnitLoop < pAdjacentPlot->getNumUnits(); iUnitLoop++)
-			{	
+			{
 				CvUnit *pUnit = pAdjacentPlot->getUnitByIndex(iUnitLoop);
 				if (pUnit->getOwner() == getOwner() && (pUnit->isEmbarked() || pUnit->getDomainType() == DOMAIN_SEA))
 				{
+#ifdef LEKMOD_ADMIRAL_DRYDOCK_HEAL_CAP
+					pUnit->changeDamage(-25);
+#else
 					pUnit->changeDamage(-pUnit->getDamage());
+#endif
 				}
 			}
 		}

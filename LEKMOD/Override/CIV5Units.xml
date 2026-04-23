@@ -140697,15 +140697,15 @@
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<Yield>1</Yield> 
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_DOCK</ImprovementType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>5</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_DOCK</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>4</Yield>
 		</Row>
-		<Row> 
-			<ImprovementType>IMPROVEMENT_CHILE_DOCK</ImprovementType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<Yield>5</Yield> 
+		<Row>
+			<ImprovementType>IMPROVEMENT_CHILE_DOCK</ImprovementType>
+			<YieldType>YIELD_PRODUCTION</YieldType>
+			<Yield>4</Yield>
 		</Row>
 		<Row>
 			<ImprovementType>IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE</ImprovementType>
@@ -142735,10 +142735,11 @@
 		</Row>
 		<Row> 
 			<ID>36</ID> 
-			<Type>IMPROVEMENT_DOCK</Type> 
-			<Description>TXT_KEY_IMPROVEMENT_DOCK</Description> 
-			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_MANUFACTORY_TEXT</Civilopedia> 
-			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANUFACTORY</ArtDefineTag> 
+			<Type>IMPROVEMENT_DOCK</Type>
+			<Description>TXT_KEY_IMPROVEMENT_DOCK</Description>
+			<Civilopedia>TXT_KEY_CIV5_IMPROVEMENTS_MANUFACTORY_TEXT</Civilopedia>
+			<Help>TXT_KEY_IMPROVEMENT_DOCK_HELP</Help>
+			<ArtDefineTag>ART_DEF_IMPROVEMENT_MANUFACTORY</ArtDefineTag>
 			<SpecificCivRequired>false</SpecificCivRequired> 
 			<HillsMakesValid>false</HillsMakesValid> 
 			<FreshWaterMakesValid>false</FreshWaterMakesValid> 
@@ -142759,36 +142760,36 @@
 			<Goody>false</Goody> 
 			<Permanent>false</Permanent> 
 			<OutsideBorders>false</OutsideBorders> 
-			<InAdjacentFriendly>false</InAdjacentFriendly> 
-			<IgnoreOwnership>false</IgnoreOwnership> 
-			<OnlyCityStateTerritory>false</OnlyCityStateTerritory> 
-			<GraphicalOnly>false</GraphicalOnly> 
-			<CreatedByGreatPerson>true</CreatedByGreatPerson> 
-			<NoTwoAdjacent>false</NoTwoAdjacent> 
-			<AdjacentLuxury>false</AdjacentLuxury> 
-			<AllowsWalkWater>false</AllowsWalkWater> 
-			<CultureAdjacentSameType>0</CultureAdjacentSameType> 
-			<TilesPerGoody>0</TilesPerGoody> 
-			<GoodyRange>0</GoodyRange> 
-			<FeatureGrowth>0</FeatureGrowth> 
-			<UpgradeTime>0</UpgradeTime> 
-			<RiverSideUpgradeMod>0</RiverSideUpgradeMod> 
-			<CoastalLandUpgradeMod>0</CoastalLandUpgradeMod> 
-			<HillsUpgradeMod>0</HillsUpgradeMod> 
-			<FreshWaterUpgradeMod>0</FreshWaterUpgradeMod> 
-			<DefenseModifier>0</DefenseModifier> 
-			<NearbyEnemyDamage>0</NearbyEnemyDamage> 
-			<PillageGold>20</PillageGold> 
-			<ResourceExtractionMod>0</ResourceExtractionMod> 
-			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor> 
-			<GoldMaintenance>0</GoldMaintenance> 
-			<CultureBombRadius>0</CultureBombRadius> 
-			<RequiresXAdjacentLand>1</RequiresXAdjacentLand> 
-			<PortraitIndex>37</PortraitIndex> 
-			<IconAtlas>TERRAIN_ATLAS</IconAtlas> 
+			<InAdjacentFriendly>true</InAdjacentFriendly>
+			<IgnoreOwnership>false</IgnoreOwnership>
+			<OnlyCityStateTerritory>false</OnlyCityStateTerritory>
+			<GraphicalOnly>false</GraphicalOnly>
+			<CreatedByGreatPerson>true</CreatedByGreatPerson>
+			<NoTwoAdjacent>false</NoTwoAdjacent>
+			<AdjacentLuxury>false</AdjacentLuxury>
+			<AllowsWalkWater>false</AllowsWalkWater>
+			<CultureAdjacentSameType>0</CultureAdjacentSameType>
+			<TilesPerGoody>0</TilesPerGoody>
+			<GoodyRange>0</GoodyRange>
+			<FeatureGrowth>0</FeatureGrowth>
+			<UpgradeTime>0</UpgradeTime>
+			<RiverSideUpgradeMod>0</RiverSideUpgradeMod>
+			<CoastalLandUpgradeMod>0</CoastalLandUpgradeMod>
+			<HillsUpgradeMod>0</HillsUpgradeMod>
+			<FreshWaterUpgradeMod>0</FreshWaterUpgradeMod>
+			<DefenseModifier>25</DefenseModifier>
+			<NearbyEnemyDamage>0</NearbyEnemyDamage>
+			<PillageGold>20</PillageGold>
+			<ResourceExtractionMod>0</ResourceExtractionMod>
+			<LuxuryCopiesSiphonedFromMinor>0</LuxuryCopiesSiphonedFromMinor>
+			<GoldMaintenance>0</GoldMaintenance>
+			<CultureBombRadius>1</CultureBombRadius>
+			<RequiresXAdjacentLand>1</RequiresXAdjacentLand>
+			<PortraitIndex>37</PortraitIndex>
+			<IconAtlas>TERRAIN_ATLAS</IconAtlas>
 		</Row>
-		<Row> 
-			<ID>37</ID> 
+		<Row>
+			<ID>37</ID>
 			<Type>IMPROVEMENT_MC_SCOTTISH_CLAN_CASTLE</Type>
 			<Description>TXT_KEY_MC_SCOTTISH_CLAN_CASTLE</Description>
 			<Civilopedia>TXT_KEY_CIVILOPEDIA_MC_SCOTTISH_CLAN_CASTLE_PEDIA</Civilopedia>
@@ -279506,10 +279507,6 @@
 		<Row> 
 			<UnitType>UNIT_GREAT_ADMIRAL</UnitType> 
 			<BuildType>BUILD_DOCK</BuildType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_GREAT_ADMIRAL</UnitType> 
-			<BuildType>BUILD_CHILE_DOCK</BuildType> 
 		</Row>
 		<Row>
 			<UnitType>UNIT_ARGENTINA_KNIGHT</UnitType>

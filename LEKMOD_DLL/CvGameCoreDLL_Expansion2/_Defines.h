@@ -1319,6 +1319,9 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Custom House: strategic tiles with a Customs House yield 50% more strategic resources
 #define LEKMOD_CUSTOMS_HOUSE_STRATEGIC_BONUS
 
+// Admiral Repair Fleet: heals naval units for up to 25 HP instead of full heal
+#define LEKMOD_ADMIRAL_DRYDOCK_HEAL_CAP
+
 // Generic define for temp changes
 #define CLEAN_UP
 // ------------------------------------------- Loup's Changes End -------------------------------------------------- \\

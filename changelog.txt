@@ -1,6 +1,17 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+GREAT ADMIRAL / DRYDOCK CHANGES
+---------------------------------
+DRYDOCK (IMPROVEMENT_DOCK):
+- Production: 5 → 4
+- Defense: 0% → 25%
+- Claims adjacent tiles (like Citadel): CultureBombRadius=1
+- Can now be built 1 tile outside friendly borders: InAdjacentFriendly=true
+- Repair Fleet action: heals up to 25 HP (was: full heal)
+  [DLL: LEKMOD_ADMIRAL_DRYDOCK_HEAL_CAP in CvUnit::repairFleet]
+- Chile no longer has a unique Drydock; uses the standard one
+
 GREAT MERCHANT / CUSTOMS HOUSE CHANGES
 ----------------------------------------
 CUSTOMS HOUSE:
