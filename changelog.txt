@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+LANCER CHANGES
+--------------
+LANCER (UNIT_LANCER):
+- Combat strength: 25 → 26
+
 TREBUCHET CHANGES
 -----------------
 TREBUCHET (UNIT_TREBUCHET):

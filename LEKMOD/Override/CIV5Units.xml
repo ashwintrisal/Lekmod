@@ -292769,7 +292769,7 @@
 			<Civilopedia>TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_LANCER_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_UNIT_LANCER_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_LANCER</Help> 
-			<Combat>25</Combat> 
+			<Combat>26</Combat> 
 			<RangedCombat>0</RangedCombat> 
 			<Cost>185</Cost> 
 			<FaithCost>370</FaithCost> 
