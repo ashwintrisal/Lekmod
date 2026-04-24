@@ -1,6 +1,18 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+PRIVATEER CHANGES
+-----------------
+PRIVATEER (UNIT_PRIVATEER):
+- Combat strength: 27 → 24
+- Production cost: 150 → 125 XML (84 at quick speed, -17%)
+- Removed: heal on kill (PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY)
+- Starts with: Marauder
+Also applies to UU replacements:
+- Dutch Sea Beggar: 27→24 str, 150→125 cost
+- Qasimi Raider: 27→24 str, 120→100 cost
+- Tunisia Privateer: 29→26 str, 180→150 cost
+
 CARAVEL CHANGES
 ---------------
 CARAVEL (UNIT_CARAVEL):

@@ -283827,6 +283827,10 @@
 			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType> 
 			<PromotionType>PROMOTION_COASTAL_RAIDER_1</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType>
+			<PromotionType>PROMOTION_MARAUDER</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType> 
 			<PromotionType>PROMOTION_SUPPLY</PromotionType> 
@@ -283996,25 +284000,21 @@
 			<UnitType>UNIT_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_COASTAL_RAIDER_1</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_PRIVATEER</UnitType> 
-			<PromotionType>PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY</PromotionType> 
+		<Row>
+			<UnitType>UNIT_PRIVATEER</UnitType>
+			<PromotionType>PROMOTION_MARAUDER</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_QASIMI_RAIDER</UnitType> 
 			<PromotionType>PROMOTION_COASTAL_RAIDER_1</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_QASIMI_RAIDER</UnitType>
+			<PromotionType>PROMOTION_MARAUDER</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_QASIMI_RAIDER</UnitType> 
 			<PromotionType>PROMOTION_COASTAL_RAIDER_DOUBLE</PromotionType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_QASIMI_RAIDER</UnitType> 
-			<PromotionType>PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY</PromotionType> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType> 
-			<PromotionType>PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY</PromotionType> 
 		</Row>
 		<!--
 		<Row> 
@@ -285038,9 +285038,9 @@
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_COASTAL_RAIDER_1</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
-			<PromotionType>PROMOTION_PARTIAL_HEAL_IF_DESTROY_ENEMY</PromotionType> 
+		<Row>
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType>
+			<PromotionType>PROMOTION_MARAUDER</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
@@ -298065,9 +298065,9 @@
 			<Civilopedia>TXT_KEY_CIV5_SEA_BEGGAR_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_UNIT_SEA_BEGGAR_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_SEA_BEGGAR</Help> 
-			<Combat>27</Combat> 
+			<Combat>24</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>150</Cost> 
+			<Cost>125</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
@@ -299046,9 +299046,9 @@
 			<Civilopedia>TXT_KEY_CIV5_PRIVATEER_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_UNIT_PRIVATEER_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_PRIVATEER</Help> 
-			<Combat>27</Combat> 
+			<Combat>24</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>150</Cost> 
+			<Cost>125</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
@@ -307513,9 +307513,9 @@
 			<Civilopedia>TXT_KEY_UNIT_QASIMI_RAIDER_CIVILOPEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_QASIMI_RAIDER_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_QASIMI_RAIDER_HELP</Help>
-			<Combat>27</Combat> 
+			<Combat>24</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>120</Cost> 
+			<Cost>100</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
@@ -308643,9 +308643,9 @@
 			<Help>TXT_KEY_UNIT_TUNISIA_PRIVATEER_HELP</Help> 
 			<Strategy>TXT_KEY_UNIT_TUNISIA_PRIVATEER_STRATEGY</Strategy>
 			<Civilopedia>TXT_KEY_UNIT_TUNISIA_PRIVATEER_PEDIA</Civilopedia>
-			<Combat>29</Combat> 
+			<Combat>26</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>180</Cost> 
+			<Cost>150</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
