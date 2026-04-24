@@ -279776,7 +279776,7 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_TRIREME</UnitType> 
-			<UnitClassType>UNITCLASS_CARAVEL</UnitClassType> 
+			<UnitClassType>UNITCLASS_QUINQ</UnitClassType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_GALLEY</UnitType> 
@@ -280261,7 +280261,7 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_DANISH_LONGSHIP</UnitType> 
-			<UnitClassType>UNITCLASS_CARAVEL</UnitClassType> 
+			<UnitClassType>UNITCLASS_QUINQ</UnitClassType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_PESTININKAS</UnitType> 
@@ -280369,7 +280369,7 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_SQUARE_SAIL_SHIP</UnitType>
-			<UnitClassType>UNITCLASS_CARAVEL</UnitClassType>
+			<UnitClassType>UNITCLASS_QUINQ</UnitClassType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_NUBIAN_BOW</UnitType>
