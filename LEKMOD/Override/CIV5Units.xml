@@ -249378,8 +249378,8 @@
 		</Row>
 		<Row>
 			<Type>PROMOTION_CARAVEL_EXTRA_SIGHT</Type>
-			<Description>TXT_KEY_PROMOTION_CARAVEL_EXTRA_SIGHT</Description>
-			<Help>TXT_KEY_PROMOTION_CARAVEL_EXTRA_SIGHT_HELP</Help>
+			<Description>TXT_KEY_PROMOTION_XTRA_SIGHT_I</Description>
+			<Help>TXT_KEY_PROMOTION_XTRA_SIGHT_I_HELP</Help>
 			<PortraitIndex>59</PortraitIndex>
 			<IconAtlas>ABILITY_ATLAS</IconAtlas>
 			<HotKeyPriority>0</HotKeyPriority>
@@ -249503,7 +249503,7 @@
 			<Sapper>false</Sapper>
 			<HeavyCharge>false</HeavyCharge>
 			<PediaType>PEDIA_ATTRIBUTES</PediaType>
-			<PediaEntry>TXT_KEY_PROMOTION_CARAVEL_EXTRA_SIGHT</PediaEntry>
+			<PediaEntry>TXT_KEY_PEDIA_PROMOTION_XTRA_SIGHT_I</PediaEntry>
 			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement>
 			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement>
 			<HeavyChargeDownhill>0</HeavyChargeDownhill>

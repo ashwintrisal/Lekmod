@@ -120928,12 +120928,6 @@ The ship has weather'd every rack; the prize we sought is won."
 				Obsidian Tip
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_CARAVEL_EXTRA_SIGHT">
-			<Text>Keen-Eyed</Text>
-		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_CARAVEL_EXTRA_SIGHT_HELP">
-			<Text>+1 Sight. Lost when this unit upgrades.</Text>
-		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_OCEAN_IMPASSABLE">
 			<Text>
 				Cannot Enter Deep Ocean
