@@ -279764,7 +279764,7 @@
 		</Row>
 		<Row> 
 			<UnitType>UNIT_CARAVEL</UnitType> 
-			<UnitClassType>UNITCLASS_IRONCLAD</UnitClassType> 
+			<UnitClassType>UNITCLASS_PRIVATEER</UnitClassType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_DHOW</UnitType> 
@@ -283462,10 +283462,6 @@
 		<Row>
 			<UnitType>UNIT_QUINQ</UnitType>
 			<PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType>
-		</Row>
-		<Row> 
-			<UnitType>UNIT_CARAVEL</UnitType> 
-			<PromotionType>PROMOTION_EXTRA_SIGHT_I</PromotionType> 
 		</Row>
 		<Row> 
 			<UnitType>UNIT_CARAVEL</UnitType> 
@@ -290376,17 +290372,17 @@
 			<Civilopedia>TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_CARAVEL_TEXT</Civilopedia> 
 			<Strategy>TXT_KEY_UNIT_CARAVEL_STRATEGY</Strategy> 
 			<Help>TXT_KEY_UNIT_HELP_CARAVEL</Help> 
-			<Combat>20</Combat> 
+			<Combat>16</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>120</Cost> 
+			<Cost>100</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
 			<MoveAfterPurchase>false</MoveAfterPurchase> 
-			<Moves>5</Moves> 
+			<Moves>6</Moves> 
 			<Immobile>false</Immobile> 
 			<Range>0</Range> 
-			<BaseSightRange>2</BaseSightRange> 
+			<BaseSightRange>3</BaseSightRange> 
 			<Class>UNITCLASS_CARAVEL</Class> 
 			<CombatClass>UNITCOMBAT_NAVALMELEE</CombatClass> 
 			<Domain>DOMAIN_SEA</Domain> 

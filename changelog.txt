@@ -1,6 +1,15 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+CARAVEL CHANGES
+---------------
+CARAVEL (UNIT_CARAVEL):
+- Combat strength: 20 → 16
+- Movement: 5 → 6 (base stat, not kept on upgrade)
+- Production cost: 120 → 100 XML (67 at quick speed, -17%)
+- Sight: now BaseSightRange 3 (was 2 + EXTRA_SIGHT_I promotion)
+- Upgrades to: Privateer (was Ironclad)
+
 QUINQUEREME CHANGES
 -------------------
 QUINQUEREME (UNIT_QUINQ):
