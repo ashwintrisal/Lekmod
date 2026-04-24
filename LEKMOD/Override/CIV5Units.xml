@@ -283451,6 +283451,18 @@
 			<UnitType>UNIT_TRIREME</UnitType> 
 			<PromotionType>PROMOTION_OCEAN_IMPASSABLE</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_QUINQ</UnitType>
+			<PromotionType>PROMOTION_OCEAN_IMPASSABLE</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_QUINQ</UnitType>
+			<PromotionType>PROMOTION_BOARDING_PARTY_1</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_QUINQ</UnitType>
+			<PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_CARAVEL</UnitType> 
 			<PromotionType>PROMOTION_EXTRA_SIGHT_I</PromotionType> 
@@ -304920,12 +304932,12 @@
 			<Help>TXT_KEY_UNIT_HELP_CARTHAGINIAN_QUINQUEREME</Help> 
 			<Combat>13</Combat> 
 			<RangedCombat>0</RangedCombat> 
-			<Cost>-1</Cost> 
+			<Cost>80</Cost> 
 			<FaithCost>0</FaithCost> 
 			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
 			<PurchaseOnly>false</PurchaseOnly> 
 			<MoveAfterPurchase>false</MoveAfterPurchase> 
-			<Moves>4</Moves> 
+			<Moves>5</Moves> 
 			<Immobile>false</Immobile> 
 			<Range>0</Range> 
 			<BaseSightRange>2</BaseSightRange> 
@@ -304938,7 +304950,7 @@
 			<RivalTerritory>false</RivalTerritory> 
 			<MilitarySupport>true</MilitarySupport> 
 			<MilitaryProduction>true</MilitaryProduction> 
-			<Pillage>false</Pillage> 
+			<Pillage>true</Pillage> 
 			<Found>false</Found> 
 			<FoundAbroad>false</FoundAbroad> 
 			<CultureBombRadius>0</CultureBombRadius> 
@@ -304951,9 +304963,11 @@
 			<Mechanized>true</Mechanized> 
 			<Suicide>false</Suicide> 
 			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<PrereqTech>TECH_COMPASS</PrereqTech>
+			<ObsoleteTech>TECH_NAVIGATION</ObsoleteTech>
 			<HurryCostModifier>0</HurryCostModifier> 
 			<AdvancedStartCost>30</AdvancedStartCost> 
-			<MinAreaSize>10</MinAreaSize> 
+			<MinAreaSize>6</MinAreaSize> 
 			<AirInterceptRange>0</AirInterceptRange> 
 			<AirUnitCap>0</AirUnitCap> 
 			<NukeDamageLevel>-1</NukeDamageLevel> 
