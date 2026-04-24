@@ -1,6 +1,13 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+NAVAL MELEE ANTI-CITY PENALTY
+------------------------------
+Added -25% vs cities (PROMOTION_SMALL_CITY_PENALTY) to:
+- Privateer (and UU replacements: Dutch Sea Beggar, Qasimi Raider, Tunisia Privateer)
+- Caravel
+- Quinquereme
+
 PRIVATEER CHANGES
 -----------------
 PRIVATEER (UNIT_PRIVATEER):

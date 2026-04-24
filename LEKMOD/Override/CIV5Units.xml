@@ -284359,9 +284359,17 @@
 			<UnitType>UNIT_QUINQ</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_QUINQ</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_CARAVEL</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_CARAVEL</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_DHOW</UnitType> 
@@ -284379,13 +284387,25 @@
 			<UnitType>UNIT_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_PRIVATEER</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_QASIMI_RAIDER</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_QASIMI_RAIDER</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_DUTCH_SEA_BEGGAR</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_IRONCLAD</UnitType> 
@@ -285045,6 +285065,10 @@
 		<Row> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
 			<PromotionType>PROMOTION_CAN_MOVE_AFTER_ATTACKING</PromotionType> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType>
+			<PromotionType>PROMOTION_SMALL_CITY_PENALTY</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_TUNISIA_PRIVATEER</UnitType> 
