@@ -1,12 +1,18 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
-NEW PROMOTIONS: BLIND SPOT, MINIMUM RANGE, DOCKED, SWIFT TRANSPORT
--------------------------------------------------------------------
-- Blind Spot (auto, Galley/Galleas/Frigate/Ship of the Line/Dreadnought): -20% CS when attacking a target 1 tile away
-- Minimum Range (auto, Battleship/Missile Cruiser): cannot target adjacent tiles
-- Docked (auto, Galley/Galleas/Frigate/Ship of the Line/Dreadnought/Battleship/Missile Cruiser): cannot attack while garrisoned in a city
-- Swift Transport (auto, Quinquereme/Caravel/Privateer/Frigate/Ship of the Line/Ironclad/Dreadnought/Destroyer/Battleship/Heavy Cruiser/Missile Cruiser): embarked units on this ship gain its movement
+NAVAL UNIT BALANCE
+------------------
+Galley, Galleas, Frigate, Ship of the Line, Dreadnought:
+- -20% [ICON_STRENGTH] CS when attacking a target 1 tile away (Blind Spot)
+- Cannot attack while garrisoned in a city (Docked)
+
+Battleship, Missile Cruiser:
+- Cannot target adjacent tiles (Minimum Range)
+- Cannot attack while garrisoned in a city (Docked)
+
+Quinquereme, Caravel, Privateer, Frigate, Ship of the Line, Ironclad, Dreadnought, Destroyer, Battleship, Heavy Cruiser, Missile Cruiser:
+- Embarked units sharing this ship's tile gain its movement at turn start (Swift Transport)
 
 FRIGATE CHANGES
 ---------------
