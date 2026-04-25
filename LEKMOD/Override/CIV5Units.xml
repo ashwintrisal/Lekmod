@@ -230240,6 +230240,16 @@
 			<InstanceCostModifier>0</InstanceCostModifier>
 			<DefaultUnit>UNIT_VANGUARD_CORPS</DefaultUnit>
 		</Row>
+		<Row>
+			<ID>116</ID>
+			<Type>UNITCLASS_DREADNOUGHT</Type>
+			<Description>TXT_KEY_UNIT_DREADNOUGHT</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_DREADNOUGHT</DefaultUnit>
+		</Row>
 	</UnitClasses>
 
 	<Table name="UnitCombatInfos">
@@ -230569,6 +230579,11 @@
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<SelectionSound>AS2D_SELECT_IRONCLAD</SelectionSound> 
 			<FirstSelectionSound>AS2D_BIRTH_IRONCLAD</FirstSelectionSound> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<SelectionSound>AS2D_SELECT_BATTLESHIP</SelectionSound>
+			<FirstSelectionSound>AS2D_BIRTH_BATTLESHIP</FirstSelectionSound>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_IROQUOIAN_MOHAWKWARRIOR</UnitType> 
@@ -278078,6 +278093,18 @@
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_JFD_DEFENDER</UnitType> 
 			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType> 
@@ -279890,6 +279917,10 @@
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType>
+		</Row>
 
 		<Row> 
 			<UnitType>UNIT_BATTLESHIP</UnitType> 
@@ -281672,6 +281703,11 @@
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<FlavorType>FLAVOR_NAVAL</FlavorType> 
 			<Flavor>18</Flavor> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>4</Flavor>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_JFD_DEFENDER</UnitType> 
@@ -283632,6 +283668,14 @@
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<PromotionType>PROMOTION_STEAM_POWERED</PromotionType> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<PromotionType>PROMOTION_STEAM_POWERED</PromotionType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_JFD_DEFENDER</UnitType> 
 			<PromotionType>PROMOTION_STEAM_POWERED</PromotionType> 
@@ -285584,6 +285628,16 @@
 		</Row>
 		<Row>
 			<UnitType>UNIT_IRONCLAD</UnitType>
+			<ResourceType>RESOURCE_COAL</ResourceType>
+			<Cost>1</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Cost>4</Cost>
+		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
 			<ResourceType>RESOURCE_COAL</ResourceType>
 			<Cost>1</Cost>
 		</Row>
@@ -309330,6 +309384,95 @@
 			<PortraitIndex>48</PortraitIndex>
 			<IconAtlas>UNIT_ATLAS_2</IconAtlas>
 			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+		<Row>
+			<ID>265</ID>
+			<Type>UNIT_DREADNOUGHT</Type>
+			<Description>TXT_KEY_UNIT_DREADNOUGHT</Description>
+			<Civilopedia>TXT_KEY_CIV5_DREADNOUGHT_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_DREADNOUGHT_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_DREADNOUGHT</Help>
+			<Combat>33</Combat>
+			<RangedCombat>43</RangedCombat>
+			<Cost>275</Cost>
+			<FaithCost>0</FaithCost>
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>2</Moves>
+			<Immobile>false</Immobile>
+			<Range>2</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_DREADNOUGHT</Class>
+			<CombatClass>UNITCOMBAT_NAVALRANGED</CombatClass>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<Found>false</Found>
+			<FoundAbroad>false</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>true</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<PrereqTech>TECH_STEAM_POWER</PrereqTech>
+			<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech>
+			<HurryCostModifier>0</HurryCostModifier>
+			<AdvancedStartCost>50</AdvancedStartCost>
+			<MinAreaSize>6</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>0</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>100</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>3</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_U_DREADNOUGHT</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>BOAT</MoveRate>
+			<UnitFlagIconOffset>1</UnitFlagIconOffset>
+			<PortraitIndex>3</PortraitIndex>
+			<IconAtlas>CIVIL_WAR_UNIT_ATLAS</IconAtlas>
+			<UnitFlagAtlas>CIVIL_WAR_UNIT_FLAG_ATLAS</UnitFlagAtlas>
 		</Row>
 	</Units>
 	

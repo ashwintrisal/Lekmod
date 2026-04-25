@@ -145120,6 +145120,19 @@ The ship has weather'd every rack; the prize we sought is won."
 		<Replace Tag="TXT_KEY_PROMOTION_EMBARK_FLAT_COST_HELP">
 			<Text>Embarking and disembarking each cost only 1 [ICON_MOVES] Movement instead of all remaining movement.</Text>
 		</Replace>
+		<!-- Dreadnought -->
+		<Replace Tag="TXT_KEY_UNIT_DREADNOUGHT">
+			<Text>Dreadnought</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_HELP_DREADNOUGHT">
+			<Text>Industrial Era naval ranged unit. Steam-powered: moves faster in coastal waters, slower in open ocean. Cannot melee attack. Upgrades to Battleship.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_DREADNOUGHT_STRATEGY">
+			<Text>The Dreadnought is a powerful naval ranged unit available at Steam Power. Its steam engines give it superior speed in coastal waters but reduced mobility in deep ocean. It cannot melee attack, so keep it supported by other vessels.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_CIV5_DREADNOUGHT_TEXT">
+			<Text>The dreadnought was the predominant type of battleship in the early 20th century. The first of the kind, the Royal Navy's HMS Dreadnought, had such an impact when launched in 1906 that similar battleships built after her were referred to as "dreadnoughts". Her design featured an all-big-gun armament scheme and revolutionary steam turbine propulsion. As dreadnoughts became a symbol of national power, their arrival renewed naval arms races between the great powers of the era.</Text>
+		</Replace>
 	</Language_en_US>
 	<Language_de_DE>
 	</Language_de_DE>

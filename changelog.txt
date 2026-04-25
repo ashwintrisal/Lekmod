@@ -1,6 +1,19 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+NEW UNIT: DREADNOUGHT
+---------------------
+New naval ranged unit (UNIT_DREADNOUGHT) added to the industrial naval chain:
+- Available at Steam Power, obsoletes at Electronics
+- Melee str 33, ranged str 43, range 2, moves 2
+- Cost 275 XML (~184 quick speed)
+- Requires 4 iron + 1 coal
+- Free promotions: PROMOTION_STEAM_POWERED (double move on coast), PROMOTION_ONLY_DEFENSIVE (cannot melee attack)
+- Upgrades to Battleship
+- New UNITCLASS_DREADNOUGHT (ID 116); Frigate and Ship of the Line will upgrade into it (wired in those specs)
+- Art: 3D model ART_DEF_UNIT_U_DREADNOUGHT (Confederate Ironclad model, confirmed from v31 archive)
+  Icon: CIVIL_WAR_UNIT_ATLAS portrait 3, flag: CIVIL_WAR_UNIT_FLAG_ATLAS offset 1 (confirmed from v31)
+
 NAVAL MELEE ANTI-CITY PENALTY
 ------------------------------
 Added -25% vs cities (PROMOTION_SMALL_CITY_PENALTY) to:
