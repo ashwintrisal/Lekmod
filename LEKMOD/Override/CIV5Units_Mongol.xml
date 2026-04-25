@@ -145133,6 +145133,23 @@ The ship has weather'd every rack; the prize we sought is won."
 		<Replace Tag="TXT_KEY_CIV5_DREADNOUGHT_TEXT">
 			<Text>The dreadnought was the predominant type of battleship in the early 20th century. The first of the kind, the Royal Navy's HMS Dreadnought, had such an impact when launched in 1906 that similar battleships built after her were referred to as "dreadnoughts". Her design featured an all-big-gun armament scheme and revolutionary steam turbine propulsion. As dreadnoughts became a symbol of national power, their arrival renewed naval arms races between the great powers of the era.</Text>
 		</Replace>
+		<!-- Ship of the Line -->
+		<Replace Tag="TXT_KEY_UNIT_SHIPOFTHELINE">
+			<Text>Ship of the Line</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_SHIPOFTHELINE_STRATEGY">
+			<Text>The Ship of the Line is a powerful Renaissance-era naval ranged unit available to all civilizations. Its heavy broadside firepower gives it a significant edge against cities, though this advantage is lost once it upgrades to more modern vessels. Requires 4 Iron.</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_UNIT_HELP_SHIPOFTHELINE">
+			<Text>Renaissance naval ranged unit. +33% vs cities (lost on upgrade). Cannot melee attack. Upgrades to Dreadnought. Requires 4 Iron.</Text>
+		</Replace>
+		<!-- PROMOTION_SHIPOFTHELINE_CITY_ATTACK -->
+		<Replace Tag="TXT_KEY_PROMOTION_SHIPOFTHELINE_CITY_ATTACK">
+			<Text>Heavy Broadside</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_PROMOTION_SHIPOFTHELINE_CITY_ATTACK_HELP">
+			<Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Lost when this unit upgrades.</Text>
+		</Replace>
 	</Language_en_US>
 	<Language_de_DE>
 	</Language_de_DE>

@@ -76940,11 +76940,7 @@
 			<UnitClassType>UNITCLASS_CROSSBOWMAN</UnitClassType> 
 			<UnitType>UNIT_ENGLISH_LONGBOWMAN</UnitType> 
 		</Row>
-		<Row> 
-			<CivilizationType>CIVILIZATION_ENGLAND</CivilizationType> 
-			<UnitClassType>UNITCLASS_FRIGATE</UnitClassType> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-		</Row>
+		
 		<Row> 
 			<CivilizationType>CIVILIZATION_FRANCE</CivilizationType> 
 			<UnitClassType>UNITCLASS_MUSKETMAN</UnitClassType> 
@@ -230250,6 +230246,16 @@
 			<InstanceCostModifier>0</InstanceCostModifier>
 			<DefaultUnit>UNIT_DREADNOUGHT</DefaultUnit>
 		</Row>
+		<Row>
+			<ID>117</ID>
+			<Type>UNITCLASS_SHIPOFTHELINE</Type>
+			<Description>TXT_KEY_UNIT_SHIPOFTHELINE</Description>
+			<MaxGlobalInstances>-1</MaxGlobalInstances>
+			<MaxTeamInstances>-1</MaxTeamInstances>
+			<MaxPlayerInstances>-1</MaxPlayerInstances>
+			<InstanceCostModifier>0</InstanceCostModifier>
+			<DefaultUnit>UNIT_SHIPOFTHELINE</DefaultUnit>
+		</Row>
 	</UnitClasses>
 
 	<Table name="UnitCombatInfos">
@@ -230495,11 +230501,7 @@
 			<SelectionSound>AS2D_SELECT_ARCHER</SelectionSound> 
 			<FirstSelectionSound>AS2D_BIRTH_ARCHER</FirstSelectionSound> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<SelectionSound>AS2D_SELECT_FRIGATE</SelectionSound> 
-			<FirstSelectionSound>AS2D_BIRTH_FRIGATE</FirstSelectionSound> 
-		</Row>
+
 		<Row> 
 			<UnitType>UNIT_FIGHTER</UnitType> 
 			<SelectionSound>AS2D_SELECT_FIGHTER</SelectionSound> 
@@ -230519,6 +230521,11 @@
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<SelectionSound>AS2D_SELECT_FRIGATE</SelectionSound> 
 			<FirstSelectionSound>AS2D_BIRTH_FRIGATE</FirstSelectionSound> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<SelectionSound>AS2D_SELECT_FRIGATE</SelectionSound>
+			<FirstSelectionSound>AS2D_BIRTH_FRIGATE</FirstSelectionSound>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_GALLEY</UnitType> 
@@ -245666,6 +245673,138 @@
 			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement> 
 			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement> 
 			<HeavyChargeDownhill>0</HeavyChargeDownhill> 
+		</Row>
+		<Row>
+			<Type>PROMOTION_SHIPOFTHELINE_CITY_ATTACK</Type>
+			<Description>TXT_KEY_PROMOTION_SHIPOFTHELINE_CITY_ATTACK</Description>
+			<Help>TXT_KEY_PROMOTION_SHIPOFTHELINE_CITY_ATTACK_HELP</Help>
+			<PortraitIndex>59</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<HotKeyPriority>0</HotKeyPriority>
+			<HotKeyPriorityAlt>0</HotKeyPriorityAlt>
+			<OrderPriority>0</OrderPriority>
+			<AltDown>false</AltDown>
+			<AltDownAlt>false</AltDownAlt>
+			<ShiftDown>false</ShiftDown>
+			<ShiftDownAlt>false</ShiftDownAlt>
+			<CtrlDown>false</CtrlDown>
+			<CtrlDownAlt>false</CtrlDownAlt>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<LostWithUpgrade>true</LostWithUpgrade>
+			<NotWithUpgrade>false</NotWithUpgrade>
+			<InstaHeal>false</InstaHeal>
+			<Leader>false</Leader>
+			<Blitz>false</Blitz>
+			<Amphib>false</Amphib>
+			<River>false</River>
+			<EnemyRoute>false</EnemyRoute>
+			<RivalTerritory>false</RivalTerritory>
+			<MustSetUpToRangedAttack>false</MustSetUpToRangedAttack>
+			<RangedSupportFire>false</RangedSupportFire>
+			<CanMoveAfterAttacking>false</CanMoveAfterAttacking>
+			<AlwaysHeal>false</AlwaysHeal>
+			<HealOutsideFriendly>false</HealOutsideFriendly>
+			<HillsDoubleMove>false</HillsDoubleMove>
+			<RoughTerrainEndsTurn>false</RoughTerrainEndsTurn>
+			<IgnoreTerrainCost>false</IgnoreTerrainCost>
+			<HoveringUnit>false</HoveringUnit>
+			<FlatMovementCost>false</FlatMovementCost>
+			<CanMoveImpassable>false</CanMoveImpassable>
+			<NoCapture>false</NoCapture>
+			<OnlyDefensive>false</OnlyDefensive>
+			<NoDefensiveBonus>false</NoDefensiveBonus>
+			<NukeImmune>false</NukeImmune>
+			<HiddenNationality>false</HiddenNationality>
+			<AlwaysHostile>false</AlwaysHostile>
+			<NoRevealMap>false</NoRevealMap>
+			<Recon>false</Recon>
+			<CanMoveAllTerrain>false</CanMoveAllTerrain>
+			<FreePillageMoves>false</FreePillageMoves>
+			<AirSweepCapable>false</AirSweepCapable>
+			<AllowsEmbarkation>false</AllowsEmbarkation>
+			<EmbarkedAllWater>false</EmbarkedAllWater>
+			<HealIfDestroyExcludesBarbarians>false</HealIfDestroyExcludesBarbarians>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<CityAttackOnly>false</CityAttackOnly>
+			<CaptureDefeatedEnemy>false</CaptureDefeatedEnemy>
+			<HealOnPillage>false</HealOnPillage>
+			<IgnoreGreatGeneralBenefit>false</IgnoreGreatGeneralBenefit>
+			<IgnoreZOC>false</IgnoreZOC>
+			<HasPostCombatPromotions>false</HasPostCombatPromotions>
+			<PostCombatPromotionsExclusive>false</PostCombatPromotionsExclusive>
+			<RangedAttackModifier>0</RangedAttackModifier>
+			<InterceptionCombatModifier>0</InterceptionCombatModifier>
+			<InterceptionDefenseDamageModifier>0</InterceptionDefenseDamageModifier>
+			<AirSweepCombatModifier>0</AirSweepCombatModifier>
+			<ExtraAttacks>0</ExtraAttacks>
+			<ExtraNavalMovement>0</ExtraNavalMovement>
+			<VisibilityChange>0</VisibilityChange>
+			<MovesChange>0</MovesChange>
+			<MoveDiscountChange>0</MoveDiscountChange>
+			<RangeChange>0</RangeChange>
+			<InterceptChanceChange>0</InterceptChanceChange>
+			<NumInterceptionChange>0</NumInterceptionChange>
+			<EvasionChange>0</EvasionChange>
+			<CargoChange>0</CargoChange>
+			<EnemyHealChange>0</EnemyHealChange>
+			<NeutralHealChange>0</NeutralHealChange>
+			<FriendlyHealChange>0</FriendlyHealChange>
+			<SameTileHealChange>0</SameTileHealChange>
+			<AdjacentTileHealChange>0</AdjacentTileHealChange>
+			<EnemyDamageChance>0</EnemyDamageChance>
+			<NeutralDamageChance>0</NeutralDamageChance>
+			<EnemyDamage>0</EnemyDamage>
+			<NeutralDamage>0</NeutralDamage>
+			<CombatPercent>0</CombatPercent>
+			<CityAttack>33</CityAttack>
+			<CityDefense>0</CityDefense>
+			<RangedDefenseMod>0</RangedDefenseMod>
+			<HillsAttack>0</HillsAttack>
+			<HillsDefense>0</HillsDefense>
+			<OpenAttack>0</OpenAttack>
+			<OpenRangedAttackMod>0</OpenRangedAttackMod>
+			<OpenDefense>0</OpenDefense>
+			<RoughAttack>0</RoughAttack>
+			<RoughRangedAttackMod>0</RoughRangedAttackMod>
+			<RoughDefense>0</RoughDefense>
+			<AttackFortifiedMod>0</AttackFortifiedMod>
+			<AttackWoundedMod>0</AttackWoundedMod>
+			<FlankAttackModifier>0</FlankAttackModifier>
+			<NearbyEnemyCombatMod>0</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>0</NearbyEnemyCombatRange>
+			<UpgradeDiscount>0</UpgradeDiscount>
+			<ExperiencePercent>0</ExperiencePercent>
+			<AdjacentMod>0</AdjacentMod>
+			<AttackMod>0</AttackMod>
+			<DefenseMod>0</DefenseMod>
+			<DropRange>0</DropRange>
+			<GreatGeneral>false</GreatGeneral>
+			<GreatAdmiral>false</GreatAdmiral>
+			<GreatGeneralModifier>0</GreatGeneralModifier>
+			<GreatGeneralReceivesMovement>false</GreatGeneralReceivesMovement>
+			<GreatGeneralCombatModifier>0</GreatGeneralCombatModifier>
+			<FriendlyLandsModifier>0</FriendlyLandsModifier>
+			<FriendlyLandsAttackModifier>0</FriendlyLandsAttackModifier>
+			<OutsideFriendlyLandsModifier>0</OutsideFriendlyLandsModifier>
+			<HPHealedIfDestroyEnemy>0</HPHealedIfDestroyEnemy>
+			<ExtraWithdrawal>0</ExtraWithdrawal>
+			<EmbarkExtraVisibility>0</EmbarkExtraVisibility>
+			<EmbarkDefenseModifier>0</EmbarkDefenseModifier>
+			<CapitalDefenseModifier>0</CapitalDefenseModifier>
+			<CapitalDefenseFalloff>0</CapitalDefenseFalloff>
+			<CityAttackPlunderModifier>0</CityAttackPlunderModifier>
+			<ReligiousStrengthLossRivalTerritory>0</ReligiousStrengthLossRivalTerritory>
+			<TradeMissionInfluenceModifier>0</TradeMissionInfluenceModifier>
+			<TradeMissionGoldModifier>0</TradeMissionGoldModifier>
+			<GoldenAgeValueFromKills>0</GoldenAgeValueFromKills>
+			<Sapper>false</Sapper>
+			<HeavyCharge>false</HeavyCharge>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SHIPOFTHELINE_CITY_ATTACK</PediaEntry>
+			<GreatGeneralOnOrAdjacentConfersMovement>0</GreatGeneralOnOrAdjacentConfersMovement>
+			<EmbarkedUnitReceivesMovement>false</EmbarkedUnitReceivesMovement>
+			<HeavyChargeDownhill>0</HeavyChargeDownhill>
 		</Row>
 		<Row> 
 			<ID>111</ID> 
@@ -278069,18 +278208,19 @@
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<UnitAIType>UNITAI_ASSAULT_SEA</UnitAIType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<UnitAIType>UNITAI_RESERVE_SEA</UnitAIType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<UnitAIType>UNITAI_ESCORT_SEA</UnitAIType>
 		</Row>
+
 		<Row> 
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<UnitAIType>UNITAI_ATTACK_SEA</UnitAIType> 
@@ -279909,13 +280049,14 @@
 			<UnitType>UNIT_WORKER</UnitType>
 			<UnitClassType>UNITCLASS_ARCHAEOLOGIST</UnitClassType>
 		</Row>
-		<Row>
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType>
-			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType> 
-		</Row>
+		
 		<Row> 
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType> 
+		</Row>
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<UnitClassType>UNITCLASS_DREADNOUGHT</UnitClassType>
 		</Row>
 		<Row>
 			<UnitType>UNIT_DREADNOUGHT</UnitType>
@@ -281684,21 +281825,17 @@
 			<FlavorType>FLAVOR_NAVAL</FlavorType> 
 			<Flavor>12</Flavor> 
 		</Row>
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<FlavorType>FLAVOR_NAVAL</FlavorType>
+			<Flavor>12</Flavor>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType> 
 			<Flavor>3</Flavor> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<FlavorType>FLAVOR_NAVAL</FlavorType> 
-			<Flavor>24</Flavor> 
-		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<FlavorType>FLAVOR_NAVAL_RECON</FlavorType> 
-			<Flavor>6</Flavor> 
-		</Row>
+
 		<Row> 
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<FlavorType>FLAVOR_NAVAL</FlavorType> 
@@ -283656,14 +283793,15 @@
 			<UnitType>UNIT_FRIGATE</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<PromotionType>PROMOTION_EXTRA_SIGHT_I</PromotionType> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<PromotionType>PROMOTION_SHIPOFTHELINE_CITY_ATTACK</PromotionType>
 		</Row>
+
 		<Row> 
 			<UnitType>UNIT_IRONCLAD</UnitType> 
 			<PromotionType>PROMOTION_STEAM_POWERED</PromotionType> 
@@ -285441,11 +285579,12 @@
 			<ResourceType>RESOURCE_IRON</ResourceType> 
 			<Cost>1</Cost> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_ENGLISH_SHIPOFTHELINE</UnitType> 
-			<ResourceType>RESOURCE_IRON</ResourceType> 
-			<Cost>1</Cost> 
+		<Row>
+			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
+			<ResourceType>RESOURCE_IRON</ResourceType>
+			<Cost>4</Cost>
 		</Row>
+
 		<Row> 
 			<UnitType>UNIT_BATTLESHIP</UnitType> 
 			<ResourceType>RESOURCE_OIL</ResourceType> 
@@ -290491,95 +290630,7 @@
 			<IconAtlas>UNIT_ATLAS_2</IconAtlas> 
 			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas> 
 		</Row>
-		<Row> 
-			<ID>20</ID> 
-			<Type>UNIT_ENGLISH_SHIPOFTHELINE</Type> 
-			<Description>TXT_KEY_UNIT_ENGLISH_SHIPOFTHELINE</Description> 
-			<Civilopedia>TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_SHIPOFTHELINE_TEXT</Civilopedia> 
-			<Strategy>TXT_KEY_UNIT_ENGLISH_SHIPOFTHELINE_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_HELP_SHIPOFTHELINE</Help> 
-			<Combat>27</Combat> 
-			<RangedCombat>32</RangedCombat> 
-			<Cost>170</Cost> 
-			<FaithCost>0</FaithCost> 
-			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled> 
-			<PurchaseOnly>false</PurchaseOnly> 
-			<MoveAfterPurchase>false</MoveAfterPurchase> 
-			<Moves>5</Moves> 
-			<Immobile>false</Immobile> 
-			<Range>2</Range> 
-			<BaseSightRange>2</BaseSightRange> 
-			<Class>UNITCLASS_FRIGATE</Class> 
-			<CombatClass>UNITCOMBAT_NAVALRANGED</CombatClass> 
-			<Domain>DOMAIN_SEA</Domain> 
-			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI> 
-			<Food>false</Food> 
-			<NoBadGoodies>false</NoBadGoodies> 
-			<RivalTerritory>false</RivalTerritory> 
-			<MilitarySupport>true</MilitarySupport> 
-			<MilitaryProduction>true</MilitaryProduction> 
-			<Pillage>true</Pillage> 
-			<Found>false</Found> 
-			<FoundAbroad>false</FoundAbroad> 
-			<CultureBombRadius>0</CultureBombRadius> 
-			<GoldenAgeTurns>0</GoldenAgeTurns> 
-			<FreePolicies>0</FreePolicies> 
-			<OneShotTourism>0</OneShotTourism> 
-			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers> 
-			<IgnoreBuildingDefense>false</IgnoreBuildingDefense> 
-			<PrereqResources>false</PrereqResources> 
-			<Mechanized>true</Mechanized> 
-			<Suicide>false</Suicide> 
-			<CaptureWhileEmbarked>false</CaptureWhileEmbarked> 
-			<PrereqTech>TECH_NAVIGATION</PrereqTech> 
-			<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech> 
-			<HurryCostModifier>20</HurryCostModifier> 
-			<AdvancedStartCost>50</AdvancedStartCost> 
-			<MinAreaSize>6</MinAreaSize> 
-			<AirInterceptRange>0</AirInterceptRange> 
-			<AirUnitCap>0</AirUnitCap> 
-			<NukeDamageLevel>-1</NukeDamageLevel> 
-			<WorkRate>0</WorkRate> 
-			<NumFreeTechs>0</NumFreeTechs> 
-			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount> 
-			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount> 
-			<RushBuilding>false</RushBuilding> 
-			<BaseHurry>0</BaseHurry> 
-			<HurryMultiplier>0</HurryMultiplier> 
-			<BaseGold>0</BaseGold> 
-			<NumGoldPerEra>0</NumGoldPerEra> 
-			<SpreadReligion>false</SpreadReligion> 
-			<RemoveHeresy>false</RemoveHeresy> 
-			<ReligionSpreads>0</ReligionSpreads> 
-			<ReligiousStrength>0</ReligiousStrength> 
-			<FoundReligion>false</FoundReligion> 
-			<RequiresEnhancedReligion>false</RequiresEnhancedReligion> 
-			<ProhibitsSpread>false</ProhibitsSpread> 
-			<CanBuyCityState>false</CanBuyCityState> 
-			<CombatLimit>100</CombatLimit> 
-			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain> 
-			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS> 
-			<Trade>false</Trade> 
-			<NumExoticGoods>0</NumExoticGoods> 
-			<RangedCombatLimit>0</RangedCombatLimit> 
-			<XPValueAttack>3</XPValueAttack> 
-			<XPValueDefense>3</XPValueDefense> 
-			<Conscription>0</Conscription> 
-			<ExtraMaintenanceCost>0</ExtraMaintenanceCost> 
-			<NoMaintenance>false</NoMaintenance> 
-			<Unhappiness>0</Unhappiness> 
-			<UnitArtInfo>ART_DEF_UNIT_U_ENGLISH_SHIPOFTHELINE</UnitArtInfo> 
-			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation> 
-			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation> 
-			<LeaderExperience>0</LeaderExperience> 
-			<DontShowYields>false</DontShowYields> 
-			<ShowInPedia>true</ShowInPedia> 
-			<MoveRate>WOODEN_BOAT</MoveRate> 
-			<UnitFlagIconOffset>52</UnitFlagIconOffset> 
-			<PortraitIndex>9</PortraitIndex> 
-			<IconAtlas>UNIT_ATLAS_2</IconAtlas> 
-			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas> 
-		</Row>
+
 		<Row> 
 			<ID>21</ID> 
 			<Type>UNIT_CARAVEL</Type> 
@@ -309473,6 +309524,95 @@
 			<PortraitIndex>3</PortraitIndex>
 			<IconAtlas>CIVIL_WAR_UNIT_ATLAS</IconAtlas>
 			<UnitFlagAtlas>CIVIL_WAR_UNIT_FLAG_ATLAS</UnitFlagAtlas>
+		</Row>
+		<Row>
+			<ID>266</ID>
+			<Type>UNIT_SHIPOFTHELINE</Type>
+			<Description>TXT_KEY_UNIT_SHIPOFTHELINE</Description>
+			<Civilopedia>TXT_KEY_CIVILOPEDIA_UNITS_RENAISSANCE_SHIPOFTHELINE_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_SHIPOFTHELINE_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_SHIPOFTHELINE</Help>
+			<Combat>25</Combat>
+			<RangedCombat>33</RangedCombat>
+			<Cost>250</Cost>
+			<FaithCost>0</FaithCost>
+			<RequiresFaithPurchaseEnabled>false</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>5</Moves>
+			<Immobile>false</Immobile>
+			<Range>2</Range>
+			<BaseSightRange>2</BaseSightRange>
+			<Class>UNITCLASS_SHIPOFTHELINE</Class>
+			<CombatClass>UNITCOMBAT_NAVALRANGED</CombatClass>
+			<Domain>DOMAIN_SEA</Domain>
+			<DefaultUnitAI>UNITAI_ASSAULT_SEA</DefaultUnitAI>
+			<Food>false</Food>
+			<NoBadGoodies>false</NoBadGoodies>
+			<RivalTerritory>false</RivalTerritory>
+			<MilitarySupport>true</MilitarySupport>
+			<MilitaryProduction>true</MilitaryProduction>
+			<Pillage>true</Pillage>
+			<Found>false</Found>
+			<FoundAbroad>false</FoundAbroad>
+			<CultureBombRadius>0</CultureBombRadius>
+			<GoldenAgeTurns>0</GoldenAgeTurns>
+			<FreePolicies>0</FreePolicies>
+			<OneShotTourism>0</OneShotTourism>
+			<OneShotTourismPercentOthers>0</OneShotTourismPercentOthers>
+			<IgnoreBuildingDefense>false</IgnoreBuildingDefense>
+			<PrereqResources>false</PrereqResources>
+			<Mechanized>true</Mechanized>
+			<Suicide>false</Suicide>
+			<CaptureWhileEmbarked>false</CaptureWhileEmbarked>
+			<PrereqTech>TECH_NAVIGATION</PrereqTech>
+			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech>
+			<HurryCostModifier>20</HurryCostModifier>
+			<AdvancedStartCost>50</AdvancedStartCost>
+			<MinAreaSize>6</MinAreaSize>
+			<AirInterceptRange>0</AirInterceptRange>
+			<AirUnitCap>0</AirUnitCap>
+			<NukeDamageLevel>-1</NukeDamageLevel>
+			<WorkRate>0</WorkRate>
+			<NumFreeTechs>0</NumFreeTechs>
+			<BaseBeakersTurnsToCount>0</BaseBeakersTurnsToCount>
+			<BaseCultureTurnsToCount>0</BaseCultureTurnsToCount>
+			<RushBuilding>false</RushBuilding>
+			<BaseHurry>0</BaseHurry>
+			<HurryMultiplier>0</HurryMultiplier>
+			<BaseGold>0</BaseGold>
+			<NumGoldPerEra>0</NumGoldPerEra>
+			<SpreadReligion>false</SpreadReligion>
+			<RemoveHeresy>false</RemoveHeresy>
+			<ReligionSpreads>0</ReligionSpreads>
+			<ReligiousStrength>0</ReligiousStrength>
+			<FoundReligion>false</FoundReligion>
+			<RequiresEnhancedReligion>false</RequiresEnhancedReligion>
+			<ProhibitsSpread>false</ProhibitsSpread>
+			<CanBuyCityState>false</CanBuyCityState>
+			<CombatLimit>100</CombatLimit>
+			<RangeAttackOnlyInDomain>false</RangeAttackOnlyInDomain>
+			<RangeAttackIgnoreLOS>false</RangeAttackIgnoreLOS>
+			<Trade>false</Trade>
+			<NumExoticGoods>0</NumExoticGoods>
+			<RangedCombatLimit>0</RangedCombatLimit>
+			<XPValueAttack>3</XPValueAttack>
+			<XPValueDefense>3</XPValueDefense>
+			<Conscription>0</Conscription>
+			<ExtraMaintenanceCost>0</ExtraMaintenanceCost>
+			<NoMaintenance>false</NoMaintenance>
+			<Unhappiness>0</Unhappiness>
+			<UnitArtInfo>ART_DEF_UNIT_U_ENGLISH_SHIPOFTHELINE</UnitArtInfo>
+			<UnitArtInfoCulturalVariation>false</UnitArtInfoCulturalVariation>
+			<UnitArtInfoEraVariation>false</UnitArtInfoEraVariation>
+			<LeaderExperience>0</LeaderExperience>
+			<DontShowYields>false</DontShowYields>
+			<ShowInPedia>true</ShowInPedia>
+			<MoveRate>WOODEN_BOAT</MoveRate>
+			<UnitFlagIconOffset>52</UnitFlagIconOffset>
+			<PortraitIndex>9</PortraitIndex>
+			<IconAtlas>UNIT_ATLAS_2</IconAtlas>
+			<UnitFlagAtlas>UNIT_FLAG_ATLAS</UnitFlagAtlas>
 		</Row>
 	</Units>
 	

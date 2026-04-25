@@ -1,6 +1,19 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+NEW UNIT: SHIP OF THE LINE
+--------------------------
+New UNIT_SHIPOFTHELINE available to all civs (UNITCLASS_SHIPOFTHELINE, ID 117):
+- Available at Navigation, obsoletes at Steam Power
+- Melee str 25, ranged str 33, range 2, moves 5, cost 250 XML (~167 quick)
+- Requires 4 iron
+- Free promotions: PROMOTION_ONLY_DEFENSIVE (no melee), PROMOTION_SHIPOFTHELINE_CITY_ATTACK (+33% vs cities, lost on upgrade)
+- Upgrades to Dreadnought
+- Art reuses UNIT_ENGLISH_SHIPOFTHELINE assets (portrait 9, UNIT_ATLAS_2, flag offset 52)
+- UNIT_ENGLISH_SHIPOFTHELINE removed entirely; England gets the generic Ship of the Line
+- England's UNITCLASS_FRIGATE UU override removed (England now builds standard Frigate)
+- New promotion PROMOTION_SHIPOFTHELINE_CITY_ATTACK: CityAttack=33, CannotBeChosen, LostWithUpgrade
+
 NEW UNIT: DREADNOUGHT
 ---------------------
 New naval ranged unit (UNIT_DREADNOUGHT) added to the industrial naval chain:
