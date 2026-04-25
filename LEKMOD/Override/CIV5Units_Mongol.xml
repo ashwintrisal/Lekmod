@@ -145125,7 +145125,7 @@ The ship has weather'd every rack; the prize we sought is won."
 			<Text>Dreadnought</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_DREADNOUGHT">
-			<Text>Industrial Era naval ranged unit. Steam-powered: moves faster in coastal waters, slower in open ocean. Cannot melee attack. Upgrades to Battleship.</Text>
+			<Text>Industrial Era naval ranged unit. Steam-powered: moves faster in coastal waters, slower in open ocean. Can fire over obstacles (Indirect Fire). Cannot melee attack. Upgrades to Battleship.</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_DREADNOUGHT_STRATEGY">
 			<Text>The Dreadnought is a powerful naval ranged unit available at Steam Power. Its steam engines give it superior speed in coastal waters but reduced mobility in deep ocean. It cannot melee attack, so keep it supported by other vessels.</Text>

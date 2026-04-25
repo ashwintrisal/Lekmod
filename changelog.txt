@@ -26,7 +26,7 @@ New naval ranged unit (UNIT_DREADNOUGHT) added to the industrial naval chain:
 - Melee str 33, ranged str 43, range 2, moves 2
 - Cost 275 XML (~184 quick speed)
 - Requires 4 iron + 1 coal
-- Free promotions: PROMOTION_STEAM_POWERED (double move on coast), PROMOTION_ONLY_DEFENSIVE (cannot melee attack)
+- Free promotions: PROMOTION_STEAM_POWERED (double move on coast), PROMOTION_ONLY_DEFENSIVE (cannot melee attack), PROMOTION_INDIRECT_FIRE (can shoot over obstacles)
 - Upgrades to Battleship
 - New UNITCLASS_DREADNOUGHT (ID 116); Frigate and Ship of the Line will upgrade into it (wired in those specs)
 - Art: 3D model ART_DEF_UNIT_U_DREADNOUGHT (Confederate Ironclad model, confirmed from v31 archive)

@@ -283814,6 +283814,10 @@
 			<UnitType>UNIT_DREADNOUGHT</UnitType>
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType>
 		</Row>
+		<Row>
+			<UnitType>UNIT_DREADNOUGHT</UnitType>
+			<PromotionType>PROMOTION_INDIRECT_FIRE</PromotionType>
+		</Row>
 		<Row> 
 			<UnitType>UNIT_JFD_DEFENDER</UnitType> 
 			<PromotionType>PROMOTION_STEAM_POWERED</PromotionType> 
