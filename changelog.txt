@@ -1,6 +1,11 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+FRIGATE CHANGES
+---------------
+- ObsoleteTech: Electronics → Steam Power (now obsoletes alongside Ship of the Line)
+- Upgrade: Battleship → Dreadnought (now feeds into the new industrial naval chain)
+
 NEW UNIT: SHIP OF THE LINE
 --------------------------
 New UNIT_SHIPOFTHELINE available to all civs (UNITCLASS_SHIPOFTHELINE, ID 117):

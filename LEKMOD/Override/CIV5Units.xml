@@ -280052,7 +280052,7 @@
 		
 		<Row> 
 			<UnitType>UNIT_FRIGATE</UnitType> 
-			<UnitClassType>UNITCLASS_BATTLESHIP</UnitClassType> 
+			<UnitClassType>UNITCLASS_DREADNOUGHT</UnitClassType> 
 		</Row>
 		<Row>
 			<UnitType>UNIT_SHIPOFTHELINE</UnitType>
@@ -290582,7 +290582,7 @@
 			<Suicide>false</Suicide> 
 			<CaptureWhileEmbarked>false</CaptureWhileEmbarked> 
 			<PrereqTech>TECH_NAVIGATION</PrereqTech> 
-			<ObsoleteTech>TECH_ELECTRONICS</ObsoleteTech> 
+			<ObsoleteTech>TECH_STEAM_POWER</ObsoleteTech> 
 			<HurryCostModifier>20</HurryCostModifier> 
 			<AdvancedStartCost>50</AdvancedStartCost> 
 			<MinAreaSize>6</MinAreaSize> 
