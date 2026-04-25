@@ -397,6 +397,45 @@
 		</Row>
 
 		<Row>
+			<Type>PROMOTION_BLIND_SPOT</Type>
+			<Description>TXT_KEY_PROMOTION_BLIND_SPOT</Description>
+			<Help>TXT_KEY_PROMOTION_BLIND_SPOT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<BlindSpotAttackMod>-20</BlindSpotAttackMod>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_BLIND_SPOT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_MINIMUM_RANGE</Type>
+			<Description>TXT_KEY_PROMOTION_MINIMUM_RANGE</Description>
+			<Help>TXT_KEY_PROMOTION_MINIMUM_RANGE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<MinRangeAttack>true</MinRangeAttack>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MINIMUM_RANGE</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_DOCKED</Type>
+			<Description>TXT_KEY_PROMOTION_DOCKED</Description>
+			<Help>TXT_KEY_PROMOTION_DOCKED_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<NoCityAttack>true</NoCityAttack>
+			<PortraitIndex>57</PortraitIndex>
+			<IconAtlas>ABILITY_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_DOCKED</PediaEntry>
+		</Row>
+
+		<Row>
 			<Type>PROMOTION_ZEALOT</Type>
 			<Description>TXT_KEY_PROMOTION_ZEALOT</Description>
 			<Help>TXT_KEY_PROMOTION_ZEALOT_HELP</Help>
@@ -480,6 +519,15 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT"><Text>Swift Transport</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP"><Text>Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_BLIND_SPOT"><Text>Blind Spot</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_BLIND_SPOT_HELP"><Text>-20% [ICON_STRENGTH] Combat Strength when attacking a target 1 tile away.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_MINIMUM_RANGE"><Text>Minimum Range</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_MINIMUM_RANGE_HELP"><Text>Cannot target tiles adjacent to this unit.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_DOCKED"><Text>Docked</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DOCKED_HELP"><Text>Cannot attack while garrisoned inside a city.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT"><Text>Zealot</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT_HELP"><Text>Killing a unit yields [ICON_FAITH] Faith equal to their [ICON_STRENGTH] Combat Strength (max 30).</Text></Row>

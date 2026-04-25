@@ -184,6 +184,9 @@ CvUnit::CvUnit() :
 	, m_iNeutralDamage(0)
 	, m_iNearbyEnemyCombatMod(0)
 	, m_iNearbyEnemyCombatRange(0)
+	, m_iBlindSpotAttackMod(0)
+	, m_iMinRangeAttackCount(0)
+	, m_iNoCityAttackCount(0)
 	, m_iSapperCount(0)
 	, m_iCanHeavyCharge(0)
 #ifdef NQ_HEAVY_CHARGE_DOWNHILL
@@ -1083,6 +1086,9 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iNeutralDamage = 0;
 	m_iNearbyEnemyCombatMod = 0;
 	m_iNearbyEnemyCombatRange = 0;
+	m_iBlindSpotAttackMod = 0;
+	m_iMinRangeAttackCount = 0;
+	m_iNoCityAttackCount = 0;
 	m_iExtraCombatPercent = 0;
 	m_iAdjacentModifier = 0;
 	m_iRangedAttackModifier = 0;
@@ -13808,6 +13814,18 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 	if(bForRangedAttack)
 	{
 		iModifier += GetRangedAttackModifier();
+
+#ifdef LEKMOD_NAVAL_BLIND_SPOT
+		if(bAttacking && GetBlindSpotAttackMod() != 0)
+		{
+			const CvPlot* pSourcePlot = plot();
+			const CvPlot* pDestPlot = (pOtherUnit != NULL) ? pOtherUnit->plot() : (pCity != NULL) ? pCity->plot() : NULL;
+			if(pDestPlot && plotDistance(pSourcePlot->getX(), pSourcePlot->getY(), pDestPlot->getX(), pDestPlot->getY()) == 1)
+			{
+				iModifier += GetBlindSpotAttackMod();
+			}
+		}
+#endif
 	}
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 	else
@@ -18642,6 +18660,47 @@ void CvUnit::changeNearbyEnemyCombatMod(int iChange)
 	m_iNearbyEnemyCombatMod = (m_iNearbyEnemyCombatMod + iChange);
 }
 
+//	--------------------------------------------------------------------------------
+int CvUnit::GetBlindSpotAttackMod() const
+{
+	VALIDATE_OBJECT
+	return m_iBlindSpotAttackMod;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeBlindSpotAttackMod(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iBlindSpotAttackMod += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetMinRangeAttackCount() const
+{
+	VALIDATE_OBJECT
+	return m_iMinRangeAttackCount;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeMinRangeAttackCount(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iMinRangeAttackCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetNoCityAttackCount() const
+{
+	VALIDATE_OBJECT
+	return m_iNoCityAttackCount;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeNoCityAttackCount(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iNoCityAttackCount += iChange;
+}
 
 //	--------------------------------------------------------------------------------
 int CvUnit::getNearbyEnemyCombatRange() const
@@ -21685,6 +21744,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeAirSweepCapableCount((thisPromotion.IsAirSweepCapable()) ? iChange: 0);
 		ChangeEmbarkAbilityCount((thisPromotion.IsAllowsEmbarkation()) ? iChange: 0);
 		ChangeRangeAttackIgnoreLOSCount((thisPromotion.IsRangeAttackIgnoreLOS()) ? iChange: 0);
+		changeBlindSpotAttackMod(thisPromotion.GetBlindSpotAttackMod() * iChange);
+		ChangeMinRangeAttackCount((thisPromotion.IsMinRangeAttack()) ? iChange : 0);
+		ChangeNoCityAttackCount((thisPromotion.IsNoCityAttack()) ? iChange : 0);
 		ChangeHealIfDefeatExcludeBarbariansCount((thisPromotion.IsHealIfDefeatExcludeBarbarians()) ? iChange: 0);
 		changeHealOnPillageCount((thisPromotion.IsHealOnPillage()) ? iChange : 0);
 		changeFreePillageMoveCount((thisPromotion.IsFreePillageMoves()) ? iChange: 0);
@@ -22138,6 +22200,9 @@ void CvUnit::read(FDataStream& kStream)
 
 	kStream >> m_iNearbyEnemyCombatMod;
 	kStream >> m_iNearbyEnemyCombatRange;
+	kStream >> m_iBlindSpotAttackMod;
+	kStream >> m_iMinRangeAttackCount;
+	kStream >> m_iNoCityAttackCount;
 
 	kStream >> m_iHealOnPillageCount;
 	kStream >> m_iFlankAttackModifier;
@@ -22335,6 +22400,9 @@ void CvUnit::write(FDataStream& kStream) const
 	kStream << m_iNeutralDamage;
 	kStream << m_iNearbyEnemyCombatMod;
 	kStream << m_iNearbyEnemyCombatRange;
+	kStream << m_iBlindSpotAttackMod;
+	kStream << m_iMinRangeAttackCount;
+	kStream << m_iNoCityAttackCount;
 
 	kStream << m_iHealOnPillageCount;
 	kStream << m_iFlankAttackModifier;
@@ -22462,6 +22530,13 @@ bool CvUnit::canRangeStrike() const
 		return false;
 	}
 
+#ifdef LEKMOD_NAVAL_DOCKED
+	if(GetNoCityAttackCount() > 0 && plot()->isCity())
+	{
+		return false;
+	}
+#endif
+
 	return true;
 }
 
@@ -22530,6 +22605,14 @@ bool CvUnit::canEverRangeStrikeAt(int iX, int iY) const
 	{
 		return false;
 	}
+
+#ifdef LEKMOD_NAVAL_MINIMUM_RANGE
+	// Minimum range check
+	if(GetMinRangeAttackCount() > 0 && plotDistance(pSourcePlot->getX(), pSourcePlot->getY(), pTargetPlot->getX(), pTargetPlot->getY()) < 2)
+	{
+		return false;
+	}
+#endif
 
 	// Ignores LoS or can see the plot directly?
 	if(!IsRangeAttackIgnoreLOS() && getDomainType() != DOMAIN_AIR)

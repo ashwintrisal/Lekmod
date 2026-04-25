@@ -70,6 +70,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iFlankAttackModifier(0),
 	m_iNearbyEnemyCombatMod(0),
 	m_iNearbyEnemyCombatRange(0),
+	m_iBlindSpotAttackMod(0),
 	m_iOpenDefensePercent(0),
 	m_iRoughDefensePercent(0),
 	m_iExtraAttacks(0),
@@ -159,6 +160,8 @@ CvPromotionEntry::CvPromotionEntry():
 	m_bAirSweepCapable(false),
 	m_bAllowsEmbarkation(false),
 	m_bRangeAttackIgnoreLOS(false),
+	m_bMinRangeAttack(false),
+	m_bNoCityAttack(false),
 	m_bFreePillageMoves(false),
 	m_bHealOnPillage(false),
 	m_iPillageChange(0),
@@ -297,6 +300,8 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bAirSweepCapable = kResults.GetBool("AirSweepCapable");
 	m_bAllowsEmbarkation = kResults.GetBool("AllowsEmbarkation");
 	m_bRangeAttackIgnoreLOS = kResults.GetBool("RangeAttackIgnoreLOS");
+	m_bMinRangeAttack = kResults.GetBool("MinRangeAttack");
+	m_bNoCityAttack = kResults.GetBool("NoCityAttack");
 	m_bFreePillageMoves = kResults.GetBool("FreePillageMoves");
 	m_bHealOnPillage = kResults.GetBool("HealOnPillage");
 	m_iPillageChange = kResults.GetInt("PillageChange");
@@ -368,6 +373,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iFlankAttackModifier = kResults.GetInt("FlankAttackModifier");
 	m_iNearbyEnemyCombatMod = kResults.GetInt("NearbyEnemyCombatMod");
 	m_iNearbyEnemyCombatRange = kResults.GetInt("NearbyEnemyCombatRange");
+	m_iBlindSpotAttackMod = kResults.GetInt("BlindSpotAttackMod");
 	m_iOpenDefensePercent = kResults.GetInt("OpenDefense");
 	m_iRoughDefensePercent = kResults.GetInt("RoughDefense");
 	m_iExtraAttacks = kResults.GetInt("ExtraAttacks");
@@ -1247,6 +1253,11 @@ int CvPromotionEntry::GetNearbyEnemyCombatMod() const
 	return m_iNearbyEnemyCombatMod;
 }
 
+int CvPromotionEntry::GetBlindSpotAttackMod() const
+{
+	return m_iBlindSpotAttackMod;
+}
+
 /// Accessor: Range of modifier on nearby enemy combat units
 int CvPromotionEntry::GetNearbyEnemyCombatRange() const
 {
@@ -1710,6 +1721,16 @@ bool CvPromotionEntry::IsAllowsEmbarkation() const
 bool CvPromotionEntry::IsRangeAttackIgnoreLOS() const
 {
 	return m_bRangeAttackIgnoreLOS;
+}
+
+bool CvPromotionEntry::IsMinRangeAttack() const
+{
+	return m_bMinRangeAttack;
+}
+
+bool CvPromotionEntry::IsNoCityAttack() const
+{
+	return m_bNoCityAttack;
 }
 
 /// Accessor: Lose no movement when pillaging?

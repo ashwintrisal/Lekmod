@@ -100,6 +100,7 @@ public:
 	int  GetFlankAttackModifier() const;
 	int  GetNearbyEnemyCombatMod() const;
 	int  GetNearbyEnemyCombatRange() const;
+	int  GetBlindSpotAttackMod() const;
 	int  GetOpenDefensePercent() const;
 	int  GetRoughDefensePercent() const;
 	int  GetExtraAttacks() const;
@@ -192,6 +193,8 @@ public:
 	bool IsAirSweepCapable() const;
 	bool IsAllowsEmbarkation() const;
 	bool IsRangeAttackIgnoreLOS() const;
+	bool IsMinRangeAttack() const;
+	bool IsNoCityAttack() const;
 	bool IsFreePillageMoves() const;
 	bool IsHealOnPillage() const;
 	int GetPillageChange() const;
@@ -339,6 +342,7 @@ protected:
 	int m_iFlankAttackModifier;
 	int m_iNearbyEnemyCombatMod;
 	int m_iNearbyEnemyCombatRange;
+	int m_iBlindSpotAttackMod;
 	int m_iOpenDefensePercent;
 	int m_iRoughDefensePercent;
 	int m_iExtraAttacks;
@@ -426,6 +430,8 @@ protected:
 	bool m_bAirSweepCapable;
 	bool m_bAllowsEmbarkation;
 	bool m_bRangeAttackIgnoreLOS;
+	bool m_bMinRangeAttack;
+	bool m_bNoCityAttack;
 	bool m_bFreePillageMoves;
 	bool m_bHealOnPillage;
 	int m_iPillageChange;

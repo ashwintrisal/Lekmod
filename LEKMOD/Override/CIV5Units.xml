@@ -231296,6 +231296,8 @@
 		<Column name="EmbarkedAllWater" type="boolean"  default="0"/>
 		<Column name="HealIfDestroyExcludesBarbarians" type="boolean"  default="0"/>
 		<Column name="RangeAttackIgnoreLOS" type="boolean"  default="0"/>
+		<Column name="MinRangeAttack" type="boolean"  default="0"/>
+		<Column name="NoCityAttack" type="boolean"  default="0"/>
 		<Column name="CityAttackOnly" type="boolean"  default="0"/>
 		<Column name="CaptureDefeatedEnemy" type="boolean"  default="0"/>
 		<Column name="HealOnPillage" type="boolean"  default="0"/>
@@ -231344,6 +231346,7 @@
 		<Column name="FlankAttackModifier" type="integer"  default="0"/>
 		<Column name="NearbyEnemyCombatMod" type="integer"  default="0"/>
 		<Column name="NearbyEnemyCombatRange" type="integer"  default="0"/>
+		<Column name="BlindSpotAttackMod" type="integer"  default="0"/>
 		<Column name="UpgradeDiscount" type="integer"  default="0"/>
 		<Column name="ExperiencePercent" type="integer"  default="0"/>
 		<Column name="AdjacentMod" type="integer"  default="0"/>
@@ -273369,6 +273372,7 @@
 			<DisembarkFlatCost>true</DisembarkFlatCost>
 			<CannotBeChosen>true</CannotBeChosen>
 		</Row>
+
 	</UnitPromotions>
 
 	<Table name="UnitPromotions_KillYieldValidEras">
@@ -285400,6 +285404,35 @@
 		<!-- Skiff and Nelayan: same free promotion as Scout -->
 		<Row><UnitType>UNIT_SKIFF</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
 		<Row><UnitType>UNIT_NELAYAN</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
+
+		<!-- Blind Spot: -20% CS when attacking at range 1 -->
+		<Row><UnitType>UNIT_GALLEY</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
+		<Row><UnitType>UNIT_GALLEASS</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
+		<Row><UnitType>UNIT_FRIGATE</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
+		<Row><UnitType>UNIT_SHIPOFTHELINE</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
+		<Row><UnitType>UNIT_DREADNOUGHT</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
+		<!-- Minimum Range: cannot attack adjacent tiles -->
+		<Row><UnitType>UNIT_BATTLESHIP</UnitType><PromotionType>PROMOTION_MINIMUM_RANGE</PromotionType></Row>
+		<Row><UnitType>UNIT_MISSILE_CRUISER</UnitType><PromotionType>PROMOTION_MINIMUM_RANGE</PromotionType></Row>
+		<!-- Docked: cannot attack while garrisoned in a city -->
+		<Row><UnitType>UNIT_GALLEY</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_GALLEASS</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_FRIGATE</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_SHIPOFTHELINE</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_DREADNOUGHT</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_BATTLESHIP</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<Row><UnitType>UNIT_MISSILE_CRUISER</UnitType><PromotionType>PROMOTION_DOCKED</PromotionType></Row>
+		<!-- Swift Transport: embarked units share this ship's movement -->
+		<Row><UnitType>UNIT_CARAVEL</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_PRIVATEER</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_FRIGATE</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_SHIPOFTHELINE</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_IRONCLAD</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_DREADNOUGHT</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_DESTROYER</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_BATTLESHIP</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_HEAVY_CRUISER</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
+		<Row><UnitType>UNIT_MISSILE_CRUISER</UnitType><PromotionType>PROMOTION_SWIFT_TRANSPORT</PromotionType></Row>
 	</Unit_FreePromotions>
 
 	<Table name="Unit_GreatPersons">

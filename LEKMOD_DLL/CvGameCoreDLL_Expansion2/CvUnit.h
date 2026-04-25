@@ -233,6 +233,15 @@ public:
 	int GetRangeAttackIgnoreLOSCount() const;
 	void ChangeRangeAttackIgnoreLOSCount(int iChange);
 
+	int GetBlindSpotAttackMod() const;
+	void changeBlindSpotAttackMod(int iChange);
+
+	int GetMinRangeAttackCount() const;
+	void ChangeMinRangeAttackCount(int iChange);
+
+	int GetNoCityAttackCount() const;
+	void ChangeNoCityAttackCount(int iChange);
+
 	bool canSetUpForRangedAttack(const CvPlot* pPlot) const;
 	bool isSetUpForRangedAttack() const;
 	void setSetUpForRangedAttack(bool bValue);
@@ -1526,6 +1535,9 @@ protected:
 	int m_iNeutralDamage;
 	int m_iNearbyEnemyCombatMod;
 	int m_iNearbyEnemyCombatRange;
+	int m_iBlindSpotAttackMod;
+	int m_iMinRangeAttackCount;
+	int m_iNoCityAttackCount;
 	FAutoVariable<int, CvUnit> m_iSameTileHeal;
 	FAutoVariable<int, CvUnit> m_iAdjacentTileHeal;
 	FAutoVariable<int, CvUnit> m_iAdjacentModifier;

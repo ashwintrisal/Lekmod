@@ -1171,6 +1171,12 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_CITY_YIELDS_TRAITS
 // Refactor Submarine Attack logic
 #define LEKMOD_SUBMARINE_ATTACK_CHANGES
+// Naval blind spot: -20% CS when attacking at range 1
+#define LEKMOD_NAVAL_BLIND_SPOT
+// Naval minimum range: cannot attack adjacent tiles
+#define LEKMOD_NAVAL_MINIMUM_RANGE
+// Naval docked: cannot attack while garrisoned in a city
+#define LEKMOD_NAVAL_DOCKED
 // Export the WLTKD count down for UI purposes.
 #define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
 // Export the Food Production value for UI purposes.
