@@ -1,6 +1,25 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+LAND UNIT BALANCE
+-----------------
+Infantry (and UU replacements at 70 CS: Vietnam Infantry, Maori Battalion):
+- CS: 70 → 72
+
+Expeditionary Force, Marines:
+- Removed: Amphibious, Defensive Embarkation
+- Added: Amphibious I, Amphibious II
+
+Marines:
+- Now upgrades to Mechanized Infantry (retains promotions on upgrade)
+
+Paratrooper:
+- CS: 65 → 70
+
+XCOM Squad:
+- CS: 100 → 110
+- Movement: 2 → 3
+
 NAVAL UNIT BALANCE
 ------------------
 - feat: add Duck promotion: +33% CS vs naval and embarked units (Bomber, Cannon, Artillery, Rocket Artillery); Great War Bomber gets it when defined

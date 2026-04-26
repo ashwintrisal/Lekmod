@@ -280721,9 +280721,13 @@
 			<UnitType>UNIT_YUGO_M84</UnitType> 
 			<UnitClassType>UNITCLASS_MODERN_ARMOR</UnitClassType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType> 
-			<UnitClassType>UNITCLASS_MARINE</UnitClassType> 
+		<Row>
+			<UnitType>UNIT_MARINE</UnitType>
+			<UnitClassType>UNITCLASS_MECHANIZED_INFANTRY</UnitClassType>
+		</Row>
+		<Row>
+			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType>
+			<UnitClassType>UNITCLASS_MARINE</UnitClassType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_PHILIPINO_MARINE</UnitType> 
@@ -284259,13 +284263,13 @@
 			<UnitType>UNIT_GALLEASS</UnitType> 
 			<PromotionType>PROMOTION_ONLY_DEFENSIVE</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_MARINE</UnitType> 
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType> 
+		<Row>
+			<UnitType>UNIT_MARINE</UnitType>
+			<PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_MARINE</UnitType> 
-			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType> 
+		<Row>
+			<UnitType>UNIT_MARINE</UnitType>
+			<PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_PHILIPINO_MARINE</UnitType> 
@@ -285261,13 +285265,13 @@
 			<UnitType>UNIT_YUGO_M84</UnitType> 
 			<PromotionType>PROMOTION_ARMOR_VS_LAND</PromotionType> 
 		</Row>
-		<Row> 
-			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType> 
-			<PromotionType>PROMOTION_AMPHIBIOUS</PromotionType> 
+		<Row>
+			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType>
+			<PromotionType>PROMOTION_AMPHIBIOUS_1</PromotionType>
 		</Row>
-		<Row> 
-			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType> 
-			<PromotionType>PROMOTION_DEFENSIVE_EMBARKATION</PromotionType> 
+		<Row>
+			<UnitType>UNIT_EXPEDITIONARY_FORCE</UnitType>
+			<PromotionType>PROMOTION_AMPHIBIOUS_2</PromotionType>
 		</Row>
 		<Row> 
 			<UnitType>UNIT_HEAVY_CRUISER</UnitType> 
@@ -292099,12 +292103,12 @@
 		</Row>
 		<Row> 
 			<ID>38</ID> 
-			<Type>UNIT_PARATROOPER</Type> 
-			<Description>TXT_KEY_UNIT_PARATROOPER</Description> 
-			<Civilopedia>TXT_KEY_CIV5_INDUSTRIAL_PARATROOPER_TEXT</Civilopedia> 
-			<Strategy>TXT_KEY_UNIT_PARATROOPER_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_HELP_PARATROOPER</Help> 
-			<Combat>65</Combat> 
+			<Type>UNIT_PARATROOPER</Type>
+			<Description>TXT_KEY_UNIT_PARATROOPER</Description>
+			<Civilopedia>TXT_KEY_CIV5_INDUSTRIAL_PARATROOPER_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_PARATROOPER_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_PARATROOPER</Help>
+			<Combat>70</Combat> 
 			<RangedCombat>0</RangedCombat> 
 			<Cost>450</Cost> 
 			<FaithCost>900</FaithCost> 
@@ -292635,12 +292639,12 @@
 		</Row>
 		<Row> 
 			<ID>44</ID> 
-			<Type>UNIT_INFANTRY</Type> 
-			<Description>TXT_KEY_UNIT_INFANTRY</Description> 
-			<Civilopedia>TXT_KEY_CIV5_INDUSTRIAL_INFANTRY_TEXT</Civilopedia> 
-			<Strategy>TXT_KEY_UNIT_INFANTRY_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_HELP_INFANTRY</Help> 
-			<Combat>70</Combat> 
+			<Type>UNIT_INFANTRY</Type>
+			<Description>TXT_KEY_UNIT_INFANTRY</Description>
+			<Civilopedia>TXT_KEY_CIV5_INDUSTRIAL_INFANTRY_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_INFANTRY_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_INFANTRY</Help>
+			<Combat>72</Combat> 
 			<RangedCombat>0</RangedCombat> 
 			<Cost>420</Cost> 
 			<FaithCost>840</FaithCost> 
@@ -301397,19 +301401,19 @@
 		</Row>
 		<Row> 
 			<ID>161</ID> 
-			<Type>UNIT_XCOM_SQUAD</Type> 
-			<Description>TXT_KEY_UNIT_XCOM_SQUAD</Description> 
-			<Civilopedia>TXT_KEY_CIV5_XCOM_SQUAD_TEXT</Civilopedia> 
-			<Strategy>TXT_KEY_UNIT_XCOM_SQUAD_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_HELP_XCOM_SQUAD</Help> 
-			<Combat>100</Combat> 
-			<RangedCombat>0</RangedCombat> 
-			<Cost>510</Cost> 
-			<FaithCost>800</FaithCost> 
-			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled> 
-			<PurchaseOnly>false</PurchaseOnly> 
-			<MoveAfterPurchase>false</MoveAfterPurchase> 
-			<Moves>2</Moves> 
+			<Type>UNIT_XCOM_SQUAD</Type>
+			<Description>TXT_KEY_UNIT_XCOM_SQUAD</Description>
+			<Civilopedia>TXT_KEY_CIV5_XCOM_SQUAD_TEXT</Civilopedia>
+			<Strategy>TXT_KEY_UNIT_XCOM_SQUAD_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_HELP_XCOM_SQUAD</Help>
+			<Combat>110</Combat>
+			<RangedCombat>0</RangedCombat>
+			<Cost>510</Cost>
+			<FaithCost>800</FaithCost>
+			<RequiresFaithPurchaseEnabled>true</RequiresFaithPurchaseEnabled>
+			<PurchaseOnly>false</PurchaseOnly>
+			<MoveAfterPurchase>false</MoveAfterPurchase>
+			<Moves>3</Moves> 
 			<Immobile>false</Immobile> 
 			<Range>0</Range> 
 			<BaseSightRange>2</BaseSightRange> 
@@ -302380,11 +302384,11 @@
 		</Row>
 		<Row> 
 			<ID>172</ID> 
-			<Type>UNIT_VIETNAM_INFANTRY</Type> 
+			<Type>UNIT_VIETNAM_INFANTRY</Type>
 			<Description>TXT_KEY_UNIT_VIETNAM_INFANTRY</Description>
-			<Strategy>TXT_KEY_UNIT_INFANTRY_STRATEGY</Strategy> 
-			<Help>TXT_KEY_UNIT_VIETNAM_INFANTRY_HELP</Help> 
-			<Combat>70</Combat> 
+			<Strategy>TXT_KEY_UNIT_INFANTRY_STRATEGY</Strategy>
+			<Help>TXT_KEY_UNIT_VIETNAM_INFANTRY_HELP</Help>
+			<Combat>72</Combat> 
 			<RangedCombat>0</RangedCombat> 
 			<Cost>350</Cost> 
 			<FaithCost>750</FaithCost> 
@@ -306841,12 +306845,12 @@
 		</Row>
 		<Row> 
 			<ID>227</ID> 
-			<Type>UNIT_MC_NEW_ZEALAND_MAORI_BATTALION</Type> 
+			<Type>UNIT_MC_NEW_ZEALAND_MAORI_BATTALION</Type>
 			<Description>TXT_KEY_UNIT_MC_NEW_ZEALAND_MAORI_BATTALION</Description>
 			<Civilopedia>TXT_KEY_UNIT_MC_NEW_ZEALAND_MAORI_BATTALION_PEDIA</Civilopedia>
 			<Strategy>TXT_KEY_UNIT_MC_NEW_ZEALAND_MAORI_BATTALION_STRATEGY</Strategy>
 			<Help>TXT_KEY_UNIT_MC_NEW_ZEALAND_MAORI_BATTALION_HELP</Help>
-			<Combat>70</Combat> 
+			<Combat>72</Combat> 
 			<RangedCombat>0</RangedCombat> 
 			<Cost>420</Cost> 
 			<FaithCost>840</FaithCost> 
