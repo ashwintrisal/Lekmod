@@ -101,6 +101,7 @@ public:
 	int  GetNearbyEnemyCombatMod() const;
 	int  GetNearbyEnemyCombatRange() const;
 	int  GetBlindSpotAttackMod() const;
+	int  GetAttackVsSeaEmbarkedMod() const;
 	int  GetOpenDefensePercent() const;
 	int  GetRoughDefensePercent() const;
 	int  GetExtraAttacks() const;
@@ -343,6 +344,7 @@ protected:
 	int m_iNearbyEnemyCombatMod;
 	int m_iNearbyEnemyCombatRange;
 	int m_iBlindSpotAttackMod;
+	int m_iAttackVsSeaEmbarkedMod;
 	int m_iOpenDefensePercent;
 	int m_iRoughDefensePercent;
 	int m_iExtraAttacks;

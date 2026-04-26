@@ -185,6 +185,7 @@ CvUnit::CvUnit() :
 	, m_iNearbyEnemyCombatMod(0)
 	, m_iNearbyEnemyCombatRange(0)
 	, m_iBlindSpotAttackMod(0)
+	, m_iAttackVsSeaEmbarkedMod(0)
 	, m_iMinRangeAttackCount(0)
 	, m_iNoCityAttackCount(0)
 	, m_iSapperCount(0)
@@ -1087,6 +1088,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iNearbyEnemyCombatMod = 0;
 	m_iNearbyEnemyCombatRange = 0;
 	m_iBlindSpotAttackMod = 0;
+	m_iAttackVsSeaEmbarkedMod = 0;
 	m_iMinRangeAttackCount = 0;
 	m_iNoCityAttackCount = 0;
 	m_iExtraCombatPercent = 0;
@@ -13826,6 +13828,12 @@ int CvUnit::GetMaxRangedCombatStrength(const CvUnit* pOtherUnit, const CvCity* p
 			}
 		}
 #endif
+#ifdef LEKMOD_ATTACK_VS_SEA_EMBARKED
+		if(GetAttackVsSeaEmbarkedMod() != 0 && pOtherUnit != NULL && pOtherUnit->isEmbarked())
+		{
+			iModifier += GetAttackVsSeaEmbarkedMod();
+		}
+#endif
 	}
 #ifdef AUI_UNIT_FIX_BAD_BONUS_STACKS
 	else
@@ -18668,6 +18676,20 @@ int CvUnit::GetBlindSpotAttackMod() const
 }
 
 //	--------------------------------------------------------------------------------
+int CvUnit::GetAttackVsSeaEmbarkedMod() const
+{
+	VALIDATE_OBJECT
+	return m_iAttackVsSeaEmbarkedMod;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeAttackVsSeaEmbarkedMod(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iAttackVsSeaEmbarkedMod += iChange;
+}
+
+//	--------------------------------------------------------------------------------
 void CvUnit::changeBlindSpotAttackMod(int iChange)
 {
 	VALIDATE_OBJECT
@@ -21745,6 +21767,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeEmbarkAbilityCount((thisPromotion.IsAllowsEmbarkation()) ? iChange: 0);
 		ChangeRangeAttackIgnoreLOSCount((thisPromotion.IsRangeAttackIgnoreLOS()) ? iChange: 0);
 		changeBlindSpotAttackMod(thisPromotion.GetBlindSpotAttackMod() * iChange);
+		changeAttackVsSeaEmbarkedMod(thisPromotion.GetAttackVsSeaEmbarkedMod() * iChange);
 		ChangeMinRangeAttackCount((thisPromotion.IsMinRangeAttack()) ? iChange : 0);
 		ChangeNoCityAttackCount((thisPromotion.IsNoCityAttack()) ? iChange : 0);
 		ChangeHealIfDefeatExcludeBarbariansCount((thisPromotion.IsHealIfDefeatExcludeBarbarians()) ? iChange: 0);

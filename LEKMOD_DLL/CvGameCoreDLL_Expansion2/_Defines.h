@@ -1177,6 +1177,8 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 #define LEKMOD_NAVAL_MINIMUM_RANGE
 // Naval docked: cannot attack while garrisoned in a city
 #define LEKMOD_NAVAL_DOCKED
+// Duck: +X% CS when attacking sea-domain units or embarked units
+#define LEKMOD_ATTACK_VS_SEA_EMBARKED
 // Export the WLTKD count down for UI purposes.
 #define LEKMOD_WLTKD_RESOURCE_COUNTDOWN_LUA
 // Export the Food Production value for UI purposes.

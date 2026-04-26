@@ -71,6 +71,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iNearbyEnemyCombatMod(0),
 	m_iNearbyEnemyCombatRange(0),
 	m_iBlindSpotAttackMod(0),
+	m_iAttackVsSeaEmbarkedMod(0),
 	m_iOpenDefensePercent(0),
 	m_iRoughDefensePercent(0),
 	m_iExtraAttacks(0),
@@ -374,6 +375,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iNearbyEnemyCombatMod = kResults.GetInt("NearbyEnemyCombatMod");
 	m_iNearbyEnemyCombatRange = kResults.GetInt("NearbyEnemyCombatRange");
 	m_iBlindSpotAttackMod = kResults.GetInt("BlindSpotAttackMod");
+	m_iAttackVsSeaEmbarkedMod = kResults.GetInt("AttackVsSeaEmbarkedMod");
 	m_iOpenDefensePercent = kResults.GetInt("OpenDefense");
 	m_iRoughDefensePercent = kResults.GetInt("RoughDefense");
 	m_iExtraAttacks = kResults.GetInt("ExtraAttacks");
@@ -1256,6 +1258,11 @@ int CvPromotionEntry::GetNearbyEnemyCombatMod() const
 int CvPromotionEntry::GetBlindSpotAttackMod() const
 {
 	return m_iBlindSpotAttackMod;
+}
+
+int CvPromotionEntry::GetAttackVsSeaEmbarkedMod() const
+{
+	return m_iAttackVsSeaEmbarkedMod;
 }
 
 /// Accessor: Range of modifier on nearby enemy combat units

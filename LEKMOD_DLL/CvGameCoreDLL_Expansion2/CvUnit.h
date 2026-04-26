@@ -236,6 +236,9 @@ public:
 	int GetBlindSpotAttackMod() const;
 	void changeBlindSpotAttackMod(int iChange);
 
+	int GetAttackVsSeaEmbarkedMod() const;
+	void changeAttackVsSeaEmbarkedMod(int iChange);
+
 	int GetMinRangeAttackCount() const;
 	void ChangeMinRangeAttackCount(int iChange);
 
@@ -1536,6 +1539,7 @@ protected:
 	int m_iNearbyEnemyCombatMod;
 	int m_iNearbyEnemyCombatRange;
 	int m_iBlindSpotAttackMod;
+	int m_iAttackVsSeaEmbarkedMod;
 	int m_iMinRangeAttackCount;
 	int m_iNoCityAttackCount;
 	FAutoVariable<int, CvUnit> m_iSameTileHeal;

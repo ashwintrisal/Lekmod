@@ -274648,10 +274648,15 @@
 			<DomainType>DOMAIN_LAND</DomainType> 
 			<Modifier>50</Modifier> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_AIR_TARGETING_3</PromotionType> 
-			<DomainType>DOMAIN_SEA</DomainType> 
-			<Modifier>34</Modifier> 
+		<Row>
+			<PromotionType>PROMOTION_AIR_TARGETING_3</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>34</Modifier>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_DUCK</PromotionType>
+			<DomainType>DOMAIN_SEA</DomainType>
+			<Modifier>33</Modifier>
 		</Row>
 	</UnitPromotions_Domains> 
 
@@ -285405,6 +285410,11 @@
 		<Row><UnitType>UNIT_SKIFF</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
 		<Row><UnitType>UNIT_NELAYAN</UnitType><PromotionType>PROMOTION_IGNORE_TERRAIN_COST</PromotionType></Row>
 
+		<!-- Duck: +33% CS vs naval (DOMAIN_SEA) and embarked units -->
+		<Row><UnitType>UNIT_BOMBER</UnitType><PromotionType>PROMOTION_DUCK</PromotionType></Row>
+		<Row><UnitType>UNIT_CANNON</UnitType><PromotionType>PROMOTION_DUCK</PromotionType></Row>
+		<Row><UnitType>UNIT_ARTILLERY</UnitType><PromotionType>PROMOTION_DUCK</PromotionType></Row>
+		<Row><UnitType>UNIT_ROCKET_ARTILLERY</UnitType><PromotionType>PROMOTION_DUCK</PromotionType></Row>
 		<!-- Blind Spot: -20% CS when attacking at range 1 -->
 		<Row><UnitType>UNIT_GALLEY</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>
 		<Row><UnitType>UNIT_GALLEASS</UnitType><PromotionType>PROMOTION_BLIND_SPOT</PromotionType></Row>

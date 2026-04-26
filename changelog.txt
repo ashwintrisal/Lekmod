@@ -3,6 +3,10 @@ LEKMOD PROMOTION CHANGELOG
 
 NAVAL UNIT BALANCE
 ------------------
+- feat: add Duck promotion: +33% CS vs naval and embarked units (Bomber, Cannon, Artillery, Rocket Artillery); Great War Bomber gets it when defined
+  - DLL: AttackVsSeaEmbarkedMod field (LEKMOD_ATTACK_VS_SEA_EMBARKED); DOMAIN_SEA modifier via XML
+
+
 Galley, Galleas, Frigate, Ship of the Line, Dreadnought:
 - -20% [ICON_STRENGTH] CS when attacking a target 1 tile away (Blind Spot)
 - Cannot attack while garrisoned in a city (Docked)

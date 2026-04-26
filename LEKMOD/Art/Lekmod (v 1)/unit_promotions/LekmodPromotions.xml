@@ -103,6 +103,12 @@
 		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>supply_ship_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>supply_ship_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 
+		<!-- DUCK -->
+		<Row><Atlas>LEKMOD_DUCK_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>sitting_duck_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DUCK_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>sitting_duck_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DUCK_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>sitting_duck_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DUCK_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>sitting_duck_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
 		<!-- SWIFT_TRANSPORT -->
 		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>swift_transport_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
 		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>swift_transport_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
@@ -436,6 +442,19 @@
 		</Row>
 
 		<Row>
+			<Type>PROMOTION_DUCK</Type>
+			<Description>TXT_KEY_PROMOTION_DUCK</Description>
+			<Help>TXT_KEY_PROMOTION_DUCK_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<AttackVsSeaEmbarkedMod>33</AttackVsSeaEmbarkedMod>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_DUCK_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_DUCK</PediaEntry>
+		</Row>
+
+		<Row>
 			<Type>PROMOTION_ZEALOT</Type>
 			<Description>TXT_KEY_PROMOTION_ZEALOT</Description>
 			<Help>TXT_KEY_PROMOTION_ZEALOT_HELP</Help>
@@ -528,6 +547,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_DOCKED"><Text>Docked</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_DOCKED_HELP"><Text>Cannot attack while garrisoned inside a city.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_DUCK"><Text>Duck</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DUCK_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength against naval units and embarked units.</Text></Row>
 
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT"><Text>Zealot</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT_HELP"><Text>Killing a unit yields [ICON_FAITH] Faith equal to their [ICON_STRENGTH] Combat Strength (max 30).</Text></Row>
