@@ -1,0 +1,210 @@
+LEKMOD PROMOTION CHANGELOG
+==========================
+
+
+ALTITUDE TRAINING (PROMOTION_ALTITUDE_TRAINING)
+------------------------------------------------
+10% movement discount in hills (hills cost 1.8 movement instead of 2.0).
+- Changed: was double movement in hills (50% discount), now 10% discount via new DLL field HillsMovementDiscountPercent
+- Changed: removed +10% attack and defense in hills
+
+
+FAST SWIMMER (PROMOTION_PHIL_MARINE)
+-------------------------------------
++2 movement while embarked.
+- Changed: embarked movement bonus 3 -> 2
+
+
+SKYRANGER / EXTENDED PARADROP (PROMOTION_EXTENDED_PARADROP)
+-------------------------------------------------------------
+Allows paradrops with a range of 100 hexes.
+Eligible: paratroopers (UNITCOMBAT_PARADROPPER).
+- Changed: paradrop range 40 -> 100
+
+
+HEAL INSTANTLY (PROMOTION_INSTA_HEAL)
+--------------------------------------
+Heals the unit for 40 HP instantly when activated. One-time use per acquisition.
+Eligible: all unit types (unchanged).
+- Changed: heal amount 50 -> 40
+
+
+COASTAL RAIDER LINE (PROMOTION_COASTAL_RAIDER_1/2/3)
+------------------------------------------------------
++25% combat strength when attacking cities per tier.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+- Changed: city attack bonus per tier was 15/15/20, now 25/25/25
+- Changed: removed gold looting on city attack (CityAttackPlunderModifier was 33/33/34, now 0)
+
+
+BOARDING PARTY LINE (PROMOTION_BOARDING_PARTY_1/2/3)
+------------------------------------------------------
++25% combat strength when attacking naval units (DOMAIN_SEA) per tier.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+- Changed: bonus per tier 15% -> 25%
+
+
+ARMOR PLATING LINE (PROMOTION_ARMOR_PLATING_1/2/3)
+----------------------------------------------------
+3-tier line, no prerequisites for tier 1.
+Eligible: carriers (UNITCOMBAT_CARRIER), naval melee (UNITCOMBAT_NAVALMELEE), helicopters (UNITCOMBAT_HELICOPTER).
+- Changed: was carrier-only; now also available to naval melee and helicopters.
+Unlocks (shared with other naval melee lines):
+- Armor Plating 1 -> Sentry, Mobility (unchanged, already wired)
+- Armor Plating 2 -> Supply (unchanged, already wired)
+- Armor Plating 3 -> Logistics (added; parity with Coastal Raider 3 / Boarding Party 3)
+Unlocks (helicopter-specific, added):
+- Armor Plating 2 -> Heli Repair, Air Logistics (parity with Heli Ambush 2 / Heli Mobility 2 / Anti-Naval Heli 2)
+
+
+DISCIPLINE (PROMOTION_DISCIPLINE / PROMOTION_DISCIPLINE_AIR)
+---------------------------------------------------------------
+NEW. Granted by policy (not player-selectable). Two internal variants, same icon.
+- PROMOTION_DISCIPLINE: +50% XP gained. Applies to all non-air units (melee, ranged, gunpowder, mounted, armor, naval, helicopter, etc.).
+- PROMOTION_DISCIPLINE_AIR: +25% XP gained. Applies to air units (fighters and bombers, UNITCOMBAT_AIR) only.
+Policy wiring (Honor finisher / Iron Fist) pending.
+
+
+SWIFT TRANSPORT (PROMOTION_SWIFT_TRANSPORT)
+-------------------------------------------
+NEW. Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn (movement only upgraded, never reduced).
+- Added: EmbarkedUnitReceivesMovement=true
+- Note: unit eligibility and assignment wired separately; not player-pickable
+
+
+MOBILITY (PROMOTION_MOBILITY)
+------------------------------
+Now accessible to melee, gunpowder, and paratroopers via earlier prerequisites.
+- Added UnitCombatTypes: MELEE, GUN, PARADROPPER
+- Added prerequisites: Drill 2, Shock 2, Ambush Formation 2, Amphibious 2
+- Note: Amphibious 2 prereq is inert until that line gets unit type eligibility defined
+- Existing prereqs (Drill 3, Shock 3, etc.) unchanged
+
+
+FEAR AURA (PROMOTION_FEAR_AURA)
+--------------------------------
+NEW. Enemies within 1 tile suffer -15% combat strength.
+- Added: NearbyEnemyCombatMod=-15, NearbyEnemyCombatRange=1
+- Note: no domain restriction (affects all unit types in range); Feared Elephant equivalent is -10%
+
+
+ZEALOT (PROMOTION_ZEALOT)
+-------------------------
+NEW. Killing a unit yields Faith equal to their Combat Strength (max 30).
+- Added: UnitPromotions_YieldFromKills entry (YIELD_FAITH, Yield=100%, Max=30)
+- Added: free promotion for UNIT_CELT_PICTISH_WARRIOR and UNIT_ISRAEL_MACCABEE
+- Removed: unit-level Unit_YieldFromKills YIELD_FAITH entries for both units (replaced by this promotion)
+- Note: previous Pictish Warrior behavior had no cap; now capped at 30
+
+
+EMBARKED UNIT DEFENSE (FORMULA CHANGE)
+---------------------------------------
+Embarked unit defense is now 40% of the unit's highest combat strength (melee or ranged), scaled by EmbarkDefenseModifier. Previously era-based (fixed value per era regardless of unit strength).
+- Changed: GetEmbarkedUnitDefense() formula from era lookup to max(meleCS, rangedCS) * 40%
+
+
+AMPHIBIOUS LINE (PROMOTION_AMPHIBIOUS_1/2/3)
+---------------------------------------------
+NEW 3-tier line replacing vanilla PROMOTION_AMPHIBIOUS. No prerequisites for tier 1.
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), mounted (UNITCOMBAT_MOUNTED), armor (UNITCOMBAT_ARMOR), ranged (UNITCOMBAT_ARCHER), mounted ranged (UNITCOMBAT_MOUNTED_RANGED).
+Tier 1 unlocks Tier 2; Tier 2 unlocks Tier 3 (and also unlocks Mobility).
+- Amphibious I: No river attack penalty. Embarked CS = 70% of base (EmbarkDefenseModifier=75 on new formula). Embarking costs 1 MP (ZOC applies); at most 1 MP remaining after.
+- Amphibious II: +1 embarked movement. Disembarking costs 1 MP (ZOC applies); at most 1 MP remaining after.
+- Amphibious III: No penalty attacking from water (Amphib). +1 embarked movement. At most 2 MP remaining after domain change. Can heal while embarked under normal land healing rules.
+- Removed: vanilla PROMOTION_AMPHIBIOUS (CannotBeChosen=true, no effects) — units that held it retain it as a dummy.
+- New DLL fields: EmbarkFlatCost, DisembarkFlatCost, MaxMovesAfterDomainChange, HealWhileEmbarked (promotion-level).
+
+
+MOUNTAINEERING (PROMOTION_MOUNTAINEERING)
+------------------------------------------
+NEW. Allows mountain crossing. Units ending their turn on a mountain take 50 damage (existing mechanic, same as Carthage).
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN).
+Requires (any): Drill 2, Altitude Training.
+- Added: CanCrossMountains=true (new DLL field; patches canEnterTerrain mountain gate)
+- The 50 mountain damage reuses the existing end-of-turn attrition check (line 6473 CvUnit.cpp) — no new code needed
+
+
+BUNKER BUSTING (PROMOTION_BUNKER_BUSTING)
+------------------------------------------
+NEW. +33% Combat Strength attacking cities. Each attack deals 10 flat damage to all non-air units and civilians in the city.
+Eligible: siege (UNITCOMBAT_SIEGE), bomber (UNITCOMBAT_BOMBER).
+Requires (any): Volley (for siege), Siege (for bombers).
+- Added: CityAttack=33 (existing field), CitySplashDamage=10 (new DLL field)
+- New DLL field CitySplashDamage triggers in ResolveRangedUnitVsCombat and ResolveAirUnitVsCombat after city takes damage
+
+
+MARAUDER (PROMOTION_MARAUDER)
+------------------------------
+NEW. +50% gold from pillaging tiles. Not player-selectable (granted by UU or policy).
+- Added: PillageChange=50 (new promotion-level field wired to existing CvUnit::getPillageChange())
+- New DLL wiring: CvPromotionEntry::GetPillageChange() added; changePillageChange() now called in promotion apply block
+
+
+ENVELOPMENT (PROMOTION_ENVELOPMENT)
+------------------------------------
+NEW. Doubles the flanking bonus per adjacent friendly unit (from +10% to +20% per unit).
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), mounted (UNITCOMBAT_MOUNTED), armor (UNITCOMBAT_ARMOR).
+Requires (any): Shock 2, Drill 2, Amphibious 2.
+- Added: FlankAttackModifier=100 (doubles the base BONUS_PER_ADJACENT_FRIEND value of 10)
+
+
+SORTIE (PROMOTION_SORTIE)
+---------------------------
+Changed: now also takes 10% less damage from Air Sweeps (air-vs-air sweep path).
+- Changed: InterceptionDefenseDamageModifier 0 -> -10
+- DLL: patched GenerateAirSweepCombatInfo to apply pkDefender->GetInterceptionDefenseDamageModifier()
+  to iAttackerDamageInflicted in the air-vs-air branch (was only applied in GetInterceptionDamage,
+  which is not called in that path)
+- Field already wired for regular interception; sweep path was the only gap
+
+
+REPAIR CREW (PROMOTION_REPAIR_CREW)
+--------------------------------------
+NEW. Aircraft based on this carrier heal +15 HP per turn when skipping a turn or with Air Repair.
+Eligible: carriers (UNITCOMBAT_CARRIER).
+Requires (any): Flight Deck II (PROMOTION_FLIGHT_DECK_2), Armor Plating II (PROMOTION_ARMOR_PLATING_2).
+- Added: SameTileHealChange=15 (existing vanilla field; picked up by air unit healRate() with no domain filter)
+- No DLL changes needed
+
+
+SAMBUCA (PROMOTION_SAMBUCA)
+---------------------------------
+NEW. Naval melee variant of the Assyrian Siege Tower's Sapper promotion.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE).
+Requires: Coastal Raider I (PROMOTION_COASTAL_RAIDER_1).
+Effects: Sapper=true (reduces enemy city defense), -33% Combat Strength on defense, -1 Movement.
+- Note: PROMOTION_SAPPER (Siege Tower) is unchanged; this is a separate choosable promotion
+  with a different display name but with balance penalties for the naval melee context.
+- Penalties are built into PROMOTION_SAMBUCA; no separate PROMOTION_PENALTY_ON_DEFENSE
+  was created (vanilla Civ5 has no promotion-level FreePromotion field to auto-grant one).
+
+
+CARPET BOMBING (PROMOTION_CARPET_BOMBING)
+------------------------------------------
+NEW. Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles (including friendlies).
+Eligible: bombers (UNITCOMBAT_BOMBER).
+Requires: Bombardment 2.
+- Added: CarpetBombing=true (new DLL field)
+- War declaration: hitting a City State unit triggers declareWar(); hitting a major civ unit not at war deals damage without declaration
+- Interception: iAttackerDamageInflicted is already interception-adjusted before splash is computed, so reduced bombing naturally reduces splash
+- Splash fires in ResolveAirUnitVsCombat for both city-target and unit-target branches
+
+
+SUPPLY SHIP (PROMOTION_SUPPLY_SHIP)
+------------------------------------
+NEW. Adjacent naval units may heal outside friendly territory (normally impossible without HealOutsideFriendly).
+Adjacent non-air units heal +10 HP per turn when outside friendly territory.
+Eligible: naval melee (UNITCOMBAT_NAVALMELEE), naval ranged (UNITCOMBAT_NAVALRANGED).
+Requires: Coastal Raider 2, Boarding Party 2, or Armor Plating 2 (any one).
+- Added: AdjacentTileHealOutsideFriendly=10 (new DLL field)
+- healRate() DOMAIN_SEA early-return is bypassed when an adjacent allied unit has AdjacentTileHealOutsideFriendly > 0
+- canHeal() DOMAIN_SEA gate is also bypassed in the same way
+- The +10 bonus from AdjacentTileHealOutsideFriendly is only applied when the healing unit is outside friendly territory and not air domain
+
+
+WOODSMAN (PROMOTION_WOODSMAN)
+------------------------------
+Double movement in forest and jungle. +15% attack and defense in forest and jungle.
+Eligible: melee (UNITCOMBAT_MELEE), gunpowder (UNITCOMBAT_GUN), paratroopers (UNITCOMBAT_PARADROPPER).
+Requires: Drill 1.
+- Changed: prerequisite was Shock 2 OR Drill 2, now Drill 1 only

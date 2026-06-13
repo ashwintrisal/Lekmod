@@ -1,0 +1,495 @@
+<?xml version="1.0" encoding="utf-8"?>
+<GameData>
+
+	<!-- ============================================================ -->
+	<!-- Icon Atlases                                                  -->
+	<!-- Each promotion uses its own 1x1 atlas (individual DDS files) -->
+	<!-- ============================================================ -->
+	<IconTextureAtlases>
+
+		<!-- AMPHIBIOUS_1 -->
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>amphibious_1_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>amphibious_1_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>amphibious_1_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>amphibious_1_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- AMPHIBIOUS_2 -->
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>amphibious_2_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>amphibious_2_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>amphibious_2_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>amphibious_2_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- AMPHIBIOUS_3 -->
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>amphibious_3_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>amphibious_3_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>amphibious_3_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>amphibious_3_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- ENVELOPMENT -->
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>envelopment_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>envelopment_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>envelopment_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>envelopment_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- BUNKER_BUSTING -->
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>bunker_busting_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>bunker_busting_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>bunker_busting_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>bunker_busting_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- CARPET_BOMBING -->
+		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>carpet_bombing_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>carpet_bombing_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>carpet_bombing_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>carpet_bombing_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- DISCIPLINE -->
+		<Row><Atlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>discipline_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>discipline_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>discipline_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>discipline_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- FEARED_ELEPHANT -->
+		<Row><Atlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>feared_elephant_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>feared_elephant_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>feared_elephant_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>feared_elephant_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- HATAMOTO -->
+		<Row><Atlas>LEKMOD_HATAMOTO_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>hatamoto_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_HATAMOTO_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>hatamoto_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_HATAMOTO_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>hatamoto_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_HATAMOTO_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>hatamoto_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- IAIJUTSU -->
+		<Row><Atlas>LEKMOD_IAIJUTSU_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>iaijutsu_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_IAIJUTSU_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>iaijutsu_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_IAIJUTSU_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>iaijutsu_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_IAIJUTSU_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>iaijutsu_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- MARAUDER -->
+		<Row><Atlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>marauder_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>marauder_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>marauder_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>marauder_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- MOUNTAINEERING -->
+		<Row><Atlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>mountaineering_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>mountaineering_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>mountaineering_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>mountaineering_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- ONE_GOOD_EYE -->
+		<Row><Atlas>LEKMOD_ONE_GOOD_EYE_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>one_good_eye_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ONE_GOOD_EYE_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>one_good_eye_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ONE_GOOD_EYE_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>one_good_eye_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ONE_GOOD_EYE_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>one_good_eye_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- REPAIR_CREW -->
+		<Row><Atlas>LEKMOD_REPAIR_CREW_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>repair_crew_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_REPAIR_CREW_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>repair_crew_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_REPAIR_CREW_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>repair_crew_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_REPAIR_CREW_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>repair_crew_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- STARGAZING -->
+		<Row><Atlas>LEKMOD_STARGAZING_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>stargazing_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_STARGAZING_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>stargazing_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_STARGAZING_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>stargazing_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_STARGAZING_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>stargazing_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- SUPPLY_SHIP -->
+		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>supply_ship_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>supply_ship_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>supply_ship_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>supply_ship_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- SWIFT_TRANSPORT -->
+		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>swift_transport_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>swift_transport_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>swift_transport_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>swift_transport_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- FEAR_AURA -->
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>fear_aura_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>fear_aura_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>fear_aura_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>fear_aura_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+		<!-- ZEALOT -->
+		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>256</IconSize><Filename>zealot_256.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>64</IconSize><Filename>zealot_64.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>45</IconSize><Filename>zealot_45.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+		<Row><Atlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</Atlas><IconSize>32</IconSize><Filename>zealot_32.dds</Filename><IconsPerRow>1</IconsPerRow><IconsPerColumn>1</IconsPerColumn></Row>
+
+	</IconTextureAtlases>
+
+	<!-- ============================================================ -->
+	<!-- Promotion Definitions (skeletons - effects TBD)              -->
+	<!-- ============================================================ -->
+	<UnitPromotions>
+
+		<Row>
+			<Type>PROMOTION_AMPHIBIOUS_1</Type>
+			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_1</Description>
+			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_1_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<River>true</River>
+			<EmbarkDefenseModifier>75</EmbarkDefenseModifier>
+			<EmbarkFlatCost>true</EmbarkFlatCost>
+			<MaxMovesAfterDomainChange>1</MaxMovesAfterDomainChange>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_AMPHIBIOUS_1_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AMPHIBIOUS_1</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_AMPHIBIOUS_2</Type>
+			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_2</Description>
+			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_2_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<DisembarkFlatCost>true</DisembarkFlatCost>
+			<ExtraNavalMovement>1</ExtraNavalMovement>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_AMPHIBIOUS_2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AMPHIBIOUS_2</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_AMPHIBIOUS_3</Type>
+			<Description>TXT_KEY_PROMOTION_AMPHIBIOUS_3</Description>
+			<Help>TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<Amphib>true</Amphib>
+			<ExtraNavalMovement>1</ExtraNavalMovement>
+			<MaxMovesAfterDomainChange>1</MaxMovesAfterDomainChange>
+			<HealWhileEmbarked>true</HealWhileEmbarked>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_AMPHIBIOUS_3_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_AMPHIBIOUS_3</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_ENVELOPMENT</Type>
+			<Description>TXT_KEY_PROMOTION_ENVELOPMENT</Description>
+			<Help>TXT_KEY_PROMOTION_ENVELOPMENT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<FlankAttackModifier>100</FlankAttackModifier>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_ENVELOPMENT_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ENVELOPMENT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_BUNKER_BUSTING</Type>
+			<Description>TXT_KEY_PROMOTION_BUNKER_BUSTING</Description>
+			<Help>TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CityAttack>33</CityAttack>
+			<CitySplashDamage>10</CitySplashDamage>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_BUNKER_BUSTING_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_BUNKER_BUSTING</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_REPAIR_CREW</Type>
+			<Description>TXT_KEY_PROMOTION_REPAIR_CREW</Description>
+			<Help>TXT_KEY_PROMOTION_REPAIR_CREW_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>9</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_REPAIR_CREW</PediaEntry>
+			<SameTileHealChange>15</SameTileHealChange>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_SUPPLY_SHIP</Type>
+			<Description>TXT_KEY_PROMOTION_SUPPLY_SHIP</Description>
+			<Help>TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY_SHIP</PediaEntry>
+			<AdjacentTileHealOutsideFriendly>10</AdjacentTileHealOutsideFriendly>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_SAMBUCA</Type>
+			<Description>TXT_KEY_PROMOTION_SAMBUCA</Description>
+			<Help>TXT_KEY_PROMOTION_SAMBUCA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>6</PortraitIndex>
+			<IconAtlas>EXPANSION2_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SAMBUCA</PediaEntry>
+			<Sapper>true</Sapper>
+			<DefenseMod>-33</DefenseMod>
+			<MovesChange>-1</MovesChange>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_CARPET_BOMBING</Type>
+			<Description>TXT_KEY_PROMOTION_CARPET_BOMBING</Description>
+			<Help>TXT_KEY_PROMOTION_CARPET_BOMBING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_CARPET_BOMBING_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_CARPET_BOMBING</PediaEntry>
+			<CarpetBombing>true</CarpetBombing>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_DISCIPLINE</Type>
+			<Description>TXT_KEY_PROMOTION_DISCIPLINE</Description>
+			<Help>TXT_KEY_PROMOTION_DISCIPLINE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExperiencePercent>50</ExperiencePercent>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_DISCIPLINE</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_DISCIPLINE_AIR</Type>
+			<Description>TXT_KEY_PROMOTION_DISCIPLINE_AIR</Description>
+			<Help>TXT_KEY_PROMOTION_DISCIPLINE_AIR_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<ExperiencePercent>25</ExperiencePercent>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_DISCIPLINE_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_DISCIPLINE_AIR</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_FEAR_AURA</Type>
+			<Description>TXT_KEY_PROMOTION_FEAR_AURA</Description>
+			<Help>TXT_KEY_PROMOTION_FEAR_AURA_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<NearbyEnemyCombatMod>-15</NearbyEnemyCombatMod>
+			<NearbyEnemyCombatRange>1</NearbyEnemyCombatRange>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_FEAR_AURA_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_FEAR_AURA</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_FEARED_ELEPHANT</Type>
+			<Description>TXT_KEY_PROMOTION_FEARED_ELEPHANT</Description>
+			<Help>TXT_KEY_PROMOTION_FEARED_ELEPHANT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_FEARED_ELEPHANT_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_FEARED_ELEPHANT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_HATAMOTO</Type>
+			<Description>TXT_KEY_PROMOTION_HATAMOTO</Description>
+			<Help>TXT_KEY_PROMOTION_HATAMOTO_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_HATAMOTO_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_HATAMOTO</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_IAIJUTSU</Type>
+			<Description>TXT_KEY_PROMOTION_IAIJUTSU</Description>
+			<Help>TXT_KEY_PROMOTION_IAIJUTSU_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_IAIJUTSU_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_IAIJUTSU</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_MARAUDER</Type>
+			<Description>TXT_KEY_PROMOTION_MARAUDER</Description>
+			<Help>TXT_KEY_PROMOTION_MARAUDER_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PillageChange>50</PillageChange>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_MARAUDER_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MARAUDER</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_MOUNTAINEERING</Type>
+			<Description>TXT_KEY_PROMOTION_MOUNTAINEERING</Description>
+			<Help>TXT_KEY_PROMOTION_MOUNTAINEERING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CanCrossMountains>true</CanCrossMountains>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_MOUNTAINEERING_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_MOUNTAINEERING</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_ONE_GOOD_EYE</Type>
+			<Description>TXT_KEY_PROMOTION_ONE_GOOD_EYE</Description>
+			<Help>TXT_KEY_PROMOTION_ONE_GOOD_EYE_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_ONE_GOOD_EYE_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ONE_GOOD_EYE</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_REPAIR_CREW</Type>
+			<Description>TXT_KEY_PROMOTION_REPAIR_CREW</Description>
+			<Help>TXT_KEY_PROMOTION_REPAIR_CREW_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_REPAIR_CREW_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_REPAIR_CREW</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_STARGAZING</Type>
+			<Description>TXT_KEY_PROMOTION_STARGAZING</Description>
+			<Help>TXT_KEY_PROMOTION_STARGAZING_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_STARGAZING_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_STARGAZING</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_SUPPLY_SHIP</Type>
+			<Description>TXT_KEY_PROMOTION_SUPPLY_SHIP</Description>
+			<Help>TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_SUPPLY_SHIP_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SUPPLY_SHIP</PediaEntry>
+			<AdjacentTileHealOutsideFriendly>10</AdjacentTileHealOutsideFriendly>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_SWIFT_TRANSPORT</Type>
+			<Description>TXT_KEY_PROMOTION_SWIFT_TRANSPORT</Description>
+			<Help>TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<EmbarkedUnitReceivesMovement>true</EmbarkedUnitReceivesMovement>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_SWIFT_TRANSPORT_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SWIFT_TRANSPORT</PediaEntry>
+		</Row>
+
+		<Row>
+			<Type>PROMOTION_ZEALOT</Type>
+			<Description>TXT_KEY_PROMOTION_ZEALOT</Description>
+			<Help>TXT_KEY_PROMOTION_ZEALOT_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<CannotBeChosen>true</CannotBeChosen>
+			<PortraitIndex>0</PortraitIndex>
+			<IconAtlas>LEKMOD_ZEALOT_PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_ATTRIBUTES</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_ZEALOT</PediaEntry>
+		</Row>
+
+	</UnitPromotions>
+
+	<!-- ============================================================ -->
+	<!-- Localization                                                  -->
+	<!-- ============================================================ -->
+	<Language_en_US>
+
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_1"><Text>Amphibious I</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_1_HELP"><Text>No [ICON_STRENGTH] Combat Strength penalty when attacking across rivers. Embarked [ICON_STRENGTH] Combat Strength increased to 70% of base. Embarking costs 1 [ICON_MOVES] Movement (ZOC still applies), with at most 1 [ICON_MOVES] Movement remaining after crossing.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_2"><Text>Amphibious II</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_2_HELP"><Text>+1 [ICON_MOVES] Movement while embarked. Disembarking costs 1 [ICON_MOVES] Movement (ZOC still applies), with at most 1 [ICON_MOVES] Movement remaining after crossing.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3"><Text>Amphibious III</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_AMPHIBIOUS_3_HELP"><Text>No [ICON_STRENGTH] Combat Strength penalty when attacking from water. +1 [ICON_MOVES] Movement while embarked. Domain changes allow up to 2 [ICON_MOVES] Movement remaining after crossing. Can heal while embarked as if on land.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT"><Text>Envelopment</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_ENVELOPMENT_HELP"><Text>Doubles flanking bonus: each adjacent friendly unit adds +20% [ICON_STRENGTH] Combat Strength when attacking (up from +10%).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING"><Text>Bunker Busting</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_BUNKER_BUSTING_HELP"><Text>+33% [ICON_STRENGTH] Combat Strength when attacking cities. Each attack also deals 10 damage to all non-air units and civilians in the city.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW"><Text>Repair Crew</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW_HELP"><Text>Aircraft based on this carrier heal +15 [ICON_HEALING] HP per turn when skipping a turn or with the Air Repair promotion. Requires Flight Deck II or Armor Plating II.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA"><Text>Sambuca</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SAMBUCA_HELP"><Text>Reduces enemy [ICON_STRENGTH] Combat Strength when attacking cities. -1 [ICON_MOVES] Movement. -33% [ICON_STRENGTH] Combat Strength on defense. Eligible: naval melee. Requires Coastal Raider I.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING"><Text>Carpet Bombing</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_CARPET_BOMBING_HELP"><Text>Each attack deals 20% of inflicted damage to all non-air units on adjacent tiles. City State units hit trigger an automatic declaration of war. Splash damage is reduced proportionally if the bomber is intercepted.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP"><Text>Supply Ship</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>Adjacent naval units may heal outside friendly territory. Adjacent non-air units heal +10 [ICON_HEALING] HP per turn outside friendly territory. Eligible: naval melee, naval ranged. Requires Coastal Raider II, Boarding Party II, or Armor Plating II.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE"><Text>Discipline</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_HELP"><Text>+50% [ICON_EXPERIENCE] Experience gained (non-air units).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR"><Text>Discipline</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_DISCIPLINE_AIR_HELP"><Text>+25% [ICON_EXPERIENCE] Experience gained (air units).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_FEAR_AURA"><Text>Fear Aura</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_FEAR_AURA_HELP"><Text>Enemies within 1 tile suffer -15% [ICON_STRENGTH] Combat Strength.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT"><Text>Feared Elephant</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_FEARED_ELEPHANT_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_HATAMOTO"><Text>Hatamoto</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_HATAMOTO_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_IAIJUTSU"><Text>Iaijutsu</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_IAIJUTSU_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_MARAUDER"><Text>Marauder</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_MARAUDER_HELP"><Text>+50% [ICON_GOLD] Gold from pillaging tiles.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING"><Text>Mountaineering</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_MOUNTAINEERING_HELP"><Text>Can cross mountain tiles. Units ending their turn on a mountain take 50 damage.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_ONE_GOOD_EYE"><Text>One Good Eye</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_ONE_GOOD_EYE_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW"><Text>Repair Crew</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_REPAIR_CREW_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_STARGAZING"><Text>Stargazing</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_STARGAZING_HELP"><Text>TODO</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP"><Text>Supply Ship</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SUPPLY_SHIP_HELP"><Text>Adjacent naval units may heal outside friendly territory. Adjacent non-air units heal +10 [ICON_HEALING] HP per turn outside friendly territory. Eligible: naval melee, naval ranged. Requires Coastal Raider II, Boarding Party II, or Armor Plating II.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT"><Text>Swift Transport</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SWIFT_TRANSPORT_HELP"><Text>Embarked units sharing this ship's tile at the start of a turn gain this ship's movement for that turn.</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_ZEALOT"><Text>Zealot</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_ZEALOT_HELP"><Text>Killing a unit yields [ICON_FAITH] Faith equal to their [ICON_STRENGTH] Combat Strength (max 30).</Text></Row>
+
+	</Language_en_US>
+
+</GameData>

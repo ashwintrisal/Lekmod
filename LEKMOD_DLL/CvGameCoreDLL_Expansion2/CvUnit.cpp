@@ -166,6 +166,7 @@ CvUnit::CvUnit() :
 	, m_iExtraVisibilityRange("CvUnit::m_iExtraVisibilityRange", m_syncArchive)
 	, m_iExtraMoves("CvUnit::m_iExtraMoves", m_syncArchive)
 	, m_iExtraMoveDiscount("CvUnit::m_iExtraMoveDiscount", m_syncArchive)
+	, m_iHillsMovementDiscountPercent("CvUnit::m_iHillsMovementDiscountPercent", m_syncArchive)
 	, m_iExtraRange("CvUnit::m_iExtraRange", m_syncArchive)
 	, m_iExtraIntercept("CvUnit::m_iExtraIntercept", m_syncArchive)
 	, m_iExtraEvasion("CvUnit::m_iExtraEvasion", m_syncArchive)
@@ -1011,6 +1012,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iExtraVisibilityRange = 0;
 	m_iExtraMoves = 0;
 	m_iExtraMoveDiscount = 0;
+	m_iHillsMovementDiscountPercent = 0;
 	m_iExtraRange = 0;
 	m_iExtraIntercept = 0;
 	m_iExtraEvasion = 0;
@@ -1038,6 +1040,7 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iDefenseModifier = 0;
 	m_iExtraCityAttackPercent = 0;
 	m_iExtraCityDefensePercent = 0;
+	m_iCitySplashDamage = 0;
 	m_iExtraRangedDefenseModifier = 0;
 	m_iExtraHillsAttackPercent = 0;
 	m_iExtraHillsDefensePercent = 0;
@@ -1095,6 +1098,13 @@ void CvUnit::reset(int iID, UnitTypes eUnit, PlayerTypes eOwner, bool bConstruct
 	m_iGreatGeneralModifier = 0;
 	m_iGreatGeneralReceivesMovementCount = 0;
 	m_iEmbarkedUnitReceivesMovementCount = 0; // NQMP GJS - Danish Longship
+	m_iEmbarkFlatCostCount = 0;
+	m_iDisembarkFlatCostCount = 0;
+	m_iMaxMovesAfterDomainChange = 0;
+	m_iHealWhileEmbarkedCount = 0;
+	m_iCanCrossMountainsCount = 0;
+	m_iCarpetBombingCount = 0;
+	m_iAdjacentTileHealOutsideFriendly = 0;
 
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	m_iLandUnitReceivesMovementCount = 0;
@@ -2631,7 +2641,7 @@ bool CvUnit::canEnterTerrain(const CvPlot& enterPlot, byte bMoveFlags) const
 	if(enterPlot.isMountain())
 	{
 		CvPlayer& kPlayer = GET_PLAYER(getOwner());
-		if(!kPlayer.GetPlayerTraits()->IsAbleToCrossMountains() && !IsHoveringUnit() && !canMoveAllTerrain())
+		if(!kPlayer.GetPlayerTraits()->IsAbleToCrossMountains() && !IsHoveringUnit() && !canMoveAllTerrain() && !IsCanCrossMountains())
 		{
 			return false;
 		}
@@ -6179,18 +6189,38 @@ bool CvUnit::canHeal(const CvPlot* pPlot, bool bTestVisible) const
 	// Unit now has to be able to Fortify to Heal (since they're very similar states, and Heal gives a defense bonus)
 	if(!bTestVisible)
 	{
-		// Embarked Units can't heal
-		if(isEmbarked())
+		// Embarked Units can't heal (unless they have HealWhileEmbarked)
+		if(isEmbarked() && !IsHealWhileEmbarked())
 		{
 			return false;
 		}
 
-		// Boats can only heal in friendly territory (without promotion)
+		// Boats can only heal in friendly territory (without promotion or adjacent Supply Ship)
 		if(getDomainType() == DOMAIN_SEA)
 		{
 			if(!IsInFriendlyTerritory() && !isHealOutsideFriendly())
 			{
-				return false;
+				bool bSupplyShipAdjacent = false;
+				for(int iDir = 0; iDir < NUM_DIRECTION_TYPES && !bSupplyShipAdjacent; iDir++)
+				{
+					CvPlot* pAdjPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)iDir);
+					if(pAdjPlot)
+					{
+						const IDInfo* pAdjNode = pAdjPlot->headUnitNode();
+						while(pAdjNode != NULL)
+						{
+							const CvUnit* pAdjUnit = ::getUnit(*pAdjNode);
+							pAdjNode = pAdjPlot->nextUnitNode(pAdjNode);
+							if(pAdjUnit && pAdjUnit->getTeam() == getTeam() && pAdjUnit->GetAdjacentTileHealOutsideFriendly() > 0)
+							{
+								bSupplyShipAdjacent = true;
+								break;
+							}
+						}
+					}
+				}
+				if(!bSupplyShipAdjacent)
+					return false;
 			}
 		}
 	}
@@ -6229,12 +6259,32 @@ bool CvUnit::canSentry(const CvPlot* pPlot) const
 int CvUnit::healRate(const CvPlot* pPlot) const
 {
 	VALIDATE_OBJECT
-	// Boats can only heal in friendly territory
+	// Boats can only heal in friendly territory (unless adjacent Supply Ship unlocks it)
 	if(getDomainType() == DOMAIN_SEA)
 	{
 		if(!IsInFriendlyTerritory() && !isHealOutsideFriendly())
 		{
-			return 0;
+			bool bSupplyShipAdjacent = false;
+			for(int iDir = 0; iDir < NUM_DIRECTION_TYPES && !bSupplyShipAdjacent; iDir++)
+			{
+				CvPlot* pAdjPlot = plotDirection(pPlot->getX(), pPlot->getY(), (DirectionTypes)iDir);
+				if(pAdjPlot)
+				{
+					const IDInfo* pAdjNode = pAdjPlot->headUnitNode();
+					while(pAdjNode != NULL)
+					{
+						const CvUnit* pAdjUnit = ::getUnit(*pAdjNode);
+						pAdjNode = pAdjPlot->nextUnitNode(pAdjNode);
+						if(pAdjUnit && pAdjUnit->getTeam() == getTeam() && pAdjUnit->GetAdjacentTileHealOutsideFriendly() > 0)
+						{
+							bSupplyShipAdjacent = true;
+							break;
+						}
+					}
+				}
+			}
+			if(!bSupplyShipAdjacent)
+				return 0;
 		}
 	}
 
@@ -6314,6 +6364,12 @@ int CvUnit::healRate(const CvPlot* pPlot) const
 					if(pLoopUnit && pLoopUnit->getTeam() == getTeam())
 					{
 						int iHeal = pLoopUnit->getAdjacentTileHeal();
+
+						// Supply Ship: bonus heal applies only outside friendly territory, non-air units
+						if(!IsInFriendlyTerritory() && getDomainType() != DOMAIN_AIR)
+						{
+							iHeal += pLoopUnit->GetAdjacentTileHealOutsideFriendly();
+						}
 
 						if(iHeal > iBestHealFromUnits)
 						{
@@ -13271,7 +13327,11 @@ int CvUnit::GetEmbarkedUnitDefense() const
 	CvPlayer& kPlayer = GET_PLAYER(m_eOwner);
 	EraTypes eEra = kPlayer.GetCurrentEra();
 
-	iRtnValue = GC.getEraInfo(eEra)->getEmbarkedUnitDefense() * 100;
+	// Embarked defense = 40% of the unit's highest combat strength (melee or ranged)
+	int iMeleeCS = m_iBaseCombat;
+	int iRangedCS = GetBaseRangedCombatStrength();
+	int iHighestCS = std::max(iMeleeCS, iRangedCS);
+	iRtnValue = iHighestCS * 40;
 
 	iModifier = GetEmbarkDefensiveModifier();
 	if(iModifier > 0)
@@ -18174,6 +18234,21 @@ void CvUnit::changeExtraMoveDiscount(int iChange)
 
 
 //	--------------------------------------------------------------------------------
+int CvUnit::getHillsMovementDiscountPercent() const
+{
+	VALIDATE_OBJECT
+	return m_iHillsMovementDiscountPercent;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::changeHillsMovementDiscountPercent(int iChange)
+{
+	VALIDATE_OBJECT
+	m_iHillsMovementDiscountPercent = (m_iHillsMovementDiscountPercent + iChange);
+}
+
+
+//	--------------------------------------------------------------------------------
 int CvUnit::getExtraRange() const
 {
 	VALIDATE_OBJECT
@@ -18511,6 +18586,18 @@ void CvUnit::changeExtraCityDefensePercent(int iChange)
 
 		setInfoBarDirty(true);
 	}
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetCitySplashDamage() const
+{
+	return m_iCitySplashDamage;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCitySplashDamage(int iChange)
+{
+	m_iCitySplashDamage += iChange;
 }
 
 
@@ -19285,6 +19372,91 @@ void CvUnit::ChangeEmbarkedUnitReceivesMovementCount(int iChange)
 	m_iEmbarkedUnitReceivesMovementCount += iChange;
 }
 // NQMP GJS - Danish Longship END
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsEmbarkFlatCost() const
+{
+	return m_iEmbarkFlatCostCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeEmbarkFlatCostCount(int iChange)
+{
+	m_iEmbarkFlatCostCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsDisembarkFlatCost() const
+{
+	return m_iDisembarkFlatCostCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeDisembarkFlatCostCount(int iChange)
+{
+	m_iDisembarkFlatCostCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetMaxMovesAfterDomainChange() const
+{
+	return m_iMaxMovesAfterDomainChange;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeMaxMovesAfterDomainChange(int iChange)
+{
+	m_iMaxMovesAfterDomainChange += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsHealWhileEmbarked() const
+{
+	return m_iHealWhileEmbarkedCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeHealWhileEmbarkedCount(int iChange)
+{
+	m_iHealWhileEmbarkedCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsCanCrossMountains() const
+{
+	return m_iCanCrossMountainsCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCanCrossMountainsCount(int iChange)
+{
+	m_iCanCrossMountainsCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+bool CvUnit::IsCarpetBombing() const
+{
+	return m_iCarpetBombingCount > 0;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeCarpetBombingCount(int iChange)
+{
+	m_iCarpetBombingCount += iChange;
+}
+
+//	--------------------------------------------------------------------------------
+int CvUnit::GetAdjacentTileHealOutsideFriendly() const
+{
+	return m_iAdjacentTileHealOutsideFriendly;
+}
+
+//	--------------------------------------------------------------------------------
+void CvUnit::ChangeAdjacentTileHealOutsideFriendly(int iChange)
+{
+	m_iAdjacentTileHealOutsideFriendly += iChange;
+}
+
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 //	--------------------------------------------------------------------------------
 bool CvUnit::IsLandUnitReceivesMovement() const
@@ -21382,6 +21554,9 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		ChangeHealIfDefeatExcludeBarbariansCount((thisPromotion.IsHealIfDefeatExcludeBarbarians()) ? iChange: 0);
 		changeHealOnPillageCount((thisPromotion.IsHealOnPillage()) ? iChange : 0);
 		changeFreePillageMoveCount((thisPromotion.IsFreePillageMoves()) ? iChange: 0);
+		changePillageChange(thisPromotion.GetPillageChange() * iChange);
+		ChangeCarpetBombingCount((thisPromotion.IsCarpetBombing()) ? iChange : 0);
+		ChangeAdjacentTileHealOutsideFriendly(thisPromotion.GetAdjacentTileHealOutsideFriendly() * iChange);
 		ChangeEmbarkAllWaterCount((thisPromotion.IsEmbarkedAllWater()) ? iChange: 0);
 		ChangeCityAttackOnlyCount((thisPromotion.IsCityAttackOnly()) ? iChange: 0);
 		ChangeCaptureDefeatedEnemyCount((thisPromotion.IsCaptureDefeatedEnemy()) ? iChange: 0);
@@ -21408,6 +21583,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraVisibilityRange(thisPromotion.GetVisibilityChange() * iChange);
 		changeExtraMoves(thisPromotion.GetMovesChange() * iChange);
 		changeExtraMoveDiscount(thisPromotion.GetMoveDiscountChange() * iChange);
+		changeHillsMovementDiscountPercent(thisPromotion.GetHillsMovementDiscountPercent() * iChange);
 		changeExtraNavalMoves(thisPromotion.GetExtraNavalMoves() * iChange);
 		changeHPHealedIfDefeatEnemy(thisPromotion.GetHPHealedIfDefeatEnemy() * iChange);
 		ChangeGoldenAgeValueFromKills(thisPromotion.GetGoldenAgeValueFromKills() * iChange);
@@ -21436,6 +21612,7 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeExtraCombatPercent(thisPromotion.GetCombatPercent() * iChange);
 		changeExtraCityAttackPercent(thisPromotion.GetCityAttackPercent() * iChange);
 		changeExtraCityDefensePercent(thisPromotion.GetCityDefensePercent() * iChange);
+		ChangeCitySplashDamage(thisPromotion.GetCitySplashDamage() * iChange);
 		changeExtraRangedDefenseModifier(thisPromotion.GetRangedDefenseMod() * iChange);
 		changeExtraHillsAttackPercent(thisPromotion.GetHillsAttackPercent() * iChange);
 		changeExtraHillsDefensePercent(thisPromotion.GetHillsDefensePercent() * iChange);
@@ -21456,6 +21633,11 @@ void CvUnit::setHasPromotion(PromotionTypes eIndex, bool bNewValue)
 		changeGreatGeneralModifier(thisPromotion.GetGreatGeneralModifier() * iChange);
 		ChangeGreatGeneralReceivesMovementCount(thisPromotion.IsGreatGeneralReceivesMovement() ? iChange: 0);
 		ChangeEmbarkedUnitReceivesMovementCount(thisPromotion.IsEmbarkedUnitReceivesMovement() ? iChange : 0); // NQMP GJS - Danish Longship
+		ChangeEmbarkFlatCostCount(thisPromotion.IsEmbarkFlatCost() ? iChange : 0);
+		ChangeDisembarkFlatCostCount(thisPromotion.IsDisembarkFlatCost() ? iChange : 0);
+		ChangeMaxMovesAfterDomainChange(thisPromotion.GetMaxMovesAfterDomainChange() * iChange);
+		ChangeHealWhileEmbarkedCount(thisPromotion.IsHealWhileEmbarked() ? iChange : 0);
+		ChangeCanCrossMountainsCount(thisPromotion.IsCanCrossMountains() ? iChange : 0);
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 		ChangeLandUnitReceivesMovementCount(thisPromotion.IsLandUnitReceivesMovement() ? iChange : 0);
 #endif
@@ -21837,6 +22019,14 @@ void CvUnit::read(FDataStream& kStream)
 
 	kStream >> m_iGreatGeneralReceivesMovementCount;
 	kStream >> m_iEmbarkedUnitReceivesMovementCount; // NQMP GJS - Danish Lonship
+	kStream >> m_iEmbarkFlatCostCount;
+	kStream >> m_iDisembarkFlatCostCount;
+	kStream >> m_iMaxMovesAfterDomainChange;
+	kStream >> m_iHealWhileEmbarkedCount;
+	kStream >> m_iCitySplashDamage;
+	kStream >> m_iCanCrossMountainsCount;
+	kStream >> m_iCarpetBombingCount;
+	kStream >> m_iAdjacentTileHealOutsideFriendly;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream >> m_iLandUnitReceivesMovementCount;
 #endif
@@ -22018,6 +22208,14 @@ void CvUnit::write(FDataStream& kStream) const
 
 	kStream << m_iGreatGeneralReceivesMovementCount;
 	kStream << m_iEmbarkedUnitReceivesMovementCount; // NQMP GJS - Danish Longship
+	kStream << m_iEmbarkFlatCostCount;
+	kStream << m_iDisembarkFlatCostCount;
+	kStream << m_iMaxMovesAfterDomainChange;
+	kStream << m_iHealWhileEmbarkedCount;
+	kStream << m_iCitySplashDamage;
+	kStream << m_iCanCrossMountainsCount;
+	kStream << m_iCarpetBombingCount;
+	kStream << m_iAdjacentTileHealOutsideFriendly;
 #ifdef LEKMOD_LONGSHIP_ALL_PROMO
 	kStream << m_iLandUnitReceivesMovementCount;
 #endif

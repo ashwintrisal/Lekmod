@@ -35,6 +35,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iVisibilityChange(0),
 	m_iMovesChange(0),
 	m_iMoveDiscountChange(0),
+	m_iHillsMovementDiscountPercent(0),
 	m_iRangeChange(0),
 	m_iRangedAttackModifier(0),
 	m_iInterceptionCombatModifier(0),
@@ -56,6 +57,7 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iCombatPercent(0),
 	m_iCityAttackPercent(0),
 	m_iCityDefensePercent(0),
+	m_iCitySplashDamage(0),
 	m_iRangedDefenseMod(0),
 	m_iHillsAttackPercent(0),
 	m_iHillsDefensePercent(0),
@@ -111,6 +113,10 @@ CvPromotionEntry::CvPromotionEntry():
 	m_iExtraWithdrawal(0),
 	m_iEmbarkExtraVisibility(0),
 	m_iEmbarkDefenseModifier(0),
+	m_bEmbarkFlatCost(false),
+	m_bDisembarkFlatCost(false),
+	m_iMaxMovesAfterDomainChange(0),
+	m_bHealWhileEmbarked(false),
 	m_iCapitalDefenseModifier(0),
 	m_iCapitalDefenseFalloff(0),
 	m_iCityAttackPlunderModifier(0),
@@ -155,6 +161,10 @@ CvPromotionEntry::CvPromotionEntry():
 	m_bRangeAttackIgnoreLOS(false),
 	m_bFreePillageMoves(false),
 	m_bHealOnPillage(false),
+	m_iPillageChange(0),
+	m_bCanCrossMountains(false),
+	m_bCarpetBombing(false),
+	m_iAdjacentTileHealOutsideFriendly(0),
 	m_bHealIfDefeatExcludesBarbarians(false),
 	m_bEmbarkedAllWater(false),
 	m_bCityAttackOnly(false),
@@ -289,6 +299,10 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_bRangeAttackIgnoreLOS = kResults.GetBool("RangeAttackIgnoreLOS");
 	m_bFreePillageMoves = kResults.GetBool("FreePillageMoves");
 	m_bHealOnPillage = kResults.GetBool("HealOnPillage");
+	m_iPillageChange = kResults.GetInt("PillageChange");
+	m_bCanCrossMountains = kResults.GetBool("CanCrossMountains");
+	m_bCarpetBombing = kResults.GetBool("CarpetBombing");
+	m_iAdjacentTileHealOutsideFriendly = kResults.GetInt("AdjacentTileHealOutsideFriendly");
 	m_bHealIfDefeatExcludesBarbarians = kResults.GetBool("HealIfDestroyExcludesBarbarians");
 	m_bEmbarkedAllWater = kResults.GetBool("EmbarkedAllWater");
 	m_bCityAttackOnly = kResults.GetBool("CityAttackOnly");
@@ -319,6 +333,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iVisibilityChange = kResults.GetInt("VisibilityChange");
 	m_iMovesChange = kResults.GetInt("MovesChange");
 	m_iMoveDiscountChange = kResults.GetInt("MoveDiscountChange");
+	m_iHillsMovementDiscountPercent = kResults.GetInt("HillsMovementDiscountPercent");
 	m_iRangeChange = kResults.GetInt("RangeChange");
 	m_iRangedAttackModifier = kResults.GetInt("RangedAttackModifier");
 	m_iInterceptionCombatModifier = kResults.GetInt("InterceptionCombatModifier");
@@ -340,6 +355,7 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iCombatPercent = kResults.GetInt("CombatPercent");
 	m_iCityAttackPercent = kResults.GetInt("CityAttack");
 	m_iCityDefensePercent = kResults.GetInt("CityDefense");
+	m_iCitySplashDamage = kResults.GetInt("CitySplashDamage");
 	m_iRangedDefenseMod = kResults.GetInt("RangedDefenseMod");
 	m_iHillsAttackPercent = kResults.GetInt("HillsAttack");
 	m_iHillsDefensePercent = kResults.GetInt("HillsDefense");
@@ -391,6 +407,10 @@ bool CvPromotionEntry::CacheResults(Database::Results& kResults, CvDatabaseUtili
 	m_iExtraWithdrawal = kResults.GetInt("ExtraWithdrawal");
 	m_iEmbarkExtraVisibility = kResults.GetInt("EmbarkExtraVisibility");
 	m_iEmbarkDefenseModifier = kResults.GetInt("EmbarkDefenseModifier");
+	m_bEmbarkFlatCost = kResults.GetBool("EmbarkFlatCost");
+	m_bDisembarkFlatCost = kResults.GetBool("DisembarkFlatCost");
+	m_iMaxMovesAfterDomainChange = kResults.GetInt("MaxMovesAfterDomainChange");
+	m_bHealWhileEmbarked = kResults.GetBool("HealWhileEmbarked");
 	m_iCapitalDefenseModifier = kResults.GetInt("CapitalDefenseModifier");
 	m_iCapitalDefenseFalloff = kResults.GetInt("CapitalDefenseFalloff");
 	m_iCityAttackPlunderModifier = kResults.GetInt("CityAttackPlunderModifier");
@@ -1024,6 +1044,12 @@ int CvPromotionEntry::GetMoveDiscountChange() const
 	return m_iMoveDiscountChange;
 }
 
+/// Accessor: Percentage discount applied to movement cost when entering hills (post-denominator scale)
+int CvPromotionEntry::GetHillsMovementDiscountPercent() const
+{
+	return m_iHillsMovementDiscountPercent;
+}
+
 /// Accessor: How much the air range of the unit is modified
 int CvPromotionEntry::GetRangeChange() const
 {
@@ -1148,6 +1174,11 @@ int CvPromotionEntry::GetCityAttackPercent() const
 int CvPromotionEntry::GetCityDefensePercent() const
 {
 	return m_iCityDefensePercent;
+}
+
+int CvPromotionEntry::GetCitySplashDamage() const
+{
+	return m_iCitySplashDamage;
 }
 
 /// Accessor: Bonus ranged defense percent
@@ -1418,6 +1449,26 @@ int CvPromotionEntry::GetEmbarkDefenseModifier() const
 	return m_iEmbarkDefenseModifier;
 }
 
+bool CvPromotionEntry::IsEmbarkFlatCost() const
+{
+	return m_bEmbarkFlatCost;
+}
+
+bool CvPromotionEntry::IsDisembarkFlatCost() const
+{
+	return m_bDisembarkFlatCost;
+}
+
+int CvPromotionEntry::GetMaxMovesAfterDomainChange() const
+{
+	return m_iMaxMovesAfterDomainChange;
+}
+
+bool CvPromotionEntry::IsHealWhileEmbarked() const
+{
+	return m_bHealWhileEmbarked;
+}
+
 /// Accessor: bonus defending near capital
 int CvPromotionEntry::GetCapitalDefenseModifier() const
 {
@@ -1671,6 +1722,26 @@ bool CvPromotionEntry::IsFreePillageMoves() const
 bool CvPromotionEntry::IsHealOnPillage() const
 {
 	return m_bHealOnPillage;
+}
+
+int CvPromotionEntry::GetPillageChange() const
+{
+	return m_iPillageChange;
+}
+
+bool CvPromotionEntry::IsCanCrossMountains() const
+{
+	return m_bCanCrossMountains;
+}
+
+bool CvPromotionEntry::IsCarpetBombing() const
+{
+	return m_bCarpetBombing;
+}
+
+int CvPromotionEntry::GetAdjacentTileHealOutsideFriendly() const
+{
+	return m_iAdjacentTileHealOutsideFriendly;
 }
 
 /// Accessor: Do we only get healed after a combat win if fighting a real civ or minor?

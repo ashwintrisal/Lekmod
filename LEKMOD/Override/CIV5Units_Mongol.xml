@@ -3058,7 +3058,7 @@ Many individual cacicazgos have been studied in colonial Mexico, showing that en
 		<Text>Fast Swimmer</Text>
 	</Row>
 	<Row Tag="TXT_KEY_PROMOTION_PHIL_MARINE_HELP">
-		<Text>+3 Movement while Embarked</Text>
+		<Text>+2 Movement while Embarked</Text>
 	</Row>
 	<Row Tag="TXT_KEY_PROMOTION_GOOD_FIGHT">
 		<Text>A Good Fight</Text>
@@ -119042,7 +119042,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_ALTITUDE_TRAINING_HELP"> 
 			<Text>
-				Double movement in hill. +10% [ICON_STRENGTH] Combat Strength when fighting in [COLOR_POSITIVE_TEXT]Hill[ENDCOLOR].
+				10% movement discount in hills.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_AMBITION"> 
@@ -119822,7 +119822,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_EXTENDED_PARADROP_HELP"> 
 			<Text>
-				May paradrop with extended range (40 hexes)
+				May paradrop with extended range (100 hexes)
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_FAMADIAHONA"> 
@@ -121075,9 +121075,9 @@ The ship has weather'd every rack; the prize we sought is won."
 				Sortie
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_PROMOTION_SORTIE_HELP"> 
+		<Replace Tag="TXT_KEY_PROMOTION_SORTIE_HELP">
 			<Text>
-				1 extra [COLOR_POSITIVE_TEXT]Interception[ENDCOLOR] may be made per turn.
+				1 extra [COLOR_POSITIVE_TEXT]Interception[ENDCOLOR] may be made per turn. Takes 10% less damage from Air Sweeps.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_PROMOTION_SPAWN_GENERALS_I"> 
@@ -138982,7 +138982,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_CELT_PICTISH_WARRIOR"> 
 			<Text>
-				Only the Celts may build this unit. It has a combat bonus outside of friendly territory and can pillage enemy improvements at no additional movement cost. Earns 100% of opponents' strength as [ICON_PEACE] Faith for kills.
+				Only the Celts may build this unit. It has a combat bonus outside of friendly territory and can pillage enemy improvements at no additional movement cost. Earns [ICON_FAITH] Faith equal to opponents' [ICON_STRENGTH] Combat Strength when killing a unit (max 30).
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_UNIT_HELP_CHARIOR_ARCHER"> 

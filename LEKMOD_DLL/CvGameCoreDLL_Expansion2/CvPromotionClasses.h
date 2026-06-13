@@ -65,6 +65,7 @@ public:
 	int  GetVisibilityChange() const;
 	int  GetMovesChange() const;
 	int  GetMoveDiscountChange() const;
+	int  GetHillsMovementDiscountPercent() const;
 	int  GetRangeChange() const;
 	int  GetRangedAttackModifier() const;
 	int  GetInterceptionCombatModifier() const;
@@ -86,6 +87,7 @@ public:
 	int  GetCombatPercent() const;
 	int  GetCityAttackPercent() const;
 	int  GetCityDefensePercent() const;
+	int  GetCitySplashDamage() const;
 	int  GetRangedDefenseMod() const;
 	int  GetHillsAttackPercent() const;
 	int  GetHillsDefensePercent() const;
@@ -141,6 +143,10 @@ public:
 	int GetExtraWithdrawal() const;
 	int GetEmbarkExtraVisibility() const;
 	int GetEmbarkDefenseModifier() const;
+	bool IsEmbarkFlatCost() const;
+	bool IsDisembarkFlatCost() const;
+	int GetMaxMovesAfterDomainChange() const;
+	bool IsHealWhileEmbarked() const;
 	int GetCapitalDefenseModifier() const;
 	int GetCapitalDefenseFalloff() const;
 	int GetCityAttackPlunderModifier() const;
@@ -188,6 +194,10 @@ public:
 	bool IsRangeAttackIgnoreLOS() const;
 	bool IsFreePillageMoves() const;
 	bool IsHealOnPillage() const;
+	int GetPillageChange() const;
+	bool IsCanCrossMountains() const;
+	bool IsCarpetBombing() const;
+	int  GetAdjacentTileHealOutsideFriendly() const;
 	bool IsHealIfDefeatExcludeBarbarians() const;
 	bool IsEmbarkedAllWater() const;
 	bool IsCityAttackOnly() const;
@@ -294,6 +304,7 @@ protected:
 	int m_iVisibilityChange;
 	int m_iMovesChange;
 	int m_iMoveDiscountChange;
+	int m_iHillsMovementDiscountPercent;
 	int m_iRangeChange;
 	int m_iRangedAttackModifier;
 	int m_iInterceptionCombatModifier;
@@ -315,6 +326,7 @@ protected:
 	int m_iCombatPercent;
 	int m_iCityAttackPercent;
 	int m_iCityDefensePercent;
+	int m_iCitySplashDamage;
 	int m_iRangedDefenseMod;
 	int m_iHillsAttackPercent;
 	int m_iHillsDefensePercent;
@@ -367,6 +379,10 @@ protected:
 	int m_iExtraWithdrawal;
 	int m_iEmbarkExtraVisibility;
 	int m_iEmbarkDefenseModifier;
+	bool m_bEmbarkFlatCost;
+	bool m_bDisembarkFlatCost;
+	int m_iMaxMovesAfterDomainChange;
+	bool m_bHealWhileEmbarked;
 	int m_iCapitalDefenseModifier;
 	int m_iCapitalDefenseFalloff;
 	int m_iCityAttackPlunderModifier;
@@ -412,6 +428,10 @@ protected:
 	bool m_bRangeAttackIgnoreLOS;
 	bool m_bFreePillageMoves;
 	bool m_bHealOnPillage;
+	int m_iPillageChange;
+	bool m_bCanCrossMountains;
+	bool m_bCarpetBombing;
+	int  m_iAdjacentTileHealOutsideFriendly;
 	bool m_bHealIfDefeatExcludesBarbarians;
 	bool m_bEmbarkedAllWater;
 	bool m_bCityAttackOnly;
