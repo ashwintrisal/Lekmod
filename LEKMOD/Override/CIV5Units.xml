@@ -109761,8 +109761,15 @@
 		<Column name="IncreasePerPop" type="integer"  default="0"/>
 		<Column name="ExcludeUnitClass" type="integer"  default="0"/>
 		<Column name="ReligionFaith" type="boolean"  default="0"/>
-		
-		
+		<Column name="BeforeEra" type="integer" default="0"/>
+		<Column name="UnitDamage" type="integer" default="0"/>
+		<Column name="GoldEraFactor" type="integer" default="0"/>
+		<Column name="EraBarbarianSpawn" type="boolean" default="0"/>
+		<Column name="ScienceEraRuin" type="boolean" default="0"/>
+		<Column name="CultureEraTurn" type="boolean" default="0"/>
+		<Column name="FaithEraTurn" type="boolean" default="0"/>
+		<Column name="FoodEraScale" type="boolean" default="0"/>
+		<Column name="FaithZeroOnly" type="boolean" default="0"/>		
 	</Table> 
 	<GoodyHuts>
 		<Delete />
@@ -110371,7 +110378,6 @@
 			<MapRange>0</MapRange> 
 			<MapProb>0</MapProb> 
 			<Experience>0</Experience> 
-			<Healing>0</Healing> 
 			<DamagePrereq>0</DamagePrereq> 
 			<Population>0</Population> 
 			<Culture>0</Culture> 
