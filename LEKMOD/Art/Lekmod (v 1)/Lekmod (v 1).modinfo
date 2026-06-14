@@ -23,12 +23,88 @@
   <References />
   <Blocks />
   <Files>
-  
+  	<File md5="39979B9763E648505BDE5B21670CF580" import="1">unit_promotions/amphibious_1_256.dds</File>
+		<File md5="1C093F6E06D734E749B25D584ECBE612" import="1">unit_promotions/amphibious_1_32.dds</File>
+		<File md5="50A293A9CD5FAE2EE1DB9C60F463D6F3" import="1">unit_promotions/amphibious_1_45.dds</File>
+		<File md5="2F4F8F250ED9C823D9B97FCC2097E3D8" import="1">unit_promotions/amphibious_1_64.dds</File>
+		<File md5="5939D72176C90D9EB499A2235A713414" import="1">unit_promotions/amphibious_2_256.dds</File>
+		<File md5="CEA5A714AD720C6C7935473AE7EDED32" import="1">unit_promotions/amphibious_2_32.dds</File>
+		<File md5="0BFFF6B6F06F37A153D70D1D591EE26A" import="1">unit_promotions/amphibious_2_45.dds</File>
+		<File md5="DB8F86FAAEEBFC66931AD65A5C918F4F" import="1">unit_promotions/amphibious_2_64.dds</File>
+		<File md5="DB941B885B99353A1B9A4B7C64A9B155" import="1">unit_promotions/amphibious_3_256.dds</File>
+		<File md5="5950114A735BB601B73234C5C5997DA4" import="1">unit_promotions/amphibious_3_32.dds</File>
+		<File md5="C78EDF8CBCC7B49B61366B34E0637864" import="1">unit_promotions/amphibious_3_45.dds</File>
+		<File md5="1F6A673AB9BB73E44EA07422BA6FFD12" import="1">unit_promotions/amphibious_3_64.dds</File>
+		<File md5="26FB98602111D1334121C9EDC245CAE9" import="1">unit_promotions/bunker_busting_256.dds</File>
+		<File md5="2479E8F0ADAAB2F70205D47256EDA382" import="1">unit_promotions/bunker_busting_32.dds</File>
+		<File md5="852230ECA163597448ED0C9C3B99E4E4" import="1">unit_promotions/bunker_busting_45.dds</File>
+		<File md5="6661B330B2B3B59250E72DC2EA7F6D99" import="1">unit_promotions/bunker_busting_64.dds</File>
+		<File md5="4517E6395993BD76CC79EEF819513555" import="1">unit_promotions/carpet_bombing_256.dds</File>
+		<File md5="37F44EE0E5757F2D07F21A870995DDCE" import="1">unit_promotions/carpet_bombing_32.dds</File>
+		<File md5="DE48C2F02B5EECE21EF5973C31B5DB40" import="1">unit_promotions/carpet_bombing_45.dds</File>
+		<File md5="5594577E028C12BF654C549C36451EA2" import="1">unit_promotions/carpet_bombing_64.dds</File>
+		<File md5="6B736BFC76505C92D63445FF3FC61EF8" import="1">unit_promotions/discipline_256.dds</File>
+		<File md5="50C3E36307165C0FE54534964E35D179" import="1">unit_promotions/discipline_32.dds</File>
+		<File md5="B66C681EAB00275E5A78355B5DD003EE" import="1">unit_promotions/discipline_45.dds</File>
+		<File md5="C250B7E8A94CF3A7C73F3FF619A6FA7F" import="1">unit_promotions/discipline_64.dds</File>
+		<File md5="26FB98602111D1334121C9EDC245CAE9" import="1">unit_promotions/envelopment_256.dds</File>
+		<File md5="2479E8F0ADAAB2F70205D47256EDA382" import="1">unit_promotions/envelopment_32.dds</File>
+		<File md5="852230ECA163597448ED0C9C3B99E4E4" import="1">unit_promotions/envelopment_45.dds</File>
+		<File md5="6661B330B2B3B59250E72DC2EA7F6D99" import="1">unit_promotions/envelopment_64.dds</File>
+		<File md5="9045DDBA11E5C3DB82D135B0C88C6025" import="1">unit_promotions/feared_elephant_256.dds</File>
+		<File md5="64DB4ABA55E99B13D60E8166523DC8ED" import="1">unit_promotions/feared_elephant_32.dds</File>
+		<File md5="A28BA00C680C6A3F76952AD98FCD5370" import="1">unit_promotions/feared_elephant_45.dds</File>
+		<File md5="E4B4184D9EFE203BB5FBA629CFEB5892" import="1">unit_promotions/feared_elephant_64.dds</File>
+		<File md5="26FB98602111D1334121C9EDC245CAE9" import="1">unit_promotions/fear_aura_256.dds</File>
+		<File md5="2479E8F0ADAAB2F70205D47256EDA382" import="1">unit_promotions/fear_aura_32.dds</File>
+		<File md5="852230ECA163597448ED0C9C3B99E4E4" import="1">unit_promotions/fear_aura_45.dds</File>
+		<File md5="6661B330B2B3B59250E72DC2EA7F6D99" import="1">unit_promotions/fear_aura_64.dds</File>
+		<File md5="AFF57A38775C416F925F39B2B92638AF" import="1">unit_promotions/hatamoto_256.dds</File>
+		<File md5="FC70B7A71083B9EA1FA26962018ADFA6" import="1">unit_promotions/hatamoto_32.dds</File>
+		<File md5="D8DD284DED5FC910C8FA9FEBB894B444" import="1">unit_promotions/hatamoto_45.dds</File>
+		<File md5="E07CDD12DF8A21582C84A9EAE97EAF9D" import="1">unit_promotions/hatamoto_64.dds</File>
+		<File md5="87E6C7AC1A4AC1337ECC4CD134EB497B" import="1">unit_promotions/iaijutsu_256.dds</File>
+		<File md5="832061200AADA8F2E081A5250842EF41" import="1">unit_promotions/iaijutsu_32.dds</File>
+		<File md5="E204366E45F297B34FF56204C34030C0" import="1">unit_promotions/iaijutsu_45.dds</File>
+		<File md5="7906B469CDE2855D37F38E51F4D20512" import="1">unit_promotions/iaijutsu_64.dds</File>
+		<File md5="19438F20ABA042B694ED11D950D95CB3" import="0">unit_promotions/LekmodPromotions.xml</File>
+		<File md5="7C9F69AF2523E76D31AE07DC2D73BF56" import="1">unit_promotions/marauder_256.dds</File>
+		<File md5="84C0D7C1B0F73BC182FA2143F06233FC" import="1">unit_promotions/marauder_32.dds</File>
+		<File md5="0B06B9363E69D2F329FA172C75597B4B" import="1">unit_promotions/marauder_45.dds</File>
+		<File md5="D5112A9DA35A5EE0200FB6F541418A41" import="1">unit_promotions/marauder_64.dds</File>
+		<File md5="B1A3DB864475B0CCDF0AAF6F6A7CC948" import="1">unit_promotions/mountaineering_256.dds</File>
+		<File md5="8F4EDD7E7840269BCAADE4ACBC4FAA20" import="1">unit_promotions/mountaineering_32.dds</File>
+		<File md5="B7EA9D30994F68627F7FA944746AD211" import="1">unit_promotions/mountaineering_45.dds</File>
+		<File md5="D83E4CA2020B2A57202340EEFB72B4B0" import="1">unit_promotions/mountaineering_64.dds</File>
+		<File md5="33AF54D5C3ADC5476359785A18D83636" import="1">unit_promotions/one_good_eye_256.dds</File>
+		<File md5="9DD93A01A22C330F6A24A672A3D2ED67" import="1">unit_promotions/one_good_eye_32.dds</File>
+		<File md5="637DB4FB7FA65E83F71451DB763AE651" import="1">unit_promotions/one_good_eye_45.dds</File>
+		<File md5="1ED18053003176C5B3CD7E63A6BA73EA" import="1">unit_promotions/one_good_eye_64.dds</File>
+		<File md5="C8F3A08DDAE5A56D08D1A6A514C2BCF6" import="1">unit_promotions/repair_crew_256.dds</File>
+		<File md5="F2ADBF6FF5E45C675321235819647102" import="1">unit_promotions/repair_crew_32.dds</File>
+		<File md5="376FDB1BFF4FF098253788313D734A39" import="1">unit_promotions/repair_crew_45.dds</File>
+		<File md5="F2750797DAB54733E1546744A26C367D" import="1">unit_promotions/repair_crew_64.dds</File>
+		<File md5="26415BADC85B86327998953EC2B705C6" import="1">unit_promotions/stargazing_256.dds</File>
+		<File md5="C077E7D2F689F5F096ADE9C455FDB21A" import="1">unit_promotions/stargazing_32.dds</File>
+		<File md5="6DABD635AA8AAD8FD138C9D53F7A82DC" import="1">unit_promotions/stargazing_45.dds</File>
+		<File md5="58C60AE545DD2361C2EBEB6B8D7D28EF" import="1">unit_promotions/stargazing_64.dds</File>
+		<File md5="3ACE45E4A8BA962348FDBC62BEA789C2" import="1">unit_promotions/supply_ship_256.dds</File>
+		<File md5="54F0AA5985C35811B7DE6C3D2ED918C0" import="1">unit_promotions/supply_ship_32.dds</File>
+		<File md5="23046C6459D153C2A87528167684039E" import="1">unit_promotions/supply_ship_45.dds</File>
+		<File md5="EAD616487F99ABCFD883BD9B1B2E3D1D" import="1">unit_promotions/supply_ship_64.dds</File>
+		<File md5="278EADDC1131B87EA3FCD23DB6257007" import="1">unit_promotions/swift_transport_256.dds</File>
+		<File md5="F9F360AC965F9F3AB990EB4F0D1A8D05" import="1">unit_promotions/swift_transport_32.dds</File>
+		<File md5="7C996A7507056137C3387AF205387420" import="1">unit_promotions/swift_transport_45.dds</File>
+		<File md5="0A37E5E022FA5E355A9CD286410E1CB6" import="1">unit_promotions/swift_transport_64.dds</File>
+		<File md5="ED4E3109123BC519FC1AA77CD6182538" import="1">unit_promotions/zealot_256.dds</File>
+		<File md5="C2EF210187AB96125BFB97CDEFD35457" import="1">unit_promotions/zealot_32.dds</File>
+		<File md5="B6807E9AEBDA3332B506F54BC7F286E3" import="1">unit_promotions/zealot_45.dds</File>
+		<File md5="B52DBA5A0B2E023AA27AED71CC3BC02C" import="1">unit_promotions/zealot_64.dds</File>
 	
   </Files>
   <Actions>
     <OnModActivated>
-      
+      <UpdateDatabase>unit_promotions/LekmodPromotions.xml</UpdateDatabase>
     </OnModActivated>
   </Actions>
  <EntryPoints>

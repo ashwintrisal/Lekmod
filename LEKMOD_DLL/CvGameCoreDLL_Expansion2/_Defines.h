@@ -1382,7 +1382,7 @@ TXT_KEY_LEAGUE_OVERVIEW_MEMBER_DETAILS_TRAIT_VOTES
 // Adds timestamp for replay messages, saves chat messages
 #define REPLAY_MESSAGE_EXTENDED
 // Extended replay messages: pseudo-enums
-// #define REPLAY_MESSAGE_CHAT 7
+#define REPLAY_MESSAGE_CHAT 7
 // IMPORTANT
 // Must be defined only ONCE and account for all ReplayMessageTypes additions
 // #define NUM_REPLAY_MESSAGE_TYPES 8
