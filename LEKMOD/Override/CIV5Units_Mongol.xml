@@ -115974,19 +115974,19 @@ The ship has weather'd every rack; the prize we sought is won."
 				Secularism is the belief that government should be separate from religion and religious faiths. Religions should not be taught in schools, nor should one's religion determine whether he or she can work in the government or serve in the military. Secularists don't necessarily disbelieve in a Supreme Being; they just think that mixing religion and government is ultimately bad for both institutions. The United States is largely a secular country, although traces of its early inhabitants' dominant religion can still be found on the country's money, its leaders' oaths of office, in its judicial system, and so forth, often to the dismay of the citizens who do not belong to that religion.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_SKYSCRAPERS"> 
+		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE"> 
 			<Text>
-				Skyscrapers
+				Monuments of the People
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_SKYSCRAPERS_HELP"> 
+		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Skyscrapers[ENDCOLOR][NEWLINE][ICON_GOLD] Gold cost of purchasing [COLOR_POSITIVE_TEXT]Buildings[ENDCOLOR] reduced by 50%.
+				[COLOR_POSITIVE_TEXT]Monuments of the People[ENDCOLOR][NEWLINE] Landmarks, Citadels and Manufacturies yield +5 [ICON_CULTURE] culture and +5 [ICON_TOURISM] tourism.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_SKYSCRAPERS_TEXT"> 
+		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_TEXT"> 
 			<Text>
-				Early in Soviet rule in Russia, the state sought to gain prestige and pride for its people through the construction of massive projects, which would be validation of Soviet superiority and organization. The first skyscraper project was the "Seven Sisters" in Moscow, a group of seven buildings in the Stalinist style of architecture, an elaborate blend of Russian Baroque and Gothic styles; although construction was interrupted by the outbreak of war in 1941, the massive towers were eventually completed in 1956 using American technology and methods. Afterwards, the Soviet Union built dozens of modern skyscrapers in its republics and client states, from Warsaw to the Kazakhstan provincial capital.
+				The architecture of an Order-driven society is rarely meant for private luxury or religious isolation; instead, it serves as a grand public stage to celebrate the collective achievements of the proletariat. The implementation of Monuments of the People represents a state-sponsored pivot toward monumentalism and socialist realism. By constructing massive public squares, soaring obelisks, and heroic statues of everyday laborers, the state permanently anchors its ideology into the physical landscape.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_SOCIALISM"> 

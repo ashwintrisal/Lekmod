@@ -199558,10 +199558,10 @@
 		</Row>
 		<Row> 
 			<ID>80</ID> 
-			<Type>POLICY_SKYSCRAPERS</Type> 
-			<Description>TXT_KEY_POLICY_SKYSCRAPERS</Description> 
-			<Civilopedia>TXT_KEY_POLICY_SKYSCRAPERS_TEXT</Civilopedia> 
-			<Help>TXT_KEY_POLICY_SKYSCRAPERS_HELP</Help> 
+			<Type>POLICY_MONUMENTS_PEOPLE</Type> 
+			<Description>TXT_KEY_POLICY_MONUMENTS_PEOPLE</Description> 
+			<Civilopedia>TXT_KEY_POLICY_MONUMENTS_PEOPLE_TEXT</Civilopedia> 
+			<Help>TXT_KEY_POLICY_MONUMENTS_PEOPLE_HELP</Help> 
 			<PolicyBranchType>POLICY_BRANCH_ORDER</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
@@ -199629,7 +199629,7 @@
 			<NumCitiesPolicyCostDiscount>0</NumCitiesPolicyCostDiscount> 
 			<GarrisonedCityRangeStrikeModifier>0</GarrisonedCityRangeStrikeModifier> 
 			<UnitPurchaseCostModifier>0</UnitPurchaseCostModifier> 
-			<BuildingPurchaseCostModifier>-50</BuildingPurchaseCostModifier> 
+			<BuildingPurchaseCostModifier>0</BuildingPurchaseCostModifier> 
 			<CityConnectionTradeRouteGoldModifier>0</CityConnectionTradeRouteGoldModifier> 
 			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
 			<FaithCostModifier>0</FaithCostModifier> 
@@ -208156,13 +208156,13 @@
 			<Flavor>25</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_SKYSCRAPERS</PolicyType> 
-			<FlavorType>FLAVOR_PRODUCTION</FlavorType> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<FlavorType>FLAVOR_CULTURE</FlavorType> 
 			<Flavor>13</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_SKYSCRAPERS</PolicyType> 
-			<FlavorType>FLAVOR_GOLD</FlavorType> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<FlavorType>FLAVOR_TOURISM</FlavorType> 
 			<Flavor>20</Flavor> 
 		</Row>
 		<Row> 
@@ -208621,6 +208621,30 @@
 		</Row>
 	</Policy_HurryModifiers> 
 
+	<Table name="Policy_ImprovementTourism">
+		<Column name="PolicyType" type="text"  />
+		<Column name="ImprovementType" type="text"  />
+		<Column name="Tourism" type="integer"  />
+	</Table> 
+	<Policy_ImprovementTourism>
+		<Delete />
+
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType> 
+			<Tourism>5</Tourism> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_MANUFACTORY</ImprovementType> 
+			<Tourism>5</Tourism> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
+			<Tourism>5</Tourism> 
+		</Row>
+
 	<Table name="Policy_ImprovementCultureChanges">
 		<Column name="PolicyType" type="text"  />
 		<Column name="ImprovementType" type="text"  />
@@ -208637,6 +208661,21 @@
 		<Row> 
 			<PolicyType>POLICY_NEW_DEAL</PolicyType> 
 			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType> 
+			<CultureChange>5</CultureChange> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_LANDMARK</ImprovementType> 
+			<CultureChange>5</CultureChange> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_MANUFACTORY</ImprovementType> 
+			<CultureChange>5</CultureChange> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MONUMENTS_PEOPLE</PolicyType> 
+			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
 			<CultureChange>5</CultureChange> 
 		</Row>
 		<Row> 
