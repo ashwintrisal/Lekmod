@@ -186721,6 +186721,7 @@
 		<Column name="GlobalMoveChange" type="integer" default="0"/>
 		<Column name="GlobalMoveChangeFriendly" type="integer" default="0"/>
 		<Column name="GlobalMoveChangeEnemy" type="integer" default="0"/>
+		<Column name="ResistanceModifier" type="integer" default="0"/>
 	</Table> 
 	<Policies>
 		<Delete />
@@ -200203,10 +200204,10 @@
 		</Row>
 		<Row> 
 			<ID>84</ID> 
-			<Type>POLICY_ACADEMY_SCIENCES</Type> 
-			<Description>TXT_KEY_POLICY_ACADEMY_SCIENCES</Description> 
-			<Civilopedia>TXT_KEY_POLICY_ACADEMY_SCIENCES_TEXT</Civilopedia> 
-			<Help>TXT_KEY_POLICY_ACADEMY_SCIENCES_HELP</Help> 
+			<Type>POLICY_REEDUCATION</Type> 
+			<Description>TXT_KEY_POLICY_REEDUCATION</Description> 
+			<Civilopedia>TXT_KEY_POLICY_REEDUCATION_TEXT</Civilopedia> 
+			<Help>TXT_KEY_POLICY_REEDUCATION_HELP</Help> 
 			<PolicyBranchType>POLICY_BRANCH_ORDER</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
@@ -200361,6 +200362,7 @@
 			<TourismPerWonder>0</TourismPerWonder> 
 			<InternalTradeRouteGoldChange>0</InternalTradeRouteGoldChange> 
 			<ExtraTerritoryClaim>0</ExtraTerritoryClaim> 
+			<ResistanceModifier>-50</ResistanceModifier>
 		</Row>
 		<Row> 
 			<ID>85</ID> 
@@ -200373,7 +200375,7 @@
 			<CultureCost>10</CultureCost> 
 			<GridX>0</GridX> 
 			<GridY>0</GridY> 
-			<Level>1</Level> 
+			<Level>2</Level> 
 			<PolicyCostModifier>0</PolicyCostModifier> 
 			<CulturePerCity>0</CulturePerCity> 
 			<CulturePerWonder>0</CulturePerWonder> 
@@ -206267,21 +206269,16 @@
 			<BuildingClassType>BUILDINGCLASS_MONUMENT</BuildingClassType> 
 			<Happiness>2</Happiness> 
 		</Row>
-		<!-- Academy of the Sciences -->
+		<!-- Re-education -->
 		<Row> 
-			<PolicyType>POLICY_ACADEMY_SCIENCES</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_OBSERVATORY</BuildingClassType> 
-			<Happiness>1</Happiness> 
+			<PolicyType>POLICY_REEDUCATION</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType> 
+			<Happiness>2</Happiness> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_ACADEMY_SCIENCES</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_PUBLIC_SCHOOL</BuildingClassType> 
-			<Happiness>1</Happiness> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_ACADEMY_SCIENCES</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_LABORATORY</BuildingClassType> 
-			<Happiness>1</Happiness> 
+			<PolicyType>POLICY_REEDUCATION</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_CONSTABLE</BuildingClassType> 
+			<Happiness>2</Happiness> 
 		</Row>
 		<!-- Young Pioneers -->
 		<Row> 
@@ -208191,13 +208188,13 @@
 			<Flavor>8</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_ACADEMY_SCIENCES</PolicyType> 
+			<PolicyType>POLICY_REEDUCATION</PolicyType> 
 			<FlavorType>FLAVOR_HAPPINESS</FlavorType> 
 			<Flavor>33</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_ACADEMY_SCIENCES</PolicyType> 
-			<FlavorType>FLAVOR_SCIENCE</FlavorType> 
+			<PolicyType>POLICY_REEDUCATION</PolicyType> 
+			<FlavorType>FLAVOR_ESPIONAGE</FlavorType> 
 			<Flavor>11</Flavor> 
 		</Row>
 		<Row> 
@@ -208644,6 +208641,8 @@
 			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
 			<Tourism>5</Tourism> 
 		</Row>
+	</Policy_ImprovementTourism>
+
 
 	<Table name="Policy_ImprovementCultureChanges">
 		<Column name="PolicyType" type="text"  />

@@ -114198,19 +114198,19 @@ The ship has weather'd every rack; the prize we sought is won."
 				To Ideology[ICON_ARROW_RIGHT]
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES"> 
+		<Replace Tag="TXT_KEY_POLICY_REEDUCATION"> 
 			<Text>
-				Academy of Sciences
+				Re-education
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_HELP"> 
+		<Replace Tag="TXT_KEY_POLICY_REEDUCATION_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Academy of Sciences[ENDCOLOR][NEWLINE]+1 [ICON_HAPPINESS_1] Local Happiness from every [COLOR_POSITIVE_TEXT]Observatory[ENDCOLOR], [COLOR_POSITIVE_TEXT]Public School[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Research Lab[ENDCOLOR].
+				[COLOR_POSITIVE_TEXT]Re-education[ENDCOLOR][NEWLINE]+2 [ICON_HAPPINESS_1] Local Happiness from every [COLOR_POSITIVE_TEXT]Constabulary[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Courthouse[ENDCOLOR]. Half the resistance time in captured cities.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_ACADEMY_SCIENCES_TEXT"> 
+		<Replace Tag="TXT_KEY_POLICY_REEDUCATION_TEXT"> 
 			<Text>
-				An Academy of Sciences is a state-supported institution of learning or research society dedicated to the sciences and/or technology. The most famous, the Russian - later Soviet - Academy was founded in 1724 AD by Peter the Great in his efforts to modernize his empire. In 1917 the academy came under Soviet control, and was tasked with addressing questions of construction and social issues; beginning in 1928 the Soviet Politburo increasingly interfered in the teaching and research of the Soviet Academy of Sciences, hindering the scientific progress of the Soviet Union for decades.
+				Within an Order-dominated society, the concept of justice shifts from punitive containment to ideological alignment. The implementation of a system-wide Re-education policy reflects the state's belief that political subversion, Western consumerism, or feudal loyalty are merely symptoms of societal conditioning. Rather than discarding or permanently imprisoning dissident populations or conquered citizens, the state invests in intensive ideological retraining programs designed to seamlessly integrate them into the proletariat.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_AESTHETICS"> 
