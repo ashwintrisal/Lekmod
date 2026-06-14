@@ -3340,12 +3340,14 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 			pNewCity->SetOccupied(true);
 
 			int iInfluenceReduction = GetCulture()->GetInfluenceCityConquestReduction(eOldOwner);
+			int iResistanceMod = GetResistanceModifier();
 
 #ifdef NQ_DIABLE_RESISTANCE_TIME_VIA_POLICIES
 			int iResistanceTurns = 0;
 			if (!IsDisablesResistanceTime())
 			{
 				iResistanceTurns = pNewCity->getPopulation() * GC.getGame().getGameSpeedInfo().getVictoryDelayPercent();
+				iResistanceTurns = (iResistanceTurns * (100 + iResistanceMod)) / 100;
 				iResistanceTurns *= (100 - iInfluenceReduction); // take tourism into account
 				if (iResistanceTurns % 20000 != 0)
 					iResistanceTurns += 20000; // acts as ceil(), but without any weird int <-> float conversions
@@ -3354,6 +3356,7 @@ void CvPlayer::acquireCity(CvCity* pOldCity, bool bConquest, bool bGift, bool bP
 #else
 			// NQMP GJS - reduce resistance time BEGIN
 			int iResistanceTurns = pNewCity->getPopulation() * GC.getGame().getGameSpeedInfo().getVictoryDelayPercent();
+			iResistanceTurns = (iResistanceTurns * (100 + iResistanceMod)) / 100;
 			iResistanceTurns *= (100 - iInfluenceReduction); // take tourism into account
 			if (iResistanceTurns % 20000 != 0)
 				iResistanceTurns += 20000; // acts as ceil(), but without any weird int <-> float conversions
@@ -11377,6 +11380,29 @@ int CvPlayer::calculateTotalYield(YieldTypes eYield) const
 	}
 
 	return iTotalYield / 100;
+}
+
+int CvPlayer::GetImprovementTourism(ImprovementTypes eImprovement) const
+{
+    if (eImprovement == NO_IMPROVEMENT) 
+        return 0;
+
+    int iTotalTourism = 0;
+    
+    // Loop through all policies and sum up the values for this specific improvement
+    for (int iI = 0; iI < GC.getNumPolicyInfos(); iI++)
+    {
+        PolicyTypes ePolicy = (PolicyTypes)iI;
+        if (GetPlayerPolicies()->HasPolicy(ePolicy))
+        {
+            CvPolicyEntry* pPolicyInfo = GC.getPolicyInfo(ePolicy);
+            if (pPolicyInfo)
+            {
+                iTotalTourism += pPolicyInfo->GetImprovementTourism(eImprovement);
+            }
+        }
+    }
+    return iTotalTourism;
 }
 
 //	--------------------------------------------------------------------------------
@@ -30898,7 +30924,24 @@ void CvPlayer::ChangeNumFreePoliciesEver(int iChange)
 {
 	SetNumFreePoliciesEver(GetNumFreePoliciesEver() + iChange);
 }
-
+//----------------------------------------------------------------------------------
+int CvPlayer::GetResistanceModifier() const
+{
+    int iTotalMod = 0;
+    for (int iI = 0; iI < GC.getNumPolicyInfos(); iI++)
+    {
+        PolicyTypes ePolicy = (PolicyTypes)iI;
+        if (GetPlayerPolicies() && GetPlayerPolicies()->HasPolicy(ePolicy))
+        {
+            CvPolicyEntry* pPolicyInfo = GC.getPolicyInfo(ePolicy);
+            if (pPolicyInfo)
+            {
+                iTotalMod += pPolicyInfo->GetResistanceModifier();
+            }
+        }
+    }
+    return iTotalMod;
+}
 //	--------------------------------------------------------------------------------
 int CvPlayer::GetLastSliceMoved() const
 {

@@ -300,6 +300,8 @@ public:
 
 	int calculateTotalYield(YieldTypes eYield) const;
 
+	int GetImprovementTourism(ImprovementTypes eImprovement) const;
+
 	int GetUnitProductionMaintenanceMod() const;
 	void UpdateUnitProductionMaintenanceMod();
 	int calculateUnitProductionMaintenanceMod() const;
@@ -1070,6 +1072,7 @@ public:
 	bool IsDisablesResistanceTime() const;
 	void ChangeDisablesResistanceTimeCount(int iChange);
 #endif
+	int GetResistanceModifier() const;
 
 #ifdef NQ_PATRIOTIC_WAR
 	int GetDoubleTrainedMilitaryLandUnitCount() const;

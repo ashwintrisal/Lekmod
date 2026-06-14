@@ -309,6 +309,7 @@ public:
 	int GetNumFreeUnitsByClass(int i) const;
 	int GetTourismByUnitClassCreated(int i) const;
 	int GetImprovementCultureChanges(int i) const;
+	int GetImprovementTourism(ImprovementTypes eImprovement) const;
 #if defined(FULL_YIELD_FROM_KILLS)
 	int GetYieldFromKills(int i) const;
 #endif
@@ -335,6 +336,7 @@ public:
 	bool IncludesOneShotFreeUnits() const;
 
 	BuildingTypes GetFreeBuildingOnConquest() const;
+	int GetResistanceModifier() const;
 
 private:
 	int m_iTechPrereq;
@@ -545,6 +547,7 @@ private:
 	int m_iNumCitiesFreeWalls; // NQMP GJS - New Oligarchy add support for NumCitiesFreeWalls
 	int m_iNumCitiesFreeCultureBuilding;
 	int m_iNumCitiesFreeFoodBuilding;
+	int m_iResistanceModifier;
 
 	bool m_bHalfSpecialistUnhappiness;
 	bool m_bHalfMoreSpecialistUnhappiness;
@@ -604,6 +607,7 @@ private:
 	int* m_piGreatWorkYieldChange;
 	int* m_piSpecialistExtraYield;
 	int* m_piImprovementCultureChange;
+	int* m_piImprovementTourism;
 	bool* m_pabFreePromotion;
 	int* m_paiUnitCombatProductionModifiers;
 	int* m_paiUnitCombatFreeExperiences;

@@ -308,12 +308,14 @@ CvPolicyEntry::CvPolicyEntry(void):
 #ifdef AUI_WARNING_FIXES
 	m_piImprovementCultureChange(NULL),
 #endif
+	m_piImprovementTourism(NULL),
 	m_piFlavorValue(NULL),
 	m_eFreeBuildingOnConquest(NO_BUILDING),
 #ifdef LEKMOD_POLICIES_GLOBAL_MOVE_CHANGE
 	m_iGlobalMoveChange(0),
 	m_iGlobalMoveChangeFriendly(0),
-	m_iGlobalMoveChangeEnemy(0)
+	m_iGlobalMoveChangeEnemy(0),
+	m_iResistanceModifier(0)
 #endif
 {
 
@@ -362,7 +364,7 @@ CvPolicyEntry::~CvPolicyEntry(void)
 	SAFE_DELETE_ARRAY(m_piFlavorValue);
 	SAFE_DELETE_ARRAY(m_piImprovementCultureChange);
 #endif
-
+	SAFE_DELETE_ARRAY(m_piImprovementTourism);
 #ifdef AUI_DATABASE_UTILITY_PROPER_2D_ALLOCATION_AND_DESTRUCTION
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiImprovementYieldChanges.first, m_ppiImprovementYieldChanges.second);
 	CvDatabaseUtility::SafeDelete2DArray(m_ppiBuildingClassYieldModifiers.first, m_ppiBuildingClassYieldModifiers.second);
@@ -632,6 +634,7 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 
 	m_strWeLoveTheKingKey = kResults.GetText("WeLoveTheKing");
 	m_wstrWeLoveTheKing = GetLocalizedText(m_strWeLoveTheKingKey);
+	m_iResistanceModifier = kResults.GetInt("ResistanceModifier");
 
 	//References
 	const char* szTechPrereq = kResults.GetText("TechPrereq");
@@ -900,6 +903,9 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 
 	//ImprovementCultureChanges
 	kUtility.PopulateArrayByValue(m_piImprovementCultureChange, "Improvements", "Policy_ImprovementCultureChanges", "ImprovementType", "PolicyType", szPolicyType, "CultureChange");
+	
+	//ImprovementTourismChanges
+	kUtility.PopulateArrayByValue(m_piImprovementTourism, "Improvements", "Policy_ImprovementTourism", "ImprovementType", "PolicyType", szPolicyType, "Tourism");
 
 	//OrPreReqs
 	{
@@ -2562,6 +2568,15 @@ int CvPolicyEntry::GetImprovementCultureChanges(int i) const
 	CvAssertMsg(i > -1, "Index out of bounds");
 	return m_piImprovementCultureChange[i];
 }
+
+int CvPolicyEntry::GetImprovementTourism(ImprovementTypes eImprovement) const
+{
+    if (m_piImprovementTourism == NULL || eImprovement == NO_IMPROVEMENT) 
+        return 0;
+        
+    return m_piImprovementTourism[eImprovement];
+}
+
 
 /// Free building in each city conquered
 BuildingTypes CvPolicyEntry::GetFreeBuildingOnConquest() const
@@ -5520,5 +5535,9 @@ int CvPolicyEntry::GetGlobalMoveChangeFriendly() const
 int CvPolicyEntry::GetGlobalMoveChangeEnemy() const
 {
 	return m_iGlobalMoveChangeEnemy;
+}
+int CvPolicyEntry::GetResistanceModifier() const
+{
+    return m_iResistanceModifier;
 }
 #endif

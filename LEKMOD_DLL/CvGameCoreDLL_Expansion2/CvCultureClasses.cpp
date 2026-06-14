@@ -4673,6 +4673,30 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
 	iBase += GET_PLAYER(m_pCity->getOwner()).GetPlayerPolicies()->GetNumericModifier(POLICYMOD_TOURISM_PER_CITY);
 #endif
 
+	// --- LEKMOD CUSTOM: Dynamic Policy-Based Improvement Tourism ---
+    CvPlayer& kOwner = GET_PLAYER(m_pCity->getOwner());
+    int iImprovementTourismBonus = 0;
+
+    // Loop through all workable plots around the city
+    for (int iI = 0; iI < NUM_CITY_PLOTS; iI++)
+    {
+        CvPlot* pPlot = plotCity(m_pCity->getX(), m_pCity->getY(), iI);
+        
+        if (pPlot != NULL && pPlot->getOwner() == m_pCity->getOwner() && pPlot->getWorkingCity() == m_pCity)
+        {
+            ImprovementTypes eImprovement = pPlot->getImprovementType();
+            if (eImprovement != NO_IMPROVEMENT)
+            {
+                // Accumulate tourism from the tile based on our custom XML table mapping!
+                iImprovementTourismBonus += kOwner.GetImprovementTourism(eImprovement); 
+            }
+        }
+    }
+
+    // Add our accumulated improvement tourism to the total city output
+    iBase += iImprovementTourismBonus; 
+    // ---------------------------------------------------------------
+
 	return iBase;
 }
 
