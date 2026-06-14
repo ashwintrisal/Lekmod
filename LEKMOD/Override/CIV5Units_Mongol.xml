@@ -114205,7 +114205,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_REEDUCATION_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Re-education[ENDCOLOR][NEWLINE]+2 [ICON_HAPPINESS_1] Local Happiness from every [COLOR_POSITIVE_TEXT]Constabulary[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Courthouse[ENDCOLOR]. Half the resistance time in captured cities.
+				[COLOR_POSITIVE_TEXT]Re-education[ENDCOLOR][NEWLINE]+2 [ICON_HAPPINESS_1] Local Happiness from every [COLOR_POSITIVE_TEXT]Constabulary[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Courthouse[ENDCOLOR]. Half the [ICON_RESISTANCE] resistance time in captured cities.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_REEDUCATION_TEXT"> 
@@ -115981,7 +115981,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Monuments of the People[ENDCOLOR][NEWLINE] Landmarks, Citadels and Manufacturies yield +5 [ICON_CULTURE] culture and +5 [ICON_TOURISM] tourism.
+				[COLOR_POSITIVE_TEXT]Monuments of the People[ENDCOLOR][NEWLINE] Landmarks, Citadels and Manufacturies yield +5 [ICON_CULTURE] Culture and +5 [ICON_TOURISM] Tourism.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_TEXT"> 

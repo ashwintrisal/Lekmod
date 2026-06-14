@@ -4682,7 +4682,7 @@ int CvCityCulture::GetBaseTourismBeforeModifiers()
     {
         CvPlot* pPlot = plotCity(m_pCity->getX(), m_pCity->getY(), iI);
         
-        if (pPlot != NULL && pPlot->getOwner() == m_pCity->getOwner() && pPlot->getWorkingCity() == m_pCity)
+        if (pPlot != NULL && pPlot->getOwner() == m_pCity->getOwner() && m_pCity->GetCityCitizens()->IsWorkingPlot(pPlot))
         {
             ImprovementTypes eImprovement = pPlot->getImprovementType();
             if (eImprovement != NO_IMPROVEMENT)
