@@ -7871,7 +7871,8 @@ void CvPlayer::receiveGoody(CvPlot* pPlot, GoodyTypes eGoody, CvUnit* pUnit)
 		int iX = (20 + GC.getGame().getJonRandNum(11, "Goody Science Era Rand")) * iEra;
 		iX = std::min(iX, 90);
 		// Science yield
-		GET_TEAM(getTeam()).changeResearchProgress(GET_TEAM(getTeam()).GetCurrentResearch(), iX, GetID());
+		TechTypes eCurrentTech = GetPlayerTechs()->GetCurrentResearch();
+		GET_TEAM(getTeam()).GetTeamTechs()->ChangeResearchProgress(eCurrentTech, iX, GetID());
 		// HP damage (leave at least 1 HP)
 		int iDamage = std::min(iX, pUnit->GetMaxHitPoints() - pUnit->getDamage() - 1);
 		if(iDamage > 0) pUnit->changeDamage(iDamage);
