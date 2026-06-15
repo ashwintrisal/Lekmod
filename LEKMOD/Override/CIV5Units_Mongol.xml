@@ -115981,7 +115981,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Monuments of the People[ENDCOLOR][NEWLINE] Landmarks, Citadels and Manufacturies yield +5 [ICON_CULTURE] Culture and +5 [ICON_TOURISM] Tourism.
+				[COLOR_POSITIVE_TEXT]Monuments of the People[ENDCOLOR][NEWLINE]Landmarks, Citadels and Manufacturies yield +5 [ICON_CULTURE] Culture and +5 [ICON_TOURISM] Tourism.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MONUMENTS_PEOPLE_TEXT"> 
