@@ -116234,14 +116234,14 @@ The ship has weather'd every rack; the prize we sought is won."
 				Many political struggles have been concerned with gaining the right to vote (as opposed to the opportunity, an important distinction) in public elections in a democracy. Where universal suffrage exists, the right to vote cannot be restricted by gender, race, belief, wealth and property ownership, or social status. In most western nations, full universal suffrage followed universal male suffrage by one or two decades; in 1893 AD, New Zealand was the first nation to achieve universal suffrage.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_PEOPLE_ARMY"> 
+		<Replace Tag="TXT_KEY_POLICY_ATOMIC_PROGRAM"> 
 			<Text>
-				People's Army
+				Atomic Program
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_PEOPLE_ARMY_HELP"> 
+		<Replace Tag="TXT_KEY_POLICY_ATOMIC_PROGRAM_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]People's Army[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production bonus towards [ICON_BUILDING_ARMORY] Armories and [ICON_BUILDING_MILITARY_ACADEMY] Military Academies and each provides +2 [ICON_RESEARCH] Science and +2 [ICON_CULTURE] Culture.
+				[COLOR_POSITIVE_TEXT]Atomic Program[ENDCOLOR][NEWLINE]Gain 4 [ICON_RES_URANIUM] Uranium. Reduce the [ICON_RES_URANIUM] Uranium cost of Nuclear Missiles and Nuclear Plants by 1. +20% [ICON_PRODUCTION] Production bonus towards Nuclear Plants.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_UNIVERSAL_HEALTHCARE"> 

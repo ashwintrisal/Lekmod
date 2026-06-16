@@ -9234,7 +9234,7 @@ bool CvPlayer::canTrain(UnitTypes eUnit, bool bContinue, bool bTestVisible, bool
 			CvResourceInfo* pkResourceInfo = GC.getResourceInfo(eResource);
 			if(pkResourceInfo)
 			{
-				const int iNumResource = pUnitInfo.GetResourceQuantityRequirement(eResource);
+				const int iNumResource = GetUnitResourceRequirement(eUnit, eResource);
 
 				if(iNumResource > 0)
 				{
@@ -16623,6 +16623,7 @@ void CvPlayer::setHasPolicy(PolicyTypes eIndex, bool bNewValue)
 	{
 		m_pPlayerPolicies->SetPolicy(eIndex, bNewValue);
 		processPolicies(eIndex, bNewValue ? 1 : -1);
+		UpdateAllUnitResourceCosts();
 	}
 }
 
@@ -27628,6 +27629,49 @@ void CvPlayer::DoReformationNotification()
 }
 #endif
 
+int CvPlayer::GetUnitResourceCostChange(UnitTypes eUnit, ResourceTypes eResource) const
+{
+    if (eUnit == NO_UNIT || eResource == NO_RESOURCE) return 0;
+    
+    int iTotalReduction = 0;
+    for (int iI = 0; iI < GC.getNumPolicyInfos(); iI++)
+    {
+        PolicyTypes ePolicy = (PolicyTypes)iI;
+        if (GetPlayerPolicies() && GetPlayerPolicies()->HasPolicy(ePolicy))
+        {
+            CvPolicyEntry* pPolicyInfo = GC.getPolicyInfo(ePolicy);
+            if (pPolicyInfo)
+            {
+                iTotalReduction += pPolicyInfo->GetUnitResourceCostChange(eUnit, eResource);
+            }
+        }
+    }
+    return iTotalReduction;
+}
+
+int CvPlayer::GetUnitResourceRequirement(UnitTypes eUnit, ResourceTypes eResource) const
+{
+    CvUnitEntry* pUnitInfo = GC.getUnitInfo(eUnit);
+    if (!pUnitInfo) return 0;
+
+    int iOriginalCost = pUnitInfo->GetResourceQuantityRequirement(eResource);
+    if (iOriginalCost <= 0) return 0;
+
+    int iNewCost = iOriginalCost - GetUnitResourceCostChange(eUnit, eResource);
+    return (iNewCost < 0) ? 0 : iNewCost;
+}
+
+void CvPlayer::UpdateAllUnitResourceCosts()
+{
+    int iLoop;
+    for (CvUnit* pLoopUnit = firstUnit(&iLoop); pLoopUnit != NULL; pLoopUnit = nextUnit(&iLoop))
+    {
+        if (pLoopUnit)
+        {
+            pLoopUnit->UpdateResourceCosts();
+        }
+    }
+}
 
 //	--------------------------------------------------------------------------------
 /// If we should see where the locations of all current Barb Camps are, do it

@@ -305,6 +305,7 @@ CvUnit::CvUnit() :
 	, m_bNotConverting("CvUnit::m_bNotConverting", m_syncArchive)
 	, m_bAirCombat("CvUnit::m_bAirCombat", m_syncArchive)
 	, m_bSetUpForRangedAttack("CvUnit::m_bSetUpForRangedAttack", m_syncArchive)
+	, m_piResourceCostPaid(NULL)
 #if defined(LEKMOD_SUBMERGE_MISSION)
 	, m_bCanSubmerge("CvUnit::m_bSubmerged", m_syncArchive)
 	, m_bSubmerged("CvUnit::m_bSubmerged", m_syncArchive)
@@ -393,6 +394,8 @@ CvUnit::~CvUnit()
 
 	if (m_iMapLayer != DEFAULT_UNIT_MAP_LAYER)
 		GC.getMap().plotManager().RemoveUnit(GetIDInfo(), m_iX, m_iY, m_iMapLayer);
+
+	SAFE_DELETE_ARRAY(m_piResourceCostPaid);
 
 	uninit();
 
@@ -541,17 +544,25 @@ void CvUnit::initWithNameOffset(int iID, UnitTypes eUnit, int iNameOffset, UnitA
 	kPlayer.changeExtraUnitCost(getUnitInfo().GetExtraMaintenanceCost());
 
 	// Add Resource Quantity to Used
+	// CUSTOM: Dynamic Resource Costs ---
+    m_piResourceCostPaid = new int[GC.getNumResourceInfos()];
 #ifdef AUI_WARNING_FIXES
-	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+    for (uint iResourceLoop = 0; iResourceLoop < (uint)GC.getNumResourceInfos(); iResourceLoop++)
 #else
-	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+    for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 #endif
-	{
-		if(getUnitInfo().GetResourceQuantityRequirement(iResourceLoop) > 0)
-		{
-			kPlayer.changeNumResourceUsed((ResourceTypes) iResourceLoop, GC.getUnitInfo(getUnitType())->GetResourceQuantityRequirement(iResourceLoop));
-		}
-	}
+    {
+        m_piResourceCostPaid[iResourceLoop] = 0;
+        ResourceTypes eResource = (ResourceTypes)iResourceLoop;
+        
+        int iRequirement = kPlayer.GetUnitResourceRequirement(getUnitType(), eResource);
+        if (iRequirement > 0)
+        {
+            m_piResourceCostPaid[iResourceLoop] = iRequirement;
+            kPlayer.changeNumResourceUsed(eResource, iRequirement);
+        }
+    }
+    // ---------------------------------------------
 
 	if(getUnitInfo().GetNukeDamageLevel() != -1)
 	{
@@ -1819,17 +1830,23 @@ void CvUnit::kill(bool bDelay, PlayerTypes ePlayer /*= NO_PLAYER*/)
 		pPlot->removeUnit(this, false);
 
 	// Remove Resource Quantity from Used
+	// --- LEKMOD CUSTOM: Dynamic Resource Refunds ---
+    if (m_piResourceCostPaid != NULL)
+    {
 #ifdef AUI_WARNING_FIXES
-	for (uint iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+        for (uint iResourceLoop = 0; iResourceLoop < (uint)GC.getNumResourceInfos(); iResourceLoop++)
 #else
-	for(int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
+        for (int iResourceLoop = 0; iResourceLoop < GC.getNumResourceInfos(); iResourceLoop++)
 #endif
-	{
-		if(getUnitInfo().GetResourceQuantityRequirement(iResourceLoop) > 0)
-		{
-			GET_PLAYER(getOwner()).changeNumResourceUsed((ResourceTypes) iResourceLoop, -getUnitInfo().GetResourceQuantityRequirement(iResourceLoop));
-		}
-	}
+        {
+            if (m_piResourceCostPaid[iResourceLoop] > 0)
+            {
+                GET_PLAYER(getOwner()).changeNumResourceUsed((ResourceTypes)iResourceLoop, -m_piResourceCostPaid[iResourceLoop]);
+                m_piResourceCostPaid[iResourceLoop] = 0; // Zero it out to prevent double-refunds
+            }
+        }
+    }
+    // -----------------------------------------------
 
 	//////////////////////////////////////////////////////////////////////////
 	// WARNING: This next statement will delete 'this'
@@ -11451,14 +11468,18 @@ bool CvUnit::CanUpgradeRightNow(bool bOnlyTestVisible) const
 #endif
 		{
 			eResource = (ResourceTypes) iResourceLoop;
-			iNumResourceNeeded = pUpgradeUnitInfo->GetResourceQuantityRequirement(eResource);
+			
+			// CUSTOM: Ask our player manager what the target unit costs right now
+			iNumResourceNeeded = kPlayer.GetUnitResourceRequirement((UnitTypes)pUpgradeUnitInfo->GetID(), eResource);
 
 			if(iNumResourceNeeded > 0)
 			{
-				// Amount we have lying around
+				// Amount we have lying around in the empire
 				iNumOfThisResourceAvailable = kPlayer.getNumResourceAvailable(eResource);
-				// Amount this old unit is using
-				iNumOfThisResourceAvailable += m_pUnitInfo->GetResourceQuantityRequirement(eResource);
+				
+				// CUSTOM: Read what this specific unit instance ACTUALLY paid, not what XML says
+				int iNumResourceAlreadyUsed = (m_piResourceCostPaid != NULL) ? m_piResourceCostPaid[iResourceLoop] : 0;
+				iNumOfThisResourceAvailable += iNumResourceAlreadyUsed;
 
 				if(iNumOfThisResourceAvailable <= 0 || iNumOfThisResourceAvailable < iNumResourceNeeded)
 					return false;
@@ -24657,6 +24678,26 @@ CvUnit* CvUnit::airStrikeTarget(CvPlot& targetPlot, bool bNoncombatAllowed) cons
 	}
 
 	return NULL;
+}
+
+//--------------------------------------------------------------------------------
+void CvUnit::UpdateResourceCosts()
+{
+    if (m_piResourceCostPaid == NULL) return;
+
+    for (int iI = 0; iI < GC.getNumResourceInfos(); iI++)
+    {
+        ResourceTypes eResource = (ResourceTypes)iI;
+        int iNewCost = GET_PLAYER(getOwner()).GetUnitResourceRequirement(getUnitType(), eResource);
+        int iOldCost = m_piResourceCostPaid[iI];
+        int iDifference = iNewCost - iOldCost;
+
+        if (iDifference != 0)
+        {
+            m_piResourceCostPaid[iI] = iNewCost;
+            GET_PLAYER(getOwner()).changeNumResourceUsed(eResource, iDifference);
+        }
+    }
 }
 
 //	--------------------------------------------------------------------------------

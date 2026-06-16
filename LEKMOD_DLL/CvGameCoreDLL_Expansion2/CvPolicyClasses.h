@@ -318,6 +318,7 @@ public:
 	int GetPolicyResourceYieldChanges(int i, int j) const;
 	int GetPolicyResourceClassYieldChanges(int i, int j) const;
 #endif
+	int GetUnitResourceCostChange(UnitTypes eUnit, ResourceTypes eResource) const;
 #if defined(LEKMOD_FIX_SCHOLASTICISM)
 	int GetMinorFriendYieldBonus(int i, int j) const;
 	int GetMinorAllyYieldBonus(int i, int j) const;
@@ -626,6 +627,7 @@ private:
 	int** m_ppiPolicyResourceYieldChanges;
 	int** m_ppiPolicyResourceClassYieldChanges;
 #endif
+	int* m_piUnitResourceCostChanges;
 #if defined(LEKMOD_FIX_SCHOLASTICISM)
 	int** m_paiMinorFriendYieldBonus;
 	int** m_paiMinorAllyYieldBonus;

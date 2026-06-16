@@ -343,6 +343,8 @@ public:
 	bool canPillage(const CvPlot* pPlot) const;
 	bool pillage();
 
+	void UpdateResourceCosts();
+
 	bool canFound(const CvPlot* pPlot, bool bTestVisible = false) const;
 	bool found();
 
@@ -1502,6 +1504,7 @@ protected:
 	FAutoVariable<int, CvUnit> m_iRangeAttackIgnoreLOSCount;
 	int m_iCityAttackOnlyCount;
 	int m_iCaptureDefeatedEnemyCount;
+	int* m_piResourceCostPaid;
 	FAutoVariable<int, CvUnit> m_iRangedSupportFireCount;
 	FAutoVariable<int, CvUnit> m_iAlwaysHealCount;
 	FAutoVariable<int, CvUnit> m_iHealOutsideFriendlyCount;
@@ -1776,6 +1779,7 @@ protected:
 #endif
 	bool DoFallBackFromMelee(CvUnit& pAttacker);
 #endif
+
 
 private:
 

@@ -284,6 +284,7 @@ CvPolicyEntry::CvPolicyEntry(void):
 	m_ppiPolicyResourceYieldChanges(NULL),
 	m_ppiPolicyResourceClassYieldChanges(NULL),
 #endif
+	m_piUnitResourceCostChanges(NULL),
 #if defined(LEKMOD_FIX_SCHOLASTICISM)
 	m_paiMinorFriendYieldBonus(NULL),
 	m_paiMinorAllyYieldBonus(NULL),
@@ -384,6 +385,7 @@ CvPolicyEntry::~CvPolicyEntry(void)
 #ifdef LEKMOD_UNITCOMBAT_FREE_PROMOTION
 	CvDatabaseUtility::SafeDelete2DArray(m_FreePromotionUnitCombats);
 #endif
+	SAFE_DELETE_ARRAY(m_piUnitResourceCostChanges);
 }
 
 /// Read from XML file (pass 1)
@@ -742,6 +744,44 @@ bool CvPolicyEntry::CacheResults(Database::Results& kResults, CvDatabaseUtility&
 		pResults->Reset();
 	}
 #endif
+	// --- LEKMOD CUSTOM: Load specific unit resource adjustments from SQL ---
+	int iNumUnits = GC.getNumUnitInfos();
+	int iNumResources = GC.getNumResourceInfos();
+
+	if (m_piUnitResourceCostChanges == NULL)
+	{
+		m_piUnitResourceCostChanges = new int[iNumUnits * iNumResources];
+	}
+	for (int i = 0; i < (iNumUnits * iNumResources); i++)
+	{
+		m_piUnitResourceCostChanges[i] = 0;
+	}
+
+	// Renamed to kSubResults to avoid colliding with the function parameter
+	Database::Results kSubResults; 
+	std::string strKey = GetType();
+	std::string strQuery = "SELECT * FROM Policy_UnitResourceCostChanges WHERE PolicyType = '" + strKey + "'";
+
+	// Execute our sub-query safely using the isolated container
+	if (GC.GetGameDatabase()->Execute(kSubResults, strQuery.c_str()))
+	{
+		while (kSubResults.Step())
+		{
+			const char* szUnitType = kSubResults.GetText("UnitType");
+			const char* szResourceType = kSubResults.GetText("ResourceType");
+			
+			UnitTypes eUnit = (UnitTypes)GC.getInfoTypeForString(szUnitType);
+			ResourceTypes eResource = (ResourceTypes)GC.getInfoTypeForString(szResourceType);
+			
+			if (eUnit != NO_UNIT && eResource != NO_RESOURCE)
+			{
+				// Map 2D coordinate space into our flattened 1D array
+				int iIndex = ((int)eUnit * iNumResources) + (int)eResource;
+				m_piUnitResourceCostChanges[iIndex] = kSubResults.GetInt("CostChange");
+			}
+		}
+	}
+	// -----------------------------------------------------------------------
 #if defined(LEKMOD_FIX_SCHOLASTICISM)
 	{
 		kUtility.Initialize2DArray(m_paiMinorFriendYieldBonus, "Eras", "Yields");
@@ -2440,6 +2480,13 @@ int CvPolicyEntry::GetPolicyResourceYieldChanges(int i, int j) const
 	return m_ppiPolicyResourceYieldChanges ? m_ppiPolicyResourceYieldChanges[i][j] : 0;
 }
 #endif
+int CvPolicyEntry::GetUnitResourceCostChange(UnitTypes eUnit, ResourceTypes eResource) const
+{
+    if (m_piUnitResourceCostChanges == NULL || eUnit == NO_UNIT || eResource == NO_RESOURCE) return 0;
+    
+    int iIndex = ((int)eUnit * GC.getNumResourceInfos()) + (int)eResource;
+    return m_piUnitResourceCostChanges[iIndex];
+}
 #if defined(LEKMOD_FIX_SCHOLASTICISM)
 /// Yield bonus from each City State Friend
 int CvPolicyEntry::GetMinorFriendYieldBonus(int i, int j) const

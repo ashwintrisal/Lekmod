@@ -935,6 +935,10 @@ public:
 #ifdef LEKMOD_REFORMATION_NOTIFICATION_MID_TURN
 	void DoReformationNotification();
 #endif
+	//Resource cost changes from policies
+	int GetUnitResourceCostChange(UnitTypes eUnit, ResourceTypes eResource) const;
+	int GetUnitResourceRequirement(UnitTypes eUnit, ResourceTypes eResource) const;
+	void UpdateAllUnitResourceCosts();
 
 	void doUpdateBarbarianCampVisibility();
 

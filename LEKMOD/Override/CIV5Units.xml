@@ -204237,10 +204237,10 @@
 		</Row>
 		<Row> 
 			<ID>109</ID> 
-			<Type>POLICY_PEOPLE_ARMY</Type> 
-			<Description>TXT_KEY_POLICY_PEOPLE_ARMY</Description>
+			<Type>POLICY_ATOMIC_PROGRAM</Type> 
+			<Description>TXT_KEY_POLICY_ATOMIC_PROGRAM</Description>
 			<Civilopedia>TXT_KEY_POLICY_NATIONALISM_TEXT</Civilopedia> 
-			<Help>TXT_KEY_POLICY_PEOPLE_ARMY_HELP</Help> 
+			<Help>TXT_KEY_POLICY_ATOMIC_PROGRAM_HELP</Help> 
 			<PolicyBranchType>POLICY_BRANCH_ORDER</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
@@ -206167,7 +206167,28 @@
 			<ResourceType>RESOURCE_URANIUM</ResourceType>
 			<Quantity>2</Quantity>
 		</Row>
+		<Row>
+			<PolicyType>POLICY_ATOMIC_PROGRAM</PolicyType>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<Quantity>4</Quantity>
+		</Row>
 	</Policy_ResourceQuantity>
+	
+	<Table name="Policy_UnitResourceCostChanges">
+		<Column name="PolicyType" type="text" reference="Policies(Type)" />
+		<Column name="UnitType" type="text" reference="Units(Type)" />
+		<Column name="ResourceType" type="text" reference="Resources(Type)" />
+		<Column name="CostChange" type="integer" notnull="true" />
+	</Table>
+	<Policy_UnitResourceCostChanges>
+		<Delete />
+		<Row>
+			<PolicyType>POLICY_ATOMIC_PROGRAM</PolicyType>
+			<UnitType>UNITCLASS_NUCLEAR_MISSILE</UnitType>
+			<ResourceType>RESOURCE_URANIUM</ResourceType>
+			<CostChange>-1</CostChange>
+		</Row>
+	</Policy_UnitResourceCostChanges>
 
 	<Table name="Policy_CityStateRelationshipYieldBonus">
 		<Column name="PolicyType" type="text" reference="Policies(Type)" />
@@ -206807,16 +206828,6 @@
 			<BuildingClassType>BUILDINGCLASS_MUSEUM</BuildingClassType> 
 			<ProductionModifier>50</ProductionModifier> 
 		</Row>
-		<Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<ProductionModifier>100</ProductionModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<ProductionModifier>100</ProductionModifier> 
-		</Row>
 	</Policy_BuildingClassProductionModifiers> 
 
 	<Table name="Policy_BuildingClassTourismModifiers">
@@ -207288,32 +207299,6 @@
 		<Row> 
 			<PolicyType>POLICY_UNIVERSAL_HEALTHCARE_F</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_MEDICAL_LAB</BuildingClassType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<!-- People's Army, Armory -->
-		 <Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row>
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<!-- People's Army, Military Academy -->
-		 <Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>2</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
 			<YieldType>YIELD_SCIENCE</YieldType> 
 			<YieldChange>2</YieldChange> 
 		</Row> 
@@ -208399,12 +208384,12 @@
 			<Flavor>8</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
+			<PolicyType>POLICY_ATOMIC_PROGRAM</PolicyType> 
 			<FlavorType>FLAVOR_OFFENSE</FlavorType> 
 			<Flavor>25</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_PEOPLE_ARMY</PolicyType> 
+			<PolicyType>POLICY_ATOMIC_PROGRAM</PolicyType> 
 			<FlavorType>FLAVOR_OFFENSE</FlavorType> 
 			<Flavor>8</Flavor> 
 		</Row>
