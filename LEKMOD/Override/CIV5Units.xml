@@ -94193,7 +94193,7 @@
 		<!-- v34 -->
 		<Row>
 			<Name>POLICY_YIELD_CAP</Name>
-			<Value>30</Value>
+			<Value>40</Value>
 		</Row>
 		<Row>
 			<Name>TRAIT_YIELD_CAP</Name>
