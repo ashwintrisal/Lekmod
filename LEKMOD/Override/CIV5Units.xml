@@ -423,11 +423,6 @@
 			<PolicyType>POLICY_ECONOMIC_UNION</PolicyType>
 		</Row>
 		<Row>
-			<BuildingType>BUILDING_HONOR_FINISHER</BuildingType>
-			<IsCapitalOnly>true</IsCapitalOnly>
-			<PolicyBranchFinished>POLICY_BRANCH_HONOR</PolicyBranchFinished>
-		</Row>
-		<Row>
 			<BuildingType>BUILDING_YUGO_ORDER</BuildingType>
 			<CivilizationType>CIVILIZATION_YUGOSLAVIA</CivilizationType> 
 			<PolicyBranchChosen>POLICY_BRANCH_FREEDOM</PolicyBranchChosen>
@@ -36070,18 +36065,6 @@
 			<Monument>false</Monument> 
 		</Row>
 		<Row> 
-			<ID>142</ID> 
-			<Type>BUILDINGCLASS_HONOR_FINISHER</Type> 
-			<Description>TXT_KEY_HONOR_FINISHER</Description> 
-			<DefaultBuilding>BUILDING_HONOR_FINISHER</DefaultBuilding> 
-			<MaxGlobalInstances>-1</MaxGlobalInstances> 
-			<MaxTeamInstances>-1</MaxTeamInstances> 
-			<MaxPlayerInstances>1</MaxPlayerInstances> 
-			<ExtraPlayerInstances>0</ExtraPlayerInstances> 
-			<NoLimit>false</NoLimit> 
-			<Monument>false</Monument> 
-		</Row>
-		<Row> 
 			<ID>143</ID> 
 			<Type>BUILDINGCLASS_AKKAD</Type> 
 			<Description>AKKAD UA</Description> 
@@ -40071,11 +40054,6 @@
 	</Table> 
 	<Building_GlobalYieldModifiers>
 		<Delete />
-		<Row> 
-			<BuildingType>BUILDING_HONOR_FINISHER</BuildingType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>10</Yield> 
-		</Row>
 		<Row> 
 			<BuildingType>BUILDING_SISTINE_CHAPEL</BuildingType> 
 			<YieldType>YIELD_CULTURE</YieldType> 
@@ -49054,23 +49032,6 @@
 			<GreatWorkCount>-1</GreatWorkCount> 
 			<PortraitIndex>13</PortraitIndex> 
 			<IconAtlas>TECH_ATLAS_1</IconAtlas> 
-		</Row>
-		<!-- Honor Finisher -->
-		<Row> 
-			<ID>240</ID> 
-			<Type>BUILDING_HONOR_FINISHER</Type> 
-			<BuildingClass>BUILDINGCLASS_HONOR_FINISHER</BuildingClass> 
-			<Description>Encampment</Description> 
-			<Civilopedia>Encampment</Civilopedia> 
-			<Strategy /> 
-			<Help />  
-			<NeverCapture>true</NeverCapture> 
-			<Cost>-1</Cost> 
-			<FaithCost>-1</FaithCost>
-			<ArtDefineTag>ART_DEF_BUILDING_HEROIC_EPIC</ArtDefineTag> 
-			<GreatWorkCount>-1</GreatWorkCount> 
-			<PortraitIndex>32</PortraitIndex> 
-			<IconAtlas>BW_ATLAS_2</IconAtlas> 
 		</Row>
 		<!-- Economic Union -->
 		<Row> 
@@ -188831,7 +188792,7 @@
 			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
-			<GridX>2</GridX> 
+			<GridX>1</GridX> 
 			<GridY>1</GridY> 
 			<Level>0</Level> 
 			<PolicyCostModifier>0</PolicyCostModifier> 
@@ -188878,7 +188839,7 @@
 			<SpecialistProductionModifier>0</SpecialistProductionModifier> 
 			<SpecialistUpgradeModifier>0</SpecialistUpgradeModifier> 
 			<MilitaryProductionModifier>0</MilitaryProductionModifier> 
-			<BaseFreeUnits>4</BaseFreeUnits> 
+			<BaseFreeUnits>10</BaseFreeUnits> 
 			<BaseFreeMilitaryUnits>0</BaseFreeMilitaryUnits> 
 			<FreeUnitsPopulationPercent>0</FreeUnitsPopulationPercent> 
 			<FreeMilitaryUnitsPopulationPercent>0</FreeMilitaryUnitsPopulationPercent> 
@@ -188985,10 +188946,10 @@
 		</Row>
 		<Row> 
 			<ID>14</ID> 
-			<Type>POLICY_DISCIPLINE</Type> 
-			<Description>TXT_KEY_POLICY_DISCIPLINE</Description> 
-			<Civilopedia>TXT_KEY_POLICY_DISCIPLINE_TEXT</Civilopedia> 
-			<Help>TXT_KEY_POLICY_DISCIPLINE_HELP</Help> 
+			<Type>POLICY_HERO_CULT</Type> 
+			<Description>TXT_KEY_POLICY_HERO_CULT</Description> 
+			<Civilopedia>TXT_KEY_POLICY_HERO_CULT_TEXT</Civilopedia> 
+			<Help>TXT_KEY_POLICY_HERO_CULT_HELP</Help> 
 			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
@@ -189093,7 +189054,7 @@
 			<AlwaysSeeBarbCamps>false</AlwaysSeeBarbCamps> 
 			<RevealAllCapitals>false</RevealAllCapitals> 
 			<FreeSpecialist>0</FreeSpecialist> 
-			<ExpModifier>50</ExpModifier> 
+			<ExpModifier>0</ExpModifier> 
 			<ExpInBorderModifier>0</ExpInBorderModifier> 
 			<MinorQuestFriendshipMod>0</MinorQuestFriendshipMod> 
 			<MinorGoldFriendshipMod>0</MinorGoldFriendshipMod> 
@@ -189231,7 +189192,7 @@
 			<BuildingGoldMaintenanceMod>0</BuildingGoldMaintenanceMod> 
 			<UnitGoldMaintenanceMod>0</UnitGoldMaintenanceMod> 
 			<UnitSupplyMod>0</UnitSupplyMod> 
-			<UnitUpgradeCostMod>0</UnitUpgradeCostMod> 
+			<UnitUpgradeCostMod>-10</UnitUpgradeCostMod> 
 			<CityStrengthMod>0</CityStrengthMod> 
 			<CityGrowthMod>0</CityGrowthMod> 
 			<CapitalGrowthMod>0</CapitalGrowthMod> 
@@ -189475,7 +189436,7 @@
 			<PolicyBranchType>POLICY_BRANCH_HONOR</PolicyBranchType> 
 			<NumExtraBranches>0</NumExtraBranches> 
 			<CultureCost>10</CultureCost> 
-			<GridX>5</GridX> 
+			<GridX>4</GridX> 
 			<GridY>1</GridY> 
 			<Level>0</Level> 
 			<PolicyCostModifier>0</PolicyCostModifier> 
@@ -193908,7 +193869,7 @@
 			<AlwaysSeeBarbCamps>false</AlwaysSeeBarbCamps> 
 			<RevealAllCapitals>false</RevealAllCapitals> 
 			<FreeSpecialist>0</FreeSpecialist> 
-			<ExpModifier>0</ExpModifier> 
+			<ExpModifier>50</ExpModifier> 
 			<ExpInBorderModifier>0</ExpInBorderModifier> 
 			<MinorQuestFriendshipMod>0</MinorQuestFriendshipMod> 
 			<MinorGoldFriendshipMod>0</MinorGoldFriendshipMod> 
@@ -193948,7 +193909,7 @@
 			<PortraitIndex>0</PortraitIndex> 
 			<ExtraTourismPerGreatWork>0</ExtraTourismPerGreatWork> 
 			<NumCitiesResearchCostDiscount>0</NumCitiesResearchCostDiscount> 
-			<ScienceFromKills>100</ScienceFromKills> 
+			<ScienceFromKills>0</ScienceFromKills> 
 			<ProductionFromGarrison>0</ProductionFromGarrison> 
 			<MinorMilitaryNumExtraUnitsToGift>0</MinorMilitaryNumExtraUnitsToGift> 
 			<CityStateBonusModifier>0</CityStateBonusModifier> 
@@ -206410,9 +206371,14 @@
 		<Delete />
 		<!-- Discipline -->
 		<Row>
-			<PolicyType>POLICY_DISCIPLINE</PolicyType>
+			<PolicyType>POLICY_HERO_CULT</PolicyType>
 			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType>
-			<Happiness>4</Happiness>
+			<Happiness>3</Happiness>
+		</Row>
+		<Row>
+			<PolicyType>POLICY_HERO_CULT</PolicyType>
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType>
+			<Happiness>3</Happiness>
 		</Row>
 		<!-- Naval Tradition -->
 		<Row> 
@@ -206615,13 +206581,8 @@
 		</Row>
 		<Row> 
 			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<ProductionModifier>100</ProductionModifier> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<ProductionModifier>100</ProductionModifier> 
+			<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType> 
+			<ProductionModifier>30</ProductionModifier> 
 		</Row>
 		<!-- Socialist Realism -->
 		<Row> 
@@ -206766,8 +206727,13 @@
 		<!-- Military Tradition -->
 		<Row> 
 			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
+			<ProductionModifier>100</ProductionModifier> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType> 
-			<ProductionModifier>50</ProductionModifier> 
+			<ProductionModifier>30</ProductionModifier> 
 		</Row>
 		<!-- Maritime Infastructure -->
 		<Row> 
@@ -206787,8 +206753,13 @@
 		</Row>
 		<!-- Discipline -->
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType> 
+			<ProductionModifier>100</ProductionModifier> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType> 
 			<ProductionModifier>100</ProductionModifier> 
 		</Row>
 		<!-- Humanism -->
@@ -207206,51 +207177,14 @@
 		<Row> 
 			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_BARRACKS</BuildingClassType> 
 			<YieldType>YIELD_CULTURE</YieldType> 
 			<YieldChange>1</YieldChange> 
 		</Row>
-		<!-- Professional Army, Armory -->
-		 <Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
+		<!-- Professional Army, Colosseum -->
 		<Row> 
 			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
-		<!-- Professional Army, Military Academy -->
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>1</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_MILITARY_ACADEMY</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
+			<BuildingClassType>BUILDINGCLASS_COLOSSEUM</BuildingClassType> 
+			<YieldType>YIELD_FOOD</YieldType> 
 			<YieldChange>1</YieldChange> 
 		</Row>
 		<!-- Military Tradition -->
@@ -207268,9 +207202,15 @@
 		</Row>
 		<Row> 
 			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_COURTHOUSE</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>3</YieldChange> 
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
+			<YieldType>YIELD_PRODUCTION</YieldType> 
+			<YieldChange>1</YieldChange> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_ARMORY</BuildingClassType> 
+			<YieldType>YIELD_CULTURE</YieldType> 
+			<YieldChange>1</YieldChange> 
 		</Row>
 		<!-- Piety Opener -->
 		 <Row> 
@@ -207382,22 +207322,16 @@
 		</Row>
 		<!-- Discipline -->
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
 			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType> 
 			<YieldType>YIELD_PRODUCTION</YieldType> 
-			<YieldChange>4</YieldChange> 
+			<YieldChange>3</YieldChange> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType> 
-			<YieldType>YIELD_GOLD</YieldType> 
-			<YieldChange>4</YieldChange> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
-			<BuildingClassType>BUILDINGCLASS_HEROIC_EPIC</BuildingClassType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<YieldChange>4</YieldChange> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
+			<BuildingClassType>BUILDINGCLASS_CIRCUS_MAXIMUS</BuildingClassType> 
+			<YieldType>YIELD_PRODUCTION</YieldType> 
+			<YieldChange>3</YieldChange> 
 		</Row>
 		<!-- Urbanization, Windmill -->
 		<Row> 
@@ -207790,17 +207724,17 @@
 			<Flavor>5</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
 			<FlavorType>FLAVOR_OFFENSE</FlavorType> 
 			<Flavor>10</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
 			<FlavorType>FLAVOR_DEFENSE</FlavorType> 
 			<Flavor>5</Flavor> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
 			<FlavorType>FLAVOR_MOBILE</FlavorType> 
 			<Flavor>5</Flavor> 
 		</Row>
@@ -207831,7 +207765,7 @@
 		</Row>
 		<Row> 
 			<PolicyType>POLICY_PROFESSIONAL_ARMY</PolicyType> 
-			<FlavorType>FLAVOR_GOLD</FlavorType> 
+			<FlavorType>FLAVOR_CULTURE</FlavorType> 
 			<Flavor>5</Flavor> 
 		</Row>
 		<Row> 
@@ -209172,25 +209106,6 @@
 			<Yield>-1</Yield> 
 		</Row>
 		
-		<Row> 
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
-			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
-			<YieldType>YIELD_FOOD</YieldType> 
-			<Yield>1</Yield> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
-			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
-			<YieldType>YIELD_SCIENCE</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
-		<Row> 
-			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 
-			<ImprovementType>IMPROVEMENT_CITADEL</ImprovementType> 
-			<YieldType>YIELD_CULTURE</YieldType> 
-			<Yield>2</Yield> 
-		</Row>
-		
 	</Policy_ImprovementYieldChanges> 
 
 	<Table name="Policy_PrereqORPolicies">
@@ -209234,8 +209149,8 @@
 			<PrereqPolicy>POLICY_WARRIOR_CODE</PrereqPolicy> 
 		</Row>
 		<Row> 
-			<PolicyType>POLICY_DISCIPLINE</PolicyType> 
-			<PrereqPolicy>POLICY_WARRIOR_CODE</PrereqPolicy> 
+			<PolicyType>POLICY_HERO_CULT</PolicyType> 
+			<PrereqPolicy>POLICY_PROFESSIONAL_ARMY</PrereqPolicy> 
 		</Row>
 		<Row> 
 			<PolicyType>POLICY_MILITARY_TRADITION</PolicyType> 

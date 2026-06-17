@@ -46961,7 +46961,7 @@ Nebuchadnezzar II died in Babylon in 562 BC. He is remembered as a successful mi
 				Depotism
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_CIV5_POLICY_DISCIPLINE_HEADING"> 
+		<Replace Tag="TXT_KEY_CIV5_POLICY_HERO_CULT_HEADING"> 
 			<Text>
 				Discipline
 			</Text>
@@ -114440,7 +114440,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_HONOR_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Honor[ENDCOLOR] improves the effectiveness of one's army in a variety of ways.[NEWLINE][NEWLINE]Adopting Honor gives a +33% combat bonus VS [COLOR_POSITIVE_TEXT]Barbarians[ENDCOLOR]. Gain [ICON_CULTURE] Culture for the empire for each enemy unit killed. Unlocks building the [COLOR_POSITIVE_TEXT]Temple of Artemis[ENDCOLOR].[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Honor tree will grant [ICON_RESEARCH] Science for each enemy unit killed. All cities receive +10% [ICON_FOOD] Food. [ICON_GREAT_GENERAL] Great Generals can be purchased with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
+				[COLOR_POSITIVE_TEXT]Honor[ENDCOLOR] improves the effectiveness of one's army in a variety of ways.[NEWLINE][NEWLINE]Adopting Honor gives a +33% combat bonus VS [COLOR_POSITIVE_TEXT]Barbarians[ENDCOLOR]. Gain [ICON_CULTURE] Culture for the empire for each enemy unit killed. Unlocks building the [COLOR_POSITIVE_TEXT]Temple of Artemis[ENDCOLOR].[NEWLINE][NEWLINE]Adopting all [COLOR_POSITIVE_TEXT]Policies[ENDCOLOR] in the Honor tree will grant all units 50% more experience from combat and +1 [ICON_FOOD] Food from [COLOR_POSITIVE_TEXT]Barracks[ENDCOLOR], [COLOR_POSITIVE_TEXT]Armories[ENDCOLOR] and National Wonders. [ICON_GREAT_GENERAL] Great Generals can be purchased with [ICON_PEACE] Faith starting in the [COLOR_CYAN]Industrial Era[ENDCOLOR].
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_BRANCH_LIBERTY"> 
@@ -114625,12 +114625,12 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COLLECTIVE_RULE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and by 10% in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
+				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and +10% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COLLECTIVE_RULE_NWS_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and by 10% in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
+				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and +10% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COMMERCE_FINISHER"> 
@@ -114848,19 +114848,19 @@ The ship has weather'd every rack; the prize we sought is won."
 				[COLOR_POSITIVE_TEXT]Source: Wikipedia (https://en.wikipedia.org/wiki/Communism)[ENDCOLOR][NEWLINE][NEWLINE]In political and social sciences, communism (from Latin communis, "common, universal") is a social, political, and economic ideology and movement whose ultimate goal is the establishment of the communist society, which is a socioeconomic order structured upon the common ownership of the means of production and the absence of social classes, money, and the state.[NEWLINE][NEWLINE]Communism includes a variety of schools of thought, which broadly include Marxism, anarchism (anarchist communism), and the political ideologies grouped around both. All these hold in common the analysis that the current order of society stems from its economic system, capitalism, that in this system, there are two major social classes: the working class – who must work to survive, and who make up a majority of society – and the capitalist class – a minority who derive profit from employing the proletariat, through private ownership of the means of production (the physical and institutional means with which commodities are produced and distributed), and that political, social and economic conflict between these two classes will trigger a fundamental change in the economic system, and by extension a wide-ranging transformation of society. The primary element which will enable this transformation, according to this analysis, is the social ownership of the means of production.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_DISCIPLINE"> 
+		<Replace Tag="TXT_KEY_POLICY_HERO_CULT"> 
 			<Text>
-				Discipline
+				Hero Cult
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_DISCIPLINE_HELP"> 
+		<Replace Tag="TXT_KEY_POLICY_HERO_CULT_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Discipline[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production towards the [COLOR_POSITIVE_TEXT]Heroic Epic[ENDCOLOR] and it provides +4 [ICON_HAPPINESS_1] Happiness, +4 [ICON_PRODUCTION] Production, +4 [ICON_GOLD] Gold and +4 [ICON_CULTURE] Culture. Non-Airplane [COLOR_POSITIVE_TEXT]Military[ENDCOLOR] units gain 50% more [COLOR_POSITIVE_TEXT]Experience[ENDCOLOR] from combat.
+				[COLOR_POSITIVE_TEXT]Hero Cult[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production toward [COLOR_POSITIVE_TEXT]Heroic Epic[ENDCOLOR] and [COLOR_POSITIVE_TEXT]Circus Maximus[ENDCOLOR] they provide +3 [ICON_PRODUCTION] Production and +3 [ICON_HAPPINESS_1] Happiness.
 			</Text>
 		</Replace>
-		<Replace Tag="TXT_KEY_POLICY_DISCIPLINE_TEXT"> 
+		<Replace Tag="TXT_KEY_POLICY_HERO_CULT_TEXT"> 
 			<Text>
-				In a military structure, discipline refers to a soldier's willingness to follow legitimate orders, to respect superior officers, and to put their life in jeopardy or even die when required. Disciplined soldiers are expected to uphold the dignity of their uniform when off-duty and to protect the weak and helpless. Lapses in discipline may lead to military punishment or even courts-martial and discharge.
+				While many civilizations look to the cosmos or abstract philosophies for spiritual guidance, highly militarized societies often find their gods right on the battlefield. A Hero Cult arises when a state elevates its most exceptional warriors, generals, and fallen martyrs to the status of living deities or divine ancestors. Rather than mourning the dead, the society worships their martial spirit, transforming the act of warfare into a supreme religious duty. Historically, this mirrors the hero cults of ancient Greece and Thrace, or the state-mandated deification of emperors and champions in Rome and early Japan.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_DOUBLE_AGENTS"> 
@@ -115445,7 +115445,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MILITARY_TRADITION_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Courthouses[ENDCOLOR] and they provide +3 [ICON_FOOD] Food, +3 [ICON_PRODUCTION] Production and +3 [ICON_GOLD] Gold. [COLOR_POSITIVE_TEXT]Citadels[ENDCOLOR] provide +2 [ICON_RESEARCH] Science, +2 [ICON_CULTURE] Culture and +1 [ICON_FOOD] Food.
+				[COLOR_POSITIVE_TEXT]Military Tradition[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Armories[ENDCOLOR] and they provide +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture. +30% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Courthouses[ENDCOLOR] and they provide +3 [ICON_FOOD] Food and +3 [ICON_PRODUCTION] Production. Unit [ICON_GOLD] Gold upgrade costs reduced by 10%.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_MOBILIZATION"> 
@@ -115786,7 +115786,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_PROFESSIONAL_ARMY_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Barracks[ENDCOLOR], [COLOR_POSITIVE_TEXT]Armories[ENDCOLOR], and [COLOR_POSITIVE_TEXT]Military Academies[ENDCOLOR]. They each provide +1 [ICON_PRODUCTION] Production, +1 [ICON_CULTURE] Culture, and +1 [ICON_GOLD] Gold.
+				[COLOR_POSITIVE_TEXT]Professional Army[ENDCOLOR][NEWLINE]+100% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Barracks[ENDCOLOR] and they provide +1 [ICON_PRODUCTION] Production and +1 [ICON_CULTURE] Culture. +30% [ICON_PRODUCTION] Production towards [COLOR_POSITIVE_TEXT]Colossuems[ENDCOLOR] and they provide +1 [ICON_FOOD] Food.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_PROTECTIONISM"> 
@@ -116326,7 +116326,7 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_WARRIOR_CODE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]4 units are maintenance free, and receive 2 [COLOR_POSITIVE_TEXT]Warriors[ENDCOLOR] immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.
+				[COLOR_POSITIVE_TEXT]Warrior Code[ENDCOLOR][NEWLINE]10 units are maintenance free, and receive 2 [COLOR_POSITIVE_TEXT]Warriors[ENDCOLOR] immediately. Gain [ICON_GOLD] Gold for each enemy unit killed.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_WORKERS_FACULTIES"> 
