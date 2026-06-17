@@ -114625,12 +114625,12 @@ The ship has weather'd every rack; the prize we sought is won."
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COLLECTIVE_RULE_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]Speeds the training of [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] by 50% in the [ICON_CAPITAL] Capital and a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] appears near the [ICON_CAPITAL] Capital.
+				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and by 10% in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COLLECTIVE_RULE_NWS_HELP"> 
 			<Text>
-				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]Speeds the training of [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] by 50% in the [ICON_CAPITAL] Capital and a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] appears near the [ICON_CAPITAL] Capital.
+				[COLOR_POSITIVE_TEXT]Collective Rule[ENDCOLOR][NEWLINE]+50% [ICON_PRODUCTION] towards [COLOR_POSITIVE_TEXT]Settlers[ENDCOLOR] in the [ICON_CAPITAL] Capital and by 10% in other cities. Receive a free [COLOR_POSITIVE_TEXT]Settler[ENDCOLOR] near the [ICON_CAPITAL] Capital.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_COMMERCE_FINISHER"> 
@@ -116062,6 +116062,21 @@ The ship has weather'd every rack; the prize we sought is won."
 		<Replace Tag="TXT_KEY_POLICY_SPACE_PROCUREMENTS_TEXT"> 
 			<Text>
 				Most space programs have a procurement office, similar to NASA's Stennis Space Center Procurement Site, charged with the purchase of certain materials and services that are not economically viable for the government to supply - such as small tools, fuels and chemicals, foodstuffs and toiletries for space flights, computer components and the like. The procurement office will enforce regulations on purchasing, inspect materials, evaluate services, and often has separate branches for awarding contracts to major corporations and another to small businesses. Being a government agency, procedures are in place for budgetary review and regulation in an effort to make the space program affordable.
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_POLICY_EMINENCE"> 
+			<Text>
+				Eminence
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_POLICY_EMINENCE_HELP"> 
+			<Text>
+				[COLOR_POSITIVE_TEXT]Eminence[ENDCOLOR][NEWLINE]Gain a free Great [ICON_GREAT_ARTIST] Artist, [ICON_GREAT_WRITER] Writer, [ICON_GREAT_MUSICIAN] Musician, [ICON_GREAT_ENGINEER] Engineer, [ICON_GREAT_MERCHANT] Merchant and [ICON_GREAT_GENERAL] General. 
+			</Text>
+		</Replace>
+		<Replace Tag="TXT_KEY_POLICY_EMINENCE_TEXT"> 
+			<Text>
+				While collective ideologies prioritize the output of the uniform masses, a society anchored in Freedom views the individual as the ultimate engine of progress. The policy of Eminence represents the cultural and political pinnacle of a liberal democracy: a state that actively fosters, celebrates, and rewards exceptional personal achievement. By protecting intellectual property, funding civil liberties, and encouraging free expression, the nation becomes a beacon for the world’s most brilliant minds.
 			</Text>
 		</Replace>
 		<Replace Tag="TXT_KEY_POLICY_TEMPLE_OF_THE_GODS"> 

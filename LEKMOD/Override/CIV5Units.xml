@@ -186983,8 +186983,8 @@
 			<CityStrengthMod>0</CityStrengthMod> 
 			<CityGrowthMod>0</CityGrowthMod> 
 			<CapitalGrowthMod>0</CapitalGrowthMod> 
-			<SettlerProductionModifier>0</SettlerProductionModifier> 
-			<CapitalSettlerProductionModifier>50</CapitalSettlerProductionModifier> 
+			<SettlerProductionModifier>10</SettlerProductionModifier> 
+			<CapitalSettlerProductionModifier>40</CapitalSettlerProductionModifier> 
 			<NewCityExtraPopulation>0</NewCityExtraPopulation> 
 			<FreeFoodBox>0</FreeFoodBox> 
 			<HappyPerMilitaryUnit>0</HappyPerMilitaryUnit> 
@@ -187765,7 +187765,7 @@
 			<NumExtraBuilders>0</NumExtraBuilders> 
 			<PlotGoldCostMod>0</PlotGoldCostMod> 
 			<PlotCultureCostModifier>0</PlotCultureCostModifier> 
-			<PlotCultureExponentModifier>-25</PlotCultureExponentModifier> 
+			<PlotCultureExponentModifier>-20</PlotCultureExponentModifier> 
 			<NumCitiesPolicyCostDiscount>0</NumCitiesPolicyCostDiscount> 
 			<GarrisonedCityRangeStrikeModifier>0</GarrisonedCityRangeStrikeModifier> 
 			<UnitPurchaseCostModifier>0</UnitPurchaseCostModifier> 
@@ -204558,6 +204558,167 @@
 			<ExtraTerritoryClaim>0</ExtraTerritoryClaim> 
 		</Row>
 		<Row> 
+			<ID>111</ID> 
+			<Type>POLICY_EMINENCE</Type> 
+			<Description>TXT_KEY_POLICY_EMINENCE</Description>
+			<Civilopedia>TXT_KEY_POLICY_EMINENCE_TEXT</Civilopedia> 
+			<Help>TXT_KEY_POLICY_EMINENCE_HELP</Help> 
+			<PolicyBranchType>POLICY_BRANCH_FREEDOM</PolicyBranchType> 
+			<NumExtraBranches>0</NumExtraBranches> 
+			<CultureCost>10</CultureCost> 
+			<GridX>0</GridX> 
+			<GridY>0</GridY> 
+			<Level>3</Level> 
+			<PolicyCostModifier>0</PolicyCostModifier> 
+			<CulturePerCity>0</CulturePerCity> 
+			<CulturePerWonder>0</CulturePerWonder> 
+			<CultureWonderMultiplier>0</CultureWonderMultiplier> 
+			<CulturePerTechResearched>0</CulturePerTechResearched> 
+			<CultureImprovementChange>0</CultureImprovementChange> 
+			<CultureFromKills>0</CultureFromKills> 
+			<CultureFromBarbarianKills>0</CultureFromBarbarianKills> 
+			<GoldFromKills>0</GoldFromKills> 
+			<EmbarkedExtraMoves>0</EmbarkedExtraMoves> 
+			<AttackBonusTurns>0</AttackBonusTurns> 
+			<GoldenAgeTurns>0</GoldenAgeTurns> 
+			<GoldenAgeMeterMod>0</GoldenAgeMeterMod> 
+			<GoldenAgeDurationMod>0</GoldenAgeDurationMod> 
+			<NumFreeTechs>0</NumFreeTechs> 
+			<NumFreePolicies>0</NumFreePolicies> 
+			<NumFreeGreatPeople>0</NumFreeGreatPeople> 
+			<MedianTechPercentChange>0</MedianTechPercentChange> 
+			<StrategicResourceMod>0</StrategicResourceMod> 
+			<WonderProductionModifier>0</WonderProductionModifier> 
+			<BuildingProductionModifier>0</BuildingProductionModifier> 
+			<GreatPeopleRateModifier>0</GreatPeopleRateModifier> 
+			<GreatGeneralRateModifier>0</GreatGeneralRateModifier> 
+			<GreatAdmiralRateModifier>0</GreatAdmiralRateModifier> 
+			<GreatWriterRateModifier>0</GreatWriterRateModifier> 
+			<GreatArtistRateModifier>0</GreatArtistRateModifier> 
+			<GreatMusicianRateModifier>0</GreatMusicianRateModifier> 
+			<GreatMerchantRateModifier>0</GreatMerchantRateModifier> 
+			<GreatScientistRateModifier>0</GreatScientistRateModifier> 
+			<DomesticGreatGeneralRateModifier>0</DomesticGreatGeneralRateModifier> 
+			<ExtraHappiness>0</ExtraHappiness> 
+			<ExtraHappinessPerCity>0</ExtraHappinessPerCity> 
+			<UnhappinessMod>0</UnhappinessMod> 
+			<CityCountUnhappinessMod>0</CityCountUnhappinessMod> 
+			<OccupiedPopulationUnhappinessMod>0</OccupiedPopulationUnhappinessMod> 
+			<CapitalUnhappinessMod>0</CapitalUnhappinessMod> 
+			<FreeExperience>0</FreeExperience> 
+			<WorkerSpeedModifier>0</WorkerSpeedModifier> 
+			<AllFeatureProduction>0</AllFeatureProduction> 
+			<ImprovementCostModifier>0</ImprovementCostModifier> 
+			<ImprovementUpgradeRateModifier>0</ImprovementUpgradeRateModifier> 
+			<SpecialistProductionModifier>0</SpecialistProductionModifier> 
+			<SpecialistUpgradeModifier>0</SpecialistUpgradeModifier> 
+			<MilitaryProductionModifier>0</MilitaryProductionModifier> 
+			<BaseFreeUnits>0</BaseFreeUnits> 
+			<BaseFreeMilitaryUnits>0</BaseFreeMilitaryUnits> 
+			<FreeUnitsPopulationPercent>0</FreeUnitsPopulationPercent> 
+			<FreeMilitaryUnitsPopulationPercent>0</FreeMilitaryUnitsPopulationPercent> 
+			<HappinessPerGarrisonedUnit>0</HappinessPerGarrisonedUnit> 
+			<CulturePerGarrisonedUnit>0</CulturePerGarrisonedUnit> 
+			<HappinessPerTradeRoute>0</HappinessPerTradeRoute> 
+			<HappinessPerXPopulation>0</HappinessPerXPopulation> 
+			<ExtraHappinessPerLuxury>0</ExtraHappinessPerLuxury> 
+			<UnhappinessFromUnitsMod>0</UnhappinessFromUnitsMod> 
+			<NumExtraBuilders>0</NumExtraBuilders> 
+			<PlotGoldCostMod>0</PlotGoldCostMod> 
+			<PlotCultureCostModifier>0</PlotCultureCostModifier> 
+			<PlotCultureExponentModifier>0</PlotCultureExponentModifier> 
+			<NumCitiesPolicyCostDiscount>0</NumCitiesPolicyCostDiscount> 
+			<GarrisonedCityRangeStrikeModifier>0</GarrisonedCityRangeStrikeModifier> 
+			<UnitPurchaseCostModifier>0</UnitPurchaseCostModifier> 
+			<BuildingPurchaseCostModifier>0</BuildingPurchaseCostModifier> 
+			<CityConnectionTradeRouteGoldModifier>0</CityConnectionTradeRouteGoldModifier> 
+			<TradeMissionGoldModifier>0</TradeMissionGoldModifier> 
+			<FaithCostModifier>0</FaithCostModifier> 
+			<CulturalPlunderMultiplier>0</CulturalPlunderMultiplier> 
+			<StealTechSlowerModifier>0</StealTechSlowerModifier> 
+			<StealTechFasterModifier>0</StealTechFasterModifier> 
+			<CatchSpiesModifier>0</CatchSpiesModifier> 
+			<GoldPerUnit>0</GoldPerUnit> 
+			<GoldPerMilitaryUnit>0</GoldPerMilitaryUnit> 
+			<RouteGoldMaintenanceMod>0</RouteGoldMaintenanceMod> 
+			<BuildingGoldMaintenanceMod>0</BuildingGoldMaintenanceMod> 
+			<UnitGoldMaintenanceMod>0</UnitGoldMaintenanceMod> 
+			<UnitSupplyMod>0</UnitSupplyMod> 
+			<UnitUpgradeCostMod>0</UnitUpgradeCostMod> 
+			<CityStrengthMod>0</CityStrengthMod> 
+			<CityGrowthMod>0</CityGrowthMod> 
+			<CapitalGrowthMod>0</CapitalGrowthMod> 
+			<SettlerProductionModifier>0</SettlerProductionModifier> 
+			<CapitalSettlerProductionModifier>0</CapitalSettlerProductionModifier> 
+			<NewCityExtraPopulation>0</NewCityExtraPopulation> 
+			<FreeFoodBox>0</FreeFoodBox> 
+			<HappyPerMilitaryUnit>0</HappyPerMilitaryUnit> 
+			<MilitaryFoodProduction>false</MilitaryFoodProduction> 
+			<HappinessToCulture>0</HappinessToCulture> 
+			<HappinessToScience>0</HappinessToScience> 
+			<NumCitiesFreeCultureBuilding>0</NumCitiesFreeCultureBuilding> 
+			<NumCitiesFreeFoodBuilding>0</NumCitiesFreeFoodBuilding> 
+			<HalfSpecialistUnhappiness>false</HalfSpecialistUnhappiness> 
+			<HalfSpecialistFood>false</HalfSpecialistFood> 
+			<MaxConscript>0</MaxConscript> 
+			<UnitSightRangeChange>0</UnitSightRangeChange> 
+			<WoundedUnitDamageMod>0</WoundedUnitDamageMod> 
+			<BarbarianCombatBonus>0</BarbarianCombatBonus> 
+			<AlwaysSeeBarbCamps>false</AlwaysSeeBarbCamps> 
+			<RevealAllCapitals>false</RevealAllCapitals> 
+			<FreeSpecialist>0</FreeSpecialist> 
+			<ExpModifier>0</ExpModifier> 
+			<ExpInBorderModifier>0</ExpInBorderModifier> 
+			<MinorQuestFriendshipMod>0</MinorQuestFriendshipMod> 
+			<MinorGoldFriendshipMod>0</MinorGoldFriendshipMod> 
+			<MinorFriendshipMinimum>0</MinorFriendshipMinimum> 
+			<MinorFriendshipDecayMod>0</MinorFriendshipDecayMod> 
+			<OtherPlayersMinorFriendshipDecayMod>0</OtherPlayersMinorFriendshipDecayMod> 
+			<CityStateUnitFrequencyModifier>0</CityStateUnitFrequencyModifier> 
+			<CommonFoeTourismModifier>0</CommonFoeTourismModifier> 
+			<LessHappyTourismModifier>0</LessHappyTourismModifier> 
+			<SharedIdeologyTourismModifier>0</SharedIdeologyTourismModifier> 
+			<LandTradeRouteGoldChange>0</LandTradeRouteGoldChange> 
+			<SeaTradeRouteGoldChange>0</SeaTradeRouteGoldChange> 
+			<SharedIdeologyTradeGoldChange>0</SharedIdeologyTradeGoldChange> 
+			<RiggingElectionModifier>0</RiggingElectionModifier> 
+			<MilitaryUnitGiftExtraInfluence>0</MilitaryUnitGiftExtraInfluence> 
+			<ProtectedMinorPerTurnInfluence>0</ProtectedMinorPerTurnInfluence> 
+			<AfraidMinorPerTurnInfluence>0</AfraidMinorPerTurnInfluence> 
+			<MinorBullyScoreModifier>0</MinorBullyScoreModifier> 
+			<CityStateTradeChange>0</CityStateTradeChange> 
+			<ThemingBonusMultiplier>0</ThemingBonusMultiplier> 
+			<InternalTradeRouteYieldModifier>0</InternalTradeRouteYieldModifier> 
+			<SharedReligionTourismModifier>0</SharedReligionTourismModifier> 
+			<TradeRouteTourismModifier>0</TradeRouteTourismModifier> 
+			<OpenBordersTourismModifier>0</OpenBordersTourismModifier> 
+			<MinorGreatPeopleAllies>false</MinorGreatPeopleAllies> 
+			<MinorScienceAllies>false</MinorScienceAllies> 
+			<MinorResourceBonus>false</MinorResourceBonus> 
+			<GarrisonFreeMaintenance>false</GarrisonFreeMaintenance> 
+			<GoldenAgeCultureBonusDisabled>false</GoldenAgeCultureBonusDisabled> 
+			<SecondReligionPantheon>false</SecondReligionPantheon> 
+			<AddReformationBelief>false</AddReformationBelief> 
+			<EnablesSSPartHurry>false</EnablesSSPartHurry> 
+			<EnablesSSPartPurchase>false</EnablesSSPartPurchase> 
+			<AbleToAnnexCityStates>false</AbleToAnnexCityStates> 
+			<OneShot>false</OneShot> 
+			<IncludesOneShotFreeUnits>true</IncludesOneShotFreeUnits> 
+			<PortraitIndex>10</PortraitIndex> 
+			<IconAtlas>POLICY_ATLAS_EXP2</IconAtlas> 
+			<IconAtlasAchieved>POLICY_A_ATLAS_EXP2</IconAtlasAchieved> 
+			<ExtraTourismPerGreatWork>0</ExtraTourismPerGreatWork> 
+			<NumCitiesResearchCostDiscount>0</NumCitiesResearchCostDiscount> 
+			<ScienceFromKills>0</ScienceFromKills> 
+			<ProductionFromGarrison>0</ProductionFromGarrison> 
+			<MinorMilitaryNumExtraUnitsToGift>0</MinorMilitaryNumExtraUnitsToGift> 
+			<CityStateBonusModifier>0</CityStateBonusModifier> 
+			<NumCitiesFreeAestheticsSchools>0</NumCitiesFreeAestheticsSchools> 
+			<TourismPerWonder>0</TourismPerWonder> 
+			<InternalTradeRouteGoldChange>0</InternalTradeRouteGoldChange> 
+			<ExtraTerritoryClaim>0</ExtraTerritoryClaim> 
+		</Row>
+		<Row> 
 			<ID>118</ID> 
 			<Type>POLICY_DUMMY_IRELAND</Type> 
 			<Description>Dummy</Description> 
@@ -208139,6 +208300,11 @@
 			<Flavor>66</Flavor> 
 		</Row>
 		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType> 
+			<Flavor>66</Flavor> 
+		</Row>
+		<Row> 
 			<PolicyType>POLICY_HERO_OF_THE_PEOPLE</PolicyType> 
 			<FlavorType>FLAVOR_GREAT_PEOPLE</FlavorType> 
 			<Flavor>23</Flavor> 
@@ -208547,6 +208713,36 @@
 		<Row> 
 			<PolicyType>POLICY_SPACEFLIGHT_PIONEERS</PolicyType> 
 			<UnitClassType>UNITCLASS_SCIENTIST</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_ENGINEER</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_ARTIST</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_WRITER</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_MUSICIAN</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_MERCHANT</UnitClassType> 
+			<Count>1</Count> 
+		</Row>
+		<Row> 
+			<PolicyType>POLICY_EMINENCE</PolicyType> 
+			<UnitClassType>UNITCLASS_GREAT_GENERAL</UnitClassType> 
 			<Count>1</Count> 
 		</Row>
 		<Row> 
