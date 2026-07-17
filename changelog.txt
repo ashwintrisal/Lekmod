@@ -1,6 +1,12 @@
 LEKMOD PROMOTION CHANGELOG
 ==========================
 
+HELICOPTER GUNSHIP
+------------------
+- Added two new tier-3 promotions (sibling to Repair and Logistics, requires any base promotion line at level 2):
+  - Sentry (helicopter-only): +2 Vision Range (vs. normal Sentry's +1); new PROMOTION_SENTRY_HELI
+  - Quick Study (PROMOTION_GAIN_EXPERIENCE): +50% XP; now choosable by helicopters
+
 LAND UNIT BALANCE
 -----------------
 Infantry (and UU replacements at 70 CS: Vietnam Infantry, Maori Battalion):

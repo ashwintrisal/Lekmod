@@ -466,6 +466,18 @@
 			<PediaEntry>TXT_KEY_PROMOTION_ZEALOT</PediaEntry>
 		</Row>
 
+		<Row>
+			<Type>PROMOTION_SENTRY_HELI</Type>
+			<Description>TXT_KEY_PROMOTION_SENTRY_HELI</Description>
+			<Help>TXT_KEY_PROMOTION_SENTRY_HELI_HELP</Help>
+			<Sound>AS2D_IF_LEVELUP</Sound>
+			<VisibilityChange>2</VisibilityChange>
+			<PortraitIndex>43</PortraitIndex>
+			<IconAtlas>PROMOTION_ATLAS</IconAtlas>
+			<PediaType>PEDIA_SCOUTING</PediaType>
+			<PediaEntry>TXT_KEY_PROMOTION_SENTRY_HELI</PediaEntry>
+		</Row>
+
 	</UnitPromotions>
 
 	<!-- ============================================================ -->
@@ -553,6 +565,9 @@
 
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT"><Text>Zealot</Text></Row>
 		<Row Tag="TXT_KEY_PROMOTION_ZEALOT_HELP"><Text>Killing a unit yields [ICON_FAITH] Faith equal to their [ICON_STRENGTH] Combat Strength (max 30).</Text></Row>
+
+		<Row Tag="TXT_KEY_PROMOTION_SENTRY_HELI"><Text>Sentry</Text></Row>
+		<Row Tag="TXT_KEY_PROMOTION_SENTRY_HELI_HELP"><Text>+2 [ICON_RANGE_STRENGTH] Vision Range. Helicopter Gunship only. Requires Heli Ambush II, Heli Mobility II, Anti-Naval II, or Armor Plating II.</Text></Row>
 
 	</Language_en_US>
 

@@ -274195,6 +274195,40 @@
 			<PromotionType>PROMOTION_HELI_REPAIR</PromotionType>
 			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
 		</Row>
+		<!-- Helicopter, Sentry -->
+		<Row>
+			<PromotionType>PROMOTION_SENTRY_HELI</PromotionType>
+			<PrerequisitePromotion>PROMOTION_HELI_AMBUSH_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SENTRY_HELI</PromotionType>
+			<PrerequisitePromotion>PROMOTION_HELI_MOBILITY_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SENTRY_HELI</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ANTI_NAVAL_HELI_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_SENTRY_HELI</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
+		</Row>
+		<!-- Helicopter, Quick Study -->
+		<Row>
+			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
+			<PrerequisitePromotion>PROMOTION_HELI_AMBUSH_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
+			<PrerequisitePromotion>PROMOTION_HELI_MOBILITY_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ANTI_NAVAL_HELI_2</PrerequisitePromotion>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
+			<PrerequisitePromotion>PROMOTION_ARMOR_PLATING_2</PrerequisitePromotion>
+		</Row>
 		<!-- Coastal Raider -->
 		<Row>
 			<PromotionType>PROMOTION_COASTAL_RAIDER_2</PromotionType>
@@ -276121,13 +276155,21 @@
 			<PromotionType>PROMOTION_HELI_AMBUSH_2</PromotionType> 
 			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType> 
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_HELI_REPAIR</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_HELI_REPAIR</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
 		</Row>
-		<Row> 
-			<PromotionType>PROMOTION_MORALE</PromotionType> 
-			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType> 
+		<Row>
+			<PromotionType>PROMOTION_SENTRY_HELI</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_GAIN_EXPERIENCE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_HELICOPTER</UnitCombatType>
+		</Row>
+		<Row>
+			<PromotionType>PROMOTION_MORALE</PromotionType>
+			<UnitCombatType>UNITCOMBAT_RECON</UnitCombatType>
 		</Row>
 		<Row> 
 			<PromotionType>PROMOTION_MORALE</PromotionType> 
